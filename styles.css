@@ -476,11 +476,26 @@ body {
   background: #ffffff;
   display: flex;
   justify-content: center;
-  padding: 10px 0;
+  padding: 0;
+  margin-bottom: 0;
 }
 
 .banner img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
+  width: 100%;
+  max-width: 1200px;
+  display: block;
+  background: #ffffff;
+}
+
+.hero {
+  background: linear-gradient(135deg, #ffffff 0%, #eef3f9 100%);
+  padding: 50px 0 70px;
+}
+
+.hero {
+  padding-top: 40px;
+}
+
+.hero {
+  background: #ffffff;
 }
