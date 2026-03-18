@@ -470,3 +470,17 @@ body {
 .info-card a:hover {
   text-decoration: underline;
 }
+
+.banner {
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.banner img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
