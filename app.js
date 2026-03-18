@@ -1,4 +1,5 @@
 const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRDyafe_Pi5gkWS7EN8e-p5XBVkDcgMd7ZzA5jZ_GAI8aX6BEmZGbjHrWenElLGfIJ-ZDboxZhyxLkf/pub?gid=0&single=true&output=csv";
+const DONATION_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSO-kh0CyOIwgGHf25x4lfXG44cIZrpvr6dP74eiWKFiqIplbmsB3z5WGrNRyj1zLeTM4_KZA62KHnF/pub?gid=0&single=true&output=csv";
 
 let currentFilter = "ALL";
 let allLeagues = [];
@@ -89,8 +90,7 @@ function renderLeagues() {
   }
 
   filtered.forEach(league => {
-    const isFull = league.status === "FULL";
-
+    const isFull = (league.status || "").trim().toUpperCase() === "FULL";
     const card = document.createElement("div");
     card.className = `card ${isFull ? "full" : ""}`;
 
@@ -121,13 +121,78 @@ function renderLeagues() {
       </div>
 
       <div class="card-footer">
-        <p class="status ${isFull ? "full" : "open"}">${league.status || "OPEN"}</p>
+        <p class="status ${isFull ? "full" : "open"}">${isFull ? "FULL" : "OPEN"}</p>
         ${
           isFull
             ? `<span class="closed">League Full</span>`
             : `<a href="${league.link || "#"}" target="_blank" class="join-btn">Join League</a>`
         }
       </div>
+    `;
+
+    container.appendChild(card);
+  });
+}
+
+function loadDonations() {
+  fetch(DONATION_URL)
+    .then(res => res.text())
+    .then(csv => {
+      const rows = csv.split(/\r?\n/).slice(1).filter(Boolean);
+      let total = 0;
+      const projects = [];
+
+    rows.forEach(row => {
+      const cols = parseCSVLine(row);
+      const slot = cols[0] || "";
+      const name = cols[1] || "Unnamed Project";
+      const state = cols[2] || "";
+      const donated = parseFloat(cols[3]) || 0;
+      const goal = parseFloat(cols[4]) || 0;
+
+        total += donated;
+
+        projects.push({
+          slot,
+          name,
+          state,
+          donated,
+          goal
+        });
+      });
+
+      renderDonationTotal(total);
+      renderDonationProjects(projects);
+    })
+    .catch(err => {
+      console.error("Donation load error:", err);
+    });
+}
+
+function renderDonationTotal(total) {
+  const el = document.getElementById("donation-total");
+  if (!el) return;
+  el.innerText = `DonorsChoose Donations (Community Reported • Paid Directly to DonorsChoose): $${total.toFixed(2)}`;
+}
+
+function renderDonationProjects(projects) {
+  const container = document.getElementById("donation-projects");
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  projects.forEach(project => {
+    const progressText = project.goal > 0
+      ? `$${project.donated.toFixed(2)} raised of $${project.goal.toFixed(2)}`
+      : `$${project.donated.toFixed(2)} raised`;
+
+    const card = document.createElement("div");
+    card.className = "info-card";
+    card.innerHTML = `
+      <h3>${project.slot}: ${project.name}</h3>
+      ${project.state ? `<p>${project.state}</p>` : ""}
+      <p><strong>$${project.donated.toFixed(2)}</strong> raised</p>
+      ${project.goal > 0 ? `<p>Goal: $${project.goal.toFixed(2)}</p>` : ""}
     `;
 
     container.appendChild(card);
@@ -165,13 +230,15 @@ fetch(SHEET_URL)
         buyin: cols[4] || "",
         teams: cols[5] || "",
         filled: cols[6] || "",
-        status: (cols[7] || "OPEN").toUpperCase(),
+        status: (cols[7] || "OPEN").trim().toUpperCase(),
         draftDate: cols[8] || "",
         link: cols[9] || "",
-        notes: cols[10] || ""
+        notes: cols[10] || "",
+        lastUpdated: cols[11] || ""
       }));
 
      renderLastUpdated();
+     loadDonations();
      renderStats();
      renderLeagues();
   })
@@ -183,11 +250,13 @@ fetch(SHEET_URL)
 
 function renderLastUpdated() {
   const el = document.getElementById("last-updated");
-  if (!el) return;
+  if (!el || allLeagues.length === 0) return;
 
-  const now = new Date();
+  const values = allLeagues
+    .map(l => (l.lastUpdated || "").trim())
+    .filter(v => v);
 
-  const formatted = now.toLocaleString();
-
-  el.innerText = `Last Updated: ${formatted}`;
+  el.innerText = values.length
+    ? `Last Updated: ${values[0]}`
+    : "Last Updated: Not Available";
 }

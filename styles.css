@@ -108,7 +108,7 @@ body {
 }
 
 .section {
-  padding: 70px 0;
+  padding: 40px 0;
 }
 
 .section.alt {
@@ -206,49 +206,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.badge {
-  background: #111827;
-  color: white;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 0.75rem;
-}
-
-.status {
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-.status.open {
-  color: #16a34a;
-}
-
-.status.full {
-  color: #dc2626;
-}
-
-.join-btn {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 10px 14px;
-  background: #111827;
-  color: white;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.join-btn:hover {
-  opacity: 0.9;
-}
-
-.closed {
-  display: inline-block;
-  margin-top: 12px;
-  color: #6b7280;
-  font-weight: 600;
 }
 
 .card a {
@@ -400,6 +357,8 @@ body {
   border-radius: 10px;
   text-decoration: none;
   font-weight: 700;
+  width: 100%;
+  text-align: center;
 }
 
 .join-btn:hover {
@@ -407,35 +366,26 @@ body {
   text-decoration: none;
 }
 
-.closed {
-  color: #6b7280;
-  font-weight: 700;
-}
-
 .card.full {
-  opacity: 0.75;
+  opacity: 0.6;
   background: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+.card.full * {
+  opacity: 1;
+}
+
+.card:not(.full) {
+  border: 1px solid #d1fae5;
+  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.08);
 }
 
 .closed {
-  background: #e5e7eb;
   padding: 8px 12px;
   border-radius: 8px;
-}
-
-.league-stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.stat-pill {
-  background: #111827;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 999px;
-  font-size: 0.85rem;
+  background: #fee2e2;
+  color: #b91c1c;
   font-weight: 700;
 }
 
@@ -453,10 +403,6 @@ body {
   border-radius: 999px;
   font-size: 0.85rem;
   font-weight: 700;
-}
-
-.stat-pill.active {
-  background: #2563eb;
 }
 
 .info-card a {
@@ -487,25 +433,8 @@ body {
   background: #ffffff;
 }
 
-.hero {
-  background: linear-gradient(135deg, #ffffff 0%, #eef3f9 100%);
-  padding: 50px 0 70px;
-}
-
-.hero {
-  padding-top: 40px;
-}
-
-.hero {
-  background: #ffffff;
-}
-
 .credibility {
-  margin-top: 16px;
-}
-
-.credibility {
-  margin-bottom: 16px;
+  margin: 16px 0;
 }
 
 .cred-badge {
@@ -523,4 +452,44 @@ body {
   font-size: 0.85rem;
   color: #6b7280;
   margin-bottom: 10px;
+}
+
+.donation-total {
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0 0 14px 0;
+  padding: 8px 12px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  color: #111827;
+}
+
+.coming-soon {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 10px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #374151;
+}
+
+.card-footer .status.full {
+  color: #b91c1c !important;
+}
+
+.card-footer .closed {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #fee2e2 !important;
+  color: #b91c1c !important;
+  font-weight: 700;
+}
+
+#donation-projects {
+  margin: 10px 0 20px;
 }
