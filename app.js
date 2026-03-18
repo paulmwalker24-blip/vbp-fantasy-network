@@ -171,11 +171,23 @@ fetch(SHEET_URL)
         notes: cols[10] || ""
       }));
 
-    renderStats();
-    renderLeagues();
+     renderLastUpdated();
+     renderStats();
+     renderLeagues();
   })
   .catch(error => {
     console.error("LOAD ERROR:", error);
     document.getElementById("leagues").innerHTML =
       `<p>Error loading league data: ${error.message}</p>`;
   });
+
+function renderLastUpdated() {
+  const el = document.getElementById("last-updated");
+  if (!el) return;
+
+  const now = new Date();
+
+  const formatted = now.toLocaleString();
+
+  el.innerText = `Last Updated: ${formatted}`;
+}
