@@ -1,262 +1,416 @@
-const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRDyafe_Pi5gkWS7EN8e-p5XBVkDcgMd7ZzA5jZ_GAI8aX6BEmZGbjHrWenElLGfIJ-ZDboxZhyxLkf/pub?gid=0&single=true&output=csv";
-const DONATION_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSO-kh0CyOIwgGHf25x4lfXG44cIZrpvr6dP74eiWKFiqIplbmsB3z5WGrNRyj1zLeTM4_KZA62KHnF/pub?gid=0&single=true&output=csv";
+const LEAGUE_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRDyafe_Pi5gkWS7EN8e-p5XBVkDcgMd7ZzA5jZ_GAI8aX6BEmZGbjHrWenElLGfIJ-ZDboxZhyxLkf/pub?output=csv";
+const DONATION_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSO-kh0CyOIwgGHf25x4lfXG44cIZrpvr6dP74eiWKFiqIplbmsB3z5WGrNRyj1zLeTM4_KZA62KHnF/pub?output=csv";
 
-let currentFilter = "ALL";
-let allLeagues = [];
+const FORMAT_META = {
+  redraft: { label: "Redraft", description: "Standard seasonal competition with balanced scoring." },
+  dynasty: { label: "Dynasty", description: "Build and manage a roster long term." },
+  bestball: { label: "Best Ball", description: "Draft once and let optimal scoring handle the lineup." },
+  bracket: { label: "Bracket", description: "Tournament-style competition across divisions." },
+  keeper: { label: "Keeper", description: "Returning format slot reserved for future launch." },
+  chopped: { label: "Chopped", description: "Planned format slot reserved for future launch." }
+};
 
-function parseCSVLine(line) {
-  const result = [];
-  let current = "";
+function parseCSV(text) {
+  const rows = [];
+  let row = [];
+  let value = "";
   let inQuotes = false;
 
-  for (let i = 0; i < line.length; i++) {
-    const char = line[i];
-    const nextChar = line[i + 1];
+  for (let i = 0; i < text.length; i += 1) {
+    const char = text[i];
+    const next = text[i + 1];
 
     if (char === '"') {
-      if (inQuotes && nextChar === '"') {
-        current += '"';
-        i++;
+      if (inQuotes && next === '"') {
+        value += '"';
+        i += 1;
       } else {
         inQuotes = !inQuotes;
       }
-    } else if (char === "," && !inQuotes) {
-      result.push(current.trim());
-      current = "";
+    } else if (char === ',' && !inQuotes) {
+      row.push(value);
+      value = "";
+    } else if ((char === '\n' || char === '\r') && !inQuotes) {
+      if (char === '\r' && next === '\n') {
+        i += 1;
+      }
+      row.push(value);
+      if (row.some(cell => cell.trim() !== "")) {
+        rows.push(row);
+      }
+      row = [];
+      value = "";
     } else {
-      current += char;
+      value += char;
     }
   }
 
-  result.push(current.trim());
-  return result;
+  if (value.length > 0 || row.length > 0) {
+    row.push(value);
+    if (row.some(cell => cell.trim() !== "")) {
+      rows.push(row);
+    }
+  }
+
+  return rows;
 }
 
-function setFilter(filter) {
-  currentFilter = filter;
-  renderStats();
-  renderLeagues();
+function rowsToObjects(rows) {
+  if (!rows.length) return [];
+  const headers = rows[0].map(cell => cell.trim());
+  return rows.slice(1).map(row => {
+    const obj = {};
+    headers.forEach((header, index) => {
+      obj[header] = (row[index] || "").trim();
+    });
+    return obj;
+  });
 }
 
-function renderStats() {
-  const container = document.getElementById("league-stats");
+function normalizeFormat(value) {
+  const v = (value || "").toLowerCase().replace(/\s+/g, "").trim();
+  if (v.includes("best")) return "bestball";
+  if (v.includes("bracket")) return "bracket";
+  if (v.includes("dynasty")) return "dynasty";
+  if (v.includes("keeper")) return "keeper";
+  if (v.includes("chopped")) return "chopped";
+  if (v.includes("redraft")) return "redraft";
+  return "";
+}
+
+function toNumber(value) {
+  const cleaned = String(value || "").replace(/[$,%\s]/g, "").replace(/,/g, "");
+  const parsed = Number(cleaned);
+  return Number.isFinite(parsed) ? parsed : 0;
+}
+
+function pick(obj, keys) {
+  for (const key of keys) {
+    if (obj[key] !== undefined && String(obj[key]).trim() !== "") {
+      return String(obj[key]).trim();
+    }
+  }
+  return "";
+}
+
+function slugify(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function formatCurrency(value) {
+  return `$${Number(value || 0).toLocaleString()}`;
+}
+
+function createLeagueCard(league) {
+  const card = document.createElement("article");
+  card.className = `league-card${league.spotsLeft === 0 ? " full-card" : ""}`;
+
+  const spotsBadgeClass = league.spotsLeft === 0
+    ? "badge badge-full"
+    : league.spotsLeft <= 3
+      ? "badge badge-urgent"
+      : "badge badge-spots";
+
+  const spotsBadgeText = league.spotsLeft === 0
+    ? "Full"
+    : `${league.spotsLeft} Spot${league.spotsLeft === 1 ? "" : "s"} Left`;
+
+  const actionHtml = league.spotsLeft === 0
+    ? `<span class="btn btn-disabled">League Full</span>`
+    : league.link
+      ? `<a href="${league.link}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Join League</a>`
+      : `<span class="btn btn-disabled">Join Unavailable</span>`;
+
+  card.innerHTML = `
+    <h3 class="league-name">${league.name}</h3>
+    <div class="league-line">${formatCurrency(league.buyIn)} • ${FORMAT_META[league.format].label}</div>
+    <div class="league-line">${league.filled} / ${league.teams} Filled</div>
+    <div class="league-badges">
+      <span class="${spotsBadgeClass}">${spotsBadgeText}</span>
+    </div>
+    <div class="league-actions">${actionHtml}</div>
+  `;
+
+  return card;
+}
+
+function renderLimitedSpots(leagues) {
+  const container = document.getElementById("limitedSpotsContainer");
   if (!container) return;
 
-  const types = ["Redraft", "Dynasty", "Best Ball", "Chopped", "Keeper", "Bracket"];
+  const limited = leagues
+    .filter(league => league.spotsLeft > 0)
+    .sort((a, b) => a.spotsLeft - b.spotsLeft || a.filled - b.filled)
+    .slice(0, 2);
+
   container.innerHTML = "";
 
-  types.forEach(type => {
-    const leagues = allLeagues.filter(l => l.type === type);
-    const open = leagues.filter(l => l.status === "OPEN").length;
-
-    if (leagues.length === 0) return;
-
-    const pill = document.createElement("div");
-    pill.className = `stat-pill ${currentFilter === type ? "active" : ""}`;
-    pill.innerText = `${type} • ${open} open`;
-    pill.style.cursor = "pointer";
-    pill.onclick = () => setFilter(type);
-
-    container.appendChild(pill);
-  });
-
-  const allPill = document.createElement("div");
-  allPill.className = `stat-pill ${currentFilter === "ALL" ? "active" : ""}`;
-  allPill.innerText = "All";
-  allPill.style.cursor = "pointer";
-  allPill.onclick = () => setFilter("ALL");
-
-  container.prepend(allPill);
-}
-
-function renderLeagues() {
-  const container = document.getElementById("leagues");
-  container.innerHTML = "";
-
-  const filtered = allLeagues
-    .filter(league => {
-      if (currentFilter === "ALL") return true;
-      return league.type === currentFilter && league.status === "OPEN";
-    })
-    .sort((a, b) => {
-      if (a.status === b.status) return 0;
-      if (a.status === "OPEN") return -1;
-      return 1;
-    });
-
-  if (filtered.length === 0) {
-    container.innerHTML = "<p>No leagues found for this filter.</p>";
+  if (!limited.length) {
+    container.innerHTML = `<div class="empty-state">No leagues currently have open spots.</div>`;
     return;
   }
 
-  filtered.forEach(league => {
-    const isFull = (league.status || "").trim().toUpperCase() === "FULL";
-    const card = document.createElement("div");
-    card.className = `card ${isFull ? "full" : ""}`;
-
-    const badgeClass = (league.type || "")
-      .toLowerCase()
-      .replace(/\s+/g, "-");
-
-    card.innerHTML = `
-      <div class="card-header">
-        <div>
-          <p class="league-id">${league.id || ""}</p>
-          <h3>${league.name || "Unnamed League"}</h3>
-        </div>
-        <span class="badge badge-${badgeClass}">
-          ${league.type || "Unknown"}
-        </span>
-      </div>
-
-      <div class="card-details">
-        <div class="detail-box">
-          <span class="detail-label">Buy-in</span>
-          <span class="detail-value">$${league.buyin || "0"}</span>
-        </div>
-        <div class="detail-box">
-          <span class="detail-label">Spots</span>
-          <span class="detail-value">${league.filled || "0"} / ${league.teams || "0"}</span>
-        </div>
-      </div>
-
-      <div class="card-footer">
-        <p class="status ${isFull ? "full" : "open"}">${isFull ? "FULL" : "OPEN"}</p>
-        ${
-          isFull
-            ? `<span class="closed">League Full</span>`
-            : `<a href="${league.link || "#"}" target="_blank" class="join-btn">Join League</a>`
-        }
-      </div>
-    `;
-
-    container.appendChild(card);
-  });
+  limited.forEach(league => container.appendChild(createLeagueCard(league)));
 }
 
-function loadDonations() {
-  fetch(DONATION_URL)
-    .then(res => res.text())
-    .then(csv => {
-      const rows = csv.split(/\r?\n/).slice(1).filter(Boolean);
-      let total = 0;
-      const projects = [];
-
-    rows.forEach(row => {
-      const cols = parseCSVLine(row);
-      const slot = cols[0] || "";
-      const name = cols[1] || "Unnamed Project";
-      const state = cols[2] || "";
-      const donated = parseFloat(cols[3]) || 0;
-      const goal = parseFloat(cols[4]) || 0;
-
-        total += donated;
-
-        projects.push({
-          slot,
-          name,
-          state,
-          donated,
-          goal
-        });
-      });
-
-      renderDonationTotal(total);
-      renderDonationProjects(projects);
-    })
-    .catch(err => {
-      console.error("Donation load error:", err);
-    });
-}
-
-function renderDonationTotal(total) {
-  const el = document.getElementById("donation-total");
-  if (!el) return;
-  el.innerText = `DonorsChoose Donations (Community Reported • Paid Directly to DonorsChoose): $${total.toFixed(2)}`;
-}
-
-function renderDonationProjects(projects) {
-  const container = document.getElementById("donation-projects");
+function renderLeagues(leagues) {
+  const container = document.getElementById("leaguesContainer");
   if (!container) return;
 
   container.innerHTML = "";
 
-  projects.forEach(project => {
-    const progressText = project.goal > 0
-      ? `$${project.donated.toFixed(2)} raised of $${project.goal.toFixed(2)}`
-      : `$${project.donated.toFixed(2)} raised`;
+  Object.entries(FORMAT_META).forEach(([formatKey, meta]) => {
+    const grouped = leagues.filter(league => league.format === formatKey);
+    const section = document.createElement("section");
+    section.className = "league-group";
+    section.id = `format-${slugify(formatKey)}`;
 
-    const card = document.createElement("div");
-    card.className = "info-card";
-    card.innerHTML = `
-      <h3>${project.slot}: ${project.name}</h3>
-      ${project.state ? `<p>${project.state}</p>` : ""}
-      <p><strong>$${project.donated.toFixed(2)}</strong> raised</p>
-      ${project.goal > 0 ? `<p>Goal: $${project.goal.toFixed(2)}</p>` : ""}
+    const openSpots = grouped.reduce((sum, league) => sum + Math.max(league.spotsLeft, 0), 0);
+
+    section.innerHTML = `
+      <div class="league-group-header">
+        <div>
+          <h3 class="league-group-title">${meta.label}</h3>
+          <div class="league-group-meta">${meta.description}</div>
+        </div>
+        <div class="league-group-meta">${grouped.length} League${grouped.length === 1 ? "" : "s"}${grouped.length ? ` • ${openSpots} Spot${openSpots === 1 ? "" : "s"} Open` : ""}</div>
+      </div>
+      <div class="card-grid"></div>
     `;
 
-    container.appendChild(card);
+    const grid = section.querySelector(".card-grid");
+
+    if (!grouped.length) {
+      grid.innerHTML = `<div class="empty-state">No active ${meta.label.toLowerCase()} leagues are listed right now.</div>`;
+    } else {
+      grouped
+        .sort((a, b) => a.spotsLeft - b.spotsLeft || a.name.localeCompare(b.name))
+        .forEach(league => grid.appendChild(createLeagueCard(league)));
+    }
+
+    container.appendChild(section);
+  });
+
+  const lastUpdated = document.getElementById("lastUpdated");
+  if (lastUpdated) {
+    lastUpdated.textContent = `League data updated: ${new Date().toLocaleString()}`;
+  }
+}
+
+function renderDonationFallback(message) {
+  const container = document.getElementById("donationProjectsContainer");
+  if (!container) return;
+  container.innerHTML = `<div class="empty-state">${message}</div>`;
+}
+
+function createDonationProgressMarkup(project) {
+  const donated = Math.max(project.donated, 0);
+  const goal = Math.max(project.goal, 0);
+  const progressPercent = goal > 0 ? Math.min((donated / goal) * 100, 100) : 0;
+  const remaining = Math.max(goal - donated, 0);
+
+  return `
+    <div class="donation-progress-header">
+      <span>${Math.round(progressPercent)}% funded</span>
+      <span>${formatCurrency(remaining)} remaining</span>
+    </div>
+    <div class="donation-progress-bar" aria-hidden="true">
+      <span class="donation-progress-fill" style="width: ${progressPercent}%;"></span>
+    </div>
+  `;
+}
+
+function createDonationCard(project) {
+  const card = document.createElement("article");
+  card.className = "donation-card";
+
+  const buttonHtml = project.link
+    ? `<a href="${project.link}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Support This Project</a>`
+    : `<span class="btn btn-disabled">Project Link Unavailable</span>`;
+
+  card.innerHTML = `
+    <div class="donation-card-body">
+      <div class="donation-slot">Project ${project.slotLabel}</div>
+      <h3>${project.name}</h3>
+      <div class="donation-meta">${project.state}</div>
+      <div class="donation-amount">${formatCurrency(project.donated)} donated by VBP community</div>
+      <div class="donation-meta">${formatCurrency(project.goal)} goal</div>
+      ${createDonationProgressMarkup(project)}
+    </div>
+    <div class="league-actions">${buttonHtml}</div>
+  `;
+
+  return card;
+}
+
+function renderDonations(projects) {
+  const container = document.getElementById("donationProjectsContainer");
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  if (!Array.isArray(projects) || !projects.length) {
+    renderDonationFallback("No classroom projects are available right now.");
+    return;
+  }
+
+  projects.slice(0, 3).forEach(project => {
+    container.appendChild(createDonationCard(project));
   });
 }
 
-fetch(SHEET_URL)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error ${response.status}`);
-    }
-    return response.text();
-  })
-  .then(csv => {
-    const lines = csv
-      .split(/\r?\n/)
-      .map(line => line.trim())
-      .filter(line => line.length > 0);
+async function loadLeagues() {
+  const response = await fetch(LEAGUE_CSV_URL, { cache: "no-store" });
+  if (!response.ok) {
+    throw new Error(`League CSV request failed with status ${response.status}`);
+  }
 
-    if (lines.length <= 1) {
-      document.getElementById("leagues").innerHTML = "<p>No league data found.</p>";
+  const text = await response.text();
+  const rows = rowsToObjects(parseCSV(text));
+
+  return rows
+    .map(row => {
+      const name = pick(row, ["League_Name", "League Name", "Name"]);
+      const format = normalizeFormat(pick(row, ["League_Type", "League Type", "Format"]));
+      const teams = toNumber(pick(row, ["Teams", "League_Size", "League Size"]));
+      const filled = toNumber(pick(row, ["Spots_Filled", "Spots Filled", "Filled"]));
+      const buyIn = toNumber(pick(row, ["Buy_In", "Buy In", "Buy-In"]));
+      const link = pick(row, ["Join_Link", "Join Link", "Link"]);
+
+      return {
+        name,
+        format,
+        teams,
+        filled,
+        spotsLeft: Math.max(teams - filled, 0),
+        buyIn,
+        link
+      };
+    })
+    .filter(league => league.name && league.format && league.teams > 0);
+}
+
+function donationRowIsHeader(row) {
+  const normalized = row.map(cell => String(cell || "").trim().toLowerCase());
+  return normalized.includes("project slot")
+    || normalized.includes("project name")
+    || normalized.includes("state")
+    || normalized.includes("donated")
+    || normalized.includes("goal")
+    || normalized.includes("link");
+}
+
+function isLikelyRealProject(project) {
+  const slot = String(project.slot || "").trim().toLowerCase();
+  const name = String(project.name || "").trim().toLowerCase();
+  const state = String(project.state || "").trim();
+
+  if (!name) return false;
+
+  const looksLikeSummaryRow =
+    name.includes("overall") ||
+    name.includes("community total") ||
+    name.includes("total donated") ||
+    name.includes("overall giving") ||
+    name.includes("vbp community total") ||
+    slot === "overall" ||
+    slot === "total";
+
+  if (looksLikeSummaryRow) return false;
+
+  const slotHasProjectNumber = /\d/.test(slot);
+  const hasProjectFields = Boolean(state || project.link || project.goal > 0);
+
+  return slotHasProjectNumber || hasProjectFields;
+}
+
+function sortDonationProjects(projects) {
+  return projects.sort((a, b) => {
+    const slotA = parseInt(String(a.slot).replace(/\D/g, ""), 10);
+    const slotB = parseInt(String(b.slot).replace(/\D/g, ""), 10);
+    const safeA = Number.isFinite(slotA) ? slotA : Number.MAX_SAFE_INTEGER;
+    const safeB = Number.isFinite(slotB) ? slotB : Number.MAX_SAFE_INTEGER;
+    return safeA - safeB;
+  });
+}
+
+async function loadDonations() {
+  const response = await fetch(DONATION_CSV_URL, { cache: "no-store" });
+  if (!response.ok) {
+    throw new Error(`Donation CSV request failed with status ${response.status}`);
+  }
+
+  const text = await response.text();
+  const rows = parseCSV(text);
+
+  if (!rows.length) {
+    return [];
+  }
+
+  const dataRows = donationRowIsHeader(rows[0]) ? rows.slice(1) : rows;
+
+  const projects = dataRows
+    .map(row => ({
+      slot: (row[0] || "").trim(),
+      name: (row[1] || "").trim(),
+      state: (row[2] || "").trim(),
+      donated: toNumber(row[3]),
+      goal: toNumber(row[4]),
+      link: (row[5] || "").trim()
+    }))
+    .filter(isLikelyRealProject);
+
+  return sortDonationProjects(projects)
+    .slice(0, 3)
+    .map((project, index) => ({
+      ...project,
+      slotLabel: project.slot || index + 1
+    }));
+}
+
+async function initLeagues() {
+  try {
+    const leagues = await loadLeagues();
+    renderLimitedSpots(leagues);
+    renderLeagues(leagues);
+  } catch (error) {
+    console.error("League load failed:", error);
+
+    const leaguesContainer = document.getElementById("leaguesContainer");
+    const limitedSpotsContainer = document.getElementById("limitedSpotsContainer");
+
+    if (leaguesContainer) {
+      leaguesContainer.innerHTML = `<div class="empty-state">Unable to load league data right now.</div>`;
+    }
+
+    if (limitedSpotsContainer) {
+      limitedSpotsContainer.innerHTML = `<div class="empty-state">Unable to load limited spot leagues right now.</div>`;
+    }
+  }
+}
+
+async function initDonations() {
+  try {
+    const projects = await loadDonations();
+
+    if (!projects.length) {
+      renderDonationFallback("No classroom projects are available right now.");
       return;
     }
 
-    const rows = lines.slice(1);
-
-    allLeagues = rows
-      .map(row => parseCSVLine(row))
-      .filter(cols => cols.length >= 10)
-      .map(cols => ({
-        id: cols[0] || "",
-        name: cols[1] || "",
-        type: cols[2] || "",
-        division: cols[3] || "",
-        buyin: cols[4] || "",
-        teams: cols[5] || "",
-        filled: cols[6] || "",
-        status: (cols[7] || "OPEN").trim().toUpperCase(),
-        draftDate: cols[8] || "",
-        link: cols[9] || "",
-        notes: cols[10] || "",
-        lastUpdated: cols[11] || ""
-      }));
-
-     renderLastUpdated();
-     loadDonations();
-     renderStats();
-     renderLeagues();
-  })
-  .catch(error => {
-    console.error("LOAD ERROR:", error);
-    document.getElementById("leagues").innerHTML =
-      `<p>Error loading league data: ${error.message}</p>`;
-  });
-
-function renderLastUpdated() {
-  const el = document.getElementById("last-updated");
-  if (!el || allLeagues.length === 0) return;
-
-  const values = allLeagues
-    .map(l => (l.lastUpdated || "").trim())
-    .filter(v => v);
-
-  el.innerText = values.length
-    ? `Last Updated: ${values[0]}`
-    : "Last Updated: Not Available";
+    renderDonations(projects);
+  } catch (error) {
+    console.error("Donation load failed:", error);
+    renderDonationFallback("Unable to load classroom projects right now.");
+  }
 }
+
+function init() {
+  initLeagues();
+  initDonations();
+}
+
+init();

@@ -4,124 +4,126 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VBP Fantasy Network</title>
-  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <div class="brand">VBP Fantasy Network</div>
-      <nav class="nav">
-        <a href="#leagues-section">Active Leagues</a>
-        <a href="#formats">Formats</a>
-        <a href="#constitutions">Constitutions</a>
-      </nav>
-    </div>
+  <header class="site-banner">
+    <img src="banner.png" alt="VBP Fantasy Network" class="site-banner-image" />
   </header>
 
-      <div class="banner">
-        <img src="banner.png" alt="VBP Fantasy Network Banner">
-      </div>
-
   <main>
-     <section class="hero">
-      <div class="container">
-        <h1>VBP Fantasy Network</h1>
-        <p class="hero-sub">
-          Active leagues, formats, and rules — all in one place.
+    <section class="intro-section">
+      <div class="container narrow">
+        <h1>Play Fantasy Football With Purpose</h1>
+        <p class="intro-copy">
+          Competitive fantasy football leagues built around structure, transparency, and a community that gives back.
+        </p>
+        <div class="top-actions">
+          <a href="#leagues" class="btn btn-primary">Join a League</a>
+          <a href="#constitutions" class="btn btn-secondary">League Constitutions</a>
+          <a href="#donations" class="btn btn-secondary">Support Classrooms</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-section">
+      <div class="container narrow">
+        <p class="story-copy">
+          I grew up in a family of educators and spent over a decade in that world myself. This network was built to combine competitive fantasy football with something that actually helps by supporting real classroom projects across the country.
         </p>
       </div>
     </section>
 
-    <section id="leagues-section" class="section">
+    <section class="impact-strip">
       <div class="container">
-        <div class="section-heading">
-          <p class="section-label">Now Open</p>
+        <p>Fantasy football leagues supporting classrooms through the VBP community.</p>
+      </div>
+    </section>
+
+    <section id="limited-spots" class="section limited-spots-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Limited Spots Available</h2>
+          <p>The leagues below currently have the fewest open spots remaining.</p>
+        </div>
+        <div id="limitedSpotsContainer" class="card-grid compact-grid"></div>
+      </div>
+    </section>
+
+    <section id="directory" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>League Formats</h2>
+          <p>Six formats are planned across the network.</p>
+        </div>
+        <div class="format-directory-grid">
+          <div class="directory-card">Redraft</div>
+          <div class="directory-card">Dynasty</div>
+          <div class="directory-card">Best Ball</div>
+          <div class="directory-card">Bracket</div>
+          <div class="directory-card">Keeper</div>
+          <div class="directory-card">Chopped</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="leagues" class="section">
+      <div class="container">
+        <div class="section-header">
           <h2>Active Leagues</h2>
-          <p class="section-text">
-            VBP Fantasy Network is a centralized hub for structured fantasy football leagues across multiple formats, including redraft, dynasty, best ball, chopped, keeper, and bracket leagues. Built on organization, consistency, and    trust, the network is backed by an “Incredible” commissioner rating on LeagueSafe, providing confidence for both new and returning managers.
+          <p id="lastUpdated" class="updated"></p>
+        </div>
+        <div id="leaguesContainer"></div>
+      </div>
+    </section>
+
+    <section id="donations" class="section alt-surface">
+      <div class="container">
+        <div class="section-header narrow">
+          <h2>Support Classrooms</h2>
+          <p>
+            These projects are funded directly through DonorsChoose. The amount shown is what the VBP community has contributed toward each project.
           </p>
         </div>
-        <div class="credibility">
-          <span class="cred-badge">LeagueSafe Commissioner Rating: Incredible</span>
-        </div>
-        <div id="last-updated" class="last-updated"></div>
-        <div id="donation-total" class="donation-total"></div>
-        <div id="donation-projects" class="info-grid"></div>
-        <div id="league-stats" class="league-stats"></div>
-        <div id="leagues" class="league-grid"></div>
+        <div id="donationProjectsContainer" class="donation-grid"></div>
       </div>
     </section>
 
-    <section id="formats" class="section alt">
+    <section id="constitutions" class="section">
       <div class="container">
-        <div class="section-heading">
-          <p class="section-label">League Formats</p>
-          <h2>Play the format that fits your style</h2>
+        <div class="section-header">
+          <h2>League Constitutions</h2>
+          <p>Review league rules and format details before joining.</p>
         </div>
-        <div class="info-grid">
-          <div class="info-card">
-            <h3>Redraft</h3>
-            <p>Classic seasonal leagues with fresh rosters every year.</p>
+        <div class="constitution-grid">
+          <a href="redraft-constitution.html" class="constitution-card">
+            <span class="constitution-card-title">Redraft</span>
+            <span class="constitution-card-subtitle">View constitution</span>
+          </a>
+          <a href="dynasty-constitution.html" class="constitution-card">
+            <span class="constitution-card-title">Dynasty</span>
+            <span class="constitution-card-subtitle">View constitution</span>
+          </a>
+          <a href="bestball-constitution.html" class="constitution-card">
+            <span class="constitution-card-title">Best Ball Union</span>
+            <span class="constitution-card-subtitle">View constitution</span>
+          </a>
+          <a href="bracket-constitution.html" class="constitution-card">
+            <span class="constitution-card-title">Bracket Redraft</span>
+            <span class="constitution-card-subtitle">View constitution</span>
+          </a>
+          <div class="constitution-card coming-soon">
+            <span class="constitution-card-title">Keeper</span>
+            <span class="constitution-card-subtitle">Coming soon</span>
           </div>
-          <div class="info-card">
-            <h3>Dynasty</h3>
-            <p>Long-term roster building with year-over-year strategy.</p>
-          </div>
-          <div class="info-card">
-            <h3>Best Ball</h3>
-            <p>Draft once and let optimal weekly scoring handle itself.</p>
-          </div>
-          <div class="info-card">
-            <h3>Bracket</h3>
-            <p>Tournament-style competition across a larger league network.</p>
+          <div class="constitution-card coming-soon">
+            <span class="constitution-card-title">Chopped</span>
+            <span class="constitution-card-subtitle">Coming soon</span>
           </div>
         </div>
       </div>
     </section>
-
- <section id="constitutions" class="section">
-  <div class="container">
-    <div class="section-heading">
-      <p class="section-label">League Rules</p>
-      <h2>Constitutions</h2>
-      <p class="section-text">
-        Full league constitutions and format details will live here.
-      </p>
-    </div>
-
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>Redraft Constitution</h3>
-        <a href="https://tall-web-281.notion.site/Redraft-League-Constitution-31fbaf2fb0998040af74e1fa87c85f74" target="_blank">View Constitution</a>
-      </div>
-
-      <div class="info-card">
-        <h3>Dynasty Constitution</h3>
-        <a href="https://tall-web-281.notion.site/Dynasty-League-Constitution-320baf2fb09980b3ab79efc10655bf3b" target="_blank">View Constitution</a>
-      </div>
-
-      <div class="info-card">
-        <h3>Bracket Constitution</h3>
-        <a href="https://tall-web-281.notion.site/Redraft-Bracket-League-60-Team-321baf2fb0998083814fc173bf135bb7" target="_blank">View Constitution</a>
-      </div>
-
-      <div class="info-card">
-        <h3>Best Ball Union Constitution</h3>
-        <a href="https://tall-web-281.notion.site/Best-Ball-Union-321baf2fb0998007a171c3d34ae86279" target="_blank">View Constitution</a>
-      </div>
-
-      <div class="info-card">
-        <h3>Keeper Constitution</h3>
-        <p class="coming-soon">Coming Soon</p>
-      </div>
-
-      <div class="info-card">
-        <h3>Chopped Constitution</h3>
-        <p class="coming-soon">Coming Soon</p>
-      </div>
-    </div>
-  </div>
-</section>
   </main>
 
   <script src="app.js"></script>
