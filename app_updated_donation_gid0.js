@@ -285,24 +285,17 @@ function normalizeDonationText(value) {
   return String(value || "").trim().toLowerCase();
 }
 
-function donationRowText(row) {
-  return row.map(normalizeDonationText).join(" | ");
-}
-
-function donationRowLooksLikeNonProject(row) {
-  const text = donationRowText(row);
-
-  return !text
-    || text.includes("timestamp")
-    || text.includes("how much did you donate")
-    || text.includes("project donated to")
-    || text.includes("email address")
-    || text.includes("upload screenshot")
-    || text.includes("submit")
-    || text.includes("project name,state,donated,goal,link")
-    || text.includes("project slot")
-    || text.includes("form")
-    || text.includes("response");
+function donationRowLooksLikeHeader(row) {
+  const normalized = row.map(normalizeDonationText);
+  return normalized.includes("project slot")
+    || normalized.includes("project name")
+    || normalized.includes("state")
+    || normalized.includes("donated")
+    || normalized.includes("goal")
+    || normalized.includes("link")
+    || normalized.includes("timestamp")
+    || normalized.includes("how much did you donate?")
+    || normalized.includes("project donated to.");
 }
 
 function donationSlotValue(value) {
@@ -314,40 +307,24 @@ function donationSlotNumber(value) {
   return match ? Number(match[0]) : NaN;
 }
 
-function looksLikeUrl(value) {
-  return /^https?:\/\//i.test(String(value || "").trim());
-}
-
-function getDonationProjectName(row) {
-  const colB = String(row[1] || "").trim();
-  const colA = String(row[0] || "").trim();
-
-  if (colB && !/^project\s*\d+$/i.test(colB)) {
-    return colB;
-  }
-
-  if (colA && !/^\d+$/i.test(colA) && !/^project\s*\d+$/i.test(colA)) {
-    return colA;
-  }
-
-  return colB || colA;
-}
-
 function isLikelyProjectRow(row) {
-  if (!row || !row.length || donationRowLooksLikeNonProject(row)) {
-    return false;
-  }
-
-  const name = getDonationProjectName(row);
+  const slot = donationSlotValue(row[0]);
+  const name = String(row[1] || "").trim();
   const state = String(row[2] || "").trim();
-  const donated = toNumber(row[3]);
   const goal = toNumber(row[4]);
   const link = String(row[5] || "").trim();
 
-  const hasProjectSignal = !!name || !!state || donated > 0 || goal > 0 || looksLikeUrl(link);
-  const badName = /how much did you donate|project donated to|timestamp|response/i.test(name);
+  const slotNumber = donationSlotNumber(slot);
+  const slotLooksValid = Number.isFinite(slotNumber) || /^project\s*[a-z0-9-]+$/i.test(slot);
+  const nameLooksLikeQuestion = /how much did you donate\??/i.test(name);
+  const stateLooksLikeQuestion = /project donated to\.?/i.test(state);
+  const linkLooksValid = /^https?:\/\//i.test(link);
 
-  return hasProjectSignal && !badName;
+  return slotLooksValid
+    && !!name
+    && !nameLooksLikeQuestion
+    && !stateLooksLikeQuestion
+    && (goal > 0 || linkLooksValid || !!state);
 }
 
 async function loadDonations() {
@@ -363,25 +340,26 @@ async function loadDonations() {
     return [];
   }
 
-  return rows
+  const cleanedRows = rows.filter(row => !donationRowLooksLikeHeader(row));
+
+  return cleanedRows
     .filter(isLikelyProjectRow)
-    .map((row, index) => {
+    .map(row => {
       const slot = donationSlotValue(row[0]);
       const slotNumber = donationSlotNumber(slot);
-      const name = getDonationProjectName(row);
 
       return {
         slot,
-        slotNumber: Number.isFinite(slotNumber) ? slotNumber : index + 1,
-        slotLabel: Number.isFinite(slotNumber) ? slotNumber : index + 1,
-        name,
+        slotNumber: Number.isFinite(slotNumber) ? slotNumber : Number.MAX_SAFE_INTEGER,
+        slotLabel: Number.isFinite(slotNumber) ? slotNumber : slot || "—",
+        name: String(row[1] || "").trim(),
         state: String(row[2] || "").trim(),
         donated: toNumber(row[3]),
         goal: toNumber(row[4]),
         link: String(row[5] || "").trim()
       };
     })
-    .filter(project => project.name || project.state || project.goal > 0 || project.link)
+    .sort((a, b) => a.slotNumber - b.slotNumber)
     .slice(0, 3);
 }
 

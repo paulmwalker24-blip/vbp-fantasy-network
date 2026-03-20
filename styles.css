@@ -270,14 +270,8 @@ a { color: inherit; }
   border-color: var(--border);
 }
 
-
 .donation-card {
   padding: 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.donation-card-body {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -286,47 +280,12 @@ a { color: inherit; }
   margin: 0;
   font-size: 1.05rem;
 }
-.donation-slot {
-  display: inline-flex;
-  align-self: flex-start;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: var(--blue-soft);
-  color: var(--blue);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-.donation-card-accent {
-  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-  border-color: #cfe0f7;
-}
 .donation-meta {
   color: var(--muted);
 }
 .donation-amount {
   font-weight: 700;
   color: var(--text);
-}
-.donation-progress-header {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  color: var(--muted-light);
-  font-size: 0.9rem;
-}
-.donation-progress-bar {
-  width: 100%;
-  height: 10px;
-  border-radius: 999px;
-  background: #e2e8f0;
-  overflow: hidden;
-}
-.donation-progress-fill {
-  display: block;
-  height: 100%;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #1d4ed8 0%, #38bdf8 100%);
 }
 .empty-state {
   padding: 18px;
@@ -426,5 +385,100 @@ a { color: inherit; }
   .card-grid,
   .donation-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+
+.constitution-toc {
+  display: grid;
+  gap: 10px;
+}
+.constitution-toc-link {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--text);
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-alt);
+}
+.constitution-toc-link:hover {
+  border-color: var(--accent);
+}
+.constitution-section-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  padding: 22px;
+}
+.constitution-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+}
+.constitution-section-header h2 {
+  margin: 0;
+  font-size: clamp(1.2rem, 2.3vw, 1.65rem);
+}
+.constitution-jump-link {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.constitution-fulltext p,
+.constitution-fulltext ul,
+.constitution-fulltext table {
+  margin-top: 0;
+}
+.constitution-fulltext p + p,
+.constitution-fulltext p + ul,
+.constitution-fulltext ul + p,
+.constitution-fulltext h3 + p,
+.constitution-fulltext h3 + ul,
+.constitution-fulltext ul + h3,
+.constitution-fulltext p + h3,
+.constitution-fulltext table + p,
+.constitution-fulltext table + h3,
+.constitution-fulltext ul + table,
+.constitution-fulltext p + table {
+  margin-top: 12px;
+}
+.constitution-fulltext h3 {
+  margin: 22px 0 10px;
+  font-size: 1rem;
+}
+.constitution-fulltext ul {
+  padding-left: 20px;
+}
+.constitution-fulltext li + li {
+  margin-top: 6px;
+}
+.constitution-table-wrap {
+  overflow-x: auto;
+}
+.constitution-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.96rem;
+}
+.constitution-table th,
+.constitution-table td {
+  text-align: left;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+}
+.constitution-table th {
+  background: var(--bg-alt);
+}
+@media (max-width: 640px) {
+  .constitution-section-header {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
