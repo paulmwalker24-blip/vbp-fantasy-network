@@ -30,6 +30,7 @@ The site is effectively data-driven through local league JSON, Google Sheets don
   - Homepage structure.
   - Defines containers populated by `app.js`, including:
     - `#limitedSpotsContainer`
+    - `#formatFilters`
     - `#leaguesContainer`
     - `#donationProjectsContainer`
     - `#lastUpdated`
@@ -38,6 +39,8 @@ The site is effectively data-driven through local league JSON, Google Sheets don
   - Fetches local league JSON and donation CSV data.
   - Can optionally fetch Sleeper league details for entries with `sleeperLeagueId`.
   - Normalizes league and donation rows.
+  - Preserves league display order by internal ID sequence within each format.
+  - Handles homepage format-filter interactions.
   - Renders league cards, grouped format sections, limited-spots cards, and donation cards.
   - Contains a custom CSV parser instead of using a dependency.
 
@@ -82,8 +85,10 @@ The current league rendering depends on:
 
 - `id`
 - `sleeperLeagueId` (optional)
+- `sleeperSeason`
 - `name`
 - `format`
+- `division`
 - `teams`
 - `filled`
 - `buyIn`
@@ -105,6 +110,7 @@ If a new format is introduced, update `FORMAT_META` and `normalizeFormat()`.
 
 When adding or updating leagues, prefer using `data/league-intake-template.md` so the required fields stay consistent.
 For new leagues, ask the league type first and infer the internal ID by format sequence rather than asking the user to choose the ID manually.
+If the user provides a Sleeper league URL instead of a raw ID, parse the numeric league ID from the URL and store it in `sleeperLeagueId`.
 Current ID prefixes are:
 
 - `RD` for redraft
@@ -130,6 +136,7 @@ If donation rendering breaks:
 
 - Keep the site static and simple unless the user asks for a structural rewrite.
 - Preserve IDs and section anchors that are referenced by buttons or scripts.
+- Preserve the format filter markup and `data-format` values in `#formatFilters` unless the filtering behavior is being intentionally changed.
 - Constitution pages follow a repeated pattern; keep new pages aligned with existing structure.
 
 ### CSS
@@ -137,6 +144,7 @@ If donation rendering breaks:
 - Reuse the design tokens in `:root` where possible.
 - Keep homepage and constitution page styles shared unless a page-specific split is clearly warranted.
 - Check mobile behavior when changing grids or card sizing.
+- `index.html` currently uses query-string cache busting on `styles.css` and `app.js`; update those version strings when local browser caching is interfering with verification.
 
 ### JavaScript
 
@@ -144,6 +152,8 @@ If donation rendering breaks:
 - Prefer small helper functions over large inline render blocks.
 - Preserve graceful fallback behavior when fetches fail.
 - When changing parsing behavior, avoid assumptions that only match one temporary spreadsheet export.
+- Keep league ordering stable by internal ID sequence within each format unless the user explicitly asks for a different sort order.
+- Keep the format filter functional when changing homepage league rendering.
 
 ## Known Issues And Hazards
 
@@ -160,19 +170,23 @@ Do not silently "clean up" generated constitution content unless the user asks f
 2. Confirm whether the task affects static content, styling, or CSV-driven rendering.
 3. If the task touches leagues, inspect `data/leagues.json` and `data/league-intake-template.md` before editing UI.
 4. For new league intake, ask the league type first and infer the next internal ID from the existing entries in `data/leagues.json`.
-5. If a league has a `sleeperLeagueId`, preserve the Sleeper-enrichment path in `app.js`.
-6. If the task touches donations, inspect the parser assumptions before editing UI.
-7. Keep changes minimal and local unless the user asks for a broader refactor.
-8. If behavior depends on live CSV data, note that full verification may require live network access in a browser.
+5. If the user provides a Sleeper league URL, extract the numeric league ID and store it in `sleeperLeagueId`.
+6. If a league has a `sleeperLeagueId`, preserve the Sleeper-enrichment path in `app.js`.
+7. If the task touches donations, inspect the parser assumptions before editing UI.
+8. Keep changes minimal and local unless the user asks for a broader refactor.
+9. If behavior depends on live CSV data, note that full verification may require live network access in a browser.
 
 ## Verification Guidance
 
 For most changes, verify with:
 
 - static inspection of `index.html`, `styles.css`, and `app.js`
+- static inspection of `data/leagues.json` when league data changes
 - checking that referenced IDs/classes still match
 - checking that render paths still handle empty or failed fetch states
 - checking mobile grid breakpoints in `styles.css`
+- checking that homepage format filters still work when league rendering changes
+- checking that league order within a format still follows the internal IDs
 - when verifying design or image changes locally, clear browser cache or do a hard refresh before judging the result, since localhost assets may be cached
 
 If runtime verification is required, use a browser or local static server when available.
