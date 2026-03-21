@@ -17,11 +17,12 @@ There is no build system, package manager, framework, or server-side app in this
 The homepage acts as a hub for fantasy football leagues and league constitutions.
 
 - It renders static marketing content and navigation.
-- It fetches league availability data from a published Google Sheets CSV.
+- It fetches league availability data from a local JSON file.
+- It can optionally enrich league entries with Sleeper API data when a `sleeperLeagueId` is present in the local JSON.
 - It fetches donation project data from a separate published Google Sheets CSV.
 - It links out to individual constitution pages for specific league formats.
 
-The site is effectively data-driven through Google Sheets plus static HTML content.
+The site is effectively data-driven through local league JSON, Google Sheets donation data, and static HTML content.
 
 ## File Map
 
@@ -34,10 +35,18 @@ The site is effectively data-driven through Google Sheets plus static HTML conte
     - `#lastUpdated`
 
 - `app.js`
-  - Fetches and parses the two CSV sources.
+  - Fetches local league JSON and donation CSV data.
+  - Can optionally fetch Sleeper league details for entries with `sleeperLeagueId`.
   - Normalizes league and donation rows.
   - Renders league cards, grouped format sections, limited-spots cards, and donation cards.
   - Contains a custom CSV parser instead of using a dependency.
+
+- `data/leagues.json`
+  - Primary source of league data for the homepage.
+  - Stores manual league fields such as invite link, LeagueSafe link, buy-in, constitution page, and optional Sleeper IDs.
+
+- `data/league-intake-template.md`
+  - Reusable questionnaire for adding or updating leagues in `data/leagues.json`.
 
 - `styles.css`
   - Shared styles for the homepage and constitution pages.
@@ -58,35 +67,30 @@ The site is effectively data-driven through Google Sheets plus static HTML conte
 
 - The site runs directly in the browser.
 - `fetch()` must be available.
-- The published Google Sheets CSV URLs in `app.js` must remain publicly accessible.
+- The local `data/leagues.json` file must remain accessible from the site root.
+- Sleeper API access is optional and only applies to leagues with a `sleeperLeagueId`.
+- The published Google Sheets donation CSV URL in `app.js` must remain publicly accessible.
 - The HTML structure and the element IDs expected by `app.js` must stay in sync.
 
 If you rename or remove a container in `index.html`, update the corresponding logic in `app.js`.
 
 ## Data Contracts
 
-### League CSV
+### League JSON
 
-`app.js` tolerates multiple possible header names and normalizes them with `pick()`.
+The current league rendering depends on:
 
-Expected fields include variants of:
-
-- league name
-- league type / format
-- team count
-- filled spots
-- buy-in
-- join link
-
-The current rendering depends on:
-
+- `id`
+- `sleeperLeagueId` (optional)
 - `name`
 - `format`
 - `teams`
 - `filled`
-- `spotsLeft`
 - `buyIn`
-- `link`
+- `inviteLink`
+- `leagueSafeLink`
+- `constitutionPage`
+- `status`
 
 Recognized normalized formats:
 
@@ -98,6 +102,17 @@ Recognized normalized formats:
 - `chopped`
 
 If a new format is introduced, update `FORMAT_META` and `normalizeFormat()`.
+
+When adding or updating leagues, prefer using `data/league-intake-template.md` so the required fields stay consistent.
+For new leagues, ask the league type first and infer the internal ID by format sequence rather than asking the user to choose the ID manually.
+Current ID prefixes are:
+
+- `RD` for redraft
+- `DYN` for dynasty
+- `BBU` for best ball
+- `RDB` for bracket
+- `KP` for keeper
+- `CH` for chopped
 
 ### Donation CSV
 
@@ -143,9 +158,12 @@ Do not silently "clean up" generated constitution content unless the user asks f
 
 1. Read `index.html`, `styles.css`, and `app.js` first.
 2. Confirm whether the task affects static content, styling, or CSV-driven rendering.
-3. If the task touches donations or leagues, inspect the parser assumptions before editing UI.
-4. Keep changes minimal and local unless the user asks for a broader refactor.
-5. If behavior depends on live CSV data, note that full verification may require live network access in a browser.
+3. If the task touches leagues, inspect `data/leagues.json` and `data/league-intake-template.md` before editing UI.
+4. For new league intake, ask the league type first and infer the next internal ID from the existing entries in `data/leagues.json`.
+5. If a league has a `sleeperLeagueId`, preserve the Sleeper-enrichment path in `app.js`.
+6. If the task touches donations, inspect the parser assumptions before editing UI.
+7. Keep changes minimal and local unless the user asks for a broader refactor.
+8. If behavior depends on live CSV data, note that full verification may require live network access in a browser.
 
 ## Verification Guidance
 

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VBP Fantasy Network</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=20260320b" />
 </head>
 <body>
   <header class="site-banner">
@@ -57,13 +57,14 @@
           <h2>League Formats</h2>
           <p>Six formats are planned across the network.</p>
         </div>
-        <div class="format-directory-grid">
-          <div class="directory-card">Redraft</div>
-          <div class="directory-card">Dynasty</div>
-          <div class="directory-card">Best Ball</div>
-          <div class="directory-card">Bracket</div>
-          <div class="directory-card">Keeper</div>
-          <div class="directory-card">Chopped</div>
+        <div class="format-directory-grid" id="formatFilters">
+          <button type="button" class="directory-card format-filter is-active" data-format="all">All</button>
+          <button type="button" class="directory-card format-filter" data-format="redraft">Redraft</button>
+          <button type="button" class="directory-card format-filter" data-format="dynasty">Dynasty</button>
+          <button type="button" class="directory-card format-filter" data-format="bestball">Best Ball</button>
+          <button type="button" class="directory-card format-filter" data-format="bracket">Bracket</button>
+          <button type="button" class="directory-card format-filter" data-format="keeper">Keeper</button>
+          <button type="button" class="directory-card format-filter" data-format="chopped">Chopped</button>
         </div>
       </div>
     </section>
@@ -126,6 +127,6 @@
     </section>
   </main>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=20260320b"></script>
 </body>
 </html>
