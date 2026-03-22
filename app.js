@@ -85,6 +85,12 @@ function formatCurrency(value) {
   return `$${Number(value || 0).toLocaleString()}`;
 }
 
+function normalizeFilledCount(teams, filled) {
+  const safeTeams = Math.max(toNumber(teams), 0);
+  const safeFilled = Math.max(toNumber(filled), 0);
+  return Math.min(safeFilled, safeTeams);
+}
+
 function getLeagueOrderValue(league) {
   const match = String(league.id || "").match(/(\d+)$/);
   return match ? Number(match[1]) : Number.MAX_SAFE_INTEGER;
@@ -152,7 +158,7 @@ function normalizeLeagueEntry(entry) {
     format,
     division: String(entry.division || "").trim(),
     teams,
-    filled,
+    filled: normalizeFilledCount(teams, filled),
     buyIn: toNumber(entry.buyIn),
     inviteLink: String(entry.inviteLink || "").trim(),
     leagueSafeLink: String(entry.leagueSafeLink || "").trim(),
@@ -184,6 +190,7 @@ async function fetchSleeperLeagueData(sleeperLeagueId) {
     name: String(league.name || "").trim(),
     teams: toNumber(league.total_rosters),
     filled: Array.isArray(users) ? users.length : 0,
+    season: String(league.season || "").trim(),
     status: String(league.status || "").trim().toLowerCase()
   };
 }
@@ -201,12 +208,13 @@ async function hydrateLeague(entry) {
 
   try {
     const sleeper = await fetchSleeperLeagueData(league.sleeperLeagueId);
+    const teams = sleeper.teams || league.teams;
+    const filled = normalizeFilledCount(teams, sleeper.filled);
     const hydrated = {
       ...league,
-      name: sleeper.name || league.name,
-      teams: sleeper.teams || league.teams,
-      filled: sleeper.filled,
-      status: sleeper.status || league.status
+      teams,
+      filled,
+      sleeperSeason: sleeper.season || league.sleeperSeason
     };
 
     return {
