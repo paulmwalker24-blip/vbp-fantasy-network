@@ -20,9 +20,10 @@ The homepage acts as a hub for fantasy football leagues and league constitutions
 - It fetches league availability data from a local JSON file.
 - It can optionally enrich league entries with Sleeper API data when a `sleeperLeagueId` is present in the local JSON.
 - It fetches donation project data from a separate published Google Sheets CSV.
+- It fetches donation project data from a local JSON file.
 - It links out to individual constitution pages for specific league formats.
 
-The site is effectively data-driven through local league JSON, Google Sheets donation data, and static HTML content.
+The site is effectively data-driven through local league JSON, local donation JSON, and static HTML content.
 
 ## File Map
 
@@ -51,6 +52,10 @@ The site is effectively data-driven through local league JSON, Google Sheets don
   - Primary source of league data for the homepage.
   - Stores manual league fields such as invite link, LeagueSafe link, buy-in, constitution page, and optional Sleeper IDs.
   - LeagueSafe links are stored here for operations, but are not currently displayed on the homepage.
+
+- `data/donations.json`
+  - Local source of donation project data for the homepage.
+  - Stores the current project slot, title, state, donated amount, goal amount, remaining amount, and DonorsChoose link.
 
 - `data/league-intake-template.md`
   - Reusable questionnaire for adding or updating leagues in `data/leagues.json`.
@@ -99,7 +104,7 @@ The site is effectively data-driven through local league JSON, Google Sheets don
 - `fetch()` must be available.
 - The local `data/leagues.json` file must remain accessible from the site root.
 - Sleeper API access is optional and only applies to leagues with a `sleeperLeagueId`.
-- The published Google Sheets donation CSV URL in `app.js` must remain publicly accessible.
+- The local `data/donations.json` file must remain accessible from the site root.
 - The HTML structure and the element IDs expected by `app.js` must stay in sync.
 
 If you rename or remove a container in `index.html`, update the corresponding logic in `app.js`.
@@ -155,15 +160,22 @@ Current league notes:
 - The local maintenance scripts intentionally treat `inviteLink`, `leagueSafeLink`, `constitutionPage`, `buyIn`, and curated `name` values as commissioner-owned fields unless the user explicitly opts into overwriting them.
 - For Sleeper-backed leagues, `filled` should reflect paid/assigned teams by counting roster slots with an `owner_id`. Do not treat raw league member count as the true fill number.
 
+Current donation notes:
+
+- The homepage donation cards now read from `data/donations.json`.
+- Donation cards should prefer a stored `remaining` value when present, since DonorsChoose exposes "still needed" amounts more reliably than a stable total-goal payload.
+- The donation section includes a public `Report Your Donation` CTA that links to a Google Form. Keep the CTA in a professional secondary position below the cards unless the user explicitly asks for a different layout.
+
 ### Donation CSV
 
-Donation parsing is more brittle because the sheet may contain headers, form-response rows, or inconsistent column meaning. Existing code attempts to filter non-project rows heuristically.
+The donation section now reads from `data/donations.json` instead of a live Google Sheets CSV.
 
 If donation rendering breaks:
 
-- inspect the published CSV shape first
-- verify whether the correct sheet tab is being published
-- prefer tightening row detection over hardcoding a single fragile row position
+- inspect `data/donations.json` first
+- verify that the `projects` array exists
+- verify that each project includes `name`, `state`, `goal`, and `link`
+- if a `remaining` field is present, treat it as the homepage source of truth for the "remaining" display
 
 ## Editing Guidance
 

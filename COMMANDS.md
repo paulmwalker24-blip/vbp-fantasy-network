@@ -104,6 +104,14 @@ Open a cache-busted preview after league-data edits:
 Run the preview script and open the homepage with cache-busting so I can verify the latest changes.
 ```
 
+## Thumbnail Image
+
+Create a general Sleeper thumbnail from the current site artwork:
+
+```text
+Generate the general Sleeper thumbnail image from the current banner and league-format artwork, then show me where it was saved.
+```
+
 ## Combined Check
 
 Run the sync report first, then validate, then tell me the net result:

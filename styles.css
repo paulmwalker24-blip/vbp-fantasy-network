@@ -298,6 +298,23 @@ a { color: inherit; }
   margin: 0;
   font-size: 1.05rem;
 }
+.donation-cta {
+  margin-top: 22px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+}
+.donation-cta-copy {
+  margin: 0;
+  color: var(--muted);
+  max-width: 700px;
+}
 .donation-meta {
   color: var(--muted);
 }
@@ -423,6 +440,10 @@ a { color: inherit; }
   .card-grid,
   .donation-grid {
     grid-template-columns: 1fr;
+  }
+  .donation-cta {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 

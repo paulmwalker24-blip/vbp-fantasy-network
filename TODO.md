@@ -19,8 +19,8 @@
 
 ## Donation Section
 
-- [ ] Decide whether to keep donations on Google Sheets or migrate donations to local JSON later.
-- [ ] Verify the donation progress bars and donation CSV parsing against the live published sheet.
+- [x] Decide whether to keep donations on Google Sheets or migrate donations to local JSON later.
+- [x] Verify the donation progress bars and local donation JSON rendering on the homepage.
 
 ## Constitutions
 
@@ -33,6 +33,7 @@
 - [ ] Add a small documented workflow for updating `data/leagues.json` from the intake template.
 - [ ] Consider adding a script later to help merge Sleeper API data into local league records.
 - [ ] Decide whether to keep planned empty formats visible in Active Leagues or hide them until launched.
+- [ ] Revisit the general Sleeper thumbnail image and refine it into a final brand-ready square image based primarily on the VBP banner.
 
 ## Automation Recommendations
 

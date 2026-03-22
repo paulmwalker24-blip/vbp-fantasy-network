@@ -172,3 +172,19 @@ Update an existing record:
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\upsert-league-record.ps1 -Mode update -LeagueRecordId CH1
 ```
+
+## `create-general-thumbnail.ps1`
+
+Builds a general square Sleeper-friendly thumbnail image from the existing site banner and format artwork.
+
+Default output:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\create-general-thumbnail.ps1
+```
+
+Custom output path:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\create-general-thumbnail.ps1 -OutputPath sleeper-thumbnail-v2.png
+```

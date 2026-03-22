@@ -1,5 +1,5 @@
 const LEAGUES_JSON_URL = "data/leagues.json";
-const DONATION_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSO-kh0CyOIwgGHf25x4lfXG44cIZrpvr6dP74eiWKFiqIplbmsB3z5WGrNRyj1zLeTM4_KZA62KHnF/pub?gid=0&single=true&output=csv";
+const DONATIONS_JSON_URL = "data/donations.json";
 
 const FORMAT_META = {
   redraft: { label: "Redraft", description: "Standard seasonal competition with balanced scoring." },
@@ -405,9 +405,14 @@ function renderDonations(projects) {
     const card = document.createElement("article");
     card.className = "donation-card";
 
-    const remaining = Math.max(project.goal - project.donated, 0);
+    const remaining = Number.isFinite(Number(project.remaining))
+      ? Math.max(toNumber(project.remaining), 0)
+      : Math.max(project.goal - project.donated, 0);
+    const fundedAmount = project.goal >= remaining
+      ? Math.max(project.goal - remaining, 0)
+      : 0;
     const fundedPercent = project.goal > 0
-      ? Math.min((project.donated / project.goal) * 100, 100)
+      ? Math.min((fundedAmount / project.goal) * 100, 100)
       : 0;
 
     const badge = document.createElement("div");
@@ -476,106 +481,30 @@ async function loadLeagues() {
   return hydrated.filter(league => league.name && league.format && league.teams > 0);
 }
 
-function normalizeDonationText(value) {
-  return String(value || "").trim().toLowerCase();
-}
-
-function donationRowText(row) {
-  return row.map(normalizeDonationText).join(" | ");
-}
-
-function donationRowLooksLikeNonProject(row) {
-  const text = donationRowText(row);
-
-  return !text
-    || text.includes("timestamp")
-    || text.includes("how much did you donate")
-    || text.includes("project donated to")
-    || text.includes("email address")
-    || text.includes("upload screenshot")
-    || text.includes("submit")
-    || text.includes("project name,state,donated,goal,link")
-    || text.includes("project slot")
-    || text.includes("form")
-    || text.includes("response");
-}
-
-function donationSlotValue(value) {
-  return String(value || "").trim();
-}
-
-function donationSlotNumber(value) {
-  const match = donationSlotValue(value).match(/\d+/);
-  return match ? Number(match[0]) : NaN;
-}
-
-function looksLikeUrl(value) {
-  return /^https?:\/\//i.test(String(value || "").trim());
-}
-
-function getDonationProjectName(row) {
-  const colB = String(row[1] || "").trim();
-  const colA = String(row[0] || "").trim();
-
-  if (colB && !/^project\s*\d+$/i.test(colB)) {
-    return colB;
-  }
-
-  if (colA && !/^\d+$/i.test(colA) && !/^project\s*\d+$/i.test(colA)) {
-    return colA;
-  }
-
-  return colB || colA;
-}
-
-function isLikelyProjectRow(row) {
-  if (!row || !row.length || donationRowLooksLikeNonProject(row)) {
-    return false;
-  }
-
-  const name = getDonationProjectName(row);
-  const state = String(row[2] || "").trim();
-  const donated = toNumber(row[3]);
-  const goal = toNumber(row[4]);
-  const link = String(row[5] || "").trim();
-
-  const hasProjectSignal = !!name || !!state || donated > 0 || goal > 0 || looksLikeUrl(link);
-  const badName = /how much did you donate|project donated to|timestamp|response/i.test(name);
-
-  return hasProjectSignal && !badName;
-}
-
 async function loadDonations() {
-  const response = await fetch(DONATION_CSV_URL, { cache: "no-store" });
+  const response = await fetch(DONATIONS_JSON_URL, { cache: "no-store" });
   if (!response.ok) {
-    throw new Error(`Donation CSV request failed with status ${response.status}`);
+    throw new Error(`Local donations JSON request failed with status ${response.status}`);
   }
 
-  const text = await response.text();
-  const rows = parseCSV(text);
+  const payload = await response.json();
+  const projects = Array.isArray(payload) ? payload : payload.projects;
 
-  if (!rows.length) {
-    return [];
+  if (!Array.isArray(projects)) {
+    throw new Error("Local donations JSON is missing a projects array.");
   }
 
-  return rows
-    .filter(isLikelyProjectRow)
-    .map((row, index) => {
-      const slot = donationSlotValue(row[0]);
-      const slotNumber = donationSlotNumber(slot);
-      const name = getDonationProjectName(row);
-
-      return {
-        slot,
-        slotNumber: Number.isFinite(slotNumber) ? slotNumber : index + 1,
-        slotLabel: Number.isFinite(slotNumber) ? slotNumber : index + 1,
-        name,
-        state: String(row[2] || "").trim(),
-        donated: toNumber(row[3]),
-        goal: toNumber(row[4]),
-        link: String(row[5] || "").trim()
-      };
-    })
+  return projects
+    .map((project, index) => ({
+      slot: String(project.slot || `Project ${index + 1}`).trim(),
+      slotLabel: Number.isFinite(Number(project.slotLabel)) ? Number(project.slotLabel) : index + 1,
+      name: String(project.name || "").trim(),
+      state: String(project.state || "").trim(),
+      donated: toNumber(project.donated),
+      goal: toNumber(project.goal),
+      remaining: toNumber(project.remaining),
+      link: String(project.link || "").trim()
+    }))
     .filter(project => project.name || project.state || project.goal > 0 || project.link)
     .slice(0, 3);
 }
