@@ -170,26 +170,29 @@ function normalizeLeagueEntry(entry) {
 }
 
 async function fetchSleeperLeagueData(sleeperLeagueId) {
-  const [leagueResponse, usersResponse] = await Promise.all([
+  const [leagueResponse, rostersResponse] = await Promise.all([
     fetch(`https://api.sleeper.app/v1/league/${encodeURIComponent(sleeperLeagueId)}`, { cache: "no-store" }),
-    fetch(`https://api.sleeper.app/v1/league/${encodeURIComponent(sleeperLeagueId)}/users`, { cache: "no-store" })
+    fetch(`https://api.sleeper.app/v1/league/${encodeURIComponent(sleeperLeagueId)}/rosters`, { cache: "no-store" })
   ]);
 
   if (!leagueResponse.ok) {
     throw new Error(`Sleeper league request failed with status ${leagueResponse.status}`);
   }
 
-  if (!usersResponse.ok) {
-    throw new Error(`Sleeper league users request failed with status ${usersResponse.status}`);
+  if (!rostersResponse.ok) {
+    throw new Error(`Sleeper league rosters request failed with status ${rostersResponse.status}`);
   }
 
   const league = await leagueResponse.json();
-  const users = await usersResponse.json();
+  const rosters = await rostersResponse.json();
+  const filled = Array.isArray(rosters)
+    ? rosters.filter(roster => String(roster?.owner_id || "").trim() !== "").length
+    : 0;
 
   return {
     name: String(league.name || "").trim(),
     teams: toNumber(league.total_rosters),
-    filled: Array.isArray(users) ? users.length : 0,
+    filled,
     season: String(league.season || "").trim(),
     status: String(league.status || "").trim().toLowerCase()
   };

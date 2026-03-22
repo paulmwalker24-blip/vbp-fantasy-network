@@ -38,6 +38,9 @@ The site is effectively data-driven through local league JSON, Google Sheets don
 - `app.js`
   - Fetches local league JSON and donation CSV data.
   - Can optionally fetch Sleeper league details for entries with `sleeperLeagueId`.
+  - Preserves local display names while still using Sleeper to refresh counts and season data.
+  - Caps hydrated filled counts so the homepage does not show impossible roster counts.
+  - Treats `filled` as the number of roster slots with an assigned `owner_id`, not simply the number of league members.
   - Normalizes league and donation rows.
   - Preserves league display order by internal ID sequence within each format.
   - Handles homepage format-filter interactions.
@@ -47,6 +50,7 @@ The site is effectively data-driven through local league JSON, Google Sheets don
 - `data/leagues.json`
   - Primary source of league data for the homepage.
   - Stores manual league fields such as invite link, LeagueSafe link, buy-in, constitution page, and optional Sleeper IDs.
+  - LeagueSafe links are stored here for operations, but are not currently displayed on the homepage.
 
 - `data/league-intake-template.md`
   - Reusable questionnaire for adding or updating leagues in `data/leagues.json`.
@@ -55,10 +59,33 @@ The site is effectively data-driven through local league JSON, Google Sheets don
   - Shared styles for the homepage and constitution pages.
   - Contains layout styles, card styles, button styles, and constitution page section styles.
 
+- `scripts/`
+  - Local maintenance automation for league intake, Sleeper sync, validation, preview, and pre-push checks.
+  - Current scripts include:
+    - `set-sleeper-league-id.ps1`
+    - `sync-sleeper-leagues.ps1`
+    - `validate-leagues-json.ps1`
+    - `get-next-league-id.ps1`
+    - `upsert-league-record.ps1`
+    - `open-preview.ps1`
+    - `check-site.ps1`
+  - `README.md` in this folder documents how each local script is intended to be run.
+
+- `COMMANDS.md`
+  - Repo-local prompt catalog for asking Codex to run repeatable local automations without manually typing PowerShell commands.
+
+- `.github/workflows/`
+  - `validate-site.yml` runs the local site-check script on push and pull request.
+  - `sleeper-sync.yml` provides an optional automated Sleeper sync path for `data/leagues.json`.
+
+- `docs/league-data-ownership.md`
+  - Documents the current flat league-data model and a future `manual` / `synced` split if automation expands further.
+
 - `redraft-constitution.html`
 - `dynasty-constitution.html`
 - `bestball-constitution.html`
 - `bracket-constitution.html`
+- `chopped-constitution.html`
   - Standalone static pages using the shared stylesheet.
 
 - `app_updated_donation_gid0.js`
@@ -120,6 +147,14 @@ Current ID prefixes are:
 - `KP` for keeper
 - `CH` for chopped
 
+Current league notes:
+
+- `division` is currently used as draft type for bracket leagues, such as `Fast` or `Slow`.
+- `CH1` is a live chopped league and should continue pointing to `chopped-constitution.html`.
+- LeagueSafe links should remain stored data unless the user explicitly asks to expose them in the homepage UI.
+- The local maintenance scripts intentionally treat `inviteLink`, `leagueSafeLink`, `constitutionPage`, `buyIn`, and curated `name` values as commissioner-owned fields unless the user explicitly opts into overwriting them.
+- For Sleeper-backed leagues, `filled` should reflect paid/assigned teams by counting roster slots with an `owner_id`. Do not treat raw league member count as the true fill number.
+
 ### Donation CSV
 
 Donation parsing is more brittle because the sheet may contain headers, form-response rows, or inconsistent column meaning. Existing code attempts to filter non-project rows heuristically.
@@ -138,6 +173,7 @@ If donation rendering breaks:
 - Preserve IDs and section anchors that are referenced by buttons or scripts.
 - Preserve the format filter markup and `data-format` values in `#formatFilters` unless the filtering behavior is being intentionally changed.
 - Constitution pages follow a repeated pattern; keep new pages aligned with existing structure.
+- `index.html` now includes a live Chopped constitution card; do not revert it to a placeholder unless requested.
 
 ### CSS
 
@@ -154,6 +190,18 @@ If donation rendering breaks:
 - When changing parsing behavior, avoid assumptions that only match one temporary spreadsheet export.
 - Keep league ordering stable by internal ID sequence within each format unless the user explicitly asks for a different sort order.
 - Keep the format filter functional when changing homepage league rendering.
+- Do not reintroduce behavior that overwrites curated local league names with raw Sleeper names unless the user explicitly asks for that.
+
+### Local Automation
+
+- Prefer using the scripts in `scripts/` for repeatable data-maintenance tasks instead of redoing one-off manual JSON edits.
+- If a task can be handled by an existing local script, use that script and then summarize the result for the user.
+- Keep local scripts conservative about which fields they mutate.
+- Validation and check scripts should be safe to run repeatedly.
+- If you add a new repeatable automation, update:
+  - `scripts/README.md`
+  - `COMMANDS.md`
+  - the relevant `TODO.md` entry
 
 ## Known Issues And Hazards
 
@@ -175,6 +223,10 @@ Do not silently "clean up" generated constitution content unless the user asks f
 7. If the task touches donations, inspect the parser assumptions before editing UI.
 8. Keep changes minimal and local unless the user asks for a broader refactor.
 9. If behavior depends on live CSV data, note that full verification may require live network access in a browser.
+10. If the task touches chopped leagues, inspect `chopped-constitution.html` and the `CH1` record in `data/leagues.json` before making assumptions about the format.
+11. If you add a new repeatable automation or recurring local workflow, add a matching prompt entry to `COMMANDS.md`.
+12. Before creating a new automation, check whether the behavior belongs in an existing script instead of adding another narrowly scoped file.
+13. If a task is “run the checks” or “what still needs attention,” prefer `scripts/check-site.ps1`, `scripts/validate-leagues-json.ps1`, and `scripts/sync-sleeper-leagues.ps1` over ad hoc inspection.
 
 ## Verification Guidance
 
@@ -188,6 +240,13 @@ For most changes, verify with:
 - checking that homepage format filters still work when league rendering changes
 - checking that league order within a format still follows the internal IDs
 - when verifying design or image changes locally, clear browser cache or do a hard refresh before judging the result, since localhost assets may be cached
+
+Local runtime notes:
+
+- A simple local server can be started from repo root with `py -m http.server 8000`.
+- The homepage can then be opened at `http://localhost:8000/index.html`.
+- If script or stylesheet changes are not visible, hard refresh first and then consider bumping the cache-busting query strings in `index.html`.
+- The local preview helper `scripts/open-preview.ps1` already handles cache-busted localhost URLs and should be preferred for repeat preview checks.
 
 If runtime verification is required, use a browser or local static server when available.
 

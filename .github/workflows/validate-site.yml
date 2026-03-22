@@ -1,0 +1,19 @@
+name: Validate Site
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run site checks
+        shell: pwsh
+        run: powershell -ExecutionPolicy Bypass -File .\scripts\check-site.ps1 -Strict
