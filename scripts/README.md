@@ -156,6 +156,74 @@ Preview the change without writing the file:
 powershell -ExecutionPolicy Bypass -File .\scripts\bump-cache-bust.ps1 -WhatIf -PassThru | ConvertTo-Json -Depth 4
 ```
 
+## `sync-keeper-ledger.ps1`
+
+Builds or refreshes `data/keeper-ledger.json` by pulling current keeper-league manager data from Sleeper for every keeper league that already has a `sleeperLeagueId`.
+
+It preserves manual keeper-slot fields and notes while refreshing:
+
+- keeper league identity
+- Sleeper league name
+- current managers
+- current roster players for each manager
+- roster IDs
+- display names
+- usernames
+- team names when available
+
+Use this when you want a commissioner worksheet in the repo explorer that you can fill in with keeper declarations and keeper rounds.
+
+Default usage:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\sync-keeper-ledger.ps1
+```
+
+Sync only specific keeper leagues:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\sync-keeper-ledger.ps1 -LeagueRecordIds KP1,KP2
+```
+
+Structured output:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\sync-keeper-ledger.ps1 -PassThru | ConvertTo-Json -Depth 6
+```
+
+## `sync-bracket-ledger.ps1`
+
+Builds or refreshes `data/bracket-ledger.json` by pulling current manager and standings data from Sleeper for grouped bracket leagues.
+
+Group membership is defined in `data/bracket-groups.json`, so multiple `RDB` leagues can be treated as one combined tournament set.
+
+It currently outputs:
+
+- grouped bracket league snapshots
+- division-winner seeding for Seeds `1-5`
+- direct-qualifier seeding for Seeds `6-30`
+- wild-card selection for Seeds `31-32`
+- Week 13 matchup output
+- a post-Week-13 static bracket template
+
+Default usage:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\sync-bracket-ledger.ps1
+```
+
+Sync only one bracket group:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\sync-bracket-ledger.ps1 -GroupIds BRACKET-2026-1
+```
+
+Structured output:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\sync-bracket-ledger.ps1 -PassThru | ConvertTo-Json -Depth 8
+```
+
 ## `get-next-league-id.ps1`
 
 Returns the next suggested internal ID for a given format based on the existing records in `data/leagues.json`.

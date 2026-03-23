@@ -1,0 +1,937 @@
+{
+    "prompts":  {
+                    "refreshGroupsAndSeeds":  "Run the bracket ledger sync and refresh data/bracket-ledger.json from Sleeper so the current bracket leagues, managers, standings, and seeding outputs are up to date. If the season is not far enough along for meaningful seeds, tell me that the results are only structural or provisional.",
+                    "refreshSpecificGroup":  "Run the bracket ledger sync for BRACKET-2026-1 only and refresh data/bracket-ledger.json from Sleeper so that bracket group\u0027s standings and playoff output are up to date."
+                },
+    "generatedAt":  "2026-03-23T15:41:56",
+    "groups":  [
+                   {
+                       "groupId":  "BRACKET-2026-1",
+                       "label":  "VBP Bracket Group 1",
+                       "season":  "2026",
+                       "leagueRecordIds":  [
+                                               "RDB1",
+                                               "RDB2",
+                                               "RDB3",
+                                               "RDB4",
+                                               "RDB5"
+                                           ],
+                       "rules":  {
+                                     "divisionWinners":  5,
+                                     "directQualifiers":  30,
+                                     "wildCards":  2,
+                                     "divisionWinnerSeeding":  "record_then_points_for_2dp",
+                                     "directQualifierSeeding":  "record_then_points_for_2dp",
+                                     "wildCardSeeding":  "points_for_2dp_then_record",
+                                     "week13MainRound":  "1_vs_30_through_15_vs_16",
+                                     "week13WildCard":  "31_vs_32",
+                                     "postWeek13Reset":  "wild_card_winner_faces_8th_highest_remaining_seed",
+                                     "postResetBracketStyle":  "static_traditional_bracket"
+                                 },
+                       "lastSyncedAt":  "2026-03-23T15:41:56",
+                       "seasonStatuses":  [
+                                              "pre_draft"
+                                          ],
+                       "seedingReady":  false,
+                       "seasonDataReady":  false,
+                       "notes":  "One or more bracket leagues are still pre-draft or drafting, so the seeding output is structural or provisional.",
+                       "leagueSnapshots":  [
+                                               {
+                                                   "leagueRecordId":  "RDB1",
+                                                   "sleeperLeagueId":  "1338004997836640256",
+                                                   "localLeagueName":  "Titan",
+                                                   "sleeperLeagueName":  "Titan Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                   "division":  "Slow",
+                                                   "status":  "pre_draft",
+                                                   "standings":  [
+                                                                     {
+                                                                         "groupId":  "BRACKET-2026-1",
+                                                                         "leagueRecordId":  "RDB1",
+                                                                         "sleeperLeagueId":  "1338004997836640256",
+                                                                         "division":  "Slow",
+                                                                         "localLeagueName":  "Titan",
+                                                                         "sleeperLeagueName":  "Titan Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                                         "ownerId":  "868021731762319360",
+                                                                         "rosterId":  2,
+                                                                         "displayName":  "alanh003",
+                                                                         "teamName":  "Uncle Rico Dowdled Me",
+                                                                         "wins":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0,
+                                                                         "recordPct":  0,
+                                                                         "pointsFor":  0,
+                                                                         "pointsForDisplay":  "0.00",
+                                                                         "seasonStatus":  "pre_draft"
+                                                                     },
+                                                                     {
+                                                                         "groupId":  "BRACKET-2026-1",
+                                                                         "leagueRecordId":  "RDB1",
+                                                                         "sleeperLeagueId":  "1338004997836640256",
+                                                                         "division":  "Slow",
+                                                                         "localLeagueName":  "Titan",
+                                                                         "sleeperLeagueName":  "Titan Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                                         "ownerId":  "673058459607990272",
+                                                                         "rosterId":  1,
+                                                                         "displayName":  "DoubleTap7798",
+                                                                         "teamName":  "",
+                                                                         "wins":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0,
+                                                                         "recordPct":  0,
+                                                                         "pointsFor":  0,
+                                                                         "pointsForDisplay":  "0.00",
+                                                                         "seasonStatus":  "pre_draft"
+                                                                     },
+                                                                     {
+                                                                         "groupId":  "BRACKET-2026-1",
+                                                                         "leagueRecordId":  "RDB1",
+                                                                         "sleeperLeagueId":  "1338004997836640256",
+                                                                         "division":  "Slow",
+                                                                         "localLeagueName":  "Titan",
+                                                                         "sleeperLeagueName":  "Titan Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                                         "ownerId":  "719043925339377664",
+                                                                         "rosterId":  4,
+                                                                         "displayName":  "Rookie86",
+                                                                         "teamName":  "",
+                                                                         "wins":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0,
+                                                                         "recordPct":  0,
+                                                                         "pointsFor":  0,
+                                                                         "pointsForDisplay":  "0.00",
+                                                                         "seasonStatus":  "pre_draft"
+                                                                     }
+                                                                 ],
+                                                   "divisionWinner":  {
+                                                                          "groupId":  "BRACKET-2026-1",
+                                                                          "leagueRecordId":  "RDB1",
+                                                                          "sleeperLeagueId":  "1338004997836640256",
+                                                                          "division":  "Slow",
+                                                                          "localLeagueName":  "Titan",
+                                                                          "sleeperLeagueName":  "Titan Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                                          "ownerId":  "868021731762319360",
+                                                                          "rosterId":  2,
+                                                                          "displayName":  "alanh003",
+                                                                          "teamName":  "Uncle Rico Dowdled Me",
+                                                                          "wins":  0,
+                                                                          "losses":  0,
+                                                                          "ties":  0,
+                                                                          "recordPct":  0,
+                                                                          "pointsFor":  0,
+                                                                          "pointsForDisplay":  "0.00",
+                                                                          "seasonStatus":  "pre_draft"
+                                                                      }
+                                               },
+                                               {
+                                                   "leagueRecordId":  "RDB2",
+                                                   "sleeperLeagueId":  "1338005036122279936",
+                                                   "localLeagueName":  "Apex",
+                                                   "sleeperLeagueName":  "Apex Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                   "division":  "Slow",
+                                                   "status":  "pre_draft",
+                                                   "standings":  [
+                                                                     {
+                                                                         "groupId":  "BRACKET-2026-1",
+                                                                         "leagueRecordId":  "RDB2",
+                                                                         "sleeperLeagueId":  "1338005036122279936",
+                                                                         "division":  "Slow",
+                                                                         "localLeagueName":  "Apex",
+                                                                         "sleeperLeagueName":  "Apex Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                                         "ownerId":  "736433000019075072",
+                                                                         "rosterId":  12,
+                                                                         "displayName":  "bryanb460",
+                                                                         "teamName":  "Two Buckeyes,One Kupp",
+                                                                         "wins":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0,
+                                                                         "recordPct":  0,
+                                                                         "pointsFor":  0,
+                                                                         "pointsForDisplay":  "0.00",
+                                                                         "seasonStatus":  "pre_draft"
+                                                                     },
+                                                                     {
+                                                                         "groupId":  "BRACKET-2026-1",
+                                                                         "leagueRecordId":  "RDB2",
+                                                                         "sleeperLeagueId":  "1338005036122279936",
+                                                                         "division":  "Slow",
+                                                                         "localLeagueName":  "Apex",
+                                                                         "sleeperLeagueName":  "Apex Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                                         "ownerId":  "428350518654402560",
+                                                                         "rosterId":  3,
+                                                                         "displayName":  "geno311",
+                                                                         "teamName":  "",
+                                                                         "wins":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0,
+                                                                         "recordPct":  0,
+                                                                         "pointsFor":  0,
+                                                                         "pointsForDisplay":  "0.00",
+                                                                         "seasonStatus":  "pre_draft"
+                                                                     },
+                                                                     {
+                                                                         "groupId":  "BRACKET-2026-1",
+                                                                         "leagueRecordId":  "RDB2",
+                                                                         "sleeperLeagueId":  "1338005036122279936",
+                                                                         "division":  "Slow",
+                                                                         "localLeagueName":  "Apex",
+                                                                         "sleeperLeagueName":  "Apex Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                                         "ownerId":  "581960005377376256",
+                                                                         "rosterId":  2,
+                                                                         "displayName":  "MarkKSilver",
+                                                                         "teamName":  "",
+                                                                         "wins":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0,
+                                                                         "recordPct":  0,
+                                                                         "pointsFor":  0,
+                                                                         "pointsForDisplay":  "0.00",
+                                                                         "seasonStatus":  "pre_draft"
+                                                                     },
+                                                                     {
+                                                                         "groupId":  "BRACKET-2026-1",
+                                                                         "leagueRecordId":  "RDB2",
+                                                                         "sleeperLeagueId":  "1338005036122279936",
+                                                                         "division":  "Slow",
+                                                                         "localLeagueName":  "Apex",
+                                                                         "sleeperLeagueName":  "Apex Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                                         "ownerId":  "75740378762199040",
+                                                                         "rosterId":  1,
+                                                                         "displayName":  "MooKow",
+                                                                         "teamName":  "",
+                                                                         "wins":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0,
+                                                                         "recordPct":  0,
+                                                                         "pointsFor":  0,
+                                                                         "pointsForDisplay":  "0.00",
+                                                                         "seasonStatus":  "pre_draft"
+                                                                     },
+                                                                     {
+                                                                         "groupId":  "BRACKET-2026-1",
+                                                                         "leagueRecordId":  "RDB2",
+                                                                         "sleeperLeagueId":  "1338005036122279936",
+                                                                         "division":  "Slow",
+                                                                         "localLeagueName":  "Apex",
+                                                                         "sleeperLeagueName":  "Apex Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                                         "ownerId":  "740674194068660224",
+                                                                         "rosterId":  6,
+                                                                         "displayName":  "pandaeagle",
+                                                                         "teamName":  "Need for Shaheed",
+                                                                         "wins":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0,
+                                                                         "recordPct":  0,
+                                                                         "pointsFor":  0,
+                                                                         "pointsForDisplay":  "0.00",
+                                                                         "seasonStatus":  "pre_draft"
+                                                                     }
+                                                                 ],
+                                                   "divisionWinner":  {
+                                                                          "groupId":  "BRACKET-2026-1",
+                                                                          "leagueRecordId":  "RDB2",
+                                                                          "sleeperLeagueId":  "1338005036122279936",
+                                                                          "division":  "Slow",
+                                                                          "localLeagueName":  "Apex",
+                                                                          "sleeperLeagueName":  "Apex Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                                          "ownerId":  "736433000019075072",
+                                                                          "rosterId":  12,
+                                                                          "displayName":  "bryanb460",
+                                                                          "teamName":  "Two Buckeyes,One Kupp",
+                                                                          "wins":  0,
+                                                                          "losses":  0,
+                                                                          "ties":  0,
+                                                                          "recordPct":  0,
+                                                                          "pointsFor":  0,
+                                                                          "pointsForDisplay":  "0.00",
+                                                                          "seasonStatus":  "pre_draft"
+                                                                      }
+                                               },
+                                               {
+                                                   "leagueRecordId":  "RDB3",
+                                                   "sleeperLeagueId":  "1338005075167035392",
+                                                   "localLeagueName":  "Iron",
+                                                   "sleeperLeagueName":  "Iron Division (VBP\u0027s Redraft Bracket-Fast Draft)",
+                                                   "division":  "Fast",
+                                                   "status":  "pre_draft",
+                                                   "standings":  [
+                                                                     {
+                                                                         "groupId":  "BRACKET-2026-1",
+                                                                         "leagueRecordId":  "RDB3",
+                                                                         "sleeperLeagueId":  "1338005075167035392",
+                                                                         "division":  "Fast",
+                                                                         "localLeagueName":  "Iron",
+                                                                         "sleeperLeagueName":  "Iron Division (VBP\u0027s Redraft Bracket-Fast Draft)",
+                                                                         "ownerId":  "737907365877317632",
+                                                                         "rosterId":  12,
+                                                                         "displayName":  "declanq1",
+                                                                         "teamName":  "Pukamon",
+                                                                         "wins":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0,
+                                                                         "recordPct":  0,
+                                                                         "pointsFor":  0,
+                                                                         "pointsForDisplay":  "0.00",
+                                                                         "seasonStatus":  "pre_draft"
+                                                                     },
+                                                                     {
+                                                                         "groupId":  "BRACKET-2026-1",
+                                                                         "leagueRecordId":  "RDB3",
+                                                                         "sleeperLeagueId":  "1338005075167035392",
+                                                                         "division":  "Fast",
+                                                                         "localLeagueName":  "Iron",
+                                                                         "sleeperLeagueName":  "Iron Division (VBP\u0027s Redraft Bracket-Fast Draft)",
+                                                                         "ownerId":  "738614393776001024",
+                                                                         "rosterId":  8,
+                                                                         "displayName":  "DSnyder5",
+                                                                         "teamName":  "",
+                                                                         "wins":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0,
+                                                                         "recordPct":  0,
+                                                                         "pointsFor":  0,
+                                                                         "pointsForDisplay":  "0.00",
+                                                                         "seasonStatus":  "pre_draft"
+                                                                     },
+                                                                     {
+                                                                         "groupId":  "BRACKET-2026-1",
+                                                                         "leagueRecordId":  "RDB3",
+                                                                         "sleeperLeagueId":  "1338005075167035392",
+                                                                         "division":  "Fast",
+                                                                         "localLeagueName":  "Iron",
+                                                                         "sleeperLeagueName":  "Iron Division (VBP\u0027s Redraft Bracket-Fast Draft)",
+                                                                         "ownerId":  "466785377303130112",
+                                                                         "rosterId":  3,
+                                                                         "displayName":  "VinsBroPaul",
+                                                                         "teamName":  "",
+                                                                         "wins":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0,
+                                                                         "recordPct":  0,
+                                                                         "pointsFor":  0,
+                                                                         "pointsForDisplay":  "0.00",
+                                                                         "seasonStatus":  "pre_draft"
+                                                                     }
+                                                                 ],
+                                                   "divisionWinner":  {
+                                                                          "groupId":  "BRACKET-2026-1",
+                                                                          "leagueRecordId":  "RDB3",
+                                                                          "sleeperLeagueId":  "1338005075167035392",
+                                                                          "division":  "Fast",
+                                                                          "localLeagueName":  "Iron",
+                                                                          "sleeperLeagueName":  "Iron Division (VBP\u0027s Redraft Bracket-Fast Draft)",
+                                                                          "ownerId":  "737907365877317632",
+                                                                          "rosterId":  12,
+                                                                          "displayName":  "declanq1",
+                                                                          "teamName":  "Pukamon",
+                                                                          "wins":  0,
+                                                                          "losses":  0,
+                                                                          "ties":  0,
+                                                                          "recordPct":  0,
+                                                                          "pointsFor":  0,
+                                                                          "pointsForDisplay":  "0.00",
+                                                                          "seasonStatus":  "pre_draft"
+                                                                      }
+                                               },
+                                               {
+                                                   "leagueRecordId":  "RDB4",
+                                                   "sleeperLeagueId":  "1338005113482022912",
+                                                   "localLeagueName":  "Vanguard",
+                                                   "sleeperLeagueName":  "Vanguard Division (VBP\u0027s Redraft Bracket-Fast Draft)",
+                                                   "division":  "Fast",
+                                                   "status":  "pre_draft",
+                                                   "standings":  [
+
+                                                                 ],
+                                                   "divisionWinner":  null
+                                               },
+                                               {
+                                                   "leagueRecordId":  "RDB5",
+                                                   "sleeperLeagueId":  "1338005158071660544",
+                                                   "localLeagueName":  "Dominion",
+                                                   "sleeperLeagueName":  "Dominion Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                   "division":  "Slow",
+                                                   "status":  "pre_draft",
+                                                   "standings":  [
+
+                                                                 ],
+                                                   "divisionWinner":  null
+                                               }
+                                           ],
+                       "divisionWinners":  [
+                                               {
+                                                   "seed":  1,
+                                                   "seedType":  "division-winner",
+                                                   "team":  {
+                                                                "groupId":  "BRACKET-2026-1",
+                                                                "leagueRecordId":  "RDB1",
+                                                                "sleeperLeagueId":  "1338004997836640256",
+                                                                "division":  "Slow",
+                                                                "localLeagueName":  "Titan",
+                                                                "sleeperLeagueName":  "Titan Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                                "ownerId":  "868021731762319360",
+                                                                "rosterId":  2,
+                                                                "displayName":  "alanh003",
+                                                                "teamName":  "Uncle Rico Dowdled Me",
+                                                                "wins":  0,
+                                                                "losses":  0,
+                                                                "ties":  0,
+                                                                "recordPct":  0,
+                                                                "pointsFor":  0,
+                                                                "pointsForDisplay":  "0.00",
+                                                                "seasonStatus":  "pre_draft"
+                                                            }
+                                               },
+                                               {
+                                                   "seed":  2,
+                                                   "seedType":  "division-winner",
+                                                   "team":  {
+                                                                "groupId":  "BRACKET-2026-1",
+                                                                "leagueRecordId":  "RDB2",
+                                                                "sleeperLeagueId":  "1338005036122279936",
+                                                                "division":  "Slow",
+                                                                "localLeagueName":  "Apex",
+                                                                "sleeperLeagueName":  "Apex Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                                "ownerId":  "736433000019075072",
+                                                                "rosterId":  12,
+                                                                "displayName":  "bryanb460",
+                                                                "teamName":  "Two Buckeyes,One Kupp",
+                                                                "wins":  0,
+                                                                "losses":  0,
+                                                                "ties":  0,
+                                                                "recordPct":  0,
+                                                                "pointsFor":  0,
+                                                                "pointsForDisplay":  "0.00",
+                                                                "seasonStatus":  "pre_draft"
+                                                            }
+                                               },
+                                               {
+                                                   "seed":  3,
+                                                   "seedType":  "division-winner",
+                                                   "team":  {
+                                                                "groupId":  "BRACKET-2026-1",
+                                                                "leagueRecordId":  "RDB3",
+                                                                "sleeperLeagueId":  "1338005075167035392",
+                                                                "division":  "Fast",
+                                                                "localLeagueName":  "Iron",
+                                                                "sleeperLeagueName":  "Iron Division (VBP\u0027s Redraft Bracket-Fast Draft)",
+                                                                "ownerId":  "737907365877317632",
+                                                                "rosterId":  12,
+                                                                "displayName":  "declanq1",
+                                                                "teamName":  "Pukamon",
+                                                                "wins":  0,
+                                                                "losses":  0,
+                                                                "ties":  0,
+                                                                "recordPct":  0,
+                                                                "pointsFor":  0,
+                                                                "pointsForDisplay":  "0.00",
+                                                                "seasonStatus":  "pre_draft"
+                                                            }
+                                               }
+                                           ],
+                       "directQualifiers":  [
+                                                {
+                                                    "seed":  4,
+                                                    "seedType":  "direct-qualifier",
+                                                    "team":  {
+                                                                 "groupId":  "BRACKET-2026-1",
+                                                                 "leagueRecordId":  "RDB1",
+                                                                 "sleeperLeagueId":  "1338004997836640256",
+                                                                 "division":  "Slow",
+                                                                 "localLeagueName":  "Titan",
+                                                                 "sleeperLeagueName":  "Titan Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                                 "ownerId":  "673058459607990272",
+                                                                 "rosterId":  1,
+                                                                 "displayName":  "DoubleTap7798",
+                                                                 "teamName":  "",
+                                                                 "wins":  0,
+                                                                 "losses":  0,
+                                                                 "ties":  0,
+                                                                 "recordPct":  0,
+                                                                 "pointsFor":  0,
+                                                                 "pointsForDisplay":  "0.00",
+                                                                 "seasonStatus":  "pre_draft"
+                                                             }
+                                                },
+                                                {
+                                                    "seed":  5,
+                                                    "seedType":  "direct-qualifier",
+                                                    "team":  {
+                                                                 "groupId":  "BRACKET-2026-1",
+                                                                 "leagueRecordId":  "RDB3",
+                                                                 "sleeperLeagueId":  "1338005075167035392",
+                                                                 "division":  "Fast",
+                                                                 "localLeagueName":  "Iron",
+                                                                 "sleeperLeagueName":  "Iron Division (VBP\u0027s Redraft Bracket-Fast Draft)",
+                                                                 "ownerId":  "738614393776001024",
+                                                                 "rosterId":  8,
+                                                                 "displayName":  "DSnyder5",
+                                                                 "teamName":  "",
+                                                                 "wins":  0,
+                                                                 "losses":  0,
+                                                                 "ties":  0,
+                                                                 "recordPct":  0,
+                                                                 "pointsFor":  0,
+                                                                 "pointsForDisplay":  "0.00",
+                                                                 "seasonStatus":  "pre_draft"
+                                                             }
+                                                },
+                                                {
+                                                    "seed":  6,
+                                                    "seedType":  "direct-qualifier",
+                                                    "team":  {
+                                                                 "groupId":  "BRACKET-2026-1",
+                                                                 "leagueRecordId":  "RDB2",
+                                                                 "sleeperLeagueId":  "1338005036122279936",
+                                                                 "division":  "Slow",
+                                                                 "localLeagueName":  "Apex",
+                                                                 "sleeperLeagueName":  "Apex Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                                 "ownerId":  "428350518654402560",
+                                                                 "rosterId":  3,
+                                                                 "displayName":  "geno311",
+                                                                 "teamName":  "",
+                                                                 "wins":  0,
+                                                                 "losses":  0,
+                                                                 "ties":  0,
+                                                                 "recordPct":  0,
+                                                                 "pointsFor":  0,
+                                                                 "pointsForDisplay":  "0.00",
+                                                                 "seasonStatus":  "pre_draft"
+                                                             }
+                                                },
+                                                {
+                                                    "seed":  7,
+                                                    "seedType":  "direct-qualifier",
+                                                    "team":  {
+                                                                 "groupId":  "BRACKET-2026-1",
+                                                                 "leagueRecordId":  "RDB2",
+                                                                 "sleeperLeagueId":  "1338005036122279936",
+                                                                 "division":  "Slow",
+                                                                 "localLeagueName":  "Apex",
+                                                                 "sleeperLeagueName":  "Apex Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                                 "ownerId":  "581960005377376256",
+                                                                 "rosterId":  2,
+                                                                 "displayName":  "MarkKSilver",
+                                                                 "teamName":  "",
+                                                                 "wins":  0,
+                                                                 "losses":  0,
+                                                                 "ties":  0,
+                                                                 "recordPct":  0,
+                                                                 "pointsFor":  0,
+                                                                 "pointsForDisplay":  "0.00",
+                                                                 "seasonStatus":  "pre_draft"
+                                                             }
+                                                },
+                                                {
+                                                    "seed":  8,
+                                                    "seedType":  "direct-qualifier",
+                                                    "team":  {
+                                                                 "groupId":  "BRACKET-2026-1",
+                                                                 "leagueRecordId":  "RDB2",
+                                                                 "sleeperLeagueId":  "1338005036122279936",
+                                                                 "division":  "Slow",
+                                                                 "localLeagueName":  "Apex",
+                                                                 "sleeperLeagueName":  "Apex Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                                 "ownerId":  "75740378762199040",
+                                                                 "rosterId":  1,
+                                                                 "displayName":  "MooKow",
+                                                                 "teamName":  "",
+                                                                 "wins":  0,
+                                                                 "losses":  0,
+                                                                 "ties":  0,
+                                                                 "recordPct":  0,
+                                                                 "pointsFor":  0,
+                                                                 "pointsForDisplay":  "0.00",
+                                                                 "seasonStatus":  "pre_draft"
+                                                             }
+                                                },
+                                                {
+                                                    "seed":  9,
+                                                    "seedType":  "direct-qualifier",
+                                                    "team":  {
+                                                                 "groupId":  "BRACKET-2026-1",
+                                                                 "leagueRecordId":  "RDB2",
+                                                                 "sleeperLeagueId":  "1338005036122279936",
+                                                                 "division":  "Slow",
+                                                                 "localLeagueName":  "Apex",
+                                                                 "sleeperLeagueName":  "Apex Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                                 "ownerId":  "740674194068660224",
+                                                                 "rosterId":  6,
+                                                                 "displayName":  "pandaeagle",
+                                                                 "teamName":  "Need for Shaheed",
+                                                                 "wins":  0,
+                                                                 "losses":  0,
+                                                                 "ties":  0,
+                                                                 "recordPct":  0,
+                                                                 "pointsFor":  0,
+                                                                 "pointsForDisplay":  "0.00",
+                                                                 "seasonStatus":  "pre_draft"
+                                                             }
+                                                },
+                                                {
+                                                    "seed":  10,
+                                                    "seedType":  "direct-qualifier",
+                                                    "team":  {
+                                                                 "groupId":  "BRACKET-2026-1",
+                                                                 "leagueRecordId":  "RDB1",
+                                                                 "sleeperLeagueId":  "1338004997836640256",
+                                                                 "division":  "Slow",
+                                                                 "localLeagueName":  "Titan",
+                                                                 "sleeperLeagueName":  "Titan Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                                 "ownerId":  "719043925339377664",
+                                                                 "rosterId":  4,
+                                                                 "displayName":  "Rookie86",
+                                                                 "teamName":  "",
+                                                                 "wins":  0,
+                                                                 "losses":  0,
+                                                                 "ties":  0,
+                                                                 "recordPct":  0,
+                                                                 "pointsFor":  0,
+                                                                 "pointsForDisplay":  "0.00",
+                                                                 "seasonStatus":  "pre_draft"
+                                                             }
+                                                },
+                                                {
+                                                    "seed":  11,
+                                                    "seedType":  "direct-qualifier",
+                                                    "team":  {
+                                                                 "groupId":  "BRACKET-2026-1",
+                                                                 "leagueRecordId":  "RDB3",
+                                                                 "sleeperLeagueId":  "1338005075167035392",
+                                                                 "division":  "Fast",
+                                                                 "localLeagueName":  "Iron",
+                                                                 "sleeperLeagueName":  "Iron Division (VBP\u0027s Redraft Bracket-Fast Draft)",
+                                                                 "ownerId":  "466785377303130112",
+                                                                 "rosterId":  3,
+                                                                 "displayName":  "VinsBroPaul",
+                                                                 "teamName":  "",
+                                                                 "wins":  0,
+                                                                 "losses":  0,
+                                                                 "ties":  0,
+                                                                 "recordPct":  0,
+                                                                 "pointsFor":  0,
+                                                                 "pointsForDisplay":  "0.00",
+                                                                 "seasonStatus":  "pre_draft"
+                                                             }
+                                                }
+                                            ],
+                       "wildCards":  [
+
+                                     ],
+                       "bubbleTeams":  [
+
+                                       ],
+                       "playoffField":  [
+                                            {
+                                                "seed":  1,
+                                                "seedType":  "division-winner",
+                                                "team":  {
+                                                             "groupId":  "BRACKET-2026-1",
+                                                             "leagueRecordId":  "RDB1",
+                                                             "sleeperLeagueId":  "1338004997836640256",
+                                                             "division":  "Slow",
+                                                             "localLeagueName":  "Titan",
+                                                             "sleeperLeagueName":  "Titan Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                             "ownerId":  "868021731762319360",
+                                                             "rosterId":  2,
+                                                             "displayName":  "alanh003",
+                                                             "teamName":  "Uncle Rico Dowdled Me",
+                                                             "wins":  0,
+                                                             "losses":  0,
+                                                             "ties":  0,
+                                                             "recordPct":  0,
+                                                             "pointsFor":  0,
+                                                             "pointsForDisplay":  "0.00",
+                                                             "seasonStatus":  "pre_draft"
+                                                         }
+                                            },
+                                            {
+                                                "seed":  2,
+                                                "seedType":  "division-winner",
+                                                "team":  {
+                                                             "groupId":  "BRACKET-2026-1",
+                                                             "leagueRecordId":  "RDB2",
+                                                             "sleeperLeagueId":  "1338005036122279936",
+                                                             "division":  "Slow",
+                                                             "localLeagueName":  "Apex",
+                                                             "sleeperLeagueName":  "Apex Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                             "ownerId":  "736433000019075072",
+                                                             "rosterId":  12,
+                                                             "displayName":  "bryanb460",
+                                                             "teamName":  "Two Buckeyes,One Kupp",
+                                                             "wins":  0,
+                                                             "losses":  0,
+                                                             "ties":  0,
+                                                             "recordPct":  0,
+                                                             "pointsFor":  0,
+                                                             "pointsForDisplay":  "0.00",
+                                                             "seasonStatus":  "pre_draft"
+                                                         }
+                                            },
+                                            {
+                                                "seed":  3,
+                                                "seedType":  "division-winner",
+                                                "team":  {
+                                                             "groupId":  "BRACKET-2026-1",
+                                                             "leagueRecordId":  "RDB3",
+                                                             "sleeperLeagueId":  "1338005075167035392",
+                                                             "division":  "Fast",
+                                                             "localLeagueName":  "Iron",
+                                                             "sleeperLeagueName":  "Iron Division (VBP\u0027s Redraft Bracket-Fast Draft)",
+                                                             "ownerId":  "737907365877317632",
+                                                             "rosterId":  12,
+                                                             "displayName":  "declanq1",
+                                                             "teamName":  "Pukamon",
+                                                             "wins":  0,
+                                                             "losses":  0,
+                                                             "ties":  0,
+                                                             "recordPct":  0,
+                                                             "pointsFor":  0,
+                                                             "pointsForDisplay":  "0.00",
+                                                             "seasonStatus":  "pre_draft"
+                                                         }
+                                            },
+                                            {
+                                                "seed":  4,
+                                                "seedType":  "direct-qualifier",
+                                                "team":  {
+                                                             "groupId":  "BRACKET-2026-1",
+                                                             "leagueRecordId":  "RDB1",
+                                                             "sleeperLeagueId":  "1338004997836640256",
+                                                             "division":  "Slow",
+                                                             "localLeagueName":  "Titan",
+                                                             "sleeperLeagueName":  "Titan Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                             "ownerId":  "673058459607990272",
+                                                             "rosterId":  1,
+                                                             "displayName":  "DoubleTap7798",
+                                                             "teamName":  "",
+                                                             "wins":  0,
+                                                             "losses":  0,
+                                                             "ties":  0,
+                                                             "recordPct":  0,
+                                                             "pointsFor":  0,
+                                                             "pointsForDisplay":  "0.00",
+                                                             "seasonStatus":  "pre_draft"
+                                                         }
+                                            },
+                                            {
+                                                "seed":  5,
+                                                "seedType":  "direct-qualifier",
+                                                "team":  {
+                                                             "groupId":  "BRACKET-2026-1",
+                                                             "leagueRecordId":  "RDB3",
+                                                             "sleeperLeagueId":  "1338005075167035392",
+                                                             "division":  "Fast",
+                                                             "localLeagueName":  "Iron",
+                                                             "sleeperLeagueName":  "Iron Division (VBP\u0027s Redraft Bracket-Fast Draft)",
+                                                             "ownerId":  "738614393776001024",
+                                                             "rosterId":  8,
+                                                             "displayName":  "DSnyder5",
+                                                             "teamName":  "",
+                                                             "wins":  0,
+                                                             "losses":  0,
+                                                             "ties":  0,
+                                                             "recordPct":  0,
+                                                             "pointsFor":  0,
+                                                             "pointsForDisplay":  "0.00",
+                                                             "seasonStatus":  "pre_draft"
+                                                         }
+                                            },
+                                            {
+                                                "seed":  6,
+                                                "seedType":  "direct-qualifier",
+                                                "team":  {
+                                                             "groupId":  "BRACKET-2026-1",
+                                                             "leagueRecordId":  "RDB2",
+                                                             "sleeperLeagueId":  "1338005036122279936",
+                                                             "division":  "Slow",
+                                                             "localLeagueName":  "Apex",
+                                                             "sleeperLeagueName":  "Apex Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                             "ownerId":  "428350518654402560",
+                                                             "rosterId":  3,
+                                                             "displayName":  "geno311",
+                                                             "teamName":  "",
+                                                             "wins":  0,
+                                                             "losses":  0,
+                                                             "ties":  0,
+                                                             "recordPct":  0,
+                                                             "pointsFor":  0,
+                                                             "pointsForDisplay":  "0.00",
+                                                             "seasonStatus":  "pre_draft"
+                                                         }
+                                            },
+                                            {
+                                                "seed":  7,
+                                                "seedType":  "direct-qualifier",
+                                                "team":  {
+                                                             "groupId":  "BRACKET-2026-1",
+                                                             "leagueRecordId":  "RDB2",
+                                                             "sleeperLeagueId":  "1338005036122279936",
+                                                             "division":  "Slow",
+                                                             "localLeagueName":  "Apex",
+                                                             "sleeperLeagueName":  "Apex Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                             "ownerId":  "581960005377376256",
+                                                             "rosterId":  2,
+                                                             "displayName":  "MarkKSilver",
+                                                             "teamName":  "",
+                                                             "wins":  0,
+                                                             "losses":  0,
+                                                             "ties":  0,
+                                                             "recordPct":  0,
+                                                             "pointsFor":  0,
+                                                             "pointsForDisplay":  "0.00",
+                                                             "seasonStatus":  "pre_draft"
+                                                         }
+                                            },
+                                            {
+                                                "seed":  8,
+                                                "seedType":  "direct-qualifier",
+                                                "team":  {
+                                                             "groupId":  "BRACKET-2026-1",
+                                                             "leagueRecordId":  "RDB2",
+                                                             "sleeperLeagueId":  "1338005036122279936",
+                                                             "division":  "Slow",
+                                                             "localLeagueName":  "Apex",
+                                                             "sleeperLeagueName":  "Apex Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                             "ownerId":  "75740378762199040",
+                                                             "rosterId":  1,
+                                                             "displayName":  "MooKow",
+                                                             "teamName":  "",
+                                                             "wins":  0,
+                                                             "losses":  0,
+                                                             "ties":  0,
+                                                             "recordPct":  0,
+                                                             "pointsFor":  0,
+                                                             "pointsForDisplay":  "0.00",
+                                                             "seasonStatus":  "pre_draft"
+                                                         }
+                                            },
+                                            {
+                                                "seed":  9,
+                                                "seedType":  "direct-qualifier",
+                                                "team":  {
+                                                             "groupId":  "BRACKET-2026-1",
+                                                             "leagueRecordId":  "RDB2",
+                                                             "sleeperLeagueId":  "1338005036122279936",
+                                                             "division":  "Slow",
+                                                             "localLeagueName":  "Apex",
+                                                             "sleeperLeagueName":  "Apex Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                             "ownerId":  "740674194068660224",
+                                                             "rosterId":  6,
+                                                             "displayName":  "pandaeagle",
+                                                             "teamName":  "Need for Shaheed",
+                                                             "wins":  0,
+                                                             "losses":  0,
+                                                             "ties":  0,
+                                                             "recordPct":  0,
+                                                             "pointsFor":  0,
+                                                             "pointsForDisplay":  "0.00",
+                                                             "seasonStatus":  "pre_draft"
+                                                         }
+                                            },
+                                            {
+                                                "seed":  10,
+                                                "seedType":  "direct-qualifier",
+                                                "team":  {
+                                                             "groupId":  "BRACKET-2026-1",
+                                                             "leagueRecordId":  "RDB1",
+                                                             "sleeperLeagueId":  "1338004997836640256",
+                                                             "division":  "Slow",
+                                                             "localLeagueName":  "Titan",
+                                                             "sleeperLeagueName":  "Titan Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                             "ownerId":  "719043925339377664",
+                                                             "rosterId":  4,
+                                                             "displayName":  "Rookie86",
+                                                             "teamName":  "",
+                                                             "wins":  0,
+                                                             "losses":  0,
+                                                             "ties":  0,
+                                                             "recordPct":  0,
+                                                             "pointsFor":  0,
+                                                             "pointsForDisplay":  "0.00",
+                                                             "seasonStatus":  "pre_draft"
+                                                         }
+                                            },
+                                            {
+                                                "seed":  11,
+                                                "seedType":  "direct-qualifier",
+                                                "team":  {
+                                                             "groupId":  "BRACKET-2026-1",
+                                                             "leagueRecordId":  "RDB3",
+                                                             "sleeperLeagueId":  "1338005075167035392",
+                                                             "division":  "Fast",
+                                                             "localLeagueName":  "Iron",
+                                                             "sleeperLeagueName":  "Iron Division (VBP\u0027s Redraft Bracket-Fast Draft)",
+                                                             "ownerId":  "466785377303130112",
+                                                             "rosterId":  3,
+                                                             "displayName":  "VinsBroPaul",
+                                                             "teamName":  "",
+                                                             "wins":  0,
+                                                             "losses":  0,
+                                                             "ties":  0,
+                                                             "recordPct":  0,
+                                                             "pointsFor":  0,
+                                                             "pointsForDisplay":  "0.00",
+                                                             "seasonStatus":  "pre_draft"
+                                                         }
+                                            }
+                                        ],
+                       "week13":  {
+                                      "wildCardPlayIn":  {
+                                                             "order":  16,
+                                                             "homeSeed":  31,
+                                                             "awaySeed":  32,
+                                                             "homeTeam":  null,
+                                                             "awayTeam":  null
+                                                         },
+                                      "mainRound":  [
+
+                                                    ]
+                                  },
+                       "postWeek13Reset":  {
+                                               "roundOf16Template":  [
+                                                                         {
+                                                                             "order":  1,
+                                                                             "home":  "Highest Remaining Seed",
+                                                                             "away":  "Lowest Remaining Seed"
+                                                                         },
+                                                                         {
+                                                                             "order":  2,
+                                                                             "home":  "4th Highest Remaining Seed",
+                                                                             "away":  "5th Lowest Remaining Seed"
+                                                                         },
+                                                                         {
+                                                                             "order":  3,
+                                                                             "home":  "5th Highest Remaining Seed",
+                                                                             "away":  "4th Lowest Remaining Seed"
+                                                                         },
+                                                                         {
+                                                                             "order":  4,
+                                                                             "home":  "8th Highest Remaining Seed",
+                                                                             "away":  "Wild Card Winner"
+                                                                         },
+                                                                         {
+                                                                             "order":  5,
+                                                                             "home":  "6th Highest Remaining Seed",
+                                                                             "away":  "3rd Lowest Remaining Seed"
+                                                                         },
+                                                                         {
+                                                                             "order":  6,
+                                                                             "home":  "3rd Highest Remaining Seed",
+                                                                             "away":  "6th Lowest Remaining Seed"
+                                                                         },
+                                                                         {
+                                                                             "order":  7,
+                                                                             "home":  "7th Highest Remaining Seed",
+                                                                             "away":  "2nd Lowest Remaining Seed"
+                                                                         },
+                                                                         {
+                                                                             "order":  8,
+                                                                             "home":  "2nd Highest Remaining Seed",
+                                                                             "away":  "7th Lowest Remaining Seed"
+                                                                         }
+                                                                     ],
+                                               "displayNote":  "Top-to-bottom display order keeps the highest remaining seed at the top of the bracket and the second-highest remaining seed at the bottom, with the Wild Card Winner assigned to the 8th-highest remaining seed."
+                                           }
+                   }
+               ]
+}

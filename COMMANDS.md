@@ -112,6 +112,34 @@ Run the donation validator and include live DonorsChoose link checks:
 Run the donation JSON validator with live link checks and tell me if any project links look broken.
 ```
 
+## Keeper Ledger
+
+Build or refresh the keeper commissioner worksheet from Sleeper:
+
+```text
+Run the keeper ledger sync and build data/keeper-ledger.json from the current keeper leagues, preserving any manual keeper entries already in the file.
+```
+
+Sync only one keeper league:
+
+```text
+Run the keeper ledger sync for KP1 only and summarize which managers were pulled into the local keeper tracker.
+```
+
+## Bracket Ledger
+
+Build or refresh the combined bracket seeding worksheet from Sleeper:
+
+```text
+Run the bracket ledger sync and refresh data/bracket-ledger.json from Sleeper so the grouped bracket leagues, standings, seeds, wild cards, and Week 13 matchups are up to date.
+```
+
+Sync only one bracket group:
+
+```text
+Run the bracket ledger sync for BRACKET-2026-1 only and summarize the current division winners, Seeds 1-30, and wild cards.
+```
+
 ## League Data Diff
 
 Compare a before snapshot to the current league data and summarize every changed league:

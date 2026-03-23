@@ -1,0 +1,28 @@
+{
+  "groups": [
+    {
+      "groupId": "BRACKET-2026-1",
+      "label": "VBP Bracket Group 1",
+      "season": "2026",
+      "leagueRecordIds": [
+        "RDB1",
+        "RDB2",
+        "RDB3",
+        "RDB4",
+        "RDB5"
+      ],
+      "rules": {
+        "divisionWinners": 5,
+        "directQualifiers": 30,
+        "wildCards": 2,
+        "divisionWinnerSeeding": "record_then_points_for_2dp",
+        "directQualifierSeeding": "record_then_points_for_2dp",
+        "wildCardSeeding": "points_for_2dp_then_record",
+        "week13MainRound": "1_vs_30_through_15_vs_16",
+        "week13WildCard": "31_vs_32",
+        "postWeek13Reset": "wild_card_winner_faces_8th_highest_remaining_seed",
+        "postResetBracketStyle": "static_traditional_bracket"
+      }
+    }
+  ]
+}

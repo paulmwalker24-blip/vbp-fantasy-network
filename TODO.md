@@ -66,6 +66,8 @@
 - [x] Add a cache-busting helper that bumps the `styles.css?v=` and `app.js?v=` values in `index.html` after frontend changes.
 - [x] Add a constitution-page check script that verifies each constitution has a working back link, banner image reference, and basic section structure.
 - [x] Add a release helper that runs the local check script, opens a preview, and summarizes whether the site is ready to push.
+- [x] Add a keeper-ledger sync script and local dataset that pull current keeper-league managers from Sleeper into a commissioner worksheet while preserving manual keeper slots.
+- [x] Add a bracket-ledger sync script and grouped bracket datasets that pull combined `RDB` standings from Sleeper and output Seeds `1-32`, wild cards, and Week 13 bracket matchups.
 
 ### Cleanup / Future Improvements
 

@@ -1,0 +1,111 @@
+{
+    "prompts":  {
+                    "refreshLeaguesAndRosters":  "Run the keeper ledger sync and refresh data/keeper-ledger.json from Sleeper so the current keeper leagues, managers, and roster players are up to date. If roster players are still empty, tell me Sleeper has not populated them yet.",
+                    "refreshSpecificLeague":  "Run the keeper ledger sync for KP1 only and refresh data/keeper-ledger.json from Sleeper so that league's managers and roster players are up to date."
+                },
+    "generatedAt":  "2026-03-23T14:56:52",
+    "leagues":  [
+                    {
+                        "leagueRecordId":  "KP1",
+                        "sleeperLeagueId":  "1341846317608992768",
+                        "season":  "2026",
+                        "leagueName":  "VBP Keeper League #1",
+                        "buyIn":  25,
+                        "teamCount":  12,
+                        "status":  "coming-soon",
+                        "constitutionPage":  "keeper-constitution.html",
+                        "lastSyncedAt":  "2026-03-23T14:56:51",
+                        "manualNotes":  "",
+                        "managers":  [
+                                         {
+                                             "ownerId":  "466785377303130112",
+                                             "rosterId":  1,
+                                             "displayName":  "VinsBroPaul",
+                                             "username":  "",
+                                             "teamName":  "",
+                                             "manualNotes":  "",
+                                             "currentRosterPlayers":  [
+
+                                                                      ],
+                                             "keepers":  [
+                                                             {
+                                                                 "slot":  1,
+                                                                 "playerName":  "",
+                                                                 "playerId":  "",
+                                                                 "keeperRound":  "",
+                                                                 "originType":  "",
+                                                                 "originSeason":  "",
+                                                                 "originRound":  "",
+                                                                 "acquiredVia":  "",
+                                                                 "timelineStartSeason":  "",
+                                                                 "manualNotes":  ""
+                                                             },
+                                                             {
+                                                                 "slot":  2,
+                                                                 "playerName":  "",
+                                                                 "playerId":  "",
+                                                                 "keeperRound":  "",
+                                                                 "originType":  "",
+                                                                 "originSeason":  "",
+                                                                 "originRound":  "",
+                                                                 "acquiredVia":  "",
+                                                                 "timelineStartSeason":  "",
+                                                                 "manualNotes":  ""
+                                                             }
+                                                         ]
+                                         }
+                                     ]
+                    },
+                    {
+                        "leagueRecordId":  "KP2",
+                        "sleeperLeagueId":  "1341846742810775552",
+                        "season":  "2026",
+                        "leagueName":  "VBP Keeper League #2",
+                        "buyIn":  50,
+                        "teamCount":  12,
+                        "status":  "coming-soon",
+                        "constitutionPage":  "keeper-constitution.html",
+                        "lastSyncedAt":  "2026-03-23T14:56:52",
+                        "manualNotes":  "",
+                        "managers":  [
+                                         {
+                                             "ownerId":  "466785377303130112",
+                                             "rosterId":  1,
+                                             "displayName":  "VinsBroPaul",
+                                             "username":  "",
+                                             "teamName":  "",
+                                             "manualNotes":  "",
+                                             "currentRosterPlayers":  [
+
+                                                                      ],
+                                             "keepers":  [
+                                                             {
+                                                                 "slot":  1,
+                                                                 "playerName":  "",
+                                                                 "playerId":  "",
+                                                                 "keeperRound":  "",
+                                                                 "originType":  "",
+                                                                 "originSeason":  "",
+                                                                 "originRound":  "",
+                                                                 "acquiredVia":  "",
+                                                                 "timelineStartSeason":  "",
+                                                                 "manualNotes":  ""
+                                                             },
+                                                             {
+                                                                 "slot":  2,
+                                                                 "playerName":  "",
+                                                                 "playerId":  "",
+                                                                 "keeperRound":  "",
+                                                                 "originType":  "",
+                                                                 "originSeason":  "",
+                                                                 "originRound":  "",
+                                                                 "acquiredVia":  "",
+                                                                 "timelineStartSeason":  "",
+                                                                 "manualNotes":  ""
+                                                             }
+                                                         ]
+                                         }
+                                     ]
+                    }
+                ]
+}

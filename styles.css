@@ -195,7 +195,27 @@ a { color: inherit; }
   border-color: var(--text);
 }
 
-.league-group + .league-group { margin-top: 34px; }
+.league-group + .league-group {
+  position: relative;
+  margin-top: 38px;
+  padding-top: 30px;
+}
+.league-group + .league-group::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(197, 210, 227, 0.35) 12%,
+    rgba(197, 210, 227, 0.85) 50%,
+    rgba(197, 210, 227, 0.35) 88%,
+    transparent 100%
+  );
+}
 .league-group-header {
   display: flex;
   align-items: baseline;
