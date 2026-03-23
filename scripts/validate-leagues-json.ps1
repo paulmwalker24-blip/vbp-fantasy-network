@@ -95,6 +95,7 @@ foreach ($league in $payload.leagues) {
   $constitutionPage = ([string]$league.constitutionPage).Trim()
   $inviteLink = ([string]$league.inviteLink).Trim()
   $leagueSafeLink = ([string]$league.leagueSafeLink).Trim()
+  $leagueSafeLinksBySeason = if ($league.PSObject.Properties.Match('leagueSafeLinksBySeason').Count -gt 0) { $league.PSObject.Properties['leagueSafeLinksBySeason'].Value } else { $null }
   $sleeperLeagueId = ([string]$league.sleeperLeagueId).Trim()
   $division = ([string]$league.division).Trim()
   $teams = To-Number $league.teams
@@ -159,6 +160,20 @@ foreach ($league in $payload.leagues) {
 
   if (-not [string]::IsNullOrWhiteSpace($leagueSafeLink) -and -not (Test-HttpUrl $leagueSafeLink)) {
     Add-Issue -Issues $issues -Severity "error" -LeagueId $leagueId -Message "leagueSafeLink is not a valid http/https URL."
+  }
+
+
+  if ($leagueSafeLinksBySeason) {
+    foreach ($property in $leagueSafeLinksBySeason.PSObject.Properties) {
+      if ($property.Name -notmatch '^\d{4}$') {
+        Add-Issue -Issues $issues -Severity "warning" -LeagueId $leagueId -Message ("leagueSafeLinksBySeason has a non-year key '{0}'." -f $property.Name)
+        continue
+      }
+
+      if (-not (Test-HttpUrl ([string]$property.Value).Trim())) {
+        Add-Issue -Issues $issues -Severity "error" -LeagueId $leagueId -Message ("leagueSafeLinksBySeason[{0}] is not a valid http/https URL." -f $property.Name)
+      }
+    }
   }
 
   if ([string]::IsNullOrWhiteSpace($leagueSafeLink)) {

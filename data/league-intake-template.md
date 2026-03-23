@@ -21,5 +21,7 @@ Use this for each league you want added or updated in `data/leagues.json`.
 - Status: `open`, `full`, or `coming-soon`
 - Invite link:
 - LeagueSafe link:
+- Future-season LeagueSafe links (optional, `season=url` pairs such as `2027=https://...`):
 - Constitution page:
 - Notes:
+

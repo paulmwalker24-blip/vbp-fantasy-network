@@ -19,7 +19,6 @@ The homepage acts as a hub for fantasy football leagues and league constitutions
 - It renders static marketing content and navigation.
 - It fetches league availability data from a local JSON file.
 - It can optionally enrich league entries with Sleeper API data when a `sleeperLeagueId` is present in the local JSON.
-- It fetches donation project data from a separate published Google Sheets CSV.
 - It fetches donation project data from a local JSON file.
 - It links out to individual constitution pages for specific league formats.
 
@@ -37,7 +36,7 @@ The site is effectively data-driven through local league JSON, local donation JS
     - `#lastUpdated`
 
 - `app.js`
-  - Fetches local league JSON and donation CSV data.
+  - Fetches local league JSON and local donation JSON data.
   - Can optionally fetch Sleeper league details for entries with `sleeperLeagueId`.
   - Preserves local display names while still using Sleeper to refresh counts and season data.
   - Caps hydrated filled counts so the homepage does not show impossible roster counts.
@@ -78,6 +77,10 @@ The site is effectively data-driven through local league JSON, local donation JS
 
 - `COMMANDS.md`
   - Repo-local prompt catalog for asking Codex to run repeatable local automations without manually typing PowerShell commands.
+
+- `TODO.md`
+  - Active backlog lives at the top of the file.
+  - Completed items are preserved and moved to the bottom instead of being deleted.
 
 - `.github/workflows/`
   - `validate-site.yml` runs the local site-check script on push and pull request.
@@ -126,6 +129,7 @@ The current league rendering depends on:
 - `buyIn`
 - `inviteLink`
 - `leagueSafeLink`
+- `leagueSafeLinksBySeason` (optional, for dynasty or other multi-season payment tracking)
 - `constitutionPage`
 - `status`
 
@@ -157,7 +161,10 @@ Current league notes:
 - `division` is currently used as draft type for bracket leagues, such as `Fast` or `Slow`.
 - `CH1` is a live chopped league and should continue pointing to `chopped-constitution.html`.
 - LeagueSafe links should remain stored data unless the user explicitly asks to expose them in the homepage UI.
+- If a league needs separate LeagueSafe links for future seasons, store the current season in `leagueSafeLink` and add an optional `leagueSafeLinksBySeason` object keyed by season, such as `2026`, `2027`, and `2028`.
 - The local maintenance scripts intentionally treat `inviteLink`, `leagueSafeLink`, `constitutionPage`, `buyIn`, and curated `name` values as commissioner-owned fields unless the user explicitly opts into overwriting them.
+- `DYN1`, `DYN2`, and `DYN3` now use season-keyed `leagueSafeLinksBySeason` data for `2026`, `2027`, and `2028` alongside the current-season `leagueSafeLink`.
+- When checking dynasty future-pick payment obligations, use Sleeper traded-pick data and only flag managers who traded away future picks. Do not flag the managers who received those picks unless they also traded away their own future picks.
 - For Sleeper-backed leagues, `filled` should reflect paid/assigned teams by counting roster slots with an `owner_id`. Do not treat raw league member count as the true fill number.
 
 Current donation notes:
@@ -210,6 +217,7 @@ If donation rendering breaks:
 - If a task can be handled by an existing local script, use that script and then summarize the result for the user.
 - Keep local scripts conservative about which fields they mutate.
 - Validation and check scripts should be safe to run repeatedly.
+- Keep `TODO.md` organized with incomplete work first and a preserved completed section at the bottom.
 - If you add a new repeatable automation, update:
   - `scripts/README.md`
   - `COMMANDS.md`
@@ -220,6 +228,7 @@ If donation rendering breaks:
 - Text encoding appears inconsistent in several files. Characters such as bullets and arrows are rendering as mojibake like `â€¢` and `â†`.
 - `app_updated_donation_gid0.js` suggests donation parsing has already been revised once; compare carefully before replacing current logic.
 - Git operations may fail in some sandboxed environments because the repo can trigger a `safe.directory` ownership warning.
+- On this machine, the Windows Store `py` / `python` app alias can break local preview startup or leave `localhost:8000` returning empty responses if the wrong interpreter path is used.
 - Some constitution pages include duplicated or noisy generated section links and content formatting artifacts.
 
 Do not silently "clean up" generated constitution content unless the user asks for content normalization, because those pages may have been exported from another source.
@@ -239,6 +248,7 @@ Do not silently "clean up" generated constitution content unless the user asks f
 11. If you add a new repeatable automation or recurring local workflow, add a matching prompt entry to `COMMANDS.md`.
 12. Before creating a new automation, check whether the behavior belongs in an existing script instead of adding another narrowly scoped file.
 13. If a task is “run the checks” or “what still needs attention,” prefer `scripts/check-site.ps1`, `scripts/validate-leagues-json.ps1`, and `scripts/sync-sleeper-leagues.ps1` over ad hoc inspection.
+14. After `/init`, if the user needs a local preview, provide exactly two copyable lines: the terminal command to run from repo root and the browser URL to open. Keep both short and do not include the full folder path unless the user asks for it.
 
 ## Verification Guidance
 
@@ -255,8 +265,11 @@ For most changes, verify with:
 
 Local runtime notes:
 
-- A simple local server can be started from repo root with `py -m http.server 8000`.
+- Prefer `python -m http.server 8000` from repo root for manual local preview.
 - The homepage can then be opened at `http://localhost:8000/index.html`.
+- Do not default to `py -m http.server 8000` in user-facing instructions for this repo unless the user explicitly asks for `py`, because the Windows app alias can be unreliable here.
+- If the user asks what to paste into `cmd` after opening a terminal in the repo folder, answer with only `python -m http.server 8000`.
+- If the user asks what to type into the browser, answer with only `http://localhost:8000/index.html`.
 - If script or stylesheet changes are not visible, hard refresh first and then consider bumping the cache-busting query strings in `index.html`.
 - The local preview helper `scripts/open-preview.ps1` already handles cache-busted localhost URLs and should be preferred for repeat preview checks.
 

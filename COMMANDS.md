@@ -104,6 +104,17 @@ Open a cache-busted preview after league-data edits:
 Run the preview script and open the homepage with cache-busting so I can verify the latest changes.
 ```
 
+## Dynasty Future Pick Audit
+
+Check which managers have traded away future picks in a dynasty league:
+
+```text
+Run the dynasty future-pick audit for DYN1 and tell me which managers owe 2027 or 2028 payment based on traded-away picks only.
+```
+
+```text
+Run the dynasty future-pick audit for DYN3 and draft me a Sleeper @all payment reminder post using the current LeagueSafe links.
+```
 ## Thumbnail Image
 
 Create a general Sleeper thumbnail from the current site artwork:

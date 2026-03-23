@@ -36,7 +36,7 @@
                     },
                     {
                         "id":  "RD3",
-                        "sleeperLeagueId":  "",
+                        "sleeperLeagueId":  "1314660487635427328",
                         "sleeperSeason":  "2026",
                         "name":  "VBP Redraft 3",
                         "format":  "redraft",
@@ -46,7 +46,7 @@
                         "filled":  11,
                         "status":  "open",
                         "inviteLink":  "https://sleeper.com/i/V9GRBq67x7jOV",
-                        "leagueSafeLink":  "",
+                        "leagueSafeLink":  "https://www.leaguesafe.com/join/4377711",
                         "constitutionPage":  "redraft-constitution.html",
                         "notes":  "",
                         "lastUpdated":  "3/20/2026 11:58 AM"
@@ -63,10 +63,15 @@
                         "filled":  12,
                         "status":  "full",
                         "inviteLink":  "",
-                        "leagueSafeLink":  "",
+                        "leagueSafeLink":  "https://www.leaguesafe.com/join/4367424",
                         "constitutionPage":  "dynasty-constitution.html",
                         "notes":  "",
-                        "lastUpdated":  "3/18/2026 2:42 PM"
+                        "lastUpdated":  "3/18/2026 2:42 PM",
+                        "leagueSafeLinksBySeason":  {
+                                                        "2026":  "https://www.leaguesafe.com/join/4367424",
+                                                        "2027":  "https://www.leaguesafe.com/join/4404690",
+                                                        "2028":  "https://www.leaguesafe.com/join/4404691"
+                                                    }
                     },
                     {
                         "id":  "DYN2",
@@ -80,10 +85,15 @@
                         "filled":  12,
                         "status":  "full",
                         "inviteLink":  "",
-                        "leagueSafeLink":  "",
+                        "leagueSafeLink":  "https://www.leaguesafe.com/join/4402310",
                         "constitutionPage":  "dynasty-constitution.html",
                         "notes":  "",
-                        "lastUpdated":  "3/18/2026 2:42 PM"
+                        "lastUpdated":  "3/18/2026 2:42 PM",
+                        "leagueSafeLinksBySeason":  {
+                                                        "2026":  "https://www.leaguesafe.com/join/4402310",
+                                                        "2027":  "https://www.leaguesafe.com/join/4404677",
+                                                        "2028":  "https://www.leaguesafe.com/join/4404678"
+                                                    }
                     },
                     {
                         "id":  "DYN3",
@@ -97,10 +107,15 @@
                         "filled":  12,
                         "status":  "open",
                         "inviteLink":  "",
-                        "leagueSafeLink":  "",
+                        "leagueSafeLink":  "https://www.leaguesafe.com/join/4403038",
                         "constitutionPage":  "dynasty-constitution.html",
                         "notes":  "",
-                        "lastUpdated":  "3/18/2026 2:43 PM"
+                        "lastUpdated":  "3/18/2026 2:43 PM",
+                        "leagueSafeLinksBySeason":  {
+                                                        "2026":  "https://www.leaguesafe.com/join/4403038",
+                                                        "2027":  "https://www.leaguesafe.com/join/4404684",
+                                                        "2028":  "https://www.leaguesafe.com/join/4404686"
+                                                    }
                     },
                     {
                         "id":  "BBU1",

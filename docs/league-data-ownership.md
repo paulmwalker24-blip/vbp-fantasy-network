@@ -12,6 +12,7 @@ Example fields currently treated as manual:
 - `buyIn`
 - `inviteLink`
 - `leagueSafeLink`
+- `leagueSafeLinksBySeason` (optional, when a league needs separate future-season LeagueSafe links)
 - `constitutionPage`
 - `division`
 - `notes`
@@ -78,3 +79,5 @@ Do not migrate yet unless:
 - multiple people begin editing league data
 
 Until then, keep using the current flat structure plus the local scripts in `scripts/` to enforce ownership in practice.
+
+For the current dynasty payment workflow, keep the present-season LeagueSafe URL in `leagueSafeLink` and store future-season dynasty LeagueSafe URLs in `leagueSafeLinksBySeason`.
