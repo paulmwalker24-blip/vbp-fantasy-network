@@ -140,6 +140,12 @@ Sync only one bracket group:
 Run the bracket ledger sync for BRACKET-2026-1 only and summarize the current division winners, Seeds 1-30, and wild cards.
 ```
 
+Refresh the full combined standings table for one bracket group:
+
+```text
+Run the bracket ledger sync and refresh data/bracket-ledger.json from Sleeper, then give me the current combined overall standings for BRACKET-2026-1 with rank, team name, league/division, record, and points for. If the season is not far enough along or the group is not full yet, tell me the standings are provisional.
+```
+
 ## League Data Diff
 
 Compare a before snapshot to the current league data and summarize every changed league:

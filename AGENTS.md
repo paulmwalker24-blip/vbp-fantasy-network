@@ -70,7 +70,7 @@ The site is effectively data-driven through local league JSON, local donation JS
 
 - `data/bracket-ledger.json`
   - Local bracket tracker that merges Sleeper manager and standings pulls across grouped bracket leagues.
-  - Intended to be the working dataset for combined playoff seeding, wild cards, and bracket outputs.
+  - Intended to be the working dataset for combined playoff seeding, wild cards, bracket outputs, and flat 1-60 style overall standings review.
 
 - `styles.css`
   - Shared styles for the homepage and constitution pages.

@@ -165,6 +165,7 @@ function Get-BracketLedgerPrompts {
   [pscustomobject]@{
     refreshGroupsAndSeeds = "Run the bracket ledger sync and refresh data/bracket-ledger.json from Sleeper so the current bracket leagues, managers, standings, and seeding outputs are up to date. If the season is not far enough along for meaningful seeds, tell me that the results are only structural or provisional."
     refreshSpecificGroup = "Run the bracket ledger sync for BRACKET-2026-1 only and refresh data/bracket-ledger.json from Sleeper so that bracket group's standings and playoff output are up to date."
+    refreshOverallStandings = "Run the bracket ledger sync and refresh data/bracket-ledger.json from Sleeper, then give me the current combined overall standings for BRACKET-2026-1 with rank, team name, league/division, record, and points for. If the season is not far enough along or the group is not full yet, tell me the standings are provisional."
   }
 }
 
@@ -349,6 +350,31 @@ foreach ($group in ($selectedGroups | Sort-Object { Get-StringValue $_.groupId }
     }) | Out-Null
   }
 
+  $overallStandings = [System.Collections.Generic.List[object]]::new()
+  $overallRank = 1
+  foreach ($team in (Get-StandingsOrder -Entries @($allTeams))) {
+    $resolvedTeamName = Get-StringValue $team.teamName
+    if ([string]::IsNullOrWhiteSpace($resolvedTeamName)) {
+      $resolvedTeamName = Get-StringValue $team.displayName
+    }
+
+    $overallStandings.Add([pscustomobject]@{
+      rank = $overallRank
+      teamName = $resolvedTeamName
+      displayName = Get-StringValue $team.displayName
+      leagueRecordId = Get-StringValue $team.leagueRecordId
+      leagueName = Get-StringValue $team.localLeagueName
+      division = Get-StringValue $team.division
+      record = ("{0}-{1}-{2}" -f $team.wins, $team.losses, $team.ties)
+      pointsFor = $team.pointsFor
+      pointsForDisplay = Get-StringValue $team.pointsForDisplay
+      ownerId = Get-StringValue $team.ownerId
+      rosterId = $team.rosterId
+    }) | Out-Null
+
+    $overallRank++
+  }
+
   $divisionWinners = Get-StandingsOrder -Entries @($leagueSnapshots | ForEach-Object { $_.divisionWinner } | Where-Object { $null -ne $_ })
   $divisionWinnerOwnerIds = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
   $seededDivisionWinners = [System.Collections.Generic.List[object]]::new()
@@ -456,6 +482,7 @@ foreach ($group in ($selectedGroups | Sort-Object { Get-StringValue $_.groupId }
     } else {
       "Standings and seeding reflect current Sleeper roster settings."
     }
+    overallStandings = @($overallStandings)
     leagueSnapshots = @($leagueSnapshots)
     divisionWinners = @($seededDivisionWinners)
     directQualifiers = @($seededDirectQualifiers)

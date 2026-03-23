@@ -1,9 +1,10 @@
 {
     "prompts":  {
                     "refreshGroupsAndSeeds":  "Run the bracket ledger sync and refresh data/bracket-ledger.json from Sleeper so the current bracket leagues, managers, standings, and seeding outputs are up to date. If the season is not far enough along for meaningful seeds, tell me that the results are only structural or provisional.",
-                    "refreshSpecificGroup":  "Run the bracket ledger sync for BRACKET-2026-1 only and refresh data/bracket-ledger.json from Sleeper so that bracket group\u0027s standings and playoff output are up to date."
+                    "refreshSpecificGroup":  "Run the bracket ledger sync for BRACKET-2026-1 only and refresh data/bracket-ledger.json from Sleeper so that bracket group\u0027s standings and playoff output are up to date.",
+                    "refreshOverallStandings":  "Run the bracket ledger sync and refresh data/bracket-ledger.json from Sleeper, then give me the current combined overall standings for BRACKET-2026-1 with rank, team name, league/division, record, and points for. If the season is not far enough along or the group is not full yet, tell me the standings are provisional."
                 },
-    "generatedAt":  "2026-03-23T15:41:56",
+    "generatedAt":  "2026-03-23T15:47:50",
     "groups":  [
                    {
                        "groupId":  "BRACKET-2026-1",
@@ -28,13 +29,158 @@
                                      "postWeek13Reset":  "wild_card_winner_faces_8th_highest_remaining_seed",
                                      "postResetBracketStyle":  "static_traditional_bracket"
                                  },
-                       "lastSyncedAt":  "2026-03-23T15:41:56",
+                       "lastSyncedAt":  "2026-03-23T15:47:50",
                        "seasonStatuses":  [
                                               "pre_draft"
                                           ],
                        "seedingReady":  false,
                        "seasonDataReady":  false,
                        "notes":  "One or more bracket leagues are still pre-draft or drafting, so the seeding output is structural or provisional.",
+                       "overallStandings":  [
+                                                {
+                                                    "rank":  1,
+                                                    "teamName":  "Uncle Rico Dowdled Me",
+                                                    "displayName":  "alanh003",
+                                                    "leagueRecordId":  "RDB1",
+                                                    "leagueName":  "Titan",
+                                                    "division":  "Slow",
+                                                    "record":  "0-0-0",
+                                                    "pointsFor":  0,
+                                                    "pointsForDisplay":  "0.00",
+                                                    "ownerId":  "868021731762319360",
+                                                    "rosterId":  2
+                                                },
+                                                {
+                                                    "rank":  2,
+                                                    "teamName":  "Two Buckeyes,One Kupp",
+                                                    "displayName":  "bryanb460",
+                                                    "leagueRecordId":  "RDB2",
+                                                    "leagueName":  "Apex",
+                                                    "division":  "Slow",
+                                                    "record":  "0-0-0",
+                                                    "pointsFor":  0,
+                                                    "pointsForDisplay":  "0.00",
+                                                    "ownerId":  "736433000019075072",
+                                                    "rosterId":  12
+                                                },
+                                                {
+                                                    "rank":  3,
+                                                    "teamName":  "Pukamon",
+                                                    "displayName":  "declanq1",
+                                                    "leagueRecordId":  "RDB3",
+                                                    "leagueName":  "Iron",
+                                                    "division":  "Fast",
+                                                    "record":  "0-0-0",
+                                                    "pointsFor":  0,
+                                                    "pointsForDisplay":  "0.00",
+                                                    "ownerId":  "737907365877317632",
+                                                    "rosterId":  12
+                                                },
+                                                {
+                                                    "rank":  4,
+                                                    "teamName":  "DoubleTap7798",
+                                                    "displayName":  "DoubleTap7798",
+                                                    "leagueRecordId":  "RDB1",
+                                                    "leagueName":  "Titan",
+                                                    "division":  "Slow",
+                                                    "record":  "0-0-0",
+                                                    "pointsFor":  0,
+                                                    "pointsForDisplay":  "0.00",
+                                                    "ownerId":  "673058459607990272",
+                                                    "rosterId":  1
+                                                },
+                                                {
+                                                    "rank":  5,
+                                                    "teamName":  "DSnyder5",
+                                                    "displayName":  "DSnyder5",
+                                                    "leagueRecordId":  "RDB3",
+                                                    "leagueName":  "Iron",
+                                                    "division":  "Fast",
+                                                    "record":  "0-0-0",
+                                                    "pointsFor":  0,
+                                                    "pointsForDisplay":  "0.00",
+                                                    "ownerId":  "738614393776001024",
+                                                    "rosterId":  8
+                                                },
+                                                {
+                                                    "rank":  6,
+                                                    "teamName":  "geno311",
+                                                    "displayName":  "geno311",
+                                                    "leagueRecordId":  "RDB2",
+                                                    "leagueName":  "Apex",
+                                                    "division":  "Slow",
+                                                    "record":  "0-0-0",
+                                                    "pointsFor":  0,
+                                                    "pointsForDisplay":  "0.00",
+                                                    "ownerId":  "428350518654402560",
+                                                    "rosterId":  3
+                                                },
+                                                {
+                                                    "rank":  7,
+                                                    "teamName":  "MarkKSilver",
+                                                    "displayName":  "MarkKSilver",
+                                                    "leagueRecordId":  "RDB2",
+                                                    "leagueName":  "Apex",
+                                                    "division":  "Slow",
+                                                    "record":  "0-0-0",
+                                                    "pointsFor":  0,
+                                                    "pointsForDisplay":  "0.00",
+                                                    "ownerId":  "581960005377376256",
+                                                    "rosterId":  2
+                                                },
+                                                {
+                                                    "rank":  8,
+                                                    "teamName":  "MooKow",
+                                                    "displayName":  "MooKow",
+                                                    "leagueRecordId":  "RDB2",
+                                                    "leagueName":  "Apex",
+                                                    "division":  "Slow",
+                                                    "record":  "0-0-0",
+                                                    "pointsFor":  0,
+                                                    "pointsForDisplay":  "0.00",
+                                                    "ownerId":  "75740378762199040",
+                                                    "rosterId":  1
+                                                },
+                                                {
+                                                    "rank":  9,
+                                                    "teamName":  "Need for Shaheed",
+                                                    "displayName":  "pandaeagle",
+                                                    "leagueRecordId":  "RDB2",
+                                                    "leagueName":  "Apex",
+                                                    "division":  "Slow",
+                                                    "record":  "0-0-0",
+                                                    "pointsFor":  0,
+                                                    "pointsForDisplay":  "0.00",
+                                                    "ownerId":  "740674194068660224",
+                                                    "rosterId":  6
+                                                },
+                                                {
+                                                    "rank":  10,
+                                                    "teamName":  "Rookie86",
+                                                    "displayName":  "Rookie86",
+                                                    "leagueRecordId":  "RDB1",
+                                                    "leagueName":  "Titan",
+                                                    "division":  "Slow",
+                                                    "record":  "0-0-0",
+                                                    "pointsFor":  0,
+                                                    "pointsForDisplay":  "0.00",
+                                                    "ownerId":  "719043925339377664",
+                                                    "rosterId":  4
+                                                },
+                                                {
+                                                    "rank":  11,
+                                                    "teamName":  "VinsBroPaul",
+                                                    "displayName":  "VinsBroPaul",
+                                                    "leagueRecordId":  "RDB3",
+                                                    "leagueName":  "Iron",
+                                                    "division":  "Fast",
+                                                    "record":  "0-0-0",
+                                                    "pointsFor":  0,
+                                                    "pointsForDisplay":  "0.00",
+                                                    "ownerId":  "466785377303130112",
+                                                    "rosterId":  3
+                                                }
+                                            ],
                        "leagueSnapshots":  [
                                                {
                                                    "leagueRecordId":  "RDB1",

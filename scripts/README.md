@@ -203,6 +203,7 @@ It currently outputs:
 - division-winner seeding for Seeds `1-5`
 - direct-qualifier seeding for Seeds `6-30`
 - wild-card selection for Seeds `31-32`
+- a flat combined `overallStandings` list for quick 1-60 style review
 - Week 13 matchup output
 - a post-Week-13 static bracket template
 
