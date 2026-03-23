@@ -19,9 +19,8 @@
 
 ## Constitutions
 
-- [ ] Continue cleaning encoding issues in constitution pages where visible text still looks corrupted.
 - [ ] Review constitution pages for duplicate or noisy generated formatting artifacts.
-- [ ] Confirm banner images and “Back to Hub” links render correctly on all constitution pages.
+- [ ] Confirm banner images and "Back to Hub" links render correctly on all constitution pages.
 
 ## Cleanup / Future Improvements
 
@@ -70,7 +69,3 @@
 - [x] Add a GitHub Action to run JSON validation and basic link/path checks on every push.
 - [x] Add a periodic sync workflow to regenerate Sleeper-derived league fields automatically while preserving your manual fields like `inviteLink` and `leagueSafeLink`.
 - [x] Document a future split between manual and synced league data so field ownership is clearer if automation expands.
-
-
-
-
