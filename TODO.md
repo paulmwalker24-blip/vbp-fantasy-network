@@ -27,6 +27,7 @@
 
 - [ ] Add a small documented workflow for updating `data/leagues.json` from the intake template.
 - [ ] Consider adding a script later to help merge Sleeper API data into local league records.
+- [ ] Normalize constitution formatting artifacts later, especially export-style heading/list structure in the redraft, best ball, bracket, and dynasty pages.
 - [ ] Decide whether to keep planned empty formats visible in Active Leagues or hide them until launched.
 - [ ] Revisit the general Sleeper thumbnail image and refine it into a final brand-ready square image based primarily on the VBP banner.
 
@@ -45,6 +46,7 @@
 
 - [x] Confirm league cards render in internal ID order within each format, especially `RD1`, `RD2`, `RD3`.
 - [x] Create and store the dynasty LeagueSafe links for `DYN1`, `DYN2`, and `DYN3`, including future-season links for `2027` and `2028`.
+- [x] Push the dynasty LeagueSafe, validator, and preview workflow updates to `origin/main`.
 
 ### League Data Migration
 
@@ -68,3 +70,7 @@
 - [x] Add a GitHub Action to run JSON validation and basic link/path checks on every push.
 - [x] Add a periodic sync workflow to regenerate Sleeper-derived league fields automatically while preserving your manual fields like `inviteLink` and `leagueSafeLink`.
 - [x] Document a future split between manual and synced league data so field ownership is clearer if automation expands.
+
+
+
+
