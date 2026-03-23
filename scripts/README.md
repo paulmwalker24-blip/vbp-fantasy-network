@@ -73,8 +73,9 @@ It checks for:
 - invalid or missing URLs
 - impossible `filled` / `teams` values
 - missing `constitutionPage`
-- missing `leagueSafeLink`
-- missing `sleeperLeagueId`
+- `constitutionPage` values that do not match the league format
+- missing `leagueSafeLink` on non-`coming-soon` records
+- missing `sleeperLeagueId` on non-`coming-soon` records
 - bracket leagues missing draft type in `division`
 
 Example:
@@ -93,6 +94,66 @@ Fail the command if validation finds errors:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\validate-leagues-json.ps1 -Strict
+```
+
+## `validate-donations-json.ps1`
+
+Runs local structural validation against `data/donations.json`.
+
+It checks for:
+
+- a valid `projects` array
+- missing `name`, `state`, `goal`, `donated`, `remaining`, or `link` values
+- invalid or duplicate DonorsChoose links
+- non-numeric or impossible donation amounts
+- optional live DonorsChoose link health when requested
+
+Example:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\validate-donations-json.ps1
+```
+
+Structured output:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\validate-donations-json.ps1 -PassThru | ConvertTo-Json -Depth 6
+```
+
+Include live link checks:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\validate-donations-json.ps1 -CheckLinks
+```
+
+Fail the command if validation finds errors:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\validate-donations-json.ps1 -Strict
+```
+
+## `bump-cache-bust.ps1`
+
+Updates the `styles.css?v=` and `app.js?v=` query strings in `index.html` to a shared version token.
+
+Use this after frontend changes when browser caching is getting in the way.
+
+Default timestamp-based version:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\bump-cache-bust.ps1
+```
+
+Set a specific version value:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\bump-cache-bust.ps1 -Version 20260323a
+```
+
+Preview the change without writing the file:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\bump-cache-bust.ps1 -WhatIf -PassThru | ConvertTo-Json -Depth 4
 ```
 
 ## `get-next-league-id.ps1`
@@ -129,7 +190,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\open-preview.ps1 -Target chop
 
 ## `check-site.ps1`
 
-Runs the validator plus additional static checks across `index.html`, `styles.css`, `app.js`, and linked constitution pages.
+Runs the validators plus additional static checks across `index.html`, `styles.css`, `app.js`, league data, donation data, and linked constitution pages.
 
 Example:
 
@@ -141,6 +202,89 @@ Strict mode:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\check-site.ps1 -Strict
+```
+
+## `league-data-diff-report.ps1`
+
+Compares two league JSON snapshots and prints a human-readable summary of added, removed, and changed league records.
+
+Use this after a sync run or manual edit when you want a cleaner review than raw JSON diff output.
+
+Example:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\league-data-diff-report.ps1 -BeforePath .\snapshots\leagues-before.json
+```
+
+Compare two explicit files:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\league-data-diff-report.ps1 -BeforePath .\snapshots\leagues-before.json -AfterPath .\snapshots\leagues-after.json
+```
+
+Structured output:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\league-data-diff-report.ps1 -BeforePath .\snapshots\leagues-before.json -PassThru | ConvertTo-Json -Depth 8
+```
+
+## `release-helper.ps1`
+
+Runs the broad site check, optionally opens a localhost preview, and summarizes whether the site is ready to push.
+
+Default behavior:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\release-helper.ps1
+```
+
+Run without opening Chrome:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\release-helper.ps1 -NoOpen
+```
+
+Skip preview and only summarize release readiness:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\release-helper.ps1 -NoPreview
+```
+
+Treat warnings as blocking:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\release-helper.ps1 -TreatWarningsAsBlocking -Strict
+```
+
+## `check-constitutions.ps1`
+
+Runs static checks across every `*-constitution.html` page in the repo.
+
+It verifies:
+
+- the `Back to Hub` link exists and points to `index.html#constitutions`
+- the constitution banner image exists and references a real local asset
+- the page includes the expected hero, summary, and table-of-contents structure
+- section cards have ids
+- table-of-contents links point to real section ids
+- `Back to top` links are present
+
+Example:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\check-constitutions.ps1
+```
+
+Structured output:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\check-constitutions.ps1 -PassThru | ConvertTo-Json -Depth 6
+```
+
+Strict mode:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\check-constitutions.ps1 -Strict
 ```
 
 ## `upsert-league-record.ps1`
@@ -172,6 +316,13 @@ Update an existing record:
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\upsert-league-record.ps1 -Mode update -LeagueRecordId CH1
 ```
+
+Suggested workflow:
+
+1. Start from `data/league-intake-template.md`.
+2. Run `upsert-league-record.ps1` to write the change.
+3. Run `validate-leagues-json.ps1`.
+4. If the record has a `sleeperLeagueId`, run `sync-sleeper-leagues.ps1` if you want Sleeper-owned fields refreshed before commit.
 
 ## `create-general-thumbnail.ps1`
 

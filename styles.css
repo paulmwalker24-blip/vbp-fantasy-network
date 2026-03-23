@@ -222,6 +222,9 @@ a { color: inherit; }
   opacity: 0.82;
   background: #fafafa;
 }
+.league-card.coming-soon-card {
+  background: #f8fafc;
+}
 .league-name {
   margin: 0;
   font-size: 1.1rem;
@@ -247,6 +250,7 @@ a { color: inherit; }
 .badge-spots { background: var(--blue-soft); color: var(--blue); }
 .badge-urgent { background: #fee2e2; color: #b91c1c; }
 .badge-full { background: var(--gray-soft); color: var(--gray-text); }
+.badge-coming-soon { background: #e0f2fe; color: #075985; }
 
 .league-actions {
   margin-top: auto;

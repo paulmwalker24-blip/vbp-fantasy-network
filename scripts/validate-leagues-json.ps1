@@ -17,11 +17,20 @@ $idPrefixByFormat = @{
   keeper = "KP"
   chopped = "CH"
 }
+$expectedConstitutionPageByFormat = @{
+  redraft = "redraft-constitution.html"
+  dynasty = "dynasty-constitution.html"
+  bestball = "bestball-constitution.html"
+  bracket = "bracket-constitution.html"
+  keeper = "keeper-constitution.html"
+  chopped = "chopped-constitution.html"
+}
 $knownConstitutionPages = @(
   "redraft-constitution.html",
   "dynasty-constitution.html",
   "bestball-constitution.html",
   "bracket-constitution.html",
+  "keeper-constitution.html",
   "chopped-constitution.html"
 )
 
@@ -148,6 +157,8 @@ foreach ($league in $payload.leagues) {
     Add-Issue -Issues $issues -Severity "warning" -LeagueId $leagueId -Message ("Unknown constitutionPage '{0}'." -f $constitutionPage)
   } elseif (-not (Test-Path -LiteralPath (Join-Path (Split-Path -Parent $jsonFullPath | Split-Path -Parent) $constitutionPage))) {
     Add-Issue -Issues $issues -Severity "error" -LeagueId $leagueId -Message ("constitutionPage file does not exist: {0}" -f $constitutionPage)
+  } elseif ($expectedConstitutionPageByFormat.ContainsKey($format) -and $constitutionPage -ne $expectedConstitutionPageByFormat[$format]) {
+    Add-Issue -Issues $issues -Severity "error" -LeagueId $leagueId -Message ("constitutionPage '{0}' does not match expected page for format '{1}'." -f $constitutionPage, $format)
   }
 
   if ($status -eq "open" -and [string]::IsNullOrWhiteSpace($inviteLink)) {
@@ -176,7 +187,7 @@ foreach ($league in $payload.leagues) {
     }
   }
 
-  if ([string]::IsNullOrWhiteSpace($leagueSafeLink)) {
+  if ($status -ne "coming-soon" -and [string]::IsNullOrWhiteSpace($leagueSafeLink)) {
     Add-Issue -Issues $issues -Severity "warning" -LeagueId $leagueId -Message "Missing leagueSafeLink."
   }
 
@@ -184,7 +195,7 @@ foreach ($league in $payload.leagues) {
     Add-Issue -Issues $issues -Severity "error" -LeagueId $leagueId -Message "sleeperLeagueId must be numeric when present."
   }
 
-  if ([string]::IsNullOrWhiteSpace($sleeperLeagueId)) {
+  if ($status -ne "coming-soon" -and [string]::IsNullOrWhiteSpace($sleeperLeagueId)) {
     Add-Issue -Issues $issues -Severity "warning" -LeagueId $leagueId -Message "Missing sleeperLeagueId."
   }
 

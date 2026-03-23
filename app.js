@@ -6,7 +6,7 @@ const FORMAT_META = {
   dynasty: { label: "Dynasty", description: "Build and manage a roster long term." },
   bestball: { label: "Best Ball", description: "Draft once and let optimal scoring handle the lineup." },
   bracket: { label: "Bracket", description: "Tournament-style competition across divisions." },
-  keeper: { label: "Keeper", description: "Returning format slot reserved for future launch." },
+  keeper: { label: "Keeper", description: "Annual redraft with two offseason keepers and rising draft costs." },
   chopped: { label: "Chopped", description: "Planned format slot reserved for future launch." }
 };
 
@@ -91,6 +91,18 @@ function normalizeFilledCount(teams, filled) {
   return Math.min(safeFilled, safeTeams);
 }
 
+function isComingSoonLeague(league) {
+  return String(league?.status || "").trim().toLowerCase() === "coming-soon";
+}
+
+function getLeagueSpotsLeft(league) {
+  if (isComingSoonLeague(league)) {
+    return 0;
+  }
+
+  return Math.max(league.teams - league.filled, 0);
+}
+
 function getLeagueOrderValue(league) {
   const match = String(league.id || "").match(/(\d+)$/);
   return match ? Number(match[1]) : Number.MAX_SAFE_INTEGER;
@@ -135,6 +147,17 @@ function createEmptyState(message) {
   state.className = "empty-state";
   state.textContent = message;
   return state;
+}
+
+function getLeagueDivisionLabel(league) {
+  const division = String(league.division || "").trim();
+  if (!division) return "";
+
+  if (league.format === "bracket") {
+    return `${division} Draft`;
+  }
+
+  return division;
 }
 
 function normalizeLeagueEntry(entry) {
@@ -205,7 +228,7 @@ async function hydrateLeague(entry) {
     return {
       ...league,
       link: league.inviteLink,
-      spotsLeft: Math.max(league.teams - league.filled, 0)
+      spotsLeft: getLeagueSpotsLeft(league)
     };
   }
 
@@ -223,29 +246,34 @@ async function hydrateLeague(entry) {
     return {
       ...hydrated,
       link: hydrated.inviteLink,
-      spotsLeft: Math.max(hydrated.teams - hydrated.filled, 0)
+      spotsLeft: getLeagueSpotsLeft(hydrated)
     };
   } catch (error) {
     console.warn(`Sleeper sync failed for ${league.id || league.name}:`, error);
     return {
       ...league,
       link: league.inviteLink,
-      spotsLeft: Math.max(league.teams - league.filled, 0)
+      spotsLeft: getLeagueSpotsLeft(league)
     };
   }
 }
 
 function createLeagueCard(league) {
   const card = document.createElement("article");
-  card.className = `league-card${league.spotsLeft === 0 ? " full-card" : ""}`;
+  const isComingSoon = isComingSoonLeague(league);
+  card.className = `league-card${isComingSoon ? " coming-soon-card" : league.spotsLeft === 0 ? " full-card" : ""}`;
 
-  const spotsBadgeClass = league.spotsLeft === 0
+  const spotsBadgeClass = isComingSoon
+    ? "badge badge-coming-soon"
+    : league.spotsLeft === 0
     ? "badge badge-full"
     : league.spotsLeft <= 3
       ? "badge badge-urgent"
       : "badge badge-spots";
 
-  const spotsBadgeText = league.spotsLeft === 0
+  const spotsBadgeText = isComingSoon
+    ? "Coming Soon"
+    : league.spotsLeft === 0
     ? "Full"
     : `${league.spotsLeft} Spot${league.spotsLeft === 1 ? "" : "s"} Left`;
 
@@ -257,9 +285,16 @@ function createLeagueCard(league) {
   details.className = "league-line";
   details.textContent = `${formatCurrency(league.buyIn)} | ${FORMAT_META[league.format].label}`;
 
+  const divisionLabel = getLeagueDivisionLabel(league);
+  const division = document.createElement("div");
+  division.className = "league-line";
+  division.textContent = divisionLabel;
+
   const fillStatus = document.createElement("div");
   fillStatus.className = "league-line";
-  fillStatus.textContent = `${league.filled} / ${league.teams} Filled`;
+  fillStatus.textContent = isComingSoon
+    ? `${league.teams} Teams | Setup in progress`
+    : `${league.filled} / ${league.teams} Filled`;
 
   const badges = document.createElement("div");
   badges.className = "league-badges";
@@ -272,7 +307,9 @@ function createLeagueCard(league) {
   const actions = document.createElement("div");
   actions.className = "league-actions";
   actions.appendChild(
-    league.spotsLeft === 0
+    isComingSoon
+      ? createButton("Coming Soon", "btn btn-disabled")
+      : league.spotsLeft === 0
       ? createButton("League Full", "btn btn-disabled")
       : createButton(
         league.link ? "Join League" : "Join Unavailable",
@@ -281,7 +318,14 @@ function createLeagueCard(league) {
       )
   );
 
-  card.append(name, details, fillStatus, badges, actions);
+  const content = [name, details];
+
+  if (divisionLabel) {
+    content.push(division);
+  }
+
+  content.push(fillStatus, badges, actions);
+  card.append(...content);
   return card;
 }
 
@@ -290,7 +334,7 @@ function renderLimitedSpots(leagues) {
   if (!container) return;
 
   const limited = leagues
-    .filter(league => league.spotsLeft > 0)
+    .filter(league => !isComingSoonLeague(league) && league.spotsLeft > 0)
     .sort((a, b) => a.spotsLeft - b.spotsLeft || a.filled - b.filled)
     .slice(0, 2);
 
@@ -336,7 +380,10 @@ function renderLeagues(leagues) {
 
     const summary = document.createElement("div");
     summary.className = "league-group-meta";
-    summary.textContent = `${grouped.length} League${grouped.length === 1 ? "" : "s"}${grouped.length ? ` | ${openSpots} Spot${openSpots === 1 ? "" : "s"} Open` : ""}`;
+    const allComingSoon = grouped.length > 0 && grouped.every(isComingSoonLeague);
+    summary.textContent = grouped.length
+      ? `${grouped.length} League${grouped.length === 1 ? "" : "s"} | ${allComingSoon ? "Coming soon" : `${openSpots} Spot${openSpots === 1 ? "" : "s"} Open`}`
+      : "0 Leagues";
 
     header.append(titleWrap, summary);
 

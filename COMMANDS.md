@@ -84,6 +84,48 @@ Run the validator in strict mode:
 Run the league JSON validator in strict mode and tell me if the file is clean enough to push.
 ```
 
+## Donation Updates
+
+Apply the documented donation workflow to a batch of form responses:
+
+```text
+Use the donation update workflow to apply the latest Google Form responses and update data/donations.json.
+```
+
+If I paste exported response rows next, use them to update the current donation totals:
+
+```text
+Use the donation update workflow with the form rows I paste next, update data/donations.json, and summarize what changed.
+```
+
+## Donation Validation
+
+Run the donation JSON validator and summarize all errors and warnings:
+
+```text
+Run the donation JSON validator and tell me every error and warning in plain English.
+```
+
+Run the donation validator and include live DonorsChoose link checks:
+
+```text
+Run the donation JSON validator with live link checks and tell me if any project links look broken.
+```
+
+## League Data Diff
+
+Compare a before snapshot to the current league data and summarize every changed league:
+
+```text
+Run the league data diff report using this before snapshot path and summarize every added, removed, and changed league.
+```
+
+Compare two explicit league JSON files:
+
+```text
+Run the league data diff report comparing these two league JSON files and give me a human-readable summary.
+```
+
 ## Local Preview
 
 Open or reopen the local site:
@@ -102,6 +144,48 @@ Open a cache-busted preview after league-data edits:
 
 ```text
 Run the preview script and open the homepage with cache-busting so I can verify the latest changes.
+```
+
+## Constitution Checks
+
+Run the constitution-page checker and summarize any missing back links, banner images, or structure issues:
+
+```text
+Run the constitution-page check and tell me if any constitution is missing the Back to Hub link, banner image, or section structure.
+```
+
+Run the broad site check, including constitutions:
+
+```text
+Run the one-command site check and include the constitution-page results in the summary.
+```
+
+## Cache Busting
+
+Update the homepage asset version strings after frontend edits:
+
+```text
+Run the cache-busting helper and update the homepage asset version strings in index.html.
+```
+
+Preview the next cache-busting version without writing the file:
+
+```text
+Preview the cache-busting helper output and tell me what version it would apply without changing index.html.
+```
+
+## Release Helper
+
+Run the release helper and tell me if the site is ready to push:
+
+```text
+Run the release helper and tell me whether the site is ready to push.
+```
+
+Run the release helper without opening the browser:
+
+```text
+Run the release helper with no preview open and summarize any blocking issues or warnings before push.
 ```
 
 ## Dynasty Future Pick Audit
@@ -143,6 +227,12 @@ Run the one-command site check and tell me any errors or warnings before commit.
 - Use the next-ID helper before creating a new league record.
 - Use the league intake script when you want one guided flow for creating or updating a league record.
 - Use the sync report when you want current fill counts and a warning summary.
+- Use the donation workflow when you want to turn reported donations into updated homepage totals without inventing a new admin system.
+- Use the donation validator when you want to sanity-check `data/donations.json` before pushing donation updates.
+- Use the league data diff report when you want a human-readable review of what changed in `data/leagues.json`.
 - Use the preview script when you want localhost reopened with a cache-busted URL.
+- Use the cache-busting helper when frontend changes are correct but your browser is still serving old CSS or JS.
+- Use the release helper when you want one command to check the site, optionally reopen preview, and tell you if the repo is ready to push.
+- Use the constitution-page check when you want a fast pass on Back to Hub links, banner image references, and basic constitution structure.
 - Use the validator before commit or push.
 - Use the one-command site check when you want the broadest local pre-push pass.

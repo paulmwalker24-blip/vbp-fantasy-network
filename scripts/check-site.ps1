@@ -41,7 +41,8 @@ $requiredFiles = @(
   "index.html",
   "styles.css",
   "app.js",
-  "data/leagues.json"
+  "data/leagues.json",
+  "data/donations.json"
 )
 
 foreach ($file in $requiredFiles) {
@@ -70,6 +71,7 @@ foreach ($page in @(
   "dynasty-constitution.html",
   "bestball-constitution.html",
   "bracket-constitution.html",
+  "keeper-constitution.html",
   "chopped-constitution.html"
 )) {
   if ($indexHtml -notmatch [regex]::Escape($page)) {
@@ -102,6 +104,26 @@ if (-not (Test-Path -LiteralPath $validatorScript)) {
   $validatorReport = & $validatorScript -PassThru
   foreach ($issue in $validatorReport.issues) {
     Add-Issue -Severity $issue.severity -Source "data/leagues.json" -Message ("{0}: {1}" -f $issue.leagueId, $issue.message)
+  }
+}
+
+$donationValidatorScript = Join-Path $PSScriptRoot "validate-donations-json.ps1"
+if (-not (Test-Path -LiteralPath $donationValidatorScript)) {
+  Add-Issue -Severity "error" -Source "scripts/validate-donations-json.ps1" -Message "Donation validator script is missing."
+} else {
+  $donationReport = & $donationValidatorScript -PassThru
+  foreach ($issue in $donationReport.issues) {
+    Add-Issue -Severity $issue.severity -Source "data/donations.json" -Message ("{0}: {1}" -f $issue.project, $issue.message)
+  }
+}
+
+$constitutionCheckScript = Join-Path $PSScriptRoot "check-constitutions.ps1"
+if (-not (Test-Path -LiteralPath $constitutionCheckScript)) {
+  Add-Issue -Severity "error" -Source "scripts/check-constitutions.ps1" -Message "Constitution check script is missing."
+} else {
+  $constitutionReport = & $constitutionCheckScript -PassThru
+  foreach ($issue in $constitutionReport.issues) {
+    Add-Issue -Severity $issue.severity -Source $issue.source -Message $issue.message
   }
 }
 

@@ -58,6 +58,7 @@ The site is effectively data-driven through local league JSON, local donation JS
 
 - `data/league-intake-template.md`
   - Reusable questionnaire for adding or updating leagues in `data/leagues.json`.
+  - Includes the recommended local workflow for writing, validating, and optionally syncing league updates.
 
 - `styles.css`
   - Shared styles for the homepage and constitution pages.
@@ -66,6 +67,11 @@ The site is effectively data-driven through local league JSON, local donation JS
 - `scripts/`
   - Local maintenance automation for league intake, Sleeper sync, validation, preview, and pre-push checks.
   - Current scripts include:
+    - `bump-cache-bust.ps1`
+    - `check-constitutions.ps1`
+    - `league-data-diff-report.ps1`
+    - `release-helper.ps1`
+    - `validate-donations-json.ps1`
     - `set-sleeper-league-id.ps1`
     - `sync-sleeper-leagues.ps1`
     - `validate-leagues-json.ps1`
@@ -73,6 +79,7 @@ The site is effectively data-driven through local league JSON, local donation JS
     - `upsert-league-record.ps1`
     - `open-preview.ps1`
     - `check-site.ps1`
+  - `check-site.ps1` now includes constitution-page and donation-data validation alongside the broader homepage and league-data checks.
   - `README.md` in this folder documents how each local script is intended to be run.
 
 - `COMMANDS.md`
@@ -82,6 +89,10 @@ The site is effectively data-driven through local league JSON, local donation JS
   - Active backlog lives at the top of the file.
   - Completed items are preserved and moved to the bottom instead of being deleted.
 
+- `marketing/reddit-posts.md`
+  - Reusable Reddit title ideas, hooks, CTAs, and short promotional post templates for the VBP Fantasy Network.
+  - Use this when the user wants recruiting copy, outreach posts, or future marketing ideas captured in-repo.
+
 - `.github/workflows/`
   - `validate-site.yml` runs the local site-check script on push and pull request.
   - `sleeper-sync.yml` provides an optional automated Sleeper sync path for `data/leagues.json`.
@@ -89,10 +100,14 @@ The site is effectively data-driven through local league JSON, local donation JS
 - `docs/league-data-ownership.md`
   - Documents the current flat league-data model and a future `manual` / `synced` split if automation expands further.
 
+- `docs/donation-update-workflow.md`
+  - Documents the lightweight manual process for applying Google Form donation responses to `data/donations.json`.
+
 - `redraft-constitution.html`
 - `dynasty-constitution.html`
 - `bestball-constitution.html`
 - `bracket-constitution.html`
+- `keeper-constitution.html`
 - `chopped-constitution.html`
   - Standalone static pages using the shared stylesheet.
 
@@ -159,9 +174,13 @@ Current ID prefixes are:
 Current league notes:
 
 - `division` is currently used as draft type for bracket leagues, such as `Fast` or `Slow`.
+- Bracket league cards should display `division` on the homepage as `Fast Draft` or `Slow Draft`.
 - `CH1` is a live chopped league and should continue pointing to `chopped-constitution.html`.
+- `KP1` and `KP2` are the initial 2026 keeper league placeholders at `$25` and `$50` buy-ins. Their `sleeperLeagueId` values are now stored, but they should remain `coming-soon` until their public invite links and LeagueSafe links are ready.
+- Prelaunch league records that are not yet joinable should use `coming-soon` rather than `open` until the Sleeper invite and LeagueSafe links exist.
 - LeagueSafe links should remain stored data unless the user explicitly asks to expose them in the homepage UI.
 - If a league needs separate LeagueSafe links for future seasons, store the current season in `leagueSafeLink` and add an optional `leagueSafeLinksBySeason` object keyed by season, such as `2026`, `2027`, and `2028`.
+- Keeper leagues may use season-keyed `leagueSafeLinksBySeason` data the same way dynasty leagues do once the yearly payment links exist.
 - The local maintenance scripts intentionally treat `inviteLink`, `leagueSafeLink`, `constitutionPage`, `buyIn`, and curated `name` values as commissioner-owned fields unless the user explicitly opts into overwriting them.
 - `DYN1`, `DYN2`, and `DYN3` now use season-keyed `leagueSafeLinksBySeason` data for `2026`, `2027`, and `2028` alongside the current-season `leagueSafeLink`.
 - When checking dynasty future-pick payment obligations, use Sleeper traded-pick data and only flag managers who traded away future picks. Do not flag the managers who received those picks unless they also traded away their own future picks.
@@ -172,6 +191,9 @@ Current donation notes:
 - The homepage donation cards now read from `data/donations.json`.
 - Donation cards should prefer a stored `remaining` value when present, since DonorsChoose exposes "still needed" amounts more reliably than a stable total-goal payload.
 - The donation section includes a public `Report Your Donation` CTA that links to a Google Form. Keep the CTA in a professional secondary position below the cards unless the user explicitly asks for a different layout.
+- Google Form responses are the intake queue; `data/donations.json` remains the published homepage source of truth.
+- Use `docs/donation-update-workflow.md` for the lightweight manual workflow when applying form responses.
+- Use `scripts/validate-donations-json.ps1` to validate donation data before push or after manual updates.
 
 ### Donation CSV
 
@@ -192,7 +214,7 @@ If donation rendering breaks:
 - Preserve IDs and section anchors that are referenced by buttons or scripts.
 - Preserve the format filter markup and `data-format` values in `#formatFilters` unless the filtering behavior is being intentionally changed.
 - Constitution pages follow a repeated pattern; keep new pages aligned with existing structure.
-- `index.html` now includes a live Chopped constitution card; do not revert it to a placeholder unless requested.
+- `index.html` now includes live Chopped and Keeper constitution cards; do not revert them to placeholders unless requested.
 
 ### CSS
 
@@ -200,6 +222,7 @@ If donation rendering breaks:
 - Keep homepage and constitution page styles shared unless a page-specific split is clearly warranted.
 - Check mobile behavior when changing grids or card sizing.
 - `index.html` currently uses query-string cache busting on `styles.css` and `app.js`; update those version strings when local browser caching is interfering with verification.
+- `index.html` now also carries basic Open Graph and Twitter meta tags for link previews; keep the live site URL and banner image path aligned if the public domain or hero asset changes.
 
 ### JavaScript
 
@@ -209,6 +232,7 @@ If donation rendering breaks:
 - When changing parsing behavior, avoid assumptions that only match one temporary spreadsheet export.
 - Keep league ordering stable by internal ID sequence within each format unless the user explicitly asks for a different sort order.
 - Keep the format filter functional when changing homepage league rendering.
+- Keep planned empty formats visible in Active Leagues unless the user explicitly asks to hide them.
 - Do not reintroduce behavior that overwrites curated local league names with raw Sleeper names unless the user explicitly asks for that.
 
 ### Local Automation
@@ -217,19 +241,31 @@ If donation rendering breaks:
 - If a task can be handled by an existing local script, use that script and then summarize the result for the user.
 - Keep local scripts conservative about which fields they mutate.
 - Validation and check scripts should be safe to run repeatedly.
+- Use `release-helper.ps1` when the user wants a quick answer on whether the site is ready to push.
+- Use `league-data-diff-report.ps1` when the user wants a reviewer-friendly summary of changes in `data/leagues.json`.
 - Keep `TODO.md` organized with incomplete work first and a preserved completed section at the bottom.
+- If a constitution encoding issue has actually been fixed, remove the stale encoding-specific TODO rather than leaving it duplicated next to the broader formatting cleanup item.
 - If you add a new repeatable automation, update:
   - `scripts/README.md`
   - `COMMANDS.md`
   - the relevant `TODO.md` entry
 
+### Marketing Copy
+
+- For Reddit league-promotion requests, treat `VBP Fantasy Network` as an active brand with live leagues, not something that is still being built, unless the user explicitly wants a softer in-progress angle.
+- Default early Reddit posts to short, direct recruiting copy focused on open spots, active owners, competitive formats, and clear rules.
+- Keep the network name in the title or first sentence so the brand still gets repeated exposure even when the body copy stays simple.
+- Use constitutions and clear rules as trust signals, but do not overload short recruiting posts with too much backstory unless the user asks for a fuller pitch.
+- When the user wants reusable outreach ideas, store them in `marketing/reddit-posts.md` so future prompts can build from past examples instead of starting from scratch.
+- If the user asks for a response-driving version, prefer a direct CTA such as `DM me or reply if interested.`
+
 ## Known Issues And Hazards
 
-- Text encoding appears inconsistent in several files. Characters such as bullets and arrows are rendering as mojibake like `â€¢` and `â†`.
+- `DYN3` is intentionally still marked `open` without an `inviteLink` while waiting for a manager to leave; this remains a known accepted warning unless the user decides to close it or add the link.
 - `app_updated_donation_gid0.js` suggests donation parsing has already been revised once; compare carefully before replacing current logic.
 - Git operations may fail in some sandboxed environments because the repo can trigger a `safe.directory` ownership warning.
 - On this machine, the Windows Store `py` / `python` app alias can break local preview startup or leave `localhost:8000` returning empty responses if the wrong interpreter path is used.
-- Some constitution pages include duplicated or noisy generated section links and content formatting artifacts.
+- Some constitution pages still include export-style formatting artifacts even after the initial cleanup pass. Use `TODO.md` for the later normalization backlog instead of treating all remaining formatting noise as urgent.
 
 Do not silently "clean up" generated constitution content unless the user asks for content normalization, because those pages may have been exported from another source.
 
@@ -241,14 +277,16 @@ Do not silently "clean up" generated constitution content unless the user asks f
 4. For new league intake, ask the league type first and infer the next internal ID from the existing entries in `data/leagues.json`.
 5. If the user provides a Sleeper league URL, extract the numeric league ID and store it in `sleeperLeagueId`.
 6. If a league has a `sleeperLeagueId`, preserve the Sleeper-enrichment path in `app.js`.
-7. If the task touches donations, inspect the parser assumptions before editing UI.
+7. If the task touches donations, inspect the parser assumptions, `docs/donation-update-workflow.md`, and `scripts/validate-donations-json.ps1` before editing UI or data.
 8. Keep changes minimal and local unless the user asks for a broader refactor.
 9. If behavior depends on live CSV data, note that full verification may require live network access in a browser.
 10. If the task touches chopped leagues, inspect `chopped-constitution.html` and the `CH1` record in `data/leagues.json` before making assumptions about the format.
 11. If you add a new repeatable automation or recurring local workflow, add a matching prompt entry to `COMMANDS.md`.
 12. Before creating a new automation, check whether the behavior belongs in an existing script instead of adding another narrowly scoped file.
-13. If a task is “run the checks” or “what still needs attention,” prefer `scripts/check-site.ps1`, `scripts/validate-leagues-json.ps1`, and `scripts/sync-sleeper-leagues.ps1` over ad hoc inspection.
-14. After `/init`, if the user needs a local preview, provide exactly two copyable lines: the terminal command to run from repo root and the browser URL to open. Keep both short and do not include the full folder path unless the user asks for it.
+13. If a task is `run the checks` or `what still needs attention,` prefer `scripts/check-site.ps1`, `scripts/validate-leagues-json.ps1`, `scripts/validate-donations-json.ps1`, `scripts/sync-sleeper-leagues.ps1`, and `scripts/release-helper.ps1` over ad hoc inspection. `scripts/check-site.ps1` already includes the constitution-page and donation-data validation passes.
+14. If the user asks to verify constitution back links, banner images, or section structure, prefer `scripts/check-constitutions.ps1`.
+15. After `/init`, if the user needs a local preview, provide exactly two copyable lines: the terminal command to run from repo root and the browser URL to open. Keep both short and do not include the full folder path unless the user asks for it.
+16. If the user asks for Reddit or recruiting copy, inspect `marketing/reddit-posts.md` first and extend it when a new pattern, title style, or CTA is worth reusing later.
 
 ## Verification Guidance
 
@@ -261,6 +299,11 @@ For most changes, verify with:
 - checking mobile grid breakpoints in `styles.css`
 - checking that homepage format filters still work when league rendering changes
 - checking that league order within a format still follows the internal IDs
+- running `scripts/validate-donations-json.ps1` when donation data changes
+- running `scripts/league-data-diff-report.ps1` after large league-data edits or syncs when you want a clean review summary
+- running `scripts/check-constitutions.ps1` when constitution back links, banner images, or section structure need verification
+- running `scripts/check-site.ps1` when you want the broadest single-pass check, including constitution validation
+- running `scripts/release-helper.ps1` when you want a push-readiness summary plus optional preview reopen
 - when verifying design or image changes locally, clear browser cache or do a hard refresh before judging the result, since localhost assets may be cached
 
 Local runtime notes:
@@ -270,7 +313,9 @@ Local runtime notes:
 - Do not default to `py -m http.server 8000` in user-facing instructions for this repo unless the user explicitly asks for `py`, because the Windows app alias can be unreliable here.
 - If the user asks what to paste into `cmd` after opening a terminal in the repo folder, answer with only `python -m http.server 8000`.
 - If the user asks what to type into the browser, answer with only `http://localhost:8000/index.html`.
+- When the user asks to `generate local host` or open the local preview, prefer `scripts/open-preview.ps1` so the page opens with a cache-busting query string.
 - If script or stylesheet changes are not visible, hard refresh first and then consider bumping the cache-busting query strings in `index.html`.
+- If script or stylesheet changes are not visible after a hard refresh, `scripts/bump-cache-bust.ps1` can update the homepage asset version strings for you.
 - The local preview helper `scripts/open-preview.ps1` already handles cache-busted localhost URLs and should be preferred for repeat preview checks.
 
 If runtime verification is required, use a browser or local static server when available.
