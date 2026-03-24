@@ -107,6 +107,10 @@ The site is effectively data-driven through local league JSON, local donation JS
   - Reusable Reddit title ideas, hooks, CTAs, and short promotional post templates for the VBP Fantasy Network.
   - Use this when the user wants recruiting copy, outreach posts, or future marketing ideas captured in-repo.
 
+- `marketing/facebook-posts.md`
+  - Reusable Facebook recruiting post logic and templates that lead with exact current openings before broadening into the network pitch.
+  - Use this when the user wants short social copy that names specific live or upcoming openings.
+
 - `.github/workflows/`
   - `validate-site.yml` runs the local site-check script on push and pull request.
   - `sleeper-sync.yml` provides an optional automated Sleeper sync path for `data/leagues.json`.
@@ -198,7 +202,7 @@ Current league notes:
 - `data/bracket-ledger.json` should keep `seasonDataReady` and `seedingReady` separate so pre-draft or partially filled bracket groups stay clearly provisional.
 - Use `data/bracket-groups.json`, `data/bracket-ledger.json`, and `scripts/sync-bracket-ledger.ps1` to manage combined bracket seeding across multiple `RDB` leagues.
 - `CH1` is a live chopped league and should continue pointing to `chopped-constitution.html`.
-- `KP1` and `KP2` are the initial 2026 keeper league placeholders at `$25` and `$50` buy-ins. Their `sleeperLeagueId` values are now stored, but they should remain `coming-soon` until their public invite links and LeagueSafe links are ready.
+- `KP1` and `KP2` are the initial 2026 keeper league placeholders at `$25` and `$50` buy-ins. Their `sleeperLeagueId` values and public Sleeper invite links are now stored, but they should remain `coming-soon` until their LeagueSafe links are ready.
 - In keeper leagues, only trades reset keeper years. Drops, waivers, and free-agent re-adds do not reset keeper years, regardless of which manager acquires the player.
 - In keeper leagues, future draft picks may be traded up to two years out, and managers must be paid through the farthest traded season before the trade is processed.
 - In keeper leagues, Round 1 is the keeper-cost floor. If a player's next cost would move earlier than Round 1, the player may be kept at a 1st-round cost for the final eligible season and then becomes ineligible afterward.
@@ -285,12 +289,12 @@ If donation rendering breaks:
 - Default early Reddit posts to short, direct recruiting copy focused on open spots, active owners, competitive formats, and clear rules.
 - Keep the network name in the title or first sentence so the brand still gets repeated exposure even when the body copy stays simple.
 - Use constitutions and clear rules as trust signals, but do not overload short recruiting posts with too much backstory unless the user asks for a fuller pitch.
-- When the user wants reusable outreach ideas, store them in `marketing/reddit-posts.md` so future prompts can build from past examples instead of starting from scratch.
+- When the user wants reusable outreach ideas, store them in the relevant file under `marketing/` so future prompts can build from past examples instead of starting from scratch.
 - If the user asks for a response-driving version, prefer a direct CTA such as `DM me or reply if interested.`
 
 ## Known Issues And Hazards
 
-- `DYN3` is intentionally still marked `open` without an `inviteLink` while waiting for a manager to leave; this remains a known accepted warning unless the user decides to close it or add the link.
+- `DYN3` now has a live invite link stored and should no longer be treated as the accepted missing-invite warning case.
 - `app_updated_donation_gid0.js` suggests donation parsing has already been revised once; compare carefully before replacing current logic.
 - Git operations may fail in some sandboxed environments because the repo can trigger a `safe.directory` ownership warning.
 - On this machine, the Windows Store `py` / `python` app alias can break local preview startup or leave `localhost:8000` returning empty responses if the wrong interpreter path is used.
@@ -315,7 +319,7 @@ Do not silently "clean up" generated constitution content unless the user asks f
 13. If a task is `run the checks` or `what still needs attention,` prefer `scripts/check-site.ps1`, `scripts/validate-leagues-json.ps1`, `scripts/validate-donations-json.ps1`, `scripts/sync-sleeper-leagues.ps1`, and `scripts/release-helper.ps1` over ad hoc inspection. `scripts/check-site.ps1` already includes the constitution-page and donation-data validation passes.
 14. If the user asks to verify constitution back links, banner images, or section structure, prefer `scripts/check-constitutions.ps1`.
 15. After `/init`, if the user needs a local preview, provide exactly two copyable lines: the terminal command to run from repo root and the browser URL to open. Keep both short and do not include the full folder path unless the user asks for it.
-16. If the user asks for Reddit or recruiting copy, inspect `marketing/reddit-posts.md` first and extend it when a new pattern, title style, or CTA is worth reusing later.
+16. If the user asks for Reddit, Facebook, or recruiting copy, inspect the relevant file in `marketing/` first and extend it when a new pattern, title style, or CTA is worth reusing later.
 17. If the user wants a keeper-manager dataset, commissioner worksheet, or a future keeper process, prefer `scripts/sync-keeper-ledger.ps1` and `data/keeper-ledger.json`.
 18. If the user wants combined bracket seeding, bracket standings, or grouped `RDB` automation, prefer `scripts/sync-bracket-ledger.ps1`, `data/bracket-groups.json`, and `data/bracket-ledger.json`.
 

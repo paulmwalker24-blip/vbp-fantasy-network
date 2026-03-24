@@ -2,9 +2,7 @@
 
 ## Immediate
 
-- [ ] Verify the homepage format filters work correctly in Chrome after cache-busting.
-- [ ] Add the `DYN3` invite link once the current manager leaves and the open spot is actually available.
-- [ ] Add the live Sleeper invite links and LeagueSafe links for `KP1` and `KP2` once the keeper leagues are ready to open publicly.
+- [ ] Add the LeagueSafe links for `KP1` and `KP2`, then flip them from `coming-soon` when the keeper leagues are ready to open publicly.
 
 ## Constitutions
 
@@ -22,6 +20,9 @@
 
 ### Immediate
 
+- [x] Verify the homepage format filters work correctly in Chrome after cache-busting.
+- [x] Add the `DYN3` invite link once the current manager leaves and the open spot is actually available.
+- [x] Store the public Sleeper invite links for `KP1` and `KP2` while keeping the keeper leagues in `coming-soon` status until their LeagueSafe links are ready.
 - [x] Confirm league cards render in internal ID order within each format, especially `RD1`, `RD2`, `RD3`.
 - [x] Create and store the dynasty LeagueSafe links for `DYN1`, `DYN2`, and `DYN3`, including future-season links for `2027` and `2028`.
 - [x] Push the dynasty LeagueSafe, validator, and preview workflow updates to `origin/main`.
