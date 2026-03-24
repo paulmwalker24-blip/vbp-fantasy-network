@@ -134,7 +134,7 @@ The site is effectively data-driven through local league JSON, local donation JS
 - `bracket-center.js`
   - Client-side renderer for the public Bracket Center page.
   - Reads `data/bracket-ledger.json` and renders division counts plus full combined standings.
-  - Falls back to a clearly labeled sample 60-team preview when the live grouped bracket data is still too incomplete for a credible public standings view.
+  - Falls back to a clearly labeled sample 60-team preview when the live grouped bracket data is still pre-draft, incomplete, or not yet showing meaningful standings.
   - Also fetches live Sleeper matchup data by division so the center can expose current-week scoreboard tabs for grouped bracket leagues.
   - Live scoreboards should refresh from Sleeper in the browser when users reload the page, while standings remain a commissioner-published snapshot from local generated data.
 
@@ -213,6 +213,7 @@ Current league notes:
 - Public format-center pages should live as standalone pages on the same site rather than becoming homepage focal sections.
 - Public format-center pages may use a clearly labeled sample preview until the live data is full enough to support a strong public-facing view.
 - For League Centers, live current-week scoreboards may fetch directly from Sleeper in the browser, but official standings, cut lines, and custom playoff logic should remain manually generated and published by the commissioner.
+- The Bracket Center sample preview should turn off automatically once the grouped leagues are season-ready, fully populated, and showing meaningful live standings data rather than all-zero placeholders.
 - `CH1` is a live chopped league and should continue pointing to `chopped-constitution.html`.
 - `KP1` and `KP2` are the initial 2026 keeper leagues at `$25` and `$50` buy-ins. Their `sleeperLeagueId` values and public Sleeper invite links are now stored, and they are live `open` records even though their LeagueSafe links are still pending.
 - In keeper leagues, only trades reset keeper years. Drops, waivers, and free-agent re-adds do not reset keeper years, regardless of which manager acquires the player.

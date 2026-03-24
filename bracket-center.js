@@ -294,7 +294,7 @@ function buildDemoGroup(group) {
   return {
     ...group,
     isSample: true,
-    notes: "Sample 60-team preview is currently shown because the live bracket group is not full enough yet to present a complete public standings view.",
+    notes: "Sample 60-team preview is currently shown because the live bracket group is still pre-draft, incomplete, or not yet showing meaningful live standings.",
     overallStandings: rankedTeams,
     divisionWinners: seededDivisionWinners,
     playoffField: [...seededDivisionWinners, ...seededDirectQualifiers, ...seededWildCards],
@@ -306,8 +306,36 @@ function buildDemoGroup(group) {
   };
 }
 
+function hasMeaningfulStandingsData(group) {
+  const standings = Array.isArray(group?.overallStandings) ? group.overallStandings : [];
+
+  return standings.some(entry => {
+    const recordParts = text(entry?.record)
+      .split("-")
+      .map(part => Number(part.trim()))
+      .filter(value => Number.isFinite(value));
+
+    const totalGames = recordParts.reduce((sum, value) => sum + value, 0);
+    const pointsFor = toNumber(entry?.pointsFor);
+
+    return totalGames > 0 || pointsFor > 0;
+  });
+}
+
 function shouldUseDemoGroup(group) {
-  return (Array.isArray(group?.overallStandings) ? group.overallStandings.length : 0) < getExpectedTeamCount(group);
+  const trackedTeams = Array.isArray(group?.overallStandings) ? group.overallStandings.length : 0;
+  const expectedTeams = getExpectedTeamCount(group);
+  const seasonDataReady = Boolean(group?.seasonDataReady);
+
+  if (!seasonDataReady) {
+    return true;
+  }
+
+  if (trackedTeams < expectedTeams) {
+    return true;
+  }
+
+  return !hasMeaningfulStandingsData(group);
 }
 
 function computeDivisionCounts(group) {
@@ -743,7 +771,7 @@ function renderMeta(group) {
 
   if (statusText) {
     statusBanner.hidden = false;
-    statusBanner.className = `format-center-banner${seasonDataReady && seedingReady ? " is-live" : " is-provisional"}`;
+    statusBanner.className = `format-center-banner${!group?.isSample && seasonDataReady && seedingReady ? " is-live" : " is-provisional"}`;
     statusBanner.textContent = statusText;
   } else {
     statusBanner.hidden = true;
