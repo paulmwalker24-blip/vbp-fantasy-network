@@ -37,10 +37,28 @@ Use this structure for short Facebook recruiting posts:
 
 `Comment or DM me if interested.`
 
+## Dynasty Orphan Template
+
+`VBP Fantasy Network currently has [number] orphan team[s] open in a year-[league year] dynasty league.`
+
+`Core pieces include [player list] and [player list]. Rules are posted up front, and the live Sleeper invite is ready now.`
+
+`Comment or DM me if interested.`
+
+## Bracket Launch Template
+
+`VBP Fantasy Network is officially opening the Bracket League to new people, not just returning players.`
+
+`It is a [team count]-team tournament across [division count] separate divisions, with live division links and current bought-in counts listed directly in the post.`
+
+`Comment or DM me if interested.`
+
 ## Notes For Future Posts
 
 - The first sentence should usually be the strongest sentence in the post.
 - If two limited-spot leagues are featured on the homepage, mention them explicitly.
 - If a league is not truly open yet, phrase it as `should have 1 opening coming soon` instead of claiming it is open.
+- For dynasty orphan posts, say `year 2` or the exact league year in the first sentence so people immediately understand it is not a startup.
+- For bracket posts, mention both the fast and slow draft options in the opening lines if they are live.
 - If new formats launch, mention them after the urgent openings so the post feels current.
 - Keep the broader network description secondary, not first.

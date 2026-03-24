@@ -3,6 +3,7 @@
 ## Immediate
 
 - [ ] Add the LeagueSafe links for `KP1` and `KP2`. They are now intentionally `open` with public invite links, so the missing LeagueSafe links are the only temporary keeper-launch gap.
+- [ ] Revisit the weaker `DYN3` year-2 orphan and try trusted private outreach before advertising that rebuild roster broadly.
 
 ## Constitutions
 
@@ -10,7 +11,6 @@
 
 ## Cleanup / Future Improvements
 
-- [ ] Add a Best Ball Union center page that exposes combined public standings in the same separate-page pattern as the Bracket Center.
 - [ ] Revisit the general Sleeper thumbnail image and refine it into a final brand-ready square image based primarily on the VBP banner.
 
 ## Next Automation Ideas
@@ -80,3 +80,4 @@
 
 - [x] Add a small documented workflow for updating `data/leagues.json` from the intake template.
 - [x] Keep planned empty formats visible in Active Leagues until the keeper format is ready to launch.
+- [x] Add a Best Ball Union center page that exposes combined public standings, league leaders, and weekly high scores in the same separate-page pattern as the Bracket Center.

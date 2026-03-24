@@ -37,6 +37,22 @@
 
 `DM me or reply if interested.`
 
+### Dynasty Orphan Template
+
+`VBP Fantasy Network has [number] year-[league year] dynasty orphan team[s] open right now in [league name].`
+
+`Core pieces include [player list] on one orphan and [player list] on the other. Full rules are posted here: https://vbp-fantasy-network.vercel.app/dynasty-constitution.html`
+
+`DM me or reply if interested.`
+
+### Bracket Launch Template
+
+`VBP Fantasy Network is opening the Bracket League to new people, not just returning players.`
+
+`This is a [team count]-team tournament made up of [division count] separate divisions, with [playoff field] teams advancing to the overall bracket. Current bought-in counts and division invite links are below, plus the main hub for rules and format details.`
+
+`DM me or reply if interested.`
+
 ## Short Hooks
 
 - `Competitive fantasy football leagues with open spots`
@@ -56,4 +72,6 @@
 - Keep testing shorter copy first when the goal is activity.
 - If a subreddit dislikes promotional tone, trim the brand language in the body but keep `VBP Fantasy Network` in the title.
 - If the post is format-specific, swap the generic multi-format line for the exact formats with current open spots.
+- For dynasty orphan posts, lead with the exact number of orphan teams and note the current dynasty year so the post feels concrete.
+- For bracket posts, list each division by name with its live count so readers can choose a fast or slow room quickly.
 - Save new versions here when a post feels natural and gets engagement.
