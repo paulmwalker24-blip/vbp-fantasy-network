@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 428" role="img" aria-labelledby="title desc">
+  <title id="title">Bracket Center Banner</title>
+  <desc id="desc">Blue motion-themed banner with the words Bracket Center.</desc>
+  <defs>
+    <linearGradient id="bgFade" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#eaf2ff"/>
+      <stop offset="18%" stop-color="#2f73d2"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="82%" stop-color="#2f73d2"/>
+      <stop offset="100%" stop-color="#eaf2ff"/>
+    </linearGradient>
+    <radialGradient id="centerGlow" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="58%" stop-color="#f5f9ff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#dbeafe" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="textBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#347fda"/>
+      <stop offset="100%" stop-color="#133b88"/>
+    </linearGradient>
+    <linearGradient id="lineBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1b47a8" stop-opacity="0.05"/>
+      <stop offset="18%" stop-color="#1e4fd1" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#6bddff" stop-opacity="0.95"/>
+      <stop offset="82%" stop-color="#1e4fd1" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#1b47a8" stop-opacity="0.05"/>
+    </linearGradient>
+    <filter id="softBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <filter id="lineBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+  </defs>
+
+  <rect width="1536" height="428" fill="url(#bgFade)"/>
+  <rect width="1536" height="428" fill="url(#centerGlow)"/>
+
+  <g opacity="0.8">
+    <path d="M0 122 C210 212 350 250 640 246 L640 308 C360 308 208 286 0 188 Z" fill="#1d4ed8" opacity="0.52"/>
+    <path d="M1536 122 C1326 212 1186 250 896 246 L896 308 C1176 308 1328 286 1536 188 Z" fill="#1d4ed8" opacity="0.52"/>
+    <path d="M0 144 C248 224 430 228 708 218" stroke="#93c5fd" stroke-width="14" fill="none" opacity="0.42" filter="url(#lineBlur)"/>
+    <path d="M1536 144 C1288 224 1106 228 828 218" stroke="#93c5fd" stroke-width="14" fill="none" opacity="0.42" filter="url(#lineBlur)"/>
+    <path d="M0 164 C250 246 432 248 770 234" stroke="#2563eb" stroke-width="18" fill="none" opacity="0.66"/>
+    <path d="M1536 164 C1286 246 1104 248 766 234" stroke="#2563eb" stroke-width="18" fill="none" opacity="0.66"/>
+    <path d="M0 332 C286 226 472 188 738 198" stroke="url(#lineBlue)" stroke-width="10" fill="none" filter="url(#lineBlur)"/>
+    <path d="M1536 332 C1250 226 1064 188 798 198" stroke="url(#lineBlue)" stroke-width="10" fill="none" filter="url(#lineBlur)"/>
+    <path d="M0 352 C290 240 470 202 758 210" stroke="#0f3ea3" stroke-width="26" fill="none" opacity="0.56"/>
+    <path d="M1536 352 C1246 240 1066 202 778 210" stroke="#0f3ea3" stroke-width="26" fill="none" opacity="0.56"/>
+    <path d="M0 374 C294 250 486 216 770 224" stroke="#0a2f7d" stroke-width="34" fill="none" opacity="0.68"/>
+    <path d="M1536 374 C1242 250 1050 216 766 224" stroke="#0a2f7d" stroke-width="34" fill="none" opacity="0.68"/>
+  </g>
+
+  <g opacity="0.95" filter="url(#softBlur)">
+    <circle cx="146" cy="219" r="30" fill="#9ae6ff"/>
+    <circle cx="1390" cy="210" r="28" fill="#9ae6ff"/>
+    <circle cx="774" cy="300" r="22" fill="#ffffff"/>
+    <circle cx="286" cy="354" r="10" fill="#93c5fd"/>
+    <circle cx="1250" cy="356" r="10" fill="#93c5fd"/>
+  </g>
+
+  <g opacity="0.25">
+    <path d="M262 0 L520 182" stroke="#cfe2ff" stroke-width="7"/>
+    <path d="M328 0 L556 176" stroke="#cfe2ff" stroke-width="5"/>
+    <path d="M1208 0 L972 178" stroke="#cfe2ff" stroke-width="7"/>
+    <path d="M1274 0 L1010 182" stroke="#cfe2ff" stroke-width="5"/>
+    <path d="M736 0 L796 112" stroke="#dbeafe" stroke-width="3"/>
+  </g>
+
+  <g transform="translate(768 228)">
+    <text
+      x="0"
+      y="0"
+      text-anchor="middle"
+      font-family="Arial, Helvetica, sans-serif"
+      font-size="112"
+      font-style="italic"
+      font-weight="900"
+      letter-spacing="1.5"
+      fill="url(#textBlue)"
+    >
+      BRACKET CENTER
+    </text>
+  </g>
+</svg>

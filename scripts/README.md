@@ -225,6 +225,35 @@ Structured output:
 powershell -ExecutionPolicy Bypass -File .\scripts\sync-bracket-ledger.ps1 -PassThru | ConvertTo-Json -Depth 8
 ```
 
+## `export-bracket-report.ps1`
+
+Builds a commissioner-friendly text standings report from `data/bracket-ledger.json`.
+
+It currently outputs:
+
+- a `DIVISION PLAYOFF COUNTS` section showing how many teams from each bracket league are in the tracked playoff field
+- a `FULL COMBINED STANDINGS` section listing every currently tracked team in rank order
+- status labels for each team: `Division Leader`, `In`, `Wild Card`, or `Out`
+- a short notes block, including whether the current report is provisional
+
+Default usage:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\export-bracket-report.ps1
+```
+
+Set a week label:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\export-bracket-report.ps1 -WeekLabel "Week 9"
+```
+
+Write the report to a file:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\export-bracket-report.ps1 -WeekLabel "Week 9" -OutputPath .\reports\bracket-week-9.txt
+```
+
 ## `get-next-league-id.ps1`
 
 Returns the next suggested internal ID for a given format based on the existing records in `data/leagues.json`.

@@ -80,6 +80,7 @@ The site is effectively data-driven through local league JSON, local donation JS
   - Local maintenance automation for league intake, Sleeper sync, validation, preview, and pre-push checks.
   - Current scripts include:
     - `sync-bracket-ledger.ps1`
+    - `export-bracket-report.ps1`
     - `sync-keeper-ledger.ps1`
     - `bump-cache-bust.ps1`
     - `check-constitutions.ps1`
@@ -125,9 +126,17 @@ The site is effectively data-driven through local league JSON, local donation JS
 - `dynasty-constitution.html`
 - `bestball-constitution.html`
 - `bracket-constitution.html`
+- `bracket-center.html`
 - `keeper-constitution.html`
 - `chopped-constitution.html`
   - Standalone static pages using the shared stylesheet.
+
+- `bracket-center.js`
+  - Client-side renderer for the public Bracket Center page.
+  - Reads `data/bracket-ledger.json` and renders division counts plus full combined standings.
+  - Falls back to a clearly labeled sample 60-team preview when the live grouped bracket data is still too incomplete for a credible public standings view.
+  - Also fetches live Sleeper matchup data by division so the center can expose current-week scoreboard tabs for grouped bracket leagues.
+  - Live scoreboards should refresh from Sleeper in the browser when users reload the page, while standings remain a commissioner-published snapshot from local generated data.
 
 - `app_updated_donation_gid0.js`
   - Appears to be an alternate or newer donation parsing variant.
@@ -200,15 +209,18 @@ Current league notes:
 - For bracket groups, Seeds `6-30` are the next best teams by `record` then `points for` to two decimals.
 - For bracket groups, Seeds `31-32` are the two highest `points for` teams among the remaining non-qualifiers, with `record` used only as a fallback tiebreaker when needed.
 - `data/bracket-ledger.json` should keep `seasonDataReady` and `seedingReady` separate so pre-draft or partially filled bracket groups stay clearly provisional.
-- Use `data/bracket-groups.json`, `data/bracket-ledger.json`, and `scripts/sync-bracket-ledger.ps1` to manage combined bracket seeding across multiple `RDB` leagues.
+- Use `data/bracket-groups.json`, `data/bracket-ledger.json`, `scripts/sync-bracket-ledger.ps1`, and `scripts/export-bracket-report.ps1` to manage combined bracket seeding and commissioner-facing standings reports across multiple `RDB` leagues.
+- Public format-center pages should live as standalone pages on the same site rather than becoming homepage focal sections.
+- Public format-center pages may use a clearly labeled sample preview until the live data is full enough to support a strong public-facing view.
+- For League Centers, live current-week scoreboards may fetch directly from Sleeper in the browser, but official standings, cut lines, and custom playoff logic should remain manually generated and published by the commissioner.
 - `CH1` is a live chopped league and should continue pointing to `chopped-constitution.html`.
-- `KP1` and `KP2` are the initial 2026 keeper league placeholders at `$25` and `$50` buy-ins. Their `sleeperLeagueId` values and public Sleeper invite links are now stored, but they should remain `coming-soon` until their LeagueSafe links are ready.
+- `KP1` and `KP2` are the initial 2026 keeper leagues at `$25` and `$50` buy-ins. Their `sleeperLeagueId` values and public Sleeper invite links are now stored, and they are live `open` records even though their LeagueSafe links are still pending.
 - In keeper leagues, only trades reset keeper years. Drops, waivers, and free-agent re-adds do not reset keeper years, regardless of which manager acquires the player.
 - In keeper leagues, future draft picks may be traded up to two years out, and managers must be paid through the farthest traded season before the trade is processed.
 - In keeper leagues, Round 1 is the keeper-cost floor. If a player's next cost would move earlier than Round 1, the player may be kept at a 1st-round cost for the final eligible season and then becomes ineligible afterward.
 - Use `data/keeper-ledger.json` and `scripts/sync-keeper-ledger.ps1` to pull current keeper-league managers from Sleeper and preserve manual keeper-slot entries between syncs.
 - The keeper ledger should expose current roster players for each manager so the commissioner can fill keeper declarations from a single explorer file.
-- Prelaunch league records that are not yet joinable should use `coming-soon` rather than `open` until the Sleeper invite and LeagueSafe links exist.
+- Prelaunch league records that are not yet joinable should usually use `coming-soon` rather than `open` until the Sleeper invite and LeagueSafe links exist, unless the user explicitly wants the league opened early with a known temporary LeagueSafe gap.
 - LeagueSafe links should remain stored data unless the user explicitly asks to expose them in the homepage UI.
 - If a league needs separate LeagueSafe links for future seasons, store the current season in `leagueSafeLink` and add an optional `leagueSafeLinksBySeason` object keyed by season, such as `2026`, `2027`, and `2028`.
 - Keeper leagues may use season-keyed `leagueSafeLinksBySeason` data the same way dynasty leagues do once the yearly payment links exist.
@@ -246,6 +258,7 @@ If donation rendering breaks:
 - Preserve the format filter markup and `data-format` values in `#formatFilters` unless the filtering behavior is being intentionally changed.
 - Constitution pages follow a repeated pattern; keep new pages aligned with existing structure.
 - `index.html` now includes live Chopped and Keeper constitution cards; do not revert them to placeholders unless requested.
+- Standalone public standings/scoreboard destinations should live in a separate `League Centers` block under the constitutions area rather than being mixed into the constitution card grid.
 
 ### CSS
 
@@ -272,6 +285,7 @@ If donation rendering breaks:
 - If a task can be handled by an existing local script, use that script and then summarize the result for the user.
 - Keep local scripts conservative about which fields they mutate.
 - Bracket-ledger syncs should preserve the configured bracket groups while only refreshing Sleeper-owned standings and manager identity fields.
+- Bracket report exports should read from `data/bracket-ledger.json` and avoid mutating the grouped bracket data.
 - Keeper-ledger syncs should preserve manual keeper slot entries and notes while only refreshing Sleeper-owned league and manager identity fields.
 - Validation and check scripts should be safe to run repeatedly.
 - Use `release-helper.ps1` when the user wants a quick answer on whether the site is ready to push.
@@ -321,7 +335,7 @@ Do not silently "clean up" generated constitution content unless the user asks f
 15. After `/init`, if the user needs a local preview, provide exactly two copyable lines: the terminal command to run from repo root and the browser URL to open. Keep both short and do not include the full folder path unless the user asks for it.
 16. If the user asks for Reddit, Facebook, or recruiting copy, inspect the relevant file in `marketing/` first and extend it when a new pattern, title style, or CTA is worth reusing later.
 17. If the user wants a keeper-manager dataset, commissioner worksheet, or a future keeper process, prefer `scripts/sync-keeper-ledger.ps1` and `data/keeper-ledger.json`.
-18. If the user wants combined bracket seeding, bracket standings, or grouped `RDB` automation, prefer `scripts/sync-bracket-ledger.ps1`, `data/bracket-groups.json`, and `data/bracket-ledger.json`.
+18. If the user wants combined bracket seeding, weekly bracket standings reports, or grouped `RDB` automation, prefer `scripts/sync-bracket-ledger.ps1`, `scripts/export-bracket-report.ps1`, `data/bracket-groups.json`, and `data/bracket-ledger.json`.
 
 ## Verification Guidance
 

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bracket Center | VBP Fantasy Network</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="constitution-page format-center-page">
+  <div class="constitution-nav" id="top">
+    <div class="container format-center-nav-links">
+      <a href="index.html#constitutions" class="constitution-back-link">Back to Hub</a>
+      <a href="bracket-constitution.html" class="constitution-back-link">View Constitution</a>
+    </div>
+  </div>
+
+  <header class="constitution-hero">
+    <div class="constitution-hero-overlay">
+      <div class="container constitution-hero-inner">
+        <img src="bracket-center-banner.png" alt="Bracket Center" class="constitution-banner" />
+        <div class="constitution-page-title">
+          <h1 id="centerPageTitle">Bracket Center</h1>
+          <p id="centerPageSubtitle">Public standings and playoff race snapshot for the VBP Bracket Redraft group.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container constitution-layout">
+      <section class="constitution-summary-card">
+        <h2>Live League Center</h2>
+        <p>This page is the public standings layer for the Bracket format. It is separate from the homepage so the hub can stay focused on recruiting, league discovery, and constitutions.</p>
+        <div class="format-center-actions">
+          <a href="bracket-constitution.html" class="btn btn-primary">View Constitution</a>
+          <button type="button" class="btn btn-secondary" id="reloadCenterButton">Reload Page</button>
+        </div>
+      </section>
+
+      <section class="constitution-content">
+        <div class="section-heading">
+          <h2>Center Snapshot</h2>
+          <p>Published standings, division counts, and current cut-line context for the grouped bracket field.</p>
+        </div>
+        <div class="format-center-meta-grid" id="centerMetaGrid">
+          <div class="format-center-metric">
+            <span class="format-center-metric-label">Group</span>
+            <strong class="format-center-metric-value" id="centerGroupName">Loading...</strong>
+          </div>
+          <div class="format-center-metric">
+            <span class="format-center-metric-label">Last Updated</span>
+            <strong class="format-center-metric-value" id="centerLastUpdated">Loading...</strong>
+          </div>
+          <div class="format-center-metric">
+            <span class="format-center-metric-label">Teams Tracked</span>
+            <strong class="format-center-metric-value" id="centerTrackedTeams">Loading...</strong>
+          </div>
+          <div class="format-center-metric">
+            <span class="format-center-metric-label">Playoff Field</span>
+            <strong class="format-center-metric-value" id="centerPlayoffFieldSize">Loading...</strong>
+          </div>
+        </div>
+        <div class="format-center-banner" id="centerStatusBanner" hidden></div>
+      </section>
+
+      <section class="constitution-section-card">
+        <div class="constitution-section-header">
+          <h2>Division Playoff Counts</h2>
+          <a href="#top" class="constitution-jump-link">Back to top</a>
+        </div>
+        <div class="format-center-division-grid" id="divisionCountsContainer">
+          <div class="empty-state">Loading division counts...</div>
+        </div>
+      </section>
+
+      <section class="constitution-section-card">
+        <div class="constitution-section-header">
+          <h2>Live League Scoreboards</h2>
+          <a href="#top" class="constitution-jump-link">Back to top</a>
+        </div>
+        <div class="format-center-scoreboard-header">
+          <p class="format-center-scoreboard-copy" id="scoreboardSummary">
+            Use the division tabs to follow live or current-week matchup scores across the grouped bracket leagues.
+          </p>
+          <div class="format-center-actions">
+            <span class="format-center-scoreboard-week" id="scoreboardWeekLabel">Loading week...</span>
+            <button type="button" class="btn btn-secondary" id="refreshScoresButton">Refresh Scores</button>
+          </div>
+        </div>
+        <div class="format-center-tabs" id="scoreboardTabs">
+          <span class="empty-state">Loading divisions...</span>
+        </div>
+        <div class="format-center-scoreboard-list" id="scoreboardPanels">
+          <div class="empty-state">Loading scoreboards...</div>
+        </div>
+      </section>
+
+      <section class="constitution-section-card">
+        <div class="constitution-section-header">
+          <h2>Full Combined Standings</h2>
+          <a href="#top" class="constitution-jump-link">Back to top</a>
+        </div>
+        <div class="format-center-table-wrap">
+          <table class="constitution-table format-center-table">
+            <thead>
+              <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Team</th>
+                <th scope="col">Division</th>
+                <th scope="col">Record</th>
+                <th scope="col">PF</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody id="standingsTableBody">
+              <tr>
+                <td colspan="6" class="format-center-table-empty">Loading standings...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="bracket-center.js"></script>
+</body>
+</html>

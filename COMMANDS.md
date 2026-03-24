@@ -146,6 +146,12 @@ Refresh the full combined standings table for one bracket group:
 Run the bracket ledger sync and refresh data/bracket-ledger.json from Sleeper, then give me the current combined overall standings for BRACKET-2026-1 with rank, team name, league/division, record, and points for. If the season is not far enough along or the group is not full yet, tell me the standings are provisional.
 ```
 
+Generate the weekly-style bracket standings report:
+
+```text
+Run the bracket ledger sync for BRACKET-2026-1, then run the bracket report exporter using Week 9 and give me the full report with division playoff counts plus all ranked teams from 1 through the bottom of the group. If the season data is still incomplete, tell me the report is provisional.
+```
+
 ## League Data Diff
 
 Compare a before snapshot to the current league data and summarize every changed league:

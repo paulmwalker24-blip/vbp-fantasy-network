@@ -2,7 +2,7 @@
 
 ## Immediate
 
-- [ ] Add the LeagueSafe links for `KP1` and `KP2`, then flip them from `coming-soon` when the keeper leagues are ready to open publicly.
+- [ ] Add the LeagueSafe links for `KP1` and `KP2`. They are now intentionally `open` with public invite links, so the missing LeagueSafe links are the only temporary keeper-launch gap.
 
 ## Constitutions
 
@@ -10,10 +10,12 @@
 
 ## Cleanup / Future Improvements
 
+- [ ] Add a Best Ball Union center page that exposes combined public standings in the same separate-page pattern as the Bracket Center.
 - [ ] Revisit the general Sleeper thumbnail image and refine it into a final brand-ready square image based primarily on the VBP banner.
 
 ## Next Automation Ideas
 
+- [ ] Decide whether to add an optional Tuesday GitHub Action that republishes bracket standings snapshots automatically, or keep standings updates fully manual while live scoreboards continue to refresh from Sleeper in the browser.
 - [ ] Add a missing-data autofill assistant that suggests likely `constitutionPage` and default format-specific fields for new league records.
 
 ## Completed
@@ -23,6 +25,7 @@
 - [x] Verify the homepage format filters work correctly in Chrome after cache-busting.
 - [x] Add the `DYN3` invite link once the current manager leaves and the open spot is actually available.
 - [x] Store the public Sleeper invite links for `KP1` and `KP2` while keeping the keeper leagues in `coming-soon` status until their LeagueSafe links are ready.
+- [x] Flip `KP1` and `KP2` from `coming-soon` to `open` once their public Sleeper invite links are ready, even before the LeagueSafe links are added.
 - [x] Confirm league cards render in internal ID order within each format, especially `RD1`, `RD2`, `RD3`.
 - [x] Create and store the dynasty LeagueSafe links for `DYN1`, `DYN2`, and `DYN3`, including future-season links for `2027` and `2028`.
 - [x] Push the dynasty LeagueSafe, validator, and preview workflow updates to `origin/main`.
@@ -52,6 +55,9 @@
 
 ### Automation Recommendations
 
+- [x] Add a first public Bracket Center page that renders division playoff counts and full combined standings from the local bracket ledger.
+- [x] Add live per-division scoreboard tabs to the Bracket Center so visitors can follow current-week matchup scores across Titan, Apex, Iron, Vanguard, and Dominion.
+- [x] Add a bracket report generator that outputs division playoff counts plus full combined group standings from the local bracket ledger.
 - [x] Add a small local script to parse a Sleeper league URL and auto-fill `sleeperLeagueId` into a league record.
 - [x] Add a local sync script that refreshes Sleeper-derived fields such as league name, team count, and filled spots for all leagues with a `sleeperLeagueId`.
 - [x] Add a validation script for `data/leagues.json` to catch missing required fields, invalid formats, broken constitution page references, and malformed URLs before changes are pushed.
