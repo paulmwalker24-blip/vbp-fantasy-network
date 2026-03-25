@@ -79,6 +79,7 @@ The site is effectively data-driven through local league JSON, local donation JS
 
 - `assets/images/`
   - Shared banner, format artwork, and social/center image assets used by the public HTML pages.
+  - Includes the refined square social asset `sleeper-thumbnail-general.png` for general Sleeper or social sharing.
 
 - `scripts/`
   - Local maintenance automation for league intake, Sleeper sync, validation, preview, and pre-push checks.
@@ -90,6 +91,7 @@ The site is effectively data-driven through local league JSON, local donation JS
     - `check-constitutions.ps1`
     - `league-data-diff-report.ps1`
     - `release-helper.ps1`
+    - `create-general-thumbnail.ps1`
     - `validate-donations-json.ps1`
     - `set-sleeper-league-id.ps1`
     - `sync-sleeper-leagues.ps1`
@@ -141,6 +143,12 @@ The site is effectively data-driven through local league JSON, local donation JS
   - Falls back to a clearly labeled sample 60-team preview when the live grouped bracket data is still pre-draft, incomplete, or not yet showing meaningful standings.
   - Also fetches live Sleeper matchup data by division so the center can expose current-week scoreboard tabs for grouped bracket leagues.
   - Live scoreboards should refresh from Sleeper in the browser when users reload the page, while standings remain a commissioner-published snapshot from local generated data.
+
+- `assets/js/bestball-center.js`
+  - Client-side renderer for the public Best Ball Union Center page.
+  - Pulls Best Ball Union league data and renders league leaders, an overall points leaderboard, and weekly overall high-score tracking across all BBU leagues.
+  - Uses a clearly labeled Week 5 sample preview until live BBU scoring is meaningful enough to support the public view.
+  - The overall points leaderboard is intentionally capped at the top 20 teams, and weekly high scores refer to the single highest scorer across all BBU leagues for each week.
 
 - `assets/reference/app_updated_donation_gid0.js`
   - Appears to be an alternate or newer donation parsing variant.
@@ -218,6 +226,9 @@ Current league notes:
 - Public format-center pages may use a clearly labeled sample preview until the live data is full enough to support a strong public-facing view.
 - For League Centers, live current-week scoreboards may fetch directly from Sleeper in the browser, but official standings, cut lines, and custom playoff logic should remain manually generated and published by the commissioner.
 - The Bracket Center sample preview should turn off automatically once the grouped leagues are season-ready, fully populated, and showing meaningful live standings data rather than all-zero placeholders.
+- The Best Ball Union Center sample preview should remain clearly labeled and may stay in place until live BBU results are meaningful enough to replace it cleanly.
+- For the Best Ball Union Center, weekly high scores refer to the single highest-scoring team across all BBU leagues for that week, not per-division weekly winners.
+- For the Best Ball Union Center, the public overall points leaderboard is intentionally limited to the top 20 teams.
 - `CH1` is a live chopped league and should continue pointing to `chopped-constitution.html`.
 - `KP1` and `KP2` are the initial 2026 keeper leagues at `$25` and `$50` buy-ins. Their `sleeperLeagueId` values and public Sleeper invite links are now stored, and they are live `open` records even though their LeagueSafe links are still pending.
 - In keeper leagues, only trades reset keeper years. Drops, waivers, and free-agent re-adds do not reset keeper years, regardless of which manager acquires the player.
@@ -310,6 +321,7 @@ If donation rendering breaks:
 - Use constitutions and clear rules as trust signals, but do not overload short recruiting posts with too much backstory unless the user asks for a fuller pitch.
 - When the user wants reusable outreach ideas, store them in the relevant file under `marketing/` so future prompts can build from past examples instead of starting from scratch.
 - If the user asks for a response-driving version, prefer a direct CTA such as `DM me or reply if interested.`
+- For weaker dynasty rebuilds or questionable orphan takeovers, prefer trusted private outreach language over broad public promotion.
 
 ## Known Issues And Hazards
 
@@ -317,7 +329,7 @@ If donation rendering breaks:
 - `assets/reference/app_updated_donation_gid0.js` suggests donation parsing has already been revised once; compare carefully before replacing current logic.
 - Git operations may fail in some sandboxed environments because the repo can trigger a `safe.directory` ownership warning.
 - On this machine, the Windows Store `py` / `python` app alias can break local preview startup or leave `localhost:8000` returning empty responses if the wrong interpreter path is used.
-- Some constitution pages still include export-style formatting artifacts even after the initial cleanup pass. Use `TODO.md` for the later normalization backlog instead of treating all remaining formatting noise as urgent.
+- Some constitution pages may still include minor export-style formatting artifacts, but the noisiest redraft, best ball, bracket, and dynasty sections have already been normalized. Do not treat remaining cleanup as urgent unless the user asks for another polish pass.
 
 Do not silently "clean up" generated constitution content unless the user asks for content normalization, because those pages may have been exported from another source.
 
