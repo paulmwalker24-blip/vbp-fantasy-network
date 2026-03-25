@@ -92,8 +92,8 @@ Draw-CoverImage -Graphics $graphics -Image $bannerImage -X 0 -Y 0 -Width $Size -
 
 $overlayBrush = New-Object System.Drawing.Drawing2D.LinearGradientBrush(
   $backgroundRect,
-  [System.Drawing.Color]::FromArgb(185, 15, 23, 42),
-  [System.Drawing.Color]::FromArgb(220, 15, 23, 42),
+  [System.Drawing.Color]::FromArgb(190, 15, 23, 42),
+  [System.Drawing.Color]::FromArgb(232, 15, 23, 42),
   90
 )
 $graphics.FillRectangle($overlayBrush, $backgroundRect)
@@ -101,34 +101,78 @@ $graphics.FillRectangle($overlayBrush, $backgroundRect)
 $navyBrush = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(15, 23, 42))
 $whiteBrush = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::White)
 $softWhiteBrush = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(222, 235, 245, 255))
-$blueBrush = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(37, 99, 235))
-$cardBrush = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(232, 248, 253, 255))
+$cardBrush = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(228, 248, 253, 255))
+$darkCardBrush = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(170, 10, 18, 34))
 $borderPen = New-Object System.Drawing.Pen ([System.Drawing.Color]::FromArgb(120, 211, 225, 239), 2)
+$dividerPen = New-Object System.Drawing.Pen ([System.Drawing.Color]::FromArgb(150, 96, 165, 250), 3)
 
-$bannerCardPath = New-RoundedRectPath -X 74 -Y 72 -Width ($Size - 148) -Height 310 -Radius 38
-$graphics.FillPath($whiteBrush, $bannerCardPath)
+$bannerCardPath = New-RoundedRectPath -X 74 -Y 72 -Width ($Size - 148) -Height 312 -Radius 38
+$graphics.FillPath($cardBrush, $bannerCardPath)
 $graphics.DrawPath($borderPen, $bannerCardPath)
+Draw-ContainedImage -Graphics $graphics -Image $bannerImage -X 102 -Y 112 -Width ($Size - 204) -Height 224
 
-Draw-ContainedImage -Graphics $graphics -Image $bannerImage -X 110 -Y 112 -Width ($Size - 220) -Height 220
+$titleFont = New-Object System.Drawing.Font("Arial", 58, [System.Drawing.FontStyle]::Bold, [System.Drawing.GraphicsUnit]::Pixel)
+$subtitleFont = New-Object System.Drawing.Font("Arial", 25, [System.Drawing.FontStyle]::Regular, [System.Drawing.GraphicsUnit]::Pixel)
+$labelFont = New-Object System.Drawing.Font("Arial", 20, [System.Drawing.FontStyle]::Bold, [System.Drawing.GraphicsUnit]::Pixel)
+$footerFont = New-Object System.Drawing.Font("Arial", 22, [System.Drawing.FontStyle]::Regular, [System.Drawing.GraphicsUnit]::Pixel)
 
-$titleFont = New-Object System.Drawing.Font("Arial", 54, [System.Drawing.FontStyle]::Bold, [System.Drawing.GraphicsUnit]::Pixel)
-$subtitleFont = New-Object System.Drawing.Font("Arial", 24, [System.Drawing.FontStyle]::Regular, [System.Drawing.GraphicsUnit]::Pixel)
-$chipFont = New-Object System.Drawing.Font("Arial", 18, [System.Drawing.FontStyle]::Bold, [System.Drawing.GraphicsUnit]::Pixel)
-$footerFont = New-Object System.Drawing.Font("Arial", 20, [System.Drawing.FontStyle]::Regular, [System.Drawing.GraphicsUnit]::Pixel)
+$centerFormat = New-Object System.Drawing.StringFormat
+$centerFormat.Alignment = [System.Drawing.StringAlignment]::Center
+$centerFormat.LineAlignment = [System.Drawing.StringAlignment]::Near
 
-$graphics.DrawString("VBP Fantasy", $titleFont, $whiteBrush, 74, 462)
-$graphics.DrawString("Network", $titleFont, $whiteBrush, 74, 522)
-$graphics.DrawString("Competitive fantasy football with clear rules, real leagues, and a community that gives back.", $subtitleFont, $softWhiteBrush, 78, 612)
+$graphics.DrawString(
+  "VBP Fantasy Network",
+  $titleFont,
+  $whiteBrush,
+  (New-Object System.Drawing.RectangleF(74, 428, ($Size - 148), 76)),
+  $centerFormat
+)
 
-$chipPath = New-RoundedRectPath -X 74 -Y 704 -Width 312 -Height 52 -Radius 18
-$graphics.FillPath($blueBrush, $chipPath)
-$graphics.DrawString("VBP Fantasy Network", $chipFont, $whiteBrush, 98, 718)
+$graphics.DrawString(
+  "Competitive fantasy football with clear rules, live leagues, and public format centers.",
+  $subtitleFont,
+  $softWhiteBrush,
+  (New-Object System.Drawing.RectangleF(118, 538, ($Size - 236), 86)),
+  $centerFormat
+)
 
-$bottomCardPath = New-RoundedRectPath -X 74 -Y 812 -Width ($Size - 148) -Height 168 -Radius 32
-$graphics.FillPath($cardBrush, $bottomCardPath)
+$graphics.DrawLine($dividerPen, 206, 648, ($Size - 206), 648)
+
+$bottomCardPath = New-RoundedRectPath -X 88 -Y 704 -Width ($Size - 176) -Height 196 -Radius 30
+$graphics.FillPath($darkCardBrush, $bottomCardPath)
 $graphics.DrawPath($borderPen, $bottomCardPath)
-$graphics.DrawString("Redraft  •  Dynasty  •  Best Ball", $footerFont, $navyBrush, 126, 860)
-$graphics.DrawString("Bracket  •  Chopped", $footerFont, $navyBrush, 310, 908)
+
+$graphics.DrawString(
+  "Formats",
+  $labelFont,
+  $whiteBrush,
+  (New-Object System.Drawing.RectangleF(120, 734, ($Size - 240), 36)),
+  $centerFormat
+)
+
+$graphics.DrawString(
+  "Redraft | Dynasty | Best Ball",
+  $footerFont,
+  $whiteBrush,
+  (New-Object System.Drawing.RectangleF(120, 786, ($Size - 240), 34)),
+  $centerFormat
+)
+
+$graphics.DrawString(
+  "Bracket | Keeper | Chopped",
+  $footerFont,
+  $whiteBrush,
+  (New-Object System.Drawing.RectangleF(120, 830, ($Size - 240), 34)),
+  $centerFormat
+)
+
+$graphics.DrawString(
+  "League Constitutions and Public Centers",
+  $labelFont,
+  $softWhiteBrush,
+  (New-Object System.Drawing.RectangleF(120, 864, ($Size - 240), 32)),
+  $centerFormat
+)
 
 $bitmap.Save($outputFullPath, [System.Drawing.Imaging.ImageFormat]::Png)
 
@@ -139,12 +183,14 @@ $overlayBrush.Dispose()
 $navyBrush.Dispose()
 $whiteBrush.Dispose()
 $softWhiteBrush.Dispose()
-$blueBrush.Dispose()
 $cardBrush.Dispose()
+$darkCardBrush.Dispose()
 $borderPen.Dispose()
+$dividerPen.Dispose()
 $titleFont.Dispose()
 $subtitleFont.Dispose()
-$chipFont.Dispose()
+$labelFont.Dispose()
 $footerFont.Dispose()
+$centerFormat.Dispose()
 
 Write-Host ("Created thumbnail: {0}" -f $outputFullPath)

@@ -45,6 +45,14 @@
 
 `DM me or reply if interested.`
 
+### Trusted Rebuild Outreach Template
+
+`I have a year-[league year] dynasty orphan I am only floating privately right now because it is more of a rebuild than a clean takeover.`
+
+`I am not going to oversell it. I am not fully sure what the previous owner was trying to build, but it still has [core assets], [tradable assets], and [pick situation summary].`
+
+`If you like rebuilds and want the full roster and pick rundown, I can send it over.`
+
 ### Bracket Launch Template
 
 `VBP Fantasy Network is opening the Bracket League to new people, not just returning players.`
@@ -97,6 +105,7 @@
 - If a subreddit dislikes promotional tone, trim the brand language in the body but keep `VBP Fantasy Network` in the title.
 - If the post is format-specific, swap the generic multi-format line for the exact formats with current open spots.
 - For dynasty orphan posts, lead with the exact number of orphan teams and note the current dynasty year so the post feels concrete.
+- For weaker dynasty orphans, save the blunt rebuild framing for trusted private outreach instead of broad public posts.
 - For bracket posts, list each division by name with its live count so readers can choose a fast or slow room quickly.
 - For Best Ball Union posts, lead with the format hook first and use the center link as a trust signal showing the tracking is already public.
 - Save new versions here when a post feels natural and gets engagement.

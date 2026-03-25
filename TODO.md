@@ -3,15 +3,7 @@
 ## Immediate
 
 - [ ] Add the LeagueSafe links for `KP1` and `KP2`. They are now intentionally `open` with public invite links, so the missing LeagueSafe links are the only temporary keeper-launch gap.
-- [ ] Revisit the weaker `DYN3` year-2 orphan and try trusted private outreach before advertising that rebuild roster broadly.
-
-## Constitutions
-
-- [ ] Review and normalize duplicate or noisy generated formatting artifacts, especially export-style heading/list structure in the redraft, best ball, bracket, and dynasty pages.
-
-## Cleanup / Future Improvements
-
-- [ ] Revisit the general Sleeper thumbnail image and refine it into a final brand-ready square image based primarily on the VBP banner.
+- [ ] Revisit the weaker `DYN3` year-2 orphan and use trusted private outreach before advertising that rebuild roster broadly. Private outreach copy is now saved in `marketing/`.
 
 ## Next Automation Ideas
 
@@ -24,6 +16,7 @@
 
 - [x] Verify the homepage format filters work correctly in Chrome after cache-busting.
 - [x] Add the `DYN3` invite link once the current manager leaves and the open spot is actually available.
+- [x] Save trusted private outreach copy for the weaker `DYN3` orphan in the marketing docs.
 - [x] Store the public Sleeper invite links for `KP1` and `KP2` while keeping the keeper leagues in `coming-soon` status until their LeagueSafe links are ready.
 - [x] Flip `KP1` and `KP2` from `coming-soon` to `open` once their public Sleeper invite links are ready, even before the LeagueSafe links are added.
 - [x] Confirm league cards render in internal ID order within each format, especially `RD1`, `RD2`, `RD3`.
@@ -52,6 +45,7 @@
 
 - [x] Confirm banner images and `Back to Hub` links are present and structurally valid on all constitution pages.
 - [x] Publish the first keeper constitution page and replace the Keeper homepage placeholder card.
+- [x] Normalize the noisiest export-style heading and list formatting in the redraft, best ball, bracket, and dynasty constitutions.
 
 ### Automation Recommendations
 
@@ -81,3 +75,4 @@
 - [x] Add a small documented workflow for updating `data/leagues.json` from the intake template.
 - [x] Keep planned empty formats visible in Active Leagues until the keeper format is ready to launch.
 - [x] Add a Best Ball Union center page that exposes combined public standings, league leaders, and weekly high scores in the same separate-page pattern as the Bracket Center.
+- [x] Refine the general Sleeper thumbnail into a cleaner square image based primarily on the VBP banner.

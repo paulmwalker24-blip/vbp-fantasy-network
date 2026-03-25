@@ -45,6 +45,14 @@ Use this structure for short Facebook recruiting posts:
 
 `Comment or DM me if interested.`
 
+## Trusted Private Outreach Template
+
+`I have a year-[league year] dynasty orphan I am only sharing privately right now because it is more of a rebuild than a plug-and-play team.`
+
+`I am not going to oversell it. I am not fully sure what the previous owner was trying to build, but it still has [core assets], [tradable assets], and [pick situation summary].`
+
+`If you like rebuilds, I can send the full roster and details.`
+
 ## Bracket Launch Template
 
 `VBP Fantasy Network is officially opening the Bracket League to new people, not just returning players.`
@@ -59,6 +67,7 @@ Use this structure for short Facebook recruiting posts:
 - If two limited-spot leagues are featured on the homepage, mention them explicitly.
 - If a league is not truly open yet, phrase it as `should have 1 opening coming soon` instead of claiming it is open.
 - For dynasty orphan posts, say `year 2` or the exact league year in the first sentence so people immediately understand it is not a startup.
+- For weaker dynasty rebuilds, use private outreach first and keep the blunt roster/pick framing out of broad public posts.
 - For bracket posts, mention both the fast and slow draft options in the opening lines if they are live.
 - If new formats launch, mention them after the urgent openings so the post feels current.
 - Keep the broader network description secondary, not first.
