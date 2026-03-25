@@ -39,8 +39,8 @@ function Read-File {
 
 $requiredFiles = @(
   "index.html",
-  "styles.css",
-  "app.js",
+  "assets/css/styles.css",
+  "assets/js/app.js",
   "data/leagues.json",
   "data/donations.json"
 )
@@ -52,7 +52,7 @@ foreach ($file in $requiredFiles) {
 }
 
 $indexHtml = Read-File -RelativePath "index.html"
-$appJs = Read-File -RelativePath "app.js"
+$appJs = Read-File -RelativePath "assets/js/app.js"
 
 foreach ($requiredId in @("limitedSpotsContainer", "formatFilters", "leaguesContainer", "donationProjectsContainer", "lastUpdated")) {
   if ($indexHtml -notmatch ("id=""{0}""" -f [regex]::Escape($requiredId))) {
@@ -83,17 +83,17 @@ foreach ($page in @(
   }
 }
 
-if ($indexHtml -notmatch 'styles\.css\?v=') {
-  Add-Issue -Severity "warning" -Source "index.html" -Message "Missing cache-busting query string on styles.css."
+if ($indexHtml -notmatch 'assets/css/styles\.css\?v=') {
+  Add-Issue -Severity "warning" -Source "index.html" -Message "Missing cache-busting query string on assets/css/styles.css."
 }
 
-if ($indexHtml -notmatch 'app\.js\?v=') {
-  Add-Issue -Severity "warning" -Source "index.html" -Message "Missing cache-busting query string on app.js."
+if ($indexHtml -notmatch 'assets/js/app\.js\?v=') {
+  Add-Issue -Severity "warning" -Source "index.html" -Message "Missing cache-busting query string on assets/js/app.js."
 }
 
 foreach ($formatKey in @("redraft", "dynasty", "bestball", "bracket", "keeper", "chopped")) {
   if ($appJs -notmatch ("{0}:" -f [regex]::Escape($formatKey))) {
-    Add-Issue -Severity "error" -Source "app.js" -Message ("FORMAT_META appears to be missing '{0}'." -f $formatKey)
+    Add-Issue -Severity "error" -Source "assets/js/app.js" -Message ("FORMAT_META appears to be missing '{0}'." -f $formatKey)
   }
 }
 

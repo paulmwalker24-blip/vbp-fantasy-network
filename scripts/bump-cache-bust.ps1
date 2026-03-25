@@ -15,19 +15,19 @@ if (-not (Test-Path -LiteralPath $IndexPath)) {
 $resolvedPath = (Resolve-Path -LiteralPath $IndexPath).Path
 $content = Get-Content -LiteralPath $resolvedPath -Raw
 
-$stylesMatch = [regex]::Match($content, 'styles\.css\?v=([^"]+)')
+$stylesMatch = [regex]::Match($content, 'assets/css/styles\.css\?v=([^"]+)')
 if (-not $stylesMatch.Success) {
-  throw "Could not find a styles.css cache-busting query string in '$IndexPath'."
+  throw "Could not find an assets/css/styles.css cache-busting query string in '$IndexPath'."
 }
 
-$appMatch = [regex]::Match($content, 'app\.js\?v=([^"]+)')
+$appMatch = [regex]::Match($content, 'assets/js/app\.js\?v=([^"]+)')
 if (-not $appMatch.Success) {
-  throw "Could not find an app.js cache-busting query string in '$IndexPath'."
+  throw "Could not find an assets/js/app.js cache-busting query string in '$IndexPath'."
 }
 
 $updatedContent = $content
-$updatedContent = [regex]::Replace($updatedContent, 'styles\.css\?v=[^"]+', "styles.css?v=$Version", 1)
-$updatedContent = [regex]::Replace($updatedContent, 'app\.js\?v=[^"]+', "app.js?v=$Version", 1)
+$updatedContent = [regex]::Replace($updatedContent, 'assets/css/styles\.css\?v=[^"]+', "assets/css/styles.css?v=$Version", 1)
+$updatedContent = [regex]::Replace($updatedContent, 'assets/js/app\.js\?v=[^"]+', "assets/js/app.js?v=$Version", 1)
 
 $changed = $updatedContent -ne $content
 $updated = $false

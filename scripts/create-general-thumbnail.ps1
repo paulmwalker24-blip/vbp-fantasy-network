@@ -1,5 +1,5 @@
 param(
-  [string]$OutputPath = "sleeper-thumbnail-general.png",
+  [string]$OutputPath = "assets/images/sleeper-thumbnail-general.png",
   [int]$Size = 1080
 )
 
@@ -12,7 +12,7 @@ $repoRoot = Split-Path -Parent $PSScriptRoot
 $outputFullPath = Join-Path $repoRoot $OutputPath
 
 $assets = @{
-  banner = Join-Path $repoRoot "banner.png"
+  banner = Join-Path $repoRoot "assets\\images\\banner.png"
 }
 
 foreach ($asset in $assets.GetEnumerator()) {

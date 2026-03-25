@@ -66,7 +66,7 @@ If this split is implemented later:
 1. Keep `id` and `format` at the top level for sorting and filtering.
 2. Move commissioner-owned fields into `manual`.
 3. Move Sleeper-refreshed fields into `synced`.
-4. Update `app.js` to normalize from the nested shape back into the current render model.
+4. Update `assets/js/app.js` to normalize from the nested shape back into the current render model.
 5. Update local scripts so they only touch `synced`.
 6. Preserve backward compatibility during the transition if existing tools still expect the flat shape.
 

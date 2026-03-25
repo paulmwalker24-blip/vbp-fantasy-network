@@ -134,7 +134,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\validate-donations-json.ps1 -
 
 ## `bump-cache-bust.ps1`
 
-Updates the `styles.css?v=` and `app.js?v=` query strings in `index.html` to a shared version token.
+Updates the `assets/css/styles.css?v=` and `assets/js/app.js?v=` query strings in `index.html` to a shared version token.
 
 Use this after frontend changes when browser caching is getting in the way.
 
@@ -288,7 +288,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\open-preview.ps1 -Target chop
 
 ## `check-site.ps1`
 
-Runs the validators plus additional static checks across `index.html`, `styles.css`, `app.js`, league data, donation data, and linked constitution pages.
+Runs the validators plus additional static checks across `index.html`, `assets/css/styles.css`, `assets/js/app.js`, league data, donation data, and linked constitution pages.
 
 Example:
 
@@ -435,5 +435,5 @@ powershell -ExecutionPolicy Bypass -File .\scripts\create-general-thumbnail.ps1
 Custom output path:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\create-general-thumbnail.ps1 -OutputPath sleeper-thumbnail-v2.png
+powershell -ExecutionPolicy Bypass -File .\scripts\create-general-thumbnail.ps1 -OutputPath assets\images\sleeper-thumbnail-v2.png
 ```

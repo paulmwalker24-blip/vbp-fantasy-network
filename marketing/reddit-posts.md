@@ -53,6 +53,30 @@
 
 `DM me or reply if interested.`
 
+### Best Ball Union Template
+
+`VBP Fantasy Network has Best Ball Union open right now.`
+
+`Use this when you want to hype the format itself: draft-and-hold best ball, progressive PPR, cross-league overall points race, and weekly overall high score tracking. Include the Best Ball Union Center link as proof of how the format is tracked, then stack the live Sleeper invites and the main hub link below.`
+
+`DM me or reply if interested.`
+
+### Best Ball Union Center Template
+
+`VBP Fantasy Network has Best Ball Union open right now.`
+
+`This is a [league count]-league best ball setup with [teams per league]-team divisions. Draft once, no weekly lineup setting, then chase your division plus the overall points race. Weekly high score tracking runs across the full union, and the public center shows exactly how it all gets tracked.`
+
+`Best Ball Union Center: [center link]`
+
+`League invites:`
+
+`[league name] - [invite link]`
+
+`Hub: [hub link]`
+
+`DM me or reply if interested.`
+
 ## Short Hooks
 
 - `Competitive fantasy football leagues with open spots`
@@ -74,4 +98,5 @@
 - If the post is format-specific, swap the generic multi-format line for the exact formats with current open spots.
 - For dynasty orphan posts, lead with the exact number of orphan teams and note the current dynasty year so the post feels concrete.
 - For bracket posts, list each division by name with its live count so readers can choose a fast or slow room quickly.
+- For Best Ball Union posts, lead with the format hook first and use the center link as a trust signal showing the tracking is already public.
 - Save new versions here when a post feels natural and gets engagement.

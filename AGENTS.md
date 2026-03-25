@@ -5,10 +5,11 @@
 This repository is a small static website for the VBP Fantasy Network.
 
 - Primary entry page: `index.html`
-- Shared styling: `styles.css`
-- Main client logic: `app.js`
+- Shared styling: `assets/css/styles.css`
+- Main client logic: `assets/js/app.js`
 - Additional static content: `*-constitution.html`
-- Visual assets: `banner.png` and `*_aligned.png`
+- Public pages stay at the repo root so deployed URLs remain simple.
+- Visual assets live under `assets/images/`.
 
 There is no build system, package manager, framework, or server-side app in this repo. Changes are made directly to static HTML, CSS, and vanilla JavaScript.
 
@@ -28,14 +29,14 @@ The site is effectively data-driven through local league JSON, local donation JS
 
 - `index.html`
   - Homepage structure.
-  - Defines containers populated by `app.js`, including:
+  - Defines containers populated by `assets/js/app.js`, including:
     - `#limitedSpotsContainer`
     - `#formatFilters`
     - `#leaguesContainer`
     - `#donationProjectsContainer`
     - `#lastUpdated`
 
-- `app.js`
+- `assets/js/app.js`
   - Fetches local league JSON and local donation JSON data.
   - Can optionally fetch Sleeper league details for entries with `sleeperLeagueId`.
   - Preserves local display names while still using Sleeper to refresh counts and season data.
@@ -72,9 +73,12 @@ The site is effectively data-driven through local league JSON, local donation JS
   - Local bracket tracker that merges Sleeper manager and standings pulls across grouped bracket leagues.
   - Intended to be the working dataset for combined playoff seeding, wild cards, bracket outputs, and flat 1-60 style overall standings review.
 
-- `styles.css`
+- `assets/css/styles.css`
   - Shared styles for the homepage and constitution pages.
   - Contains layout styles, card styles, button styles, and constitution page section styles.
+
+- `assets/images/`
+  - Shared banner, format artwork, and social/center image assets used by the public HTML pages.
 
 - `scripts/`
   - Local maintenance automation for league intake, Sleeper sync, validation, preview, and pre-push checks.
@@ -131,14 +135,14 @@ The site is effectively data-driven through local league JSON, local donation JS
 - `chopped-constitution.html`
   - Standalone static pages using the shared stylesheet.
 
-- `bracket-center.js`
+- `assets/js/bracket-center.js`
   - Client-side renderer for the public Bracket Center page.
   - Reads `data/bracket-ledger.json` and renders division counts plus full combined standings.
   - Falls back to a clearly labeled sample 60-team preview when the live grouped bracket data is still pre-draft, incomplete, or not yet showing meaningful standings.
   - Also fetches live Sleeper matchup data by division so the center can expose current-week scoreboard tabs for grouped bracket leagues.
   - Live scoreboards should refresh from Sleeper in the browser when users reload the page, while standings remain a commissioner-published snapshot from local generated data.
 
-- `app_updated_donation_gid0.js`
+- `assets/reference/app_updated_donation_gid0.js`
   - Appears to be an alternate or newer donation parsing variant.
   - Not currently wired into `index.html`.
   - Treat it as reference material unless the user explicitly wants it merged or promoted.
@@ -152,9 +156,9 @@ The site is effectively data-driven through local league JSON, local donation JS
 - The local `data/donations.json` file must remain accessible from the site root.
 - The local `data/keeper-ledger.json` file is commissioner-owned working data and is not used by the homepage.
 - The local `data/bracket-groups.json` and `data/bracket-ledger.json` files are commissioner-owned working data and are not used by the homepage.
-- The HTML structure and the element IDs expected by `app.js` must stay in sync.
+- The HTML structure and the element IDs expected by `assets/js/app.js` must stay in sync.
 
-If you rename or remove a container in `index.html`, update the corresponding logic in `app.js`.
+If you rename or remove a container in `index.html`, update the corresponding logic in `assets/js/app.js`.
 
 ## Data Contracts
 
@@ -266,7 +270,7 @@ If donation rendering breaks:
 - Reuse the design tokens in `:root` where possible.
 - Keep homepage and constitution page styles shared unless a page-specific split is clearly warranted.
 - Check mobile behavior when changing grids or card sizing.
-- `index.html` currently uses query-string cache busting on `styles.css` and `app.js`; update those version strings when local browser caching is interfering with verification.
+- `index.html` currently uses query-string cache busting on `assets/css/styles.css` and `assets/js/app.js`; update those version strings when local browser caching is interfering with verification.
 - `index.html` now also carries basic Open Graph and Twitter meta tags for link previews; keep the live site URL and banner image path aligned if the public domain or hero asset changes.
 
 ### JavaScript
@@ -310,7 +314,7 @@ If donation rendering breaks:
 ## Known Issues And Hazards
 
 - `DYN3` now has a live invite link stored and should no longer be treated as the accepted missing-invite warning case.
-- `app_updated_donation_gid0.js` suggests donation parsing has already been revised once; compare carefully before replacing current logic.
+- `assets/reference/app_updated_donation_gid0.js` suggests donation parsing has already been revised once; compare carefully before replacing current logic.
 - Git operations may fail in some sandboxed environments because the repo can trigger a `safe.directory` ownership warning.
 - On this machine, the Windows Store `py` / `python` app alias can break local preview startup or leave `localhost:8000` returning empty responses if the wrong interpreter path is used.
 - Some constitution pages still include export-style formatting artifacts even after the initial cleanup pass. Use `TODO.md` for the later normalization backlog instead of treating all remaining formatting noise as urgent.
@@ -319,12 +323,12 @@ Do not silently "clean up" generated constitution content unless the user asks f
 
 ## Preferred Workflow For Agents
 
-1. Read `index.html`, `styles.css`, and `app.js` first.
+1. Read `index.html`, `assets/css/styles.css`, and `assets/js/app.js` first.
 2. Confirm whether the task affects static content, styling, or CSV-driven rendering.
 3. If the task touches leagues, inspect `data/leagues.json` and `data/league-intake-template.md` before editing UI.
 4. For new league intake, ask the league type first and infer the next internal ID from the existing entries in `data/leagues.json`.
 5. If the user provides a Sleeper league URL, extract the numeric league ID and store it in `sleeperLeagueId`.
-6. If a league has a `sleeperLeagueId`, preserve the Sleeper-enrichment path in `app.js`.
+6. If a league has a `sleeperLeagueId`, preserve the Sleeper-enrichment path in `assets/js/app.js`.
 7. If the task touches donations, inspect the parser assumptions, `docs/donation-update-workflow.md`, and `scripts/validate-donations-json.ps1` before editing UI or data.
 8. Keep changes minimal and local unless the user asks for a broader refactor.
 9. If behavior depends on live CSV data, note that full verification may require live network access in a browser.
@@ -342,11 +346,11 @@ Do not silently "clean up" generated constitution content unless the user asks f
 
 For most changes, verify with:
 
-- static inspection of `index.html`, `styles.css`, and `app.js`
+- static inspection of `index.html`, `assets/css/styles.css`, and `assets/js/app.js`
 - static inspection of `data/leagues.json` when league data changes
 - checking that referenced IDs/classes still match
 - checking that render paths still handle empty or failed fetch states
-- checking mobile grid breakpoints in `styles.css`
+- checking mobile grid breakpoints in `assets/css/styles.css`
 - checking that homepage format filters still work when league rendering changes
 - checking that league order within a format still follows the internal IDs
 - running `scripts/validate-donations-json.ps1` when donation data changes
