@@ -2,7 +2,7 @@
 
 ## `set-sleeper-league-id.ps1`
 
-Parses a Sleeper league URL or raw numeric league ID and writes the resulting `sleeperLeagueId` into a league record inside `data/leagues.json`.
+Parses a Sleeper league URL, Sleeper invite link, or raw numeric league ID and writes the resulting `sleeperLeagueId` into a league record inside `data/leagues.json`.
 
 Examples:
 
@@ -12,6 +12,10 @@ powershell -ExecutionPolicy Bypass -File .\scripts\set-sleeper-league-id.ps1 -Le
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\set-sleeper-league-id.ps1 -LeagueRecordId BBU5 -SleeperInput "1339095453291003904"
+```
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\set-sleeper-league-id.ps1 -LeagueRecordId DYN3 -SleeperInput "https://sleeper.com/i/E8a1K6DqnARY0"
 ```
 
 Optional output:
@@ -393,7 +397,7 @@ It can:
 
 - prompt for the standard intake fields
 - assign the next internal ID automatically for new leagues
-- parse a Sleeper URL into `sleeperLeagueId`
+- parse a Sleeper URL or invite link into `sleeperLeagueId`
 - write the record
 - run the validator afterward
 

@@ -110,6 +110,10 @@ The site is effectively data-driven through local league JSON, local donation JS
   - Active backlog lives at the top of the file.
   - Completed items are preserved and moved to the bottom instead of being deleted.
 
+- `LOCAL-PREVIEW.md`
+  - Tiny repo-root reminder file for the localhost command and homepage URL.
+  - Use this when the user wants a quick explorer-visible preview reference instead of a longer doc.
+
 - `marketing/reddit-posts.md`
   - Reusable Reddit title ideas, hooks, CTAs, and short promotional post templates for the VBP Fantasy Network.
   - Use this when the user wants recruiting copy, outreach posts, or future marketing ideas captured in-repo.
@@ -117,6 +121,10 @@ The site is effectively data-driven through local league JSON, local donation JS
 - `marketing/facebook-posts.md`
   - Reusable Facebook recruiting post logic and templates that lead with exact current openings before broadening into the network pitch.
   - Use this when the user wants short social copy that names specific live or upcoming openings.
+
+- `marketing/generic-post-bank.md`
+  - Ready-to-copy generic recruiting posts that group live links by hub or format.
+  - Use this when the user wants one explorer-visible bank of reusable posts with direct hub and league links.
 
 - `.github/workflows/`
   - `validate-site.yml` runs the local site-check script on push and pull request.
@@ -202,7 +210,7 @@ If a new format is introduced, update `FORMAT_META` and `normalizeFormat()`.
 
 When adding or updating leagues, prefer using `data/league-intake-template.md` so the required fields stay consistent.
 For new leagues, ask the league type first and infer the internal ID by format sequence rather than asking the user to choose the ID manually.
-If the user provides a Sleeper league URL instead of a raw ID, parse the numeric league ID from the URL and store it in `sleeperLeagueId`.
+If the user provides a Sleeper league URL or invite link instead of a raw ID, resolve the live numeric league ID and store it in `sleeperLeagueId`.
 Current ID prefixes are:
 
 - `RD` for redraft
@@ -242,6 +250,7 @@ Current league notes:
 - Keeper leagues may use season-keyed `leagueSafeLinksBySeason` data the same way dynasty leagues do once the yearly payment links exist.
 - The local maintenance scripts intentionally treat `inviteLink`, `leagueSafeLink`, `constitutionPage`, `buyIn`, and curated `name` values as commissioner-owned fields unless the user explicitly opts into overwriting them.
 - `DYN1`, `DYN2`, and `DYN3` now use season-keyed `leagueSafeLinksBySeason` data for `2026`, `2027`, and `2028` alongside the current-season `leagueSafeLink`.
+- Sleeper invite links can point to a newer live league than the currently stored `sleeperLeagueId`, especially on renewed dynasty leagues. If live counts look wrong, resolve the invite page's `league_id` before assuming the invite link is stale.
 - When checking dynasty future-pick payment obligations, use Sleeper traded-pick data and only flag managers who traded away future picks. Do not flag the managers who received those picks unless they also traded away their own future picks.
 - For Sleeper-backed leagues, `filled` should reflect paid/assigned teams by counting roster slots with an `owner_id`. Do not treat raw league member count as the true fill number.
 
@@ -339,7 +348,7 @@ Do not silently "clean up" generated constitution content unless the user asks f
 2. Confirm whether the task affects static content, styling, or CSV-driven rendering.
 3. If the task touches leagues, inspect `data/leagues.json` and `data/league-intake-template.md` before editing UI.
 4. For new league intake, ask the league type first and infer the next internal ID from the existing entries in `data/leagues.json`.
-5. If the user provides a Sleeper league URL, extract the numeric league ID and store it in `sleeperLeagueId`.
+5. If the user provides a Sleeper league URL or invite link, resolve the live numeric league ID and store it in `sleeperLeagueId`.
 6. If a league has a `sleeperLeagueId`, preserve the Sleeper-enrichment path in `assets/js/app.js`.
 7. If the task touches donations, inspect the parser assumptions, `docs/donation-update-workflow.md`, and `scripts/validate-donations-json.ps1` before editing UI or data.
 8. Keep changes minimal and local unless the user asks for a broader refactor.

@@ -13,6 +13,33 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
+function Resolve-SleeperInviteLeagueId {
+  param(
+    [Parameter(Mandatory = $true)]
+    [string]$InviteUrl
+  )
+
+  try {
+    $response = Invoke-WebRequest -Uri $InviteUrl -UseBasicParsing
+  } catch {
+    throw "Could not load Sleeper invite page '$InviteUrl': $($_.Exception.Message)"
+  }
+
+  $content = [string]$response.Content
+  foreach ($pattern in @(
+    'league_id\\":\\"(\d+)',
+    '"league_id":"(\d+)"',
+    'league_id["\\]?\s*:\s*["\\]?(\d+)'
+  )) {
+    $match = [regex]::Match($content, $pattern, [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
+    if ($match.Success) {
+      return $match.Groups[1].Value
+    }
+  }
+
+  throw "Could not resolve a Sleeper league ID from invite page '$InviteUrl'."
+}
+
 function Get-SleeperLeagueId {
   param(
     [Parameter(Mandatory = $true)]
@@ -36,6 +63,10 @@ function Get-SleeperLeagueId {
     if ($match.Success) {
       return $match.Groups[1].Value
     }
+  }
+
+  if ($trimmed -match 'sleeper\.com/i/[^/\s?]+(?:[/?#]|$)') {
+    return Resolve-SleeperInviteLeagueId -InviteUrl $trimmed
   }
 
   throw "Could not parse a Sleeper league ID from '$Value'."

@@ -228,7 +228,9 @@ async function hydrateLeague(entry) {
     return {
       ...league,
       link: league.inviteLink,
-      spotsLeft: getLeagueSpotsLeft(league)
+      spotsLeft: getLeagueSpotsLeft(league),
+      liveSyncEligible: false,
+      liveSyncState: "manual"
     };
   }
 
@@ -246,14 +248,18 @@ async function hydrateLeague(entry) {
     return {
       ...hydrated,
       link: hydrated.inviteLink,
-      spotsLeft: getLeagueSpotsLeft(hydrated)
+      spotsLeft: getLeagueSpotsLeft(hydrated),
+      liveSyncEligible: true,
+      liveSyncState: "live"
     };
   } catch (error) {
     console.warn(`Sleeper sync failed for ${league.id || league.name}:`, error);
     return {
       ...league,
       link: league.inviteLink,
-      spotsLeft: getLeagueSpotsLeft(league)
+      spotsLeft: getLeagueSpotsLeft(league),
+      liveSyncEligible: true,
+      liveSyncState: "fallback"
     };
   }
 }
@@ -403,7 +409,24 @@ function renderLeagues(leagues) {
 
   const lastUpdated = document.getElementById("lastUpdated");
   if (lastUpdated) {
-    lastUpdated.textContent = `Data loaded: ${new Date().toLocaleString()}`;
+    const totalLeagues = leagues.length;
+    const totalOpenSpots = leagues.reduce((sum, league) => sum + Math.max(league.spotsLeft, 0), 0);
+    const sleeperBackedCount = leagues.filter(league => league.liveSyncEligible).length;
+    const liveSyncedCount = leagues.filter(league => league.liveSyncState === "live").length;
+    const summaryParts = [
+      `${totalLeagues} League${totalLeagues === 1 ? "" : "s"} Listed`,
+      `${totalOpenSpots} Spot${totalOpenSpots === 1 ? "" : "s"} Open`
+    ];
+
+    if (sleeperBackedCount > 0) {
+      summaryParts.push(`Sleeper Live Sync ${liveSyncedCount}/${sleeperBackedCount}`);
+      if (liveSyncedCount < sleeperBackedCount) {
+        summaryParts.push("Fallback local data shown where live refresh failed");
+      }
+    }
+
+    summaryParts.push(`Refreshed ${new Date().toLocaleString()}`);
+    lastUpdated.textContent = summaryParts.join(" | ");
   }
 }
 

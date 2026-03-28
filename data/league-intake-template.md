@@ -6,7 +6,7 @@ Use this for each league you want added or updated in `data/leagues.json`.
 
 1. Start with `League type` first so the correct ID prefix and constitution page are obvious from the beginning.
 2. If this is a new league, leave `Internal ID` blank and let `upsert-league-record.ps1` assign it, or run `get-next-league-id.ps1` first if you want to preview the suggested ID.
-3. If you have a Sleeper URL instead of a raw numeric ID, keep the URL. The local intake flow can parse and store the `sleeperLeagueId` for you.
+3. If you have a Sleeper league URL or invite link instead of a raw numeric ID, keep the URL. The local intake flow can resolve and store the `sleeperLeagueId` for you.
 4. Write or update the record with the local intake script:
 
 ```powershell

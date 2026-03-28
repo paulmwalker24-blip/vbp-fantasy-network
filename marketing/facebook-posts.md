@@ -8,6 +8,7 @@
 - After the specific opening callout, widen the post into the larger multi-format network pitch.
 - Keep the post short enough to scan easily in-feed.
 - End with a simple CTA like `Comment or DM me if interested.`
+- See `marketing/generic-post-bank.md` for ready-to-copy hub posts and format-grouped posts with current invite links.
 
 ## Preferred Logic
 
@@ -26,6 +27,22 @@ Use this structure for short Facebook recruiting posts:
 `VBP Fantasy Network currently has two redraft leagues with just 1 spot left each. I should also have 1 opening coming soon in a year 2 dynasty league, and I just opened two new 12-team keeper leagues at $25 and $50.`
 
 `If you're looking for organized fantasy football leagues with clear rules and multiple formats, check it out here: https://vbp-fantasy-network.vercel.app/`
+
+`Comment or DM me if interested.`
+
+### March 25 2026 Live Openings
+
+`VBP Fantasy Network currently has two redraft leagues with 1 spot left each, and two new keeper leagues now open at $25 and $50.`
+
+`Redraft 1 ($25): https://sleeper.com/i/j7XdNzlxZk9P2`
+
+`Redraft 3 ($50): https://sleeper.com/i/V9GRBq67x7jOV`
+
+`Keeper 1 ($25): https://sleeper.com/i/m7olnV2oZdMDY`
+
+`Keeper 2 ($50): https://sleeper.com/i/LVoRxbV3z2bw3`
+
+`Hub + constitutions: https://vbp-fantasy-network.vercel.app/`
 
 `Comment or DM me if interested.`
 

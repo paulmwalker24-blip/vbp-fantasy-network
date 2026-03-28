@@ -14,7 +14,7 @@ The goal is:
 
 ## Sleeper ID Parser
 
-Set or replace a `sleeperLeagueId` from a Sleeper URL or raw ID:
+Set or replace a `sleeperLeagueId` from a Sleeper URL, invite link, or raw ID:
 
 ```text
 Run the Sleeper ID parser for league record CH1 using this input: https://sleeper.com/leagues/1339342261023961088/predraft
@@ -22,6 +22,10 @@ Run the Sleeper ID parser for league record CH1 using this input: https://sleepe
 
 ```text
 Run the Sleeper ID parser for league record BBU5 using this input: 1339095453291003904
+```
+
+```text
+Run the Sleeper ID parser for league record DYN3 using this input: https://sleeper.com/i/E8a1K6DqnARY0
 ```
 
 ## Next League ID

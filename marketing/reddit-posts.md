@@ -8,6 +8,7 @@
 - Keep the network name visible in the title or first sentence.
 - Use `DM me or reply if interested.` when a direct call to action fits the post.
 - Mention constitutions and clear rules as trust signals, but do not overload the post.
+- See `marketing/generic-post-bank.md` for ready-to-copy hub posts and format-grouped posts with current invite links.
 
 ## Title Ideas
 
@@ -18,6 +19,34 @@
 - `VBP Fantasy Network | Organized Leagues, Clear Rules, Open Spots`
 
 ## Short Post Templates
+
+### March 25 2026 Live Openings
+
+Title:
+
+`VBP Fantasy Network | Two Redraft Spots Left + New Keeper Leagues Open`
+
+Body:
+
+`VBP Fantasy Network currently has two redraft leagues with 1 spot left each, plus two new keeper leagues now open at $25 and $50.`
+
+`Redraft 1 ($25): https://sleeper.com/i/j7XdNzlxZk9P2`
+
+`Redraft 3 ($50): https://sleeper.com/i/V9GRBq67x7jOV`
+
+`Keeper 1 ($25): https://sleeper.com/i/m7olnV2oZdMDY`
+
+`Keeper 2 ($50): https://sleeper.com/i/LVoRxbV3z2bw3`
+
+`Hub + constitutions: https://vbp-fantasy-network.vercel.app/`
+
+`DM me or reply if interested.`
+
+### Weekly League Classifieds Reply
+
+`VBP Fantasy Network has open spots across redraft, dynasty, best ball, bracket, keeper, and chopped. Hub, constitutions, and live openings are here: https://vbp-fantasy-network.vercel.app/`
+
+`DM me if interested.`
 
 ### Template 1
 
