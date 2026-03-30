@@ -271,6 +271,8 @@ a { color: inherit; }
 .badge-urgent { background: #fee2e2; color: #b91c1c; }
 .badge-full { background: var(--gray-soft); color: var(--gray-text); }
 .badge-coming-soon { background: #e0f2fe; color: #075985; }
+.badge-draft-fast { background: #dcfce7; color: #166534; }
+.badge-draft-slow { background: #fef3c7; color: #92400e; }
 
 .league-actions {
   margin-top: auto;

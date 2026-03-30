@@ -9,6 +9,7 @@ $ErrorActionPreference = "Stop"
 
 $validFormats = @("redraft", "dynasty", "bestball", "bracket", "keeper", "chopped")
 $validStatuses = @("open", "full", "coming-soon")
+$validDraftStyles = @("", "fast", "slow")
 $idPrefixByFormat = @{
   redraft = "RD"
   dynasty = "DYN"
@@ -106,6 +107,8 @@ foreach ($league in $payload.leagues) {
   $leagueSafeLink = ([string]$league.leagueSafeLink).Trim()
   $leagueSafeLinksBySeason = if ($league.PSObject.Properties.Match('leagueSafeLinksBySeason').Count -gt 0) { $league.PSObject.Properties['leagueSafeLinksBySeason'].Value } else { $null }
   $sleeperLeagueId = ([string]$league.sleeperLeagueId).Trim()
+  $draftStyleValue = if ($league.PSObject.Properties.Match('draftStyle').Count -gt 0) { $league.PSObject.Properties['draftStyle'].Value } else { "" }
+  $draftStyle = ([string]$draftStyleValue).Trim().ToLowerInvariant()
   $division = ([string]$league.division).Trim()
   $teams = To-Number $league.teams
   $filled = To-Number $league.filled
@@ -163,6 +166,14 @@ foreach ($league in $payload.leagues) {
 
   if ($status -eq "open" -and [string]::IsNullOrWhiteSpace($inviteLink)) {
     Add-Issue -Issues $issues -Severity "warning" -LeagueId $leagueId -Message "Open league is missing inviteLink."
+  }
+
+  if ($draftStyle -notin $validDraftStyles) {
+    Add-Issue -Issues $issues -Severity "error" -LeagueId $leagueId -Message ("draftStyle must be 'fast' or 'slow' when present, found '{0}'." -f $draftStyle)
+  }
+
+  if ($format -eq "bracket" -and -not [string]::IsNullOrWhiteSpace($draftStyle)) {
+    Add-Issue -Issues $issues -Severity "warning" -LeagueId $leagueId -Message "Bracket league should leave draftStyle empty and use division for draft type."
   }
 
   if (-not [string]::IsNullOrWhiteSpace($inviteLink) -and -not (Test-HttpUrl $inviteLink)) {

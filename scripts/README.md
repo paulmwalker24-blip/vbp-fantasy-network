@@ -73,6 +73,7 @@ It checks for:
 
 - duplicate league IDs
 - invalid formats or statuses
+- invalid optional `draftStyle` values
 - bad ID prefixes for the chosen format
 - invalid or missing URLs
 - impossible `filled` / `teams` values
@@ -81,6 +82,7 @@ It checks for:
 - missing `leagueSafeLink` on non-`coming-soon` records
 - missing `sleeperLeagueId` on non-`coming-soon` records
 - bracket leagues missing draft type in `division`
+- bracket leagues incorrectly using `draftStyle` instead of `division`
 
 Example:
 
@@ -398,6 +400,7 @@ It can:
 - prompt for the standard intake fields
 - assign the next internal ID automatically for new leagues
 - parse a Sleeper URL or invite link into `sleeperLeagueId`
+- store an optional non-bracket `draftStyle` value for homepage card pills
 - write the record
 - run the validator afterward
 
@@ -410,7 +413,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\upsert-league-record.ps1
 Create a new league with parameters:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\upsert-league-record.ps1 -Mode new -LeagueType chopped -PublicLeagueName "VBP Chopped League #2" -SleeperInput "https://sleeper.com/leagues/1234567890/predraft" -SleeperSeason 2026 -BuyIn 15 -TeamCount 18 -FilledSpots 0 -Status open -InviteLink "https://sleeper.com/i/example" -LeagueSafeLink "https://www.leaguesafe.com/join/example" -ConstitutionPage chopped-constitution.html
+powershell -ExecutionPolicy Bypass -File .\scripts\upsert-league-record.ps1 -Mode new -LeagueType chopped -PublicLeagueName "VBP Chopped League #2" -SleeperInput "https://sleeper.com/leagues/1234567890/predraft" -SleeperSeason 2026 -DraftStyle slow -BuyIn 15 -TeamCount 18 -FilledSpots 0 -Status open -InviteLink "https://sleeper.com/i/example" -LeagueSafeLink "https://www.leaguesafe.com/join/example" -ConstitutionPage chopped-constitution.html
 ```
 
 Update an existing record:

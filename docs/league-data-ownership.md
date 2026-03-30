@@ -9,6 +9,7 @@ Today, all league data lives in a single flat record inside `data/leagues.json`.
 Example fields currently treated as manual:
 
 - `name`
+- `draftStyle` (optional, for non-bracket leagues that should show a fast/slow draft pill)
 - `buyIn`
 - `inviteLink`
 - `leagueSafeLink`
@@ -42,6 +43,7 @@ A split would make ownership explicit and reduce accidental overwrites.
   "format": "chopped",
   "manual": {
     "name": "VBP Chopped League #1",
+    "draftStyle": "slow",
     "buyIn": 15,
     "inviteLink": "https://sleeper.com/i/Y2VKoEON1XkqR",
     "leagueSafeLink": "https://www.leaguesafe.com/join/4404482",

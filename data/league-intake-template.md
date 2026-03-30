@@ -39,7 +39,8 @@ Manual fields such as `inviteLink`, `leagueSafeLink`, `constitutionPage`, `buyIn
 - Sleeper season:
 - Public league name:
 - Format:
-- Division / draft type:
+- Draft style (optional, non-bracket only): `fast`, `slow`, or blank
+- Division / draft type (bracket only):
 - Buy-in:
 - Team count:
 - Filled spots:

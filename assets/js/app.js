@@ -74,6 +74,17 @@ function normalizeFormat(value) {
   return "";
 }
 
+function normalizeDraftStyle(value, format) {
+  if (format === "bracket") {
+    return "";
+  }
+
+  const normalized = String(value || "").toLowerCase().replace(/\s+/g, " ").trim();
+  if (normalized === "fast" || normalized === "fast draft") return "fast";
+  if (normalized === "slow" || normalized === "slow draft") return "slow";
+  return "";
+}
+
 function slugify(value) {
   return String(value || "")
     .toLowerCase()
@@ -160,6 +171,22 @@ function getLeagueDivisionLabel(league) {
   return division;
 }
 
+function getDraftStyleLabel(league) {
+  if (league.format === "bracket") {
+    return "";
+  }
+
+  if (league.draftStyle === "fast") {
+    return "Fast Draft";
+  }
+
+  if (league.draftStyle === "slow") {
+    return "Slow Draft";
+  }
+
+  return "";
+}
+
 function normalizeLeagueEntry(entry) {
   const format = normalizeFormat(entry.format);
   const teams = toNumber(entry.teams);
@@ -179,6 +206,7 @@ function normalizeLeagueEntry(entry) {
     sleeperSeason: String(entry.sleeperSeason || "").trim(),
     name: String(entry.name || "").trim(),
     format,
+    draftStyle: normalizeDraftStyle(entry.draftStyle, format),
     division: String(entry.division || "").trim(),
     teams,
     filled: normalizeFilledCount(teams, filled),
@@ -308,6 +336,15 @@ function createLeagueCard(league) {
   const badge = document.createElement("span");
   badge.className = spotsBadgeClass;
   badge.textContent = spotsBadgeText;
+  const draftStyleLabel = getDraftStyleLabel(league);
+
+  if (draftStyleLabel) {
+    const draftStyleBadge = document.createElement("span");
+    draftStyleBadge.className = `badge badge-draft-${league.draftStyle}`;
+    draftStyleBadge.textContent = draftStyleLabel;
+    badges.appendChild(draftStyleBadge);
+  }
+
   badges.appendChild(badge);
 
   const actions = document.createElement("div");

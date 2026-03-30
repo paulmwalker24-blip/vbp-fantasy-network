@@ -7,6 +7,7 @@ param(
   [string]$SleeperInput,
   [string]$SleeperSeason,
   [string]$PublicLeagueName,
+  [string]$DraftStyle,
   [string]$Division,
   [string]$BuyIn,
   [string]$TeamCount,
@@ -25,6 +26,7 @@ $ErrorActionPreference = "Stop"
 
 $validFormats = @("redraft", "dynasty", "bestball", "bracket", "keeper", "chopped")
 $validStatuses = @("open", "full", "coming-soon")
+$validDraftStyles = @("", "fast", "slow")
 
 function Resolve-SleeperInviteLeagueId {
   param([string]$InviteUrl)
@@ -184,6 +186,7 @@ if ($Mode -eq "new") {
     sleeperSeason = ""
     name = ""
     format = $LeagueType
+    draftStyle = ""
     division = ""
     buyIn = 0
     teams = 0
@@ -223,8 +226,13 @@ if ([string]::IsNullOrWhiteSpace($SleeperSeason)) {
   $SleeperSeason = Prompt-Value -Label "Sleeper season" -Default ([string]$target.sleeperSeason)
 }
 
+if ([string]::IsNullOrWhiteSpace($DraftStyle)) {
+  $draftStyleDefault = if ($target.PSObject.Properties.Match('draftStyle').Count -gt 0) { [string]$target.draftStyle } else { "" }
+  $DraftStyle = Prompt-Value -Label "Draft style (optional: fast/slow; leave blank for bracket)" -Default $draftStyleDefault
+}
+
 if ([string]::IsNullOrWhiteSpace($Division)) {
-  $Division = Prompt-Value -Label "Division / draft type" -Default ([string]$target.division)
+  $Division = Prompt-Value -Label "Division / draft type (bracket only)" -Default ([string]$target.division)
 }
 
 if ([string]::IsNullOrWhiteSpace($BuyIn)) {
@@ -261,9 +269,18 @@ if ([string]::IsNullOrWhiteSpace($Notes)) {
 
 $parsedSleeperLeagueId = Get-SleeperLeagueId -Value $SleeperInput
 $normalizedStatus = $Status.Trim().ToLowerInvariant()
+$normalizedDraftStyle = $DraftStyle.Trim().ToLowerInvariant()
 
 if ($normalizedStatus -notin $validStatuses) {
   throw "Status must be one of: $($validStatuses -join ', ')."
+}
+
+if ($normalizedDraftStyle -notin $validDraftStyles) {
+  throw "Draft style must be one of: fast, slow, or blank."
+}
+
+if ($LeagueType -eq "bracket" -and -not [string]::IsNullOrWhiteSpace($normalizedDraftStyle)) {
+  throw "Bracket leagues should leave draft style blank and use division for draft type."
 }
 
 $target.id = $LeagueRecordId
@@ -271,6 +288,7 @@ $target.sleeperLeagueId = $parsedSleeperLeagueId
 $target.sleeperSeason = $SleeperSeason.Trim()
 $target.name = $PublicLeagueName.Trim()
 $target.format = $LeagueType
+$target.draftStyle = $normalizedDraftStyle
 $target.division = $Division.Trim()
 $target.buyIn = [int]([double]$BuyIn)
 $target.teams = [int]([double]$TeamCount)
