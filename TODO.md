@@ -2,8 +2,7 @@
 
 ## Immediate
 
-- [ ] Add the LeagueSafe links for `KP1` and `KP2`. They are now intentionally `open` with public invite links, so the missing LeagueSafe links are the only temporary keeper-launch gap.
-- [ ] Revisit the weaker `DYN3` year-2 orphan and use trusted private outreach before advertising that rebuild roster broadly. Private outreach copy is now saved in `marketing/`.
+- [ ] Add the LeagueSafe links for `DYN4`, `KP1`, and `KP2`. These are the current open-league records still missing LeagueSafe links and the only active league-data validation warnings.
 
 ## Next Automation Ideas
 
@@ -17,6 +16,7 @@
 - [x] Verify the homepage format filters work correctly in Chrome after cache-busting.
 - [x] Add the `DYN3` invite link once the current manager leaves and the open spot is actually available.
 - [x] Save trusted private outreach copy for the weaker `DYN3` orphan in the marketing docs.
+- [x] Keep the weaker `DYN3` year-2 orphan in-house by taking over the team instead of advertising the opening.
 - [x] Store the public Sleeper invite links for `KP1` and `KP2` while keeping the keeper leagues in `coming-soon` status until their LeagueSafe links are ready.
 - [x] Flip `KP1` and `KP2` from `coming-soon` to `open` once their public Sleeper invite links are ready, even before the LeagueSafe links are added.
 - [x] Confirm league cards render in internal ID order within each format, especially `RD1`, `RD2`, `RD3`.

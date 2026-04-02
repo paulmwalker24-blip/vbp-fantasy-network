@@ -238,6 +238,7 @@ Current league notes:
 - For the Best Ball Union Center, weekly high scores refer to the single highest-scoring team across all BBU leagues for that week, not per-division weekly winners.
 - For the Best Ball Union Center, the public overall points leaderboard is intentionally limited to the top 20 teams.
 - `CH1` is a live chopped league and should continue pointing to `chopped-constitution.html`.
+- `RD4` is a live 2026 redraft league at `$100` buy-in and currently uses the direct Sleeper predraft URL as its public link.
 - `KP1` and `KP2` are the initial 2026 keeper leagues at `$25` and `$50` buy-ins. Their `sleeperLeagueId` values and public Sleeper invite links are now stored, and they are live `open` records even though their LeagueSafe links are still pending.
 - In keeper leagues, only trades reset keeper years. Drops, waivers, and free-agent re-adds do not reset keeper years, regardless of which manager acquires the player.
 - In keeper leagues, future draft picks may be traded up to two years out, and managers must be paid through the farthest traded season before the trade is processed.
@@ -251,6 +252,7 @@ Current league notes:
 - The local maintenance scripts intentionally treat `inviteLink`, `leagueSafeLink`, `constitutionPage`, `buyIn`, and curated `name` values as commissioner-owned fields unless the user explicitly opts into overwriting them.
 - `DYN1`, `DYN2`, and `DYN3` now use season-keyed `leagueSafeLinksBySeason` data for `2026`, `2027`, and `2028` alongside the current-season `leagueSafeLink`.
 - Sleeper invite links can point to a newer live league than the currently stored `sleeperLeagueId`, especially on renewed dynasty leagues. If live counts look wrong, resolve the invite page's `league_id` before assuming the invite link is stale.
+- If the user provides a direct Sleeper league URL instead of a share invite, it is acceptable to store that direct league URL in `inviteLink` so the record can stay publicly actionable while still resolving and storing the numeric `sleeperLeagueId`.
 - When checking dynasty future-pick payment obligations, use Sleeper traded-pick data and only flag managers who traded away future picks. Do not flag the managers who received those picks unless they also traded away their own future picks.
 - For Sleeper-backed leagues, `filled` should reflect paid/assigned teams by counting roster slots with an `owner_id`. Do not treat raw league member count as the true fill number.
 
@@ -330,6 +332,7 @@ If donation rendering breaks:
 - Use constitutions and clear rules as trust signals, but do not overload short recruiting posts with too much backstory unless the user asks for a fuller pitch.
 - When the user wants reusable outreach ideas, store them in the relevant file under `marketing/` so future prompts can build from past examples instead of starting from scratch.
 - If the user asks for a response-driving version, prefer a direct CTA such as `DM me or reply if interested.`
+- For bracket league recruiting copy, prefer an early `Year 3` or established-league hook so the format does not read like an unproven startup and the commissioner experience comes through quickly.
 - For weaker dynasty rebuilds or questionable orphan takeovers, prefer trusted private outreach language over broad public promotion.
 
 ## Known Issues And Hazards

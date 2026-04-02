@@ -46,6 +46,20 @@ Use this structure for short Facebook recruiting posts:
 
 `Comment or DM me if interested.`
 
+### March 30 2026 Live Openings
+
+`VBP Fantasy Network currently has 1 spot left in Redraft 3, 1 spot left in Dynasty 3, and the $15 Chopped league is also open if you want a lower-cost entry point.`
+
+`Redraft 3 ($50): https://sleeper.com/i/V9GRBq67x7jOV`
+
+`Dynasty 3 ($30): https://sleeper.com/i/E8a1K6DqnARY0`
+
+`Chopped 1 ($15): https://sleeper.com/i/Y2VKoEON1XkqR`
+
+`Hub + constitutions: https://vbp-fantasy-network.vercel.app/`
+
+`Comment or DM me if interested.`
+
 ## Reusable Template
 
 `VBP Fantasy Network currently has [specific opening 1], [specific opening 2], and [new or upcoming opening].`

@@ -512,9 +512,9 @@ function renderDonations(projects) {
     const card = document.createElement("article");
     card.className = "donation-card";
 
-    const remaining = Number.isFinite(Number(project.remaining))
-      ? Math.max(toNumber(project.remaining), 0)
-      : Math.max(project.goal - project.donated, 0);
+    const remaining = project.remaining === null
+      ? Math.max(project.goal - project.donated, 0)
+      : Math.max(toNumber(project.remaining), 0);
     const fundedAmount = project.goal >= remaining
       ? Math.max(project.goal - remaining, 0)
       : 0;
@@ -604,12 +604,18 @@ async function loadDonations() {
   return projects
     .map((project, index) => ({
       slot: String(project.slot || `Project ${index + 1}`).trim(),
-      slotLabel: Number.isFinite(Number(project.slotLabel)) ? Number(project.slotLabel) : index + 1,
+      slotLabel: project.slotLabel === "" || project.slotLabel === null || project.slotLabel === undefined
+        ? index + 1
+        : Number.isFinite(Number(project.slotLabel))
+          ? Number(project.slotLabel)
+          : index + 1,
       name: String(project.name || "").trim(),
       state: String(project.state || "").trim(),
       donated: toNumber(project.donated),
       goal: toNumber(project.goal),
-      remaining: toNumber(project.remaining),
+      remaining: project.remaining === "" || project.remaining === null || project.remaining === undefined
+        ? null
+        : toNumber(project.remaining),
       link: String(project.link || "").trim()
     }))
     .filter(project => project.name || project.state || project.goal > 0 || project.link)

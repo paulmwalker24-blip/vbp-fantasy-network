@@ -5,6 +5,7 @@
 - Treat `VBP Fantasy Network` as an active brand, not a project that is still being built.
 - Keep early Reddit posts short and simple so they feel like league recruiting, not a full brand explainer.
 - Lead with open spots, active owners, competitive leagues, and multiple formats.
+- Make the title do real work. Lead with urgency, scarcity, price point, or the clearest reason someone should click.
 - Keep the network name visible in the title or first sentence.
 - Use `DM me or reply if interested.` when a direct call to action fits the post.
 - Mention constitutions and clear rules as trust signals, but do not overload the post.
@@ -17,6 +18,9 @@
 - `Join VBP Fantasy Network | Competitive Leagues Now Open`
 - `VBP Fantasy Network | Looking for Active Fantasy Football Owners`
 - `VBP Fantasy Network | Organized Leagues, Clear Rules, Open Spots`
+- `1 Spot Left in $50 Redraft + 1 Spot Left in Dynasty 3 | VBP Fantasy Network`
+- `Need 1 More for Redraft 3 + 1 More for Dynasty 3 | $15 Chopped Also Open`
+- `Last Spot in $50 Redraft + Last Spot in Dynasty 3 | VBP Fantasy Network`
 
 ## Short Post Templates
 
@@ -37,6 +41,26 @@ Body:
 `Keeper 1 ($25): https://sleeper.com/i/m7olnV2oZdMDY`
 
 `Keeper 2 ($50): https://sleeper.com/i/LVoRxbV3z2bw3`
+
+`Hub + constitutions: https://vbp-fantasy-network.vercel.app/`
+
+`DM me or reply if interested.`
+
+### March 30 2026 Live Openings
+
+Title:
+
+`1 Spot Left in $50 Redraft + 1 Spot Left in Dynasty 3 | $15 Chopped Also Open`
+
+Body:
+
+`VBP Fantasy Network currently has 1 spot left in Redraft 3, 1 spot left in Dynasty 3, and the $15 Chopped league is also open if you want a lower entry point.`
+
+`Redraft 3 ($50): https://sleeper.com/i/V9GRBq67x7jOV`
+
+`Dynasty 3 ($30): https://sleeper.com/i/E8a1K6DqnARY0`
+
+`Chopped 1 ($15): https://sleeper.com/i/Y2VKoEON1XkqR`
 
 `Hub + constitutions: https://vbp-fantasy-network.vercel.app/`
 
@@ -90,6 +114,38 @@ Body:
 
 `DM me or reply if interested.`
 
+### Reusable Bracket League Post
+
+Title:
+
+`VBP Fantasy Network | Year 3 Bracket League Open | $50 60-Team Tournament`
+
+Body:
+
+`VBP Fantasy Network has spots open in the Year 3 Bracket League. This is an established $50 format, not a brand-new startup, and it is built as a 60-team Progressive PPR tournament split into five 12-team divisions with 32 teams advancing to the overall playoff bracket.`
+
+`If you want something bigger than a standard home league, this is built to feel like a full-season tournament while still drafting and managing your own 12-team division on Sleeper.`
+
+`Fast + Slow divisions are both available. Current openings:`
+
+`Titan (Slow) - 3/12: http://sleeper.com/i/kM2GBe6qL228Y`
+
+`Apex (Slow) - 5/12: http://sleeper.com/i/zExweGWd6aPgb`
+
+`Iron (Fast) - 4/12: http://sleeper.com/i/j7moDEZ337dn0`
+
+`Vanguard (Fast) - 0/12: http://sleeper.com/i/kM2GBe9QxYED7`
+
+`Dominion (Slow) - 0/12: http://sleeper.com/i/Y2VXxZ02Y850R`
+
+`Bracket constitution: https://vbp-fantasy-network.vercel.app/bracket-constitution.html`
+
+`Bracket Center: https://vbp-fantasy-network.vercel.app/bracket-center.html`
+
+`Main hub: https://vbp-fantasy-network.vercel.app/`
+
+`DM me or reply if interested.`
+
 ### Best Ball Union Template
 
 `VBP Fantasy Network has Best Ball Union open right now.`
@@ -136,5 +192,6 @@ Body:
 - For dynasty orphan posts, lead with the exact number of orphan teams and note the current dynasty year so the post feels concrete.
 - For weaker dynasty orphans, save the blunt rebuild framing for trusted private outreach instead of broad public posts.
 - For bracket posts, list each division by name with its live count so readers can choose a fast or slow room quickly.
+- For bracket posts, use the Year 3 angle as an early trust signal so readers understand the format is established and likely to fill.
 - For Best Ball Union posts, lead with the format hook first and use the center link as a trust signal showing the tracking is already public.
 - Save new versions here when a post feels natural and gets engagement.
