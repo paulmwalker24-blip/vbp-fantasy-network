@@ -140,16 +140,53 @@
                         "sleeperSeason":  "2026",
                         "name":  "VBP Dynasty 4",
                         "format":  "dynasty",
+                        "draftStyle":  "slow",
                         "division":  "",
                         "buyIn":  30,
                         "teams":  12,
                         "filled":  12,
                         "status":  "open",
                         "inviteLink":  "https://sleeper.com/i/V9xM5LYMZzN0V",
-                        "leagueSafeLink":  "",
+                        "leagueSafeLink":  "https://www.leaguesafe.com/join/4405724",
                         "constitutionPage":  "dynasty-constitution.html",
                         "notes":  "",
-                        "lastUpdated":  "3/27/2026"
+                        "lastUpdated":  "4/13/2026"
+                    },
+                    {
+                        "id":  "DYN5",
+                        "sleeperLeagueId":  "1348345763335270400",
+                        "sleeperSeason":  "2026",
+                        "name":  "VBP Dynasty 5",
+                        "format":  "dynasty",
+                        "draftStyle":  "slow",
+                        "division":  "",
+                        "buyIn":  30,
+                        "teams":  12,
+                        "filled":  0,
+                        "status":  "open",
+                        "inviteLink":  "https://sleeper.com/i/Y2V7Pl9D6P51X",
+                        "leagueSafeLink":  "https://www.leaguesafe.com/join/4409283",
+                        "constitutionPage":  "dynasty-constitution.html",
+                        "notes":  "",
+                        "lastUpdated":  "4/13/2026"
+                    },
+                    {
+                        "id":  "DYN6",
+                        "sleeperLeagueId":  "1348345934114725888",
+                        "sleeperSeason":  "2026",
+                        "name":  "VBP Dynasty 6",
+                        "format":  "dynasty",
+                        "draftStyle":  "fast",
+                        "division":  "",
+                        "buyIn":  30,
+                        "teams":  12,
+                        "filled":  0,
+                        "status":  "open",
+                        "inviteLink":  "https://sleeper.com/i/Y2V7Pl0EnAzlj",
+                        "leagueSafeLink":  "https://www.leaguesafe.com/join/4409286",
+                        "constitutionPage":  "dynasty-constitution.html",
+                        "notes":  "",
+                        "lastUpdated":  "4/13/2026"
                     },
                     {
                         "id":  "BBU1",
@@ -333,10 +370,10 @@
                         "filled":  1,
                         "status":  "open",
                         "inviteLink":  "https://sleeper.com/i/m7olnV2oZdMDY",
-                        "leagueSafeLink":  "",
+                        "leagueSafeLink":  "https://www.leaguesafe.com/join/4409288",
                         "constitutionPage":  "keeper-constitution.html",
                         "notes":  "",
-                        "lastUpdated":  "3/23/2026"
+                        "lastUpdated":  "4/13/2026"
                     },
                     {
                         "id":  "KP2",
@@ -350,10 +387,10 @@
                         "filled":  1,
                         "status":  "open",
                         "inviteLink":  "https://sleeper.com/i/LVoRxbV3z2bw3",
-                        "leagueSafeLink":  "",
+                        "leagueSafeLink":  "https://www.leaguesafe.com/join/4409289",
                         "constitutionPage":  "keeper-constitution.html",
                         "notes":  "",
-                        "lastUpdated":  "3/23/2026"
+                        "lastUpdated":  "4/13/2026"
                     },
                     {
                         "id":  "CH1",

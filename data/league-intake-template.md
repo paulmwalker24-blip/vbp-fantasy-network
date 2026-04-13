@@ -7,19 +7,20 @@ Use this for each league you want added or updated in `data/leagues.json`.
 1. Start with `League type` first so the correct ID prefix and constitution page are obvious from the beginning.
 2. If this is a new league, leave `Internal ID` blank and let `upsert-league-record.ps1` assign it, or run `get-next-league-id.ps1` first if you want to preview the suggested ID.
 3. If you have a Sleeper league URL or invite link instead of a raw numeric ID, keep the URL. The local intake flow can resolve and store the `sleeperLeagueId` for you.
-4. Write or update the record with the local intake script:
+4. For newly created non-bracket leagues, decide the draft pace up front and store it as `fast` or `slow` during intake.
+5. Write or update the record with the local intake script:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\upsert-league-record.ps1
 ```
 
-5. Validate the JSON after the change:
+6. Validate the JSON after the change:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\validate-leagues-json.ps1
 ```
 
-6. If the league has a `sleeperLeagueId`, optionally refresh Sleeper-owned fields afterward:
+7. If the league has a `sleeperLeagueId`, optionally refresh Sleeper-owned fields afterward:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\sync-sleeper-leagues.ps1
@@ -39,7 +40,7 @@ Manual fields such as `inviteLink`, `leagueSafeLink`, `constitutionPage`, `buyIn
 - Sleeper season:
 - Public league name:
 - Format:
-- Draft style (optional, non-bracket only): `fast`, `slow`, or blank
+- Draft style (newly created non-bracket leagues should use `fast` or `slow`; legacy leagues may be blank)
 - Division / draft type (bracket only):
 - Buy-in:
 - Team count:
