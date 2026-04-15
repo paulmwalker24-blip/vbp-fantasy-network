@@ -150,6 +150,18 @@ Refresh the full combined standings table for one bracket group:
 Run the bracket ledger sync and refresh data/bracket-ledger.json from Sleeper, then give me the current combined overall standings for BRACKET-2026-1 with rank, team name, league/division, record, and points for. If the season is not far enough along or the group is not full yet, tell me the standings are provisional.
 ```
 
+Build or refresh the dynasty bracket center ledger using the alternate grouped-data files:
+
+```text
+Run the bracket ledger sync using data/dynasty-bracket-groups.json and refresh data/dynasty-bracket-ledger.json from Sleeper so the grouped dynasty bracket leagues, standings, seeds, and center data are up to date.
+```
+
+Sync only the dynasty bracket group:
+
+```text
+Run the bracket ledger sync using data/dynasty-bracket-groups.json and data/dynasty-bracket-ledger.json for DYNASTY-BRACKET-2026-1 only, then summarize the current division winners and full playoff field.
+```
+
 Generate the weekly-style bracket standings report:
 
 ```text

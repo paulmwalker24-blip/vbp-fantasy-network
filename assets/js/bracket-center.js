@@ -1,5 +1,53 @@
-const BRACKET_LEDGER_URL = "data/bracket-ledger.json";
-const DEFAULT_GROUP_ID = "BRACKET-2026-1";
+const CENTER_VIEW_CONFIG = {
+  redraft: {
+    key: "redraft",
+    buttonLabel: "Redraft Bracket",
+    label: "Bracket Redraft",
+    pageTitle: "Bracket Center",
+    summaryTitle: "Live Redraft Bracket Center",
+    summaryCopy: "This page is the public standings layer for the redraft bracket format. It stays separate from the homepage so the hub can stay focused on recruiting, league discovery, and constitutions.",
+    subtitle: "Public standings and playoff race snapshot for the VBP Bracket Redraft group.",
+    sampleSubtitlePrefix: "Sample full-field preview for",
+    constitutionPage: "bracket-constitution.html",
+    constitutionLabel: "Bracket Redraft Constitution",
+    ledgerUrl: "data/bracket-ledger.json",
+    defaultGroupId: "BRACKET-2026-1",
+    divisionHeading: "Division Playoff Counts",
+    divisionEmptyMessage: "No grouped redraft bracket leagues are configured for this center yet.",
+    standingsEmptyMessage: "No standings are available for this redraft bracket group yet.",
+    scoreboardsIntro: "Use the division tabs to follow live or current-week matchup scores across the grouped redraft bracket leagues.",
+    scoreboardsWaiting: "Live scoreboards will appear here once the redraft bracket leagues enter the season and start posting weekly matchups.",
+    scoreboardsMissing: "No redraft bracket leagues are configured for live scoreboards yet.",
+    loadFailure: "The redraft bracket center could not load the current data file.",
+    unavailableDivisionMessage: "Unable to load redraft bracket center data right now.",
+    unavailableStandingsMessage: "Unable to load redraft bracket standings right now.",
+    unavailableScoreboardsMessage: "Unable to load live redraft bracket scoreboards right now."
+  },
+  dynasty: {
+    key: "dynasty",
+    buttonLabel: "Dynasty Bracket",
+    label: "Dynasty Bracket",
+    pageTitle: "Bracket Center",
+    summaryTitle: "Live Dynasty Bracket Center",
+    summaryCopy: "This page is the public standings layer for the dynasty bracket format. It is built to mirror the redraft bracket center once the four dynasty divisions are live and publishing weekly data.",
+    subtitle: "Public standings and playoff race snapshot for the VBP Dynasty Bracket group.",
+    sampleSubtitlePrefix: "Sample dynasty-field preview for",
+    constitutionPage: "dynasty-bracket-constitution.html",
+    constitutionLabel: "Dynasty Bracket Constitution",
+    ledgerUrl: "data/dynasty-bracket-ledger.json",
+    defaultGroupId: "DYNASTY-BRACKET-2026-1",
+    divisionHeading: "Division Playoff Counts",
+    divisionEmptyMessage: "No grouped dynasty bracket leagues are configured for this center yet.",
+    standingsEmptyMessage: "No standings are available for this dynasty bracket group yet.",
+    scoreboardsIntro: "Use the division tabs to follow live or current-week matchup scores across the grouped dynasty bracket leagues.",
+    scoreboardsWaiting: "Live scoreboards will appear here once the dynasty bracket leagues enter the season and start posting weekly matchups.",
+    scoreboardsMissing: "No dynasty bracket leagues are configured for live scoreboards yet.",
+    loadFailure: "The dynasty bracket center could not load the current data file.",
+    unavailableDivisionMessage: "Unable to load dynasty bracket center data right now.",
+    unavailableStandingsMessage: "Unable to load dynasty bracket standings right now.",
+    unavailableScoreboardsMessage: "Unable to load live dynasty bracket scoreboards right now."
+  }
+};
 const DEFAULT_TEAMS_PER_LEAGUE = 12;
 const SCOREBOARD_REFRESH_MS = 60000;
 const DEMO_TEAM_SUFFIXES = [
@@ -19,6 +67,7 @@ const DEMO_TEAM_SUFFIXES = [
 
 const scoreboardState = {
   liveGroup: null,
+  centerView: CENTER_VIEW_CONFIG.redraft,
   selectedLeagueRecordId: "",
   refreshTimer: null
 };
@@ -32,9 +81,15 @@ function toNumber(value) {
   return Number.isFinite(parsed) ? parsed : 0;
 }
 
-function getSearchGroupId() {
+function getCenterView() {
   const params = new URLSearchParams(window.location.search);
-  return text(params.get("group")) || DEFAULT_GROUP_ID;
+  const requestedView = text(params.get("view")).toLowerCase();
+  return CENTER_VIEW_CONFIG[requestedView] || CENTER_VIEW_CONFIG.redraft;
+}
+
+function getSearchGroupId(centerView) {
+  const params = new URLSearchParams(window.location.search);
+  return text(params.get("group")) || centerView.defaultGroupId;
 }
 
 function getEntryKey(entry) {
@@ -105,18 +160,37 @@ function findGroup(payload, groupId) {
   return getGroups(payload).find(group => text(group?.groupId) === groupId) || null;
 }
 
-function getExpectedTeamCount(group) {
-  const leagueCount = Array.isArray(group?.leagueRecordIds) ? group.leagueRecordIds.length : 0;
-  return leagueCount * DEFAULT_TEAMS_PER_LEAGUE;
-}
-
-function getDemoPlayoffCounts(leagueCount) {
-  if (leagueCount === 5) {
-    return [7, 6, 7, 5, 7];
+function getGroupLeagueCount(group) {
+  const leagueRecordIds = Array.isArray(group?.leagueRecordIds) ? group.leagueRecordIds.filter(Boolean) : [];
+  if (leagueRecordIds.length) {
+    return leagueRecordIds.length;
   }
 
-  const counts = new Array(Math.max(leagueCount, 1)).fill(1);
-  let remaining = 32 - counts.length;
+  const snapshots = Array.isArray(group?.leagueSnapshots) ? group.leagueSnapshots.filter(Boolean) : [];
+  if (snapshots.length) {
+    return snapshots.length;
+  }
+
+  return toNumber(group?.sampleLeagueCount);
+}
+
+function getExpectedTeamCount(group) {
+  const leagueCount = getGroupLeagueCount(group);
+  const teamsPerLeague = Math.max(toNumber(group?.teamsPerLeague), DEFAULT_TEAMS_PER_LEAGUE);
+  return leagueCount * teamsPerLeague;
+}
+
+function getTargetPlayoffFieldSize(group) {
+  return Math.max(
+    toNumber(group?.rules?.directQualifiers) + toNumber(group?.rules?.wildCards),
+    toNumber(group?.rules?.divisionWinners)
+  );
+}
+
+function getDemoPlayoffCounts(group) {
+  const leagueCount = Math.max(getGroupLeagueCount(group), 1);
+  const counts = new Array(leagueCount).fill(1);
+  let remaining = Math.max(getTargetPlayoffFieldSize(group) - leagueCount, 0);
   let index = 0;
 
   while (remaining > 0) {
@@ -129,6 +203,7 @@ function getDemoPlayoffCounts(leagueCount) {
 }
 
 function getLeagueDescriptors(group) {
+  const sampleDivisions = Array.isArray(group?.sampleDivisions) ? group.sampleDivisions : [];
   const snapshots = Array.isArray(group?.leagueSnapshots) ? group.leagueSnapshots : [];
   const namesById = new Map();
 
@@ -141,47 +216,67 @@ function getLeagueDescriptors(group) {
     });
   });
 
-  return (Array.isArray(group?.leagueRecordIds) ? group.leagueRecordIds : []).map((leagueRecordId, index) => {
-    const resolvedLeagueRecordId = text(leagueRecordId);
-    const snapshotInfo = namesById.get(resolvedLeagueRecordId) || {};
+  const leagueRecordIds = Array.isArray(group?.leagueRecordIds) ? group.leagueRecordIds : [];
+  if (leagueRecordIds.length) {
+    return leagueRecordIds.map((leagueRecordId, index) => {
+      const resolvedLeagueRecordId = text(leagueRecordId);
+      const snapshotInfo = namesById.get(resolvedLeagueRecordId) || {};
 
-    return {
-      leagueRecordId: resolvedLeagueRecordId,
-      leagueName: snapshotInfo.leagueName || `Division ${index + 1}`,
-      division: snapshotInfo.division || ""
-    };
-  });
+      return {
+        leagueRecordId: resolvedLeagueRecordId,
+        leagueName: snapshotInfo.leagueName || `Division ${index + 1}`,
+        division: snapshotInfo.division || ""
+      };
+    });
+  }
+
+  if (snapshots.length) {
+    return snapshots.map((snapshot, index) => ({
+      leagueRecordId: text(snapshot?.leagueRecordId) || `SAMPLE${index + 1}`,
+      leagueName: text(snapshot?.localLeagueName) || `Division ${index + 1}`,
+      division: text(snapshot?.division)
+    }));
+  }
+
+  return sampleDivisions.map((entry, index) => ({
+    leagueRecordId: text(entry?.leagueRecordId) || `SAMPLE${index + 1}`,
+    leagueName: text(entry?.leagueName) || `Division ${index + 1}`,
+    division: text(entry?.division)
+  }));
 }
 
-function getDemoMetrics(rank, divisionIndex, slotIndex) {
+function getDemoMetrics(rank, divisionIndex, slotIndex, totalTeams) {
+  const percentile = totalTeams > 1 ? (rank - 1) / (totalTeams - 1) : 0;
   let wins = 1;
   let losses = 8;
   let ties = 0;
 
-  if (rank <= 2) {
+  if (percentile <= 0.08) {
     wins = 8;
     losses = 1;
-  } else if (rank <= 10) {
+  } else if (percentile <= 0.2) {
     wins = 7;
     losses = 2;
-  } else if (rank <= 24) {
+  } else if (percentile <= 0.45) {
     wins = 6;
     losses = 3;
-  } else if (rank <= 38) {
+  } else if (percentile <= 0.72) {
     wins = 5;
     losses = 4;
-  } else if (rank <= 48) {
+  } else if (percentile <= 0.88) {
     wins = 4;
     losses = 5;
-  } else if (rank <= 55) {
+  } else if (percentile <= 0.96) {
     wins = 3;
     losses = 6;
-  } else if (rank <= 59) {
+  } else {
     wins = 2;
     losses = 7;
   }
 
-  const pointsFor = Number((1188.42 - ((rank - 1) * 7.83) - (divisionIndex * 1.47) - (slotIndex * 0.31)).toFixed(2));
+  const pointsForBase = totalTeams > 50 ? 1188.42 : 1318.42;
+  const pointsForStep = totalTeams > 50 ? 7.83 : 9.12;
+  const pointsFor = Number((pointsForBase - ((rank - 1) * pointsForStep) - (divisionIndex * 1.47) - (slotIndex * 0.31)).toFixed(2));
 
   return {
     wins,
@@ -213,9 +308,13 @@ function interleaveGroups(groups) {
 
 function buildDemoGroup(group) {
   const descriptors = getLeagueDescriptors(group);
-  const expectedTeamCount = getExpectedTeamCount(group) || 60;
+  const expectedTeamCount = getExpectedTeamCount(group) || (descriptors.length * DEFAULT_TEAMS_PER_LEAGUE);
   const teamsPerLeague = Math.max(Math.floor(expectedTeamCount / Math.max(descriptors.length, 1)), DEFAULT_TEAMS_PER_LEAGUE);
-  const playoffCounts = getDemoPlayoffCounts(descriptors.length);
+  const playoffCounts = getDemoPlayoffCounts(group);
+  const targetPlayoffFieldSize = getTargetPlayoffFieldSize(group);
+  const divisionWinnerSeedCount = Math.min(Math.max(toNumber(group?.rules?.divisionWinners), descriptors.length), descriptors.length);
+  const wildCardCount = Math.max(toNumber(group?.rules?.wildCards), 0);
+  const directQualifierCount = Math.max(targetPlayoffFieldSize - divisionWinnerSeedCount - wildCardCount, 0);
 
   const divisionTeams = descriptors.map((descriptor, divisionIndex) => {
     const teams = [];
@@ -238,18 +337,18 @@ function buildDemoGroup(group) {
     return teams;
   });
 
-  const divisionWinners = divisionTeams.map(teams => teams[0]);
+  const divisionWinners = divisionTeams.map(teams => teams[0]).slice(0, divisionWinnerSeedCount);
   const extraPlayoffTeams = interleaveGroups(
     divisionTeams.map((teams, divisionIndex) => teams.slice(1, playoffCounts[divisionIndex]))
   );
-  const directQualifiers = extraPlayoffTeams.slice(0, 25);
-  const wildCards = extraPlayoffTeams.slice(25, 27);
+  const directQualifiers = extraPlayoffTeams.slice(0, directQualifierCount);
+  const wildCards = extraPlayoffTeams.slice(directQualifierCount, directQualifierCount + wildCardCount);
   const outTeams = interleaveGroups(
     divisionTeams.map((teams, divisionIndex) => teams.slice(playoffCounts[divisionIndex]))
   );
 
   const rankedTeams = [...divisionWinners, ...directQualifiers, ...wildCards, ...outTeams].map((team, index) => {
-    const metrics = getDemoMetrics(index + 1, team.divisionIndex, team.slotIndex);
+    const metrics = getDemoMetrics(index + 1, team.divisionIndex, team.slotIndex, expectedTeamCount);
 
     return {
       rank: index + 1,
@@ -280,13 +379,13 @@ function buildDemoGroup(group) {
   }));
 
   const seededDirectQualifiers = directQualifiers.map((team, index) => ({
-    seed: index + 6,
+    seed: divisionWinnerSeedCount + index + 1,
     seedType: "direct-qualifier",
     team: rankedTeamByKey.get(getEntryKey(team))
   }));
 
   const seededWildCards = wildCards.map((team, index) => ({
-    seed: index + 31,
+    seed: divisionWinnerSeedCount + directQualifierCount + index + 1,
     seedType: "wild-card",
     team: rankedTeamByKey.get(getEntryKey(team))
   }));
@@ -294,7 +393,7 @@ function buildDemoGroup(group) {
   return {
     ...group,
     isSample: true,
-    notes: "Sample 60-team preview is currently shown because the live bracket group is still pre-draft, incomplete, or not yet showing meaningful live standings.",
+    notes: `${scoreboardState.centerView.label} sample preview is currently shown because the live grouped standings are still pre-draft, incomplete, or not yet showing meaningful data.`,
     overallStandings: rankedTeams,
     divisionWinners: seededDivisionWinners,
     playoffField: [...seededDivisionWinners, ...seededDirectQualifiers, ...seededWildCards],
@@ -345,6 +444,8 @@ function computeDivisionCounts(group) {
   const leagueRecordIds = Array.isArray(group?.leagueRecordIds) ? group.leagueRecordIds : [];
   const snapshots = Array.isArray(group?.leagueSnapshots) ? group.leagueSnapshots : [];
   const playoffField = Array.isArray(group?.playoffField) ? group.playoffField : [];
+  const descriptorIds = getLeagueDescriptors(group).map(entry => text(entry.leagueRecordId)).filter(Boolean);
+  const resolvedLeagueIds = leagueRecordIds.length ? leagueRecordIds : descriptorIds;
 
   snapshots.forEach(snapshot => {
     const leagueRecordId = text(snapshot?.leagueRecordId);
@@ -352,7 +453,7 @@ function computeDivisionCounts(group) {
     leagueNamesById.set(leagueRecordId, text(snapshot?.localLeagueName) || leagueRecordId);
   });
 
-  leagueRecordIds.forEach(leagueRecordId => {
+  resolvedLeagueIds.forEach(leagueRecordId => {
     countsByLeague.set(text(leagueRecordId), 0);
   });
 
@@ -362,7 +463,7 @@ function computeDivisionCounts(group) {
     countsByLeague.set(leagueRecordId, (countsByLeague.get(leagueRecordId) || 0) + 1);
   });
 
-  return leagueRecordIds.map(leagueRecordId => {
+  return resolvedLeagueIds.map(leagueRecordId => {
     const resolvedId = text(leagueRecordId);
     return {
       leagueRecordId: resolvedId,
@@ -595,13 +696,14 @@ function renderScoreboardsUnavailable(snapshots, message, weekLabel = "Scoreboar
 }
 
 async function renderLiveScoreboards(group) {
+  const centerView = scoreboardState.centerView;
   const snapshots = Array.isArray(group?.leagueSnapshots) ? group.leagueSnapshots : [];
   const summary = document.getElementById("scoreboardSummary");
   const weekLabel = document.getElementById("scoreboardWeekLabel");
   const panelsContainer = document.getElementById("scoreboardPanels");
 
   if (!snapshots.length) {
-    renderScoreboardsUnavailable([], "No bracket leagues are configured for live scoreboards yet.");
+    renderScoreboardsUnavailable([], centerView.scoreboardsMissing);
     return;
   }
 
@@ -611,7 +713,7 @@ async function renderLiveScoreboards(group) {
   if (allPrelaunch) {
     renderScoreboardsUnavailable(
       snapshots,
-      "Live scoreboards will appear here once the bracket leagues enter the season and start posting weekly matchups.",
+      centerView.scoreboardsWaiting,
       "Season not active yet"
     );
     return;
@@ -636,7 +738,7 @@ async function renderLiveScoreboards(group) {
 
   renderScoreboardTabs(snapshots);
   panelsContainer.innerHTML = "";
-  summary.textContent = "Current-week matchup scores refresh from Sleeper while this page is open. Use the tabs to follow each division.";
+  summary.textContent = `Current-week matchup scores refresh from Sleeper while this page is open. Use the tabs to follow each ${centerView.key === "dynasty" ? "dynasty division" : "division"}.`;
   weekLabel.textContent = weekInfo.label;
 
   const matchupResults = await Promise.all(snapshots.map(async snapshot => {
@@ -727,6 +829,8 @@ async function renderLiveScoreboards(group) {
 
 function getStatusMeta(entry, statusMaps) {
   const key = getEntryKey(entry);
+  const divisionWinnerCount = Math.max(toNumber(scoreboardState.liveGroup?.rules?.divisionWinners), 0);
+  const directQualifierTarget = Math.max(toNumber(scoreboardState.liveGroup?.rules?.directQualifiers), divisionWinnerCount);
 
   if (statusMaps.divisionWinnerKeys.has(key)) {
     return { label: "Division Leader", className: "format-center-status is-leader" };
@@ -734,7 +838,7 @@ function getStatusMeta(entry, statusMaps) {
 
   if (statusMaps.playoffSeedByKey.has(key)) {
     const seed = statusMaps.playoffSeedByKey.get(key);
-    if (seed >= 31) {
+    if (seed > directQualifierTarget) {
       return { label: "Wild Card", className: "format-center-status is-wild-card" };
     }
     return { label: "In", className: "format-center-status is-in" };
@@ -744,6 +848,7 @@ function getStatusMeta(entry, statusMaps) {
 }
 
 function renderMeta(group) {
+  const centerView = scoreboardState.centerView;
   const groupName = document.getElementById("centerGroupName");
   const lastUpdated = document.getElementById("centerLastUpdated");
   const trackedTeams = document.getElementById("centerTrackedTeams");
@@ -751,23 +856,44 @@ function renderMeta(group) {
   const statusBanner = document.getElementById("centerStatusBanner");
   const title = document.getElementById("centerPageTitle");
   const subtitle = document.getElementById("centerPageSubtitle");
+  const summaryTitle = document.getElementById("centerSummaryTitle");
+  const summaryCopy = document.getElementById("centerSummaryCopy");
+  const constitutionLink = document.getElementById("centerConstitutionLink");
+  const topConstitutionLink = document.getElementById("centerTopConstitutionLink");
+  const sectionHeaders = Array.from(document.querySelectorAll(".constitution-section-header h2"));
+  const scoreboardSummary = document.getElementById("scoreboardSummary");
 
   const overallStandings = Array.isArray(group?.overallStandings) ? group.overallStandings : [];
   const playoffField = Array.isArray(group?.playoffField) ? group.playoffField : [];
-  const targetPlayoffSize = Number(group?.rules?.directQualifiers || 30) + Number(group?.rules?.wildCards || 2);
-  const label = text(group?.label) || text(group?.groupId) || DEFAULT_GROUP_ID;
+  const targetPlayoffSize = getTargetPlayoffFieldSize(group);
+  const label = text(group?.label) || text(group?.groupId) || centerView.defaultGroupId;
   const seasonDataReady = Boolean(group?.seasonDataReady);
   const seedingReady = Boolean(group?.seedingReady);
   const statusText = text(group?.notes);
 
-  title.textContent = "Bracket Center";
+  title.textContent = centerView.pageTitle;
   subtitle.textContent = group?.isSample
-    ? `Sample full-field preview for ${label} while live standings are still incomplete.`
+    ? `${centerView.sampleSubtitlePrefix} ${label} while live standings are still incomplete.`
     : `Public standings and playoff race snapshot for ${label}.`;
+  summaryTitle.textContent = centerView.summaryTitle;
+  summaryCopy.textContent = centerView.summaryCopy;
+  constitutionLink.href = centerView.constitutionPage;
+  constitutionLink.textContent = "View Constitution";
+  if (topConstitutionLink) {
+    topConstitutionLink.href = centerView.constitutionPage;
+    topConstitutionLink.textContent = "View Constitution";
+  }
+  scoreboardSummary.textContent = centerView.scoreboardsIntro;
   groupName.textContent = label;
   lastUpdated.textContent = formatTimestamp(group?.lastSyncedAt);
   trackedTeams.textContent = `${overallStandings.length} tracked`;
   playoffFieldSize.textContent = `${playoffField.length} / ${targetPlayoffSize}`;
+
+  if (sectionHeaders.length >= 3) {
+    sectionHeaders[0].textContent = centerView.divisionHeading;
+    sectionHeaders[1].textContent = "Live League Scoreboards";
+    sectionHeaders[2].textContent = "Full Combined Standings";
+  }
 
   if (statusText) {
     statusBanner.hidden = false;
@@ -779,6 +905,7 @@ function renderMeta(group) {
 }
 
 function renderDivisionCounts(group) {
+  const centerView = scoreboardState.centerView;
   const container = document.getElementById("divisionCountsContainer");
   const counts = computeDivisionCounts(group);
   container.innerHTML = "";
@@ -786,7 +913,7 @@ function renderDivisionCounts(group) {
   if (!counts.length) {
     const empty = document.createElement("div");
     empty.className = "empty-state";
-    empty.textContent = "No grouped bracket leagues are configured for this center yet.";
+    empty.textContent = centerView.divisionEmptyMessage;
     container.appendChild(empty);
     return;
   }
@@ -808,6 +935,7 @@ function renderDivisionCounts(group) {
 }
 
 function renderStandings(group) {
+  const centerView = scoreboardState.centerView;
   const body = document.getElementById("standingsTableBody");
   const standings = Array.isArray(group?.overallStandings) ? group.overallStandings : [];
   const statusMaps = buildStatusMaps(group);
@@ -815,7 +943,7 @@ function renderStandings(group) {
   body.innerHTML = "";
 
   if (!standings.length) {
-    body.appendChild(createEmptyState("No standings are available for this bracket group yet.", 6));
+    body.appendChild(createEmptyState(centerView.standingsEmptyMessage, 6));
     return;
   }
 
@@ -851,32 +979,48 @@ function renderStandings(group) {
   });
 }
 
+function updateCenterViewSwitcher() {
+  const centerView = scoreboardState.centerView;
+  const buttons = Array.from(document.querySelectorAll("[data-center-view]"));
+
+  buttons.forEach(button => {
+    const targetView = text(button.dataset.centerView).toLowerCase();
+    button.classList.toggle("is-active", targetView === centerView.key);
+  });
+}
+
 async function loadCenter() {
-  const targetGroupId = getSearchGroupId();
+  const centerView = getCenterView();
+  const targetGroupId = getSearchGroupId(centerView);
   const divisionCountsContainer = document.getElementById("divisionCountsContainer");
   const standingsBody = document.getElementById("standingsTableBody");
 
+  scoreboardState.centerView = centerView;
+  scoreboardState.liveGroup = null;
+  scoreboardState.selectedLeagueRecordId = "";
+  updateCenterViewSwitcher();
+
   try {
-    const response = await fetch(BRACKET_LEDGER_URL, { cache: "no-store" });
+    const response = await fetch(centerView.ledgerUrl, { cache: "no-store" });
     if (!response.ok) {
-      throw new Error(`Bracket ledger request failed with status ${response.status}`);
+      throw new Error(`${centerView.label} ledger request failed with status ${response.status}`);
     }
 
     const payload = await response.json();
     const liveGroup = findGroup(payload, targetGroupId);
 
     if (!liveGroup) {
-      throw new Error(`Could not find bracket group ${targetGroupId}.`);
+      throw new Error(`Could not find ${centerView.label} group ${targetGroupId}.`);
     }
 
     const group = shouldUseDemoGroup(liveGroup)
       ? buildDemoGroup(liveGroup)
       : liveGroup;
 
+    scoreboardState.liveGroup = liveGroup;
     renderMeta(group);
     renderDivisionCounts(group);
     renderStandings(group);
-    scoreboardState.liveGroup = liveGroup;
     await renderLiveScoreboards(liveGroup);
   } catch (error) {
     console.error("Bracket center load failed:", error);
@@ -884,18 +1028,18 @@ async function loadCenter() {
     divisionCountsContainer.innerHTML = "";
     const emptyDivisionState = document.createElement("div");
     emptyDivisionState.className = "empty-state";
-    emptyDivisionState.textContent = "Unable to load bracket center data right now.";
+    emptyDivisionState.textContent = centerView.unavailableDivisionMessage;
     divisionCountsContainer.appendChild(emptyDivisionState);
 
     standingsBody.innerHTML = "";
-    standingsBody.appendChild(createEmptyState("Unable to load standings right now.", 6));
+    standingsBody.appendChild(createEmptyState(centerView.unavailableStandingsMessage, 6));
 
     const banner = document.getElementById("centerStatusBanner");
     banner.hidden = false;
     banner.className = "format-center-banner is-provisional";
-    banner.textContent = "The bracket center could not load the current data file.";
+    banner.textContent = centerView.loadFailure;
 
-    renderScoreboardsUnavailable([], "Unable to load live scoreboards right now.");
+    renderScoreboardsUnavailable([], centerView.unavailableScoreboardsMessage);
   }
 }
 

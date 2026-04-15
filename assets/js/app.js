@@ -2,12 +2,13 @@ const LEAGUES_JSON_URL = "data/leagues.json";
 const DONATIONS_JSON_URL = "data/donations.json";
 
 const FORMAT_META = {
-  redraft: { label: "Redraft", description: "Standard seasonal competition with balanced scoring." },
-  dynasty: { label: "Dynasty", description: "Build and manage a roster long term." },
   bestball: { label: "Best Ball", description: "Draft once and let optimal scoring handle the lineup." },
-  bracket: { label: "Bracket", description: "Tournament-style competition across divisions." },
+  bracket: { label: "Redraft Bracket", description: "Tournament-style redraft competition across divisions." },
+  chopped: { label: "Chopped", description: "Planned format slot reserved for future launch." },
+  dynasty: { label: "Dynasty", description: "Build and manage a roster long term." },
+  dynastybracket: { label: "Dynasty Bracket", description: "Multi-division dynasty feeding a shared playoff bracket." },
   keeper: { label: "Keeper", description: "Annual redraft with two offseason keepers and rising draft costs." },
-  chopped: { label: "Chopped", description: "Planned format slot reserved for future launch." }
+  redraft: { label: "Redraft", description: "Standard seasonal competition with balanced scoring." }
 };
 
 let currentLeagueFilter = "all";
@@ -64,7 +65,8 @@ function toNumber(value) {
 }
 
 function normalizeFormat(value) {
-  const v = (value || "").toLowerCase().replace(/\s+/g, "").trim();
+  const v = (value || "").toLowerCase().replace(/[\s-]+/g, "").trim();
+  if (v.includes("dynastybracket")) return "dynastybracket";
   if (v.includes("best")) return "bestball";
   if (v.includes("bracket")) return "bracket";
   if (v.includes("dynasty")) return "dynasty";
@@ -164,10 +166,6 @@ function getLeagueDivisionLabel(league) {
   const division = String(league.division || "").trim();
   if (!division) return "";
 
-  if (league.format === "bracket") {
-    return `${division} Draft`;
-  }
-
   return division;
 }
 
@@ -185,6 +183,39 @@ function getDraftStyleLabel(league) {
   }
 
   return "";
+}
+
+function getLeagueContextNote(league) {
+  const explicitNote = String(league.notes || "").trim();
+  if (explicitNote) {
+    return explicitNote;
+  }
+
+  if (league.format === "dynastybracket" || league.constitutionPage === "dynasty-bracket-constitution.html") {
+    return "Part of 48 Team Dynasty Bracket";
+  }
+
+  if (league.format === "bracket") {
+    return "Part of 60 Team Redraft Bracket";
+  }
+
+  return "";
+}
+
+function getBalancedRowSizes(count) {
+  if (count <= 0) return [];
+  if (count <= 4) return [count];
+
+  const rowCount = Math.ceil(count / 5);
+  const baseSize = Math.floor(count / rowCount);
+  const remainder = count % rowCount;
+  const sizes = [];
+
+  for (let index = 0; index < rowCount; index += 1) {
+    sizes.push(baseSize + (index < remainder ? 1 : 0));
+  }
+
+  return sizes;
 }
 
 function normalizeLeagueEntry(entry) {
@@ -330,6 +361,11 @@ function createLeagueCard(league) {
     ? `${league.teams} Teams | Setup in progress`
     : `${league.filled} / ${league.teams} Filled`;
 
+  const note = document.createElement("div");
+  note.className = "league-line";
+  const contextNote = getLeagueContextNote(league);
+  note.textContent = contextNote;
+
   const badges = document.createElement("div");
   badges.className = "league-badges";
 
@@ -337,12 +373,23 @@ function createLeagueCard(league) {
   badge.className = spotsBadgeClass;
   badge.textContent = spotsBadgeText;
   const draftStyleLabel = getDraftStyleLabel(league);
+  const bracketDivisionLabel = league.format === "bracket" && divisionLabel
+    ? `${divisionLabel} Draft`
+    : "";
 
   if (draftStyleLabel) {
     const draftStyleBadge = document.createElement("span");
     draftStyleBadge.className = `badge badge-draft-${league.draftStyle}`;
     draftStyleBadge.textContent = draftStyleLabel;
     badges.appendChild(draftStyleBadge);
+  }
+
+  if (bracketDivisionLabel) {
+    const bracketDivisionBadge = document.createElement("span");
+    const normalizedDivision = divisionLabel.toLowerCase();
+    bracketDivisionBadge.className = `badge ${normalizedDivision === "fast" ? "badge-draft-fast" : "badge-draft-slow"}`;
+    bracketDivisionBadge.textContent = bracketDivisionLabel;
+    badges.appendChild(bracketDivisionBadge);
   }
 
   badges.appendChild(badge);
@@ -363,11 +410,17 @@ function createLeagueCard(league) {
 
   const content = [name, details];
 
-  if (divisionLabel) {
+  if (divisionLabel && league.format !== "bracket") {
     content.push(division);
   }
 
-  content.push(fillStatus, badges, actions);
+  content.push(fillStatus);
+
+  if (contextNote) {
+    content.push(note);
+  }
+
+  content.push(badges, actions);
   card.append(...content);
   return card;
 }
@@ -431,13 +484,28 @@ function renderLeagues(leagues) {
     header.append(titleWrap, summary);
 
     const grid = document.createElement("div");
-    grid.className = "card-grid";
+    grid.className = "card-grid-stack";
 
     if (!grouped.length) {
-      grid.appendChild(createEmptyState(`No active ${meta.label.toLowerCase()} leagues are listed right now.`));
+      const emptyGrid = document.createElement("div");
+      emptyGrid.className = "card-grid";
+      emptyGrid.appendChild(createEmptyState(`No active ${meta.label.toLowerCase()} leagues are listed right now.`));
+      grid.appendChild(emptyGrid);
     } else {
-      sortLeaguesByDisplayOrder(grouped)
-        .forEach(league => grid.appendChild(createLeagueCard(league)));
+      const orderedLeagues = sortLeaguesByDisplayOrder(grouped);
+      let offset = 0;
+
+      getBalancedRowSizes(orderedLeagues.length).forEach(size => {
+        const row = document.createElement("div");
+        row.className = "balanced-card-row";
+        row.style.setProperty("--balanced-cols", String(size));
+
+        orderedLeagues.slice(offset, offset + size)
+          .forEach(league => row.appendChild(createLeagueCard(league)));
+
+        grid.appendChild(row);
+        offset += size;
+      });
     }
 
     section.append(header, grid);

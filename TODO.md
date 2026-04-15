@@ -2,7 +2,7 @@
 
 ## Immediate
 
-- [ ] Add the LeagueSafe links for `DYN4`, `KP1`, and `KP2`. These are the current open-league records still missing LeagueSafe links and the only active league-data validation warnings.
+- [ ] No immediate cleanup items right now.
 
 ## Next Automation Ideas
 
@@ -13,6 +13,10 @@
 
 ### Immediate
 
+- [x] Split the Bracket Center into redraft and dynasty views inside the same page and scaffold the dynasty-bracket ledger path so both formats can share the same public center pattern.
+- [x] Add the LeagueSafe links for `DYN4`, `KP1`, and `KP2`, clearing the remaining active league-data validation warnings.
+- [x] Add dated addendum and revision-history sections to the public constitutions, and update the draft-timing language to reflect the post-NFL-draft rule change.
+- [x] Save a commissioner-ready dynasty rookie draft order worksheet for `DYN1`, `DYN2`, and `DYN3`, including the reason for each slot and the manual best-ball rule for `1.07` and `1.08`.
 - [x] Verify the homepage format filters work correctly in Chrome after cache-busting.
 - [x] Add the `DYN3` invite link once the current manager leaves and the open spot is actually available.
 - [x] Save trusted private outreach copy for the weaker `DYN3` orphan in the marketing docs.

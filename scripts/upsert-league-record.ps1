@@ -24,7 +24,7 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
-$validFormats = @("redraft", "dynasty", "bestball", "bracket", "keeper", "chopped")
+$validFormats = @("redraft", "dynasty", "dynastybracket", "bestball", "bracket", "keeper", "chopped")
 $validStatuses = @("open", "full", "coming-soon")
 $validDraftStyles = @("", "fast", "slow")
 
@@ -55,10 +55,11 @@ function Resolve-SleeperInviteLeagueId {
 function Normalize-Format {
   param([string]$Value)
 
-  $normalized = ($Value -replace '\s+', '').Trim().ToLowerInvariant()
+  $normalized = ($Value -replace '[\s-]+', '').Trim().ToLowerInvariant()
   switch ($normalized) {
     "redraft" { return "redraft" }
     "dynasty" { return "dynasty" }
+    "dynastybracket" { return "dynastybracket" }
     "bestball" { return "bestball" }
     "bestballunion" { return "bestball" }
     "bracket" { return "bracket" }
@@ -108,6 +109,7 @@ function Get-NextLeagueId {
   $prefixByFormat = @{
     redraft = "RD"
     dynasty = "DYN"
+    dynastybracket = "DYB"
     bestball = "BBU"
     bracket = "RDB"
     keeper = "KP"

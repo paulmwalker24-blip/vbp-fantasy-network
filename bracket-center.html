@@ -10,7 +10,7 @@
   <div class="constitution-nav" id="top">
     <div class="container format-center-nav-links">
       <a href="index.html#constitutions" class="constitution-back-link">Back to Hub</a>
-      <a href="bracket-constitution.html" class="constitution-back-link">View Constitution</a>
+      <a href="bracket-constitution.html" class="constitution-back-link" id="centerTopConstitutionLink">View Constitution</a>
     </div>
   </div>
 
@@ -29,10 +29,14 @@
   <main class="section">
     <div class="container constitution-layout">
       <section class="constitution-summary-card">
-        <h2>Live League Center</h2>
-        <p>This page is the public standings layer for the Bracket format. It is separate from the homepage so the hub can stay focused on recruiting, league discovery, and constitutions.</p>
+        <h2 id="centerSummaryTitle">Live League Center</h2>
+        <p id="centerSummaryCopy">This page is the public standings layer for the Bracket format. It is separate from the homepage so the hub can stay focused on recruiting, league discovery, and constitutions.</p>
+        <div class="format-center-view-switcher" id="centerViewSwitcher" aria-label="Bracket center type">
+          <a href="bracket-center.html?view=redraft" class="format-center-view-link" data-center-view="redraft">Redraft Bracket</a>
+          <a href="bracket-center.html?view=dynasty" class="format-center-view-link" data-center-view="dynasty">Dynasty Bracket</a>
+        </div>
         <div class="format-center-actions">
-          <a href="bracket-constitution.html" class="btn btn-primary">View Constitution</a>
+          <a href="bracket-constitution.html" class="btn btn-primary" id="centerConstitutionLink">View Constitution</a>
           <button type="button" class="btn btn-secondary" id="reloadCenterButton">Reload Page</button>
         </div>
       </section>

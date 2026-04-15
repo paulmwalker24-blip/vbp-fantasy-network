@@ -7,12 +7,13 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
-$validFormats = @("redraft", "dynasty", "bestball", "bracket", "keeper", "chopped")
+$validFormats = @("redraft", "dynasty", "dynastybracket", "bestball", "bracket", "keeper", "chopped")
 $validStatuses = @("open", "full", "coming-soon")
 $validDraftStyles = @("", "fast", "slow")
 $idPrefixByFormat = @{
   redraft = "RD"
   dynasty = "DYN"
+  dynastybracket = "DYB"
   bestball = "BBU"
   bracket = "RDB"
   keeper = "KP"
@@ -21,6 +22,7 @@ $idPrefixByFormat = @{
 $expectedConstitutionPageByFormat = @{
   redraft = "redraft-constitution.html"
   dynasty = "dynasty-constitution.html"
+  dynastybracket = "dynasty-bracket-constitution.html"
   bestball = "bestball-constitution.html"
   bracket = "bracket-constitution.html"
   keeper = "keeper-constitution.html"
@@ -29,6 +31,7 @@ $expectedConstitutionPageByFormat = @{
 $knownConstitutionPages = @(
   "redraft-constitution.html",
   "dynasty-constitution.html",
+  "dynasty-bracket-constitution.html",
   "bestball-constitution.html",
   "bracket-constitution.html",
   "keeper-constitution.html",

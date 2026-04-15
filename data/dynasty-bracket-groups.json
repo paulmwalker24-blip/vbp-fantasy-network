@@ -1,0 +1,51 @@
+{
+  "groups": [
+    {
+      "groupId": "DYNASTY-BRACKET-2026-1",
+      "label": "VBP Dynasty Bracket Group 1",
+      "season": "2026",
+      "sampleLeagueCount": 4,
+      "teamsPerLeague": 12,
+      "sampleDivisions": [
+        {
+          "leagueRecordId": "DYB1",
+          "leagueName": "Foundry",
+          "division": "Slow",
+          "inviteLink": "https://sleeper.com/i/Y2VajM5OZwN44",
+          "leagueSafeLink": "https://www.leaguesafe.com/join/4409855"
+        },
+        {
+          "leagueRecordId": "DYB2",
+          "leagueName": "Forge",
+          "division": "Slow",
+          "inviteLink": "https://sleeper.com/i/m7oKYMV9ldoGg",
+          "leagueSafeLink": "https://www.leaguesafe.com/join/4409855"
+        },
+        {
+          "leagueRecordId": "DYB3",
+          "leagueName": "Legacy",
+          "division": "Fast",
+          "inviteLink": "https://sleeper.com/i/Y2VajNddMbGMa",
+          "leagueSafeLink": "https://www.leaguesafe.com/join/4409855"
+        },
+        {
+          "leagueRecordId": "DYB4",
+          "leagueName": "Empire",
+          "division": "Fast",
+          "inviteLink": "https://sleeper.com/i/JKo0Ejo4zKeY3",
+          "leagueSafeLink": "https://www.leaguesafe.com/join/4409855"
+        }
+      ],
+      "leagueRecordIds": [],
+      "rules": {
+        "divisionWinners": 4,
+        "directQualifiers": 16,
+        "wildCards": 0,
+        "divisionWinnerSeeding": "record_then_points_for_2dp",
+        "directQualifierSeeding": "record_then_points_for_2dp",
+        "week14RoundOf16": "1_vs_16_through_8_vs_9",
+        "postResetBracketStyle": "static_traditional_bracket"
+      }
+    }
+  ]
+}

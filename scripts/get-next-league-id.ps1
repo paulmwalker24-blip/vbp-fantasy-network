@@ -13,6 +13,7 @@ $ErrorActionPreference = "Stop"
 $prefixByFormat = @{
   redraft = "RD"
   dynasty = "DYN"
+  dynastybracket = "DYB"
   bestball = "BBU"
   bracket = "RDB"
   keeper = "KP"
@@ -24,11 +25,12 @@ function Normalize-Format {
     [string]$Value
   )
 
-  $normalized = ($Value -replace '\s+', '').Trim().ToLowerInvariant()
+  $normalized = ($Value -replace '[\s-]+', '').Trim().ToLowerInvariant()
 
   switch ($normalized) {
     "redraft" { return "redraft" }
     "dynasty" { return "dynasty" }
+    "dynastybracket" { return "dynastybracket" }
     "bestball" { return "bestball" }
     "bestballunion" { return "bestball" }
     "bracket" { return "bracket" }

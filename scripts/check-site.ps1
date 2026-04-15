@@ -60,7 +60,7 @@ foreach ($requiredId in @("limitedSpotsContainer", "formatFilters", "leaguesCont
   }
 }
 
-foreach ($format in @("all", "redraft", "dynasty", "bestball", "bracket", "keeper", "chopped")) {
+foreach ($format in @("all", "redraft", "dynasty", "dynastybracket", "bestball", "bracket", "keeper", "chopped")) {
   if ($indexHtml -notmatch ("data-format=""{0}""" -f [regex]::Escape($format))) {
     Add-Issue -Severity "error" -Source "index.html" -Message ("Missing format filter '{0}'." -f $format)
   }
@@ -69,6 +69,7 @@ foreach ($format in @("all", "redraft", "dynasty", "bestball", "bracket", "keepe
 foreach ($page in @(
   "redraft-constitution.html",
   "dynasty-constitution.html",
+  "dynasty-bracket-constitution.html",
   "bestball-constitution.html",
   "bracket-constitution.html",
   "keeper-constitution.html",
@@ -91,7 +92,7 @@ if ($indexHtml -notmatch 'assets/js/app\.js\?v=') {
   Add-Issue -Severity "warning" -Source "index.html" -Message "Missing cache-busting query string on assets/js/app.js."
 }
 
-foreach ($formatKey in @("redraft", "dynasty", "bestball", "bracket", "keeper", "chopped")) {
+foreach ($formatKey in @("redraft", "dynasty", "dynastybracket", "bestball", "bracket", "keeper", "chopped")) {
   if ($appJs -notmatch ("{0}:" -f [regex]::Escape($formatKey))) {
     Add-Issue -Severity "error" -Source "assets/js/app.js" -Message ("FORMAT_META appears to be missing '{0}'." -f $formatKey)
   }

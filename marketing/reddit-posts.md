@@ -146,6 +146,58 @@ Body:
 
 `DM me or reply if interested.`
 
+### Redraft Bracket Trust-Heavy Template
+
+Title:
+
+`VBP Fantasy Network | Year 3 Bracket Redraft Open | Established 60-Team Tournament`
+
+Body:
+
+`VBP Fantasy Network has Bracket Redraft spots open right now. This is already an established Year 3 format, not a first-year experiment, and it runs as a 60-team tournament split into five separate 12-team Sleeper divisions with one combined playoff field.` 
+
+`If you like tournament-style fantasy with a bigger overall chase than a normal home league, this is built for that. The public Bracket Center and constitution are both live so you can see how the format is tracked before joining.`
+
+`Bracket Center: https://vbp-fantasy-network.vercel.app/bracket-center.html`
+
+`Bracket constitution: https://vbp-fantasy-network.vercel.app/bracket-constitution.html`
+
+`DM me or reply if interested.`
+
+### Dynasty Bracket Launch Template
+
+Title:
+
+`VBP Fantasy Network | 48-Team Dynasty Bracket Opening Soon | 4 Divisions, 1 Combined Playoff`
+
+Body:
+
+`VBP Fantasy Network is moving forward with a 48-team Dynasty Bracket. It will be four separate 12-team dynasty divisions feeding one shared playoff bracket, with the same public-center concept as the redraft bracket once the divisions are live.` 
+
+`This is for people who want long-term dynasty roster building but still want the feel of a bigger network-wide playoff race instead of only staying inside one standalone 12-team league.`
+
+`Dynasty Bracket constitution: https://vbp-fantasy-network.vercel.app/dynasty-bracket-constitution.html`
+
+`Main hub: https://vbp-fantasy-network.vercel.app/`
+
+`DM me or reply if interested.`
+
+### Dynasty Multi-Year Buy-In Template
+
+`VBP Dynasty 5 and newer dynasty launches will use the Future Pick and Commitment Model: the current season plus the next two seasons paid up front at join time.`
+
+`Use this when you want to frame the policy as a trust and stability feature, not just a payment ask. Keep the wording direct: pay ahead because the league is dynasty, assets carry across years, and managers should enter with that commitment already made.`
+
+### Best Ball Union Reset Template
+
+`VBP Fantasy Network is still building Best Ball Union for 2026, and the pitch works best when the public invites feel like fresh live openings instead of holdover inactive rooms.`
+
+`Use this angle when relaunching it: five 10-team best ball divisions, draft once, no weekly lineup setting, overall points race across the union, and a public center that tracks league leaders and weekly high scores.`
+
+`Best Ball Union Center: https://vbp-fantasy-network.vercel.app/bestball-center.html`
+
+`DM me or reply if interested.`
+
 ### Best Ball Union Template
 
 `VBP Fantasy Network has Best Ball Union open right now.`
@@ -193,5 +245,8 @@ Body:
 - For weaker dynasty orphans, save the blunt rebuild framing for trusted private outreach instead of broad public posts.
 - For bracket posts, list each division by name with its live count so readers can choose a fast or slow room quickly.
 - For bracket posts, use the Year 3 angle as an early trust signal so readers understand the format is established and likely to fill.
+- For dynasty bracket posts, sell the combined-playoff concept early so it reads as a format upgrade, not just four unrelated dynasty startups.
+- For multi-year dynasty dues, frame the policy as long-term league protection and future-pick accountability.
 - For Best Ball Union posts, lead with the format hook first and use the center link as a trust signal showing the tracking is already public.
+- For Best Ball Union, avoid making the public pitch feel like leftover empty seats from last year. Fresh-room language will likely convert better than unassigned-team language.
 - Save new versions here when a post feels natural and gets engagement.

@@ -1,0 +1,117 @@
+{
+  "prompts": {
+    "refreshGroupsAndSeeds": "Run the dynasty bracket ledger sync using data/dynasty-bracket-groups.json and refresh data/dynasty-bracket-ledger.json from Sleeper so the grouped dynasty bracket leagues, standings, and seeds are up to date. If the season is not far enough along for meaningful seeds, tell me the results are structural or provisional.",
+    "refreshSpecificGroup": "Run the dynasty bracket ledger sync for DYNASTY-BRACKET-2026-1 only using data/dynasty-bracket-groups.json and refresh data/dynasty-bracket-ledger.json from Sleeper so that dynasty bracket group's standings and playoff output are up to date.",
+    "refreshOverallStandings": "Run the dynasty bracket ledger sync using data/dynasty-bracket-groups.json and refresh data/dynasty-bracket-ledger.json from Sleeper, then give me the current combined overall standings for DYNASTY-BRACKET-2026-1 with rank, team name, league/division, record, and points for. If the season is not far enough along or the group is not full yet, tell me the standings are provisional."
+  },
+  "generatedAt": "2026-04-15T00:00:00",
+  "groups": [
+    {
+      "groupId": "DYNASTY-BRACKET-2026-1",
+      "label": "VBP Dynasty Bracket Group 1",
+      "season": "2026",
+      "sampleLeagueCount": 4,
+      "teamsPerLeague": 12,
+      "sampleDivisions": [
+        {
+          "leagueRecordId": "DYB1",
+          "leagueName": "Foundry",
+          "division": "Slow",
+          "inviteLink": "https://sleeper.com/i/Y2VajM5OZwN44",
+          "leagueSafeLink": "https://www.leaguesafe.com/join/4409855"
+        },
+        {
+          "leagueRecordId": "DYB2",
+          "leagueName": "Forge",
+          "division": "Slow",
+          "inviteLink": "https://sleeper.com/i/m7oKYMV9ldoGg",
+          "leagueSafeLink": "https://www.leaguesafe.com/join/4409855"
+        },
+        {
+          "leagueRecordId": "DYB3",
+          "leagueName": "Legacy",
+          "division": "Fast",
+          "inviteLink": "https://sleeper.com/i/Y2VajNddMbGMa",
+          "leagueSafeLink": "https://www.leaguesafe.com/join/4409855"
+        },
+        {
+          "leagueRecordId": "DYB4",
+          "leagueName": "Empire",
+          "division": "Fast",
+          "inviteLink": "https://sleeper.com/i/JKo0Ejo4zKeY3",
+          "leagueSafeLink": "https://www.leaguesafe.com/join/4409855"
+        }
+      ],
+      "leagueRecordIds": [],
+      "rules": {
+        "divisionWinners": 4,
+        "directQualifiers": 16,
+        "wildCards": 0,
+        "divisionWinnerSeeding": "record_then_points_for_2dp",
+        "directQualifierSeeding": "record_then_points_for_2dp",
+        "week14RoundOf16": "1_vs_16_through_8_vs_9",
+        "postResetBracketStyle": "static_traditional_bracket"
+      },
+      "lastSyncedAt": "2026-04-15T00:00:00",
+      "seasonStatuses": [
+        "pre_draft"
+      ],
+      "seedingReady": false,
+      "seasonDataReady": false,
+      "notes": "Dynasty Bracket is currently in setup mode. This center is ready for the same live-update flow as redraft bracket once the four dynasty divisions have live Sleeper league ids and grouped sync data.",
+      "overallStandings": [],
+      "divisionWinners": [],
+      "playoffField": [],
+      "leagueSnapshots": [
+        {
+          "leagueRecordId": "DYB1",
+          "sleeperLeagueId": "",
+          "localLeagueName": "Foundry",
+          "sleeperLeagueName": "",
+          "division": "Slow",
+          "inviteLink": "https://sleeper.com/i/Y2VajM5OZwN44",
+          "leagueSafeLink": "https://www.leaguesafe.com/join/4409855",
+          "status": "pre_draft",
+          "standings": [],
+          "divisionWinner": null
+        },
+        {
+          "leagueRecordId": "DYB2",
+          "sleeperLeagueId": "",
+          "localLeagueName": "Forge",
+          "sleeperLeagueName": "",
+          "division": "Slow",
+          "inviteLink": "https://sleeper.com/i/m7oKYMV9ldoGg",
+          "leagueSafeLink": "https://www.leaguesafe.com/join/4409855",
+          "status": "pre_draft",
+          "standings": [],
+          "divisionWinner": null
+        },
+        {
+          "leagueRecordId": "DYB3",
+          "sleeperLeagueId": "",
+          "localLeagueName": "Legacy",
+          "sleeperLeagueName": "",
+          "division": "Fast",
+          "inviteLink": "https://sleeper.com/i/Y2VajNddMbGMa",
+          "leagueSafeLink": "https://www.leaguesafe.com/join/4409855",
+          "status": "pre_draft",
+          "standings": [],
+          "divisionWinner": null
+        },
+        {
+          "leagueRecordId": "DYB4",
+          "sleeperLeagueId": "",
+          "localLeagueName": "Empire",
+          "sleeperLeagueName": "",
+          "division": "Fast",
+          "inviteLink": "https://sleeper.com/i/JKo0Ejo4zKeY3",
+          "leagueSafeLink": "https://www.leaguesafe.com/join/4409855",
+          "status": "pre_draft",
+          "standings": [],
+          "divisionWinner": null
+        }
+      ]
+    }
+  ]
+}

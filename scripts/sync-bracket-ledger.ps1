@@ -266,8 +266,8 @@ foreach ($group in ($selectedGroups | Sort-Object { Get-StringValue $_.groupId }
       throw "Bracket group '$groupId' references missing league '$leagueRecordId'."
     }
 
-    if ((Get-StringValue $leagueRecord.format).ToLowerInvariant() -ne "bracket") {
-      throw "Bracket group '$groupId' references non-bracket league '$leagueRecordId'."
+    if ((Get-StringValue $leagueRecord.format).ToLowerInvariant() -notin @("bracket", "dynastybracket")) {
+      throw "Bracket group '$groupId' references a league that is not bracket-enabled: '$leagueRecordId'."
     }
 
     if ([string]::IsNullOrWhiteSpace((Get-StringValue $leagueRecord.sleeperLeagueId))) {

@@ -203,6 +203,8 @@ Builds or refreshes `data/bracket-ledger.json` by pulling current manager and st
 
 Group membership is defined in `data/bracket-groups.json`, so multiple `RDB` leagues can be treated as one combined tournament set.
 
+The same script can also power alternate grouped bracket centers, including the dynasty-bracket setup, by pointing it at a different groups file and ledger output path.
+
 It currently outputs:
 
 - grouped bracket league snapshots
@@ -229,6 +231,18 @@ Structured output:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\sync-bracket-ledger.ps1 -PassThru | ConvertTo-Json -Depth 8
+```
+
+Dynasty bracket usage:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\sync-bracket-ledger.ps1 -GroupsPath .\data\dynasty-bracket-groups.json -LedgerPath .\data\dynasty-bracket-ledger.json
+```
+
+Sync only the dynasty bracket group:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\sync-bracket-ledger.ps1 -GroupsPath .\data\dynasty-bracket-groups.json -LedgerPath .\data\dynasty-bracket-ledger.json -GroupIds DYNASTY-BRACKET-2026-1
 ```
 
 ## `export-bracket-report.ps1`
