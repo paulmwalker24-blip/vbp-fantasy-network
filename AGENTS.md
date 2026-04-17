@@ -117,14 +117,38 @@ The site is effectively data-driven through local league JSON, local donation JS
 - `marketing/reddit-posts.md`
   - Reusable Reddit title ideas, hooks, CTAs, and short promotional post templates for the VBP Fantasy Network.
   - Use this when the user wants recruiting copy, outreach posts, or future marketing ideas captured in-repo.
+ 
+- `marketing/reddit-posts-copy-ready.txt`
+  - Plain-text Reddit recruiting copy for direct copy/paste without markdown formatting.
+  - Use this when the user wants a raw post they can paste into apps or sites without code fences or markdown behavior.
 
 - `marketing/facebook-posts.md`
   - Reusable Facebook recruiting post logic and templates that lead with exact current openings before broadening into the network pitch.
   - Use this when the user wants short social copy that names specific live or upcoming openings.
 
+- `marketing/facebook-posts-copy-ready.md`
+  - Explorer-friendly copy bank that keeps the active Facebook posts grouped in one easy-to-scan file.
+  - Use this when the user wants the current Facebook post set in one place with titles and body copy together.
+
+- `marketing/facebook-posts-copy-ready.txt`
+  - Plain-text Facebook recruiting copy for direct copy/paste without markdown formatting.
+  - Use this when the user wants the simplest possible paste-ready version.
+
 - `marketing/generic-post-bank.md`
   - Ready-to-copy generic recruiting posts that group live links by hub or format.
   - Use this when the user wants one explorer-visible bank of reusable posts with direct hub and league links.
+
+- `marketing/generic-post-bank-copy-ready.txt`
+  - Plain-text version of the generic post bank for direct copy/paste without markdown formatting.
+  - Use this when the user wants grouped hub or format posts in raw text form.
+
+- `marketing/other-platform-posts.md`
+  - Recruiting copy and channel-specific guidance for Sleeper chat, classifieds, Discord, and other non-Facebook/Reddit platforms.
+  - Use this when the user wants platform-specific outreach copy beyond the main Facebook or Reddit banks.
+
+- `marketing/other-platform-posts-copy-ready.txt`
+  - Plain-text version of the other-platform recruiting bank for direct copy/paste without markdown formatting.
+  - Use this when the user wants raw outreach copy for Sleeper chat, Discord, classifieds, or similar channels.
 
 - `.github/workflows/`
   - `validate-site.yml` runs the local site-check script on push and pull request.
@@ -334,6 +358,9 @@ If donation rendering breaks:
 - If the user asks for a response-driving version, prefer a direct CTA such as `DM me or reply if interested.`
 - For bracket league recruiting copy, prefer an early `Year 3` or established-league hook so the format does not read like an unproven startup and the commissioner experience comes through quickly.
 - For weaker dynasty rebuilds or questionable orphan takeovers, prefer trusted private outreach language over broad public promotion.
+- Keep public-facing recruiting copy lean. Avoid internal commissioner shorthand such as `DYN5+` unless the user explicitly wants internal context kept in the copy.
+- Do not over-explain familiar formats like best ball in public ad copy unless the user explicitly wants a beginner-facing pitch.
+- If the user wants raw copy/paste output, prefer the `*-copy-ready.txt` marketing files over the markdown source files so pasted text does not inherit markdown formatting behavior.
 
 ## Known Issues And Hazards
 

@@ -1,179 +1,272 @@
 # Other Platform Recruiting
 
-## Best Places To Market The Hub Outside Reddit And Facebook
+## Current Focus
 
-As of March 25, 2026, the best non-Reddit/Facebook channels for VBP Fantasy Network are the ones where people are already looking for leagues, not just browsing fantasy content.
+This file is aligned to the active `April 16, 2026` recruiting push:
+
+- `Bracket Redraft`
+- `Dynasty Bracket`
+- `Best Ball Union #1`
+- `Dynasty 5`
+- `Dynasty 6`
+- `Keeper 1`
+- `Redraft 4`
+
+Working timing notes:
+
+- `May 1` and `draft set within 24 hours` should only be used for `BBU`
+- All `BBU` leagues should be described as `fast draft`
+
+## Best Places To Push These Leagues
 
 ### Priority 1: Sleeper Matchmaking + Sleeper Fantasy Football Channel
 
-- Best fit because the audience is already on Sleeper and actively looking for leagues.
-- Sleeper supports publishing leagues to Matchmaking when a league has open spots and is still pre-draft.
-- Sleeper also says many users post invite links in the Fantasy Football Channel, including startup and orphan topics.
-- This should be the first place to push the open redraft and keeper leagues.
+- Best fit for `Bracket Redraft`, `Dynasty Bracket`, `BBU1`, `DYN5`, `DYN6`, `KP1`, and `RD4` because the audience is already on Sleeper.
+- If a room is clearly open and pre-draft, this should still be the first place to push it.
 
 ### Priority 2: LeagueSafe Classifieds
 
-- Strong trust fit because VBP already uses LeagueSafe.
-- LeagueSafe has active classifieds with NFL filters, format tags, and current `Sleeperbot` listings.
-- This is especially useful for paid leagues because it signals legitimacy before someone clicks into the hub.
+- Strong fit for paid leagues because LeagueSafe adds trust before the invite click.
+- Best used for `Bracket Redraft`, `Dynasty Bracket`, `DYN5`, `DYN6`, `KP1`, and `RD4`.
 
 ### Priority 3: Discord Fantasy Football Communities
 
-- Good for direct recruiting if you post in the right channel instead of dropping links cold.
-- Large active servers still exist, including FantasyPros Fantasy Football and Fantasy Football Chat, which Discord and directory listings place in the tens of thousands of members.
-- Best approach is to use servers that have `find-a-league`, `league-recruiting`, or commissioner-friendly channels.
+- Good for quick format-specific recruiting when you do not want a long post.
+- Especially good for `BBU1` and the bracket formats because the pitch can be short and different from standard redraft.
 
 ### Priority 4: FFToday "Find A League, Fill A League"
 
-- Good niche forum because it is still active and specifically built for classifieds.
-- The forum currently shows `7,063` topics in that section and recent league posts.
-- This is a better forum target than broad NFL message boards.
+- Good forum-style home for one clean post per format.
+- Better to post separate `Bracket Redraft` and `Dynasty Bracket` threads than one blended thread.
 
-### Priority 5: X
+### Priority 5: X / Threads / Bluesky
 
-- Best used for discovery, replies, and community participation, not as the only conversion path.
-- X Communities are public-facing and community posts can appear in profiles, search, and other timelines.
-- Spaces are public and shareable by link, so they are worth testing later if you want a live format breakdown or Q&A.
+- Best for awareness and repostable short-form recruiting.
+- Use one format per post instead of trying to cram the full network into one message.
 
-### Priority 6: Threads
+## Sleeper Fantasy Football Channel Posts
 
-- Worth testing if you already have an Instagram account or can start one cleanly.
-- Threads now has communities, topic-driven discovery, and public community membership.
-- Good for text-first recruiting, but lower confidence than Sleeper, LeagueSafe, Discord, and FFToday for direct league fill.
-
-### Priority 7: Bluesky
-
-- Best as a lightweight networking and awareness channel, not the main recruiting engine.
-- There are now over `114` fantasy football starter packs on Bluesky, which means the community exists, but it is still more fragmented than Sleeper or Discord.
-
-## Recommended Posting Order
-
-1. Publish eligible leagues to Sleeper Matchmaking.
-2. Post one clean recruiting note in the Sleeper Fantasy Football Channel.
-3. Add LeagueSafe classifieds for the open paid leagues.
-4. Post one thread in FFToday and one message in 1-2 fantasy-football Discord servers that allow recruiting.
-5. Post on X and Threads for awareness.
-6. Mirror a short version to Bluesky if you want extra reach.
-
-## Live Focus
-
-- Lead with `RD1` and `RD3` because they each have `1` spot left.
-- Use `KP1` and `KP2` as the secondary angle because they are newly opened keeper leagues.
-- Keep `DYN3` out of broad public posts for now.
-
-## Sleeper Fantasy Football Channel Post
-
-```text
-VBP Fantasy Network has two redraft leagues with 1 spot left each, plus two new keeper leagues now open at $25 and $50.
-
-Redraft 1 ($25): https://sleeper.com/i/j7XdNzlxZk9P2
-Redraft 3 ($50): https://sleeper.com/i/V9GRBq67x7jOV
-Keeper 1 ($25): https://sleeper.com/i/m7olnV2oZdMDY
-Keeper 2 ($50): https://sleeper.com/i/LVoRxbV3z2bw3
-
-Hub + constitutions: https://vbp-fantasy-network.vercel.app/
-```
-
-## LeagueSafe Classifieds Description
-
-Use one listing per league if possible. If you only want one listing, use the strongest open league first, which is currently `RD1` or `RD3`.
-
-```text
-VBP Fantasy Network is filling competitive fantasy football leagues hosted on Sleeper with full constitutions and clearly posted rules.
-
-Current openings:
-- VBP Redraft 1 | $25 | 1 spot left
-- VBP Redraft 3 | $50 | 1 spot left
-- VBP Keeper 1 | $25 | new league
-- VBP Keeper 2 | $50 | new league
-
-Hub: https://vbp-fantasy-network.vercel.app/
-```
-
-## Discord Find-A-League Post
-
-```text
-VBP Fantasy Network has two redraft leagues with 1 spot left each, plus two new keeper leagues now open on Sleeper.
-
-RD1 ($25): https://sleeper.com/i/j7XdNzlxZk9P2
-RD3 ($50): https://sleeper.com/i/V9GRBq67x7jOV
-KP1 ($25): https://sleeper.com/i/m7olnV2oZdMDY
-KP2 ($50): https://sleeper.com/i/LVoRxbV3z2bw3
-
-Rules + constitutions: https://vbp-fantasy-network.vercel.app/
-DM me if interested.
-```
-
-## FFToday Forum Post
+### Bracket Redraft
 
 Title:
 
-`VBP Fantasy Network | 2 Redraft Spots Left + 2 New Keeper Leagues Open`
+```text
+VBP Fantasy Network | Year 3 Bracket Redraft Open | $50 Tournament Format
+```
 
 Body:
 
 ```text
-VBP Fantasy Network currently has two redraft leagues with 1 spot left each, plus two new keeper leagues now open on Sleeper at $25 and $50.
+VBP Fantasy Network is filling its Year 3 Bracket Redraft format right now. This is a $50 redraft setup with both fast and slow draft options, Progressive PPR scoring, and a combined bracket playoff race that gives the format a bigger tournament feel than a standard home league.
 
-Open leagues:
-VBP Redraft 1 ($25): https://sleeper.com/i/j7XdNzlxZk9P2
-VBP Redraft 3 ($50): https://sleeper.com/i/V9GRBq67x7jOV
-VBP Keeper 1 ($25): https://sleeper.com/i/m7olnV2oZdMDY
-VBP Keeper 2 ($50): https://sleeper.com/i/LVoRxbV3z2bw3
+Titan ($50, Slow): http://sleeper.com/i/kM2GBe6qL228Y
+Apex ($50, Slow): http://sleeper.com/i/zExweGWd6aPgb
+Iron ($50, Fast): http://sleeper.com/i/j7moDEZ337dn0
+Vanguard ($50, Fast): http://sleeper.com/i/kM2GBe9QxYED7
+Dominion ($50, Slow): http://sleeper.com/i/Y2VXxZ02Y850R
 
-Hub + constitutions:
-https://vbp-fantasy-network.vercel.app/
-
-Reply or DM if interested.
+Bracket constitution: https://vbp-fantasy-network.vercel.app/bracket-constitution.html
+Bracket Center: https://vbp-fantasy-network.vercel.app/bracket-center.html
 ```
 
-## X Post
+### Dynasty Bracket
+
+Title:
 
 ```text
-VBP Fantasy Network has 2 redraft leagues with 1 spot left each, plus 2 new keeper leagues now open on Sleeper.
-
-Hub + constitutions: https://vbp-fantasy-network.vercel.app/
-
-RD1 $25: https://sleeper.com/i/j7XdNzlxZk9P2
-RD3 $50: https://sleeper.com/i/V9GRBq67x7jOV
-KP1 $25: https://sleeper.com/i/m7olnV2oZdMDY
-KP2 $50: https://sleeper.com/i/LVoRxbV3z2bw3
+VBP Fantasy Network | Dynasty Bracket Open | $150 Up Front, Superflex Startup
 ```
 
-If that feels too long for the main post, put the hub in the main post and stack the four invite links in the first reply.
-
-## Threads Post
+Suggested image:
 
 ```text
-VBP Fantasy Network currently has two redraft leagues with 1 spot left each, plus two new keeper leagues now open on Sleeper at $25 and $50.
+assets/images/dynasty-bracket-divisions.png
+```
 
-Open leagues:
-Redraft 1 ($25): https://sleeper.com/i/j7XdNzlxZk9P2
-Redraft 3 ($50): https://sleeper.com/i/V9GRBq67x7jOV
+Body:
+
+```text
+VBP Fantasy Network is now pushing Dynasty Bracket as its own format. This is a $50 per season dynasty startup with $150 due up front. It uses Superflex, 3 FLEX spots, 4 taxi, 4 IR, a 3RR startup draft, and one shared playoff structure across the full format.
+
+Foundry ($50, Slow): https://sleeper.com/i/Y2VajM5OZwN44
+Forge ($50, Slow): https://sleeper.com/i/m7oKYMV9ldoGg
+Legacy ($50, Fast): https://sleeper.com/i/Y2VajNddMbGMa
+Empire ($50, Fast): https://sleeper.com/i/JKo0Ejo4zKeY3
+
+Dynasty Bracket constitution: https://vbp-fantasy-network.vercel.app/dynasty-bracket-constitution.html
+```
+
+### Best Ball Union #1
+
+Title:
+
+```text
+VBP Fantasy Network | Best Ball Union #1 Open | $10 Fast Draft Best Ball
+```
+
+Body:
+
+```text
+VBP Fantasy Network is building Best Ball Union starting with the first league. This is a $10 fast-draft best ball room on Sleeper.
+
+Target start is May 1. If BBU #1 fills and everyone is paid, the draft will be set within 24 hours.
+
+Best Ball Union #1 ($10, Fast): http://sleeper.com/i/JKo2LRqq854mm
+Best Ball constitution: https://vbp-fantasy-network.vercel.app/bestball-constitution.html
+Best Ball Union Center: https://vbp-fantasy-network.vercel.app/bestball-center.html
+```
+
+### Dynasty 5
+
+Title:
+
+```text
+VBP Fantasy Network | Dynasty 5 Open | $90 Up Front Slow Superflex Startup
+```
+
+Body:
+
+```text
+VBP Fantasy Network has Dynasty 5 open right now at $30 per season. This is the slow startup option with $90 due up front. It uses Superflex, 3 FLEX spots, 4 taxi, 4 IR, and a 3RR startup draft.
+
+Dynasty 5 ($30, Slow): https://sleeper.com/i/Y2V7Pl9D6P51X
+Dynasty constitution: https://vbp-fantasy-network.vercel.app/dynasty-constitution.html
+```
+
+### Dynasty 6
+
+Title:
+
+```text
+VBP Fantasy Network | Dynasty 6 Open | $90 Up Front Fast Superflex Startup
+```
+
+Body:
+
+```text
+VBP Fantasy Network has Dynasty 6 open right now at $30 per season. This is the fast startup option with $90 due up front. It uses Superflex, 3 FLEX spots, 4 taxi, 4 IR, and a 3RR startup draft.
+
+Dynasty 6 ($30, Fast): https://sleeper.com/i/Y2V7Pl0EnAzlj
+Dynasty constitution: https://vbp-fantasy-network.vercel.app/dynasty-constitution.html
+```
+
+### Keeper 1
+
+Title:
+
+```text
+VBP Fantasy Network | Keeper 1 Starting Up | $50 Up Front 3-Keeper League
+```
+
+Body:
+
+```text
+VBP Fantasy Network has Keeper 1 starting up now at $25 per season. This is a 12-team 3-keeper league with $50 due up front, so the league stays one year ahead financially and future pick trading stays protected.
+
 Keeper 1 ($25): https://sleeper.com/i/m7olnV2oZdMDY
-Keeper 2 ($50): https://sleeper.com/i/LVoRxbV3z2bw3
-
-Hub + constitutions: https://vbp-fantasy-network.vercel.app/
+Keeper constitution: https://vbp-fantasy-network.vercel.app/keeper-constitution.html
 ```
 
-## Bluesky Post
+### Redraft 4
+
+Title:
 
 ```text
-VBP Fantasy Network has two redraft spots left and two new keeper leagues now open on Sleeper.
-
-Hub + constitutions: https://vbp-fantasy-network.vercel.app/
-
-RD1 $25: https://sleeper.com/i/j7XdNzlxZk9P2
-RD3 $50: https://sleeper.com/i/V9GRBq67x7jOV
-KP1 $25: https://sleeper.com/i/m7olnV2oZdMDY
-KP2 $50: https://sleeper.com/i/LVoRxbV3z2bw3
+VBP Fantasy Network | Redraft 4 Open | $100 Competitive Redraft
 ```
 
-## Source Notes
+Body:
 
-- Sleeper Matchmaking and public league discovery: Sleeper Support says leagues can be published to Matchmaking and invite links are often posted in the Fantasy Football Channel.
-- LeagueSafe classifieds: LeagueSafe currently lists NFL classifieds and shows active `Sleeperbot` listings with tags and paid-team counts.
-- Discord: fantasy-football servers with meaningful size and activity still exist.
-- FFToday: the `Find A League, Fill A League` section is still active and built specifically for classifieds.
-- X and Threads: both currently support community-style discovery.
-- Bluesky: fantasy-football starter-pack volume is real, but still better for secondary reach than direct conversion.
+```text
+VBP Fantasy Network has Redraft 4 open right now at $100. It uses Progressive PPR scoring, no kicker or defense spots, and a 6-team playoff with top-two byes.
+
+Redraft 4 ($100): https://sleeper.com/leagues/1344449488089014272/predraft
+Redraft constitution: https://vbp-fantasy-network.vercel.app/redraft-constitution.html
+```
+
+## LeagueSafe Classifieds Descriptions
+
+### Bracket Redraft
+
+```text
+VBP Fantasy Network is filling its Year 3 Bracket Redraft format at $50. This is a Progressive PPR tournament setup with both fast and slow divisions and one combined playoff race across the full format.
+
+Hub: https://vbp-fantasy-network.vercel.app/
+Bracket constitution: https://vbp-fantasy-network.vercel.app/bracket-constitution.html
+```
+
+### Dynasty Bracket
+
+```text
+VBP Fantasy Network is filling Dynasty Bracket at $50 per season with $150 due up front at startup. This is a Superflex dynasty format with 3 FLEX spots, taxi squads, 3RR startup drafts, and one shared playoff structure across four divisions.
+
+Hub: https://vbp-fantasy-network.vercel.app/
+Dynasty Bracket constitution: https://vbp-fantasy-network.vercel.app/dynasty-bracket-constitution.html
+```
+
+### Best Ball Union #1
+
+```text
+VBP Fantasy Network is building Best Ball Union starting with the first league. This is a $10 fast-draft best ball room on Sleeper.
+
+Target start is May 1. If BBU #1 fills and everyone is paid, the draft will be set within 24 hours.
+
+Hub: https://vbp-fantasy-network.vercel.app/
+Best Ball Union #1: http://sleeper.com/i/JKo2LRqq854mm
+```
+
+### Keeper 1
+
+```text
+VBP Fantasy Network is starting up Keeper 1 at $25 per season with $50 due up front. This is a 12-team 3-keeper format that stays one year ahead financially so future pick trading stays protected.
+
+Hub: https://vbp-fantasy-network.vercel.app/
+Keeper constitution: https://vbp-fantasy-network.vercel.app/keeper-constitution.html
+Keeper 1: https://sleeper.com/i/m7olnV2oZdMDY
+```
+
+## Discord / Short-Form Post Bank
+
+### Bracket Redraft
+
+```text
+VBP Fantasy Network is filling its Year 3 Bracket Redraft format now. $50, fast and slow draft options, Progressive PPR, and one combined playoff race across the full format.
+
+Titan: http://sleeper.com/i/kM2GBe6qL228Y
+Apex: http://sleeper.com/i/zExweGWd6aPgb
+Iron: http://sleeper.com/i/j7moDEZ337dn0
+Vanguard: http://sleeper.com/i/kM2GBe9QxYED7
+Dominion: http://sleeper.com/i/Y2VXxZ02Y850R
+```
+
+### Dynasty Bracket
+
+```text
+VBP Fantasy Network is pushing Dynasty Bracket as its own format now. $50 per season, $150 up front at startup, Superflex, 3 FLEX, 4 taxi, 4 IR, and 3RR startup drafts across four divisions.
+
+Foundry: https://sleeper.com/i/Y2VajM5OZwN44
+Forge: https://sleeper.com/i/m7oKYMV9ldoGg
+Legacy: https://sleeper.com/i/Y2VajNddMbGMa
+Empire: https://sleeper.com/i/JKo0Ejo4zKeY3
+```
+
+### Best Ball Union #1
+
+```text
+VBP Fantasy Network is building Best Ball Union starting with BBU1. $10 fast-draft best ball on Sleeper.
+
+Target start is May 1. If it fills and everyone is paid, the draft will be set within 24 hours.
+
+BBU1: http://sleeper.com/i/JKo2LRqq854mm
+```
+
+### Dynasty 5 / Dynasty 6 / Keeper 1 / Redraft 4
+
+```text
+VBP Fantasy Network is also filling:
+
+Dynasty 5 ($30 per season, $90 up front, Slow): https://sleeper.com/i/Y2V7Pl9D6P51X
+Dynasty 6 ($30 per season, $90 up front, Fast): https://sleeper.com/i/Y2V7Pl0EnAzlj
+Keeper 1 ($25 per season, $50 up front, 3-Keeper): https://sleeper.com/i/m7olnV2oZdMDY
+Redraft 4 ($100): https://sleeper.com/leagues/1344449488089014272/predraft
+```

@@ -72,6 +72,21 @@ const scoreboardState = {
   refreshTimer: null
 };
 
+const REDRAFT_DIVISION_IMAGE_BY_NAME = {
+  titan: "assets/images/redraft-bracket-titan.png",
+  apex: "assets/images/redraft-bracket-apex.png",
+  iron: "assets/images/redraft-bracket-iron.png",
+  vanguard: "assets/images/redraft-bracket-vanguard.png",
+  dominion: "assets/images/redraft-bracket-dominion.png"
+};
+
+const DYNASTY_DIVISION_IMAGE_BY_NAME = {
+  foundry: "assets/images/dynasty-bracket-foundry.png",
+  forge: "assets/images/dynasty-bracket-forge.png",
+  empire: "assets/images/dynasty-bracket-empire.png",
+  legacy: "assets/images/dynasty-bracket-legacy.png"
+};
+
 function text(value) {
   return String(value ?? "").trim();
 }
@@ -921,6 +936,25 @@ function renderDivisionCounts(group) {
   counts.forEach(entry => {
     const card = document.createElement("article");
     card.className = "format-center-division-card";
+
+    const normalizedName = text(entry.leagueName).toLowerCase();
+    const imageMap = centerView.key === "dynasty"
+      ? DYNASTY_DIVISION_IMAGE_BY_NAME
+      : REDRAFT_DIVISION_IMAGE_BY_NAME;
+    const imageSrc = imageMap[normalizedName] || "";
+
+    if (imageSrc) {
+      const imageWrap = document.createElement("div");
+      imageWrap.className = "format-center-division-image-wrap";
+
+      const image = document.createElement("img");
+      image.className = "format-center-division-image";
+      image.src = imageSrc;
+      image.alt = `${entry.leagueName} division artwork`;
+
+      imageWrap.appendChild(image);
+      card.appendChild(imageWrap);
+    }
 
     const name = document.createElement("h3");
     name.textContent = entry.leagueName;

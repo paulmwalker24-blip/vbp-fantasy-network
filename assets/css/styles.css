@@ -682,6 +682,18 @@ a { color: inherit; }
   background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
   box-shadow: var(--shadow-soft);
 }
+.format-center-division-image-wrap {
+  overflow: hidden;
+  margin: -18px -18px 14px;
+  border-radius: 14px 14px 0 0;
+  border-bottom: 1px solid var(--border);
+  background: #05070d;
+}
+.format-center-division-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 .format-center-division-card h3 {
   margin: 0 0 8px;
   font-size: 1.05rem;
