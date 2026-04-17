@@ -57,7 +57,11 @@ VBP Fantasy Network | Dynasty Bracket Open | $150 Up Front, Superflex Startup
 Suggested image:
 
 ```text
-assets/images/dynasty-bracket-divisions.png
+Use one single division image for Facebook, not the 4-panel graphic:
+assets/images/dynasty-bracket-foundry.png
+or assets/images/dynasty-bracket-forge.png
+or assets/images/dynasty-bracket-legacy.png
+or assets/images/dynasty-bracket-empire.png
 ```
 
 Body:

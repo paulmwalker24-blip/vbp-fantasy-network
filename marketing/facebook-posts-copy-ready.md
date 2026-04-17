@@ -51,7 +51,11 @@ Title:
 VBP Fantasy Network | Dynasty Bracket Open | $150 Up Front, Superflex Startup
 
 Attach image:
-assets/images/dynasty-bracket-divisions.png
+Use one single division image for Facebook, not the 4-panel graphic:
+assets/images/dynasty-bracket-foundry.png
+or assets/images/dynasty-bracket-forge.png
+or assets/images/dynasty-bracket-legacy.png
+or assets/images/dynasty-bracket-empire.png
 
 VBP Fantasy Network is now pushing Dynasty Bracket as its own format. This is a $50 per season dynasty startup with $150 due up front. It uses Superflex, 3 FLEX spots, 4 taxi, 4 IR, a 3RR startup draft, and one shared playoff structure across the full format.
 
