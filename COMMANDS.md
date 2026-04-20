@@ -54,6 +54,12 @@ Update an existing league record through the intake flow:
 Run the league intake script to update CH1 and prompt me for any missing fields.
 ```
 
+Start a new record with the repo's current format-based defaults already suggested:
+
+```text
+Run the league intake script in new mode for a dynasty league and use the built-in format defaults for the suggested ID, constitution page, team count, season, and common same-format settings.
+```
+
 ## Sleeper Sync Report
 
 Refresh Sleeper-owned fields and summarize the result, without changing local names or statuses:
@@ -72,6 +78,32 @@ Refresh Sleeper-owned fields and also overwrite local names from Sleeper:
 
 ```text
 Run the local Sleeper sync report, update local names from Sleeper too, and summarize every changed league.
+```
+
+Refresh Sleeper owner counts but keep my published `filled` values untouched:
+
+```text
+Run the local Sleeper sync report, refresh sleeperFilled reference counts, and keep my published filled numbers unchanged.
+```
+
+Refresh Sleeper owner counts and also overwrite my published `filled` values:
+
+```text
+Run the local Sleeper sync report, update published filled counts from Sleeper too, and summarize every changed league.
+```
+
+## League Occupancy Report
+
+Show the current published occupancy counts for every league:
+
+```text
+Run the league occupancy report and show me the current filled, teams, and open spots for every league.
+```
+
+Show only open leagues:
+
+```text
+Run the league occupancy report for open leagues only.
 ```
 
 ## League JSON Validation

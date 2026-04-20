@@ -11,6 +11,7 @@ Example fields currently treated as manual:
 - `name`
 - `draftStyle` (optional, for non-bracket leagues that should show a fast/slow draft pill)
 - `buyIn`
+- `filled` as the commissioner-published occupancy count shown on the site
 - `inviteLink`
 - `leagueSafeLink`
 - `leagueSafeLinksBySeason` (optional, when a league needs separate future-season LeagueSafe links)
@@ -23,7 +24,7 @@ Example fields currently treated as Sleeper-derived:
 - `sleeperLeagueId`
 - `sleeperSeason`
 - `teams`
-- `filled`
+- `sleeperFilled` (optional reference copy of Sleeper owner-assigned roster count)
 - `status` can be reviewed against Sleeper, but is still locally controlled by default
 
 ## Why A Future Split Could Help
@@ -55,7 +56,7 @@ A split would make ownership explicit and reduce accidental overwrites.
     "sleeperLeagueId": "1339342261023961088",
     "sleeperSeason": "2026",
     "teams": 18,
-    "filled": 1,
+    "sleeperFilled": 1,
     "status": "open"
   }
 }
@@ -83,3 +84,9 @@ Do not migrate yet unless:
 Until then, keep using the current flat structure plus the local scripts in `scripts/` to enforce ownership in practice.
 
 For the current dynasty payment workflow, keep the present-season LeagueSafe URL in `leagueSafeLink` and store future-season dynasty LeagueSafe URLs in `leagueSafeLinksBySeason`.
+
+## Current Practical Rule
+
+- `filled` is the commissioner-published occupancy number you want the site and local copy to trust.
+- `sleeperFilled` is optional reference data from Sleeper showing how many rosters currently have an `owner_id`.
+- `sync-sleeper-leagues.ps1` should refresh `sleeperFilled` by default and only overwrite `filled` when you explicitly opt in.

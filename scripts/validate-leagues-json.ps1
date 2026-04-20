@@ -110,6 +110,7 @@ foreach ($league in $payload.leagues) {
   $leagueSafeLink = ([string]$league.leagueSafeLink).Trim()
   $leagueSafeLinksBySeason = if ($league.PSObject.Properties.Match('leagueSafeLinksBySeason').Count -gt 0) { $league.PSObject.Properties['leagueSafeLinksBySeason'].Value } else { $null }
   $sleeperLeagueId = ([string]$league.sleeperLeagueId).Trim()
+  $sleeperFilled = if ($league.PSObject.Properties.Match('sleeperFilled').Count -gt 0) { To-Number $league.sleeperFilled } else { $null }
   $draftStyleValue = if ($league.PSObject.Properties.Match('draftStyle').Count -gt 0) { $league.PSObject.Properties['draftStyle'].Value } else { "" }
   $draftStyle = ([string]$draftStyleValue).Trim().ToLowerInvariant()
   $division = ([string]$league.division).Trim()
@@ -151,6 +152,14 @@ foreach ($league in $payload.leagues) {
 
   if ($filled -gt $teams -and $teams -gt 0) {
     Add-Issue -Issues $issues -Severity "error" -LeagueId $leagueId -Message "filled cannot exceed teams."
+  }
+
+  if ($null -ne $sleeperFilled -and $sleeperFilled -lt 0) {
+    Add-Issue -Issues $issues -Severity "error" -LeagueId $leagueId -Message "sleeperFilled must be 0 or greater when present."
+  }
+
+  if ($null -ne $sleeperFilled -and $sleeperFilled -gt $teams -and $teams -gt 0) {
+    Add-Issue -Issues $issues -Severity "error" -LeagueId $leagueId -Message "sleeperFilled cannot exceed teams."
   }
 
   if ($buyIn -lt 0) {

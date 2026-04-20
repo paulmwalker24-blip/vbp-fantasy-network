@@ -2,6 +2,7 @@ param(
   [string]$JsonPath = "data/leagues.json",
   [switch]$UpdateStatus,
   [switch]$UpdateNames,
+  [switch]$UpdateFilledFromSleeper,
   [switch]$PassThru
 )
 
@@ -146,9 +147,22 @@ foreach ($league in $payload.leagues) {
       $changedFields.Add("teams") | Out-Null
     }
 
-    if ((To-Number $league.filled) -ne $snapshot.filled) {
+    $hasSleeperFilledProperty = $league.PSObject.Properties.Match('sleeperFilled').Count -gt 0
+    $currentSleeperFilled = if ($hasSleeperFilledProperty) { To-Number $league.sleeperFilled } else { -1 }
+    if ($currentSleeperFilled -ne $snapshot.filled) {
+      if ($hasSleeperFilledProperty) {
+        $league.sleeperFilled = $snapshot.filled
+      } else {
+        $league | Add-Member -NotePropertyName sleeperFilled -NotePropertyValue $snapshot.filled
+      }
+      $changedFields.Add("sleeperFilled") | Out-Null
+    }
+
+    if ($UpdateFilledFromSleeper -and (To-Number $league.filled) -ne $snapshot.filled) {
       $league.filled = $snapshot.filled
       $changedFields.Add("filled") | Out-Null
+    } elseif (-not $UpdateFilledFromSleeper -and (To-Number $league.filled) -ne $snapshot.filled) {
+      Add-Warning -Warnings $leagueWarnings -Message ("WARN {0}: published filled '{1}' differs from Sleeper owner count '{2}'." -f $leagueId, $filledBefore, $snapshot.filled)
     }
 
     if ($UpdateStatus -and ([string]$league.status).Trim().ToLowerInvariant() -ne $snapshot.suggestedStatus) {
@@ -185,7 +199,8 @@ foreach ($league in $payload.leagues) {
       teamsBefore = $teamsBefore
       teamsAfter = $snapshot.teams
       filledBefore = $filledBefore
-      filledAfter = $snapshot.filled
+      filledAfter = To-Number $league.filled
+      sleeperFilledAfter = $snapshot.filled
       seasonBefore = $seasonBefore
       seasonAfter = $snapshot.sleeperSeason
       nameBefore = $nameBefore

@@ -37,9 +37,9 @@ By default it updates:
 
 - `sleeperSeason`
 - `teams`
-- `filled`
+- `sleeperFilled`
 
-It does not overwrite local names or statuses unless you opt in.
+It does not overwrite local published `filled`, names, or statuses unless you opt in.
 
 Example:
 
@@ -63,6 +63,34 @@ Opt in to syncing local display names from Sleeper:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\sync-sleeper-leagues.ps1 -UpdateNames
+```
+
+Opt in to overwriting local published `filled` from Sleeper:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\sync-sleeper-leagues.ps1 -UpdateFilledFromSleeper
+```
+
+## `league-occupancy-report.ps1`
+
+Prints a quick commissioner-facing snapshot of local league occupancy from `data/leagues.json`.
+
+Use this when you want one place to check the published `filled` count for every league without reading JSON manually.
+
+If `sleeperFilled` is present, the report also shows the Sleeper owner-assigned roster count for comparison.
+
+Examples:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\league-occupancy-report.ps1
+```
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\league-occupancy-report.ps1 -OpenOnly
+```
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\league-occupancy-report.ps1 -PassThru | ConvertTo-Json -Depth 5
 ```
 
 ## `validate-leagues-json.ps1`
@@ -100,6 +128,34 @@ Fail the command if validation finds errors:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\validate-leagues-json.ps1 -Strict
+```
+
+## `upsert-league-record.ps1`
+
+Creates a new league record or updates an existing one inside `data/leagues.json`.
+
+For new records, the intake flow now pre-suggests likely defaults based on format and current repo data, including:
+
+- the next internal ID for the chosen format
+- the expected `constitutionPage`
+- the common team count for that format
+- the latest known `sleeperSeason`
+- the most common same-format `buyIn`, `status`, and draft settings when available
+
+Examples:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\upsert-league-record.ps1 -Mode new -LeagueType dynasty
+```
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\upsert-league-record.ps1 -Mode update -LeagueRecordId KP1
+```
+
+Structured output:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\upsert-league-record.ps1 -Mode new -LeagueType bestball -PassThru | ConvertTo-Json -Depth 5
 ```
 
 ## `validate-donations-json.ps1`

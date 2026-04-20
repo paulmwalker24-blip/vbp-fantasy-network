@@ -7,7 +7,6 @@
 ## Next Automation Ideas
 
 - [ ] Decide whether to add an optional Tuesday GitHub Action that republishes bracket standings snapshots automatically, or keep standings updates fully manual while live scoreboards continue to refresh from Sleeper in the browser.
-- [ ] Add a missing-data autofill assistant that suggests likely `constitutionPage` and default format-specific fields for new league records.
 
 ## Completed
 
@@ -53,6 +52,8 @@
 
 ### Automation Recommendations
 
+- [x] Add a league occupancy report so published `filled` counts can be reviewed quickly without reading raw JSON.
+- [x] Add a missing-data autofill assistant that suggests likely `constitutionPage` and default format-specific fields for new league records.
 - [x] Add a first public Bracket Center page that renders division playoff counts and full combined standings from the local bracket ledger.
 - [x] Add live per-division scoreboard tabs to the Bracket Center so visitors can follow current-week matchup scores across Titan, Apex, Iron, Vanguard, and Dominion.
 - [x] Add a bracket report generator that outputs division playoff counts plus full combined group standings from the local bracket ledger.

@@ -114,41 +114,14 @@ The site is effectively data-driven through local league JSON, local donation JS
   - Tiny repo-root reminder file for the localhost command and homepage URL.
   - Use this when the user wants a quick explorer-visible preview reference instead of a longer doc.
 
-- `marketing/reddit-posts.md`
-  - Reusable Reddit title ideas, hooks, CTAs, and short promotional post templates for the VBP Fantasy Network.
-  - Use this when the user wants recruiting copy, outreach posts, or future marketing ideas captured in-repo.
- 
-- `marketing/reddit-posts-copy-ready.txt`
-  - Plain-text Reddit recruiting copy for direct copy/paste without markdown formatting.
-  - Use this when the user wants a raw post they can paste into apps or sites without code fences or markdown behavior.
+- `marketing/recruiting-playbook.md`
+  - Canonical recruiting strategy and source-copy file for the VBP Fantasy Network.
+  - Consolidates the old Facebook, Reddit, generic, and other-platform notes into one reusable playbook.
+  - Use this when the user wants recruiting ideas, platform guidance, title angles, or reusable outreach patterns captured in-repo.
 
-- `marketing/facebook-posts.md`
-  - Reusable Facebook recruiting post logic and templates that lead with exact current openings before broadening into the network pitch.
-  - Use this when the user wants short social copy that names specific live or upcoming openings.
-
-- `marketing/facebook-posts-copy-ready.md`
-  - Explorer-friendly copy bank that keeps the active Facebook posts grouped in one easy-to-scan file.
-  - Use this when the user wants the current Facebook post set in one place with titles and body copy together.
-
-- `marketing/facebook-posts-copy-ready.txt`
-  - Plain-text Facebook recruiting copy for direct copy/paste without markdown formatting.
-  - Use this when the user wants the simplest possible paste-ready version.
-
-- `marketing/generic-post-bank.md`
-  - Ready-to-copy generic recruiting posts that group live links by hub or format.
-  - Use this when the user wants one explorer-visible bank of reusable posts with direct hub and league links.
-
-- `marketing/generic-post-bank-copy-ready.txt`
-  - Plain-text version of the generic post bank for direct copy/paste without markdown formatting.
-  - Use this when the user wants grouped hub or format posts in raw text form.
-
-- `marketing/other-platform-posts.md`
-  - Recruiting copy and channel-specific guidance for Sleeper chat, classifieds, Discord, and other non-Facebook/Reddit platforms.
-  - Use this when the user wants platform-specific outreach copy beyond the main Facebook or Reddit banks.
-
-- `marketing/other-platform-posts-copy-ready.txt`
-  - Plain-text version of the other-platform recruiting bank for direct copy/paste without markdown formatting.
-  - Use this when the user wants raw outreach copy for Sleeper chat, Discord, classifieds, or similar channels.
+- `marketing/recruiting-copy-ready.txt`
+  - Plain-text recruiting copy bank for direct copy/paste without markdown formatting.
+  - Use this when the user wants the simplest possible paste-ready version of the current recruiting posts.
 
 - `.github/workflows/`
   - `validate-site.yml` runs the local site-check script on push and pull request.
@@ -214,6 +187,7 @@ The current league rendering depends on:
 - `division`
 - `teams`
 - `filled`
+- `sleeperFilled` (optional reference copy of Sleeper owner-assigned roster count)
 - `buyIn`
 - `inviteLink`
 - `leagueSafeLink`
@@ -278,7 +252,9 @@ Current league notes:
 - Sleeper invite links can point to a newer live league than the currently stored `sleeperLeagueId`, especially on renewed dynasty leagues. If live counts look wrong, resolve the invite page's `league_id` before assuming the invite link is stale.
 - If the user provides a direct Sleeper league URL instead of a share invite, it is acceptable to store that direct league URL in `inviteLink` so the record can stay publicly actionable while still resolving and storing the numeric `sleeperLeagueId`.
 - When checking dynasty future-pick payment obligations, use Sleeper traded-pick data and only flag managers who traded away future picks. Do not flag the managers who received those picks unless they also traded away their own future picks.
-- For Sleeper-backed leagues, `filled` should reflect paid/assigned teams by counting roster slots with an `owner_id`. Do not treat raw league member count as the true fill number.
+- `filled` is the commissioner-published occupancy count used by the site and local copy.
+- Optional `sleeperFilled` can store the live Sleeper owner-assigned roster count as reference data when local published occupancy intentionally differs.
+- Do not treat raw league member count as the true fill number.
 
 Current donation notes:
 
@@ -329,6 +305,7 @@ If donation rendering breaks:
 - Keep the format filter functional when changing homepage league rendering.
 - Keep planned empty formats visible in Active Leagues unless the user explicitly asks to hide them.
 - Do not reintroduce behavior that overwrites curated local league names with raw Sleeper names unless the user explicitly asks for that.
+- Do not overwrite commissioner-published `filled` counts from Sleeper unless the user explicitly asks for that sync behavior.
 
 ### Local Automation
 
@@ -354,7 +331,7 @@ If donation rendering breaks:
 - Default early Reddit posts to short, direct recruiting copy focused on open spots, active owners, competitive formats, and clear rules.
 - Keep the network name in the title or first sentence so the brand still gets repeated exposure even when the body copy stays simple.
 - Use constitutions and clear rules as trust signals, but do not overload short recruiting posts with too much backstory unless the user asks for a fuller pitch.
-- When the user wants reusable outreach ideas, store them in the relevant file under `marketing/` so future prompts can build from past examples instead of starting from scratch.
+- When the user wants reusable outreach ideas, store them in the relevant consolidated file under `marketing/` so future prompts can build from past examples instead of starting from scratch.
 - If the user asks for a response-driving version, prefer a direct CTA such as `DM me or reply if interested.`
 - For bracket league recruiting copy, prefer an early `Year 3` or established-league hook so the format does not read like an unproven startup and the commissioner experience comes through quickly.
 - For weaker dynasty rebuilds or questionable orphan takeovers, prefer trusted private outreach language over broad public promotion.
@@ -389,7 +366,7 @@ Do not silently "clean up" generated constitution content unless the user asks f
 13. If a task is `run the checks` or `what still needs attention,` prefer `scripts/check-site.ps1`, `scripts/validate-leagues-json.ps1`, `scripts/validate-donations-json.ps1`, `scripts/sync-sleeper-leagues.ps1`, and `scripts/release-helper.ps1` over ad hoc inspection. `scripts/check-site.ps1` already includes the constitution-page and donation-data validation passes.
 14. If the user asks to verify constitution back links, banner images, or section structure, prefer `scripts/check-constitutions.ps1`.
 15. After `/init`, if the user needs a local preview, provide exactly two copyable lines: the terminal command to run from repo root and the browser URL to open. Keep both short and do not include the full folder path unless the user asks for it.
-16. If the user asks for Reddit, Facebook, or recruiting copy, inspect the relevant file in `marketing/` first and extend it when a new pattern, title style, or CTA is worth reusing later.
+16. If the user asks for Reddit, Facebook, or recruiting copy, inspect `marketing/recruiting-playbook.md` first and extend it when a new pattern, title style, or CTA is worth reusing later. Use `marketing/recruiting-copy-ready.txt` when the user wants raw paste-ready output.
 17. If the user wants a keeper-manager dataset, commissioner worksheet, or a future keeper process, prefer `scripts/sync-keeper-ledger.ps1` and `data/keeper-ledger.json`.
 18. If the user wants combined bracket seeding, weekly bracket standings reports, or grouped `RDB` automation, prefer `scripts/sync-bracket-ledger.ps1`, `scripts/export-bracket-report.ps1`, `data/bracket-groups.json`, and `data/bracket-ledger.json`.
 

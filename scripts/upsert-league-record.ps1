@@ -27,6 +27,24 @@ $ErrorActionPreference = "Stop"
 $validFormats = @("redraft", "dynasty", "dynastybracket", "bestball", "bracket", "keeper", "chopped")
 $validStatuses = @("open", "full", "coming-soon")
 $validDraftStyles = @("", "fast", "slow")
+$defaultConstitutionPageByFormat = @{
+  redraft = "redraft-constitution.html"
+  dynasty = "dynasty-constitution.html"
+  dynastybracket = "dynasty-bracket-constitution.html"
+  bestball = "bestball-constitution.html"
+  bracket = "bracket-constitution.html"
+  keeper = "keeper-constitution.html"
+  chopped = "chopped-constitution.html"
+}
+$defaultTeamCountByFormat = @{
+  redraft = 12
+  dynasty = 12
+  dynastybracket = 12
+  bestball = 10
+  bracket = 12
+  keeper = 12
+  chopped = 18
+}
 
 function Resolve-SleeperInviteLeagueId {
   param([string]$InviteUrl)
@@ -132,6 +150,94 @@ function Get-NextLeagueId {
   return "{0}{1}" -f $prefix, ($maxSuffix + 1)
 }
 
+function Get-MostCommonValue {
+  param(
+    [object[]]$Leagues,
+    [string]$PropertyName
+  )
+
+  if (-not $Leagues -or $Leagues.Count -eq 0) {
+    return $null
+  }
+
+  $ranked = $Leagues |
+    Where-Object { $_.PSObject.Properties.Match($PropertyName).Count -gt 0 } |
+    Group-Object -Property {
+      $value = $_.PSObject.Properties[$PropertyName].Value
+      if ($null -eq $value) {
+        return ""
+      }
+
+      return [string]$value
+    } |
+    Sort-Object -Property @{ Expression = { $_.Count }; Descending = $true }, @{ Expression = { $_.Name }; Descending = $false }
+
+  if (-not $ranked) {
+    return $null
+  }
+
+  return $ranked[0].Name
+}
+
+function Get-LatestSeasonSuggestion {
+  param([object[]]$Leagues)
+
+  $seasonValues = @(
+    $Leagues |
+      Where-Object { $_.PSObject.Properties.Match('sleeperSeason').Count -gt 0 } |
+      ForEach-Object { [string]$_.sleeperSeason } |
+      Where-Object { $_ -match '^\d{4}$' } |
+      ForEach-Object { [int]$_ }
+  )
+
+  if ($seasonValues.Count -gt 0) {
+    return [string](($seasonValues | Measure-Object -Maximum).Maximum)
+  }
+
+  return [string](Get-Date).Year
+}
+
+function Get-NewLeagueDefaults {
+  param(
+    [string]$Format,
+    [object[]]$Leagues
+  )
+
+  $sameFormatLeagues = @($Leagues | Where-Object {
+    ([string]$_.format).Trim().ToLowerInvariant() -eq $Format
+  })
+
+  $suggestedBuyIn = Get-MostCommonValue -Leagues $sameFormatLeagues -PropertyName "buyIn"
+  $suggestedStatus = Get-MostCommonValue -Leagues $sameFormatLeagues -PropertyName "status"
+  $suggestedDraftStyle = Get-MostCommonValue -Leagues $sameFormatLeagues -PropertyName "draftStyle"
+  $suggestedDivision = Get-MostCommonValue -Leagues $sameFormatLeagues -PropertyName "division"
+
+  if ([string]::IsNullOrWhiteSpace($suggestedStatus)) {
+    $suggestedStatus = "open"
+  }
+
+  if ($Format -eq "bracket") {
+    $suggestedDraftStyle = ""
+    if ([string]::IsNullOrWhiteSpace($suggestedDivision)) {
+      $suggestedDivision = "Slow"
+    }
+  }
+
+  if ($Format -eq "bestball" -and [string]::IsNullOrWhiteSpace($suggestedDraftStyle)) {
+    $suggestedDraftStyle = "fast"
+  }
+
+  return [pscustomobject]@{
+    constitutionPage = $defaultConstitutionPageByFormat[$Format]
+    teams = $defaultTeamCountByFormat[$Format]
+    buyIn = if ([string]::IsNullOrWhiteSpace($suggestedBuyIn)) { 0 } else { [int][double]$suggestedBuyIn }
+    status = $suggestedStatus
+    draftStyle = if ([string]::IsNullOrWhiteSpace($suggestedDraftStyle)) { "" } else { $suggestedDraftStyle.Trim().ToLowerInvariant() }
+    division = if ([string]::IsNullOrWhiteSpace($suggestedDivision)) { "" } else { $suggestedDivision.Trim() }
+    sleeperSeason = Get-LatestSeasonSuggestion -Leagues $Leagues
+  }
+}
+
 function Prompt-Value {
   param(
     [string]$Label,
@@ -177,6 +283,8 @@ if ([string]::IsNullOrWhiteSpace($LeagueType)) {
 $LeagueType = Normalize-Format -Value $LeagueType
 
 if ($Mode -eq "new") {
+  $newLeagueDefaults = Get-NewLeagueDefaults -Format $LeagueType -Leagues $payload.leagues
+
   if ([string]::IsNullOrWhiteSpace($LeagueRecordId)) {
     $LeagueRecordId = Get-NextLeagueId -Format $LeagueType -Leagues $payload.leagues
   }
@@ -185,18 +293,18 @@ if ($Mode -eq "new") {
   $target = [pscustomobject]@{
     id = $LeagueRecordId
     sleeperLeagueId = ""
-    sleeperSeason = ""
+    sleeperSeason = [string]$newLeagueDefaults.sleeperSeason
     name = ""
     format = $LeagueType
-    draftStyle = ""
-    division = ""
-    buyIn = 0
-    teams = 0
+    draftStyle = [string]$newLeagueDefaults.draftStyle
+    division = [string]$newLeagueDefaults.division
+    buyIn = [int]$newLeagueDefaults.buyIn
+    teams = [int]$newLeagueDefaults.teams
     filled = 0
-    status = "open"
+    status = [string]$newLeagueDefaults.status
     inviteLink = ""
     leagueSafeLink = ""
-    constitutionPage = ""
+    constitutionPage = [string]$newLeagueDefaults.constitutionPage
     notes = ""
     lastUpdated = ""
   }
