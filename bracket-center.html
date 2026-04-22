@@ -4,7 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bracket Center | VBP Fantasy Network</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <meta name="description" content="Bracket Center for VBP Fantasy Network with public format info, standings, scoreboards, and bracket tracking." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Bracket Center | VBP Fantasy Network" />
+  <meta property="og:description" content="Explore the VBP Bracket Center for public format info, standings, and bracket tracking." />
+  <meta property="og:url" content="https://vbp-fantasy-network.vercel.app/bracket-center.html" />
+  <meta property="og:image" content="https://vbp-fantasy-network.vercel.app/assets/images/banner.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bracket Center | VBP Fantasy Network" />
+  <meta name="twitter:description" content="Explore the VBP Bracket Center for public format info, standings, and bracket tracking." />
+  <meta name="twitter:image" content="https://vbp-fantasy-network.vercel.app/assets/images/banner.png" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260422102500" />
 </head>
 <body class="constitution-page format-center-page">
   <div class="constitution-nav" id="top">
@@ -31,9 +41,23 @@
       <section class="constitution-summary-card">
         <h2 id="centerSummaryTitle">Live League Center</h2>
         <p id="centerSummaryCopy">This page is the public standings layer for the Bracket format. It is separate from the homepage so the hub can stay focused on recruiting, league discovery, and constitutions.</p>
+        <div class="format-center-hub-card">
+          <div class="format-center-hub-copy">
+            <span class="format-center-hub-kicker">Best Entry Point</span>
+            <h3 id="centerHubTitle">Join the Bracket Hub First</h3>
+            <p id="centerHubCopy">Use the central Sleeper hub to get format information first. That lets new owners land in the healthiest open divisions instead of joining a low-fill room and bouncing before momentum builds.</p>
+          </div>
+          <div class="format-center-actions format-center-hub-actions">
+            <a href="https://sleeper.com/leagues/1314678719968739328" class="btn btn-primary" id="centerHubLink" target="_blank" rel="noopener noreferrer">Join Central Hub</a>
+          </div>
+        </div>
         <div class="format-center-view-switcher" id="centerViewSwitcher" aria-label="Bracket center type">
           <a href="bracket-center.html?view=redraft" class="format-center-view-link" data-center-view="redraft">Redraft Bracket</a>
           <a href="bracket-center.html?view=dynasty" class="format-center-view-link" data-center-view="dynasty">Dynasty Bracket</a>
+        </div>
+        <div class="format-center-tabs format-center-mode-tabs" id="centerModeTabs" aria-label="Bracket center content mode">
+          <button type="button" class="format-center-tab" data-center-section="standings">Standings</button>
+          <button type="button" class="format-center-tab" data-center-section="bracket">Playoff Bracket</button>
         </div>
         <div class="format-center-actions">
           <a href="bracket-constitution.html" class="btn btn-primary" id="centerConstitutionLink">View Constitution</a>
@@ -67,9 +91,22 @@
         <div class="format-center-banner" id="centerStatusBanner" hidden></div>
       </section>
 
-      <section class="constitution-section-card">
+      <section class="constitution-section-card" id="bracketVisualSection" hidden>
         <div class="constitution-section-header">
-          <h2>Division Playoff Counts</h2>
+          <h2 id="bracketVisualHeading">Projected Playoff Bracket</h2>
+          <a href="#top" class="constitution-jump-link">Back to top</a>
+        </div>
+        <p class="format-center-scoreboard-copy" id="bracketVisualSummary">
+          Seed paths and projected matchups will appear here once the current playoff field is available.
+        </p>
+        <div class="format-center-bracket-shell" id="bracketVisualContainer">
+          <div class="empty-state">Loading bracket view...</div>
+        </div>
+      </section>
+
+      <section class="constitution-section-card" id="divisionCountsSection">
+        <div class="constitution-section-header">
+          <h2 id="divisionCountsHeading">Division Playoff Counts</h2>
           <a href="#top" class="constitution-jump-link">Back to top</a>
         </div>
         <div class="format-center-division-grid" id="divisionCountsContainer">
@@ -77,9 +114,9 @@
         </div>
       </section>
 
-      <section class="constitution-section-card">
+      <section class="constitution-section-card" id="scoreboardsSection">
         <div class="constitution-section-header">
-          <h2>Live League Scoreboards</h2>
+          <h2 id="scoreboardsHeading">Live League Scoreboards</h2>
           <a href="#top" class="constitution-jump-link">Back to top</a>
         </div>
         <div class="format-center-scoreboard-header">
@@ -99,9 +136,9 @@
         </div>
       </section>
 
-      <section class="constitution-section-card">
+      <section class="constitution-section-card" id="standingsSection">
         <div class="constitution-section-header">
-          <h2>Full Combined Standings</h2>
+          <h2 id="standingsHeading">Full Combined Standings</h2>
           <a href="#top" class="constitution-jump-link">Back to top</a>
         </div>
         <div class="format-center-table-wrap">
@@ -127,6 +164,6 @@
     </div>
   </main>
 
-  <script src="assets/js/bracket-center.js"></script>
+  <script src="assets/js/bracket-center.js?v=20260422102500"></script>
 </body>
 </html>

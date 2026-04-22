@@ -45,6 +45,18 @@ Use:
 - `BBU MOMENTUM`
 - `BBU LOW-PRESSURE`
 
+### If You Want Redraft Copy
+
+Use:
+- `BRACKET REDRAFT`
+- `REDRAFT 4`
+
+### If You Want To Funnel Through The Sleeper Hub First
+
+Use:
+- `BRACKET HUB INTAKE`
+- `BRACKET HUB AD`
+
 ## Current Recruiting Priorities
 
 ### Primary Push
@@ -98,7 +110,150 @@ Use:
 - `Sleeper / Discord / Classifieds`
   - Use the shorter versions or trim these down to one CTA and one or two links.
 
+### Redraft
+
+- Keep redraft copy aligned with the rest of the recruiting strategy: trust first, clear structure, and fewer "listing" vibes.
+- For `Bracket Redraft`, lead with the format hook and the fact that it is an established Year 3 setup.
+- For `Redraft 4`, frame it as the sharper seasonal option for owners who want a more serious room with rules posted up front.
+- Keep both redraft posts direct, but make them sound curated rather than generic.
+
+### Bracket Hub Intake
+
+- Use the Sleeper hub as the first stop for both `Dynasty Bracket` and `Bracket Redraft` when you want better fill control.
+- Keep the hub framed as one combined intake lane, not as two separate ads stitched together.
+- Lead with curiosity, structure, and the easy next step.
+- Avoid front-loading too many details that can give people reasons to pass before they even join the hub.
+- The hub should explain the format clearly, show the currently preferred rooms, and tell people not to self-sort into a random low-count division.
+- The main value of the hub is filtering: you can steer new joins into the healthiest open rooms and keep momentum concentrated instead of spreading early interest too thin.
+- Keep the hub pinned messages short enough to scan on mobile. Long constitutions should stay linked, not pasted in full.
+- Treat the hub ad as an interest and intake post, not a direct league-listing post.
+- In public ads, sell the format and the process: `join the hub, read the overview, get placed in the best-fit active room.`
+- When one room starts snowballing, update the pinned message and the ad copy to make that room the default recommendation.
+
 ## Labeled Source Copy
+
+### BRACKET HUB INTAKE
+
+When to use:
+- building the Sleeper hub pins
+- central intake setup for both bracket formats
+- commissioner reference
+
+Recommended pinned-message stack:
+
+1. `START HERE`
+- One short welcome note.
+- Tell people this hub is the entry point for `Dynasty Bracket` and `Bracket Redraft`.
+- Tell them you use this to place owners into the best active room instead of spreading joins across low-count leagues.
+
+Suggested copy:
+
+```text
+Welcome to the VBP Fantasy Network Bracket Hub.
+
+This Sleeper hub is the main entry point for both Dynasty Bracket and Bracket Redraft. Join here first, read the format overview, and I will point you to the best active opening instead of having people scatter across low-count divisions too early.
+```
+
+2. `FORMAT SNAPSHOT`
+- One fast explainer for both formats.
+- Keep it to bullets and differences.
+
+Suggested copy:
+
+```text
+Current bracket options:
+
+Dynasty Bracket
+- Superflex startup
+- 3 FLEX, 4 taxi, 4 IR
+- 3RR startup draft
+- 4 divisions feeding one shared playoff bracket
+- $50 per season, 3 years due up front
+
+Bracket Redraft
+- Year 3 format
+- $50 buy-in
+- Fast and slow rooms
+- Progressive PPR scoring
+- 5 divisions feeding one shared playoff bracket
+```
+
+3. `HOW PLACEMENT WORKS`
+- Explain why they should not just pick the emptiest room.
+- Tell them you’ll route them based on draft pace, fit, and current fill momentum.
+
+Suggested copy:
+
+```text
+How placement works:
+
+- Tell me whether you want dynasty bracket or redraft bracket.
+- Tell me whether you prefer fast or slow draft pace.
+- I will point you to the best current opening.
+
+I do it this way to keep momentum in the healthiest rooms first. That helps leagues fill faster and avoids people joining a nearly empty room, waiting around, and leaving.
+```
+
+4. `CURRENT PRIORITY ROOMS`
+- Keep this one updated often.
+- List only the one or two rooms you actively want to fill next for each format.
+- Do not list every room unless you actually want traffic split evenly.
+
+Suggested structure:
+
+```text
+Current priority openings:
+
+Dynasty Bracket
+- [room name]
+- [fast or slow]
+- [current occupancy]
+
+Bracket Redraft
+- [room name]
+- [fast or slow]
+- [current occupancy]
+
+If one of these fills, I will update this pin and point new joins to the next room.
+```
+
+5. `RULES + LINKS`
+- Keep this as the resource pin.
+- Link out instead of overexplaining.
+
+Suggested copy:
+
+```text
+Reference links:
+
+Dynasty Bracket constitution:
+https://vbp-fantasy-network.vercel.app/dynasty-bracket-constitution.html
+
+Bracket Redraft constitution:
+https://vbp-fantasy-network.vercel.app/bracket-constitution.html
+
+Bracket Center:
+https://vbp-fantasy-network.vercel.app/bracket-center.html
+
+Main hub:
+https://vbp-fantasy-network.vercel.app/
+```
+
+6. `QUICK RESPONSE PROMPT`
+- Optional final pin.
+- Makes replies easier for new joins.
+
+Suggested copy:
+
+```text
+If you join the hub, send one quick message with:
+
+- Dynasty Bracket or Bracket Redraft
+- Fast or Slow draft preference
+- Any buy-in or roster questions
+
+That is enough for me to point you to the best fit.
+```
 
 ### DYNASTY HUB
 
@@ -134,6 +289,84 @@ Dynasty Bracket constitution: https://vbp-fantasy-network.vercel.app/dynasty-bra
 Main hub: https://vbp-fantasy-network.vercel.app/
 
 DM me or reply and I will point you to the best fit.
+```
+
+### BRACKET HUB AD
+
+When to use:
+- broad public ad for the Sleeper intake hub
+- when you want one central CTA instead of direct room links
+
+Title:
+
+```text
+VBP Fantasy Network | Join The Bracket Hub | Dynasty + Redraft Openings
+```
+
+Body:
+
+```text
+VBP Fantasy Network is using one Sleeper hub as the intake point for Dynasty Bracket and Bracket Redraft.
+
+If you are interested, join the hub first. I use that to answer questions, share the format overview, and route new owners into the healthiest open rooms instead of having people join nearly empty divisions and leave.
+
+Bracket Hub: https://sleeper.com/leagues/1314678719968739328
+Bracket Center: https://vbp-fantasy-network.vercel.app/bracket-center.html
+Main hub: https://vbp-fantasy-network.vercel.app/
+
+Reply or join the hub if you want in.
+```
+
+### DYNASTY BRACKET HUB AD
+
+When to use:
+- dynasty bracket recruiting
+- when you want the CTA to be the Sleeper hub, not a specific division
+
+Title:
+
+```text
+VBP Fantasy Network | Dynasty Bracket Open | Join The Sleeper Hub First
+```
+
+Body:
+
+```text
+VBP Fantasy Network is filling Dynasty Bracket and using one Sleeper hub as the first stop for interested owners.
+
+This is a Superflex startup with 3 FLEX, 4 taxi, 4 IR, a 3RR startup draft, and one shared playoff bracket across all divisions. Instead of sending people into random low-count rooms, I use the hub to point new owners to the best active opening.
+
+Bracket Hub: https://sleeper.com/leagues/1314678719968739328
+Dynasty Bracket constitution: https://vbp-fantasy-network.vercel.app/dynasty-bracket-constitution.html
+Bracket Center: https://vbp-fantasy-network.vercel.app/bracket-center.html
+
+Reply or join the hub if you want in.
+```
+
+### REDRAFT BRACKET HUB AD
+
+When to use:
+- bracket redraft recruiting
+- when you want the CTA to be the Sleeper hub, not a specific room
+
+Title:
+
+```text
+VBP Fantasy Network | Year 3 Bracket Redraft Open | Join The Sleeper Hub First
+```
+
+Body:
+
+```text
+VBP Fantasy Network is filling its Year 3 Bracket Redraft format and using one central Sleeper hub as the intake point.
+
+This is a $50 redraft setup with fast and slow rooms, Progressive PPR scoring, and one shared playoff bracket across the format. The hub lets me route new owners into the healthiest open rooms instead of splitting traffic across low-count divisions too early.
+
+Bracket Hub: https://sleeper.com/leagues/1314678719968739328
+Bracket constitution: https://vbp-fantasy-network.vercel.app/bracket-constitution.html
+Bracket Center: https://vbp-fantasy-network.vercel.app/bracket-center.html
+
+Reply or join the hub if interested.
 ```
 
 ### DYN5 CLOSER
@@ -355,4 +588,62 @@ Best Ball Union Center: https://vbp-fantasy-network.vercel.app/bestball-center.h
 Main hub: https://vbp-fantasy-network.vercel.app/
 
 DM me or reply if you want in.
+```
+
+### BRACKET REDRAFT
+
+When to use:
+- tournament-style redraft recruiting
+- when you want the multi-division bracket format in one post
+
+Title:
+
+```text
+VBP Fantasy Network | Year 3 Bracket Redraft Open | $50 Tournament Format
+```
+
+Body:
+
+```text
+VBP Fantasy Network is filling its Year 3 Bracket Redraft format with a few more committed owners right now.
+
+This is a $50 redraft setup with both fast and slow draft options, Progressive PPR scoring, and a combined bracket playoff race that gives the format a bigger tournament feel than a standard home league.
+
+Titan ($50, Slow): http://sleeper.com/i/kM2GBe6qL228Y
+Apex ($50, Slow): http://sleeper.com/i/zExweGWd6aPgb
+Iron ($50, Fast): http://sleeper.com/i/j7moDEZ337dn0
+Vanguard ($50, Fast): http://sleeper.com/i/kM2GBe9QxYED7
+Dominion ($50, Slow): http://sleeper.com/i/Y2VXxZ02Y850R
+
+Bracket constitution: https://vbp-fantasy-network.vercel.app/bracket-constitution.html
+Bracket Center: https://vbp-fantasy-network.vercel.app/bracket-center.html
+Main hub: https://vbp-fantasy-network.vercel.app/
+
+DM me or reply if interested.
+```
+
+### REDRAFT 4
+
+When to use:
+- standard higher-buy-in seasonal redraft recruiting
+- direct post for `RD4`
+
+Title:
+
+```text
+VBP Fantasy Network | Redraft 4 Open | $100 Competitive Redraft
+```
+
+Body:
+
+```text
+VBP Fantasy Network has Redraft 4 open right now for owners who want a sharper $100 seasonal league with clear rules posted up front.
+
+It uses Progressive PPR scoring, no kicker or defense spots, and a 6-team playoff with top-two byes.
+
+Redraft 4 ($100): https://sleeper.com/i/V9xKEeVN7AD4e
+Redraft constitution: https://vbp-fantasy-network.vercel.app/redraft-constitution.html
+Main hub: https://vbp-fantasy-network.vercel.app/
+
+DM me or reply if interested.
 ```

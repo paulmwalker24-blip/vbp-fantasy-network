@@ -1,3 +1,5 @@
+const BRACKET_HUB_URL = "https://sleeper.com/leagues/1314678719968739328";
+
 const CENTER_VIEW_CONFIG = {
   redraft: {
     key: "redraft",
@@ -5,9 +7,11 @@ const CENTER_VIEW_CONFIG = {
     label: "Bracket Redraft",
     pageTitle: "Bracket Center",
     summaryTitle: "Live Redraft Bracket Center",
-    summaryCopy: "This page is the public standings layer for the redraft bracket format. It stays separate from the homepage so the hub can stay focused on recruiting, league discovery, and constitutions.",
+    summaryCopy: "This page acts as both the public home for the redraft bracket format and the standings layer once the grouped leagues are live.",
     subtitle: "Public standings and playoff race snapshot for the VBP Bracket Redraft group.",
     sampleSubtitlePrefix: "Sample full-field preview for",
+    hubTitle: "Join the Bracket Hub First",
+    hubCopy: "Use the central Sleeper hub to get the redraft bracket format details first. That makes it easier to route new owners into the fuller open rooms instead of sending them straight into low-fill divisions that lose momentum.",
     constitutionPage: "bracket-constitution.html",
     constitutionLabel: "Bracket Redraft Constitution",
     ledgerUrl: "data/bracket-ledger.json",
@@ -29,9 +33,11 @@ const CENTER_VIEW_CONFIG = {
     label: "Dynasty Bracket",
     pageTitle: "Bracket Center",
     summaryTitle: "Live Dynasty Bracket Center",
-    summaryCopy: "This page is the public standings layer for the dynasty bracket format. It is built to mirror the redraft bracket center once the four dynasty divisions are live and publishing weekly data.",
+    summaryCopy: "This page acts as the public home for the dynasty bracket format, with a central intake path now and standings support as the divisions go live.",
     subtitle: "Public standings and playoff race snapshot for the VBP Dynasty Bracket group.",
     sampleSubtitlePrefix: "Sample dynasty-field preview for",
+    hubTitle: "Use the Central Dynasty Bracket Hub",
+    hubCopy: "Start in the shared Sleeper hub so interested dynasty owners can read the format, ask questions, and then get pointed into the healthiest open division instead of scattering across empty rooms too early.",
     constitutionPage: "dynasty-bracket-constitution.html",
     constitutionLabel: "Dynasty Bracket Constitution",
     ledgerUrl: "data/dynasty-bracket-ledger.json",
@@ -68,6 +74,7 @@ const DEMO_TEAM_SUFFIXES = [
 const scoreboardState = {
   liveGroup: null,
   centerView: CENTER_VIEW_CONFIG.redraft,
+  selectedSection: "standings",
   selectedLeagueRecordId: "",
   refreshTimer: null
 };
@@ -105,6 +112,12 @@ function getCenterView() {
 function getSearchGroupId(centerView) {
   const params = new URLSearchParams(window.location.search);
   return text(params.get("group")) || centerView.defaultGroupId;
+}
+
+function getCenterSection() {
+  const params = new URLSearchParams(window.location.search);
+  const requestedSection = text(params.get("tab")).toLowerCase();
+  return requestedSection === "bracket" ? "bracket" : "standings";
 }
 
 function getEntryKey(entry) {
@@ -873,10 +886,15 @@ function renderMeta(group) {
   const subtitle = document.getElementById("centerPageSubtitle");
   const summaryTitle = document.getElementById("centerSummaryTitle");
   const summaryCopy = document.getElementById("centerSummaryCopy");
+  const hubTitle = document.getElementById("centerHubTitle");
+  const hubCopy = document.getElementById("centerHubCopy");
+  const hubLink = document.getElementById("centerHubLink");
   const constitutionLink = document.getElementById("centerConstitutionLink");
   const topConstitutionLink = document.getElementById("centerTopConstitutionLink");
-  const sectionHeaders = Array.from(document.querySelectorAll(".constitution-section-header h2"));
   const scoreboardSummary = document.getElementById("scoreboardSummary");
+  const divisionCountsHeading = document.getElementById("divisionCountsHeading");
+  const scoreboardsHeading = document.getElementById("scoreboardsHeading");
+  const standingsHeading = document.getElementById("standingsHeading");
 
   const overallStandings = Array.isArray(group?.overallStandings) ? group.overallStandings : [];
   const playoffField = Array.isArray(group?.playoffField) ? group.playoffField : [];
@@ -892,6 +910,15 @@ function renderMeta(group) {
     : `Public standings and playoff race snapshot for ${label}.`;
   summaryTitle.textContent = centerView.summaryTitle;
   summaryCopy.textContent = centerView.summaryCopy;
+  if (hubTitle) {
+    hubTitle.textContent = centerView.hubTitle;
+  }
+  if (hubCopy) {
+    hubCopy.textContent = centerView.hubCopy;
+  }
+  if (hubLink) {
+    hubLink.href = BRACKET_HUB_URL;
+  }
   constitutionLink.href = centerView.constitutionPage;
   constitutionLink.textContent = "View Constitution";
   if (topConstitutionLink) {
@@ -904,10 +931,14 @@ function renderMeta(group) {
   trackedTeams.textContent = `${overallStandings.length} tracked`;
   playoffFieldSize.textContent = `${playoffField.length} / ${targetPlayoffSize}`;
 
-  if (sectionHeaders.length >= 3) {
-    sectionHeaders[0].textContent = centerView.divisionHeading;
-    sectionHeaders[1].textContent = "Live League Scoreboards";
-    sectionHeaders[2].textContent = "Full Combined Standings";
+  if (divisionCountsHeading) {
+    divisionCountsHeading.textContent = centerView.divisionHeading;
+  }
+  if (scoreboardsHeading) {
+    scoreboardsHeading.textContent = "Live League Scoreboards";
+  }
+  if (standingsHeading) {
+    standingsHeading.textContent = "Full Combined Standings";
   }
 
   if (statusText) {
@@ -1013,6 +1044,415 @@ function renderStandings(group) {
   });
 }
 
+function getPlayoffField(group) {
+  const playoffField = Array.isArray(group?.playoffField) ? group.playoffField : [];
+  return [...playoffField]
+    .filter(entry => entry?.team)
+    .sort((left, right) => toNumber(left?.seed) - toNumber(right?.seed));
+}
+
+function createBracketSlot(label) {
+  const slot = document.createElement("div");
+  slot.className = "format-center-bracket-slot";
+
+  const seed = document.createElement("span");
+  seed.className = "format-center-bracket-seed";
+  seed.textContent = label;
+
+  slot.appendChild(seed);
+  return slot;
+}
+
+function createBracketMatchupCard(leftLabel, rightLabel, label, note = "", size = "standard") {
+  const card = document.createElement("article");
+  card.className = `format-center-bracket-matchup${size !== "standard" ? ` is-${size}` : ""}`;
+
+  const heading = document.createElement("div");
+  heading.className = "format-center-bracket-matchup-header";
+
+  const title = document.createElement("h3");
+  title.textContent = label;
+  heading.appendChild(title);
+
+  if (note) {
+    const noteEl = document.createElement("p");
+    noteEl.className = "format-center-bracket-matchup-note";
+    noteEl.textContent = note;
+    heading.appendChild(noteEl);
+  }
+
+  const teams = document.createElement("div");
+  teams.className = "format-center-bracket-matchup-body";
+  teams.append(createBracketSlot(leftLabel), createBracketSlot(rightLabel));
+
+  card.append(heading, teams);
+  return card;
+}
+
+function createBracketPlaceholderCard(label, lineOne, lineTwo) {
+  const card = document.createElement("article");
+  card.className = "format-center-bracket-matchup is-placeholder";
+
+  const heading = document.createElement("div");
+  heading.className = "format-center-bracket-matchup-header";
+  const title = document.createElement("h3");
+  title.textContent = label;
+  heading.appendChild(title);
+
+  const body = document.createElement("div");
+  body.className = "format-center-bracket-placeholder";
+  body.innerHTML = `<span>${lineOne}</span><span>${lineTwo}</span>`;
+
+  card.append(heading, body);
+  return card;
+}
+
+function createBracketTextCard(label, lineOne, lineTwo, tone = "standard") {
+  const card = document.createElement("article");
+  card.className = `format-center-bracket-matchup format-center-bracket-text-card${tone === "placeholder" ? " is-placeholder" : ""}`;
+
+  const heading = document.createElement("div");
+  heading.className = "format-center-bracket-matchup-header";
+
+  const title = document.createElement("h3");
+  title.textContent = label;
+  heading.appendChild(title);
+
+  const body = document.createElement("div");
+  body.className = "format-center-bracket-text-body";
+
+  const lineOneEl = document.createElement("span");
+  lineOneEl.textContent = lineOne;
+
+  const lineTwoEl = document.createElement("span");
+  lineTwoEl.textContent = lineTwo;
+
+  body.append(lineOneEl, lineTwoEl);
+  card.append(heading, body);
+  return card;
+}
+
+function createBracketScoreCard(label, topLabel, topScore, bottomLabel, bottomScore, note = "") {
+  const card = document.createElement("article");
+  card.className = "format-center-bracket-matchup format-center-bracket-score-card";
+
+  const heading = document.createElement("div");
+  heading.className = "format-center-bracket-matchup-header";
+
+  const title = document.createElement("h3");
+  title.textContent = label;
+  heading.appendChild(title);
+
+  if (note) {
+    const noteEl = document.createElement("p");
+    noteEl.className = "format-center-bracket-matchup-note";
+    noteEl.textContent = note;
+    heading.appendChild(noteEl);
+  }
+
+  const body = document.createElement("div");
+  body.className = "format-center-bracket-score-body";
+
+  const entries = [
+    { label: topLabel, score: topScore },
+    { label: bottomLabel, score: bottomScore }
+  ];
+
+  entries.forEach(entry => {
+    const row = document.createElement("div");
+    row.className = `format-center-bracket-score-row${Number(entry.score) === Math.max(topScore, bottomScore) ? " is-winner" : ""}`;
+
+    const team = document.createElement("span");
+    team.className = "format-center-bracket-score-label";
+    team.textContent = entry.label;
+
+    const score = document.createElement("span");
+    score.className = "format-center-bracket-score-value";
+    score.textContent = Number(entry.score).toFixed(2);
+
+    row.append(team, score);
+    body.appendChild(row);
+  });
+
+  card.append(heading, body);
+  return card;
+}
+
+function createBracketSection(titleText, summaryText = "") {
+  const section = document.createElement("section");
+  section.className = "format-center-bracket-stage";
+
+  const header = document.createElement("div");
+  header.className = "format-center-bracket-stage-header";
+
+  const title = document.createElement("h3");
+  title.textContent = titleText;
+  header.appendChild(title);
+
+  if (summaryText) {
+    const summary = document.createElement("p");
+    summary.className = "format-center-bracket-stage-copy";
+    summary.textContent = summaryText;
+    header.appendChild(summary);
+  }
+
+  section.appendChild(header);
+  return section;
+}
+
+function createBracketDiagramPaths() {
+  const paths = [
+    "M236 54 H252 V182 H268",
+    "M236 310 H252 V182 H268",
+    "M236 566 H252 V694 H268",
+    "M236 822 H252 V694 H268",
+    "M468 182 H484 V438 H500",
+    "M468 694 H484 V438 H500",
+    "M670 438 H702",
+    "M1404 54 H1388 V182 H1372",
+    "M1404 310 H1388 V182 H1372",
+    "M1404 566 H1388 V694 H1372",
+    "M1404 822 H1388 V694 H1372",
+    "M1172 182 H1156 V438 H1140",
+    "M1172 694 H1156 V438 H1140",
+    "M970 438 H938"
+  ];
+
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("class", "format-center-bracket-svg");
+  svg.setAttribute("viewBox", "0 0 1640 876");
+  svg.setAttribute("aria-hidden", "true");
+
+  paths.forEach(d => {
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", d);
+    path.setAttribute("fill", "none");
+    path.setAttribute("stroke", "#9fb3c8");
+    path.setAttribute("stroke-width", "4");
+    path.setAttribute("stroke-linecap", "round");
+    path.setAttribute("stroke-linejoin", "round");
+    svg.appendChild(path);
+  });
+
+  return svg;
+}
+
+function createBracketDiagramNode(column, row, roundKey, sideKey, card) {
+  const node = document.createElement("div");
+  node.className = "format-center-bracket-node";
+  node.style.gridColumn = String(column);
+  node.style.gridRow = String(row);
+  node.dataset.round = roundKey;
+  node.dataset.side = sideKey;
+  card.classList.add("format-center-bracket-diagram-card");
+  node.appendChild(card);
+  return node;
+}
+
+function getMockDynastyPlayoffNodes() {
+  return [
+    createBracketDiagramNode(1, 1, "round-of-16", "left", createBracketScoreCard("Round of 16 A", "Seed 1", 156.42, "Seed 16", 118.77)),
+    createBracketDiagramNode(1, 3, "round-of-16", "left", createBracketScoreCard("Round of 16 B", "Seed 8", 133.58, "Seed 9", 141.21)),
+    createBracketDiagramNode(1, 5, "round-of-16", "left", createBracketScoreCard("Round of 16 C", "Seed 5", 149.06, "Seed 12", 136.44)),
+    createBracketDiagramNode(1, 7, "round-of-16", "left", createBracketScoreCard("Round of 16 D", "Seed 4", 127.13, "Seed 13", 130.89)),
+    createBracketDiagramNode(2, 2, "quarterfinals", "left", createBracketScoreCard("Quarterfinal 1", "Seed 1", 151.88, "Seed 9", 146.22)),
+    createBracketDiagramNode(2, 6, "quarterfinals", "left", createBracketScoreCard("Quarterfinal 2", "Seed 5", 138.74, "Seed 13", 144.37)),
+    createBracketDiagramNode(3, 4, "semifinals", "left", createBracketScoreCard("Semifinal 1", "Seed 1", 162.54, "Seed 13", 154.91)),
+    createBracketDiagramNode(4, 4, "championship", "center", createBracketScoreCard("Title Game", "Seed 1", 168.02, "Seed 2", 159.47)),
+    createBracketDiagramNode(5, 4, "semifinals", "right", createBracketScoreCard("Semifinal 2", "Seed 2", 148.35, "Seed 6", 141.92)),
+    createBracketDiagramNode(6, 2, "quarterfinals", "right", createBracketScoreCard("Quarterfinal 3", "Seed 6", 140.68, "Seed 3", 134.11)),
+    createBracketDiagramNode(6, 6, "quarterfinals", "right", createBracketScoreCard("Quarterfinal 4", "Seed 7", 126.94, "Seed 2", 145.76)),
+    createBracketDiagramNode(7, 1, "round-of-16", "right", createBracketScoreCard("Round of 16 E", "Seed 6", 137.85, "Seed 11", 132.09)),
+    createBracketDiagramNode(7, 3, "round-of-16", "right", createBracketScoreCard("Round of 16 F", "Seed 3", 144.63, "Seed 14", 121.47)),
+    createBracketDiagramNode(7, 5, "round-of-16", "right", createBracketScoreCard("Round of 16 G", "Seed 7", 135.14, "Seed 10", 128.39)),
+    createBracketDiagramNode(7, 7, "round-of-16", "right", createBracketScoreCard("Round of 16 H", "Seed 2", 152.27, "Seed 15", 117.84))
+  ];
+}
+
+function getMockRedraftPlayoffNodes() {
+  return [
+    createBracketDiagramNode(1, 1, "round-of-16", "left", createBracketScoreCard("Round of 16 A", "Seed 1", 142.61, "Seed 29", 126.12)),
+    createBracketDiagramNode(1, 3, "round-of-16", "left", createBracketScoreCard("Round of 16 B", "Seed 12", 136.84, "Wild Card winner", 133.44)),
+    createBracketDiagramNode(1, 5, "round-of-16", "left", createBracketScoreCard("Round of 16 C", "Seed 5", 147.28, "Seed 21", 138.93)),
+    createBracketDiagramNode(1, 7, "round-of-16", "left", createBracketScoreCard("Round of 16 D", "Seed 14", 131.55, "Seed 18", 135.02)),
+    createBracketDiagramNode(2, 2, "quarterfinals", "left", createBracketScoreCard("Quarterfinal 1", "Seed 1", 150.9, "Seed 12", 141.16)),
+    createBracketDiagramNode(2, 6, "quarterfinals", "left", createBracketScoreCard("Quarterfinal 2", "Seed 5", 143.31, "Seed 18", 148.08)),
+    createBracketDiagramNode(3, 4, "semifinals", "left", createBracketScoreCard("Semifinal 1", "Seed 1", 155.67, "Seed 18", 149.54)),
+    createBracketDiagramNode(4, 4, "championship", "center", createBracketScoreCard("Title Game", "Seed 1", 161.48, "Seed 3", 157.83)),
+    createBracketDiagramNode(5, 4, "semifinals", "right", createBracketScoreCard("Semifinal 2", "Seed 3", 146.22, "Seed 10", 139.75)),
+    createBracketDiagramNode(6, 2, "quarterfinals", "right", createBracketScoreCard("Quarterfinal 3", "Seed 3", 138.94, "Seed 19", 134.5)),
+    createBracketDiagramNode(6, 6, "quarterfinals", "right", createBracketScoreCard("Quarterfinal 4", "Seed 10", 132.18, "Seed 16", 144.73)),
+    createBracketDiagramNode(7, 1, "round-of-16", "right", createBracketScoreCard("Round of 16 E", "Seed 10", 127.41, "Seed 19", 134.88)),
+    createBracketDiagramNode(7, 3, "round-of-16", "right", createBracketScoreCard("Round of 16 F", "Seed 3", 151.07, "Seed 14", 122.95)),
+    createBracketDiagramNode(7, 5, "round-of-16", "right", createBracketScoreCard("Round of 16 G", "Seed 16", 140.62, "Seed 20", 136.2)),
+    createBracketDiagramNode(7, 7, "round-of-16", "right", createBracketScoreCard("Round of 16 H", "Seed 11", 148.19, "Seed 18", 130.44))
+  ];
+}
+
+function renderMainBracket(container, nodes) {
+  const board = document.createElement("div");
+  board.className = "format-center-bracket-board";
+
+  const labels = document.createElement("div");
+  labels.className = "format-center-bracket-label-row";
+
+  [
+    "Round of 16",
+    "Quarterfinals",
+    "Semifinals",
+    "Championship",
+    "Semifinals",
+    "Quarterfinals",
+    "Round of 16"
+  ].forEach(labelText => {
+    const label = document.createElement("span");
+    label.className = "format-center-bracket-label";
+    label.textContent = labelText;
+    labels.appendChild(label);
+  });
+
+  const diagram = document.createElement("div");
+  diagram.className = "format-center-bracket-diagram";
+  diagram.appendChild(createBracketDiagramPaths());
+
+  const grid = document.createElement("div");
+  grid.className = "format-center-bracket-grid";
+  nodes.forEach(node => grid.appendChild(node));
+
+  diagram.appendChild(grid);
+  board.append(labels, diagram);
+  container.appendChild(board);
+}
+
+function renderDynastyBracketView(group, container) {
+  const bracketSection = createBracketSection(
+    "Tournament Bracket",
+    "The dynasty format opens directly with a 16-team seeded bracket."
+  );
+  const nodes = getMockDynastyPlayoffNodes();
+
+  renderMainBracket(bracketSection, nodes);
+  container.appendChild(bracketSection);
+}
+
+function renderRedraftBracketView(group, container) {
+  const prelimSection = createBracketSection(
+    "Preliminary Rounds",
+    "These games set the final Round of 16 field. Once that field is locked, the full tournament bracket begins below."
+  );
+  const prelimGrid = document.createElement("div");
+  prelimGrid.className = "format-center-prelim-grid";
+
+  const playInCards = [];
+  playInCards.push(
+    createBracketScoreCard(
+      "Wild Card Play-In",
+      "Seed 31",
+      118.94,
+      "Seed 32",
+      124.66,
+      "Seed 32 advances into the opening-round funnel."
+    )
+  );
+
+  const openingRound = [];
+  [
+    ["1 vs 30", "Seed 1", 143.8, "Seed 30", 109.44],
+    ["2 vs 29", "Seed 2", 132.17, "Seed 29", 137.52],
+    ["3 vs 28", "Seed 3", 149.93, "Seed 28", 121.38],
+    ["4 vs 27", "Seed 4", 141.04, "Seed 27", 126.15],
+    ["5 vs 26", "Seed 5", 145.66, "Seed 26", 115.81],
+    ["6 vs 25", "Seed 6", 128.45, "Seed 25", 134.09],
+    ["7 vs 24", "Seed 7", 138.97, "Seed 24", 119.72],
+    ["8 vs 23", "Seed 8", 130.88, "Seed 23", 117.14],
+    ["9 vs 22", "Seed 9", 136.51, "Seed 22", 111.26],
+    ["10 vs 21", "Seed 10", 142.64, "Seed 21", 140.37],
+    ["11 vs 20", "Seed 11", 138.42, "Seed 20", 131.48],
+    ["12 vs 19", "Seed 12", 144.55, "Seed 19", 121.91],
+    ["13 vs 18", "Seed 13", 126.04, "Seed 18", 133.29],
+    ["14 vs 17", "Seed 14", 139.83, "Seed 17", 120.62],
+    ["15 vs 16", "Seed 15", 113.58, "Seed 16", 127.41]
+  ].forEach(([label, topSeed, topScore, bottomSeed, bottomScore]) => {
+    openingRound.push(createBracketScoreCard(label, topSeed, topScore, bottomSeed, bottomScore));
+  });
+
+  const playInPanel = document.createElement("section");
+  playInPanel.className = "format-center-prelim-panel";
+  const playInTitle = document.createElement("h4");
+  playInTitle.className = "format-center-prelim-title";
+  playInTitle.textContent = "Wild Card Play-In";
+  playInPanel.append(playInTitle, ...playInCards);
+
+  const openingPanel = document.createElement("section");
+  openingPanel.className = "format-center-prelim-panel";
+  const openingTitle = document.createElement("h4");
+  openingTitle.className = "format-center-prelim-title";
+  openingTitle.textContent = "Opening Round Box Scores";
+  const openingList = document.createElement("div");
+  openingList.className = "format-center-prelim-list";
+  openingRound.forEach(card => openingList.appendChild(card));
+  openingPanel.append(openingTitle, openingList);
+
+  prelimGrid.append(playInPanel, openingPanel);
+  prelimSection.appendChild(prelimGrid);
+  container.appendChild(prelimSection);
+
+  const bracketSection = createBracketSection(
+    "Main Tournament Bracket",
+    "The redraft bracket starts here visually after the play-in and opening round. The field reseeds once at this stage, so lower surviving seeds can move into any Round of 16 slot."
+  );
+  const nodes = getMockRedraftPlayoffNodes();
+
+  renderMainBracket(bracketSection, nodes);
+  container.appendChild(bracketSection);
+}
+
+function renderBracketView(group) {
+  const centerView = scoreboardState.centerView;
+  const section = document.getElementById("bracketVisualSection");
+  const heading = document.getElementById("bracketVisualHeading");
+  const summary = document.getElementById("bracketVisualSummary");
+  const container = document.getElementById("bracketVisualContainer");
+  const isSample = Boolean(group?.isSample);
+
+  section.hidden = scoreboardState.selectedSection !== "bracket";
+  container.innerHTML = "";
+
+  heading.textContent = isSample ? "Projected Playoff Bracket" : "Current Playoff Bracket";
+  summary.textContent = centerView.key === "dynasty"
+    ? isSample
+      ? "This visual preview shows how the dynasty bracket will look once the 16-team field is live."
+      : "This visual preview shows how the dynasty bracket is structured from the Round of 16 forward."
+    : isSample
+      ? "This preview separates the preliminary redraft games from the actual Round of 16 bracket so the tournament path is easier to follow."
+      : "This layout separates the preliminary redraft games from the main Round of 16 bracket so the tournament path is easier to follow.";
+
+  if (centerView.key === "dynasty") {
+    renderDynastyBracketView(group, container);
+  } else {
+    renderRedraftBracketView(group, container);
+  }
+}
+
+function updateCenterSectionTabs() {
+  const selectedSection = scoreboardState.selectedSection;
+  const buttons = Array.from(document.querySelectorAll("[data-center-section]"));
+  const divisionSection = document.getElementById("divisionCountsSection");
+  const scoreboardsSection = document.getElementById("scoreboardsSection");
+  const standingsSection = document.getElementById("standingsSection");
+  const bracketSection = document.getElementById("bracketVisualSection");
+
+  buttons.forEach(button => {
+    button.classList.toggle("is-active", text(button.dataset.centerSection) === selectedSection);
+  });
+
+  const showStandings = selectedSection === "standings";
+  divisionSection.hidden = !showStandings;
+  scoreboardsSection.hidden = !showStandings;
+  standingsSection.hidden = !showStandings;
+  bracketSection.hidden = showStandings;
+}
+
 function updateCenterViewSwitcher() {
   const centerView = scoreboardState.centerView;
   const buttons = Array.from(document.querySelectorAll("[data-center-view]"));
@@ -1030,9 +1470,11 @@ async function loadCenter() {
   const standingsBody = document.getElementById("standingsTableBody");
 
   scoreboardState.centerView = centerView;
+  scoreboardState.selectedSection = getCenterSection();
   scoreboardState.liveGroup = null;
   scoreboardState.selectedLeagueRecordId = "";
   updateCenterViewSwitcher();
+  updateCenterSectionTabs();
 
   try {
     const response = await fetch(centerView.ledgerUrl, { cache: "no-store" });
@@ -1053,9 +1495,11 @@ async function loadCenter() {
 
     scoreboardState.liveGroup = liveGroup;
     renderMeta(group);
+    renderBracketView(group);
     renderDivisionCounts(group);
     renderStandings(group);
     await renderLiveScoreboards(liveGroup);
+    updateCenterSectionTabs();
   } catch (error) {
     console.error("Bracket center load failed:", error);
 
@@ -1073,9 +1517,25 @@ async function loadCenter() {
     banner.className = "format-center-banner is-provisional";
     banner.textContent = centerView.loadFailure;
 
+    const bracketContainer = document.getElementById("bracketVisualContainer");
+    bracketContainer.innerHTML = "";
+    const emptyBracketState = document.createElement("div");
+    emptyBracketState.className = "empty-state";
+    emptyBracketState.textContent = "Unable to load bracket view right now.";
+    bracketContainer.appendChild(emptyBracketState);
+
     renderScoreboardsUnavailable([], centerView.unavailableScoreboardsMessage);
+    updateCenterSectionTabs();
   }
 }
+
+Array.from(document.querySelectorAll("[data-center-section]")).forEach(button => {
+  button.addEventListener("click", () => {
+    const nextSection = text(button.dataset.centerSection).toLowerCase();
+    scoreboardState.selectedSection = nextSection === "bracket" ? "bracket" : "standings";
+    updateCenterSectionTabs();
+  });
+});
 
 document.getElementById("reloadCenterButton")?.addEventListener("click", () => {
   window.location.reload();

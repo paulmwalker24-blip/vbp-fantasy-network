@@ -123,6 +123,11 @@ The site is effectively data-driven through local league JSON, local donation JS
   - Plain-text recruiting copy bank for direct copy/paste without markdown formatting.
   - Use this when the user wants the simplest possible paste-ready version of the current recruiting posts.
 
+- `notes/`
+  - Commissioner-facing league-note folder for short recruiting hooks and constitution-derived talking points.
+  - Use this when the user wants quick league-specific reminders about format hooks, trust signals, draft pace, or occupancy without rereading full constitutions.
+  - `notes/league-hooks.md` is the main quick-reference file for active recruiting lanes.
+
 - `.github/workflows/`
   - `validate-site.yml` runs the local site-check script on push and pull request.
   - `sleeper-sync.yml` provides an optional automated Sleeper sync path for `data/leagues.json`.
@@ -135,9 +140,11 @@ The site is effectively data-driven through local league JSON, local donation JS
 
 - `redraft-constitution.html`
 - `dynasty-constitution.html`
+- `dynasty-bracket-constitution.html`
 - `bestball-constitution.html`
 - `bracket-constitution.html`
 - `bracket-center.html`
+- `bestball-center.html`
 - `keeper-constitution.html`
 - `chopped-constitution.html`
   - Standalone static pages using the shared stylesheet.
@@ -199,6 +206,7 @@ Recognized normalized formats:
 
 - `redraft`
 - `dynasty`
+- `dynastybracket`
 - `bestball`
 - `bracket`
 - `keeper`
@@ -213,6 +221,7 @@ Current ID prefixes are:
 
 - `RD` for redraft
 - `DYN` for dynasty
+- `DB` for dynasty bracket
 - `BBU` for best ball
 - `RDB` for bracket
 - `KP` for keeper
@@ -366,7 +375,7 @@ Do not silently "clean up" generated constitution content unless the user asks f
 13. If a task is `run the checks` or `what still needs attention,` prefer `scripts/check-site.ps1`, `scripts/validate-leagues-json.ps1`, `scripts/validate-donations-json.ps1`, `scripts/sync-sleeper-leagues.ps1`, and `scripts/release-helper.ps1` over ad hoc inspection. `scripts/check-site.ps1` already includes the constitution-page and donation-data validation passes.
 14. If the user asks to verify constitution back links, banner images, or section structure, prefer `scripts/check-constitutions.ps1`.
 15. After `/init`, if the user needs a local preview, provide exactly two copyable lines: the terminal command to run from repo root and the browser URL to open. Keep both short and do not include the full folder path unless the user asks for it.
-16. If the user asks for Reddit, Facebook, or recruiting copy, inspect `marketing/recruiting-playbook.md` first and extend it when a new pattern, title style, or CTA is worth reusing later. Use `marketing/recruiting-copy-ready.txt` when the user wants raw paste-ready output.
+16. If the user asks for Reddit, Facebook, or recruiting copy, inspect `marketing/recruiting-playbook.md` first and extend it when a new pattern, title style, or CTA is worth reusing later. Use `marketing/recruiting-copy-ready.txt` when the user wants raw paste-ready output. Use `notes/league-hooks.md` when the user wants quick league-specific recruiting reminders or constitution-derived hook points.
 17. If the user wants a keeper-manager dataset, commissioner worksheet, or a future keeper process, prefer `scripts/sync-keeper-ledger.ps1` and `data/keeper-ledger.json`.
 18. If the user wants combined bracket seeding, weekly bracket standings reports, or grouped `RDB` automation, prefer `scripts/sync-bracket-ledger.ps1`, `scripts/export-bracket-report.ps1`, `data/bracket-groups.json`, and `data/bracket-ledger.json`.
 
