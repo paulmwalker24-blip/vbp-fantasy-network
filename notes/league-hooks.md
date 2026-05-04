@@ -4,8 +4,7 @@ Short recruiting hooks capped at 200 characters or less.
 
 ## Standard Dynasty
 
-- `DYN5`: Slow 12-team Superflex startup with 3 FLEX, 4 taxi, 4 IR, 3RR, and 3 years due up front. Good fit for patient dynasty drafters. Current occupancy: 9/12.
-- `DYN6`: Fast 12-team Superflex startup with 3 FLEX, 4 taxi, 4 IR, 3RR, and 3 years due up front. Good fit for owners who want the room to move. Current occupancy: 4/12.
+- `DYN6`: Fast 12-team Superflex startup with 3 FLEX, 4 taxi, 4 IR, 3RR, and 3 years due up front. Current paid count: 9/12.
 
 ## Dynasty Bracket
 
@@ -20,6 +19,7 @@ Short recruiting hooks capped at 200 characters or less.
 
 ## Bracket Redraft
 
+- Current redraft priority: push Bracket Redraft alongside `RD4`. Format count is 12/60, with Apex, Iron, and Titan as the warmest rooms.
 - `Titan`: Slow room in the Year 3, 60-team bracket redraft format with Progressive PPR and a shared 32-team playoff. Current occupancy: 3/12.
 - `Apex`: Slow room in the Year 3 bracket redraft setup with Progressive PPR and a shared playoff path. One of the more active rooms. Current occupancy: 5/12.
 - `Iron`: Fast room in the Year 3 bracket redraft format with Progressive PPR and a shared 32-team playoff. Current occupancy: 4/12.
@@ -28,7 +28,12 @@ Short recruiting hooks capped at 200 characters or less.
 
 ## Standard Redraft
 
+- Current redraft priority: `RD4` is the sharper standalone seasonal push and should be paired with Bracket Redraft when you want a broader redraft post.
 - `RD4`: $100 standalone redraft with Progressive PPR, no kicker, no defense, and a 6-team playoff with top-two byes. Built for a sharper seasonal room. Current occupancy: 10/12.
+
+## Chopped
+
+- `CH1`: $15 18-team elimination redraft with Progressive PPR and one team chopped each week. Currently 9/18 paid.
 
 ## Keeper
 

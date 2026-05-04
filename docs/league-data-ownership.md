@@ -6,7 +6,11 @@ This document captures the current field ownership model for `data/leagues.json`
 
 Today, all league data lives in a single flat record inside `data/leagues.json`.
 
-Example fields currently treated as manual:
+The homepage now normalizes every row into a render model before display. That keeps the public card rendering insulated from the flat storage shape and makes field ownership explicit even before a future nested migration.
+
+### Commissioner-Owned Fields
+
+These are the fields the site should trust as curated public or operational values unless a script is explicitly run with an overwrite option:
 
 - `name`
 - `draftStyle` (optional, for non-bracket leagues that should show a fast/slow draft pill)
@@ -18,14 +22,32 @@ Example fields currently treated as manual:
 - `constitutionPage`
 - `division`
 - `notes`
+- `status`
+- `lastUpdated`
 
-Example fields currently treated as Sleeper-derived:
+### Sleeper Reference Fields
+
+These fields may be refreshed from Sleeper or resolved from Sleeper links, but they should not silently overwrite commissioner-owned fields:
 
 - `sleeperLeagueId`
 - `sleeperSeason`
 - `teams`
 - `sleeperFilled` (optional reference copy of Sleeper owner-assigned roster count)
-- `status` can be reviewed against Sleeper, but is still locally controlled by default
+
+### Homepage Render Model
+
+`assets/js/app.js` converts each stored record into the shape the cards actually use:
+
+- normalized `format`
+- normalized `draftStyle`
+- capped commissioner-published `filled`
+- optional reference `sleeperFilled`
+- computed `spotsLeft`
+- safe public `link`
+- `liveSyncEligible`
+- `liveSyncState`, one of `manual`, `live`, or `fallback`
+
+Sleeper hydration can update live `teams`, `sleeperFilled`, and `sleeperSeason` in the browser for reference/sync status. It should not replace the commissioner-published `filled` count unless a maintenance script is run with an explicit overwrite option.
 
 ## Why A Future Split Could Help
 
@@ -75,13 +97,13 @@ If this split is implemented later:
 
 ## Current Recommendation
 
-Do not migrate yet unless:
+Do not migrate the JSON storage shape yet unless:
 
 - Sleeper sync becomes a routine maintenance task
 - manual and synced values start conflicting often
 - multiple people begin editing league data
 
-Until then, keep using the current flat structure plus the local scripts in `scripts/` to enforce ownership in practice.
+Until then, keep using the current flat structure, the homepage normalization layer, and the local scripts in `scripts/` to enforce ownership in practice.
 
 For the current dynasty payment workflow, keep the present-season LeagueSafe URL in `leagueSafeLink` and store future-season dynasty LeagueSafe URLs in `leagueSafeLinksBySeason`.
 

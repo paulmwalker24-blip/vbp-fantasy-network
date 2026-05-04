@@ -46,7 +46,7 @@ The site is effectively data-driven through local league JSON, local donation JS
   - Preserves league display order by internal ID sequence within each format.
   - Handles homepage format-filter interactions.
   - Renders league cards, grouped format sections, limited-spots cards, and donation cards.
-  - Contains a custom CSV parser instead of using a dependency.
+  - Normalizes local JSON rows into render models before display.
 
 - `data/leagues.json`
   - Primary source of league data for the homepage.
@@ -274,7 +274,7 @@ Current donation notes:
 - Use `docs/donation-update-workflow.md` for the lightweight manual workflow when applying form responses.
 - Use `scripts/validate-donations-json.ps1` to validate donation data before push or after manual updates.
 
-### Donation CSV
+### Donation JSON
 
 The donation section now reads from `data/donations.json` instead of a live Google Sheets CSV.
 
@@ -337,6 +337,9 @@ If donation rendering breaks:
 ### Marketing Copy
 
 - For Reddit league-promotion requests, treat `VBP Fantasy Network` as an active brand with live leagues, not something that is still being built, unless the user explicitly wants a softer in-progress angle.
+- Current recruiting priority is Redraft 4 and Bracket Redraft. Lead with `REDRAFT PRIORITY PUSH`, `REDRAFT 4`, or `BRACKET REDRAFT` from `marketing/recruiting-copy-ready.txt` unless the user explicitly asks for another format.
+- Redraft 4 copy should frame the league as the sharper standalone seasonal room and may mention `10/12` and `2 spots left` while those counts remain current.
+- Bracket Redraft copy should lead with the established `Year 3` tournament hook and may mention `12/60` while that count remains current.
 - Default early Reddit posts to short, direct recruiting copy focused on open spots, active owners, competitive formats, and clear rules.
 - Keep the network name in the title or first sentence so the brand still gets repeated exposure even when the body copy stays simple.
 - Use constitutions and clear rules as trust signals, but do not overload short recruiting posts with too much backstory unless the user asks for a fuller pitch.
@@ -361,14 +364,14 @@ Do not silently "clean up" generated constitution content unless the user asks f
 ## Preferred Workflow For Agents
 
 1. Read `index.html`, `assets/css/styles.css`, and `assets/js/app.js` first.
-2. Confirm whether the task affects static content, styling, or CSV-driven rendering.
+2. Confirm whether the task affects static content, styling, or local JSON-driven rendering.
 3. If the task touches leagues, inspect `data/leagues.json` and `data/league-intake-template.md` before editing UI.
 4. For new league intake, ask the league type first and infer the next internal ID from the existing entries in `data/leagues.json`.
 5. If the user provides a Sleeper league URL or invite link, resolve the live numeric league ID and store it in `sleeperLeagueId`.
 6. If a league has a `sleeperLeagueId`, preserve the Sleeper-enrichment path in `assets/js/app.js`.
-7. If the task touches donations, inspect the parser assumptions, `docs/donation-update-workflow.md`, and `scripts/validate-donations-json.ps1` before editing UI or data.
+7. If the task touches donations, inspect `data/donations.json`, `docs/donation-update-workflow.md`, and `scripts/validate-donations-json.ps1` before editing UI or data.
 8. Keep changes minimal and local unless the user asks for a broader refactor.
-9. If behavior depends on live CSV data, note that full verification may require live network access in a browser.
+9. If behavior depends on live Sleeper API data, note that full verification may require live network access in a browser.
 10. If the task touches chopped leagues, inspect `chopped-constitution.html` and the `CH1` record in `data/leagues.json` before making assumptions about the format.
 11. If you add a new repeatable automation or recurring local workflow, add a matching prompt entry to `COMMANDS.md`.
 12. Before creating a new automation, check whether the behavior belongs in an existing script instead of adding another narrowly scoped file.

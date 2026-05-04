@@ -16,18 +16,25 @@ Use `marketing/recruiting-copy-ready.txt` for:
 - direct copy/paste into apps or sites
 - quick access when you already know what you want to post
 
+Use `marketing/recruiting-archive.md` for:
+- retired copy
+- old room-specific pushes
+- historical wording that should not be posted without refreshing first
+
 ## Quick Guide
+
+### If You Want Redraft Copy
+
+Use:
+- `REDRAFT PRIORITY PUSH`
+- `REDRAFT 4`
+- `BRACKET REDRAFT`
+- `CHOPPED`
 
 ### If You Want One Broad Dynasty Post
 
 Use:
-- `DYNASTY HUB`
-
-### If You Want A Standard Dynasty Closer
-
-Use:
-- `DYN5 CLOSER`
-- `DYN6 CLOSER`
+- `DYNASTY`
 
 ### If You Want A Dynasty Bracket Post
 
@@ -41,15 +48,12 @@ Use:
 ### If You Want BBU Momentum
 
 Use:
-- `BBU LAUNCH`
-- `BBU MOMENTUM`
-- `BBU LOW-PRESSURE`
+- `BBU`
 
-### If You Want Redraft Copy
+### If You Want Keeper Copy
 
 Use:
-- `BRACKET REDRAFT`
-- `REDRAFT 4`
+- `KEEPER HUB`
 
 ### If You Want To Funnel Through The Sleeper Hub First
 
@@ -61,26 +65,26 @@ Use:
 
 ### Primary Push
 
-- `DYN5`
+- `Redraft 4`
+- `Bracket Redraft`
+
+### Secondary / Optional Push
+
 - `DYN6`
 - `Foundry`
 - `Forge`
 - `Legacy`
 - `Empire`
-- `BBU1`
-
-### Secondary / Optional Push
-
-- `Bracket Redraft`
+- `Best Ball Union`
 - `Keeper 1`
-- `Redraft 4`
+- `Chopped`
 
 ## Positioning Notes
 
 ### Standard Dynasty Startups
 
 - Treat the current dynasty push as startup recruiting, not orphan or takeover recruiting.
-- Keep `DYN5` and `DYN6` framed as the standard startup lane.
+- Keep `DYN6` framed as the standard startup lane while `DYN5` is full.
 - Use `slow` vs `fast` as the main sorting choice.
 - Lead with trust, format, and owner quality before payment structure.
 - Present the up-front model as the stability feature, not the burden.
@@ -94,12 +98,11 @@ Use:
 
 ### Best Ball Union
 
-- Keep leading with `BBU1` until the first room has real traction.
+- Lead with broader `Best Ball Union` momentum while pushing the current active room.
 - Always say `fast draft`.
-- Keep the `May 1` and `within 24 hours` timing language only for `BBU` unless the plan changes.
-- Rotate the `launch`, `momentum`, and `low-pressure` versions so the pitch does not feel stale.
-- When a `BBU` post mentions room progress, use the paid-in / assigned count from `data/leagues.json` so the recruiting copy stays aligned with the homepage.
-- Current published `BBU1` count: `6/10 paid`.
+- Keep the `after May 1` and `within 24 hours` timing language only for `BBU` unless the plan changes.
+- Refresh the active `BBU` template when the current room changes so the pitch does not feel stale.
+- When a `BBU` post mentions traction, prefer broader momentum language like one room already being full unless an exact public count is part of the current push.
 
 ### Platform Notes
 
@@ -109,13 +112,28 @@ Use:
   - Let the title do real work and keep the body tighter.
 - `Sleeper / Discord / Classifieds`
   - Use the shorter versions or trim these down to one CTA and one or two links.
+- `Discord`
+  - Treat it as an operations surface, not a public ad archive.
+  - Keep the structure small enough to maintain.
+  - Do not let it duplicate the website, constitutions, Sleeper chats, and DMs all at once.
+  - Move stale filled-league copy out of visible channels before it creates confusion.
 
 ### Redraft
 
 - Keep redraft copy aligned with the rest of the recruiting strategy: trust first, clear structure, and fewer "listing" vibes.
-- For `Bracket Redraft`, lead with the format hook and the fact that it is an established Year 3 setup.
-- For `Redraft 4`, frame it as the sharper seasonal option for owners who want a more serious room with rules posted up front.
+- For the current push, lead with `Redraft 4` and `Bracket Redraft` before dynasty, best ball, keeper, or chopped.
+- For `Redraft 4`, frame it as the sharper seasonal option for owners who want a more serious room with rules posted up front. Mention that it is 10/12 when urgency helps.
+- For `Bracket Redraft`, lead with the format hook and the fact that it is an established Year 3 setup. Mention 12/60 when you want to show the format has started but still has plenty of room.
+- Use `REDRAFT PRIORITY PUSH` when you want one post that lets people choose between the $100 standalone room and the $50 tournament format.
+- For `Chopped`, lead with the elimination hook and the half-full paid count.
 - Keep both redraft posts direct, but make them sound curated rather than generic.
+
+### Keeper
+
+- Position keeper as the middle ground between redraft and dynasty.
+- Lead with the format appeal first, then mention the two buy-in choices.
+- Keep the copy simple: up to 3 keepers, rising keeper costs, 3RR draft, and two seasons due up front.
+- Use one combined post when both keeper rooms are open unless one room clearly becomes the priority push.
 
 ### Bracket Hub Intake
 
@@ -131,6 +149,45 @@ Use:
 - When one room starts snowballing, update the pinned message and the ad copy to make that room the default recommendation.
 
 ## Labeled Source Copy
+
+### REDRAFT PRIORITY PUSH
+
+When to use:
+- current main recruiting push
+- when you want one post covering both `RD4` and Bracket Redraft
+- when you want people to self-select between the sharper $100 room and the bigger $50 tournament format
+
+Title:
+
+```text
+VBP Fantasy Network | Redraft Openings | $100 League + Year 3 Bracket Format
+```
+
+Body:
+
+```text
+VBP Fantasy Network is pushing redraft right now with two active lanes:
+
+Redraft 4 is the sharper standalone seasonal room. It is a $100 league with Progressive PPR, no kicker or defense, and a 6-team playoff with top-two byes. Current count: 10/12.
+
+Bracket Redraft is the bigger tournament-style format. It is a Year 3, $50 redraft setup with fast and slow draft rooms feeding one shared 32-team playoff across the full 60-team field. Current count: 12/60.
+
+Redraft 4 ($100): https://sleeper.com/i/V9xKEeVN7AD4e
+
+Bracket Redraft rooms:
+Titan ($50, Slow): http://sleeper.com/i/kM2GBe6qL228Y
+Apex ($50, Slow): http://sleeper.com/i/zExweGWd6aPgb
+Iron ($50, Fast): http://sleeper.com/i/j7moDEZ337dn0
+Vanguard ($50, Fast): http://sleeper.com/i/kM2GBe9QxYED7
+Dominion ($50, Slow): http://sleeper.com/i/Y2VXxZ02Y850R
+
+Redraft constitution: https://vbp-fantasy-network.vercel.app/redraft-constitution.html
+Bracket constitution: https://vbp-fantasy-network.vercel.app/bracket-constitution.html
+Bracket Center: https://vbp-fantasy-network.vercel.app/bracket-center.html
+Main hub: https://vbp-fantasy-network.vercel.app/
+
+DM me or reply and I will point you to the best fit.
+```
 
 ### BRACKET HUB INTAKE
 
@@ -255,40 +312,33 @@ If you join the hub, send one quick message with:
 That is enough for me to point you to the best fit.
 ```
 
-### DYNASTY HUB
+### DYNASTY
 
 When to use:
-- broad dynasty recruiting
-- when you want one post that can sort people into standard dynasty or bracket dynasty
+- main standard dynasty recruiting post
 
 Title:
 
 ```text
-VBP Fantasy Network | Dynasty Startups Filling Now | Standard + Bracket Options
+VBP Fantasy Network | Dynasty 6 Open | Fast Superflex Startup
 ```
 
 Body:
 
 ```text
-VBP Fantasy Network is filling dynasty startups right now and looking for committed long-term owners.
+VBP Fantasy Network has Dynasty 6 open right now and is looking for more committed long-term owners.
 
-Current openings include standard Superflex startups with both slow and fast draft options, plus Dynasty Bracket divisions for anyone who wants a bigger shared-playoff format.
+These are 12-team Superflex startups with 3 FLEX, 4 taxi, 4 IR, and a 3RR startup draft. Buy-in is $30 per season with 3 years due up front ($90 total) to keep the league stable and future-pick trading protected.
 
-Standard dynasty:
-Dynasty 5 ($30, Slow): https://sleeper.com/i/Y2V7Pl9D6P51X
+Current opening:
 Dynasty 6 ($30, Fast): https://sleeper.com/i/Y2V7Pl0EnAzlj
 
-Dynasty Bracket:
-Foundry ($50, Slow): https://sleeper.com/i/Y2VajM5OZwN44
-Forge ($50, Slow): https://sleeper.com/i/m7oKYMV9ldoGg
-Legacy ($50, Fast): https://sleeper.com/i/Y2VajNddMbGMa
-Empire ($50, Fast): https://sleeper.com/i/JKo0Ejo4zKeY3
+Dynasty 6 is currently 9/12 paid.
 
 Dynasty constitution: https://vbp-fantasy-network.vercel.app/dynasty-constitution.html
-Dynasty Bracket constitution: https://vbp-fantasy-network.vercel.app/dynasty-bracket-constitution.html
 Main hub: https://vbp-fantasy-network.vercel.app/
 
-DM me or reply and I will point you to the best fit.
+DM me or reply if you want the full breakdown.
 ```
 
 ### BRACKET HUB AD
@@ -300,21 +350,68 @@ When to use:
 Title:
 
 ```text
-VBP Fantasy Network | Join The Bracket Hub | Dynasty + Redraft Openings
+VBP Fantasy Network | Join The Bracket Hub | Year 3 Redraft + Dynasty Bracket
 ```
 
 Body:
 
 ```text
-VBP Fantasy Network is using one Sleeper hub as the intake point for Dynasty Bracket and Bracket Redraft.
+VBP Fantasy Network has one Sleeper hub for anyone interested in the bracket side of the network.
 
-If you are interested, join the hub first. I use that to answer questions, share the format overview, and route new owners into the healthiest open rooms instead of having people join nearly empty divisions and leave.
+Current bracket formats include:
 
-Bracket Hub: https://sleeper.com/leagues/1314678719968739328
+Dynasty Bracket (Year 1) - Startup
+- 48-team Superflex dynasty format
+- 4 separate 12-team divisions
+- shared 16-team playoff bracket
+- $50 per season with 3 years due up front
+- $2,400 total prize pool
+- payouts: $1,380 champion, $300 runner-up, $100 semifinal losers, $55 quarterfinal losers, $75 division winner bonus
+
+Bracket Redraft (Year 3) - 12/60 Spots Filled
+- 60-team redraft format
+- 5 separate 12-team divisions
+- shared 32-team playoff bracket
+- $50 buy-in with fast and slow room options
+- $3,000 total prize pool
+- payouts: $1,380 champion, $500 runner-up, $200 semifinal losers, $55 quarterfinal losers, $100 division winner bonus
+
+If either format sounds interesting, start in the hub and I can point you to the best current opening.
+
+Bracket Hub: https://sleeper.com/i/V9GRwXkB7aGeM
 Bracket Center: https://vbp-fantasy-network.vercel.app/bracket-center.html
 Main hub: https://vbp-fantasy-network.vercel.app/
 
-Reply or join the hub if you want in.
+Join the hub if you want the info.
+```
+
+### KEEPER HUB
+
+When to use:
+- combined keeper recruiting
+- when both current buy-in levels are open
+
+Title:
+
+```text
+VBP Fantasy Network | Keeper Leagues Open | $25 + $50 Options
+```
+
+Body:
+
+```text
+VBP Fantasy Network has keeper leagues open right now and is looking for more active owners.
+
+These are 12-team keeper startups with up to 3 keepers, rising keeper costs, a 3RR draft, and two seasons due up front so the format stays one year ahead financially.
+
+Current openings:
+Keeper 1 ($25): https://sleeper.com/i/m7olnV2oZdMDY
+Keeper 2 ($50): https://sleeper.com/i/LVoRxbV3z2bw3
+
+Keeper constitution: https://vbp-fantasy-network.vercel.app/keeper-constitution.html
+Main hub: https://vbp-fantasy-network.vercel.app/
+
+DM me or reply if you want the full breakdown.
 ```
 
 ### DYNASTY BRACKET HUB AD
@@ -336,7 +433,7 @@ VBP Fantasy Network is filling Dynasty Bracket and using one Sleeper hub as the 
 
 This is a Superflex startup with 3 FLEX, 4 taxi, 4 IR, a 3RR startup draft, and one shared playoff bracket across all divisions. Instead of sending people into random low-count rooms, I use the hub to point new owners to the best active opening.
 
-Bracket Hub: https://sleeper.com/leagues/1314678719968739328
+Bracket Hub: https://sleeper.com/i/V9GRwXkB7aGeM
 Dynasty Bracket constitution: https://vbp-fantasy-network.vercel.app/dynasty-bracket-constitution.html
 Bracket Center: https://vbp-fantasy-network.vercel.app/bracket-center.html
 
@@ -362,66 +459,13 @@ VBP Fantasy Network is filling its Year 3 Bracket Redraft format and using one c
 
 This is a $50 redraft setup with fast and slow rooms, Progressive PPR scoring, and one shared playoff bracket across the format. The hub lets me route new owners into the healthiest open rooms instead of splitting traffic across low-count divisions too early.
 
-Bracket Hub: https://sleeper.com/leagues/1314678719968739328
+Bracket Hub: https://sleeper.com/i/V9GRwXkB7aGeM
 Bracket constitution: https://vbp-fantasy-network.vercel.app/bracket-constitution.html
 Bracket Center: https://vbp-fantasy-network.vercel.app/bracket-center.html
 
 Reply or join the hub if interested.
 ```
 
-### DYN5 CLOSER
-
-When to use:
-- standard dynasty
-- slow-draft owners
-- more direct conversion post
-
-Title:
-
-```text
-VBP Fantasy Network | Dynasty 5 Filling Now | Slow Superflex Startup
-```
-
-Body:
-
-```text
-VBP Fantasy Network is filling Dynasty 5 with a few more committed owners for a long-term Superflex startup.
-
-This is a 12-team slow startup with 3 FLEX, 4 taxi, 4 IR, and a 3RR startup draft. Buy-in is $30 per season with 3 years due up front ($90 total) to keep the league stable and future-pick trading protected.
-
-Dynasty 5 ($30, Slow): https://sleeper.com/i/Y2V7Pl9D6P51X
-Dynasty constitution: https://vbp-fantasy-network.vercel.app/dynasty-constitution.html
-Main hub: https://vbp-fantasy-network.vercel.app/
-
-DM me or reply if you want a spot.
-```
-
-### DYN6 CLOSER
-
-When to use:
-- standard dynasty
-- fast-draft owners
-- more direct conversion post
-
-Title:
-
-```text
-VBP Fantasy Network | Dynasty 6 Filling Now | Fast Superflex Startup
-```
-
-Body:
-
-```text
-VBP Fantasy Network is filling Dynasty 6 with owners who want a fast-moving Superflex startup.
-
-This is a 12-team startup with 3 FLEX, 4 taxi, 4 IR, and a 3RR startup draft. Buy-in is $30 per season with 3 years due up front ($90 total) to keep the league stable and future-pick trading protected.
-
-Dynasty 6 ($30, Fast): https://sleeper.com/i/Y2V7Pl0EnAzlj
-Dynasty constitution: https://vbp-fantasy-network.vercel.app/dynasty-constitution.html
-Main hub: https://vbp-fantasy-network.vercel.app/
-
-DM me or reply if you want a spot.
-```
 
 ### DYNASTY BRACKET HUB
 
@@ -511,83 +555,32 @@ Empire ($50, Fast): https://sleeper.com/i/JKo0Ejo4zKeY3
 Dynasty Bracket constitution: https://vbp-fantasy-network.vercel.app/dynasty-bracket-constitution.html
 ```
 
-### BBU LAUNCH
+### BBU
 
 When to use:
-- fresh `BBU1` post
-- launch framing
+- main Best Ball Union recruiting post
 
 Title:
 
 ```text
-VBP Fantasy Network | Best Ball Union #1 Open | $10 Fast Draft Best Ball
+VBP Fantasy Network | Best Ball Union Open | $10 Fast Draft Best Ball
 ```
 
 Body:
 
 ```text
-VBP Fantasy Network is building Best Ball Union starting with the first league. This is a $10 fast-draft best ball room on Sleeper.
+Best Ball Union is moving on to BBU2 now.
 
-Right now BBU1 is at 6/10 paid spots. I only assign active spots once owners are paid in, so that count matches the live website.
+One room is already full, and all new BBU leagues that fill and are fully paid after May 1 will have the draft set within 24 hours.
 
-Target start is May 1. If BBU #1 fills and everyone is paid, the draft will be set within 24 hours.
+This is a $10 fast-draft best ball setup on Sleeper with no weekly lineup setting, a $100 league pot, and extra Union-wide high-score upside on top.
 
-Best Ball Union #1 ($10, Fast): http://sleeper.com/i/JKo2LRqq854mm
+Best Ball Union #2 ($10, Fast): http://sleeper.com/i/LVoN4RXgLDk9w
 Best Ball constitution: https://vbp-fantasy-network.vercel.app/bestball-constitution.html
 Best Ball Union Center: https://vbp-fantasy-network.vercel.app/bestball-center.html
 Main hub: https://vbp-fantasy-network.vercel.app/
 
 DM me or reply if interested.
-```
-
-### BBU MOMENTUM
-
-When to use:
-- ongoing `BBU1` push
-- follow-up post after launch
-
-Title:
-
-```text
-VBP Fantasy Network | Best Ball Union #1 Filling Now | $10 Fast Draft
-```
-
-Body:
-
-```text
-VBP Fantasy Network is still pushing Best Ball Union #1 and looking for more active owners before the room locks in.
-
-This is a $10 fast-draft best ball league on Sleeper. Best Ball Union also includes league prizes plus overall Union high-score prizes, so the format still has something bigger than just one room.
-
-Current paid count is 6/10, and I only assign active spots once owners are paid in so the website number stays accurate.
-
-Best Ball Union #1 ($10, Fast): http://sleeper.com/i/JKo2LRqq854mm
-Best Ball constitution: https://vbp-fantasy-network.vercel.app/bestball-constitution.html
-Best Ball Union Center: https://vbp-fantasy-network.vercel.app/bestball-center.html
-Main hub: https://vbp-fantasy-network.vercel.app/
-
-DM me or reply if interested.
-```
-
-### BBU LOW-PRESSURE
-
-When to use:
-- softer CTA
-- casual bump post
-
-```text
-Still filling Best Ball Union #1 in the VBP Fantasy Network if anyone wants a simple fast-draft best ball room on Sleeper.
-
-$10 buy-in, no weekly lineup setting, and Union-wide high-score tracking on top of the league-level prizes.
-
-Current paid count is 6/10, and active spots only get assigned once owners are paid in.
-
-Best Ball Union #1 ($10, Fast): http://sleeper.com/i/JKo2LRqq854mm
-Best Ball constitution: https://vbp-fantasy-network.vercel.app/bestball-constitution.html
-Best Ball Union Center: https://vbp-fantasy-network.vercel.app/bestball-center.html
-Main hub: https://vbp-fantasy-network.vercel.app/
-
-DM me or reply if you want in.
 ```
 
 ### BRACKET REDRAFT
@@ -605,9 +598,11 @@ VBP Fantasy Network | Year 3 Bracket Redraft Open | $50 Tournament Format
 Body:
 
 ```text
-VBP Fantasy Network is filling its Year 3 Bracket Redraft format with a few more committed owners right now.
+VBP Fantasy Network is pushing its Year 3 Bracket Redraft format right now.
 
-This is a $50 redraft setup with both fast and slow draft options, Progressive PPR scoring, and a combined bracket playoff race that gives the format a bigger tournament feel than a standard home league.
+This is a $50 redraft setup with both fast and slow draft options, Progressive PPR scoring, and one shared 32-team playoff across the full 60-team field. It gives the season a bigger tournament feel than a standard home league while still keeping each room familiar and manageable.
+
+Current count: 12/60 across the format.
 
 Titan ($50, Slow): http://sleeper.com/i/kM2GBe6qL228Y
 Apex ($50, Slow): http://sleeper.com/i/zExweGWd6aPgb
@@ -639,10 +634,36 @@ Body:
 ```text
 VBP Fantasy Network has Redraft 4 open right now for owners who want a sharper $100 seasonal league with clear rules posted up front.
 
-It uses Progressive PPR scoring, no kicker or defense spots, and a 6-team playoff with top-two byes.
+It uses Progressive PPR scoring, no kicker or defense spots, and a 6-team playoff with top-two byes. The room is currently 10/12, so there are only 2 spots left.
 
 Redraft 4 ($100): https://sleeper.com/i/V9xKEeVN7AD4e
 Redraft constitution: https://vbp-fantasy-network.vercel.app/redraft-constitution.html
+Main hub: https://vbp-fantasy-network.vercel.app/
+
+DM me or reply if interested.
+```
+
+### CHOPPED
+
+When to use:
+- elimination redraft recruiting
+- direct post for `CH1`
+
+Title:
+
+```text
+VBP Fantasy Network | Chopped League Half Full | $15 Elimination Redraft
+```
+
+Body:
+
+```text
+VBP Fantasy Network has Chopped League #1 open right now. It is an 18-team elimination redraft where one team gets chopped each week and the goal is to survive through Week 17.
+
+Buy-in is $15, scoring is Progressive PPR, and the league is currently 9/18 paid.
+
+Chopped League #1 ($15): https://sleeper.com/i/Y2VKoEON1XkqR
+Chopped constitution: https://vbp-fantasy-network.vercel.app/chopped-constitution.html
 Main hub: https://vbp-fantasy-network.vercel.app/
 
 DM me or reply if interested.
