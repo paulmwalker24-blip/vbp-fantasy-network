@@ -31,11 +31,6 @@ Use:
 - `BRACKET REDRAFT`
 - `CHOPPED`
 
-### If You Want One Broad Dynasty Post
-
-Use:
-- `DYNASTY`
-
 ### If You Want A Dynasty Bracket Post
 
 Use:
@@ -70,7 +65,6 @@ Use:
 
 ### Secondary / Optional Push
 
-- `DYN6`
 - `Foundry`
 - `Forge`
 - `Legacy`
@@ -83,8 +77,8 @@ Use:
 
 ### Standard Dynasty Startups
 
+- `DYN6` is paid in full and should not be marketed as an active opening.
 - Treat the current dynasty push as startup recruiting, not orphan or takeover recruiting.
-- Keep `DYN6` framed as the standard startup lane while `DYN5` is full.
 - Use `slow` vs `fast` as the main sorting choice.
 - Lead with trust, format, and owner quality before payment structure.
 - Present the up-front model as the stability feature, not the burden.
@@ -184,6 +178,7 @@ Dominion ($50, Slow): http://sleeper.com/i/Y2VXxZ02Y850R
 Redraft constitution: https://vbp-fantasy-network.vercel.app/redraft-constitution.html
 Bracket constitution: https://vbp-fantasy-network.vercel.app/bracket-constitution.html
 Bracket Center: https://vbp-fantasy-network.vercel.app/bracket-center.html
+The Bracket Center includes the public standings layer and a cross-division trade tracker.
 Main hub: https://vbp-fantasy-network.vercel.app/
 
 DM me or reply and I will point you to the best fit.
@@ -310,35 +305,6 @@ If you join the hub, send one quick message with:
 - Any buy-in or roster questions
 
 That is enough for me to point you to the best fit.
-```
-
-### DYNASTY
-
-When to use:
-- main standard dynasty recruiting post
-
-Title:
-
-```text
-VBP Fantasy Network | Dynasty 6 Open | Fast Superflex Startup
-```
-
-Body:
-
-```text
-VBP Fantasy Network has Dynasty 6 open right now and is looking for more committed long-term owners.
-
-These are 12-team Superflex startups with 3 FLEX, 4 taxi, 4 IR, and a 3RR startup draft. Buy-in is $30 per season with 3 years due up front ($90 total) to keep the league stable and future-pick trading protected.
-
-Current opening:
-Dynasty 6 ($30, Fast): https://sleeper.com/i/Y2V7Pl0EnAzlj
-
-Dynasty 6 is currently 9/12 paid.
-
-Dynasty constitution: https://vbp-fantasy-network.vercel.app/dynasty-constitution.html
-Main hub: https://vbp-fantasy-network.vercel.app/
-
-DM me or reply if you want the full breakdown.
 ```
 
 ### BRACKET HUB AD
@@ -476,7 +442,7 @@ When to use:
 Title:
 
 ```text
-VBP Fantasy Network | Dynasty Bracket Open | $150 Up Front, Superflex Startup
+VBP Fantasy Network | 48-Team Dynasty Bracket Open | Superflex Startup
 ```
 
 Body:

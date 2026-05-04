@@ -758,6 +758,63 @@ a { color: inherit; }
 .format-center-table-empty {
   color: var(--muted);
 }
+.format-center-trade-table td:nth-child(1),
+.format-center-trade-table th:nth-child(1) {
+  white-space: nowrap;
+}
+.format-center-trade-table td:nth-child(3) {
+  min-width: 190px;
+}
+.format-center-trade-table td:nth-child(4) {
+  min-width: 280px;
+}
+.format-center-trade-league {
+  display: grid;
+  gap: 7px;
+  justify-items: start;
+  min-width: 116px;
+}
+.format-center-trade-logo {
+  width: 116px;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: #05070d;
+  box-shadow: var(--shadow-soft);
+}
+.format-center-trade-subtext {
+  display: block;
+  color: var(--muted-light);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+.format-center-trade-details {
+  display: grid;
+  gap: 8px;
+}
+.format-center-trade-details p {
+  margin: 0;
+  color: var(--muted);
+}
+.format-center-trade-details strong {
+  color: var(--text);
+}
+.format-center-trade-table tr.is-sample-trade td {
+  background: #fff7ed;
+}
+.format-center-sample-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: var(--radius-pill);
+  background: #ffedd5;
+  color: #9a3412;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
 .format-center-bracket-shell {
   display: grid;
   gap: 22px;

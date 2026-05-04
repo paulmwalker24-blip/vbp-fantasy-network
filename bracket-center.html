@@ -14,7 +14,7 @@
   <meta name="twitter:title" content="Bracket Center | VBP Fantasy Network" />
   <meta name="twitter:description" content="Explore the VBP Bracket Center for public format info, standings, and bracket tracking." />
   <meta name="twitter:image" content="https://vbp-fantasy-network.vercel.app/assets/images/banner.png" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260422102500" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260504154500" />
 </head>
 <body class="constitution-page format-center-page">
   <div class="constitution-nav" id="top">
@@ -48,7 +48,7 @@
             <p id="centerHubCopy">Use the central Sleeper hub to get format information first. That lets new owners land in the healthiest open divisions instead of joining a low-fill room and bouncing before momentum builds.</p>
           </div>
           <div class="format-center-actions format-center-hub-actions">
-            <a href="https://sleeper.com/leagues/1314678719968739328" class="btn btn-primary" id="centerHubLink" target="_blank" rel="noopener noreferrer">Join Central Hub</a>
+            <a href="https://sleeper.com/i/V9GRwXkB7aGeM" class="btn btn-primary" id="centerHubLink" target="_blank" rel="noopener noreferrer">Join Central Hub</a>
           </div>
         </div>
         <div class="format-center-view-switcher" id="centerViewSwitcher" aria-label="Bracket center type">
@@ -58,6 +58,7 @@
         <div class="format-center-tabs format-center-mode-tabs" id="centerModeTabs" aria-label="Bracket center content mode">
           <button type="button" class="format-center-tab" data-center-section="standings">Standings</button>
           <button type="button" class="format-center-tab" data-center-section="bracket">Playoff Bracket</button>
+          <button type="button" class="format-center-tab" data-center-section="trades">Trade Tracker</button>
         </div>
         <div class="format-center-actions">
           <a href="bracket-constitution.html" class="btn btn-primary" id="centerConstitutionLink">View Constitution</a>
@@ -161,9 +162,42 @@
           </table>
         </div>
       </section>
+
+      <section class="constitution-section-card" id="tradeTrackerSection" hidden>
+        <div class="constitution-section-header">
+          <h2 id="tradeTrackerHeading">Trade Tracker</h2>
+          <a href="#top" class="constitution-jump-link">Back to top</a>
+        </div>
+        <div class="format-center-scoreboard-header">
+          <p class="format-center-scoreboard-copy" id="tradeTrackerSummary">
+            Accepted trades across the grouped bracket leagues will appear here.
+          </p>
+          <div class="format-center-actions">
+            <span class="format-center-scoreboard-week" id="tradeTrackerStatus">Loading trades...</span>
+            <button type="button" class="btn btn-secondary" id="refreshTradesButton">Refresh Trades</button>
+          </div>
+        </div>
+        <div class="format-center-table-wrap">
+          <table class="constitution-table format-center-table format-center-trade-table">
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">League</th>
+                <th scope="col">Teams</th>
+                <th scope="col">Trade Details</th>
+              </tr>
+            </thead>
+            <tbody id="tradeTrackerTableBody">
+              <tr>
+                <td colspan="4" class="format-center-table-empty">Loading trades...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
   </main>
 
-  <script src="assets/js/bracket-center.js?v=20260422102500"></script>
+  <script src="assets/js/bracket-center.js?v=20260504154500"></script>
 </body>
 </html>

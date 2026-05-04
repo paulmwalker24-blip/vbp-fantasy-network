@@ -1,4 +1,4 @@
-const BRACKET_HUB_URL = "https://sleeper.com/leagues/1314678719968739328";
+const BRACKET_HUB_URL = "https://sleeper.com/i/V9GRwXkB7aGeM";
 
 const CENTER_VIEW_CONFIG = {
   redraft: {
@@ -22,10 +22,14 @@ const CENTER_VIEW_CONFIG = {
     scoreboardsIntro: "Use the division tabs to follow live or current-week matchup scores across the grouped redraft bracket leagues.",
     scoreboardsWaiting: "Live scoreboards will appear here once the redraft bracket leagues enter the season and start posting weekly matchups.",
     scoreboardsMissing: "No redraft bracket leagues are configured for live scoreboards yet.",
+    tradeTrackerIntro: "Accepted trades from every configured redraft bracket division are merged here so owners can follow the market across the full format.",
+    tradeTrackerMissing: "No redraft bracket leagues are configured for trade tracking yet.",
+    tradeTrackerEmpty: "No accepted redraft bracket trades have been reported by Sleeper yet.",
     loadFailure: "The redraft bracket center could not load the current data file.",
     unavailableDivisionMessage: "Unable to load redraft bracket center data right now.",
     unavailableStandingsMessage: "Unable to load redraft bracket standings right now.",
-    unavailableScoreboardsMessage: "Unable to load live redraft bracket scoreboards right now."
+    unavailableScoreboardsMessage: "Unable to load live redraft bracket scoreboards right now.",
+    unavailableTradeTrackerMessage: "Unable to load redraft bracket trades right now."
   },
   dynasty: {
     key: "dynasty",
@@ -48,14 +52,19 @@ const CENTER_VIEW_CONFIG = {
     scoreboardsIntro: "Use the division tabs to follow live or current-week matchup scores across the grouped dynasty bracket leagues.",
     scoreboardsWaiting: "Live scoreboards will appear here once the dynasty bracket leagues enter the season and start posting weekly matchups.",
     scoreboardsMissing: "No dynasty bracket leagues are configured for live scoreboards yet.",
+    tradeTrackerIntro: "Accepted trades from every configured dynasty bracket division are merged here so owners can follow the startup and in-season market across the full format.",
+    tradeTrackerMissing: "No dynasty bracket leagues are configured for trade tracking yet.",
+    tradeTrackerEmpty: "No accepted dynasty bracket trades have been reported by Sleeper yet.",
     loadFailure: "The dynasty bracket center could not load the current data file.",
     unavailableDivisionMessage: "Unable to load dynasty bracket center data right now.",
     unavailableStandingsMessage: "Unable to load dynasty bracket standings right now.",
-    unavailableScoreboardsMessage: "Unable to load live dynasty bracket scoreboards right now."
+    unavailableScoreboardsMessage: "Unable to load live dynasty bracket scoreboards right now.",
+    unavailableTradeTrackerMessage: "Unable to load dynasty bracket trades right now."
   }
 };
 const DEFAULT_TEAMS_PER_LEAGUE = 12;
 const SCOREBOARD_REFRESH_MS = 60000;
+const TRADE_TRACKER_WEEKS = Array.from({ length: 18 }, (_, index) => index + 1);
 const DEMO_TEAM_SUFFIXES = [
   "Legion",
   "Outlaws",
@@ -78,6 +87,8 @@ const scoreboardState = {
   selectedLeagueRecordId: "",
   refreshTimer: null
 };
+
+let sleeperPlayersPromise = null;
 
 const REDRAFT_DIVISION_IMAGE_BY_NAME = {
   titan: "assets/images/redraft-bracket-titan.png",
@@ -117,7 +128,10 @@ function getSearchGroupId(centerView) {
 function getCenterSection() {
   const params = new URLSearchParams(window.location.search);
   const requestedSection = text(params.get("tab")).toLowerCase();
-  return requestedSection === "bracket" ? "bracket" : "standings";
+  if (requestedSection === "bracket" || requestedSection === "trades") {
+    return requestedSection;
+  }
+  return "standings";
 }
 
 function getEntryKey(entry) {
@@ -855,6 +869,388 @@ async function renderLiveScoreboards(group) {
   updateActiveScoreboardTab();
 }
 
+function getRosterTeamLookup(snapshot) {
+  const standings = Array.isArray(snapshot?.standings) ? snapshot.standings : [];
+  const lookup = snapshot?._tradeTeamLookup instanceof Map
+    ? new Map(snapshot._tradeTeamLookup)
+    : new Map();
+
+  standings.forEach(entry => {
+    const rosterId = toNumber(entry?.rosterId);
+    if (!rosterId) return;
+
+    lookup.set(rosterId, text(entry?.teamName) || text(entry?.displayName) || `Roster ${rosterId}`);
+  });
+
+  return lookup;
+}
+
+function getDivisionImageSrc(leagueName) {
+  const normalizedName = text(leagueName).toLowerCase();
+  const imageMap = scoreboardState.centerView.key === "dynasty"
+    ? DYNASTY_DIVISION_IMAGE_BY_NAME
+    : REDRAFT_DIVISION_IMAGE_BY_NAME;
+
+  return imageMap[normalizedName] || "";
+}
+
+async function hydrateTradeTeamLookup(snapshot) {
+  const sleeperLeagueId = text(snapshot?.sleeperLeagueId);
+  if (!sleeperLeagueId || snapshot?._tradeTeamLookup instanceof Map) {
+    return;
+  }
+
+  try {
+    const [usersResponse, rostersResponse] = await Promise.all([
+      fetch(`https://api.sleeper.app/v1/league/${encodeURIComponent(sleeperLeagueId)}/users`, { cache: "no-store" }),
+      fetch(`https://api.sleeper.app/v1/league/${encodeURIComponent(sleeperLeagueId)}/rosters`, { cache: "no-store" })
+    ]);
+
+    if (!usersResponse.ok || !rostersResponse.ok) {
+      throw new Error("Sleeper users or rosters request failed.");
+    }
+
+    const users = await usersResponse.json();
+    const rosters = await rostersResponse.json();
+    const usersById = new Map((Array.isArray(users) ? users : []).map(user => [text(user?.user_id), user]));
+    const lookup = new Map();
+
+    (Array.isArray(rosters) ? rosters : []).forEach(roster => {
+      const rosterId = toNumber(roster?.roster_id);
+      const ownerId = text(roster?.owner_id);
+      const user = usersById.get(ownerId);
+      const teamName = text(user?.metadata?.team_name) || text(user?.display_name) || text(user?.username);
+
+      if (rosterId && teamName) {
+        lookup.set(rosterId, teamName);
+      }
+    });
+
+    snapshot._tradeTeamLookup = lookup;
+  } catch (error) {
+    console.warn(`Trade tracker team lookup failed for ${sleeperLeagueId}:`, error);
+    snapshot._tradeTeamLookup = new Map();
+  }
+}
+
+function formatTradeDate(value) {
+  const timestamp = toNumber(value);
+  if (!timestamp) return "Unknown";
+
+  const parsed = new Date(timestamp);
+  if (Number.isNaN(parsed.getTime())) return "Unknown";
+
+  return parsed.toLocaleDateString(undefined, {
+    month: "short",
+    day: "numeric",
+    year: "numeric"
+  });
+}
+
+function getPlayerDisplayName(playerId, players) {
+  const id = text(playerId);
+  if (!id) return "Unknown player";
+
+  const player = players?.[id];
+  if (!player) return `Player ${id}`;
+
+  return text(player.full_name)
+    || [text(player.first_name), text(player.last_name)].filter(Boolean).join(" ")
+    || text(player.search_full_name)
+    || `Player ${id}`;
+}
+
+function formatDraftPick(pick) {
+  const season = text(pick?.season) || "Future";
+  const round = text(pick?.round);
+  const originalRosterId = toNumber(pick?.roster_id);
+  const roundLabel = round ? `Round ${round}` : "Pick";
+  const originalLabel = originalRosterId ? `, original roster ${originalRosterId}` : "";
+
+  return `${season} ${roundLabel}${originalLabel}`;
+}
+
+async function getSleeperPlayers() {
+  if (!sleeperPlayersPromise) {
+    sleeperPlayersPromise = fetch("https://api.sleeper.app/v1/players/nfl", { cache: "force-cache" })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Sleeper players request failed with status ${response.status}`);
+        }
+        return response.json();
+      })
+      .catch(error => {
+        console.warn("Sleeper players load failed:", error);
+        return {};
+      });
+  }
+
+  return sleeperPlayersPromise;
+}
+
+function getTransactionAssetLines(transaction, snapshot, players) {
+  if (Array.isArray(transaction?.sampleLines)) {
+    return transaction.sampleLines;
+  }
+
+  const rosterIds = Array.isArray(transaction?.roster_ids) ? transaction.roster_ids.map(toNumber).filter(Boolean) : [];
+  const teamLookup = getRosterTeamLookup(snapshot);
+  const assetsByRoster = new Map(rosterIds.map(rosterId => [rosterId, []]));
+  const adds = transaction?.adds && typeof transaction.adds === "object" ? transaction.adds : {};
+  const draftPicks = Array.isArray(transaction?.draft_picks) ? transaction.draft_picks : [];
+
+  Object.entries(adds).forEach(([playerId, rosterIdValue]) => {
+    const rosterId = toNumber(rosterIdValue);
+    if (!rosterId) return;
+    if (!assetsByRoster.has(rosterId)) {
+      assetsByRoster.set(rosterId, []);
+    }
+    assetsByRoster.get(rosterId).push(getPlayerDisplayName(playerId, players));
+  });
+
+  draftPicks.forEach(pick => {
+    const receivingRosterId = toNumber(pick?.owner_id) || toNumber(pick?.roster_id);
+    if (!receivingRosterId) return;
+    if (!assetsByRoster.has(receivingRosterId)) {
+      assetsByRoster.set(receivingRosterId, []);
+    }
+    assetsByRoster.get(receivingRosterId).push(formatDraftPick(pick));
+  });
+
+  const lines = Array.from(assetsByRoster.entries()).map(([rosterId, assets]) => ({
+    teamName: teamLookup.get(rosterId) || `Roster ${rosterId}`,
+    assets: assets.length ? assets : ["Details unavailable from Sleeper"]
+  }));
+
+  if (!lines.length) {
+    return [{ teamName: "Trade", assets: ["Details unavailable from Sleeper"] }];
+  }
+
+  return lines;
+}
+
+function createTradeRow(trade, players) {
+  const row = document.createElement("tr");
+  if (trade.isSample) {
+    row.className = "is-sample-trade";
+  }
+
+  const leagueLabel = text(trade.snapshot?.localLeagueName) || text(trade.snapshot?.leagueRecordId) || "League";
+  const division = text(trade.snapshot?.division);
+  const assetLines = getTransactionAssetLines(trade.transaction, trade.snapshot, players);
+
+  const date = document.createElement("td");
+  date.textContent = text(trade.transaction?.dateLabel) || formatTradeDate(trade.transaction?.created);
+
+  const league = document.createElement("td");
+  const leagueWrap = document.createElement("div");
+  leagueWrap.className = "format-center-trade-league";
+  const imageSrc = getDivisionImageSrc(leagueLabel);
+
+  if (imageSrc) {
+    const logo = document.createElement("img");
+    logo.className = "format-center-trade-logo";
+    logo.src = imageSrc;
+    logo.alt = `${leagueLabel} division logo`;
+    leagueWrap.appendChild(logo);
+  } else {
+    const leagueName = document.createElement("strong");
+    leagueName.textContent = leagueLabel;
+    leagueWrap.appendChild(leagueName);
+  }
+
+  if (trade.isSample) {
+    const sampleBadge = document.createElement("span");
+    sampleBadge.className = "format-center-sample-badge";
+    sampleBadge.textContent = "Sample";
+    leagueWrap.appendChild(sampleBadge);
+  }
+  if (division) {
+    const divisionLabel = document.createElement("span");
+    divisionLabel.className = "format-center-trade-subtext";
+    divisionLabel.textContent = division;
+    leagueWrap.appendChild(divisionLabel);
+  }
+  league.appendChild(leagueWrap);
+
+  const teams = document.createElement("td");
+  teams.textContent = assetLines.map(line => line.teamName).join(" / ");
+
+  const details = document.createElement("td");
+  const list = document.createElement("div");
+  list.className = "format-center-trade-details";
+  assetLines.forEach(line => {
+    const item = document.createElement("p");
+    const team = document.createElement("strong");
+    team.textContent = `${line.teamName} receives: `;
+    item.append(team, document.createTextNode(line.assets.join(", ")));
+    list.appendChild(item);
+  });
+  details.appendChild(list);
+
+  row.append(date, league, teams, details);
+  return row;
+}
+
+function getSampleTrades(centerView, snapshots) {
+  const fallbackSnapshots = centerView.key === "dynasty"
+    ? [
+        { localLeagueName: "Foundry", leagueRecordId: "DYB1", division: "Slow" },
+        { localLeagueName: "Legacy", leagueRecordId: "DYB3", division: "Fast" }
+      ]
+    : [
+        { localLeagueName: "Titan", leagueRecordId: "RDB1", division: "Slow" },
+        { localLeagueName: "Iron", leagueRecordId: "RDB3", division: "Fast" }
+      ];
+
+  const usableSnapshots = snapshots.length ? snapshots : fallbackSnapshots;
+  const firstSnapshot = usableSnapshots[0] || fallbackSnapshots[0];
+  const secondSnapshot = usableSnapshots[1] || usableSnapshots[0] || fallbackSnapshots[1];
+
+  if (centerView.key === "dynasty") {
+    return [
+      {
+        isSample: true,
+        snapshot: firstSnapshot,
+        transaction: {
+          dateLabel: "Sample",
+          sampleLines: [
+            { teamName: "Startup Builder", assets: ["Garrett Wilson", "2027 Round 2"] },
+            { teamName: "Win-Now Core", assets: ["Saquon Barkley", "2026 Round 3"] }
+          ]
+        }
+      },
+      {
+        isSample: true,
+        snapshot: secondSnapshot,
+        transaction: {
+          dateLabel: "Sample",
+          sampleLines: [
+            { teamName: "Pick Collector", assets: ["2026 Round 1", "2027 Round 1"] },
+            { teamName: "QB Shopper", assets: ["Dak Prescott"] }
+          ]
+        }
+      }
+    ];
+  }
+
+  return [
+    {
+      isSample: true,
+      snapshot: firstSnapshot,
+      transaction: {
+        dateLabel: "Sample",
+        sampleLines: [
+          { teamName: "RB Needy Team", assets: ["Breece Hall"] },
+          { teamName: "Depth Builder", assets: ["DK Metcalf", "Rachaad White"] }
+        ]
+      }
+    },
+    {
+      isSample: true,
+      snapshot: secondSnapshot,
+      transaction: {
+        dateLabel: "Sample",
+        sampleLines: [
+          { teamName: "Contender", assets: ["Amon-Ra St. Brown"] },
+          { teamName: "Roster Rebuilder", assets: ["Jaylen Waddle", "Brian Robinson"] }
+        ]
+      }
+    }
+  ];
+}
+
+function renderSampleTrades(centerView, snapshots, body, status) {
+  const sampleTrades = getSampleTrades(centerView, snapshots);
+
+  body.innerHTML = "";
+  sampleTrades.forEach(trade => {
+    body.appendChild(createTradeRow(trade, {}));
+  });
+
+  status.textContent = "Sample trades shown";
+}
+
+function renderTradeTrackerUnavailable(message, statusLabel = "Trade tracker unavailable") {
+  const summary = document.getElementById("tradeTrackerSummary");
+  const status = document.getElementById("tradeTrackerStatus");
+  const body = document.getElementById("tradeTrackerTableBody");
+
+  if (summary) summary.textContent = message;
+  if (status) status.textContent = statusLabel;
+  if (body) {
+    body.innerHTML = "";
+    body.appendChild(createEmptyState(message, 4));
+  }
+}
+
+async function renderTradeTracker(group) {
+  const centerView = scoreboardState.centerView;
+  const snapshots = Array.isArray(group?.leagueSnapshots) ? group.leagueSnapshots : [];
+  const configuredSnapshots = snapshots.filter(snapshot => text(snapshot?.sleeperLeagueId));
+  const summary = document.getElementById("tradeTrackerSummary");
+  const status = document.getElementById("tradeTrackerStatus");
+  const body = document.getElementById("tradeTrackerTableBody");
+
+  if (!summary || !status || !body) return;
+
+  if (!configuredSnapshots.length) {
+    renderTradeTrackerUnavailable(centerView.tradeTrackerMissing, "No leagues configured");
+    return;
+  }
+
+  summary.textContent = centerView.tradeTrackerIntro;
+  status.textContent = "Loading trades...";
+  body.innerHTML = "";
+  body.appendChild(createEmptyState("Loading trades from Sleeper...", 4));
+
+  const results = await Promise.all(configuredSnapshots.map(async snapshot => {
+    const sleeperLeagueId = text(snapshot?.sleeperLeagueId);
+    const weekResults = await Promise.all(TRADE_TRACKER_WEEKS.map(async week => {
+      try {
+        const response = await fetch(`https://api.sleeper.app/v1/league/${encodeURIComponent(sleeperLeagueId)}/transactions/${week}`, { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(`Transactions request failed with status ${response.status}`);
+        }
+        const transactions = await response.json();
+        return Array.isArray(transactions) ? transactions : [];
+      } catch (error) {
+        console.warn(`Trade tracker load failed for ${sleeperLeagueId} week ${week}:`, error);
+        return [];
+      }
+    }));
+
+    return weekResults
+      .flat()
+      .filter(transaction => text(transaction?.type).toLowerCase() === "trade")
+      .filter(transaction => {
+        const statusValue = text(transaction?.status).toLowerCase();
+        return !statusValue || statusValue === "complete" || statusValue === "completed";
+      })
+      .map(transaction => ({ snapshot, transaction }));
+  }));
+
+  const trades = results
+    .flat()
+    .sort((left, right) => toNumber(right.transaction?.created) - toNumber(left.transaction?.created));
+
+  body.innerHTML = "";
+
+  if (!trades.length) {
+    summary.textContent = `${centerView.tradeTrackerEmpty} Sample examples are shown below and clearly marked until live trades exist.`;
+    renderSampleTrades(centerView, configuredSnapshots, body, status);
+    return;
+  }
+
+  await Promise.all(configuredSnapshots.map(hydrateTradeTeamLookup));
+  const players = await getSleeperPlayers();
+  trades.slice(0, 50).forEach(trade => {
+    body.appendChild(createTradeRow(trade, players));
+  });
+
+  status.textContent = `${trades.length} trade${trades.length === 1 ? "" : "s"} tracked`;
+}
+
 function getStatusMeta(entry, statusMaps) {
   const key = getEntryKey(entry);
   const divisionWinnerCount = Math.max(toNumber(scoreboardState.liveGroup?.rules?.divisionWinners), 0);
@@ -892,9 +1288,11 @@ function renderMeta(group) {
   const constitutionLink = document.getElementById("centerConstitutionLink");
   const topConstitutionLink = document.getElementById("centerTopConstitutionLink");
   const scoreboardSummary = document.getElementById("scoreboardSummary");
+  const tradeTrackerSummary = document.getElementById("tradeTrackerSummary");
   const divisionCountsHeading = document.getElementById("divisionCountsHeading");
   const scoreboardsHeading = document.getElementById("scoreboardsHeading");
   const standingsHeading = document.getElementById("standingsHeading");
+  const tradeTrackerHeading = document.getElementById("tradeTrackerHeading");
 
   const overallStandings = Array.isArray(group?.overallStandings) ? group.overallStandings : [];
   const playoffField = Array.isArray(group?.playoffField) ? group.playoffField : [];
@@ -926,6 +1324,9 @@ function renderMeta(group) {
     topConstitutionLink.textContent = "View Constitution";
   }
   scoreboardSummary.textContent = centerView.scoreboardsIntro;
+  if (tradeTrackerSummary) {
+    tradeTrackerSummary.textContent = centerView.tradeTrackerIntro;
+  }
   groupName.textContent = label;
   lastUpdated.textContent = formatTimestamp(group?.lastSyncedAt);
   trackedTeams.textContent = `${overallStandings.length} tracked`;
@@ -939,6 +1340,9 @@ function renderMeta(group) {
   }
   if (standingsHeading) {
     standingsHeading.textContent = "Full Combined Standings";
+  }
+  if (tradeTrackerHeading) {
+    tradeTrackerHeading.textContent = "Trade Tracker";
   }
 
   if (statusText) {
@@ -1441,16 +1845,21 @@ function updateCenterSectionTabs() {
   const scoreboardsSection = document.getElementById("scoreboardsSection");
   const standingsSection = document.getElementById("standingsSection");
   const bracketSection = document.getElementById("bracketVisualSection");
+  const tradeTrackerSection = document.getElementById("tradeTrackerSection");
 
   buttons.forEach(button => {
     button.classList.toggle("is-active", text(button.dataset.centerSection) === selectedSection);
   });
 
   const showStandings = selectedSection === "standings";
+  const showTrades = selectedSection === "trades";
   divisionSection.hidden = !showStandings;
   scoreboardsSection.hidden = !showStandings;
   standingsSection.hidden = !showStandings;
-  bracketSection.hidden = showStandings;
+  bracketSection.hidden = selectedSection !== "bracket";
+  if (tradeTrackerSection) {
+    tradeTrackerSection.hidden = !showTrades;
+  }
 }
 
 function updateCenterViewSwitcher() {
@@ -1499,6 +1908,7 @@ async function loadCenter() {
     renderDivisionCounts(group);
     renderStandings(group);
     await renderLiveScoreboards(liveGroup);
+    await renderTradeTracker(liveGroup);
     updateCenterSectionTabs();
   } catch (error) {
     console.error("Bracket center load failed:", error);
@@ -1525,6 +1935,7 @@ async function loadCenter() {
     bracketContainer.appendChild(emptyBracketState);
 
     renderScoreboardsUnavailable([], centerView.unavailableScoreboardsMessage);
+    renderTradeTrackerUnavailable(centerView.unavailableTradeTrackerMessage);
     updateCenterSectionTabs();
   }
 }
@@ -1532,7 +1943,7 @@ async function loadCenter() {
 Array.from(document.querySelectorAll("[data-center-section]")).forEach(button => {
   button.addEventListener("click", () => {
     const nextSection = text(button.dataset.centerSection).toLowerCase();
-    scoreboardState.selectedSection = nextSection === "bracket" ? "bracket" : "standings";
+    scoreboardState.selectedSection = nextSection === "bracket" || nextSection === "trades" ? nextSection : "standings";
     updateCenterSectionTabs();
   });
 });
@@ -1547,6 +1958,14 @@ document.getElementById("refreshScoresButton")?.addEventListener("click", async 
   }
 
   await renderLiveScoreboards(scoreboardState.liveGroup);
+});
+
+document.getElementById("refreshTradesButton")?.addEventListener("click", async () => {
+  if (!scoreboardState.liveGroup) {
+    return;
+  }
+
+  await renderTradeTracker(scoreboardState.liveGroup);
 });
 
 if (scoreboardState.refreshTimer) {

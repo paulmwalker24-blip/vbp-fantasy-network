@@ -154,6 +154,9 @@ The site is effectively data-driven through local league JSON, local donation JS
   - Reads `data/bracket-ledger.json` and renders division counts plus full combined standings.
   - Falls back to a clearly labeled sample 60-team preview when the live grouped bracket data is still pre-draft, incomplete, or not yet showing meaningful standings.
   - Also fetches live Sleeper matchup data by division so the center can expose current-week scoreboard tabs for grouped bracket leagues.
+  - Also renders a public trade tracker tab for both Redraft Bracket and Dynasty Bracket views.
+  - The trade tracker fetches accepted Sleeper trades across configured grouped divisions and falls back to clearly labeled sample rows until live trades exist.
+  - Trade tracker league cells should prefer the division artwork from `assets/images/` over plain text when a matching logo exists.
   - Live scoreboards should refresh from Sleeper in the browser when users reload the page, while standings remain a commissioner-published snapshot from local generated data.
 
 - `assets/js/bestball-center.js`
@@ -240,6 +243,9 @@ Current league notes:
 - Public format-center pages should live as standalone pages on the same site rather than becoming homepage focal sections.
 - Public format-center pages may use a clearly labeled sample preview until the live data is full enough to support a strong public-facing view.
 - For League Centers, live current-week scoreboards may fetch directly from Sleeper in the browser, but official standings, cut lines, and custom playoff logic should remain manually generated and published by the commissioner.
+- The Bracket Center trade tracker may fetch accepted trades directly from Sleeper in the browser across configured grouped divisions.
+- If no accepted trades exist yet, the Bracket Center trade tracker should show clearly labeled sample trades rather than an empty table, and sample rows must be marked as sample.
+- Trade tracker league cells should display division logos for Titan, Apex, Iron, Vanguard, Dominion, Foundry, Forge, Legacy, and Empire when the matching image asset exists.
 - The Bracket Center sample preview should turn off automatically once the grouped leagues are season-ready, fully populated, and showing meaningful live standings data rather than all-zero placeholders.
 - The Best Ball Union Center sample preview should remain clearly labeled and may stay in place until live BBU results are meaningful enough to replace it cleanly.
 - For the Best Ball Union Center, weekly high scores refer to the single highest-scoring team across all BBU leagues for that week, not per-division weekly winners.
@@ -258,6 +264,7 @@ Current league notes:
 - Keeper leagues may use season-keyed `leagueSafeLinksBySeason` data the same way dynasty leagues do once the yearly payment links exist.
 - The local maintenance scripts intentionally treat `inviteLink`, `leagueSafeLink`, `constitutionPage`, `buyIn`, and curated `name` values as commissioner-owned fields unless the user explicitly opts into overwriting them.
 - `DYN1`, `DYN2`, and `DYN3` now use season-keyed `leagueSafeLinksBySeason` data for `2026`, `2027`, and `2028` alongside the current-season `leagueSafeLink`.
+- `DYN6` is paid in full and should not be marketed as an active opening.
 - Sleeper invite links can point to a newer live league than the currently stored `sleeperLeagueId`, especially on renewed dynasty leagues. If live counts look wrong, resolve the invite page's `league_id` before assuming the invite link is stale.
 - If the user provides a direct Sleeper league URL instead of a share invite, it is acceptable to store that direct league URL in `inviteLink` so the record can stay publicly actionable while still resolving and storing the numeric `sleeperLeagueId`.
 - When checking dynasty future-pick payment obligations, use Sleeper traded-pick data and only flag managers who traded away future picks. Do not flag the managers who received those picks unless they also traded away their own future picks.
@@ -340,6 +347,8 @@ If donation rendering breaks:
 - Current recruiting priority is Redraft 4 and Bracket Redraft. Lead with `REDRAFT PRIORITY PUSH`, `REDRAFT 4`, or `BRACKET REDRAFT` from `marketing/recruiting-copy-ready.txt` unless the user explicitly asks for another format.
 - Redraft 4 copy should frame the league as the sharper standalone seasonal room and may mention `10/12` and `2 spots left` while those counts remain current.
 - Bracket Redraft copy should lead with the established `Year 3` tournament hook and may mention `12/60` while that count remains current.
+- Dynasty Bracket recruiting titles should make the 48-team format visible, such as `VBP Fantasy Network | 48-Team Dynasty Bracket Open | Superflex Startup`.
+- Dynasty Bracket and Bracket Redraft recruiting copy may mention that the Bracket Center includes a cross-division trade tracker.
 - Default early Reddit posts to short, direct recruiting copy focused on open spots, active owners, competitive formats, and clear rules.
 - Keep the network name in the title or first sentence so the brand still gets repeated exposure even when the body copy stays simple.
 - Use constitutions and clear rules as trust signals, but do not overload short recruiting posts with too much backstory unless the user asks for a fuller pitch.
