@@ -31,10 +31,6 @@ Short recruiting hooks capped at 200 characters or less.
 - Current redraft priority: `RD4` is the sharper standalone seasonal push and should be paired with Bracket Redraft when you want a broader redraft post.
 - `RD4`: $100 standalone redraft with Progressive PPR, no kicker, no defense, and a 6-team playoff with top-two byes. Built for a sharper seasonal room. Current occupancy: 10/12.
 
-## Chopped
-
-- `CH1`: $15 18-team elimination redraft with Progressive PPR and one team chopped each week. Currently 9/18 paid.
-
 ## Keeper
 
 - `KP1`: 12-team keeper startup with up to 3 keepers, rising keeper costs, and 2 seasons due up front. Good middle ground between redraft and dynasty. Current occupancy: 2/12.

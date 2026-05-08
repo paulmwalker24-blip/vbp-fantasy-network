@@ -150,8 +150,20 @@ function shouldUseAssignedRosterCount(league) {
   return league?.format === "bracket" || league?.format === "dynastybracket";
 }
 
+function shouldUseExactAssignedRosterCount(league) {
+  return league?.format === "chopped";
+}
+
 function getLeagueDisplayFilledCount(league) {
-  if (!shouldUseAssignedRosterCount(league) || league.sleeperFilled === null || league.sleeperFilled === undefined) {
+  if (league.sleeperFilled === null || league.sleeperFilled === undefined) {
+    return league.filled;
+  }
+
+  if (shouldUseExactAssignedRosterCount(league)) {
+    return normalizeFilledCount(league.teams, league.sleeperFilled);
+  }
+
+  if (!shouldUseAssignedRosterCount(league)) {
     return league.filled;
   }
 

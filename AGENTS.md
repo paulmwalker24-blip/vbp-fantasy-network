@@ -250,7 +250,8 @@ Current league notes:
 - The Best Ball Union Center sample preview should remain clearly labeled and may stay in place until live BBU results are meaningful enough to replace it cleanly.
 - For the Best Ball Union Center, weekly high scores refer to the single highest-scoring team across all BBU leagues for that week, not per-division weekly winners.
 - For the Best Ball Union Center, the public overall points leaderboard is intentionally limited to the top 20 teams.
-- `CH1` is a live chopped league and should continue pointing to `chopped-constitution.html`.
+- `CH1` is a live full chopped league and should continue pointing to `chopped-constitution.html`.
+- `CH1` hub-page availability should follow the live Sleeper owner-assigned roster count exactly when the API is available, with local `filled` / `sleeperFilled` acting only as fallback data.
 - `RD4` is a live 2026 redraft league at `$100` buy-in and currently uses the direct Sleeper predraft URL as its public link.
 - `KP1` and `KP2` are the initial 2026 keeper leagues at `$25` and `$50` buy-ins. Their `sleeperLeagueId` values and public Sleeper invite links are now stored, and they are live `open` records even though their LeagueSafe links are still pending.
 - In keeper leagues, only trades reset keeper years. Drops, waivers, and free-agent re-adds do not reset keeper years, regardless of which manager acquires the player.
@@ -268,7 +269,7 @@ Current league notes:
 - Sleeper invite links can point to a newer live league than the currently stored `sleeperLeagueId`, especially on renewed dynasty leagues. If live counts look wrong, resolve the invite page's `league_id` before assuming the invite link is stale.
 - If the user provides a direct Sleeper league URL instead of a share invite, it is acceptable to store that direct league URL in `inviteLink` so the record can stay publicly actionable while still resolving and storing the numeric `sleeperLeagueId`.
 - When checking dynasty future-pick payment obligations, use Sleeper traded-pick data and only flag managers who traded away future picks. Do not flag the managers who received those picks unless they also traded away their own future picks.
-- `filled` is the commissioner-published occupancy count used by the site and local copy.
+- `filled` is the commissioner-published occupancy count used by the site and local copy, except where a specific format note says the hub should follow live Sleeper availability.
 - Optional `sleeperFilled` can store the live Sleeper owner-assigned roster count as reference data when local published occupancy intentionally differs.
 - Do not treat raw league member count as the true fill number.
 
@@ -357,6 +358,8 @@ If donation rendering breaks:
 - Redraft 4 copy should frame the league as the sharper standalone seasonal room and may mention `10/12` and `2 spots left` while those counts remain current.
 - Bracket Redraft copy should lead with the established returning-format hook and may say this is the third season the commissioner has run it. Avoid making `Year 3 Bracket Redraft` sound like the formal format name.
 - Current Bracket Redraft recruiting should concentrate new owners into Apex for slow draft and Vanguard for fast draft before pushing Titan, Iron, or Dominion equally. Apex may be described as `9/12 paid` while that remains current.
+- Chopped is full and should not be included in active recruiting copy unless a new chopped opening appears.
+- Best Ball Union recruiting titles should include the `$10` cost and the `Drafting 24 Hours After Fill` hook while that remains the active pitch.
 - Dynasty Bracket recruiting titles should make the 48-team format visible, such as `VBP Fantasy Network | 48-Team Dynasty Bracket Open | Superflex Startup`.
 - Current Dynasty Bracket recruiting should concentrate new owners into Foundry for slow draft and Empire for fast draft before pushing Forge or Legacy equally.
 - Dynasty Bracket and Bracket Redraft recruiting copy may mention that the Bracket Center includes a cross-division trade tracker.

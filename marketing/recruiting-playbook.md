@@ -76,7 +76,6 @@ Use:
 - `Empire`
 - `Best Ball Union`
 - `Keeper 1`
-- `Chopped`
 
 ## Positioning Notes
 
@@ -107,7 +106,7 @@ Use:
 
 - Lead with broader `Best Ball Union` momentum while pushing the current active room.
 - Always say `fast draft`.
-- Keep the `after May 1` and `within 24 hours` timing language only for `BBU` unless the plan changes.
+- Say new BBU leagues start drafting 24 hours after the league is filled and fully paid.
 - Refresh the active `BBU` template when the current room changes so the pitch does not feel stale.
 - When a `BBU` post mentions traction, prefer broader momentum language like one room already being full unless an exact public count is part of the current push.
 
@@ -133,7 +132,6 @@ Use:
 - For `Bracket Redraft`, lead with the format hook and the fact that this is the third season the commissioner has run the format. Avoid phrasing that makes `Year 3 Bracket Redraft` sound like the formal format name.
 - Current Bracket Redraft recruiting should concentrate new owners into `Apex` for slow draft and `Iron` plus `Vanguard` for fast draft before pushing Titan or Dominion equally.
 - Use `REDRAFT PRIORITY PUSH` when you want one post that lets people choose between the $100 standalone room and the $50 tournament format.
-- For `Chopped`, lead with the elimination hook and the near-full paid count.
 - Keep both redraft posts direct, but make them sound curated rather than generic.
 
 ### Keeper
@@ -480,7 +478,6 @@ Main hub: https://vbp-fantasy-network.vercel.app/
 
 DM me or reply if interested.
 ```
-
 ### FOUNDRY DIVISION
 
 When to use:
@@ -549,7 +546,7 @@ When to use:
 Title:
 
 ```text
-VBP Fantasy Network | Best Ball Union Open | $10 Fast Draft Best Ball
+VBP Fantasy Network | Best Ball Union $10 | Drafting 24 Hours After Fill
 ```
 
 Body:
@@ -557,7 +554,7 @@ Body:
 ```text
 Best Ball Union is moving on to BBU2 now.
 
-One room is already full, BBU2 is 3/10 assigned, the Union has $200 in total buy-ins so far, and all new BBU leagues that fill and are fully paid after May 1 will have the draft set within 24 hours.
+One room is already full, BBU2 is 3/10 assigned, and the Union has $200 in total buy-ins so far.
 
 This is a $10 fast-draft best ball setup on Sleeper with no weekly lineup setting, a $100 league pot, and extra Union-wide high-score upside on top.
 
@@ -625,32 +622,6 @@ It uses Progressive PPR scoring, no kicker or defense spots, and a 6-team playof
 
 Redraft 4 ($100): https://sleeper.com/i/V9xKEeVN7AD4e
 Redraft constitution: https://vbp-fantasy-network.vercel.app/redraft-constitution.html
-Main hub: https://vbp-fantasy-network.vercel.app/
-
-DM me or reply if interested.
-```
-
-### CHOPPED
-
-When to use:
-- elimination redraft recruiting
-- direct post for `CH1`
-
-Title:
-
-```text
-VBP Fantasy Network | Chopped League Almost Full | $15 Elimination Redraft
-```
-
-Body:
-
-```text
-VBP Fantasy Network has Chopped League #1 open right now. It is an 18-team elimination redraft where one team gets chopped each week and the goal is to survive through Week 17.
-
-Buy-in is $15, scoring is Progressive PPR, and the league is currently 15/18 paid.
-
-Chopped League #1 ($15): https://sleeper.com/i/Y2VKoEON1XkqR
-Chopped constitution: https://vbp-fantasy-network.vercel.app/chopped-constitution.html
 Main hub: https://vbp-fantasy-network.vercel.app/
 
 DM me or reply if interested.
