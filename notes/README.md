@@ -14,6 +14,8 @@ Use these notes when you want:
 - `league-hooks.md`
   - Main recruiting-note bank for the active leagues you are currently filling.
   - Organized by league / division so you can quickly find usable hook points without rereading full constitutions.
+- `league-hooks.txt`
+  - Plain-text mirror for quick copy/paste where markdown formatting is annoying.
 
 ## Scope
 

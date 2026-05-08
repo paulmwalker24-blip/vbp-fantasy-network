@@ -40,6 +40,11 @@ Use:
 - `LEGACY DIVISION`
 - `EMPIRE DIVISION`
 
+### If You Want A Standard Dynasty Orphan Post
+
+Use:
+- `DYN1 ORPHAN`
+
 ### If You Want BBU Momentum
 
 Use:
@@ -83,10 +88,18 @@ Use:
 - Lead with trust, format, and owner quality before payment structure.
 - Present the up-front model as the stability feature, not the burden.
 
+### Standard Dynasty Orphans
+
+- Keep orphan posts short and direct unless the roster is strong enough to lead with specific player names.
+- For `DYN1`, frame the opening as an established $30 Superflex dynasty takeover, not a startup.
+- Offer to send roster, picks, and payment details privately when they are not ready to publish in the post.
+- Use the dynasty constitution as the main public trust signal.
+
 ### Dynasty Bracket
 
 - Treat `Dynasty Bracket` as the premium startup lane.
 - Use the hub version when you want reach.
+- Current Dynasty Bracket recruiting should concentrate new owners into `Foundry` for slow draft and `Empire` for fast draft before pushing Forge or Legacy equally.
 - Use division-specific versions when you want one-link clarity.
 - Keep the wording copy-first and simple.
 
@@ -117,9 +130,10 @@ Use:
 - Keep redraft copy aligned with the rest of the recruiting strategy: trust first, clear structure, and fewer "listing" vibes.
 - For the current push, lead with `Redraft 4` and `Bracket Redraft` before dynasty, best ball, keeper, or chopped.
 - For `Redraft 4`, frame it as the sharper seasonal option for owners who want a more serious room with rules posted up front. Mention that it is 10/12 when urgency helps.
-- For `Bracket Redraft`, lead with the format hook and the fact that it is an established Year 3 setup. Mention 12/60 when you want to show the format has started but still has plenty of room.
+- For `Bracket Redraft`, lead with the format hook and the fact that this is the third season the commissioner has run the format. Avoid phrasing that makes `Year 3 Bracket Redraft` sound like the formal format name.
+- Current Bracket Redraft recruiting should concentrate new owners into `Apex` for slow draft and `Iron` plus `Vanguard` for fast draft before pushing Titan or Dominion equally.
 - Use `REDRAFT PRIORITY PUSH` when you want one post that lets people choose between the $100 standalone room and the $50 tournament format.
-- For `Chopped`, lead with the elimination hook and the half-full paid count.
+- For `Chopped`, lead with the elimination hook and the near-full paid count.
 - Keep both redraft posts direct, but make them sound curated rather than generic.
 
 ### Keeper
@@ -154,7 +168,7 @@ When to use:
 Title:
 
 ```text
-VBP Fantasy Network | Redraft Openings | $100 League + Year 3 Bracket Format
+VBP Fantasy Network | Redraft Openings | $100 League + Returning Bracket Format
 ```
 
 Body:
@@ -164,16 +178,16 @@ VBP Fantasy Network is pushing redraft right now with two active lanes:
 
 Redraft 4 is the sharper standalone seasonal room. It is a $100 league with Progressive PPR, no kicker or defense, and a 6-team playoff with top-two byes. Current count: 10/12.
 
-Bracket Redraft is the bigger tournament-style format. It is a Year 3, $50 redraft setup with fast and slow draft rooms feeding one shared 32-team playoff across the full 60-team field. Current count: 12/60.
+Bracket Redraft is the bigger tournament-style format. I am filling it for the third season I have run this setup. It is a $50 redraft format with fast and slow draft rooms feeding one shared 32-team playoff across the full 60-team field. The current push is Apex as the nearly full slow room, plus Iron and Vanguard as the priority fast rooms.
 
 Redraft 4 ($100): https://sleeper.com/i/V9xKEeVN7AD4e
 
-Bracket Redraft rooms:
-Titan ($50, Slow): http://sleeper.com/i/kM2GBe6qL228Y
-Apex ($50, Slow): http://sleeper.com/i/zExweGWd6aPgb
-Iron ($50, Fast): http://sleeper.com/i/j7moDEZ337dn0
+Bracket Redraft priority rooms:
+Apex ($50, Slow, 11/12 paid): http://sleeper.com/i/zExweGWd6aPgb
+Iron ($50, Fast, 4/12 paid): http://sleeper.com/i/j7moDEZ337dn0
 Vanguard ($50, Fast): http://sleeper.com/i/kM2GBe9QxYED7
-Dominion ($50, Slow): http://sleeper.com/i/Y2VXxZ02Y850R
+
+If you want slow draft, join Apex. If you want fast draft, join Iron or Vanguard. Titan and Dominion are part of the full format, but the push right now is to concentrate new joins into these priority rooms first.
 
 Redraft constitution: https://vbp-fantasy-network.vercel.app/redraft-constitution.html
 Bracket constitution: https://vbp-fantasy-network.vercel.app/bracket-constitution.html
@@ -223,7 +237,7 @@ Dynasty Bracket
 - $50 per season, 3 years due up front
 
 Bracket Redraft
-- Year 3 format
+- returning bracket format
 - $50 buy-in
 - Fast and slow rooms
 - Progressive PPR scoring
@@ -316,7 +330,7 @@ When to use:
 Title:
 
 ```text
-VBP Fantasy Network | Join The Bracket Hub | Year 3 Redraft + Dynasty Bracket
+VBP Fantasy Network | Join The Bracket Hub | Returning Redraft + Dynasty Bracket
 ```
 
 Body:
@@ -334,7 +348,7 @@ Dynasty Bracket (Year 1) - Startup
 - $2,400 total prize pool
 - payouts: $1,380 champion, $300 runner-up, $100 semifinal losers, $55 quarterfinal losers, $75 division winner bonus
 
-Bracket Redraft (Year 3) - 12/60 Spots Filled
+Bracket Redraft - third season running this format
 - 60-team redraft format
 - 5 separate 12-team divisions
 - shared 32-team playoff bracket
@@ -415,13 +429,13 @@ When to use:
 Title:
 
 ```text
-VBP Fantasy Network | Year 3 Bracket Redraft Open | Join The Sleeper Hub First
+VBP Fantasy Network | Bracket Redraft Returns | Join The Sleeper Hub First
 ```
 
 Body:
 
 ```text
-VBP Fantasy Network is filling its Year 3 Bracket Redraft format and using one central Sleeper hub as the intake point.
+VBP Fantasy Network is filling Bracket Redraft for the third season I have run this format and using one central Sleeper hub as the intake point.
 
 This is a $50 redraft setup with fast and slow rooms, Progressive PPR scoring, and one shared playoff bracket across the format. The hub lets me route new owners into the healthiest open rooms instead of splitting traffic across low-count divisions too early.
 
@@ -437,25 +451,31 @@ Reply or join the hub if interested.
 
 When to use:
 - broad bracket recruiting
-- when you want all bracket divisions in one place
+- when you want all bracket interest routed toward the current priority rooms first
+- current priority is `Foundry` for slow draft and `Empire` for fast draft
 
 Title:
 
 ```text
-VBP Fantasy Network | 48-Team Dynasty Bracket Open | Superflex Startup
+VBP Fantasy Network | 48-Team Dynasty Bracket | Foundry + Empire Filling First
 ```
 
 Body:
 
 ```text
-VBP Fantasy Network is pushing Dynasty Bracket as its own format right now. This is a $50 per season dynasty startup with $150 due up front. It uses Superflex, 3 FLEX spots, 4 taxi, 4 IR, a 3RR startup draft, and one shared playoff structure across the full format.
+VBP Fantasy Network is filling its 48-team Dynasty Bracket format and concentrating new owners into two priority rooms first so the leagues build momentum together.
 
+This is a $50 per season Superflex dynasty startup with $150 due up front. It uses 3 FLEX spots, 4 taxi, 4 IR, a 3RR startup draft, and one shared playoff structure across the full format.
+
+Current priority rooms:
 Foundry ($50, Slow): https://sleeper.com/i/Y2VajM5OZwN44
-Forge ($50, Slow): https://sleeper.com/i/m7oKYMV9ldoGg
-Legacy ($50, Fast): https://sleeper.com/i/Y2VajNddMbGMa
 Empire ($50, Fast): https://sleeper.com/i/JKo0Ejo4zKeY3
 
+If you want slow draft, join Foundry. If you want fast draft, join Empire. Forge and Legacy are part of the full format, but the push right now is to fill these two rooms first.
+
 Dynasty Bracket constitution: https://vbp-fantasy-network.vercel.app/dynasty-bracket-constitution.html
+Dynasty Bracket Center: https://vbp-fantasy-network.vercel.app/bracket-center.html?view=dynasty
+The Bracket Center includes the public standings layer and a cross-division trade tracker.
 Main hub: https://vbp-fantasy-network.vercel.app/
 
 DM me or reply if interested.
@@ -537,7 +557,7 @@ Body:
 ```text
 Best Ball Union is moving on to BBU2 now.
 
-One room is already full, and all new BBU leagues that fill and are fully paid after May 1 will have the draft set within 24 hours.
+One room is already full, BBU2 is 3/10 assigned, the Union has $200 in total buy-ins so far, and all new BBU leagues that fill and are fully paid after May 1 will have the draft set within 24 hours.
 
 This is a $10 fast-draft best ball setup on Sleeper with no weekly lineup setting, a $100 league pot, and extra Union-wide high-score upside on top.
 
@@ -552,32 +572,33 @@ DM me or reply if interested.
 ### BRACKET REDRAFT
 
 When to use:
-- tournament-style redraft recruiting
-- when you want the multi-division bracket format in one post
+- focused tournament-style redraft recruiting
+- when you want bracket interest routed toward the current priority rooms first
+- current priority is `Apex` for slow draft and `Iron` plus `Vanguard` for fast draft
 
 Title:
 
 ```text
-VBP Fantasy Network | Year 3 Bracket Redraft Open | $50 Tournament Format
+VBP Fantasy Network | Bracket Redraft Returns | Apex + Fast Rooms Filling
 ```
 
 Body:
 
 ```text
-VBP Fantasy Network is pushing its Year 3 Bracket Redraft format right now.
+VBP Fantasy Network has Bracket Redraft openings for owners who want a bigger tournament-style redraft league with clear rules and an experienced commissioner. This is the third season I have run the format.
 
 This is a $50 redraft setup with both fast and slow draft options, Progressive PPR scoring, and one shared 32-team playoff across the full 60-team field. It gives the season a bigger tournament feel than a standard home league while still keeping each room familiar and manageable.
 
-Current count: 12/60 across the format.
-
-Titan ($50, Slow): http://sleeper.com/i/kM2GBe6qL228Y
-Apex ($50, Slow): http://sleeper.com/i/zExweGWd6aPgb
-Iron ($50, Fast): http://sleeper.com/i/j7moDEZ337dn0
+Current priority rooms:
+Apex ($50, Slow, 11/12 paid): http://sleeper.com/i/zExweGWd6aPgb
+Iron ($50, Fast, 4/12 paid): http://sleeper.com/i/j7moDEZ337dn0
 Vanguard ($50, Fast): http://sleeper.com/i/kM2GBe9QxYED7
-Dominion ($50, Slow): http://sleeper.com/i/Y2VXxZ02Y850R
+
+If you want slow draft, join Apex. If you want fast draft, join Iron or Vanguard. Titan and Dominion are part of the full format, but the push right now is to fill these priority rooms first.
 
 Bracket constitution: https://vbp-fantasy-network.vercel.app/bracket-constitution.html
 Bracket Center: https://vbp-fantasy-network.vercel.app/bracket-center.html
+The Bracket Center includes the public standings layer and a cross-division trade tracker.
 Main hub: https://vbp-fantasy-network.vercel.app/
 
 DM me or reply if interested.
@@ -618,7 +639,7 @@ When to use:
 Title:
 
 ```text
-VBP Fantasy Network | Chopped League Half Full | $15 Elimination Redraft
+VBP Fantasy Network | Chopped League Almost Full | $15 Elimination Redraft
 ```
 
 Body:
@@ -626,7 +647,7 @@ Body:
 ```text
 VBP Fantasy Network has Chopped League #1 open right now. It is an 18-team elimination redraft where one team gets chopped each week and the goal is to survive through Week 17.
 
-Buy-in is $15, scoring is Progressive PPR, and the league is currently 9/18 paid.
+Buy-in is $15, scoring is Progressive PPR, and the league is currently 15/18 paid.
 
 Chopped League #1 ($15): https://sleeper.com/i/Y2VKoEON1XkqR
 Chopped constitution: https://vbp-fantasy-network.vercel.app/chopped-constitution.html

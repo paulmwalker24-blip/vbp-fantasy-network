@@ -21,6 +21,8 @@ const FORMAT_META = {
   redraft: { label: "Redraft", description: "Standard seasonal competition with balanced scoring." }
 };
 
+const BEST_BALL_UNION_TOTAL_BUY_IN = 200;
+
 let currentLeagueFilter = "all";
 
 function getElement(id) {
@@ -144,12 +146,24 @@ function isComingSoonLeague(league) {
   return String(league?.status || "").trim().toLowerCase() === "coming-soon";
 }
 
+function shouldUseAssignedRosterCount(league) {
+  return league?.format === "bracket" || league?.format === "dynastybracket";
+}
+
+function getLeagueDisplayFilledCount(league) {
+  if (!shouldUseAssignedRosterCount(league) || league.sleeperFilled === null || league.sleeperFilled === undefined) {
+    return league.filled;
+  }
+
+  return normalizeFilledCount(league.teams, Math.max(league.filled, league.sleeperFilled));
+}
+
 function getLeagueSpotsLeft(league) {
   if (isComingSoonLeague(league)) {
     return 0;
   }
 
-  return Math.max(league.teams - league.filled, 0);
+  return Math.max(league.teams - getLeagueDisplayFilledCount(league), 0);
 }
 
 function getLeagueOrderValue(league) {
@@ -413,9 +427,10 @@ function createLeagueCard(league) {
   const spotsBadge = getSpotsBadge(league);
 
   const details = `${formatCurrency(league.buyIn)} | ${FORMAT_META[league.format].label}`;
+  const filledCount = getLeagueDisplayFilledCount(league);
   const fillStatus = isComingSoon
     ? `${league.teams} Teams | Setup in progress`
-    : `${league.filled} / ${league.teams} Filled`;
+    : `${filledCount} / ${league.teams} Filled`;
 
   const badges = document.createElement("div");
   badges.className = "league-badges";
@@ -451,7 +466,7 @@ function renderLimitedSpots(leagues) {
 
   const limited = leagues
     .filter(league => !isComingSoonLeague(league) && league.spotsLeft > 0)
-    .sort((a, b) => a.spotsLeft - b.spotsLeft || a.filled - b.filled)
+    .sort((a, b) => a.spotsLeft - b.spotsLeft || getLeagueDisplayFilledCount(a) - getLeagueDisplayFilledCount(b))
     .slice(0, 2);
 
   clearElement(container);
@@ -481,8 +496,11 @@ function createLeagueGroupHeader(formatKey, grouped) {
   const summary = grouped.length
     ? `${pluralize(grouped.length, "League")} | ${allComingSoon ? "Coming soon" : `${pluralize(openSpots, "Spot")} Open`}`
     : "0 Leagues";
+  const displaySummary = formatKey === "bestball" && BEST_BALL_UNION_TOTAL_BUY_IN > 0
+    ? `${summary} | ${formatCurrency(BEST_BALL_UNION_TOTAL_BUY_IN)} Buy-In So Far`
+    : summary;
 
-  header.append(titleWrap, createTextElement("div", "league-group-meta", summary));
+  header.append(titleWrap, createTextElement("div", "league-group-meta", displaySummary));
   return header;
 }
 

@@ -19,12 +19,12 @@ Short recruiting hooks capped at 200 characters or less.
 
 ## Bracket Redraft
 
-- Current redraft priority: push Bracket Redraft alongside `RD4`. Format count is 12/60, with Apex, Iron, and Titan as the warmest rooms.
-- `Titan`: Slow room in the Year 3, 60-team bracket redraft format with Progressive PPR and a shared 32-team playoff. Current occupancy: 3/12.
-- `Apex`: Slow room in the Year 3 bracket redraft setup with Progressive PPR and a shared playoff path. One of the more active rooms. Current occupancy: 5/12.
-- `Iron`: Fast room in the Year 3 bracket redraft format with Progressive PPR and a shared 32-team playoff. Current occupancy: 4/12.
-- `Vanguard`: Fast room in the Year 3 bracket redraft format for owners who want the format without a slow draft. Current occupancy: 0/12.
-- `Dominion`: Slow room in the Year 3 bracket redraft format with Progressive PPR and the same shared tournament structure. Current occupancy: 0/12.
+- Current redraft priority: push Bracket Redraft alongside `RD4`, with Apex as the slow-draft focus and Vanguard as the fast-draft focus.
+- `Titan`: Slow room in the returning 60-team bracket redraft format with Progressive PPR and a shared 32-team playoff. Current occupancy: 3/12.
+- `Apex`: Slow room in the returning bracket redraft setup with Progressive PPR and a shared playoff path. Current paid count: 9/12.
+- `Iron`: Fast room in the returning bracket redraft format with Progressive PPR and a shared 32-team playoff. Current occupancy: 4/12.
+- `Vanguard`: Fast room in the returning bracket redraft format and the current fast-draft priority room.
+- `Dominion`: Slow room in the returning bracket redraft format with Progressive PPR and the same shared tournament structure. Current occupancy: 0/12.
 
 ## Standard Redraft
 

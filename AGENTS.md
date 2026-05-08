@@ -300,6 +300,15 @@ If donation rendering breaks:
 - Preserve IDs and section anchors that are referenced by buttons or scripts.
 - Preserve the format filter markup and `data-format` values in `#formatFilters` unless the filtering behavior is being intentionally changed.
 - Constitution pages follow a repeated pattern; keep new pages aligned with existing structure.
+- Constitution draft-order language should use `100yardrush.com` once the league or division is full and paid, with results posted publicly by the commissioner.
+- Constitution fast-draft language should use 90-second pick timers.
+- Constitution slow-draft language should use the tiered schedule: 8-hour before July 15, 4-hour from July 15 to before August 15, 2-hour from August 15 to one week before the NFL regular season, and 1-hour during the final week before the NFL regular season. Slow drafts should include the 10:00 PM to 7:00 AM CST overnight pause, next-manager notification, and commissioner scheduling fallback.
+- Draft-pick trading language belongs only in Chopped, Dynasty, Dynasty Bracket, and Keeper constitutions. Do not add draft-pick trading language to Redraft, Redraft Bracket, or Best Ball constitutions unless explicitly requested.
+- Standard dynasty startups require three seasons paid up front. Existing dynasty leagues, including DYN1 through DYN3, require payment at the start of each new season and when trading away future rookie picks for the season involved.
+- Standard dynasty 5th Place Game rookie-order language should say `manual best ball scoring calculated by the commissioner`.
+- Keeper Regular Season Winner means the team in 1st place at the end of the regular season.
+- Best Ball Union overall high-score prize pool goes to the manager with the single highest total season score across all Best Ball Union leagues. The public Best Ball Union leaderboard language should use Top 20, not Top 10.
+- Chopped elimination-line tiebreakers should chop the lower total season points team when total season points are used.
 - `index.html` now includes live Chopped and Keeper constitution cards; do not revert them to placeholders unless requested.
 - Standalone public standings/scoreboard destinations should live in a separate `League Centers` block under the constitutions area rather than being mixed into the constitution card grid.
 
@@ -346,15 +355,17 @@ If donation rendering breaks:
 - For Reddit league-promotion requests, treat `VBP Fantasy Network` as an active brand with live leagues, not something that is still being built, unless the user explicitly wants a softer in-progress angle.
 - Current recruiting priority is Redraft 4 and Bracket Redraft. Lead with `REDRAFT PRIORITY PUSH`, `REDRAFT 4`, or `BRACKET REDRAFT` from `marketing/recruiting-copy-ready.txt` unless the user explicitly asks for another format.
 - Redraft 4 copy should frame the league as the sharper standalone seasonal room and may mention `10/12` and `2 spots left` while those counts remain current.
-- Bracket Redraft copy should lead with the established `Year 3` tournament hook and may mention `12/60` while that count remains current.
+- Bracket Redraft copy should lead with the established returning-format hook and may say this is the third season the commissioner has run it. Avoid making `Year 3 Bracket Redraft` sound like the formal format name.
+- Current Bracket Redraft recruiting should concentrate new owners into Apex for slow draft and Vanguard for fast draft before pushing Titan, Iron, or Dominion equally. Apex may be described as `9/12 paid` while that remains current.
 - Dynasty Bracket recruiting titles should make the 48-team format visible, such as `VBP Fantasy Network | 48-Team Dynasty Bracket Open | Superflex Startup`.
+- Current Dynasty Bracket recruiting should concentrate new owners into Foundry for slow draft and Empire for fast draft before pushing Forge or Legacy equally.
 - Dynasty Bracket and Bracket Redraft recruiting copy may mention that the Bracket Center includes a cross-division trade tracker.
 - Default early Reddit posts to short, direct recruiting copy focused on open spots, active owners, competitive formats, and clear rules.
 - Keep the network name in the title or first sentence so the brand still gets repeated exposure even when the body copy stays simple.
 - Use constitutions and clear rules as trust signals, but do not overload short recruiting posts with too much backstory unless the user asks for a fuller pitch.
 - When the user wants reusable outreach ideas, store them in the relevant consolidated file under `marketing/` so future prompts can build from past examples instead of starting from scratch.
 - If the user asks for a response-driving version, prefer a direct CTA such as `DM me or reply if interested.`
-- For bracket league recruiting copy, prefer an early `Year 3` or established-league hook so the format does not read like an unproven startup and the commissioner experience comes through quickly.
+- For bracket league recruiting copy, prefer an early established-league hook, such as the commissioner filling Bracket Redraft for the third season, so the format does not read like an unproven startup and the commissioner experience comes through quickly.
 - For weaker dynasty rebuilds or questionable orphan takeovers, prefer trusted private outreach language over broad public promotion.
 - Keep public-facing recruiting copy lean. Avoid internal commissioner shorthand such as `DYN5+` unless the user explicitly wants internal context kept in the copy.
 - Do not over-explain familiar formats like best ball in public ad copy unless the user explicitly wants a beginner-facing pitch.
