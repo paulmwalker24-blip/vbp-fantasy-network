@@ -8,22 +8,23 @@ Short recruiting hooks capped at 200 characters or less.
 
 ## Dynasty Bracket
 
-- `Foundry`: Slow division in a 48-team Superflex dynasty bracket with a shared 16-team playoff, 3RR startup, taxi squads, and 3 years due up front. Current occupancy: 0/12.
-- `Forge`: Slow division in the 48-team dynasty bracket with a shared playoff, Superflex, 3 FLEX, taxi squads, and 3 years due up front. Current occupancy: 0/12.
-- `Legacy`: Fast division in the 48-team dynasty bracket with Superflex, 3 FLEX, taxi squads, 3RR, and a shared playoff path. Current occupancy: 0/12.
-- `Empire`: Fast division in the 48-team dynasty bracket with Superflex, 3 FLEX, taxi squads, 3RR, and 3 years due up front. Current occupancy: 0/12.
+- Current dynasty bracket priority: 48-team $50 Superflex dynasty bracket, four 12-team divisions, $1,380 to champion; fill Foundry first.
+- `Foundry`: 48-team Superflex dynasty bracket division with a shared 16-team playoff, 3RR slow startup, taxi squads, and 3 years due up front. Current occupancy: 0/12.
+- `Forge`: 48-team Superflex dynasty bracket division with a shared 16-team playoff, 3RR slow startup, taxi squads, and 3 years due up front. Current occupancy: 0/12.
+- `Legacy`: 48-team Superflex dynasty bracket division with a shared 16-team playoff, 3RR slow startup, taxi squads, and 3 years due up front. Current occupancy: 0/12.
+- `Empire`: 48-team Superflex dynasty bracket division with a shared 16-team playoff, 3RR slow startup, taxi squads, and 3 years due up front. Current occupancy: 0/12.
 
 ## Best Ball Union
 
-- `BBU1`: $10 fast-draft best ball with auto lineups, median matchup scoring, and Union-wide prize upside beyond one room. Paid count is commissioner-controlled. Current occupancy: 6/10.
+- `BBU2`: $10 fast-draft best ball, 8/10 paid, drafting tonight at 8:00 PM CST. Auto lineups, Progressive PPR, median matchup, and Union high-score tracking.
 
 ## Bracket Redraft
 
-- Current redraft priority: push Bracket Redraft alongside `RD4`, with Apex as the slow-draft focus and Vanguard as the fast-draft focus.
-- `Titan`: Slow room in the returning 60-team bracket redraft format with Progressive PPR and a shared 32-team playoff. Current occupancy: 3/12.
-- `Apex`: Slow room in the returning bracket redraft setup with Progressive PPR and a shared playoff path. Current paid count: 9/12.
-- `Iron`: Fast room in the returning bracket redraft format with Progressive PPR and a shared 32-team playoff. Current occupancy: 4/12.
-- `Vanguard`: Fast room in the returning bracket redraft format and the current fast-draft priority room.
+- Current redraft priority: push Bracket Redraft alongside `RD4`; 60-team, five 12-team divisions, $50 entry, $1,380 to champion.
+- `Titan`: $50 slow room in the 60-team bracket, one of five 12-team divisions, with $1,380 to champion. Current paid count: 3/12.
+- `Apex`: $50 slow room in the 60-team bracket, one of five 12-team divisions, with $1,380 to champion. Current paid count: 11/12.
+- `Iron`: $50 fast room in the 60-team bracket, one of five 12-team divisions, with $1,380 to champion. Current paid count: 4/12.
+- `Vanguard`: Fast room in the returning bracket redraft format, but Iron is the current fast-draft priority because it already has paid owners.
 - `Dominion`: Slow room in the returning bracket redraft format with Progressive PPR and the same shared tournament structure. Current occupancy: 0/12.
 
 ## Standard Redraft
