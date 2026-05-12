@@ -27,6 +27,177 @@ const SAMPLE_TEAM_PREFIXES = [
   "Royal",
   "Echo"
 ];
+const BBU_POWER_SCORE_WEIGHTS = {
+  lineup: 0.45,
+  depth: 0.30,
+  bigWeeks: 0.15,
+  scoringFit: 0.10
+};
+const BBU_POWER_RANKINGS = [
+  {
+    rank: 1,
+    team: "DSnyder5",
+    league: "BBU2",
+    grades: { lineup: 96, depth: 94, bigWeeks: 94, scoringFit: 92 },
+    summary: "Ranked first because the RBs are excellent, the WR group is deep enough to fill the flex spots, and Hurts gives the team a strong QB score most weeks.",
+    core: "Jonathan Taylor, Saquon Barkley, Nico Collins, Ladd McConkey, George Pickens, Davante Adams, Jalen Hurts"
+  },
+  {
+    rank: 2,
+    team: "ThrowwUpTheX",
+    league: "BBU1",
+    grades: { lineup: 95, depth: 92, bigWeeks: 95, scoringFit: 89 },
+    summary: "Very close to first. Chase, Saquon, Kyren, Waddle, and Evans give this roster a lot of weekly scoring power, and the two QBs give it good cover.",
+    core: "Ja'Marr Chase, Saquon Barkley, Kyren Williams, Jaylen Waddle, Mike Evans, Jalen Hurts, Justin Herbert"
+  },
+  {
+    rank: 3,
+    team: "Adamgrifki",
+    league: "BBU1",
+    grades: { lineup: 91, depth: 91, bigWeeks: 90, scoringFit: 96 },
+    summary: "Bowers is a real edge at TE, and the WR room is strong. The RB depth is also good enough for a league where rosters are locked after the draft.",
+    core: "Jonathan Taylor, Amon-Ra St. Brown, Brock Bowers, Chris Olave, Marvin Harrison, Jameson Williams"
+  },
+  {
+    rank: 4,
+    team: "bryanb460",
+    league: "BBU2",
+    grades: { lineup: 91, depth: 88, bigWeeks: 92, scoringFit: 84 },
+    summary: "This is one of the best WR rooms in the field. That matters because BBU starts three WRs and two flex spots every week.",
+    core: "Justin Jefferson, Malik Nabers, A.J. Brown, DK Metcalf, James Cook"
+  },
+  {
+    rank: 5,
+    team: "gunnar21",
+    league: "BBU1",
+    grades: { lineup: 90, depth: 86, bigWeeks: 90, scoringFit: 91 },
+    summary: "Bijan and Breece are a strong RB start, McBride helps at TE, and Lamar gives the roster a clear weekly advantage at QB.",
+    core: "Bijan Robinson, Breece Hall, Trey McBride, Lamar Jackson, Ladd McConkey, Rome Odunze"
+  },
+  {
+    rank: 6,
+    team: "Cameron74",
+    league: "BBU2",
+    grades: { lineup: 88, depth: 84, bigWeeks: 88, scoringFit: 87 },
+    summary: "The top players are strong and the three-QB setup should help. The main concern is whether the WR depth is enough over a full season.",
+    core: "Bijan Robinson, Josh Jacobs, Drake London, Lamar Jackson, David Montgomery, Kyle Pitts, Justin Herbert"
+  },
+  {
+    rank: 7,
+    team: "mguzz",
+    league: "BBU1",
+    grades: { lineup: 86, depth: 89, bigWeeks: 86, scoringFit: 83 },
+    summary: "This roster has useful depth at both RB and WR, which matters when there are no waivers. Burrow also gives it a strong weekly QB option.",
+    core: "Puka Nacua, Nico Collins, Derrick Henry, Chase Brown, Joe Burrow, Zay Flowers, Jordan Addison"
+  },
+  {
+    rank: 8,
+    team: "swampraider",
+    league: "BBU2",
+    grades: { lineup: 86, depth: 83, bigWeeks: 89, scoringFit: 82 },
+    summary: "Chase and Burrow can carry big weeks together. The RB group has upside, but it also carries more risk than some teams above it.",
+    core: "Ja'Marr Chase, Kyren Williams, Chase Brown, Chris Olave, Joe Burrow, TreVeyon Henderson"
+  },
+  {
+    rank: 9,
+    team: "PasqTheGoat",
+    league: "BBU2",
+    grades: { lineup: 84, depth: 80, bigWeeks: 91, scoringFit: 88 },
+    summary: "This team can have huge weeks because of CMC, Bowers, Daniels, Wilson, and Brian Thomas. The risk is that several key players have more uncertainty than the teams above.",
+    core: "Christian McCaffrey, Brock Bowers, Garrett Wilson, Jayden Daniels, Brian Thomas"
+  },
+  {
+    rank: 10,
+    team: "jakeejk",
+    league: "BBU2",
+    grades: { lineup: 83, depth: 84, bigWeeks: 80, scoringFit: 92 },
+    summary: "The WR and TE groups are very strong for this scoring format. QB is the biggest reason this team is not ranked higher.",
+    core: "Ashton Jeanty, CeeDee Lamb, Trey McBride, Tee Higgins, DeVonta Smith, Emeka Egbuka"
+  },
+  {
+    rank: 11,
+    team: "jakeejk",
+    league: "BBU1",
+    grades: { lineup: 83, depth: 80, bigWeeks: 82, scoringFit: 88 },
+    summary: "The WR group is excellent, especially in a three-WR format. The RB and QB groups are thinner than the teams above it.",
+    core: "Justin Jefferson, Garrett Wilson, Tetairoa McMillan, Luther Burden, Emeka Egbuka"
+  },
+  {
+    rank: 12,
+    team: "OutlawReturns",
+    league: "BBU2",
+    grades: { lineup: 81, depth: 82, bigWeeks: 82, scoringFit: 87 },
+    summary: "Amon-Ra gives this team a steady WR base, and the RBs can produce big weeks. The TE depth also helps because TEs get 0.75 per catch.",
+    core: "De'Von Achane, Amon-Ra St. Brown, Breece Hall, Drake Maye, D'Andre Swift, Zay Flowers, Sam LaPorta"
+  },
+  {
+    rank: 13,
+    team: "RevDennis",
+    league: "BBU2",
+    grades: { lineup: 82, depth: 81, bigWeeks: 79, scoringFit: 83 },
+    summary: "Allen and Puka are a strong starting point. The roster also has enough RB and TE cover to handle a season without pickups.",
+    core: "Puka Nacua, Omarion Hampton, Josh Allen, Travis Etienne, DJ Moore, Rome Odunze"
+  },
+  {
+    rank: 14,
+    team: "jessegambo",
+    league: "BBU1",
+    grades: { lineup: 81, depth: 80, bigWeeks: 80, scoringFit: 82 },
+    summary: "Gibbs and Jacobs give this team a strong RB base, and the WRs are good enough to keep the weekly score steady.",
+    core: "Jahmyr Gibbs, Josh Jacobs, Drake London, Tee Higgins, Terry McLaurin, Caleb Williams"
+  },
+  {
+    rank: 15,
+    team: "VanillaWafer",
+    league: "BBU1",
+    grades: { lineup: 80, depth: 76, bigWeeks: 86, scoringFit: 81 },
+    summary: "CMC, Nabers, DK, and Mahomes give this roster real upside. The lower rank is mostly because there is more injury and role risk here.",
+    core: "Christian McCaffrey, Malik Nabers, DJ Moore, DK Metcalf, Patrick Mahomes"
+  },
+  {
+    rank: 16,
+    team: "Flagg Planters",
+    league: "BBU2",
+    grades: { lineup: 79, depth: 78, bigWeeks: 82, scoringFit: 79 },
+    summary: "This team is very RB-heavy and has two good QB options. It can win big weeks, but the WR room is thinner than most teams above it.",
+    core: "Jahmyr Gibbs, Bucky Irving, Derrick Henry, Tetairoa McMillan, Patrick Mahomes, Mark Andrews"
+  },
+  {
+    rank: 17,
+    team: "kj0116",
+    league: "BBU1",
+    grades: { lineup: 80, depth: 75, bigWeeks: 79, scoringFit: 80 },
+    summary: "Lamb, A.J. Brown, Allen, and LaPorta are excellent. The concern is that the bench does not add as much weekly scoring help as the teams above it.",
+    core: "CeeDee Lamb, A.J. Brown, Josh Allen, Kenneth Walker, Sam LaPorta"
+  },
+  {
+    rank: 18,
+    team: "SnoopDerek",
+    league: "BBU2",
+    grades: { lineup: 77, depth: 76, bigWeeks: 79, scoringFit: 77 },
+    summary: "The WR and QB groups can score well. The RB room needs to hit because there are no waivers or trades to fix it later.",
+    core: "Jaxon Smith-Njigba, Kenneth Walker, Rashee Rice, Jaylen Waddle, Caleb Williams, Bo Nix"
+  },
+  {
+    rank: 19,
+    team: "HopscotchDaisy",
+    league: "BBU1",
+    grades: { lineup: 76, depth: 77, bigWeeks: 75, scoringFit: 80 },
+    summary: "The RB and TE rooms are deep. The issue is that the WR and QB groups look less likely to keep up in total points.",
+    core: "Ashton Jeanty, De'Von Achane, Bucky Irving, Travis Etienne, Davante Adams, DeVonta Smith"
+  },
+  {
+    rank: 20,
+    team: "2GunzTanner",
+    league: "BBU1",
+    grades: { lineup: 75, depth: 75, bigWeeks: 76, scoringFit: 78 },
+    summary: "There is plenty to like with Maye, Daniels, Kittle, JSN, and Hampton. The rank is lower because more of the roster still has to prove it.",
+    core: "Jaxon Smith-Njigba, Omarion Hampton, Rashee Rice, TreVeyon Henderson, Drake Maye, Jayden Daniels, George Kittle"
+  }
+];
+const bestBallCenterState = {
+  selectedSection: window.location.hash === "#powerRankings" ? "power" : "scoring"
+};
 
 function text(value) {
   return String(value ?? "").trim();
@@ -587,6 +758,82 @@ function renderWeeklyHighScores(weeklyHighRows, mode) {
   });
 }
 
+function renderPowerRankings() {
+  const list = document.getElementById("bbuPowerRankingsList");
+  if (!list) {
+    return;
+  }
+
+  list.innerHTML = "";
+
+  BBU_POWER_RANKINGS.forEach(entry => {
+    const score = getBbuPowerScore(entry.grades);
+    const row = document.createElement("article");
+    row.className = `power-ranking-row${entry.rank <= 3 ? " is-top" : ""}`;
+
+    const rank = document.createElement("div");
+    rank.className = "power-ranking-position";
+    rank.textContent = String(entry.rank);
+
+    const body = document.createElement("div");
+    body.className = "power-ranking-body";
+
+    const header = document.createElement("div");
+    header.className = "power-ranking-header";
+
+    const name = document.createElement("h3");
+    name.textContent = entry.team;
+
+    const scoreBadge = document.createElement("span");
+    scoreBadge.className = "power-ranking-score";
+    scoreBadge.textContent = `${entry.league} | ${score.toFixed(1)}`;
+
+    const summary = document.createElement("p");
+    summary.textContent = entry.summary;
+
+    const core = document.createElement("p");
+    core.className = "power-ranking-core";
+    core.textContent = `Build keys: ${entry.core}`;
+
+    const breakdown = document.createElement("p");
+    breakdown.className = "power-ranking-breakdown";
+    breakdown.textContent = `Score: ${score.toFixed(1)} = lineup ${entry.grades.lineup} x 45%, depth ${entry.grades.depth} x 30%, big-week players ${entry.grades.bigWeeks} x 15%, scoring fit ${entry.grades.scoringFit} x 10%.`;
+
+    header.append(name, scoreBadge);
+    body.append(header, summary, core, breakdown);
+    row.append(rank, body);
+    list.appendChild(row);
+  });
+}
+
+function getBbuPowerScore(grades) {
+  return (
+    (toNumber(grades?.lineup) * BBU_POWER_SCORE_WEIGHTS.lineup) +
+    (toNumber(grades?.depth) * BBU_POWER_SCORE_WEIGHTS.depth) +
+    (toNumber(grades?.bigWeeks) * BBU_POWER_SCORE_WEIGHTS.bigWeeks) +
+    (toNumber(grades?.scoringFit) * BBU_POWER_SCORE_WEIGHTS.scoringFit)
+  );
+}
+
+function updateBestBallSectionTabs(options = {}) {
+  const selectedSection = bestBallCenterState.selectedSection === "power" ? "power" : "scoring";
+  const buttons = Array.from(document.querySelectorAll("[data-bbu-section]"));
+  const panels = Array.from(document.querySelectorAll("[data-bbu-panel]"));
+
+  buttons.forEach(button => {
+    button.classList.toggle("is-active", text(button.dataset.bbuSection) === selectedSection);
+  });
+
+  panels.forEach(panel => {
+    panel.hidden = text(panel.dataset.bbuPanel) !== selectedSection;
+  });
+
+  if (options.scroll) {
+    const targetId = selectedSection === "power" ? "powerRankings" : "scoringCenter";
+    document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
 function renderLoadFailure(error) {
   console.error("Best Ball Union center load failed:", error);
 
@@ -657,4 +904,18 @@ document.getElementById("reloadCenterButton")?.addEventListener("click", () => {
   window.location.reload();
 });
 
+Array.from(document.querySelectorAll("[data-bbu-section]")).forEach(button => {
+  button.addEventListener("click", () => {
+    bestBallCenterState.selectedSection = text(button.dataset.bbuSection) === "power" ? "power" : "scoring";
+    if (bestBallCenterState.selectedSection === "power") {
+      window.history.replaceState(null, "", "#powerRankings");
+    } else {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+    updateBestBallSectionTabs({ scroll: true });
+  });
+});
+
+renderPowerRankings();
+updateBestBallSectionTabs();
 loadCenter();

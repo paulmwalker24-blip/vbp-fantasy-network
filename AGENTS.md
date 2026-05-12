@@ -359,7 +359,8 @@ If donation rendering breaks:
 - Bracket Redraft copy should lead with the established returning-format hook and may say this is the third season the commissioner has run it. Avoid making `Year 3 Bracket Redraft` sound like the formal format name.
 - Current Bracket Redraft recruiting should concentrate new owners into Apex for slow draft and Vanguard for fast draft before pushing Titan, Iron, or Dominion equally. Apex may be described as `9/12 paid` while that remains current.
 - Chopped is full and should not be included in active recruiting copy unless a new chopped opening appears.
-- Best Ball Union recruiting titles should include the `$10` cost and the `Drafting 24 Hours After Fill` hook while that remains the active pitch.
+- DYN1 is full and should not be included as an active orphan/takeover recruiting post unless a new vacancy appears.
+- Current Best Ball Union recruiting is on `BBU3`, a `$10` fast-draft best ball room at `4/10 paid`; say it drafts within 24 hours after full and paid while that remains current.
 - Dynasty Bracket recruiting titles should make the 48-team format visible, such as `VBP Fantasy Network | 48-Team Dynasty Bracket Open | Superflex Startup`.
 - Current Dynasty Bracket recruiting should concentrate new owners into Foundry for slow draft and Empire for fast draft before pushing Forge or Legacy equally.
 - Dynasty Bracket and Bracket Redraft recruiting copy may mention that the Bracket Center includes a cross-division trade tracker.

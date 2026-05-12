@@ -40,11 +40,6 @@ Use:
 - `LEGACY DIVISION`
 - `EMPIRE DIVISION`
 
-### If You Want A Standard Dynasty Orphan Post
-
-Use:
-- `DYN1 ORPHAN`
-
 ### If You Want BBU Momentum
 
 Use:
@@ -87,13 +82,6 @@ Use:
 - Lead with trust, format, and owner quality before payment structure.
 - Present the up-front model as the stability feature, not the burden.
 
-### Standard Dynasty Orphans
-
-- Keep orphan posts short and direct unless the roster is strong enough to lead with specific player names.
-- For `DYN1`, frame the opening as an established $30 Superflex dynasty takeover, not a startup.
-- Offer to send roster, picks, and payment details privately when they are not ready to publish in the post.
-- Use the dynasty constitution as the main public trust signal.
-
 ### Dynasty Bracket
 
 - Treat `Dynasty Bracket` as the premium startup lane.
@@ -104,11 +92,11 @@ Use:
 
 ### Best Ball Union
 
-- Lead with broader `Best Ball Union` momentum while pushing the current active room.
+- Lead with the current active room when there is a scheduled draft time.
 - Always say `fast draft`.
-- Say new BBU leagues start drafting 24 hours after the league is filled and fully paid.
+- Say new BBU leagues start drafting 24 hours after the league is filled and fully paid unless a same-day draft time has already been set.
 - Refresh the active `BBU` template when the current room changes so the pitch does not feel stale.
-- When a `BBU` post mentions traction, prefer broader momentum language like one room already being full unless an exact public count is part of the current push.
+- When a `BBU` post has a scheduled draft time, lead with that urgency and keep the description focused on the active room.
 
 ### Platform Notes
 
@@ -130,7 +118,7 @@ Use:
 - For the current push, lead with `Redraft 4` and `Bracket Redraft` before dynasty, best ball, keeper, or chopped.
 - For `Redraft 4`, frame it as the sharper seasonal option for owners who want a more serious room with rules posted up front. Mention that it is 10/12 when urgency helps.
 - For `Bracket Redraft`, lead with the format hook and the fact that this is the third season the commissioner has run the format. Avoid phrasing that makes `Year 3 Bracket Redraft` sound like the formal format name.
-- Current Bracket Redraft recruiting should concentrate new owners into `Apex` for slow draft and `Iron` plus `Vanguard` for fast draft before pushing Titan or Dominion equally.
+- Current Bracket Redraft recruiting should concentrate new owners into `Apex` and `Titan` for slow draft and `Iron` for fast draft before pushing Vanguard or Dominion equally.
 - Use `REDRAFT PRIORITY PUSH` when you want one post that lets people choose between the $100 standalone room and the $50 tournament format.
 - Keep both redraft posts direct, but make them sound curated rather than generic.
 
@@ -176,16 +164,16 @@ VBP Fantasy Network is pushing redraft right now with two active lanes:
 
 Redraft 4 is the sharper standalone seasonal room. It is a $100 league with Progressive PPR, no kicker or defense, and a 6-team playoff with top-two byes. Current count: 10/12.
 
-Bracket Redraft is the bigger tournament-style format. I am filling it for the third season I have run this setup. It is a $50 redraft format with fast and slow draft rooms feeding one shared 32-team playoff across the full 60-team field. The current push is Apex as the nearly full slow room, plus Iron and Vanguard as the priority fast rooms.
+Bracket Redraft is the bigger tournament-style format. I am filling it for the third season I have run this setup. It is a $50 redraft format with fast and slow draft rooms feeding one shared 32-team playoff across the full 60-team field. The current push is Apex and Titan for slow draft, plus Iron as the priority fast room.
 
 Redraft 4 ($100): https://sleeper.com/i/V9xKEeVN7AD4e
 
 Bracket Redraft priority rooms:
 Apex ($50, Slow, 11/12 paid): http://sleeper.com/i/zExweGWd6aPgb
+Titan ($50, Slow, 3/12 paid): http://sleeper.com/i/kM2GBe6qL228Y
 Iron ($50, Fast, 4/12 paid): http://sleeper.com/i/j7moDEZ337dn0
-Vanguard ($50, Fast): http://sleeper.com/i/kM2GBe9QxYED7
 
-If you want slow draft, join Apex. If you want fast draft, join Iron or Vanguard. Titan and Dominion are part of the full format, but the push right now is to concentrate new joins into these priority rooms first.
+If you want slow draft, join Apex or Titan. If you want fast draft, join Iron. Vanguard and Dominion are part of the full format, but the push right now is to concentrate new joins into Apex, Titan, and Iron first.
 
 Redraft constitution: https://vbp-fantasy-network.vercel.app/redraft-constitution.html
 Bracket constitution: https://vbp-fantasy-network.vercel.app/bracket-constitution.html
@@ -541,24 +529,28 @@ Dynasty Bracket constitution: https://vbp-fantasy-network.vercel.app/dynasty-bra
 ### BBU
 
 When to use:
-- main Best Ball Union recruiting post
+- current BBU3 best ball recruiting post
 
 Title:
 
 ```text
-VBP Fantasy Network | Best Ball Union $10 | Drafting 24 Hours After Fill
+VBP Fantasy Network | BBU3 $10 Best Ball | 4/10 Paid
 ```
 
 Body:
 
 ```text
-Best Ball Union is moving on to BBU2 now.
+VBP Fantasy Network has BBU3 open for anyone who wants a simple $10 best ball draft. The room is 4/10 paid right now, so there are 6 spots left.
 
-One room is already full, BBU2 is 3/10 assigned, and the Union has $200 in total buy-ins so far.
+Draft will be scheduled within 24 hours after the league is full and paid.
 
-This is a $10 fast-draft best ball setup on Sleeper with no weekly lineup setting, a $100 league pot, and extra Union-wide high-score upside on top.
+This is a 10-team draft-and-hold best ball league on Sleeper. It uses a 90-second snake draft, 18-player rosters, Progressive PPR scoring, and a weekly median matchup.
 
-Best Ball Union #2 ($10, Fast): http://sleeper.com/i/LVoN4RXgLDk9w
+After the draft, there are no waivers, trades, pickups, or weekly lineup decisions. Sleeper automatically uses your best lineup each week.
+
+Each BBU league has a $100 league prize pool, with the league champion prize plus Best Ball Union overall high-score tracking across the format.
+
+Best Ball Union #3 ($10, Fast, 4/10 paid): http://sleeper.com/i/V9x7zRZzzqlXO
 Best Ball constitution: https://vbp-fantasy-network.vercel.app/bestball-constitution.html
 Best Ball Union Center: https://vbp-fantasy-network.vercel.app/bestball-center.html
 Main hub: https://vbp-fantasy-network.vercel.app/
@@ -566,17 +558,69 @@ Main hub: https://vbp-fantasy-network.vercel.app/
 DM me or reply if interested.
 ```
 
+### BBU POWER RANKINGS
+
+When to use:
+- preseason combined BBU1 and BBU2 draft-build post
+- quick engagement post after multiple BBU rooms finish drafting
+
+Title:
+
+```text
+VBP Fantasy Network | Preseason Best Ball Union Combined Power Rankings
+```
+
+Body:
+
+```text
+BBU1 and BBU2 are both drafted, so here is the first combined Best Ball Union power ranking.
+
+These are preseason rankings, not standings. They are based on the BBU rules: 10 teams, 18 drafted players, no pickups after the draft, automatic best-ball scoring, Progressive PPR, and a full-season points race across both leagues.
+
+Method:
+45% best expected weekly lineup across 1 QB, 2 RB, 3 WR, 1 TE, and 2 FLEX
+30% bench depth, bye-week cover, and injury cover across all 18 spots
+15% players who can create big scoring weeks for the overall points race
+10% fit with BBU scoring, especially TE catches, RB catches, and WR volume
+
+1. DSnyder5, BBU2 - 94.7
+2. ThrowwUpTheX, BBU1 - 93.5
+3. Adamgrifki, BBU1 - 91.3
+4. bryanb460, BBU2 - 89.5
+5. gunnar21, BBU1 - 88.9
+6. Cameron74, BBU2 - 86.7
+7. mguzz, BBU1 - 86.6
+8. swampraider, BBU2 - 85.2
+9. PasqTheGoat, BBU2 - 84.3
+10. jakeejk, BBU2 - 83.8
+11. jakeejk, BBU1 - 82.5
+12. OutlawReturns, BBU2 - 82.0
+13. RevDennis, BBU2 - 81.3
+14. jessegambo, BBU1 - 80.7
+15. VanillaWafer, BBU1 - 79.8
+16. Flagg Planters, BBU2 - 79.2
+17. kj0116, BBU1 - 78.3
+18. SnoopDerek, BBU2 - 77.0
+19. HopscotchDaisy, BBU1 - 76.5
+20. 2GunzTanner, BBU1 - 75.5
+
+Top tier feels tight. DSnyder5 gets the early nod because the team has two elite RBs, enough WR depth, and Jalen Hurts at QB. ThrowwUpTheX is right there with Ja'Marr Chase, Saquon Barkley, Kyren Williams, Jaylen Waddle, Mike Evans, Jalen Hurts, and Justin Herbert.
+
+Best Ball Union Center: https://vbp-fantasy-network.vercel.app/bestball-center.html
+Main hub: https://vbp-fantasy-network.vercel.app/
+```
+
 ### BRACKET REDRAFT
 
 When to use:
 - focused tournament-style redraft recruiting
 - when you want bracket interest routed toward the current priority rooms first
-- current priority is `Apex` for slow draft and `Iron` plus `Vanguard` for fast draft
+- current priority is `Apex` and `Titan` for slow draft and `Iron` for fast draft
 
 Title:
 
 ```text
-VBP Fantasy Network | Bracket Redraft Returns | Apex + Fast Rooms Filling
+VBP Fantasy Network | Bracket Redraft Returns | Apex + Titan + Iron Filling
 ```
 
 Body:
@@ -588,10 +632,10 @@ This is a $50 redraft setup with both fast and slow draft options, Progressive P
 
 Current priority rooms:
 Apex ($50, Slow, 11/12 paid): http://sleeper.com/i/zExweGWd6aPgb
+Titan ($50, Slow, 3/12 paid): http://sleeper.com/i/kM2GBe6qL228Y
 Iron ($50, Fast, 4/12 paid): http://sleeper.com/i/j7moDEZ337dn0
-Vanguard ($50, Fast): http://sleeper.com/i/kM2GBe9QxYED7
 
-If you want slow draft, join Apex. If you want fast draft, join Iron or Vanguard. Titan and Dominion are part of the full format, but the push right now is to fill these priority rooms first.
+If you want slow draft, join Apex or Titan. If you want fast draft, join Iron. Vanguard and Dominion are part of the full format, but the push right now is to fill Apex, Titan, and Iron first.
 
 Bracket constitution: https://vbp-fantasy-network.vercel.app/bracket-constitution.html
 Bracket Center: https://vbp-fantasy-network.vercel.app/bracket-center.html

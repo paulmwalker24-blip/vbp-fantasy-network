@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Best Ball Union Center | VBP Fantasy Network</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260512d" />
 </head>
 <body class="constitution-page format-center-page">
   <div class="constitution-nav" id="top">
@@ -31,13 +31,17 @@
       <section class="constitution-summary-card">
         <h2>Live League Center</h2>
         <p>This page is the public standings layer for Best Ball Union. It is separate from the homepage so the hub can stay focused on recruiting, league discovery, and constitutions.</p>
+        <div class="format-center-tabs format-center-mode-tabs" id="bestBallModeTabs" aria-label="Best Ball Union center view">
+          <button type="button" class="format-center-tab is-active" data-bbu-section="scoring">Scoring Center</button>
+          <button type="button" class="format-center-tab" data-bbu-section="power">Power Rankings</button>
+        </div>
         <div class="format-center-actions">
           <a href="bestball-constitution.html" class="btn btn-primary">View Constitution</a>
           <button type="button" class="btn btn-secondary" id="reloadCenterButton">Reload Page</button>
         </div>
       </section>
 
-      <section class="constitution-content">
+      <section class="constitution-content" id="scoringCenter" data-bbu-panel="scoring">
         <div class="section-heading">
           <h2>Center Snapshot</h2>
           <p>Current league leaders, overall points race, and weekly high-score tracking across Best Ball Union.</p>
@@ -67,7 +71,72 @@
         <div class="format-center-banner" id="centerStatusBanner" hidden></div>
       </section>
 
-      <section class="constitution-section-card">
+      <section class="power-rankings-card power-rankings-feature" id="powerRankings" data-bbu-panel="power" hidden>
+        <div>
+          <p class="power-rankings-kicker">Preseason Draft-Build Snapshot</p>
+          <h2>Combined BBU1 + BBU2 Power Rankings</h2>
+          <p>
+            These are preseason rankings, not standings. They are based on the rules of BBU: 10 teams, 18 drafted
+            players, no pickups after the draft, automatic best-ball scoring, Progressive PPR, and a full-season
+            points race across both leagues.
+          </p>
+        </div>
+        <div class="power-rankings-feature-score">
+          <span class="power-rankings-score-label">Top Score</span>
+          <strong>94.7</strong>
+          <span>DSnyder5, BBU2</span>
+        </div>
+      </section>
+
+      <section class="power-rankings-card" data-bbu-panel="power" hidden>
+        <div class="constitution-section-header">
+          <div>
+            <p class="power-rankings-kicker">Best Ball Union</p>
+            <h2>Preseason Power Rankings</h2>
+          </div>
+          <a href="#top" class="constitution-jump-link">Back to top</a>
+        </div>
+        <div class="power-rankings-list" id="bbuPowerRankingsList">
+          <div class="empty-state">Loading power rankings...</div>
+        </div>
+      </section>
+
+      <section class="power-rankings-card" data-bbu-panel="power" hidden>
+        <div class="section-heading">
+          <h2>Best Ball Methodology</h2>
+          <p>The point is not to predict standings perfectly. Each score is a weighted grade out of 100 based on the four categories below.</p>
+        </div>
+        <div class="power-rankings-method-grid">
+          <div class="power-rankings-method">
+            <strong>45%</strong>
+            <span>Best expected weekly lineup across 1 QB, 2 RB, 3 WR, 1 TE, and 2 FLEX</span>
+          </div>
+          <div class="power-rankings-method">
+            <strong>30%</strong>
+            <span>Bench depth, bye-week cover, and injury cover across all 18 spots</span>
+          </div>
+          <div class="power-rankings-method">
+            <strong>15%</strong>
+            <span>Players who can create big scoring weeks for the overall points race</span>
+          </div>
+          <div class="power-rankings-method">
+            <strong>10%</strong>
+            <span>Fit with BBU scoring, especially TE catches, RB catches, and WR volume</span>
+          </div>
+        </div>
+        <div class="constitution-fulltext power-rankings-notes">
+          <h3>Research Notes</h3>
+          <ul>
+            <li>Best Ball Union starts 9 players: 1 QB, 2 RB, 3 WR, 1 TE, and 2 FLEX.</li>
+            <li>Rosters are 18-player draft-and-hold builds with no waivers, trades, pickups, or weekly lineup decisions after the draft.</li>
+            <li>Sleeper automatically uses each manager's best eligible lineup every week, so useful bench players can help without being manually started.</li>
+            <li>Progressive PPR reception scoring is RB 0.5, WR 0.25, and TE 0.75, so TE depth and pass-catching RBs matter.</li>
+            <li>Because BBU also tracks overall season points and weekly high scores across all Union leagues, total scoring matters as much as head-to-head record.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="constitution-section-card" data-bbu-panel="scoring">
         <div class="constitution-section-header">
           <h2>Current League Leaders</h2>
           <a href="#top" class="constitution-jump-link">Back to top</a>
@@ -77,7 +146,7 @@
         </div>
       </section>
 
-      <section class="constitution-section-card">
+      <section class="constitution-section-card" data-bbu-panel="scoring">
         <div class="constitution-section-header">
           <h2>Overall Points Leaderboard (Top 20)</h2>
           <a href="#top" class="constitution-jump-link">Back to top</a>
@@ -102,7 +171,7 @@
         </div>
       </section>
 
-      <section class="constitution-section-card">
+      <section class="constitution-section-card" data-bbu-panel="scoring">
         <div class="constitution-section-header">
           <h2>Weekly High Scores</h2>
           <a href="#top" class="constitution-jump-link">Back to top</a>
@@ -128,6 +197,6 @@
     </div>
   </main>
 
-  <script src="assets/js/bestball-center.js"></script>
+  <script src="assets/js/bestball-center.js?v=20260512d"></script>
 </body>
 </html>

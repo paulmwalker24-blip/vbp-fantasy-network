@@ -962,6 +962,11 @@ a { color: inherit; }
   font-size: 0.92rem;
   font-weight: 700;
 }
+.power-ranking-breakdown {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
 .power-rankings-method-grid {
   display: grid;
   gap: 14px;
