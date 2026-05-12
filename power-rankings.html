@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Power Rankings Hub | VBP Fantasy Network</title>
+  <meta name="description" content="Choose a VBP Fantasy Network league type and open the matching power rankings or league center." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Power Rankings Hub | VBP Fantasy Network" />
+  <meta property="og:description" content="Choose a VBP Fantasy Network league type and open the matching power rankings or league center." />
+  <meta property="og:url" content="https://vbp-fantasy-network.vercel.app/power-rankings.html" />
+  <meta property="og:image" content="https://vbp-fantasy-network.vercel.app/assets/images/banner.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Power Rankings Hub | VBP Fantasy Network" />
+  <meta name="twitter:description" content="Choose a VBP Fantasy Network league type and open the matching power rankings or league center." />
+  <meta name="twitter:image" content="https://vbp-fantasy-network.vercel.app/assets/images/banner.png" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260512f" />
+</head>
+<body class="constitution-page power-rankings-page">
+  <div class="constitution-nav" id="top">
+    <div class="container format-center-nav-links">
+      <a href="index.html#constitutions" class="constitution-back-link">Back to Hub</a>
+      <a href="bracket-center.html" class="constitution-back-link">Bracket Center</a>
+      <a href="bestball-center.html" class="constitution-back-link">Best Ball Center</a>
+    </div>
+  </div>
+
+  <header class="power-rankings-hero power-rankings-hero-compact">
+    <div class="container power-rankings-hero-inner">
+      <p class="power-rankings-kicker">League Centers</p>
+      <h1>Power Rankings</h1>
+      <p>Select a league type, then choose the league or rankings board you want to view.</p>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container power-rankings-layout">
+      <section class="power-rankings-card power-rankings-selector-card">
+        <div class="section-heading">
+          <h2>Choose League Type</h2>
+          <p>Power rankings are organized by format because each format rewards different things.</p>
+        </div>
+
+        <div class="format-center-tabs format-center-mode-tabs power-rankings-type-tabs" aria-label="Power rankings league type">
+          <button type="button" class="format-center-tab is-active" data-ranking-type="bestball">Best Ball Union</button>
+          <button type="button" class="format-center-tab" data-ranking-type="bracket">Redraft Bracket</button>
+          <button type="button" class="format-center-tab" data-ranking-type="redraft">Redraft</button>
+          <button type="button" class="format-center-tab" data-ranking-type="dynasty">Dynasty</button>
+          <button type="button" class="format-center-tab" data-ranking-type="dynastybracket">Dynasty Bracket</button>
+          <button type="button" class="format-center-tab" data-ranking-type="keeper">Keeper</button>
+          <button type="button" class="format-center-tab" data-ranking-type="chopped">Chopped</button>
+        </div>
+
+        <div class="power-rankings-picker" data-ranking-panel="bestball">
+          <label for="bestballRankingSelect">Best Ball Union board</label>
+          <select id="bestballRankingSelect" data-ranking-select>
+            <option value="bestball-center.html#powerRankings" data-note="Combined BBU1 + BBU2 rankings are live with weighted scores and roster notes.">Combined BBU1 + BBU2 Preseason Rankings</option>
+            <option value="bestball-center.html" data-note="The full Best Ball Union Center shows league leaders, overall points, and weekly high scores.">Best Ball Union Center</option>
+            <option value="" data-note="BBU1 has drafted, but its standalone league-room ranking is not split out yet. Use the combined BBU board for now.">BBU1 - Best Ball Union #1</option>
+            <option value="" data-note="BBU2 has drafted, but its standalone league-room ranking is not split out yet. Use the combined BBU board for now.">BBU2 - Best Ball Union #2</option>
+            <option value="" data-note="BBU3 is visible here now. Its ranking board will unlock after the league fills and drafts.">BBU3 - Best Ball Union #3</option>
+            <option value="" data-note="BBU4 is visible here now. Its ranking board will unlock after the league fills and drafts.">BBU4 - Best Ball Union #4</option>
+            <option value="" data-note="BBU5 is visible here now. Its ranking board will unlock after the league fills and drafts.">BBU5 - Best Ball Union #5</option>
+          </select>
+          <p data-ranking-note>Combined BBU1 + BBU2 rankings are live with weighted scores and roster notes.</p>
+          <a href="bestball-center.html#powerRankings" class="btn btn-primary" data-ranking-open>Open Selected Board</a>
+          <button type="button" class="btn btn-secondary" data-ranking-pending hidden disabled>Board Coming Soon</button>
+        </div>
+
+        <div class="power-rankings-picker" data-ranking-panel="bracket" hidden>
+          <label for="bracketRankingSelect">Redraft Bracket board</label>
+          <select id="bracketRankingSelect" data-ranking-select>
+            <option value="bracket-center.html?view=redraft" data-note="Redraft Bracket will use one combined Top 20 board across Titan, Apex, Iron, Vanguard, and Dominion once those drafts are complete.">Combined Redraft Bracket Top 20</option>
+            <option value="" data-note="Titan is listed here, but Redraft Bracket rankings will stay combined instead of splitting into separate division boards.">RDB1 - Titan</option>
+            <option value="" data-note="Apex is listed here, but Redraft Bracket rankings will stay combined instead of splitting into separate division boards.">RDB2 - Apex</option>
+            <option value="" data-note="Iron is listed here, but Redraft Bracket rankings will stay combined instead of splitting into separate division boards.">RDB3 - Iron</option>
+            <option value="" data-note="Vanguard is listed here, but Redraft Bracket rankings will stay combined instead of splitting into separate division boards.">RDB4 - Vanguard</option>
+            <option value="" data-note="Dominion is listed here, but Redraft Bracket rankings will stay combined instead of splitting into separate division boards.">RDB5 - Dominion</option>
+          </select>
+          <p data-ranking-note>Redraft Bracket will use one combined Top 20 board across Titan, Apex, Iron, Vanguard, and Dominion once those drafts are complete.</p>
+          <a href="bracket-center.html?view=redraft" class="btn btn-primary" data-ranking-open>Open Selected Board</a>
+          <button type="button" class="btn btn-secondary" data-ranking-pending hidden disabled>Board Coming After Draft</button>
+        </div>
+
+        <div class="power-rankings-picker" data-ranking-panel="redraft" hidden>
+          <label for="redraftRankingSelect">Redraft league</label>
+          <select id="redraftRankingSelect" data-ranking-select>
+            <option value="" data-note="RD1 is listed here now. Its power ranking board can be added after draft data is ready.">RD1 - VBP Redraft 1</option>
+            <option value="" data-note="RD2 is listed here now. Its power ranking board can be added after draft data is ready.">RD2 - VBP Redraft 2</option>
+            <option value="" data-note="RD3 is listed here now. Its power ranking board can be added after draft data is ready.">RD3 - VBP Redraft 3</option>
+            <option value="" data-note="RD4 is listed here now. Its power ranking board will unlock after the league fills and drafts.">RD4 - VBP Redraft 4</option>
+          </select>
+          <p data-ranking-note>RD1 is listed here now. Its power ranking board can be added after draft data is ready.</p>
+          <a href="" class="btn btn-primary" data-ranking-open hidden>Open Selected Board</a>
+          <button type="button" class="btn btn-secondary" data-ranking-pending disabled>Board Coming After Draft</button>
+        </div>
+
+        <div class="power-rankings-picker" data-ranking-panel="dynasty" hidden>
+          <label for="dynastyRankingSelect">Dynasty league</label>
+          <select id="dynastyRankingSelect" data-ranking-select>
+            <option value="" data-note="DYN1 is listed here, but its power ranking stays pending until the rookie draft is complete.">DYN1 - VBP Dynasty 1</option>
+            <option value="dynasty-power-rankings.html" data-note="DYN2 is the completed dynasty league with a live power ranking board.">DYN2 - VBP Dynasty 2</option>
+            <option value="" data-note="DYN3 is currently drafting. Its board will unlock after the draft is complete.">DYN3 - VBP Dynasty 3</option>
+            <option value="" data-note="DYN4 is currently drafting. Its board will unlock after the draft is complete.">DYN4 - VBP Dynasty 4</option>
+            <option value="" data-note="DYN5 is currently drafting. Its board will unlock after the draft is complete.">DYN5 - VBP Dynasty 5</option>
+            <option value="" data-note="DYN6 is pre-draft. Its board will unlock after the draft is complete.">DYN6 - VBP Dynasty 6</option>
+          </select>
+          <p data-ranking-note>DYN1 is listed here, but its power ranking stays pending until the rookie draft is complete.</p>
+          <a href="" class="btn btn-primary" data-ranking-open hidden>Open Selected Board</a>
+          <button type="button" class="btn btn-secondary" data-ranking-pending disabled>Board Coming After Rookie Draft</button>
+        </div>
+
+        <div class="power-rankings-picker" data-ranking-panel="dynastybracket" hidden>
+          <label for="dynastyBracketRankingSelect">Dynasty bracket board</label>
+          <select id="dynastyBracketRankingSelect" data-ranking-select>
+            <option value="bracket-center.html?view=dynasty" data-note="Dynasty Bracket will use one combined Top 20 board across Foundry, Forge, Legacy, and Empire once those drafts are complete.">Combined Dynasty Bracket Top 20</option>
+            <option value="" data-note="Foundry is listed here, but Dynasty Bracket rankings will stay combined instead of splitting into separate division boards.">DYB1 - Foundry</option>
+            <option value="" data-note="Forge is listed here, but Dynasty Bracket rankings will stay combined instead of splitting into separate division boards.">DYB2 - Forge</option>
+            <option value="" data-note="Legacy is listed here, but Dynasty Bracket rankings will stay combined instead of splitting into separate division boards.">DYB3 - Legacy</option>
+            <option value="" data-note="Empire is listed here, but Dynasty Bracket rankings will stay combined instead of splitting into separate division boards.">DYB4 - Empire</option>
+          </select>
+          <p data-ranking-note>Dynasty Bracket will use one combined Top 20 board across Foundry, Forge, Legacy, and Empire once those drafts are complete.</p>
+          <a href="bracket-center.html?view=dynasty" class="btn btn-primary" data-ranking-open>Open Selected Board</a>
+          <button type="button" class="btn btn-secondary" data-ranking-pending hidden disabled>Board Coming After Draft</button>
+        </div>
+
+        <div class="power-rankings-picker" data-ranking-panel="keeper" hidden>
+          <label for="keeperRankingSelect">Keeper league</label>
+          <select id="keeperRankingSelect" data-ranking-select>
+            <option value="" data-note="KP1 is listed here now. Its ranking board will unlock after the league fills and drafts.">KP1 - VBP Keeper 1</option>
+            <option value="" data-note="KP2 is listed here now. Its ranking board will unlock after the league fills and drafts.">KP2 - VBP Keeper 2</option>
+          </select>
+          <p data-ranking-note>KP1 is listed here now. Its ranking board will unlock after the league fills and drafts.</p>
+          <a href="" class="btn btn-primary" data-ranking-open hidden>Open Selected Board</a>
+          <button type="button" class="btn btn-secondary" data-ranking-pending disabled>Board Coming After Draft</button>
+        </div>
+
+        <div class="power-rankings-picker" data-ranking-panel="chopped" hidden>
+          <label for="choppedRankingSelect">Chopped league</label>
+          <select id="choppedRankingSelect" data-ranking-select>
+            <option value="" data-note="CH1 is listed here now. Its survival ranking board should unlock after Week 1 scoring starts.">CH1 - VBP Chopped League #1</option>
+          </select>
+          <p data-ranking-note>CH1 is listed here now. Its survival ranking board should unlock after Week 1 scoring starts.</p>
+          <a href="" class="btn btn-primary" data-ranking-open hidden>Open Selected Board</a>
+          <button type="button" class="btn btn-secondary" data-ranking-pending disabled>Board Coming After Week 1</button>
+        </div>
+      </section>
+
+      <section class="power-rankings-card">
+        <div class="section-heading">
+          <h2>How Scores Will Work</h2>
+          <p>Every rankings board should show the score and the reason for it.</p>
+        </div>
+        <div class="power-rankings-method-grid">
+          <div class="power-rankings-method">
+            <strong>Roster</strong>
+            <span>How strong the starters and useful bench pieces are for that format.</span>
+          </div>
+          <div class="power-rankings-method">
+            <strong>Results</strong>
+            <span>Points, record, Max PF, or survival status once the season starts.</span>
+          </div>
+          <div class="power-rankings-method">
+            <strong>Path</strong>
+            <span>Playoff seed, cut line, division race, or weekly elimination pressure.</span>
+          </div>
+          <div class="power-rankings-method">
+            <strong>Format</strong>
+            <span>Best ball depth, bracket path, dynasty age, keeper cost, or chopped floor.</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const rankingButtons = Array.from(document.querySelectorAll("[data-ranking-type]"));
+    const rankingPanels = Array.from(document.querySelectorAll("[data-ranking-panel]"));
+
+    function setRankingType(type) {
+      rankingButtons.forEach(button => {
+        button.classList.toggle("is-active", button.dataset.rankingType === type);
+      });
+
+      rankingPanels.forEach(panel => {
+        panel.hidden = panel.dataset.rankingPanel !== type;
+      });
+    }
+
+    rankingButtons.forEach(button => {
+      button.addEventListener("click", () => setRankingType(button.dataset.rankingType));
+    });
+
+    rankingPanels.forEach(panel => {
+      const select = panel.querySelector("[data-ranking-select]");
+      const openLink = panel.querySelector("[data-ranking-open]");
+      const pendingButton = panel.querySelector("[data-ranking-pending]");
+      const note = panel.querySelector("[data-ranking-note]");
+
+      if (!select) {
+        return;
+      }
+
+      function syncSelection() {
+        const selectedOption = select.options[select.selectedIndex];
+        const target = select.value;
+
+        if (note) {
+          note.textContent = selectedOption?.dataset.note || "";
+        }
+
+        if (openLink) {
+          openLink.hidden = !target;
+          openLink.href = target || "";
+        }
+
+        if (pendingButton) {
+          pendingButton.hidden = Boolean(target);
+        }
+      }
+
+      select.addEventListener("change", syncSelection);
+      syncSelection();
+    });
+  </script>
+</body>
+</html>

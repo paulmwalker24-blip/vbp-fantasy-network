@@ -301,6 +301,46 @@ Sync only the dynasty bracket group:
 powershell -ExecutionPolicy Bypass -File .\scripts\sync-bracket-ledger.ps1 -GroupsPath .\data\dynasty-bracket-groups.json -LedgerPath .\data\dynasty-bracket-ledger.json -GroupIds DYNASTY-BRACKET-2026-1
 ```
 
+## `sync-power-rankings.ps1`
+
+Builds or refreshes `data/power-rankings.json` by pulling detailed power-ranking inputs from Sleeper.
+
+The generated dataset combines:
+
+- league settings and roster positions
+- users and rosters
+- draft status and draft-pick data
+- Sleeper NFL player metadata
+- injury/status flags exposed by Sleeper
+- optimized starters and bench snapshots
+- commissioner-owned overrides from `data/power-ranking-overrides.json`
+
+Use `data/power-ranking-overrides.json` for facts Sleeper cannot reliably know, such as a league whose rookie draft is not finished, a schedule-context adjustment, or a manually reviewed player injury/value note.
+
+Default usage:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\sync-power-rankings.ps1
+```
+
+Sync only DYN2:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\sync-power-rankings.ps1 -LeagueRecordIds DYN2
+```
+
+Include pending or held leagues in the output for commissioner review:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\sync-power-rankings.ps1 -IncludePending
+```
+
+Structured output:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\sync-power-rankings.ps1 -LeagueRecordIds DYN2 -PassThru | ConvertTo-Json -Depth 10
+```
+
 ## `export-bracket-report.ps1`
 
 Builds a commissioner-friendly text standings report from `data/bracket-ledger.json`.

@@ -826,6 +826,9 @@ a { color: inherit; }
     linear-gradient(120deg, rgba(15, 23, 42, 0.94), rgba(37, 99, 235, 0.76)),
     url("../images/banner.png") center / cover no-repeat;
 }
+.power-rankings-hero-compact {
+  padding: 42px 0 36px;
+}
 .power-rankings-hero-inner {
   max-width: 880px;
 }
@@ -864,6 +867,50 @@ a { color: inherit; }
   border-radius: var(--radius-sm);
   background: var(--surface);
   box-shadow: var(--shadow-soft);
+}
+.power-rankings-selector-card {
+  display: grid;
+  gap: 18px;
+}
+.power-rankings-type-tabs {
+  margin-top: 0;
+}
+.power-rankings-picker {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-alt);
+}
+.power-rankings-picker[hidden] {
+  display: none;
+}
+.power-rankings-picker label {
+  color: var(--muted-light);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.power-rankings-picker select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--text);
+  font: inherit;
+  font-weight: 700;
+}
+.power-rankings-picker p {
+  max-width: 760px;
+  margin: 0;
+  color: var(--muted);
+}
+.power-rankings-picker .btn {
+  justify-self: start;
 }
 .power-rankings-feature {
   display: grid;
@@ -907,6 +954,35 @@ a { color: inherit; }
   display: grid;
   gap: 14px;
   margin-top: 18px;
+}
+.power-rankings-hub-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-top: 18px;
+}
+.power-rankings-hub-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 220px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #fff;
+}
+.power-rankings-hub-card.is-live {
+  border-color: #bfdbfe;
+  background: linear-gradient(180deg, #ffffff 0%, #eff6ff 100%);
+}
+.power-rankings-hub-card h3 {
+  margin: 8px 0 8px;
+  font-size: 1.08rem;
+}
+.power-rankings-hub-card p {
+  margin: 0;
+  color: var(--muted);
 }
 .power-ranking-row {
   display: grid;
@@ -966,6 +1042,78 @@ a { color: inherit; }
   margin-top: 8px;
   color: var(--muted);
   font-size: 0.88rem;
+}
+.power-ranking-component-grid {
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+  margin: 0.85rem 0;
+}
+.power-ranking-component {
+  padding: 0.55rem 0.65rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: var(--radius-sm);
+  background: rgba(15, 23, 42, 0.04);
+}
+.power-ranking-component strong {
+  display: block;
+  color: var(--text);
+}
+.power-ranking-component span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-transform: capitalize;
+}
+.power-ranking-pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+}
+.power-ranking-pill {
+  padding: 0.3rem 0.58rem;
+  border: 1px solid rgba(18, 129, 87, 0.16);
+  border-radius: var(--radius-pill);
+  background: rgba(18, 129, 87, 0.1);
+  color: #128157;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+.power-ranking-pill.has-status {
+  border-color: rgba(184, 92, 56, 0.22);
+  background: rgba(184, 92, 56, 0.12);
+  color: #8a3d22;
+}
+.power-ranking-details {
+  margin-top: 1rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+.power-ranking-details summary {
+  color: var(--blue);
+  cursor: pointer;
+  font-weight: 800;
+}
+.power-ranking-snapshot {
+  margin-top: 0.85rem;
+}
+.power-ranking-snapshot strong {
+  display: block;
+  margin-bottom: 0.45rem;
+}
+.power-ranking-mini-grid {
+  display: grid;
+  gap: 0.35rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.power-ranking-mini-grid span {
+  padding: 0.42rem 0.55rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--muted);
+  font-size: 0.82rem;
 }
 .power-rankings-method-grid {
   display: grid;

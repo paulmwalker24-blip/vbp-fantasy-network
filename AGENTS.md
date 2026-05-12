@@ -73,6 +73,14 @@ The site is effectively data-driven through local league JSON, local donation JS
   - Local bracket tracker that merges Sleeper manager and standings pulls across grouped bracket leagues.
   - Intended to be the working dataset for combined playoff seeding, wild cards, bracket outputs, and flat 1-60 style overall standings review.
 
+- `data/power-ranking-overrides.json`
+  - Commissioner-owned input file for generated power rankings.
+  - Stores league publish holds, manual team context, schedule adjustments, and player injury/value notes that Sleeper does not reliably know.
+
+- `data/power-rankings.json`
+  - Generated public power-ranking dataset.
+  - Built by `scripts/sync-power-rankings.ps1` from Sleeper league, roster, user, draft, draft-pick, and player metadata plus commissioner overrides.
+
 - `assets/css/styles.css`
   - Shared styles for the homepage and constitution pages.
   - Contains layout styles, card styles, button styles, and constitution page section styles.
@@ -87,6 +95,7 @@ The site is effectively data-driven through local league JSON, local donation JS
     - `sync-bracket-ledger.ps1`
     - `export-bracket-report.ps1`
     - `sync-keeper-ledger.ps1`
+    - `sync-power-rankings.ps1`
     - `bump-cache-bust.ps1`
     - `check-constitutions.ps1`
     - `league-data-diff-report.ps1`
@@ -145,6 +154,8 @@ The site is effectively data-driven through local league JSON, local donation JS
 - `bracket-constitution.html`
 - `bracket-center.html`
 - `bestball-center.html`
+- `power-rankings.html`
+- `dynasty-power-rankings.html`
 - `keeper-constitution.html`
 - `chopped-constitution.html`
   - Standalone static pages using the shared stylesheet.
@@ -164,6 +175,23 @@ The site is effectively data-driven through local league JSON, local donation JS
   - Pulls Best Ball Union league data and renders league leaders, an overall points leaderboard, and weekly overall high-score tracking across all BBU leagues.
   - Uses a clearly labeled Week 5 sample preview until live BBU scoring is meaningful enough to support the public view.
   - The overall points leaderboard is intentionally capped at the top 20 teams, and weekly high scores refer to the single highest scorer across all BBU leagues for each week.
+
+- `assets/js/power-rankings.js`
+  - Client-side renderer for generated individual-league power ranking pages.
+  - Reads `data/power-rankings.json` and renders score components, top players, optimized starters, bench snapshots, injury/status pills, and methodology.
+
+- `power-rankings.html`
+  - Public selector hub for network power rankings.
+  - Keep all league records visible in the selector, even when a league is pre-draft or currently drafting.
+  - Redraft Bracket and Dynasty Bracket rankings should be combined Top 20 boards only, not separate division boards.
+  - Best Ball Union rankings should be combined Top 20 boards unless the commissioner asks for a different split.
+
+- `dynasty-power-rankings.html`
+  - Standalone public page for completed-draft dynasty league power rankings.
+  - Reads generated ranking data through `assets/js/power-rankings.js`; do not hard-code the rankings unless the user explicitly asks for a one-off override.
+  - Current live board is DYN2 only. DYN1 should remain pending until its rookie draft is complete.
+  - DYN3, DYN4, and DYN5 were drafting during the May 12, 2026 Sleeper parse, and DYN6 was pre-draft.
+  - Dynasty scores should show a score out of 100 with plain-language reasons tied to roster strength, quarterback stability, depth, and dynasty outlook.
 
 - `assets/reference/app_updated_donation_gid0.js`
   - Appears to be an alternate or newer donation parsing variant.
@@ -242,6 +270,8 @@ Current league notes:
 - Use `data/bracket-groups.json`, `data/bracket-ledger.json`, `scripts/sync-bracket-ledger.ps1`, and `scripts/export-bracket-report.ps1` to manage combined bracket seeding and commissioner-facing standings reports across multiple `RDB` leagues.
 - Public format-center pages should live as standalone pages on the same site rather than becoming homepage focal sections.
 - Public format-center pages may use a clearly labeled sample preview until the live data is full enough to support a strong public-facing view.
+- Power ranking pages should only publish rankings for leagues with completed draft data or meaningful live season data. Drafting and pre-draft leagues should stay listed as pending.
+- Generated power rankings should prefer `scripts/sync-power-rankings.ps1`, `data/power-rankings.json`, and `data/power-ranking-overrides.json` over hand-authored rankings. Use overrides for league readiness, schedule context, injury notes, and manual commissioner adjustments.
 - For League Centers, live current-week scoreboards may fetch directly from Sleeper in the browser, but official standings, cut lines, and custom playoff logic should remain manually generated and published by the commissioner.
 - The Bracket Center trade tracker may fetch accepted trades directly from Sleeper in the browser across configured grouped divisions.
 - If no accepted trades exist yet, the Bracket Center trade tracker should show clearly labeled sample trades rather than an empty table, and sample rows must be marked as sample.
@@ -250,6 +280,8 @@ Current league notes:
 - The Best Ball Union Center sample preview should remain clearly labeled and may stay in place until live BBU results are meaningful enough to replace it cleanly.
 - For the Best Ball Union Center, weekly high scores refer to the single highest-scoring team across all BBU leagues for that week, not per-division weekly winners.
 - For the Best Ball Union Center, the public overall points leaderboard is intentionally limited to the top 20 teams.
+- `power-rankings.html` is the public hub for rankings across the network. Keep format-specific rankings in the format center when a center exists, such as BBU rankings in `bestball-center.html` and bracket path rankings in `bracket-center.html`.
+- Individual league power rankings should use compact league-room boards after each league drafts, with simple reasons, visible scores, and format-specific methodology instead of one generic model for every format.
 - `CH1` is a live full chopped league and should continue pointing to `chopped-constitution.html`.
 - `CH1` hub-page availability should follow the live Sleeper owner-assigned roster count exactly when the API is available, with local `filled` / `sleeperFilled` acting only as fallback data.
 - `RD4` is a live 2026 redraft league at `$100` buy-in and currently uses the direct Sleeper predraft URL as its public link.

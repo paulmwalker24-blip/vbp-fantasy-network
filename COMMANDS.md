@@ -194,6 +194,26 @@ Sync only the dynasty bracket group:
 Run the bracket ledger sync using data/dynasty-bracket-groups.json and data/dynasty-bracket-ledger.json for DYNASTY-BRACKET-2026-1 only, then summarize the current division winners and full playoff field.
 ```
 
+## Power Rankings
+
+Refresh every eligible generated power-ranking board from Sleeper:
+
+```text
+Run the power rankings sync and refresh data/power-rankings.json from Sleeper, using the commissioner overrides file for publish holds and manual context.
+```
+
+Refresh only DYN2:
+
+```text
+Run the power rankings sync for DYN2 only, then summarize the new top five with their scores and biggest component strengths.
+```
+
+Refresh pending leagues too for commissioner review:
+
+```text
+Run the power rankings sync with pending leagues included so I can review draft-status holds and any provisional boards before publishing.
+```
+
 Generate the weekly-style bracket standings report:
 
 ```text
