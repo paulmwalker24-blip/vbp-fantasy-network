@@ -14,12 +14,12 @@
   <meta name="twitter:title" content="Power Rankings Hub | VBP Fantasy Network" />
   <meta name="twitter:description" content="Choose a VBP Fantasy Network league type and open the matching power rankings or league center." />
   <meta name="twitter:image" content="https://vbp-fantasy-network.vercel.app/assets/images/banner.png" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260512f" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260512i" />
 </head>
 <body class="constitution-page power-rankings-page">
   <div class="constitution-nav" id="top">
     <div class="container format-center-nav-links">
-      <a href="index.html#constitutions" class="constitution-back-link">Back to Hub</a>
+      <a href="index.html#league-centers" class="constitution-back-link">Back to Hub</a>
       <a href="bracket-center.html" class="constitution-back-link">Bracket Center</a>
       <a href="bestball-center.html" class="constitution-back-link">Best Ball Center</a>
     </div>
@@ -29,7 +29,7 @@
     <div class="container power-rankings-hero-inner">
       <p class="power-rankings-kicker">League Centers</p>
       <h1>Power Rankings</h1>
-      <p>Select a league type, then choose the league or rankings board you want to view.</p>
+      <p>Select a league type, then choose the league or weekly rankings board you want to view.</p>
     </div>
   </header>
 
@@ -54,7 +54,7 @@
         <div class="power-rankings-picker" data-ranking-panel="bestball">
           <label for="bestballRankingSelect">Best Ball Union board</label>
           <select id="bestballRankingSelect" data-ranking-select>
-            <option value="bestball-center.html#powerRankings" data-note="Combined BBU1 + BBU2 rankings are live with weighted scores and roster notes.">Combined BBU1 + BBU2 Preseason Rankings</option>
+            <option value="bestball-center.html#powerRankings" data-note="Combined BBU1 + BBU2 rankings are live with weighted scores and roster notes. They can refresh as weekly BBU scoring data becomes meaningful.">Combined BBU1 + BBU2 Rankings</option>
             <option value="bestball-center.html" data-note="The full Best Ball Union Center shows league leaders, overall points, and weekly high scores.">Best Ball Union Center</option>
             <option value="" data-note="BBU1 has drafted, but its standalone league-room ranking is not split out yet. Use the combined BBU board for now.">BBU1 - Best Ball Union #1</option>
             <option value="" data-note="BBU2 has drafted, but its standalone league-room ranking is not split out yet. Use the combined BBU board for now.">BBU2 - Best Ball Union #2</option>
@@ -62,7 +62,7 @@
             <option value="" data-note="BBU4 is visible here now. Its ranking board will unlock after the league fills and drafts.">BBU4 - Best Ball Union #4</option>
             <option value="" data-note="BBU5 is visible here now. Its ranking board will unlock after the league fills and drafts.">BBU5 - Best Ball Union #5</option>
           </select>
-          <p data-ranking-note>Combined BBU1 + BBU2 rankings are live with weighted scores and roster notes.</p>
+          <p data-ranking-note>Combined BBU1 + BBU2 rankings are live with weighted scores and roster notes. They can refresh as weekly BBU scoring data becomes meaningful.</p>
           <a href="bestball-center.html#powerRankings" class="btn btn-primary" data-ranking-open>Open Selected Board</a>
           <button type="button" class="btn btn-secondary" data-ranking-pending hidden disabled>Board Coming Soon</button>
         </div>
@@ -149,7 +149,7 @@
       <section class="power-rankings-card">
         <div class="section-heading">
           <h2>How Scores Will Work</h2>
-          <p>Every rankings board should show the score and the reason for it.</p>
+          <p>Every rankings board should show the score, the reason for it, and when the snapshot was refreshed.</p>
         </div>
         <div class="power-rankings-method-grid">
           <div class="power-rankings-method">

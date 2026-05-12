@@ -537,6 +537,12 @@ if ($selectedLeagues.Count -eq 0) {
 
 Write-Host "Loading Sleeper NFL player metadata..."
 $playersById = Invoke-SleeperJson -Uri "https://api.sleeper.app/v1/players/nfl"
+$nflState = $null
+try {
+  $nflState = Invoke-SleeperJson -Uri "https://api.sleeper.app/v1/state/nfl"
+} catch {
+  Write-Warning ("Unable to load Sleeper NFL state for snapshot labels: {0}" -f $_.Exception.Message)
+}
 
 $generatedLeagues = @()
 $warnings = New-Object System.Collections.Generic.List[string]
@@ -606,6 +612,16 @@ foreach ($leagueRecord in $selectedLeagues) {
 
 $output = [pscustomobject]@{
   generatedAt = (Get-Date).ToString("o")
+  snapshot = [pscustomobject]@{
+    season = Get-TextValue (Get-ObjectProperty -Object $nflState -Name "season")
+    seasonType = Get-TextValue (Get-ObjectProperty -Object $nflState -Name "season_type")
+    week = [int](Get-NumberValue (Get-ObjectProperty -Object $nflState -Name "week") 0)
+    display = if ($nflState -and (Get-NumberValue (Get-ObjectProperty -Object $nflState -Name "week") 0) -gt 0) {
+      "{0} Week {1}" -f (Get-TextValue (Get-ObjectProperty -Object $nflState -Name "season")), ([int](Get-NumberValue (Get-ObjectProperty -Object $nflState -Name "week") 0))
+    } else {
+      "Current snapshot"
+    }
+  }
   source = "Sleeper league, roster, user, draft, draft-pick, and player metadata endpoints plus data/power-ranking-overrides.json."
   methodology = [pscustomobject]@{
     summary = "Power rankings combine optimized starters, bench strength, quarterback room, elite-player count, health/injury flags, dynasty value, draft capital, standings, and commissioner context adjustments."

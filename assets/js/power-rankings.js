@@ -127,7 +127,11 @@ function renderLeague(data) {
   const topTeam = document.querySelector("[data-top-team]");
   const subtitle = document.querySelector("[data-rankings-subtitle]");
 
-  if (generatedAt) generatedAt.textContent = formatDate(data.generatedAt) ? `Generated ${formatDate(data.generatedAt)}` : "";
+  if (generatedAt) {
+    const snapshotLabel = text(data.snapshot?.display);
+    const generatedLabel = formatDate(data.generatedAt);
+    generatedAt.textContent = [snapshotLabel, generatedLabel ? `refreshed ${generatedLabel}` : ""].filter(Boolean).join(" - ");
+  }
   if (topScore) topScore.textContent = number(leader.score).toFixed(1);
   if (topTeam) topTeam.textContent = text(leader.teamName);
   if (subtitle) subtitle.textContent = `${text(league.name)} uses Sleeper roster, draft, player, and injury/status data plus commissioner overrides.`;

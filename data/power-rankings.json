@@ -1,5 +1,11 @@
 ﻿{
-    "generatedAt":  "2026-05-12T15:16:11.9436348-05:00",
+    "generatedAt":  "2026-05-12T15:41:54.6588425-05:00",
+    "snapshot":  {
+                     "season":  "2026",
+                     "seasonType":  "off",
+                     "week":  0,
+                     "display":  "Current snapshot"
+                 },
     "source":  "Sleeper league, roster, user, draft, draft-pick, and player metadata endpoints plus data/power-ranking-overrides.json.",
     "methodology":  {
                         "summary":  "Power rankings combine optimized starters, bench strength, quarterback room, elite-player count, health/injury flags, dynasty value, draft capital, standings, and commissioner context adjustments.",

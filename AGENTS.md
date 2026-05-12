@@ -80,6 +80,7 @@ The site is effectively data-driven through local league JSON, local donation JS
 - `data/power-rankings.json`
   - Generated public power-ranking dataset.
   - Built by `scripts/sync-power-rankings.ps1` from Sleeper league, roster, user, draft, draft-pick, and player metadata plus commissioner overrides.
+  - Includes a snapshot label from Sleeper NFL state so published rankings can read as weekly refreshes rather than fixed preseason lists.
 
 - `assets/css/styles.css`
   - Shared styles for the homepage and constitution pages.
@@ -272,6 +273,7 @@ Current league notes:
 - Public format-center pages may use a clearly labeled sample preview until the live data is full enough to support a strong public-facing view.
 - Power ranking pages should only publish rankings for leagues with completed draft data or meaningful live season data. Drafting and pre-draft leagues should stay listed as pending.
 - Generated power rankings should prefer `scripts/sync-power-rankings.ps1`, `data/power-rankings.json`, and `data/power-ranking-overrides.json` over hand-authored rankings. Use overrides for league readiness, schedule context, injury notes, and manual commissioner adjustments.
+- On the homepage, League Centers should live as a compact block after Active Leagues. This keeps recruiting/open leagues first while making standings, scoreboards, and rankings more discoverable than burying them below constitutions.
 - For League Centers, live current-week scoreboards may fetch directly from Sleeper in the browser, but official standings, cut lines, and custom playoff logic should remain manually generated and published by the commissioner.
 - The Bracket Center trade tracker may fetch accepted trades directly from Sleeper in the browser across configured grouped divisions.
 - If no accepted trades exist yet, the Bracket Center trade tracker should show clearly labeled sample trades rather than an empty table, and sample rows must be marked as sample.
@@ -280,6 +282,7 @@ Current league notes:
 - The Best Ball Union Center sample preview should remain clearly labeled and may stay in place until live BBU results are meaningful enough to replace it cleanly.
 - For the Best Ball Union Center, weekly high scores refer to the single highest-scoring team across all BBU leagues for that week, not per-division weekly winners.
 - For the Best Ball Union Center, the public overall points leaderboard is intentionally limited to the top 20 teams.
+- `BBU1` and `BBU2` are both full and drafted. Public BBU recruiting should focus on the next open BBU room, currently BBU3 unless newer data says otherwise.
 - `power-rankings.html` is the public hub for rankings across the network. Keep format-specific rankings in the format center when a center exists, such as BBU rankings in `bestball-center.html` and bracket path rankings in `bracket-center.html`.
 - Individual league power rankings should use compact league-room boards after each league drafts, with simple reasons, visible scores, and format-specific methodology instead of one generic model for every format.
 - `CH1` is a live full chopped league and should continue pointing to `chopped-constitution.html`.

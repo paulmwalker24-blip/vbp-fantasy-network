@@ -12,7 +12,7 @@ const ELEMENT_IDS = {
 };
 
 const FORMAT_META = {
-  bestball: { label: "Best Ball", description: "Draft once and let optimal scoring handle the lineup." },
+  bestball: { label: "Best Ball Union", description: "Draft once and let optimal scoring handle the lineup." },
   bracket: { label: "Redraft Bracket", description: "Tournament-style redraft competition across divisions." },
   chopped: { label: "Chopped", description: "Elimination redraft where the goal is to survive the weekly cut." },
   dynasty: { label: "Dynasty", description: "Build and manage a roster long term." },
