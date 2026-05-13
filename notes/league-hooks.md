@@ -16,7 +16,7 @@ Short recruiting hooks capped at 200 characters or less.
 
 ## Best Ball Union
 
-- `BBU3`: $10 fast-draft best ball, 4/10 paid. Drafts within 24 hours after full and paid. Auto lineups, Progressive PPR, and Union high-score tracking.
+- `BBU3`: $10 fast-draft best ball, 7/10 paid. Drafts tonight at 8 PM CST. Auto lineups, Progressive PPR, and Union high-score tracking.
 
 ## Bracket Redraft
 

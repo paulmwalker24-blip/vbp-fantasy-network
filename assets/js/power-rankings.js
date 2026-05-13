@@ -1,5 +1,10 @@
 const POWER_RANKINGS_DATA_URL = "data/power-rankings.json";
-const ACTIVE_LEAGUE_RECORD_ID = "DYN2";
+const DEFAULT_LEAGUE_RECORD_ID = "DYN2";
+
+function getActiveLeagueRecordId() {
+  const params = new URLSearchParams(window.location.search);
+  return text(params.get("league") || DEFAULT_LEAGUE_RECORD_ID).toUpperCase();
+}
 
 function text(value) {
   return value === null || value === undefined ? "" : String(value).trim();
@@ -113,10 +118,11 @@ function renderMethodology(methodology) {
 }
 
 function renderLeague(data) {
-  const league = (data.leagues || []).find(item => text(item.leagueRecordId) === ACTIVE_LEAGUE_RECORD_ID);
+  const activeLeagueRecordId = getActiveLeagueRecordId();
+  const league = (data.leagues || []).find(item => text(item.leagueRecordId).toUpperCase() === activeLeagueRecordId);
   const list = document.querySelector("[data-rankings-list]");
   if (!league || !Array.isArray(league.rankings) || !league.rankings.length) {
-    if (list) list.textContent = "DYN2 rankings are not available yet. Run the local power rankings sync to refresh this page.";
+    if (list) list.textContent = `${activeLeagueRecordId} rankings are not available yet. Run the local power rankings sync to refresh this page.`;
     return;
   }
 
@@ -126,12 +132,20 @@ function renderLeague(data) {
   const topScore = document.querySelector("[data-top-score]");
   const topTeam = document.querySelector("[data-top-team]");
   const subtitle = document.querySelector("[data-rankings-subtitle]");
+  const kicker = document.querySelector("[data-rankings-kicker]");
+  const title = document.querySelector("[data-rankings-title]");
+  const featureKicker = document.querySelector("[data-rankings-feature-kicker]");
+  const listHeading = document.querySelector("[data-rankings-list-heading]");
 
   if (generatedAt) {
     const snapshotLabel = text(data.snapshot?.display);
     const generatedLabel = formatDate(data.generatedAt);
     generatedAt.textContent = [snapshotLabel, generatedLabel ? `refreshed ${generatedLabel}` : ""].filter(Boolean).join(" - ");
   }
+  if (kicker) kicker.textContent = text(league.leagueRecordId);
+  if (title) title.textContent = `${text(league.name)} Power Rankings`;
+  if (featureKicker) featureKicker.textContent = text(league.name);
+  if (listHeading) listHeading.textContent = `${text(league.leagueRecordId)} Rankings`;
   if (topScore) topScore.textContent = number(leader.score).toFixed(1);
   if (topTeam) topTeam.textContent = text(leader.teamName);
   if (subtitle) subtitle.textContent = `${text(league.name)} uses Sleeper roster, draft, player, and injury/status data plus commissioner overrides.`;

@@ -15,12 +15,7 @@
       "note": "Optional player-specific injury, role, or news context."
     }
   },
-  "leagueOverrides": {
-    "DYN1": {
-      "publishPowerRanking": false,
-      "reason": "Rookie draft is not complete yet."
-    }
-  },
+  "leagueOverrides": {},
   "teamAdjustments": [],
   "playerAdjustments": {}
 }

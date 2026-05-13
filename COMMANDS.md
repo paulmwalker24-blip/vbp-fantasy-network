@@ -202,6 +202,12 @@ Refresh every eligible generated power-ranking board from Sleeper:
 Run the power rankings sync and refresh data/power-rankings.json from Sleeper, using the commissioner overrides file for publish holds and manual context.
 ```
 
+Refresh ranking readiness for every Sleeper-backed league:
+
+```text
+Run the power rankings sync for all leagues so the generated data can automatically unlock completed startup, rookie, and regular-draft boards while keeping unfinished boards marked pending.
+```
+
 Refresh only DYN2:
 
 ```text

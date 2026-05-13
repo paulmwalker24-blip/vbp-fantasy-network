@@ -305,6 +305,14 @@ powershell -ExecutionPolicy Bypass -File .\scripts\sync-bracket-ledger.ps1 -Grou
 
 Builds or refreshes `data/power-rankings.json` by pulling detailed power-ranking inputs from Sleeper.
 
+The sync automatically reads each league's Sleeper draft records and determines whether the relevant board is ready:
+
+- startup drafts for new dynasty, dynasty-bracket, and keeper rooms
+- rookie drafts for existing dynasty rooms when Sleeper marks the draft as rookie-only
+- regular drafts for redraft, best ball, bracket redraft, and chopped rooms
+
+Published boards are generated only after Sleeper reports the relevant draft data as complete. Pending leagues remain in the JSON with a `draftReadiness` explanation so the public rankings hub can show why a board is still locked.
+
 The generated dataset combines:
 
 - league settings and roster positions
@@ -315,7 +323,7 @@ The generated dataset combines:
 - optimized starters and bench snapshots
 - commissioner-owned overrides from `data/power-ranking-overrides.json`
 
-Use `data/power-ranking-overrides.json` for facts Sleeper cannot reliably know, such as a league whose rookie draft is not finished, a schedule-context adjustment, or a manually reviewed player injury/value note.
+Use `data/power-ranking-overrides.json` for facts Sleeper cannot reliably know, such as a commissioner publish hold, a schedule-context adjustment, or a manually reviewed player injury/value note.
 
 Default usage:
 

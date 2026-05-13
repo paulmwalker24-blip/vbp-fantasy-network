@@ -510,6 +510,104 @@ function Get-LeagueOverride {
   return Get-ObjectProperty -Object $Overrides.leagueOverrides -Name $LeagueRecordId
 }
 
+function Get-DraftStage {
+  param($LeagueRecord, $Draft)
+
+  $format = (Get-TextValue $LeagueRecord.format).ToLowerInvariant()
+  $playerType = [int](Get-NumberValue (Get-ObjectProperty -Object $Draft.settings -Name "player_type") -1)
+  $draftType = (Get-TextValue $Draft.type).ToLowerInvariant()
+  $rounds = [int](Get-NumberValue (Get-ObjectProperty -Object $Draft.settings -Name "rounds") 0)
+  $name = (Get-TextValue (Get-ObjectProperty -Object $Draft.metadata -Name "name")).ToLowerInvariant()
+
+  if ($playerType -eq 1 -or $name -match "rookie") {
+    return "rookie"
+  }
+
+  if ($format -in @("dynasty", "dynastybracket", "keeper") -and ($rounds -ge 10 -or $draftType -eq "snake")) {
+    return "startup"
+  }
+
+  return "regular"
+}
+
+function Get-DraftStageLabel {
+  param([string]$Stage)
+
+  switch ((Get-TextValue $Stage).ToLowerInvariant()) {
+    "rookie" { return "Rookie draft complete" }
+    "startup" { return "Startup draft complete" }
+    "regular" { return "Regular draft complete" }
+    default { return "Draft complete" }
+  }
+}
+
+function Get-DraftReadiness {
+  param($LeagueRecord, [object[]]$Drafts, $LeagueOverride)
+
+  $draftSummaries = @($Drafts | ForEach-Object {
+    $stage = Get-DraftStage -LeagueRecord $LeagueRecord -Draft $_
+    [pscustomobject]@{
+      draftId = Get-TextValue $_.draft_id
+      status = (Get-TextValue $_.status).ToLowerInvariant()
+      stage = $stage
+      type = Get-TextValue $_.type
+      season = Get-TextValue $_.season
+      seasonType = Get-TextValue $_.season_type
+      playerType = [int](Get-NumberValue (Get-ObjectProperty -Object $_.settings -Name "player_type") -1)
+      rounds = [int](Get-NumberValue (Get-ObjectProperty -Object $_.settings -Name "rounds") 0)
+      name = Get-TextValue (Get-ObjectProperty -Object $_.metadata -Name "name")
+    }
+  })
+
+  $completedDrafts = @($draftSummaries | Where-Object { $_.status -eq "complete" })
+  $openDrafts = @($draftSummaries | Where-Object { $_.status -and $_.status -ne "complete" })
+  $latestCompletedDraft = @($completedDrafts | Sort-Object @{ Expression = { Get-NumberValue $_.season 0 }; Descending = $true }, @{ Expression = { $_.stage }; Descending = $false }) | Select-Object -First 1
+  $publishOverride = Get-ObjectProperty -Object $LeagueOverride -Name "publishPowerRanking"
+  $hasPublishOverride = $null -ne $publishOverride
+  $overrideReason = Get-TextValue (Get-ObjectProperty -Object $LeagueOverride -Name "reason")
+
+  $ready = $draftSummaries.Count -gt 0 -and $completedDrafts.Count -gt 0 -and $openDrafts.Count -eq 0
+  $reason = ""
+  if ($draftSummaries.Count -eq 0) {
+    $reason = "No Sleeper draft data is available yet."
+  } elseif ($openDrafts.Count -gt 0) {
+    $openLabels = @($openDrafts | ForEach-Object {
+      $label = switch ($_.stage) {
+        "rookie" { "rookie draft" }
+        "startup" { "startup draft" }
+        "regular" { "regular draft" }
+        default { "draft" }
+      }
+      "{0} is {1}" -f $label, $_.status
+    })
+    $reason = ($openLabels -join "; ")
+  } elseif ($completedDrafts.Count -eq 0) {
+    $reason = "Draft data is not complete."
+  }
+
+  if ($hasPublishOverride) {
+    $ready = [bool]$publishOverride
+    if ($overrideReason) {
+      $reason = $overrideReason
+    } elseif ($ready) {
+      $reason = "Commissioner override marked this board publishable."
+    } else {
+      $reason = "Commissioner override is holding this board."
+    }
+  }
+
+  $stage = if ($latestCompletedDraft) { $latestCompletedDraft.stage } elseif ($draftSummaries.Count -gt 0) { $draftSummaries[0].stage } else { "" }
+  $label = if ($ready) { Get-DraftStageLabel -Stage $stage } elseif ($stage) { "Waiting on {0} draft" -f $stage } else { "Waiting on draft data" }
+
+  return [pscustomobject]@{
+    ready = [bool]$ready
+    stage = $stage
+    label = $label
+    reason = $reason
+    drafts = $draftSummaries
+  }
+}
+
 $leagueData = Get-JsonFile -Path $LeaguesPath
 if ($null -eq $leagueData -or $null -eq $leagueData.leagues) {
   throw "Could not read league data from $LeaguesPath."
@@ -564,15 +662,25 @@ foreach ($leagueRecord in $selectedLeagues) {
     continue
   }
 
-  $draftStatuses = @($drafts | ForEach-Object { (Get-TextValue $_.status).ToLowerInvariant() } | Where-Object { $_ })
-  $allDraftsComplete = $draftStatuses.Count -gt 0 -and (@($draftStatuses | Where-Object { $_ -ne "complete" }).Count -eq 0)
-  $publishOverride = Get-ObjectProperty -Object $leagueOverride -Name "publishPowerRanking"
-  $hasPublishOverride = $null -ne $publishOverride
-  $publish = if ($hasPublishOverride) { [bool]$publishOverride } else { $allDraftsComplete }
-  $holdReason = Get-TextValue (Get-ObjectProperty -Object $leagueOverride -Name "reason")
+  $draftReadiness = Get-DraftReadiness -LeagueRecord $leagueRecord -Drafts $drafts -LeagueOverride $leagueOverride
+  $draftStatuses = @($draftReadiness.drafts | ForEach-Object { $_.status } | Where-Object { $_ })
+  $publish = [bool]$draftReadiness.ready
+  $holdReason = Get-TextValue $draftReadiness.reason
 
   if (-not $publish -and -not $IncludePending) {
     $warnings.Add(("SKIP {0}: {1}" -f $leagueRecordId, $(if ($holdReason) { $holdReason } else { "Draft data is not complete." }))) | Out-Null
+    $generatedLeagues += [pscustomobject]@{
+      leagueRecordId = $leagueRecordId
+      sleeperLeagueId = $sleeperLeagueId
+      name = Get-TextValue $leagueRecord.name
+      format = Get-TextValue $leagueRecord.format
+      publish = $false
+      holdReason = $holdReason
+      draftStatuses = $draftStatuses
+      draftReadiness = $draftReadiness
+      rosterPositions = @(Convert-ToArray $liveLeague.roster_positions)
+      rankings = @()
+    }
     continue
   }
 
@@ -605,6 +713,7 @@ foreach ($leagueRecord in $selectedLeagues) {
     publish = [bool]$publish
     holdReason = $holdReason
     draftStatuses = $draftStatuses
+    draftReadiness = $draftReadiness
     rosterPositions = @(Convert-ToArray $liveLeague.roster_positions)
     rankings = $rankings
   }

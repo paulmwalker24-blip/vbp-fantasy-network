@@ -98,16 +98,17 @@
         <div class="power-rankings-picker" data-ranking-panel="dynasty" hidden>
           <label for="dynastyRankingSelect">Dynasty league</label>
           <select id="dynastyRankingSelect" data-ranking-select>
-            <option value="" data-note="DYN1 is listed here, but its power ranking stays pending until the rookie draft is complete.">DYN1 - VBP Dynasty 1</option>
-            <option value="dynasty-power-rankings.html" data-note="DYN2 is the completed dynasty league with a live power ranking board.">DYN2 - VBP Dynasty 2</option>
-            <option value="" data-note="DYN3 is currently drafting. Its board will unlock after the draft is complete.">DYN3 - VBP Dynasty 3</option>
-            <option value="" data-note="DYN4 is currently drafting. Its board will unlock after the draft is complete.">DYN4 - VBP Dynasty 4</option>
-            <option value="" data-note="DYN5 is currently drafting. Its board will unlock after the draft is complete.">DYN5 - VBP Dynasty 5</option>
-            <option value="" data-note="DYN6 is pre-draft. Its board will unlock after the draft is complete.">DYN6 - VBP Dynasty 6</option>
+            <option value="dynasty-power-rankings.html?league=DYN1" data-league-record-id="DYN1" data-note="DYN1 has completed its draft data and has a live power ranking board.">DYN1 - VBP Dynasty 1</option>
+            <option value="dynasty-power-rankings.html?league=DYN2" data-league-record-id="DYN2" data-note="DYN2 has completed its draft data and has a live power ranking board.">DYN2 - VBP Dynasty 2</option>
+            <option value="" data-league-record-id="DYN3" data-note="DYN3 is listed here now. Its board will unlock automatically after Sleeper shows the draft as complete.">DYN3 - VBP Dynasty 3</option>
+            <option value="" data-league-record-id="DYN4" data-note="DYN4 is listed here now. Its board will unlock automatically after Sleeper shows the draft as complete.">DYN4 - VBP Dynasty 4</option>
+            <option value="" data-league-record-id="DYN5" data-note="DYN5 is listed here now. Its board will unlock automatically after Sleeper shows the draft as complete.">DYN5 - VBP Dynasty 5</option>
+            <option value="" data-league-record-id="DYN6" data-note="DYN6 is listed here now. Its board will unlock automatically after Sleeper shows the draft as complete.">DYN6 - VBP Dynasty 6</option>
+            <option value="" data-league-record-id="DYN7" data-note="DYN7 is listed here now. Its board will unlock automatically after Sleeper shows the draft as complete.">DYN7 - VBP Dynasty 7</option>
           </select>
-          <p data-ranking-note>DYN1 is listed here, but its power ranking stays pending until the rookie draft is complete.</p>
+          <p data-ranking-note>DYN1 has completed its rookie draft and has a live power ranking board.</p>
           <a href="" class="btn btn-primary" data-ranking-open hidden>Open Selected Board</a>
-          <button type="button" class="btn btn-secondary" data-ranking-pending disabled>Board Coming After Rookie Draft</button>
+          <button type="button" class="btn btn-secondary" data-ranking-pending hidden disabled>Board Coming After Draft</button>
         </div>
 
         <div class="power-rankings-picker" data-ranking-panel="dynastybracket" hidden>
@@ -176,6 +177,7 @@
   <script>
     const rankingButtons = Array.from(document.querySelectorAll("[data-ranking-type]"));
     const rankingPanels = Array.from(document.querySelectorAll("[data-ranking-panel]"));
+    const POWER_RANKINGS_DATA_URL = "data/power-rankings.json";
 
     function setRankingType(type) {
       rankingButtons.forEach(button => {
@@ -185,6 +187,50 @@
       rankingPanels.forEach(panel => {
         panel.hidden = panel.dataset.rankingPanel !== type;
       });
+    }
+
+    function getBoardUrl(league) {
+      const id = String(league?.leagueRecordId || "").trim();
+      const format = String(league?.format || "").trim().toLowerCase();
+      if (!id || !league?.publish) return "";
+      if (format === "dynasty") return `dynasty-power-rankings.html?league=${encodeURIComponent(id)}`;
+      return "";
+    }
+
+    function getRankingNote(league, fallback) {
+      if (!league) return fallback;
+      const id = String(league.leagueRecordId || "").trim();
+      const name = String(league.name || id).trim();
+      const readiness = league.draftReadiness || {};
+      if (league.publish) {
+        return `${id} is live: ${readiness.label || "draft data complete"}. Rankings refresh from Sleeper when the power-ranking sync runs.`;
+      }
+      return `${name} is pending: ${readiness.reason || league.holdReason || "Sleeper draft data is not complete yet."}`;
+    }
+
+    function applyGeneratedRankingAvailability(data) {
+      const leaguesById = new Map((data.leagues || []).map(league => [String(league.leagueRecordId || "").trim(), league]));
+      document.querySelectorAll("[data-league-record-id]").forEach(option => {
+        const league = leaguesById.get(option.dataset.leagueRecordId);
+        const boardUrl = getBoardUrl(league);
+        if (boardUrl) option.value = boardUrl;
+        option.dataset.note = getRankingNote(league, option.dataset.note || "");
+      });
+
+      rankingPanels.forEach(panel => {
+        const select = panel.querySelector("[data-ranking-select]");
+        if (select) select.dispatchEvent(new Event("change"));
+      });
+    }
+
+    async function loadGeneratedRankingAvailability() {
+      try {
+        const response = await fetch(POWER_RANKINGS_DATA_URL, { cache: "no-store" });
+        if (!response.ok) return;
+        applyGeneratedRankingAvailability(await response.json());
+      } catch (error) {
+        console.warn("Unable to load ranking availability:", error);
+      }
     }
 
     rankingButtons.forEach(button => {
@@ -222,6 +268,8 @@
       select.addEventListener("change", syncSelection);
       syncSelection();
     });
+
+    loadGeneratedRankingAvailability();
   </script>
 </body>
 </html>

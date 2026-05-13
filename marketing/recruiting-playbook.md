@@ -21,6 +21,11 @@ Use `marketing/recruiting-archive.md` for:
 - old room-specific pushes
 - historical wording that should not be posted without refreshing first
 
+Use `power-rankings/copy-ready.txt` for:
+- power-ranking posts
+- ranking methodology blurbs
+- engagement copy after leagues draft
+
 ## Quick Guide
 
 ### If You Want Redraft Copy
@@ -316,13 +321,13 @@ When to use:
 Title:
 
 ```text
-VBP Fantasy Network | Join The Bracket Hub | Returning Redraft + Dynasty Bracket
+VBP Fantasy Network | Bracket Hub | Separate Redraft and Dynasty Options
 ```
 
 Body:
 
 ```text
-VBP Fantasy Network has one Sleeper hub for anyone interested in the bracket side of the network.
+VBP Fantasy Network has one Sleeper hub for anyone interested in either bracket format: Bracket Redraft or Dynasty Bracket.
 
 Current bracket formats include:
 
@@ -534,15 +539,15 @@ When to use:
 Title:
 
 ```text
-VBP Fantasy Network | BBU3 $10 Best Ball | 4/10 Paid
+VBP Fantasy Network | BBU3 $10 Best Ball | 7/10 Paid
 ```
 
 Body:
 
 ```text
-VBP Fantasy Network has BBU3 open for anyone who wants a simple $10 best ball draft. The room is 4/10 paid right now, so there are 6 spots left.
+VBP Fantasy Network has BBU3 open for anyone who wants a simple $10 best ball draft. The room is 7/10 paid right now, so there are 3 spots left.
 
-Draft will be scheduled within 24 hours after the league is full and paid.
+Draft is tonight at 8 PM CST.
 
 This is a 10-team draft-and-hold best ball league on Sleeper. It uses a 90-second snake draft, 18-player rosters, Progressive PPR scoring, and a weekly median matchup.
 
@@ -550,64 +555,12 @@ After the draft, there are no waivers, trades, pickups, or weekly lineup decisio
 
 Each BBU league has a $100 league prize pool, with the league champion prize plus Best Ball Union overall high-score tracking across the format.
 
-Best Ball Union #3 ($10, Fast, 4/10 paid): http://sleeper.com/i/V9x7zRZzzqlXO
+Best Ball Union #3 ($10, Fast, 7/10 paid): http://sleeper.com/i/V9x7zRZzzqlXO
 Best Ball constitution: https://vbp-fantasy-network.vercel.app/bestball-constitution.html
 Best Ball Union Center: https://vbp-fantasy-network.vercel.app/bestball-center.html
 Main hub: https://vbp-fantasy-network.vercel.app/
 
 DM me or reply if interested.
-```
-
-### BBU POWER RANKINGS
-
-When to use:
-- preseason combined BBU1 and BBU2 draft-build post
-- quick engagement post after multiple BBU rooms finish drafting
-
-Title:
-
-```text
-VBP Fantasy Network | Preseason Best Ball Union Combined Power Rankings
-```
-
-Body:
-
-```text
-BBU1 and BBU2 are both drafted, so here is the first combined Best Ball Union power ranking.
-
-These are preseason rankings, not standings. They are based on the BBU rules: 10 teams, 18 drafted players, no pickups after the draft, automatic best-ball scoring, Progressive PPR, and a full-season points race across both leagues.
-
-Method:
-45% best expected weekly lineup across 1 QB, 2 RB, 3 WR, 1 TE, and 2 FLEX
-30% bench depth, bye-week cover, and injury cover across all 18 spots
-15% players who can create big scoring weeks for the overall points race
-10% fit with BBU scoring, especially TE catches, RB catches, and WR volume
-
-1. DSnyder5, BBU2 - 94.7
-2. ThrowwUpTheX, BBU1 - 93.5
-3. Adamgrifki, BBU1 - 91.3
-4. bryanb460, BBU2 - 89.5
-5. gunnar21, BBU1 - 88.9
-6. Cameron74, BBU2 - 86.7
-7. mguzz, BBU1 - 86.6
-8. swampraider, BBU2 - 85.2
-9. PasqTheGoat, BBU2 - 84.3
-10. jakeejk, BBU2 - 83.8
-11. jakeejk, BBU1 - 82.5
-12. OutlawReturns, BBU2 - 82.0
-13. RevDennis, BBU2 - 81.3
-14. jessegambo, BBU1 - 80.7
-15. VanillaWafer, BBU1 - 79.8
-16. Flagg Planters, BBU2 - 79.2
-17. kj0116, BBU1 - 78.3
-18. SnoopDerek, BBU2 - 77.0
-19. HopscotchDaisy, BBU1 - 76.5
-20. 2GunzTanner, BBU1 - 75.5
-
-Top tier feels tight. DSnyder5 gets the early nod because the team has two elite RBs, enough WR depth, and Jalen Hurts at QB. ThrowwUpTheX is right there with Ja'Marr Chase, Saquon Barkley, Kyren Williams, Jaylen Waddle, Mike Evans, Jalen Hurts, and Justin Herbert.
-
-Best Ball Union Center: https://vbp-fantasy-network.vercel.app/bestball-center.html
-Main hub: https://vbp-fantasy-network.vercel.app/
 ```
 
 ### BRACKET REDRAFT
