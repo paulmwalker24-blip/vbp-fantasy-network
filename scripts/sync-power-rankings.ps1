@@ -3,6 +3,7 @@ param(
   [string]$LeaguesPath = ".\data\leagues.json",
   [string]$OverridesPath = ".\data\power-ranking-overrides.json",
   [string]$OutputPath = ".\data\power-rankings.json",
+  [switch]$PublishDrafting,
   [switch]$IncludePending,
   [switch]$PassThru
 )
@@ -38,7 +39,13 @@ function Get-JsonFile {
 
 function Invoke-SleeperJson {
   param([string]$Uri)
-  Invoke-RestMethod -Uri $Uri -Headers @{ "User-Agent" = "vbp-power-rankings/1.0" }
+  $separator = if ($Uri.Contains("?")) { "&" } else { "?" }
+  $cacheBustedUri = "{0}{1}_={2}" -f $Uri, $separator, [DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds()
+  Invoke-RestMethod -Uri $cacheBustedUri -Headers @{
+    "User-Agent" = "vbp-power-rankings/1.0"
+    "Cache-Control" = "no-cache"
+    "Pragma" = "no-cache"
+  }
 }
 
 function Get-ObjectProperty {
@@ -566,7 +573,11 @@ function Get-DraftReadiness {
   $hasPublishOverride = $null -ne $publishOverride
   $overrideReason = Get-TextValue (Get-ObjectProperty -Object $LeagueOverride -Name "reason")
 
+  $draftingDrafts = @($openDrafts | Where-Object { $_.status -eq "drafting" })
   $ready = $draftSummaries.Count -gt 0 -and $completedDrafts.Count -gt 0 -and $openDrafts.Count -eq 0
+  if (-not $ready -and $PublishDrafting -and $draftingDrafts.Count -gt 0) {
+    $ready = $true
+  }
   $reason = ""
   if ($draftSummaries.Count -eq 0) {
     $reason = "No Sleeper draft data is available yet."
@@ -597,7 +608,15 @@ function Get-DraftReadiness {
   }
 
   $stage = if ($latestCompletedDraft) { $latestCompletedDraft.stage } elseif ($draftSummaries.Count -gt 0) { $draftSummaries[0].stage } else { "" }
-  $label = if ($ready) { Get-DraftStageLabel -Stage $stage } elseif ($stage) { "Waiting on {0} draft" -f $stage } else { "Waiting on draft data" }
+  $label = if ($PublishDrafting -and $draftingDrafts.Count -gt 0) {
+    "Live from current Sleeper rosters while draft is in progress"
+  } elseif ($ready) {
+    Get-DraftStageLabel -Stage $stage
+  } elseif ($stage) {
+    "Waiting on {0} draft" -f $stage
+  } else {
+    "Waiting on draft data"
+  }
 
   return [pscustomobject]@{
     ready = [bool]$ready
@@ -655,7 +674,8 @@ foreach ($leagueRecord in $selectedLeagues) {
   try {
     $liveLeague = Invoke-SleeperJson -Uri ("https://api.sleeper.app/v1/league/{0}" -f $sleeperLeagueId)
     $users = Convert-ToArray (Invoke-SleeperJson -Uri ("https://api.sleeper.app/v1/league/{0}/users" -f $sleeperLeagueId))
-    $rosters = Convert-ToArray (Invoke-SleeperJson -Uri ("https://api.sleeper.app/v1/league/{0}/rosters" -f $sleeperLeagueId))
+    $rosterSourceUrl = "https://api.sleeper.app/v1/league/{0}/rosters" -f $sleeperLeagueId
+    $rosters = Convert-ToArray (Invoke-SleeperJson -Uri $rosterSourceUrl)
     $drafts = Convert-ToArray (Invoke-SleeperJson -Uri ("https://api.sleeper.app/v1/league/{0}/drafts" -f $sleeperLeagueId))
   } catch {
     $warnings.Add(("ERROR {0}: Sleeper input load failed - {1}" -f $leagueRecordId, $_.Exception.Message)) | Out-Null
@@ -666,6 +686,14 @@ foreach ($leagueRecord in $selectedLeagues) {
   $draftStatuses = @($draftReadiness.drafts | ForEach-Object { $_.status } | Where-Object { $_ })
   $publish = [bool]$draftReadiness.ready
   $holdReason = Get-TextValue $draftReadiness.reason
+  $rosterSync = [pscustomobject]@{
+    source = $rosterSourceUrl
+    refreshedAt = (Get-Date).ToString("o")
+    rosterCount = @($rosters).Count
+    playerCount = [int]((@($rosters) | ForEach-Object { @(Convert-ToArray $_.players).Count } | Measure-Object -Sum).Sum)
+    sleeperLeagueSeason = Get-TextValue $liveLeague.season
+    sleeperLeagueStatus = Get-TextValue $liveLeague.status
+  }
 
   if (-not $publish -and -not $IncludePending) {
     $warnings.Add(("SKIP {0}: {1}" -f $leagueRecordId, $(if ($holdReason) { $holdReason } else { "Draft data is not complete." }))) | Out-Null
@@ -678,6 +706,7 @@ foreach ($leagueRecord in $selectedLeagues) {
       holdReason = $holdReason
       draftStatuses = $draftStatuses
       draftReadiness = $draftReadiness
+      rosterSync = $rosterSync
       rosterPositions = @(Convert-ToArray $liveLeague.roster_positions)
       rankings = @()
     }
@@ -714,6 +743,7 @@ foreach ($leagueRecord in $selectedLeagues) {
     holdReason = $holdReason
     draftStatuses = $draftStatuses
     draftReadiness = $draftReadiness
+    rosterSync = $rosterSync
     rosterPositions = @(Convert-ToArray $liveLeague.roster_positions)
     rankings = $rankings
   }

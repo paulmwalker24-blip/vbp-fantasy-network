@@ -148,7 +148,15 @@ function renderLeague(data) {
   if (listHeading) listHeading.textContent = `${text(league.leagueRecordId)} Rankings`;
   if (topScore) topScore.textContent = number(leader.score).toFixed(1);
   if (topTeam) topTeam.textContent = text(leader.teamName);
-  if (subtitle) subtitle.textContent = `${text(league.name)} uses Sleeper roster, draft, player, and injury/status data plus commissioner overrides.`;
+  if (subtitle) {
+    const rosterLabel = formatDate(league.rosterSync?.refreshedAt);
+    const readinessLabel = text(league.draftReadiness?.label);
+    subtitle.textContent = [
+      `${text(league.name)} uses the latest Sleeper roster endpoint saved during the power-ranking sync.`,
+      rosterLabel ? `Roster pull: ${rosterLabel}.` : "",
+      readinessLabel ? readinessLabel + "." : ""
+    ].filter(Boolean).join(" ");
+  }
 
   if (list) {
     list.innerHTML = "";

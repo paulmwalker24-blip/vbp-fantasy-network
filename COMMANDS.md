@@ -208,6 +208,12 @@ Refresh ranking readiness for every Sleeper-backed league:
 Run the power rankings sync for all leagues so the generated data can automatically unlock completed startup, rookie, and regular-draft boards while keeping unfinished boards marked pending.
 ```
 
+Refresh live drafting boards from current Sleeper rosters:
+
+```text
+Run the power rankings sync with PublishDrafting so drafting leagues use the latest rosters from Sleeper right now.
+```
+
 Refresh only DYN2:
 
 ```text

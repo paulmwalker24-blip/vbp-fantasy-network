@@ -20,7 +20,7 @@ jobs:
 
       - name: Refresh power rankings
         shell: pwsh
-        run: powershell -ExecutionPolicy Bypass -File .\scripts\sync-power-rankings.ps1
+        run: powershell -ExecutionPolicy Bypass -File .\scripts\sync-power-rankings.ps1 -PublishDrafting
 
       - name: Validate site
         shell: pwsh

@@ -313,6 +313,8 @@ The sync automatically reads each league's Sleeper draft records and determines 
 
 Published boards are generated only after Sleeper reports the relevant draft data as complete. Pending leagues remain in the JSON with a `draftReadiness` explanation so the public rankings hub can show why a board is still locked.
 
+Every refresh reads the current Sleeper roster endpoint for each league and writes a `rosterSync` block with the API source URL, refresh timestamp, Sleeper season/status, roster count, and player count. Use this to confirm the public board is based on the current stored Sleeper league ID.
+
 The generated dataset combines:
 
 - league settings and roster positions
@@ -341,6 +343,12 @@ Include pending or held leagues in the output for commissioner review:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\sync-power-rankings.ps1 -IncludePending
+```
+
+Publish in-progress drafting leagues from the latest Sleeper rosters endpoint:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\sync-power-rankings.ps1 -PublishDrafting
 ```
 
 Structured output:
