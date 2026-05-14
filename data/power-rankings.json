@@ -1,5 +1,5 @@
 ﻿{
-    "generatedAt":  "2026-05-14T13:21:33.2222427+00:00",
+    "generatedAt":  "2026-05-14T16:55:06.4042041+00:00",
     "snapshot":  {
                      "season":  "2026",
                      "seasonType":  "off",
@@ -24,8 +24,6 @@
                      "SKIP RD2: regular draft is pre_draft",
                      "SKIP RD3: regular draft is pre_draft",
                      "SKIP RD4: regular draft is pre_draft",
-                     "SKIP DYN4: startup draft is paused",
-                     "SKIP DYN5: startup draft is paused",
                      "SKIP DYN6: startup draft is pre_draft",
                      "SKIP DYN7: startup draft is pre_draft",
                      "SKIP DYB1: startup draft is pre_draft",
@@ -75,7 +73,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314663050854305792/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:11.8883061+00:00",
+                                           "refreshedAt":  "2026-05-14T16:54:53.8262316+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -132,7 +130,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314662767977824256/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:12.4917096+00:00",
+                                           "refreshedAt":  "2026-05-14T16:54:54.0820674+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -189,7 +187,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314660487635427328/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:13.0552633+00:00",
+                                           "refreshedAt":  "2026-05-14T16:54:54.3394412+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -246,7 +244,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1344449488089014272/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:13.6210039+00:00",
+                                           "refreshedAt":  "2026-05-14T16:54:54.5692802+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -303,7 +301,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341650084122595328/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:14.3132707+00:00",
+                                           "refreshedAt":  "2026-05-14T16:54:54.8223801+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  384,
                                            "sleeperLeagueSeason":  "2026",
@@ -549,8 +547,8 @@
                                                                 "depth":  72.3,
                                                                 "quarterback":  81.5,
                                                                 "eliteCeiling":  74,
-                                                                "health":  66,
-                                                                "dynastyValue":  67.9
+                                                                "health":  72,
+                                                                "dynastyValue":  68
                                                             },
                                              "topPlayers":  [
                                                                 {
@@ -721,7 +719,7 @@
                                                              "QB room: Drake Maye, Patrick Mahomes",
                                                              "Starter grade 78.6",
                                                              "Bench grade 72.3",
-                                                             "Health watch: Isaiah Davis, Patrick Mahomes, Daniel Jones"
+                                                             "Health watch: Patrick Mahomes, Daniel Jones"
                                                          ],
                                              "rank":  2
                                          },
@@ -931,12 +929,12 @@
                                                             "ties":  0
                                                         },
                                              "components":  {
-                                                                "lineup":  77.5,
+                                                                "lineup":  77.9,
                                                                 "depth":  70.1,
                                                                 "quarterback":  79,
                                                                 "eliteCeiling":  58,
-                                                                "health":  76,
-                                                                "dynastyValue":  73.6
+                                                                "health":  82,
+                                                                "dynastyValue":  73.7
                                                             },
                                              "topPlayers":  [
                                                                 {
@@ -964,19 +962,19 @@
                                                                     "value":  79
                                                                 },
                                                                 {
-                                                                    "name":  "Jayden Daniels",
-                                                                    "position":  "QB",
-                                                                    "team":  "WAS",
-                                                                    "age":  25,
-                                                                    "injuryStatus":  "Questionable",
-                                                                    "value":  79
-                                                                },
-                                                                {
                                                                     "name":  "Jordan Love",
                                                                     "position":  "QB",
                                                                     "team":  "GB",
                                                                     "age":  27,
                                                                     "injuryStatus":  "",
+                                                                    "value":  79
+                                                                },
+                                                                {
+                                                                    "name":  "Jayden Daniels",
+                                                                    "position":  "QB",
+                                                                    "team":  "WAS",
+                                                                    "age":  25,
+                                                                    "injuryStatus":  "Questionable",
                                                                     "value":  79
                                                                 },
                                                                 {
@@ -1007,13 +1005,13 @@
                                              "starterSnapshot":  [
                                                                      {
                                                                          "slot":  "QB",
-                                                                         "name":  "Jayden Daniels",
+                                                                         "name":  "Jordan Love",
                                                                          "position":  "QB",
                                                                          "value":  79
                                                                      },
                                                                      {
                                                                          "slot":  "SUPER_FLEX",
-                                                                         "name":  "Jordan Love",
+                                                                         "name":  "Jayden Daniels",
                                                                          "position":  "QB",
                                                                          "value":  79
                                                                      },
@@ -1061,9 +1059,9 @@
                                                                      },
                                                                      {
                                                                          "slot":  "FLEX",
-                                                                         "name":  "Isaac TeSlaa",
-                                                                         "position":  "WR",
-                                                                         "value":  70
+                                                                         "name":  "Braelon Allen",
+                                                                         "position":  "RB",
+                                                                         "value":  74
                                                                      }
                                                                  ],
                                              "benchSnapshot":  [
@@ -1088,12 +1086,12 @@
                                                                        "value":  70
                                                                    },
                                                                    {
-                                                                       "name":  "Demond Claiborne",
-                                                                       "position":  "RB",
+                                                                       "name":  "Khalil Shakir",
+                                                                       "position":  "WR",
                                                                        "value":  70
                                                                    },
                                                                    {
-                                                                       "name":  "Khalil Shakir",
+                                                                       "name":  "Isaac TeSlaa",
                                                                        "position":  "WR",
                                                                        "value":  70
                                                                    },
@@ -1105,9 +1103,9 @@
                                                                ],
                                              "reasons":  [
                                                              "QB room: Jordan Love, Jayden Daniels",
-                                                             "Starter grade 77.5",
+                                                             "Starter grade 77.9",
                                                              "Bench grade 70.1",
-                                                             "Health watch: Michael Penix, Jayden Daniels, Braelon Allen"
+                                                             "Health watch: Michael Penix, Jayden Daniels, Travis Hunter"
                                                          ],
                                              "rank":  4
                                          },
@@ -2688,7 +2686,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1340820529996640256/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:16.2807964+00:00",
+                                           "refreshedAt":  "2026-05-14T16:54:56.6882320+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  369,
                                            "sleeperLeagueSeason":  "2026",
@@ -3317,11 +3315,11 @@
                                                         },
                                              "components":  {
                                                                 "lineup":  77.2,
-                                                                "depth":  70.6,
+                                                                "depth":  71.1,
                                                                 "quarterback":  77.5,
                                                                 "eliteCeiling":  58,
-                                                                "health":  76,
-                                                                "dynastyValue":  73.5
+                                                                "health":  82,
+                                                                "dynastyValue":  73.6
                                                             },
                                              "topPlayers":  [
                                                                 {
@@ -3453,8 +3451,13 @@
                                                                  ],
                                              "benchSnapshot":  [
                                                                    {
-                                                                       "name":  "Jalen Milroe",
-                                                                       "position":  "QB",
+                                                                       "name":  "Braelon Allen",
+                                                                       "position":  "RB",
+                                                                       "value":  74
+                                                                   },
+                                                                   {
+                                                                       "name":  "Sean Tucker",
+                                                                       "position":  "RB",
                                                                        "value":  71
                                                                    },
                                                                    {
@@ -3468,8 +3471,8 @@
                                                                        "value":  71
                                                                    },
                                                                    {
-                                                                       "name":  "Sean Tucker",
-                                                                       "position":  "RB",
+                                                                       "name":  "Jalen Milroe",
+                                                                       "position":  "QB",
                                                                        "value":  71
                                                                    },
                                                                    {
@@ -3478,21 +3481,16 @@
                                                                        "value":  70
                                                                    },
                                                                    {
-                                                                       "name":  "Kenyon Sadiq",
-                                                                       "position":  "TE",
-                                                                       "value":  70
-                                                                   },
-                                                                   {
-                                                                       "name":  "Tyler Allgeier",
-                                                                       "position":  "RB",
+                                                                       "name":  "Tyson Bagent",
+                                                                       "position":  "QB",
                                                                        "value":  70
                                                                    }
                                                                ],
                                              "reasons":  [
                                                              "QB room: Dak Prescott, Jared Goff",
                                                              "Starter grade 77.2",
-                                                             "Bench grade 70.6",
-                                                             "Health watch: Braelon Allen, Bucky Irving, Brock Bowers"
+                                                             "Bench grade 71.1",
+                                                             "Health watch: Bucky Irving, Brock Bowers, Calvin Ridley"
                                                          ],
                                              "rank":  4
                                          },
@@ -4478,8 +4476,8 @@
                                                                 "depth":  67.9,
                                                                 "quarterback":  77,
                                                                 "eliteCeiling":  66,
-                                                                "health":  54,
-                                                                "dynastyValue":  67.6
+                                                                "health":  60,
+                                                                "dynastyValue":  67.7
                                                             },
                                              "topPlayers":  [
                                                                 {
@@ -4523,14 +4521,6 @@
                                                                     "value":  74
                                                                 },
                                                                 {
-                                                                    "name":  "Travis Etienne",
-                                                                    "position":  "RB",
-                                                                    "team":  "NO",
-                                                                    "age":  27,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  73
-                                                                },
-                                                                {
                                                                     "name":  "Courtland Sutton",
                                                                     "position":  "WR",
                                                                     "team":  "DEN",
@@ -4539,10 +4529,18 @@
                                                                     "value":  73
                                                                 },
                                                                 {
-                                                                    "name":  "Quentin Johnston",
-                                                                    "position":  "WR",
-                                                                    "team":  "LAC",
-                                                                    "age":  24,
+                                                                    "name":  "Travis Etienne",
+                                                                    "position":  "RB",
+                                                                    "team":  "NO",
+                                                                    "age":  27,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  73
+                                                                },
+                                                                {
+                                                                    "name":  "Justin Fields",
+                                                                    "position":  "QB",
+                                                                    "team":  "KC",
+                                                                    "age":  27,
                                                                     "injuryStatus":  "",
                                                                     "value":  71
                                                                 }
@@ -4650,7 +4648,7 @@
                                                              "QB room: Joe Burrow, Justin Fields",
                                                              "Starter grade 75.5",
                                                              "Bench grade 67.9",
-                                                             "Health watch: Isaiah Davis, KeAndre Lambert-Smith, George Kittle"
+                                                             "Health watch: KeAndre Lambert-Smith, George Kittle, Kendre Miller"
                                                          ],
                                              "rank":  10
                                          },
@@ -5073,7 +5071,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341646934816849920/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:17.8400505+00:00",
+                                           "refreshedAt":  "2026-05-14T16:54:57.9770068+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  371,
                                            "sleeperLeagueSeason":  "2026",
@@ -5692,7 +5690,7 @@
                                              "rosterId":  10,
                                              "ownerId":  "921627885746712576",
                                              "teamName":  "MattyBRaps97",
-                                             "score":  73,
+                                             "score":  74,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -5702,11 +5700,11 @@
                                                         },
                                              "components":  {
                                                                 "lineup":  79,
-                                                                "depth":  71.9,
+                                                                "depth":  72.4,
                                                                 "quarterback":  81.5,
                                                                 "eliteCeiling":  66,
-                                                                "health":  48,
-                                                                "dynastyValue":  69.8
+                                                                "health":  54,
+                                                                "dynastyValue":  69.9
                                                             },
                                              "topPlayers":  [
                                                                 {
@@ -5831,12 +5829,17 @@
                                                                      },
                                                                      {
                                                                          "slot":  "FLEX",
-                                                                         "name":  "Garrett Wilson",
-                                                                         "position":  "WR",
+                                                                         "name":  "Braelon Allen",
+                                                                         "position":  "RB",
                                                                          "value":  74
                                                                      }
                                                                  ],
                                              "benchSnapshot":  [
+                                                                   {
+                                                                       "name":  "Garrett Wilson",
+                                                                       "position":  "WR",
+                                                                       "value":  74
+                                                                   },
                                                                    {
                                                                        "name":  "Jerry Jeudy",
                                                                        "position":  "WR",
@@ -5846,11 +5849,6 @@
                                                                        "name":  "Keaton Mitchell",
                                                                        "position":  "RB",
                                                                        "value":  73
-                                                                   },
-                                                                   {
-                                                                       "name":  "Tre Tucker",
-                                                                       "position":  "WR",
-                                                                       "value":  72
                                                                    },
                                                                    {
                                                                        "name":  "Cade Otton",
@@ -5863,21 +5861,21 @@
                                                                        "value":  72
                                                                    },
                                                                    {
+                                                                       "name":  "Tre Tucker",
+                                                                       "position":  "WR",
+                                                                       "value":  72
+                                                                   },
+                                                                   {
                                                                        "name":  "Jaylen Warren",
                                                                        "position":  "RB",
                                                                        "value":  71
-                                                                   },
-                                                                   {
-                                                                       "name":  "Omar Cooper",
-                                                                       "position":  "WR",
-                                                                       "value":  70
                                                                    }
                                                                ],
                                              "reasons":  [
                                                              "QB room: Jaxson Dart, Brock Purdy",
                                                              "Starter grade 79",
-                                                             "Bench grade 71.9",
-                                                             "Health watch: Quinn Ewers, Garrett Wilson, Braelon Allen"
+                                                             "Bench grade 72.4",
+                                                             "Health watch: Quinn Ewers, Garrett Wilson, Erick All"
                                                          ],
                                              "rank":  4
                                          },
@@ -6091,8 +6089,8 @@
                                                                 "depth":  68.9,
                                                                 "quarterback":  79.5,
                                                                 "eliteCeiling":  74,
-                                                                "health":  36,
-                                                                "dynastyValue":  76.5
+                                                                "health":  42,
+                                                                "dynastyValue":  76.7
                                                             },
                                              "topPlayers":  [
                                                                 {
@@ -6136,19 +6134,19 @@
                                                                     "value":  78
                                                                 },
                                                                 {
-                                                                    "name":  "Bo Nix",
-                                                                    "position":  "QB",
-                                                                    "team":  "DEN",
-                                                                    "age":  26,
-                                                                    "injuryStatus":  "Questionable",
-                                                                    "value":  75
-                                                                },
-                                                                {
                                                                     "name":  "DeVonta Smith",
                                                                     "position":  "WR",
                                                                     "team":  "PHI",
                                                                     "age":  27,
                                                                     "injuryStatus":  "",
+                                                                    "value":  75
+                                                                },
+                                                                {
+                                                                    "name":  "Bo Nix",
+                                                                    "position":  "QB",
+                                                                    "team":  "DEN",
+                                                                    "age":  26,
+                                                                    "injuryStatus":  "Questionable",
                                                                     "value":  75
                                                                 },
                                                                 {
@@ -6239,13 +6237,13 @@
                                                                        "value":  69
                                                                    },
                                                                    {
-                                                                       "name":  "Trey Benson",
-                                                                       "position":  "RB",
+                                                                       "name":  "Davis Mills",
+                                                                       "position":  "QB",
                                                                        "value":  68
                                                                    },
                                                                    {
-                                                                       "name":  "Davis Mills",
-                                                                       "position":  "QB",
+                                                                       "name":  "Trey Benson",
+                                                                       "position":  "RB",
                                                                        "value":  68
                                                                    },
                                                                    {
@@ -6254,8 +6252,8 @@
                                                                        "value":  67
                                                                    },
                                                                    {
-                                                                       "name":  "Tutu Atwell",
-                                                                       "position":  "WR",
+                                                                       "name":  "Kirk Cousins",
+                                                                       "position":  "QB",
                                                                        "value":  65
                                                                    }
                                                                ],
@@ -6263,7 +6261,7 @@
                                                              "QB room: Caleb Williams, Bo Nix",
                                                              "Starter grade 76.4",
                                                              "Bench grade 68.9",
-                                                             "Health watch: Bo Nix, Isaiah Davis, MarShawn Lloyd"
+                                                             "Health watch: Bo Nix, MarShawn Lloyd, Trey Benson"
                                                          ],
                                              "rank":  6
                                          },
@@ -7432,20 +7430,20 @@
                         "sleeperLeagueId":  "1342931950981091328",
                         "name":  "VBP Dynasty 4",
                         "format":  "dynasty",
-                        "publish":  false,
-                        "holdReason":  "startup draft is paused",
+                        "publish":  true,
+                        "holdReason":  "startup draft is drafting",
                         "draftStatuses":  [
-                                              "paused"
+                                              "drafting"
                                           ],
                         "draftReadiness":  {
-                                               "ready":  false,
+                                               "ready":  true,
                                                "stage":  "startup",
-                                               "label":  "Waiting on startup draft",
-                                               "reason":  "startup draft is paused",
+                                               "label":  "Live from current Sleeper rosters while draft is in progress",
+                                               "reason":  "startup draft is drafting",
                                                "drafts":  [
                                                               {
                                                                   "draftId":  "1342931952184860672",
-                                                                  "status":  "paused",
+                                                                  "status":  "drafting",
                                                                   "stage":  "startup",
                                                                   "type":  "snake",
                                                                   "season":  "2026",
@@ -7458,7 +7456,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1342931950981091328/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:19.6779757+00:00",
+                                           "refreshedAt":  "2026-05-14T16:54:59.3575842+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -7494,7 +7492,414 @@
                                                 "BN"
                                             ],
                         "rankings":  [
+                                         {
+                                             "rosterId":  9,
+                                             "ownerId":  "1048334055684591616",
+                                             "teamName":  "Booty Hole Trolls",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.5
+                                                            },
+                                             "topPlayers":  [
 
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  1
+                                         },
+                                         {
+                                             "rosterId":  8,
+                                             "ownerId":  "1311062867629314048",
+                                             "teamName":  "Frieza",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.4
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  2
+                                         },
+                                         {
+                                             "rosterId":  7,
+                                             "ownerId":  "712531686138646528",
+                                             "teamName":  "swampraider",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  3
+                                         },
+                                         {
+                                             "rosterId":  12,
+                                             "ownerId":  "1268017436926431232",
+                                             "teamName":  "Steel City Football",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.2
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  4
+                                         },
+                                         {
+                                             "rosterId":  11,
+                                             "ownerId":  "791162591366983680",
+                                             "teamName":  "JavarisonLamar",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.4
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  5
+                                         },
+                                         {
+                                             "rosterId":  10,
+                                             "ownerId":  "554461116627103744",
+                                             "teamName":  "Chroma187",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.2
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  6
+                                         },
+                                         {
+                                             "rosterId":  3,
+                                             "ownerId":  "1266256709131714560",
+                                             "teamName":  "corra",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.2
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  7
+                                         },
+                                         {
+                                             "rosterId":  2,
+                                             "ownerId":  "1003082957231366144",
+                                             "teamName":  "Arby’s",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.2
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  8
+                                         },
+                                         {
+                                             "rosterId":  1,
+                                             "ownerId":  "729193493376905216",
+                                             "teamName":  "Air Raid",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.2
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  9
+                                         },
+                                         {
+                                             "rosterId":  6,
+                                             "ownerId":  "1159332046461775872",
+                                             "teamName":  "BigDawgzGa",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.4
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  10
+                                         },
+                                         {
+                                             "rosterId":  5,
+                                             "ownerId":  "1119817466047242240",
+                                             "teamName":  "TacticoolG",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.1
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  11
+                                         },
+                                         {
+                                             "rosterId":  4,
+                                             "ownerId":  "994351130131902464",
+                                             "teamName":  "notoriousblt23",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.4
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  12
+                                         }
                                      ]
                     },
                     {
@@ -7502,20 +7907,20 @@
                         "sleeperLeagueId":  "1348345763335270400",
                         "name":  "VBP Dynasty 5",
                         "format":  "dynasty",
-                        "publish":  false,
-                        "holdReason":  "startup draft is paused",
+                        "publish":  true,
+                        "holdReason":  "startup draft is drafting",
                         "draftStatuses":  [
-                                              "paused"
+                                              "drafting"
                                           ],
                         "draftReadiness":  {
-                                               "ready":  false,
+                                               "ready":  true,
                                                "stage":  "startup",
-                                               "label":  "Waiting on startup draft",
-                                               "reason":  "startup draft is paused",
+                                               "label":  "Live from current Sleeper rosters while draft is in progress",
+                                               "reason":  "startup draft is drafting",
                                                "drafts":  [
                                                               {
                                                                   "draftId":  "1348345764610314240",
-                                                                  "status":  "paused",
+                                                                  "status":  "drafting",
                                                                   "stage":  "startup",
                                                                   "type":  "snake",
                                                                   "season":  "2026",
@@ -7528,7 +7933,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345763335270400/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:20.3816206+00:00",
+                                           "refreshedAt":  "2026-05-14T16:54:59.9040235+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -7564,7 +7969,414 @@
                                                 "BN"
                                             ],
                         "rankings":  [
+                                         {
+                                             "rosterId":  9,
+                                             "ownerId":  "862197117240860672",
+                                             "teamName":  "bickey22",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.4
+                                                            },
+                                             "topPlayers":  [
 
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  1
+                                         },
+                                         {
+                                             "rosterId":  8,
+                                             "ownerId":  "1160704724572729344",
+                                             "teamName":  "KingGrizz69",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  2
+                                         },
+                                         {
+                                             "rosterId":  7,
+                                             "ownerId":  "677907394440814592",
+                                             "teamName":  "billfishh",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.6
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  3
+                                         },
+                                         {
+                                             "rosterId":  12,
+                                             "ownerId":  "715780421882843136",
+                                             "teamName":  "MJ23Sandberg",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.4
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  4
+                                         },
+                                         {
+                                             "rosterId":  11,
+                                             "ownerId":  "839700362360360960",
+                                             "teamName":  "Bizo",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  22.6
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  5
+                                         },
+                                         {
+                                             "rosterId":  10,
+                                             "ownerId":  "862178481428123648",
+                                             "teamName":  "Beastsupreme23",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.4
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  6
+                                         },
+                                         {
+                                             "rosterId":  3,
+                                             "ownerId":  "1130521166885564416",
+                                             "teamName":  "sellrya",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.1
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  7
+                                         },
+                                         {
+                                             "rosterId":  2,
+                                             "ownerId":  "1181792494384242688",
+                                             "teamName":  "BeantownBaller13",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.4
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  8
+                                         },
+                                         {
+                                             "rosterId":  1,
+                                             "ownerId":  "585729828611727360",
+                                             "teamName":  "FrankiieG23",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.2
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  9
+                                         },
+                                         {
+                                             "rosterId":  6,
+                                             "ownerId":  "737338308111241216",
+                                             "teamName":  "MattyCRuzzlers",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.1
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  10
+                                         },
+                                         {
+                                             "rosterId":  5,
+                                             "ownerId":  "1003362527729803264",
+                                             "teamName":  "All You Need is Love",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  24
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  11
+                                         },
+                                         {
+                                             "rosterId":  4,
+                                             "ownerId":  "467969640677502976",
+                                             "teamName":  "Akkido907",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.4
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  12
+                                         }
                                      ]
                     },
                     {
@@ -7598,7 +8410,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345934114725888/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:20.9444876+00:00",
+                                           "refreshedAt":  "2026-05-14T16:55:00.3636132+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -7668,7 +8480,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1360285262617284608/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:21.5535470+00:00",
+                                           "refreshedAt":  "2026-05-14T16:55:00.5756372+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -7738,7 +8550,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350152770275020800/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:22.1334433+00:00",
+                                           "refreshedAt":  "2026-05-14T16:55:00.8190218+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -7808,7 +8620,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154389192474624/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:22.7172780+00:00",
+                                           "refreshedAt":  "2026-05-14T16:55:01.0722212+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -7878,7 +8690,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154561549004800/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:23.3109606+00:00",
+                                           "refreshedAt":  "2026-05-14T16:55:01.3215639+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -7948,7 +8760,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154695137570816/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:23.8708792+00:00",
+                                           "refreshedAt":  "2026-05-14T16:55:01.5554359+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -8018,7 +8830,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095209052508160/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:24.4523251+00:00",
+                                           "refreshedAt":  "2026-05-14T16:55:01.7908400+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -9887,7 +10699,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095313704554496/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:25.6115251+00:00",
+                                           "refreshedAt":  "2026-05-14T16:55:02.6252982+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -11757,7 +12569,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095371091017728/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:26.7892054+00:00",
+                                           "refreshedAt":  "2026-05-14T16:55:03.4445117+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -11784,6 +12596,187 @@
                                                 "BN"
                                             ],
                         "rankings":  [
+                                         {
+                                             "rosterId":  4,
+                                             "ownerId":  "1127082953709899776",
+                                             "teamName":  "gunnar21",
+                                             "score":  76,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  77.8,
+                                                                "depth":  70,
+                                                                "quarterback":  78,
+                                                                "eliteCeiling":  74,
+                                                                "health":  94,
+                                                                "context":  70
+                                                            },
+                                             "topPlayers":  [
+                                                                {
+                                                                    "name":  "Drake Maye",
+                                                                    "position":  "QB",
+                                                                    "team":  "NE",
+                                                                    "age":  23,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  85
+                                                                },
+                                                                {
+                                                                    "name":  "Jahmyr Gibbs",
+                                                                    "position":  "RB",
+                                                                    "team":  "DET",
+                                                                    "age":  24,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  84
+                                                                },
+                                                                {
+                                                                    "name":  "Justin Jefferson",
+                                                                    "position":  "WR",
+                                                                    "team":  "MIN",
+                                                                    "age":  26,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  80
+                                                                },
+                                                                {
+                                                                    "name":  "Nico Collins",
+                                                                    "position":  "WR",
+                                                                    "team":  "HOU",
+                                                                    "age":  27,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  78
+                                                                },
+                                                                {
+                                                                    "name":  "RJ Harvey",
+                                                                    "position":  "RB",
+                                                                    "team":  "DEN",
+                                                                    "age":  25,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  76
+                                                                },
+                                                                {
+                                                                    "name":  "DJ Moore",
+                                                                    "position":  "WR",
+                                                                    "team":  "BUF",
+                                                                    "age":  29,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  74
+                                                                },
+                                                                {
+                                                                    "name":  "Tyler Warren",
+                                                                    "position":  "TE",
+                                                                    "team":  "IND",
+                                                                    "age":  23,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  73
+                                                                },
+                                                                {
+                                                                    "name":  "Travis Kelce",
+                                                                    "position":  "TE",
+                                                                    "team":  "KC",
+                                                                    "age":  36,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  72
+                                                                }
+                                                            ],
+                                             "starterSnapshot":  [
+                                                                     {
+                                                                         "slot":  "QB",
+                                                                         "name":  "Drake Maye",
+                                                                         "position":  "QB",
+                                                                         "value":  85
+                                                                     },
+                                                                     {
+                                                                         "slot":  "RB",
+                                                                         "name":  "Jahmyr Gibbs",
+                                                                         "position":  "RB",
+                                                                         "value":  84
+                                                                     },
+                                                                     {
+                                                                         "slot":  "RB",
+                                                                         "name":  "RJ Harvey",
+                                                                         "position":  "RB",
+                                                                         "value":  76
+                                                                     },
+                                                                     {
+                                                                         "slot":  "WR",
+                                                                         "name":  "Justin Jefferson",
+                                                                         "position":  "WR",
+                                                                         "value":  80
+                                                                     },
+                                                                     {
+                                                                         "slot":  "WR",
+                                                                         "name":  "Nico Collins",
+                                                                         "position":  "WR",
+                                                                         "value":  78
+                                                                     },
+                                                                     {
+                                                                         "slot":  "TE",
+                                                                         "name":  "Tyler Warren",
+                                                                         "position":  "TE",
+                                                                         "value":  73
+                                                                     },
+                                                                     {
+                                                                         "slot":  "FLEX",
+                                                                         "name":  "DJ Moore",
+                                                                         "position":  "WR",
+                                                                         "value":  74
+                                                                     },
+                                                                     {
+                                                                         "slot":  "FLEX",
+                                                                         "name":  "Travis Kelce",
+                                                                         "position":  "TE",
+                                                                         "value":  72
+                                                                     }
+                                                                 ],
+                                             "benchSnapshot":  [
+                                                                   {
+                                                                       "name":  "Blake Corum",
+                                                                       "position":  "RB",
+                                                                       "value":  72
+                                                                   },
+                                                                   {
+                                                                       "name":  "Chris Godwin",
+                                                                       "position":  "WR",
+                                                                       "value":  71
+                                                                   },
+                                                                   {
+                                                                       "name":  "Fernando Mendoza",
+                                                                       "position":  "QB",
+                                                                       "value":  71
+                                                                   },
+                                                                   {
+                                                                       "name":  "Keaton Mitchell",
+                                                                       "position":  "RB",
+                                                                       "value":  69
+                                                                   },
+                                                                   {
+                                                                       "name":  "Jayden Higgins",
+                                                                       "position":  "WR",
+                                                                       "value":  69
+                                                                   },
+                                                                   {
+                                                                       "name":  "Rashid Shaheed",
+                                                                       "position":  "WR",
+                                                                       "value":  69
+                                                                   },
+                                                                   {
+                                                                       "name":  "Braelon Allen",
+                                                                       "position":  "RB",
+                                                                       "value":  69
+                                                                   }
+                                                               ],
+                                             "reasons":  [
+                                                             "QB room: Drake Maye, Fernando Mendoza",
+                                                             "Starter grade 77.8",
+                                                             "Bench grade 70",
+                                                             "Health watch: Rashod Bateman"
+                                                         ],
+                                             "rank":  1
+                                         },
                                          {
                                              "rosterId":  10,
                                              "ownerId":  "1115680444374302720",
@@ -11961,187 +12954,6 @@
                                                              "QB room: Joe Burrow, Jaxson Dart",
                                                              "Starter grade 75.9",
                                                              "Bench grade 72.1"
-                                                         ],
-                                             "rank":  1
-                                         },
-                                         {
-                                             "rosterId":  4,
-                                             "ownerId":  "1127082953709899776",
-                                             "teamName":  "gunnar21",
-                                             "score":  75,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "components":  {
-                                                                "lineup":  77.8,
-                                                                "depth":  69.9,
-                                                                "quarterback":  78,
-                                                                "eliteCeiling":  74,
-                                                                "health":  88,
-                                                                "context":  70
-                                                            },
-                                             "topPlayers":  [
-                                                                {
-                                                                    "name":  "Drake Maye",
-                                                                    "position":  "QB",
-                                                                    "team":  "NE",
-                                                                    "age":  23,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  85
-                                                                },
-                                                                {
-                                                                    "name":  "Jahmyr Gibbs",
-                                                                    "position":  "RB",
-                                                                    "team":  "DET",
-                                                                    "age":  24,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  84
-                                                                },
-                                                                {
-                                                                    "name":  "Justin Jefferson",
-                                                                    "position":  "WR",
-                                                                    "team":  "MIN",
-                                                                    "age":  26,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  80
-                                                                },
-                                                                {
-                                                                    "name":  "Nico Collins",
-                                                                    "position":  "WR",
-                                                                    "team":  "HOU",
-                                                                    "age":  27,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  78
-                                                                },
-                                                                {
-                                                                    "name":  "RJ Harvey",
-                                                                    "position":  "RB",
-                                                                    "team":  "DEN",
-                                                                    "age":  25,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  76
-                                                                },
-                                                                {
-                                                                    "name":  "DJ Moore",
-                                                                    "position":  "WR",
-                                                                    "team":  "BUF",
-                                                                    "age":  29,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  74
-                                                                },
-                                                                {
-                                                                    "name":  "Tyler Warren",
-                                                                    "position":  "TE",
-                                                                    "team":  "IND",
-                                                                    "age":  23,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  73
-                                                                },
-                                                                {
-                                                                    "name":  "Travis Kelce",
-                                                                    "position":  "TE",
-                                                                    "team":  "KC",
-                                                                    "age":  36,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  72
-                                                                }
-                                                            ],
-                                             "starterSnapshot":  [
-                                                                     {
-                                                                         "slot":  "QB",
-                                                                         "name":  "Drake Maye",
-                                                                         "position":  "QB",
-                                                                         "value":  85
-                                                                     },
-                                                                     {
-                                                                         "slot":  "RB",
-                                                                         "name":  "Jahmyr Gibbs",
-                                                                         "position":  "RB",
-                                                                         "value":  84
-                                                                     },
-                                                                     {
-                                                                         "slot":  "RB",
-                                                                         "name":  "RJ Harvey",
-                                                                         "position":  "RB",
-                                                                         "value":  76
-                                                                     },
-                                                                     {
-                                                                         "slot":  "WR",
-                                                                         "name":  "Justin Jefferson",
-                                                                         "position":  "WR",
-                                                                         "value":  80
-                                                                     },
-                                                                     {
-                                                                         "slot":  "WR",
-                                                                         "name":  "Nico Collins",
-                                                                         "position":  "WR",
-                                                                         "value":  78
-                                                                     },
-                                                                     {
-                                                                         "slot":  "TE",
-                                                                         "name":  "Tyler Warren",
-                                                                         "position":  "TE",
-                                                                         "value":  73
-                                                                     },
-                                                                     {
-                                                                         "slot":  "FLEX",
-                                                                         "name":  "DJ Moore",
-                                                                         "position":  "WR",
-                                                                         "value":  74
-                                                                     },
-                                                                     {
-                                                                         "slot":  "FLEX",
-                                                                         "name":  "Travis Kelce",
-                                                                         "position":  "TE",
-                                                                         "value":  72
-                                                                     }
-                                                                 ],
-                                             "benchSnapshot":  [
-                                                                   {
-                                                                       "name":  "Blake Corum",
-                                                                       "position":  "RB",
-                                                                       "value":  72
-                                                                   },
-                                                                   {
-                                                                       "name":  "Chris Godwin",
-                                                                       "position":  "WR",
-                                                                       "value":  71
-                                                                   },
-                                                                   {
-                                                                       "name":  "Fernando Mendoza",
-                                                                       "position":  "QB",
-                                                                       "value":  71
-                                                                   },
-                                                                   {
-                                                                       "name":  "Jayden Higgins",
-                                                                       "position":  "WR",
-                                                                       "value":  69
-                                                                   },
-                                                                   {
-                                                                       "name":  "Rashid Shaheed",
-                                                                       "position":  "WR",
-                                                                       "value":  69
-                                                                   },
-                                                                   {
-                                                                       "name":  "Keaton Mitchell",
-                                                                       "position":  "RB",
-                                                                       "value":  69
-                                                                   },
-                                                                   {
-                                                                       "name":  "Makai Lemon",
-                                                                       "position":  "WR",
-                                                                       "value":  68
-                                                                   }
-                                                               ],
-                                             "reasons":  [
-                                                             "QB room: Drake Maye, Fernando Mendoza",
-                                                             "Starter grade 77.8",
-                                                             "Bench grade 69.9",
-                                                             "Health watch: Braelon Allen, Rashod Bateman"
                                                          ],
                                              "rank":  2
                                          },
@@ -13625,7 +14437,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095416859287552/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:27.9598968+00:00",
+                                           "refreshedAt":  "2026-05-14T16:55:04.2563347+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -13686,7 +14498,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095453291003904/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:28.5232983+00:00",
+                                           "refreshedAt":  "2026-05-14T16:55:04.4756076+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -13747,7 +14559,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338004997836640256/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:29.0959256+00:00",
+                                           "refreshedAt":  "2026-05-14T16:55:04.7025402+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -13805,7 +14617,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005036122279936/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:29.6965709+00:00",
+                                           "refreshedAt":  "2026-05-14T16:55:04.9326718+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -13863,7 +14675,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005075167035392/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:30.2942641+00:00",
+                                           "refreshedAt":  "2026-05-14T16:55:05.1565880+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -13921,7 +14733,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005113482022912/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:30.8918958+00:00",
+                                           "refreshedAt":  "2026-05-14T16:55:05.4277467+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -13979,7 +14791,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005158071660544/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:31.4796780+00:00",
+                                           "refreshedAt":  "2026-05-14T16:55:05.6609567+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -14037,7 +14849,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846317608992768/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:32.0397304+00:00",
+                                           "refreshedAt":  "2026-05-14T16:55:05.8913301+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -14094,7 +14906,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846742810775552/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:32.6484301+00:00",
+                                           "refreshedAt":  "2026-05-14T16:55:06.1466379+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -14151,7 +14963,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339342261023961088/rosters",
-                                           "refreshedAt":  "2026-05-14T13:21:33.2202322+00:00",
+                                           "refreshedAt":  "2026-05-14T16:55:06.4021839+00:00",
                                            "rosterCount":  18,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
