@@ -1,5 +1,5 @@
 ﻿{
-    "generatedAt":  "2026-05-14T11:06:02.3951092+00:00",
+    "generatedAt":  "2026-05-14T13:21:33.2222427+00:00",
     "snapshot":  {
                      "season":  "2026",
                      "seasonType":  "off",
@@ -75,7 +75,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314663050854305792/rosters",
-                                           "refreshedAt":  "2026-05-14T11:05:45.6551869+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:11.8883061+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -132,7 +132,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314662767977824256/rosters",
-                                           "refreshedAt":  "2026-05-14T11:05:46.1237359+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:12.4917096+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -189,7 +189,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314660487635427328/rosters",
-                                           "refreshedAt":  "2026-05-14T11:05:46.5769911+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:13.0552633+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -246,7 +246,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1344449488089014272/rosters",
-                                           "refreshedAt":  "2026-05-14T11:05:46.9393722+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:13.6210039+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -303,7 +303,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341650084122595328/rosters",
-                                           "refreshedAt":  "2026-05-14T11:05:47.3786985+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:14.3132707+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  384,
                                            "sleeperLeagueSeason":  "2026",
@@ -2688,7 +2688,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1340820529996640256/rosters",
-                                           "refreshedAt":  "2026-05-14T11:05:49.5421968+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:16.2807964+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  369,
                                            "sleeperLeagueSeason":  "2026",
@@ -5073,9 +5073,9 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341646934816849920/rosters",
-                                           "refreshedAt":  "2026-05-14T11:05:51.0510824+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:17.8400505+00:00",
                                            "rosterCount":  12,
-                                           "playerCount":  375,
+                                           "playerCount":  371,
                                            "sleeperLeagueSeason":  "2026",
                                            "sleeperLeagueStatus":  "in_season"
                                        },
@@ -6268,10 +6268,10 @@
                                              "rank":  6
                                          },
                                          {
-                                             "rosterId":  2,
-                                             "ownerId":  "740316773081030656",
-                                             "teamName":  "Dsquad04",
-                                             "score":  72,
+                                             "rosterId":  5,
+                                             "ownerId":  "1045843158745198592",
+                                             "teamName":  "Hillbilly Brawlers",
+                                             "score":  73,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -6280,75 +6280,75 @@
                                                             "ties":  0
                                                         },
                                              "components":  {
-                                                                "lineup":  77.2,
-                                                                "depth":  69.9,
-                                                                "quarterback":  77,
-                                                                "eliteCeiling":  66,
-                                                                "health":  52,
-                                                                "dynastyValue":  69.5
+                                                                "lineup":  76.9,
+                                                                "depth":  69.1,
+                                                                "quarterback":  76.5,
+                                                                "eliteCeiling":  58,
+                                                                "health":  76,
+                                                                "dynastyValue":  71.7
                                                             },
                                              "topPlayers":  [
                                                                 {
-                                                                    "name":  "Jahmyr Gibbs",
-                                                                    "position":  "RB",
-                                                                    "team":  "DET",
-                                                                    "age":  24,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  88
-                                                                },
-                                                                {
-                                                                    "name":  "Breece Hall",
-                                                                    "position":  "RB",
-                                                                    "team":  "NYJ",
-                                                                    "age":  24,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  81
-                                                                },
-                                                                {
-                                                                    "name":  "George Pickens",
+                                                                    "name":  "Drake London",
                                                                     "position":  "WR",
-                                                                    "team":  "DAL",
-                                                                    "age":  25,
+                                                                    "team":  "ATL",
+                                                                    "age":  24,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  83
+                                                                },
+                                                                {
+                                                                    "name":  "Justin Jefferson",
+                                                                    "position":  "WR",
+                                                                    "team":  "MIN",
+                                                                    "age":  26,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  82
+                                                                },
+                                                                {
+                                                                    "name":  "Ladd McConkey",
+                                                                    "position":  "WR",
+                                                                    "team":  "LAC",
+                                                                    "age":  24,
                                                                     "injuryStatus":  "",
                                                                     "value":  79
                                                                 },
                                                                 {
-                                                                    "name":  "Baker Mayfield",
+                                                                    "name":  "A.J. Brown",
+                                                                    "position":  "WR",
+                                                                    "team":  "PHI",
+                                                                    "age":  28,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  79
+                                                                },
+                                                                {
+                                                                    "name":  "Dak Prescott",
                                                                     "position":  "QB",
-                                                                    "team":  "TB",
-                                                                    "age":  31,
+                                                                    "team":  "DAL",
+                                                                    "age":  32,
                                                                     "injuryStatus":  "",
-                                                                    "value":  77
+                                                                    "value":  78
                                                                 },
                                                                 {
-                                                                    "name":  "Jameson Williams",
-                                                                    "position":  "WR",
-                                                                    "team":  "DET",
-                                                                    "age":  25,
+                                                                    "name":  "Shedeur Sanders",
+                                                                    "position":  "QB",
+                                                                    "team":  "CLE",
+                                                                    "age":  24,
                                                                     "injuryStatus":  "",
-                                                                    "value":  76
-                                                                },
-                                                                {
-                                                                    "name":  "Bucky Irving",
-                                                                    "position":  "RB",
-                                                                    "team":  "TB",
-                                                                    "age":  23,
-                                                                    "injuryStatus":  "Questionable",
-                                                                    "value":  76
-                                                                },
-                                                                {
-                                                                    "name":  "Chris Olave",
-                                                                    "position":  "WR",
-                                                                    "team":  "NO",
-                                                                    "age":  25,
-                                                                    "injuryStatus":  "Questionable",
                                                                     "value":  75
                                                                 },
                                                                 {
-                                                                    "name":  "Saquon Barkley",
+                                                                    "name":  "Isaiah Likely",
+                                                                    "position":  "TE",
+                                                                    "team":  "NYG",
+                                                                    "age":  26,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  75
+                                                                },
+                                                                {
+                                                                    "name":  "Kyle Monangai",
                                                                     "position":  "RB",
-                                                                    "team":  "PHI",
-                                                                    "age":  29,
+                                                                    "team":  "CHI",
+                                                                    "age":  23,
                                                                     "injuryStatus":  "",
                                                                     "value":  74
                                                                 }
@@ -6356,107 +6356,107 @@
                                              "starterSnapshot":  [
                                                                      {
                                                                          "slot":  "QB",
-                                                                         "name":  "Baker Mayfield",
+                                                                         "name":  "Dak Prescott",
                                                                          "position":  "QB",
-                                                                         "value":  77
+                                                                         "value":  78
                                                                      },
                                                                      {
                                                                          "slot":  "SUPER_FLEX",
-                                                                         "name":  "Jahmyr Gibbs",
-                                                                         "position":  "RB",
-                                                                         "value":  88
+                                                                         "name":  "Shedeur Sanders",
+                                                                         "position":  "QB",
+                                                                         "value":  75
                                                                      },
                                                                      {
                                                                          "slot":  "RB",
-                                                                         "name":  "Breece Hall",
+                                                                         "name":  "Kyle Monangai",
                                                                          "position":  "RB",
-                                                                         "value":  81
-                                                                     },
-                                                                     {
-                                                                         "slot":  "RB",
-                                                                         "name":  "Bucky Irving",
-                                                                         "position":  "RB",
-                                                                         "value":  76
-                                                                     },
-                                                                     {
-                                                                         "slot":  "WR",
-                                                                         "name":  "George Pickens",
-                                                                         "position":  "WR",
-                                                                         "value":  79
-                                                                     },
-                                                                     {
-                                                                         "slot":  "WR",
-                                                                         "name":  "Jameson Williams",
-                                                                         "position":  "WR",
-                                                                         "value":  76
-                                                                     },
-                                                                     {
-                                                                         "slot":  "TE",
-                                                                         "name":  "Mason Taylor",
-                                                                         "position":  "TE",
                                                                          "value":  74
                                                                      },
                                                                      {
-                                                                         "slot":  "FLEX",
-                                                                         "name":  "Chris Olave",
+                                                                         "slot":  "RB",
+                                                                         "name":  "Rhamondre Stevenson",
+                                                                         "position":  "RB",
+                                                                         "value":  70
+                                                                     },
+                                                                     {
+                                                                         "slot":  "WR",
+                                                                         "name":  "Drake London",
                                                                          "position":  "WR",
+                                                                         "value":  83
+                                                                     },
+                                                                     {
+                                                                         "slot":  "WR",
+                                                                         "name":  "Justin Jefferson",
+                                                                         "position":  "WR",
+                                                                         "value":  82
+                                                                     },
+                                                                     {
+                                                                         "slot":  "TE",
+                                                                         "name":  "Isaiah Likely",
+                                                                         "position":  "TE",
                                                                          "value":  75
                                                                      },
                                                                      {
                                                                          "slot":  "FLEX",
-                                                                         "name":  "Saquon Barkley",
-                                                                         "position":  "RB",
-                                                                         "value":  74
+                                                                         "name":  "Ladd McConkey",
+                                                                         "position":  "WR",
+                                                                         "value":  79
                                                                      },
                                                                      {
                                                                          "slot":  "FLEX",
-                                                                         "name":  "Keon Coleman",
+                                                                         "name":  "A.J. Brown",
                                                                          "position":  "WR",
-                                                                         "value":  72
+                                                                         "value":  79
+                                                                     },
+                                                                     {
+                                                                         "slot":  "FLEX",
+                                                                         "name":  "Terry McLaurin",
+                                                                         "position":  "WR",
+                                                                         "value":  74
                                                                      }
                                                                  ],
                                              "benchSnapshot":  [
                                                                    {
-                                                                       "name":  "Rashid Shaheed",
-                                                                       "position":  "WR",
-                                                                       "value":  71
-                                                                   },
-                                                                   {
-                                                                       "name":  "Jalen Coker",
-                                                                       "position":  "WR",
-                                                                       "value":  71
-                                                                   },
-                                                                   {
-                                                                       "name":  "Denzel Boston",
-                                                                       "position":  "WR",
-                                                                       "value":  70
-                                                                   },
-                                                                   {
-                                                                       "name":  "Tucker Kraft",
+                                                                       "name":  "T.J. Hockenson",
                                                                        "position":  "TE",
+                                                                       "value":  73
+                                                                   },
+                                                                   {
+                                                                       "name":  "Nicholas Singleton",
+                                                                       "position":  "RB",
                                                                        "value":  70
                                                                    },
                                                                    {
-                                                                       "name":  "Chris Brazzell",
+                                                                       "name":  "Geno Smith",
+                                                                       "position":  "QB",
+                                                                       "value":  70
+                                                                   },
+                                                                   {
+                                                                       "name":  "Elijah Sarratt",
                                                                        "position":  "WR",
                                                                        "value":  69
                                                                    },
                                                                    {
-                                                                       "name":  "Ted Hurst",
-                                                                       "position":  "WR",
-                                                                       "value":  69
+                                                                       "name":  "Carson Beck",
+                                                                       "position":  "QB",
+                                                                       "value":  68
                                                                    },
                                                                    {
-                                                                       "name":  "Ja\u0027Kobi Lane",
-                                                                       "position":  "WR",
-                                                                       "value":  69
+                                                                       "name":  "James Conner",
+                                                                       "position":  "RB",
+                                                                       "value":  67
+                                                                   },
+                                                                   {
+                                                                       "name":  "Michael Trigg",
+                                                                       "position":  "TE",
+                                                                       "value":  67
                                                                    }
                                                                ],
                                              "reasons":  [
-                                                             "QB room: Baker Mayfield",
-                                                             "Starter grade 77.2",
-                                                             "Bench grade 69.9",
-                                                             "Health watch: Bucky Irving, Troy Franklin, Luke McCaffrey"
+                                                             "QB room: Dak Prescott, Shedeur Sanders",
+                                                             "Starter grade 76.9",
+                                                             "Bench grade 69.1",
+                                                             "Health watch: Devin Neal, Savion Williams, Tory Horton"
                                                          ],
                                              "rank":  7
                                          },
@@ -6654,6 +6654,199 @@
                                              "rank":  8
                                          },
                                          {
+                                             "rosterId":  2,
+                                             "ownerId":  "740316773081030656",
+                                             "teamName":  "Dsquad04",
+                                             "score":  72,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  77.2,
+                                                                "depth":  69.9,
+                                                                "quarterback":  77,
+                                                                "eliteCeiling":  66,
+                                                                "health":  52,
+                                                                "dynastyValue":  69.5
+                                                            },
+                                             "topPlayers":  [
+                                                                {
+                                                                    "name":  "Jahmyr Gibbs",
+                                                                    "position":  "RB",
+                                                                    "team":  "DET",
+                                                                    "age":  24,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  88
+                                                                },
+                                                                {
+                                                                    "name":  "Breece Hall",
+                                                                    "position":  "RB",
+                                                                    "team":  "NYJ",
+                                                                    "age":  24,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  81
+                                                                },
+                                                                {
+                                                                    "name":  "George Pickens",
+                                                                    "position":  "WR",
+                                                                    "team":  "DAL",
+                                                                    "age":  25,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  79
+                                                                },
+                                                                {
+                                                                    "name":  "Baker Mayfield",
+                                                                    "position":  "QB",
+                                                                    "team":  "TB",
+                                                                    "age":  31,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  77
+                                                                },
+                                                                {
+                                                                    "name":  "Jameson Williams",
+                                                                    "position":  "WR",
+                                                                    "team":  "DET",
+                                                                    "age":  25,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  76
+                                                                },
+                                                                {
+                                                                    "name":  "Bucky Irving",
+                                                                    "position":  "RB",
+                                                                    "team":  "TB",
+                                                                    "age":  23,
+                                                                    "injuryStatus":  "Questionable",
+                                                                    "value":  76
+                                                                },
+                                                                {
+                                                                    "name":  "Chris Olave",
+                                                                    "position":  "WR",
+                                                                    "team":  "NO",
+                                                                    "age":  25,
+                                                                    "injuryStatus":  "Questionable",
+                                                                    "value":  75
+                                                                },
+                                                                {
+                                                                    "name":  "Saquon Barkley",
+                                                                    "position":  "RB",
+                                                                    "team":  "PHI",
+                                                                    "age":  29,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  74
+                                                                }
+                                                            ],
+                                             "starterSnapshot":  [
+                                                                     {
+                                                                         "slot":  "QB",
+                                                                         "name":  "Baker Mayfield",
+                                                                         "position":  "QB",
+                                                                         "value":  77
+                                                                     },
+                                                                     {
+                                                                         "slot":  "SUPER_FLEX",
+                                                                         "name":  "Jahmyr Gibbs",
+                                                                         "position":  "RB",
+                                                                         "value":  88
+                                                                     },
+                                                                     {
+                                                                         "slot":  "RB",
+                                                                         "name":  "Breece Hall",
+                                                                         "position":  "RB",
+                                                                         "value":  81
+                                                                     },
+                                                                     {
+                                                                         "slot":  "RB",
+                                                                         "name":  "Bucky Irving",
+                                                                         "position":  "RB",
+                                                                         "value":  76
+                                                                     },
+                                                                     {
+                                                                         "slot":  "WR",
+                                                                         "name":  "George Pickens",
+                                                                         "position":  "WR",
+                                                                         "value":  79
+                                                                     },
+                                                                     {
+                                                                         "slot":  "WR",
+                                                                         "name":  "Jameson Williams",
+                                                                         "position":  "WR",
+                                                                         "value":  76
+                                                                     },
+                                                                     {
+                                                                         "slot":  "TE",
+                                                                         "name":  "Mason Taylor",
+                                                                         "position":  "TE",
+                                                                         "value":  74
+                                                                     },
+                                                                     {
+                                                                         "slot":  "FLEX",
+                                                                         "name":  "Chris Olave",
+                                                                         "position":  "WR",
+                                                                         "value":  75
+                                                                     },
+                                                                     {
+                                                                         "slot":  "FLEX",
+                                                                         "name":  "Saquon Barkley",
+                                                                         "position":  "RB",
+                                                                         "value":  74
+                                                                     },
+                                                                     {
+                                                                         "slot":  "FLEX",
+                                                                         "name":  "Keon Coleman",
+                                                                         "position":  "WR",
+                                                                         "value":  72
+                                                                     }
+                                                                 ],
+                                             "benchSnapshot":  [
+                                                                   {
+                                                                       "name":  "Rashid Shaheed",
+                                                                       "position":  "WR",
+                                                                       "value":  71
+                                                                   },
+                                                                   {
+                                                                       "name":  "Jalen Coker",
+                                                                       "position":  "WR",
+                                                                       "value":  71
+                                                                   },
+                                                                   {
+                                                                       "name":  "Denzel Boston",
+                                                                       "position":  "WR",
+                                                                       "value":  70
+                                                                   },
+                                                                   {
+                                                                       "name":  "Tucker Kraft",
+                                                                       "position":  "TE",
+                                                                       "value":  70
+                                                                   },
+                                                                   {
+                                                                       "name":  "Chris Brazzell",
+                                                                       "position":  "WR",
+                                                                       "value":  69
+                                                                   },
+                                                                   {
+                                                                       "name":  "Ted Hurst",
+                                                                       "position":  "WR",
+                                                                       "value":  69
+                                                                   },
+                                                                   {
+                                                                       "name":  "Ja\u0027Kobi Lane",
+                                                                       "position":  "WR",
+                                                                       "value":  69
+                                                                   }
+                                                               ],
+                                             "reasons":  [
+                                                             "QB room: Baker Mayfield",
+                                                             "Starter grade 77.2",
+                                                             "Bench grade 69.9",
+                                                             "Health watch: Bucky Irving, Troy Franklin, Luke McCaffrey"
+                                                         ],
+                                             "rank":  9
+                                         },
+                                         {
                                              "rosterId":  3,
                                              "ownerId":  "465050123617955840",
                                              "teamName":  "TheJuanAndOnly15",
@@ -6843,199 +7036,6 @@
                                                              "Starter grade 77.2",
                                                              "Bench grade 71.3",
                                                              "Health watch: Roschon Johnson, Malik Nabers, Gunnar Helm"
-                                                         ],
-                                             "rank":  9
-                                         },
-                                         {
-                                             "rosterId":  5,
-                                             "ownerId":  "1045843158745198592",
-                                             "teamName":  "Hillbilly Brawlers",
-                                             "score":  72,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "components":  {
-                                                                "lineup":  76.9,
-                                                                "depth":  69.1,
-                                                                "quarterback":  76.5,
-                                                                "eliteCeiling":  58,
-                                                                "health":  64,
-                                                                "dynastyValue":  70.6
-                                                            },
-                                             "topPlayers":  [
-                                                                {
-                                                                    "name":  "Drake London",
-                                                                    "position":  "WR",
-                                                                    "team":  "ATL",
-                                                                    "age":  24,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  83
-                                                                },
-                                                                {
-                                                                    "name":  "Justin Jefferson",
-                                                                    "position":  "WR",
-                                                                    "team":  "MIN",
-                                                                    "age":  26,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  82
-                                                                },
-                                                                {
-                                                                    "name":  "Ladd McConkey",
-                                                                    "position":  "WR",
-                                                                    "team":  "LAC",
-                                                                    "age":  24,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  79
-                                                                },
-                                                                {
-                                                                    "name":  "A.J. Brown",
-                                                                    "position":  "WR",
-                                                                    "team":  "PHI",
-                                                                    "age":  28,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  79
-                                                                },
-                                                                {
-                                                                    "name":  "Dak Prescott",
-                                                                    "position":  "QB",
-                                                                    "team":  "DAL",
-                                                                    "age":  32,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  78
-                                                                },
-                                                                {
-                                                                    "name":  "Shedeur Sanders",
-                                                                    "position":  "QB",
-                                                                    "team":  "CLE",
-                                                                    "age":  24,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  75
-                                                                },
-                                                                {
-                                                                    "name":  "Isaiah Likely",
-                                                                    "position":  "TE",
-                                                                    "team":  "NYG",
-                                                                    "age":  26,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  75
-                                                                },
-                                                                {
-                                                                    "name":  "Kyle Monangai",
-                                                                    "position":  "RB",
-                                                                    "team":  "CHI",
-                                                                    "age":  23,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  74
-                                                                }
-                                                            ],
-                                             "starterSnapshot":  [
-                                                                     {
-                                                                         "slot":  "QB",
-                                                                         "name":  "Dak Prescott",
-                                                                         "position":  "QB",
-                                                                         "value":  78
-                                                                     },
-                                                                     {
-                                                                         "slot":  "SUPER_FLEX",
-                                                                         "name":  "Shedeur Sanders",
-                                                                         "position":  "QB",
-                                                                         "value":  75
-                                                                     },
-                                                                     {
-                                                                         "slot":  "RB",
-                                                                         "name":  "Kyle Monangai",
-                                                                         "position":  "RB",
-                                                                         "value":  74
-                                                                     },
-                                                                     {
-                                                                         "slot":  "RB",
-                                                                         "name":  "Nicholas Singleton",
-                                                                         "position":  "RB",
-                                                                         "value":  70
-                                                                     },
-                                                                     {
-                                                                         "slot":  "WR",
-                                                                         "name":  "Drake London",
-                                                                         "position":  "WR",
-                                                                         "value":  83
-                                                                     },
-                                                                     {
-                                                                         "slot":  "WR",
-                                                                         "name":  "Justin Jefferson",
-                                                                         "position":  "WR",
-                                                                         "value":  82
-                                                                     },
-                                                                     {
-                                                                         "slot":  "TE",
-                                                                         "name":  "Isaiah Likely",
-                                                                         "position":  "TE",
-                                                                         "value":  75
-                                                                     },
-                                                                     {
-                                                                         "slot":  "FLEX",
-                                                                         "name":  "Ladd McConkey",
-                                                                         "position":  "WR",
-                                                                         "value":  79
-                                                                     },
-                                                                     {
-                                                                         "slot":  "FLEX",
-                                                                         "name":  "A.J. Brown",
-                                                                         "position":  "WR",
-                                                                         "value":  79
-                                                                     },
-                                                                     {
-                                                                         "slot":  "FLEX",
-                                                                         "name":  "Terry McLaurin",
-                                                                         "position":  "WR",
-                                                                         "value":  74
-                                                                     }
-                                                                 ],
-                                             "benchSnapshot":  [
-                                                                   {
-                                                                       "name":  "T.J. Hockenson",
-                                                                       "position":  "TE",
-                                                                       "value":  73
-                                                                   },
-                                                                   {
-                                                                       "name":  "Rhamondre Stevenson",
-                                                                       "position":  "RB",
-                                                                       "value":  70
-                                                                   },
-                                                                   {
-                                                                       "name":  "Geno Smith",
-                                                                       "position":  "QB",
-                                                                       "value":  70
-                                                                   },
-                                                                   {
-                                                                       "name":  "Elijah Sarratt",
-                                                                       "position":  "WR",
-                                                                       "value":  69
-                                                                   },
-                                                                   {
-                                                                       "name":  "Carson Beck",
-                                                                       "position":  "QB",
-                                                                       "value":  68
-                                                                   },
-                                                                   {
-                                                                       "name":  "Michael Trigg",
-                                                                       "position":  "TE",
-                                                                       "value":  67
-                                                                   },
-                                                                   {
-                                                                       "name":  "James Conner",
-                                                                       "position":  "RB",
-                                                                       "value":  67
-                                                                   }
-                                                               ],
-                                             "reasons":  [
-                                                             "QB room: Dak Prescott, Shedeur Sanders",
-                                                             "Starter grade 76.9",
-                                                             "Bench grade 69.1",
-                                                             "Health watch: Devin Neal, Savion Williams, Tory Horton"
                                                          ],
                                              "rank":  10
                                          },
@@ -7458,7 +7458,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1342931950981091328/rosters",
-                                           "refreshedAt":  "2026-05-14T11:05:52.6404788+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:19.6779757+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -7528,7 +7528,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345763335270400/rosters",
-                                           "refreshedAt":  "2026-05-14T11:05:53.0164150+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:20.3816206+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -7598,7 +7598,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345934114725888/rosters",
-                                           "refreshedAt":  "2026-05-14T11:05:53.4021311+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:20.9444876+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -7668,7 +7668,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1360285262617284608/rosters",
-                                           "refreshedAt":  "2026-05-14T11:05:53.7836091+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:21.5535470+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -7738,7 +7738,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350152770275020800/rosters",
-                                           "refreshedAt":  "2026-05-14T11:05:54.2306620+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:22.1334433+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -7808,7 +7808,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154389192474624/rosters",
-                                           "refreshedAt":  "2026-05-14T11:05:54.5860015+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:22.7172780+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -7878,7 +7878,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154561549004800/rosters",
-                                           "refreshedAt":  "2026-05-14T11:05:54.9672946+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:23.3109606+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -7948,7 +7948,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154695137570816/rosters",
-                                           "refreshedAt":  "2026-05-14T11:05:55.3674472+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:23.8708792+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -8018,7 +8018,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095209052508160/rosters",
-                                           "refreshedAt":  "2026-05-14T11:05:55.7399296+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:24.4523251+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -9887,7 +9887,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095313704554496/rosters",
-                                           "refreshedAt":  "2026-05-14T11:05:56.7829407+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:25.6115251+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -11757,7 +11757,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095371091017728/rosters",
-                                           "refreshedAt":  "2026-05-14T11:05:57.8773264+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:26.7892054+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -13625,7 +13625,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095416859287552/rosters",
-                                           "refreshedAt":  "2026-05-14T11:05:58.9856201+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:27.9598968+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -13686,7 +13686,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095453291003904/rosters",
-                                           "refreshedAt":  "2026-05-14T11:05:59.3635281+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:28.5232983+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -13747,7 +13747,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338004997836640256/rosters",
-                                           "refreshedAt":  "2026-05-14T11:05:59.7296198+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:29.0959256+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -13805,7 +13805,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005036122279936/rosters",
-                                           "refreshedAt":  "2026-05-14T11:06:00.1100625+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:29.6965709+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -13863,7 +13863,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005075167035392/rosters",
-                                           "refreshedAt":  "2026-05-14T11:06:00.4502033+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:30.2942641+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -13921,7 +13921,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005113482022912/rosters",
-                                           "refreshedAt":  "2026-05-14T11:06:00.8346749+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:30.8918958+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -13979,7 +13979,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005158071660544/rosters",
-                                           "refreshedAt":  "2026-05-14T11:06:01.2002750+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:31.4796780+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -14037,7 +14037,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846317608992768/rosters",
-                                           "refreshedAt":  "2026-05-14T11:06:01.5980322+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:32.0397304+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -14094,7 +14094,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846742810775552/rosters",
-                                           "refreshedAt":  "2026-05-14T11:06:01.9822060+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:32.6484301+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -14151,7 +14151,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339342261023961088/rosters",
-                                           "refreshedAt":  "2026-05-14T11:06:02.3930885+00:00",
+                                           "refreshedAt":  "2026-05-14T13:21:33.2202322+00:00",
                                            "rosterCount":  18,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
