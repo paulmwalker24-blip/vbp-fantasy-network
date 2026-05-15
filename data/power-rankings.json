@@ -1,5 +1,5 @@
 ﻿{
-    "generatedAt":  "2026-05-14T21:58:04.8036340+00:00",
+    "generatedAt":  "2026-05-15T01:47:51.8687282+00:00",
     "snapshot":  {
                      "season":  "2026",
                      "seasonType":  "off",
@@ -73,7 +73,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314663050854305792/rosters",
-                                           "refreshedAt":  "2026-05-14T21:57:47.3864215+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:40.2623592+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -130,7 +130,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314662767977824256/rosters",
-                                           "refreshedAt":  "2026-05-14T21:57:47.9529589+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:40.5260394+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -187,7 +187,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314660487635427328/rosters",
-                                           "refreshedAt":  "2026-05-14T21:57:48.3674502+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:40.7733702+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -244,7 +244,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1344449488089014272/rosters",
-                                           "refreshedAt":  "2026-05-14T21:57:48.8151850+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:41.0216798+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -301,7 +301,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341650084122595328/rosters",
-                                           "refreshedAt":  "2026-05-14T21:57:49.4983185+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:41.2807448+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  384,
                                            "sleeperLeagueSeason":  "2026",
@@ -736,8 +736,8 @@
                                                             "ties":  0
                                                         },
                                              "components":  {
-                                                                "lineup":  77,
-                                                                "depth":  70.9,
+                                                                "lineup":  76.9,
+                                                                "depth":  70.7,
                                                                 "quarterback":  79.5,
                                                                 "eliteCeiling":  74,
                                                                 "health":  70,
@@ -860,15 +860,15 @@
                                                                      },
                                                                      {
                                                                          "slot":  "FLEX",
-                                                                         "name":  "Parker Washington",
-                                                                         "position":  "WR",
+                                                                         "name":  "AJ Barner",
+                                                                         "position":  "TE",
                                                                          "value":  72
                                                                      },
                                                                      {
                                                                          "slot":  "FLEX",
-                                                                         "name":  "AJ Barner",
-                                                                         "position":  "TE",
-                                                                         "value":  72
+                                                                         "name":  "Cam Skattebo",
+                                                                         "position":  "RB",
+                                                                         "value":  71
                                                                      }
                                                                  ],
                                              "benchSnapshot":  [
@@ -878,14 +878,14 @@
                                                                        "value":  77
                                                                    },
                                                                    {
-                                                                       "name":  "Cam Skattebo",
-                                                                       "position":  "RB",
-                                                                       "value":  71
-                                                                   },
-                                                                   {
                                                                        "name":  "Ty Simpson",
                                                                        "position":  "QB",
                                                                        "value":  71
+                                                                   },
+                                                                   {
+                                                                       "name":  "Marvin Mims",
+                                                                       "position":  "WR",
+                                                                       "value":  70
                                                                    },
                                                                    {
                                                                        "name":  "Matthew Stafford",
@@ -893,7 +893,7 @@
                                                                        "value":  70
                                                                    },
                                                                    {
-                                                                       "name":  "Marvin Mims",
+                                                                       "name":  "Parker Washington",
                                                                        "position":  "WR",
                                                                        "value":  70
                                                                    },
@@ -910,8 +910,8 @@
                                                                ],
                                              "reasons":  [
                                                              "QB room: Jaxson Dart, Baker Mayfield",
-                                                             "Starter grade 77",
-                                                             "Bench grade 70.9",
+                                                             "Starter grade 76.9",
+                                                             "Bench grade 70.7",
                                                              "Health watch: Ja\u0027Lynn Polk, Cam Skattebo, Quinn Ewers"
                                                          ],
                                              "rank":  3
@@ -1706,7 +1706,7 @@
                                                                 "quarterback":  80.5,
                                                                 "eliteCeiling":  74,
                                                                 "health":  38,
-                                                                "dynastyValue":  68.9
+                                                                "dynastyValue":  68.8
                                                             },
                                              "topPlayers":  [
                                                                 {
@@ -1843,13 +1843,13 @@
                                                                        "value":  73
                                                                    },
                                                                    {
-                                                                       "name":  "Anthony Richardson",
-                                                                       "position":  "QB",
+                                                                       "name":  "Tre\u0027 Harris",
+                                                                       "position":  "WR",
                                                                        "value":  72
                                                                    },
                                                                    {
-                                                                       "name":  "Tre\u0027 Harris",
-                                                                       "position":  "WR",
+                                                                       "name":  "Anthony Richardson",
+                                                                       "position":  "QB",
                                                                        "value":  72
                                                                    },
                                                                    {
@@ -1868,8 +1868,8 @@
                                                                        "value":  70
                                                                    },
                                                                    {
-                                                                       "name":  "Jakobi Meyers",
-                                                                       "position":  "WR",
+                                                                       "name":  "J.K. Dobbins",
+                                                                       "position":  "RB",
                                                                        "value":  70
                                                                    }
                                                                ],
@@ -2686,7 +2686,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1340820529996640256/rosters",
-                                           "refreshedAt":  "2026-05-14T21:57:52.2681586+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:42.8396329+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  369,
                                            "sleeperLeagueSeason":  "2026",
@@ -2929,7 +2929,7 @@
                                                         },
                                              "components":  {
                                                                 "lineup":  79.6,
-                                                                "depth":  71.9,
+                                                                "depth":  71.6,
                                                                 "quarterback":  85.5,
                                                                 "eliteCeiling":  74,
                                                                 "health":  66,
@@ -3075,11 +3075,6 @@
                                                                        "value":  73
                                                                    },
                                                                    {
-                                                                       "name":  "Parker Washington",
-                                                                       "position":  "WR",
-                                                                       "value":  72
-                                                                   },
-                                                                   {
                                                                        "name":  "Michael Pittman",
                                                                        "position":  "WR",
                                                                        "value":  72
@@ -3095,6 +3090,11 @@
                                                                        "value":  71
                                                                    },
                                                                    {
+                                                                       "name":  "Parker Washington",
+                                                                       "position":  "WR",
+                                                                       "value":  70
+                                                                   },
+                                                                   {
                                                                        "name":  "Chris Godwin",
                                                                        "position":  "WR",
                                                                        "value":  70
@@ -3103,7 +3103,7 @@
                                              "reasons":  [
                                                              "QB room: Drake Maye, Jalen Hurts",
                                                              "Starter grade 79.6",
-                                                             "Bench grade 71.9",
+                                                             "Bench grade 71.6",
                                                              "Health watch: Gunnar Helm, Nick Chubb, Jalin Hyatt"
                                                          ],
                                              "rank":  2
@@ -3122,7 +3122,7 @@
                                                         },
                                              "components":  {
                                                                 "lineup":  77.6,
-                                                                "depth":  70,
+                                                                "depth":  69.9,
                                                                 "quarterback":  80,
                                                                 "eliteCeiling":  66,
                                                                 "health":  88,
@@ -3278,25 +3278,25 @@
                                                                        "value":  70
                                                                    },
                                                                    {
+                                                                       "name":  "Chris Brazzell",
+                                                                       "position":  "WR",
+                                                                       "value":  69
+                                                                   },
+                                                                   {
                                                                        "name":  "Ted Hurst",
                                                                        "position":  "WR",
                                                                        "value":  69
                                                                    },
                                                                    {
-                                                                       "name":  "Travis Hunter",
-                                                                       "position":  "WR",
-                                                                       "value":  69
-                                                                   },
-                                                                   {
-                                                                       "name":  "Chris Brazzell",
-                                                                       "position":  "WR",
-                                                                       "value":  69
+                                                                       "name":  "Tanner McKee",
+                                                                       "position":  "QB",
+                                                                       "value":  68
                                                                    }
                                                                ],
                                              "reasons":  [
                                                              "QB room: Trevor Lawrence, Jordan Love",
                                                              "Starter grade 77.6",
-                                                             "Bench grade 70",
+                                                             "Bench grade 69.9",
                                                              "Health watch: Savion Williams, Travis Hunter"
                                                          ],
                                              "rank":  3
@@ -4666,7 +4666,7 @@
                                                         },
                                              "components":  {
                                                                 "lineup":  74.6,
-                                                                "depth":  69.1,
+                                                                "depth":  68.9,
                                                                 "quarterback":  72.5,
                                                                 "eliteCeiling":  58,
                                                                 "health":  70,
@@ -4807,11 +4807,6 @@
                                                                        "value":  70
                                                                    },
                                                                    {
-                                                                       "name":  "Jakobi Meyers",
-                                                                       "position":  "WR",
-                                                                       "value":  70
-                                                                   },
-                                                                   {
                                                                        "name":  "Elic Ayomanor",
                                                                        "position":  "WR",
                                                                        "value":  70
@@ -4827,6 +4822,11 @@
                                                                        "value":  69
                                                                    },
                                                                    {
+                                                                       "name":  "Garrett Nussmeier",
+                                                                       "position":  "QB",
+                                                                       "value":  68
+                                                                   },
+                                                                   {
                                                                        "name":  "Kayshon Boutte",
                                                                        "position":  "WR",
                                                                        "value":  68
@@ -4840,7 +4840,7 @@
                                              "reasons":  [
                                                              "QB room: Baker Mayfield, Davis Mills",
                                                              "Starter grade 74.6",
-                                                             "Bench grade 69.1",
+                                                             "Bench grade 68.9",
                                                              "Health watch: Michael Penix, Spencer Rattler, Cam Skattebo"
                                                          ],
                                              "rank":  11
@@ -5071,7 +5071,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341646934816849920/rosters",
-                                           "refreshedAt":  "2026-05-14T21:57:53.4273284+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:43.9022915+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  371,
                                            "sleeperLeagueSeason":  "2026",
@@ -5121,11 +5121,11 @@
                                                         },
                                              "components":  {
                                                                 "lineup":  78,
-                                                                "depth":  72.9,
+                                                                "depth":  72.7,
                                                                 "quarterback":  84,
                                                                 "eliteCeiling":  66,
                                                                 "health":  76,
-                                                                "dynastyValue":  73.3
+                                                                "dynastyValue":  73.2
                                                             },
                                              "topPlayers":  [
                                                                 {
@@ -5267,24 +5267,24 @@
                                                                        "value":  74
                                                                    },
                                                                    {
-                                                                       "name":  "Oronde Gadsden",
-                                                                       "position":  "TE",
-                                                                       "value":  73
-                                                                   },
-                                                                   {
                                                                        "name":  "Adonai Mitchell",
                                                                        "position":  "WR",
                                                                        "value":  73
                                                                    },
                                                                    {
-                                                                       "name":  "Parker Washington",
-                                                                       "position":  "WR",
-                                                                       "value":  72
+                                                                       "name":  "Oronde Gadsden",
+                                                                       "position":  "TE",
+                                                                       "value":  73
                                                                    },
                                                                    {
                                                                        "name":  "Terrance Ferguson",
                                                                        "position":  "TE",
                                                                        "value":  72
+                                                                   },
+                                                                   {
+                                                                       "name":  "Jalen Milroe",
+                                                                       "position":  "QB",
+                                                                       "value":  71
                                                                    },
                                                                    {
                                                                        "name":  "Christian Watson",
@@ -5295,7 +5295,7 @@
                                              "reasons":  [
                                                              "QB room: Drake Maye, Jayden Daniels",
                                                              "Starter grade 78",
-                                                             "Bench grade 72.9",
+                                                             "Bench grade 72.7",
                                                              "Health watch: Jayden Daniels, Brock Bowers, Drew Allar"
                                                          ],
                                              "rank":  1
@@ -5314,7 +5314,7 @@
                                                         },
                                              "components":  {
                                                                 "lineup":  78.6,
-                                                                "depth":  71.7,
+                                                                "depth":  71.6,
                                                                 "quarterback":  81.5,
                                                                 "eliteCeiling":  66,
                                                                 "health":  76,
@@ -5480,15 +5480,15 @@
                                                                        "value":  70
                                                                    },
                                                                    {
-                                                                       "name":  "Travis Hunter",
-                                                                       "position":  "WR",
-                                                                       "value":  69
+                                                                       "name":  "Audric Estime",
+                                                                       "position":  "RB",
+                                                                       "value":  68
                                                                    }
                                                                ],
                                              "reasons":  [
                                                              "QB room: Joe Burrow, Justin Herbert",
                                                              "Starter grade 78.6",
-                                                             "Bench grade 71.7",
+                                                             "Bench grade 71.6",
                                                              "Health watch: Cam Skattebo, Travis Hunter, Jaylin Lane"
                                                          ],
                                              "rank":  2
@@ -5893,7 +5893,7 @@
                                                         },
                                              "components":  {
                                                                 "lineup":  76.4,
-                                                                "depth":  69.1,
+                                                                "depth":  68.9,
                                                                 "quarterback":  80.5,
                                                                 "eliteCeiling":  66,
                                                                 "health":  66,
@@ -6034,18 +6034,13 @@
                                                                        "value":  71
                                                                    },
                                                                    {
-                                                                       "name":  "Jakobi Meyers",
-                                                                       "position":  "WR",
-                                                                       "value":  70
+                                                                       "name":  "Tony Pollard",
+                                                                       "position":  "RB",
+                                                                       "value":  69
                                                                    },
                                                                    {
                                                                        "name":  "Marcus Mariota",
                                                                        "position":  "QB",
-                                                                       "value":  69
-                                                                   },
-                                                                   {
-                                                                       "name":  "Tony Pollard",
-                                                                       "position":  "RB",
                                                                        "value":  69
                                                                    },
                                                                    {
@@ -6062,12 +6057,17 @@
                                                                        "name":  "Mason Rudolph",
                                                                        "position":  "QB",
                                                                        "value":  68
+                                                                   },
+                                                                   {
+                                                                       "name":  "Jakobi Meyers",
+                                                                       "position":  "WR",
+                                                                       "value":  68
                                                                    }
                                                                ],
                                              "reasons":  [
                                                              "QB room: Jalen Hurts, Jordan Love",
                                                              "Starter grade 76.4",
-                                                             "Bench grade 69.1",
+                                                             "Bench grade 68.9",
                                                              "Health watch: Malik Davis, Darnell Washington, Nick Chubb"
                                                          ],
                                              "rank":  5
@@ -7456,7 +7456,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1342931950981091328/rosters",
-                                           "refreshedAt":  "2026-05-14T21:57:54.7484874+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:45.0176937+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -7933,7 +7933,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345763335270400/rosters",
-                                           "refreshedAt":  "2026-05-14T21:57:55.3855997+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:45.4905903+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -7987,7 +7987,7 @@
                                                                 "quarterback":  0,
                                                                 "eliteCeiling":  58,
                                                                 "health":  100,
-                                                                "dynastyValue":  23.4
+                                                                "dynastyValue":  23.3
                                                             },
                                              "topPlayers":  [
 
@@ -8021,7 +8021,7 @@
                                                                 "quarterback":  0,
                                                                 "eliteCeiling":  58,
                                                                 "health":  100,
-                                                                "dynastyValue":  23.2
+                                                                "dynastyValue":  23
                                                             },
                                              "topPlayers":  [
 
@@ -8055,7 +8055,7 @@
                                                                 "quarterback":  0,
                                                                 "eliteCeiling":  58,
                                                                 "health":  100,
-                                                                "dynastyValue":  23.6
+                                                                "dynastyValue":  23.5
                                                             },
                                              "topPlayers":  [
 
@@ -8089,7 +8089,7 @@
                                                                 "quarterback":  0,
                                                                 "eliteCeiling":  58,
                                                                 "health":  100,
-                                                                "dynastyValue":  23.1
+                                                                "dynastyValue":  23.3
                                                             },
                                              "topPlayers":  [
 
@@ -8157,7 +8157,7 @@
                                                                 "quarterback":  0,
                                                                 "eliteCeiling":  58,
                                                                 "health":  100,
-                                                                "dynastyValue":  23.1
+                                                                "dynastyValue":  23.3
                                                             },
                                              "topPlayers":  [
 
@@ -8191,7 +8191,7 @@
                                                                 "quarterback":  0,
                                                                 "eliteCeiling":  58,
                                                                 "health":  100,
-                                                                "dynastyValue":  23.4
+                                                                "dynastyValue":  23.3
                                                             },
                                              "topPlayers":  [
 
@@ -8225,7 +8225,7 @@
                                                                 "quarterback":  0,
                                                                 "eliteCeiling":  58,
                                                                 "health":  100,
-                                                                "dynastyValue":  23.7
+                                                                "dynastyValue":  23.6
                                                             },
                                              "topPlayers":  [
 
@@ -8259,7 +8259,7 @@
                                                                 "quarterback":  0,
                                                                 "eliteCeiling":  58,
                                                                 "health":  100,
-                                                                "dynastyValue":  23
+                                                                "dynastyValue":  23.2
                                                             },
                                              "topPlayers":  [
 
@@ -8293,7 +8293,7 @@
                                                                 "quarterback":  0,
                                                                 "eliteCeiling":  58,
                                                                 "health":  100,
-                                                                "dynastyValue":  23.4
+                                                                "dynastyValue":  23.1
                                                             },
                                              "topPlayers":  [
 
@@ -8327,7 +8327,7 @@
                                                                 "quarterback":  0,
                                                                 "eliteCeiling":  58,
                                                                 "health":  100,
-                                                                "dynastyValue":  23.2
+                                                                "dynastyValue":  23.4
                                                             },
                                              "topPlayers":  [
 
@@ -8361,7 +8361,7 @@
                                                                 "quarterback":  0,
                                                                 "eliteCeiling":  58,
                                                                 "health":  100,
-                                                                "dynastyValue":  23.4
+                                                                "dynastyValue":  23.3
                                                             },
                                              "topPlayers":  [
 
@@ -8410,7 +8410,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345934114725888/rosters",
-                                           "refreshedAt":  "2026-05-14T21:57:56.0591620+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:45.9474240+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -8480,7 +8480,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1360285262617284608/rosters",
-                                           "refreshedAt":  "2026-05-14T21:57:56.4467517+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:46.1819272+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -8550,7 +8550,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350152770275020800/rosters",
-                                           "refreshedAt":  "2026-05-14T21:57:56.8579602+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:46.4162031+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -8620,7 +8620,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154389192474624/rosters",
-                                           "refreshedAt":  "2026-05-14T21:57:57.3181639+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:46.6567381+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -8690,7 +8690,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154561549004800/rosters",
-                                           "refreshedAt":  "2026-05-14T21:57:57.6626952+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:46.8884243+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -8760,7 +8760,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154695137570816/rosters",
-                                           "refreshedAt":  "2026-05-14T21:57:58.0665599+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:47.1422362+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -8830,7 +8830,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095209052508160/rosters",
-                                           "refreshedAt":  "2026-05-14T21:57:58.4588397+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:47.3900781+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -9025,7 +9025,7 @@
                                                                        "value":  69
                                                                    },
                                                                    {
-                                                                       "name":  "Parker Washington",
+                                                                       "name":  "Jordan Addison",
                                                                        "position":  "WR",
                                                                        "value":  68
                                                                    }
@@ -10499,7 +10499,7 @@
                                                         },
                                              "components":  {
                                                                 "lineup":  74.9,
-                                                                "depth":  69.9,
+                                                                "depth":  69.6,
                                                                 "quarterback":  75,
                                                                 "eliteCeiling":  58,
                                                                 "health":  48,
@@ -10633,14 +10633,14 @@
                                                                        "value":  71
                                                                    },
                                                                    {
-                                                                       "name":  "Jakobi Meyers",
-                                                                       "position":  "WR",
-                                                                       "value":  71
-                                                                   },
-                                                                   {
                                                                        "name":  "Brock Bowers",
                                                                        "position":  "TE",
                                                                        "value":  70
+                                                                   },
+                                                                   {
+                                                                       "name":  "Jakobi Meyers",
+                                                                       "position":  "WR",
+                                                                       "value":  69
                                                                    },
                                                                    {
                                                                        "name":  "Quinshon Judkins",
@@ -10653,15 +10653,15 @@
                                                                        "value":  68
                                                                    },
                                                                    {
-                                                                       "name":  "Marvin Harrison",
-                                                                       "position":  "WR",
+                                                                       "name":  "Emmett Johnson",
+                                                                       "position":  "RB",
                                                                        "value":  67
                                                                    }
                                                                ],
                                              "reasons":  [
                                                              "QB room: Trevor Lawrence, Bryce Young",
                                                              "Starter grade 74.9",
-                                                             "Bench grade 69.9",
+                                                             "Bench grade 69.6",
                                                              "Health watch: Brock Bowers, Marvin Harrison, Quinshon Judkins"
                                                          ],
                                              "rank":  10
@@ -10699,7 +10699,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095313704554496/rosters",
-                                           "refreshedAt":  "2026-05-14T21:57:59.3700192+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:48.1374793+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -10740,7 +10740,7 @@
                                                         },
                                              "components":  {
                                                                 "lineup":  76.8,
-                                                                "depth":  72.3,
+                                                                "depth":  72,
                                                                 "quarterback":  79,
                                                                 "eliteCeiling":  66,
                                                                 "health":  94,
@@ -10879,17 +10879,17 @@
                                                                        "value":  72
                                                                    },
                                                                    {
-                                                                       "name":  "Jakobi Meyers",
-                                                                       "position":  "WR",
-                                                                       "value":  71
-                                                                   },
-                                                                   {
                                                                        "name":  "Matthew Golden",
                                                                        "position":  "WR",
                                                                        "value":  71
                                                                    },
                                                                    {
                                                                        "name":  "Jauan Jennings",
+                                                                       "position":  "WR",
+                                                                       "value":  69
+                                                                   },
+                                                                   {
+                                                                       "name":  "Jakobi Meyers",
                                                                        "position":  "WR",
                                                                        "value":  69
                                                                    },
@@ -10902,7 +10902,7 @@
                                              "reasons":  [
                                                              "QB room: Lamar Jackson, Justin Herbert",
                                                              "Starter grade 76.8",
-                                                             "Bench grade 72.3",
+                                                             "Bench grade 72",
                                                              "Health watch: Tank Dell"
                                                          ],
                                              "rank":  1
@@ -10921,7 +10921,7 @@
                                                         },
                                              "components":  {
                                                                 "lineup":  77.2,
-                                                                "depth":  71,
+                                                                "depth":  70.9,
                                                                 "quarterback":  79.5,
                                                                 "eliteCeiling":  66,
                                                                 "health":  94,
@@ -11070,20 +11070,20 @@
                                                                        "value":  71
                                                                    },
                                                                    {
-                                                                       "name":  "Parker Washington",
-                                                                       "position":  "WR",
-                                                                       "value":  68
-                                                                   },
-                                                                   {
                                                                        "name":  "Stefon Diggs",
                                                                        "position":  "WR",
+                                                                       "value":  67
+                                                                   },
+                                                                   {
+                                                                       "name":  "Sam LaPorta",
+                                                                       "position":  "TE",
                                                                        "value":  67
                                                                    }
                                                                ],
                                              "reasons":  [
                                                              "QB room: Drake Maye, Sam Darnold",
                                                              "Starter grade 77.2",
-                                                             "Bench grade 71",
+                                                             "Bench grade 70.9",
                                                              "Health watch: Sam LaPorta"
                                                          ],
                                              "rank":  2
@@ -12569,7 +12569,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095371091017728/rosters",
-                                           "refreshedAt":  "2026-05-14T21:58:00.2210329+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:48.8916665+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -14056,7 +14056,7 @@
                                                         },
                                              "components":  {
                                                                 "lineup":  75.2,
-                                                                "depth":  69.3,
+                                                                "depth":  69,
                                                                 "quarterback":  77,
                                                                 "eliteCeiling":  58,
                                                                 "health":  44,
@@ -14173,8 +14173,8 @@
                                                                      },
                                                                      {
                                                                          "slot":  "FLEX",
-                                                                         "name":  "Jakobi Meyers",
-                                                                         "position":  "WR",
+                                                                         "name":  "Kenneth Gainwell",
+                                                                         "position":  "RB",
                                                                          "value":  71
                                                                      }
                                                                  ],
@@ -14190,9 +14190,9 @@
                                                                        "value":  72
                                                                    },
                                                                    {
-                                                                       "name":  "Kenneth Gainwell",
-                                                                       "position":  "RB",
-                                                                       "value":  71
+                                                                       "name":  "Jakobi Meyers",
+                                                                       "position":  "WR",
+                                                                       "value":  69
                                                                    },
                                                                    {
                                                                        "name":  "Isiah Pacheco",
@@ -14218,7 +14218,7 @@
                                              "reasons":  [
                                                              "QB room: Lamar Jackson, Kyler Murray",
                                                              "Starter grade 75.2",
-                                                             "Bench grade 69.3",
+                                                             "Bench grade 69",
                                                              "Health watch: Sam LaPorta, Malik Nabers, Patrick Mahomes"
                                                          ],
                                              "rank":  9
@@ -14437,7 +14437,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095416859287552/rosters",
-                                           "refreshedAt":  "2026-05-14T21:58:01.0083599+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:49.6609296+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -14498,7 +14498,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095453291003904/rosters",
-                                           "refreshedAt":  "2026-05-14T21:58:01.4611069+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:49.9149073+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -14559,7 +14559,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338004997836640256/rosters",
-                                           "refreshedAt":  "2026-05-14T21:58:01.8370264+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:50.1678629+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -14617,7 +14617,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005036122279936/rosters",
-                                           "refreshedAt":  "2026-05-14T21:58:02.2265413+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:50.4212336+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -14675,7 +14675,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005075167035392/rosters",
-                                           "refreshedAt":  "2026-05-14T21:58:02.5984146+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:50.6603781+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -14733,7 +14733,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005113482022912/rosters",
-                                           "refreshedAt":  "2026-05-14T21:58:03.1504675+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:50.8971962+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -14791,7 +14791,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005158071660544/rosters",
-                                           "refreshedAt":  "2026-05-14T21:58:03.5254398+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:51.1478618+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -14849,7 +14849,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846317608992768/rosters",
-                                           "refreshedAt":  "2026-05-14T21:58:03.9428387+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:51.3846898+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -14906,7 +14906,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846742810775552/rosters",
-                                           "refreshedAt":  "2026-05-14T21:58:04.2913459+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:51.6114579+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -14963,7 +14963,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339342261023961088/rosters",
-                                           "refreshedAt":  "2026-05-14T21:58:04.8030345+00:00",
+                                           "refreshedAt":  "2026-05-15T01:47:51.8670872+00:00",
                                            "rosterCount":  18,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
