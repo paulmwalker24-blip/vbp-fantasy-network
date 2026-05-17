@@ -1,5 +1,5 @@
 ﻿{
-    "generatedAt":  "2026-05-17T06:10:49.0526032+00:00",
+    "generatedAt":  "2026-05-17T10:15:09.2884882+00:00",
     "snapshot":  {
                      "season":  "2026",
                      "seasonType":  "off",
@@ -74,7 +74,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314663050854305792/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:37.5562360+00:00",
+                                           "refreshedAt":  "2026-05-17T10:14:53.5617707+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -131,7 +131,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314662767977824256/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:37.7997981+00:00",
+                                           "refreshedAt":  "2026-05-17T10:14:53.9451401+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -188,7 +188,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314660487635427328/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:38.0571235+00:00",
+                                           "refreshedAt":  "2026-05-17T10:14:54.3575451+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -245,7 +245,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1344449488089014272/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:38.2736203+00:00",
+                                           "refreshedAt":  "2026-05-17T10:14:54.8772162+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -302,7 +302,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341650084122595328/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:38.5207392+00:00",
+                                           "refreshedAt":  "2026-05-17T10:14:55.2705610+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  389,
                                            "sleeperLeagueSeason":  "2026",
@@ -2687,9 +2687,9 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1340820529996640256/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:40.1226893+00:00",
+                                           "refreshedAt":  "2026-05-17T10:14:56.6641238+00:00",
                                            "rosterCount":  12,
-                                           "playerCount":  364,
+                                           "playerCount":  366,
                                            "sleeperLeagueSeason":  "2026",
                                            "sleeperLeagueStatus":  "in_season"
                                        },
@@ -4863,8 +4863,8 @@
                                                                 "depth":  70.1,
                                                                 "quarterback":  73,
                                                                 "eliteCeiling":  66,
-                                                                "health":  42,
-                                                                "dynastyValue":  72
+                                                                "health":  36,
+                                                                "dynastyValue":  71.9
                                                             },
                                              "topPlayers":  [
                                                                 {
@@ -5072,7 +5072,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341646934816849920/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:41.1437263+00:00",
+                                           "refreshedAt":  "2026-05-17T10:14:57.7069231+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  372,
                                            "sleeperLeagueSeason":  "2026",
@@ -7457,9 +7457,9 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1342931950981091328/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:42.2738325+00:00",
+                                           "refreshedAt":  "2026-05-17T10:14:58.8677576+00:00",
                                            "rosterCount":  12,
-                                           "playerCount":  368,
+                                           "playerCount":  369,
                                            "sleeperLeagueSeason":  "2026",
                                            "sleeperLeagueStatus":  "in_season"
                                        },
@@ -9633,8 +9633,8 @@
                                                                 "depth":  69.6,
                                                                 "quarterback":  76.5,
                                                                 "eliteCeiling":  58,
-                                                                "health":  54,
-                                                                "dynastyValue":  70
+                                                                "health":  48,
+                                                                "dynastyValue":  70.2
                                                             },
                                              "topPlayers":  [
                                                                 {
@@ -9646,18 +9646,18 @@
                                                                     "value":  79
                                                                 },
                                                                 {
-                                                                    "name":  "Rashee Rice",
-                                                                    "position":  "WR",
-                                                                    "team":  "KC",
-                                                                    "age":  26,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  77
-                                                                },
-                                                                {
                                                                     "name":  "RJ Harvey",
                                                                     "position":  "RB",
                                                                     "team":  "DEN",
                                                                     "age":  25,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  77
+                                                                },
+                                                                {
+                                                                    "name":  "Rashee Rice",
+                                                                    "position":  "WR",
+                                                                    "team":  "KC",
+                                                                    "age":  26,
                                                                     "injuryStatus":  "",
                                                                     "value":  77
                                                                 },
@@ -9678,18 +9678,18 @@
                                                                     "value":  75
                                                                 },
                                                                 {
-                                                                    "name":  "Brock Bowers",
-                                                                    "position":  "TE",
-                                                                    "team":  "LV",
-                                                                    "age":  23,
-                                                                    "injuryStatus":  "Questionable",
-                                                                    "value":  74
-                                                                },
-                                                                {
                                                                     "name":  "Patrick Mahomes",
                                                                     "position":  "QB",
                                                                     "team":  "KC",
                                                                     "age":  30,
+                                                                    "injuryStatus":  "Questionable",
+                                                                    "value":  74
+                                                                },
+                                                                {
+                                                                    "name":  "Brock Bowers",
+                                                                    "position":  "TE",
+                                                                    "team":  "LV",
+                                                                    "age":  23,
                                                                     "injuryStatus":  "Questionable",
                                                                     "value":  74
                                                                 },
@@ -9747,8 +9747,8 @@
                                                                      },
                                                                      {
                                                                          "slot":  "FLEX",
-                                                                         "name":  "Jaylen Wright",
-                                                                         "position":  "RB",
+                                                                         "name":  "Antonio Williams",
+                                                                         "position":  "WR",
                                                                          "value":  70
                                                                      },
                                                                      {
@@ -9759,8 +9759,8 @@
                                                                      },
                                                                      {
                                                                          "slot":  "FLEX",
-                                                                         "name":  "Antonio Williams",
-                                                                         "position":  "WR",
+                                                                         "name":  "Kaytron Allen",
+                                                                         "position":  "RB",
                                                                          "value":  70
                                                                      }
                                                                  ],
@@ -9771,19 +9771,14 @@
                                                                        "value":  71
                                                                    },
                                                                    {
-                                                                       "name":  "Kenyon Sadiq",
-                                                                       "position":  "TE",
-                                                                       "value":  70
-                                                                   },
-                                                                   {
-                                                                       "name":  "Kaytron Allen",
+                                                                       "name":  "Jaylen Wright",
                                                                        "position":  "RB",
                                                                        "value":  70
                                                                    },
                                                                    {
-                                                                       "name":  "Malachi Fields",
-                                                                       "position":  "WR",
-                                                                       "value":  69
+                                                                       "name":  "Kenyon Sadiq",
+                                                                       "position":  "TE",
+                                                                       "value":  70
                                                                    },
                                                                    {
                                                                        "name":  "Elijah Sarratt",
@@ -9791,13 +9786,18 @@
                                                                        "value":  69
                                                                    },
                                                                    {
-                                                                       "name":  "Eli Stowers",
-                                                                       "position":  "TE",
+                                                                       "name":  "Malachi Fields",
+                                                                       "position":  "WR",
                                                                        "value":  69
                                                                    },
                                                                    {
                                                                        "name":  "De\u0027Zhaun Stribling",
                                                                        "position":  "WR",
+                                                                       "value":  69
+                                                                   },
+                                                                   {
+                                                                       "name":  "Eli Stowers",
+                                                                       "position":  "TE",
                                                                        "value":  69
                                                                    }
                                                                ],
@@ -9842,7 +9842,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345763335270400/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:43.4255987+00:00",
+                                           "refreshedAt":  "2026-05-17T10:15:00.0311844+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9912,7 +9912,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345934114725888/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:43.6569868+00:00",
+                                           "refreshedAt":  "2026-05-17T10:15:00.4042018+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9982,7 +9982,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1360285262617284608/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:43.8689884+00:00",
+                                           "refreshedAt":  "2026-05-17T10:15:00.8224591+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10052,7 +10052,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350152770275020800/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:44.0818883+00:00",
+                                           "refreshedAt":  "2026-05-17T10:15:01.2445020+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10122,7 +10122,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154389192474624/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:44.3037524+00:00",
+                                           "refreshedAt":  "2026-05-17T10:15:01.7395137+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10192,7 +10192,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154561549004800/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:44.5234691+00:00",
+                                           "refreshedAt":  "2026-05-17T10:15:02.1416933+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10262,7 +10262,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154695137570816/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:44.7391972+00:00",
+                                           "refreshedAt":  "2026-05-17T10:15:02.5325461+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10332,7 +10332,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095209052508160/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:44.9626613+00:00",
+                                           "refreshedAt":  "2026-05-17T10:15:02.8806394+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -12201,7 +12201,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095313704554496/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:45.6790539+00:00",
+                                           "refreshedAt":  "2026-05-17T10:15:03.7351371+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -14071,7 +14071,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095371091017728/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:46.3830810+00:00",
+                                           "refreshedAt":  "2026-05-17T10:15:04.5389778+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -15939,7 +15939,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095416859287552/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:47.0847116+00:00",
+                                           "refreshedAt":  "2026-05-17T10:15:05.3214332+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -16000,7 +16000,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095453291003904/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:47.2940473+00:00",
+                                           "refreshedAt":  "2026-05-17T10:15:05.7255074+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -16061,7 +16061,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338004997836640256/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:47.5091213+00:00",
+                                           "refreshedAt":  "2026-05-17T10:15:06.1091916+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -16119,7 +16119,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005036122279936/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:47.7276771+00:00",
+                                           "refreshedAt":  "2026-05-17T10:15:06.4978783+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -16177,7 +16177,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005075167035392/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:47.9615179+00:00",
+                                           "refreshedAt":  "2026-05-17T10:15:07.0026549+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -16235,7 +16235,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005113482022912/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:48.1832777+00:00",
+                                           "refreshedAt":  "2026-05-17T10:15:07.3754905+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -16293,7 +16293,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005158071660544/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:48.3987994+00:00",
+                                           "refreshedAt":  "2026-05-17T10:15:07.8892232+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -16351,7 +16351,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846317608992768/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:48.6145177+00:00",
+                                           "refreshedAt":  "2026-05-17T10:15:08.3794388+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -16408,7 +16408,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846742810775552/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:48.8356217+00:00",
+                                           "refreshedAt":  "2026-05-17T10:15:08.7624771+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -16465,7 +16465,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339342261023961088/rosters",
-                                           "refreshedAt":  "2026-05-17T06:10:49.0526032+00:00",
+                                           "refreshedAt":  "2026-05-17T10:15:09.2874635+00:00",
                                            "rosterCount":  18,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
