@@ -253,6 +253,103 @@ Structured output:
 powershell -ExecutionPolicy Bypass -File .\scripts\sync-keeper-ledger.ps1 -PassThru | ConvertTo-Json -Depth 6
 ```
 
+## `reconcile-bbu-payments.ps1`
+
+Builds private commissioner reports that cross-reference Best Ball Union Sleeper managers against local LeagueSafe payment rows and saved identity matches.
+
+Private inputs live under `data/private/` and are ignored by git:
+
+- `manager-identities.json`
+- `leaguesafe-payments.csv`
+
+The script writes `reports/private/bbu-payment-reconciliation.md`, plus Excel-friendly CSV files under `reports/private/bbu-payment-reconciliation/`, also ignored by git.
+
+CSV outputs:
+
+- `sleeper-entries.csv` - one row per Sleeper manager entry by BBU room
+- `person-summary.csv` - one row per matched person with total BBU entries, due, paid, and balance
+- `unmatched-payments.csv` - one row per LeagueSafe payment that still needs matching
+
+Default usage:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\reconcile-bbu-payments.ps1
+```
+
+Reconcile only BBU4:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\reconcile-bbu-payments.ps1 -LeagueRecordIds BBU4
+```
+
+Structured output:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\reconcile-bbu-payments.ps1 -PassThru | ConvertTo-Json -Depth 6
+```
+
+## `import-bbu-leaguesafe-export.ps1`
+
+Copies the latest downloaded Best Ball Union LeagueSafe export into `data/private/leaguesafe-bbu-current.csv`, then rewrites `data/private/leaguesafe-payments.csv` with the paid rows used by reconciliation.
+
+Use this whenever a newer LeagueSafe payment export is downloaded.
+
+Example:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\import-bbu-leaguesafe-export.ps1 -SourcePath "C:\Users\pkwal\Downloads\VBP's Best Ball Union 2026 payment details (2).csv"
+```
+
+Structured output:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\import-bbu-leaguesafe-export.ps1 -SourcePath "C:\Users\pkwal\Downloads\VBP's Best Ball Union 2026 payment details (2).csv" -PassThru | ConvertTo-Json -Depth 4
+```
+
+## `import-redraft-bracket-leaguesafe-export.ps1`
+
+Copies the latest downloaded Redraft Bracket LeagueSafe export into `data/private/leaguesafe-bracket-current.csv`, then rewrites `data/private/leaguesafe-bracket-payments.csv` with the paid rows used by reconciliation.
+
+Example:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\import-redraft-bracket-leaguesafe-export.ps1 -SourcePath "C:\Users\pkwal\Downloads\VBPs Redraft Bracket League 2026 payment details.csv"
+```
+
+## `reconcile-redraft-bracket-payments.ps1`
+
+Builds private Redraft Bracket payment reconciliation CSV files from Sleeper RDB league managers, the Redraft Bracket LeagueSafe paid rows, and saved identity matches.
+
+Default usage:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\reconcile-redraft-bracket-payments.ps1
+```
+
+## `export-bbu-payment-workbook.ps1`
+
+Builds a formatted Excel workbook from the private BBU reconciliation CSV files.
+
+The workbook includes formatted tabs for:
+
+- Action Tracker
+- Person Summary
+- Sleeper Entries
+- LeagueSafe Export
+- Unmatched Payments
+
+Default usage:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\export-bbu-payment-workbook.ps1
+```
+
+Build and open the workbook:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\export-bbu-payment-workbook.ps1 -Open
+```
+
 ## `sync-bracket-ledger.ps1`
 
 Builds or refreshes `data/bracket-ledger.json` by pulling current manager and standings data from Sleeper for grouped bracket leagues.

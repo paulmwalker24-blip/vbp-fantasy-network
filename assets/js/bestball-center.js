@@ -36,163 +36,163 @@ const BBU_POWER_SCORE_WEIGHTS = {
 const BBU_POWER_RANKINGS = [
   {
     rank: 1,
-    team: "DSnyder5",
-    league: "BBU2",
-    grades: { lineup: 96, depth: 94, bigWeeks: 94, scoringFit: 92 },
-    summary: "Ranked first because the RBs are excellent, the WR group is deep enough to fill the flex spots, and Hurts gives the team a strong QB score most weeks.",
-    core: "Jonathan Taylor, Saquon Barkley, Nico Collins, Ladd McConkey, George Pickens, Davante Adams, Jalen Hurts"
+    team: "gunnar21",
+    league: "BBU3",
+    score: 76,
+    summary: "QB room: Drake Maye, Fernando Mendoza. Starter grade 77.8. Bench grade 70.",
+    core: "Drake Maye, Jahmyr Gibbs, Justin Jefferson, Nico Collins, RJ Harvey, DJ Moore, Tyler Warren"
   },
   {
     rank: 2,
-    team: "ThrowwUpTheX",
-    league: "BBU1",
-    grades: { lineup: 95, depth: 92, bigWeeks: 95, scoringFit: 89 },
-    summary: "Very close to first. Chase, Saquon, Kyren, Waddle, and Evans give this roster a lot of weekly scoring power, and the two QBs give it good cover.",
-    core: "Ja'Marr Chase, Saquon Barkley, Kyren Williams, Jaylen Waddle, Mike Evans, Jalen Hurts, Justin Herbert"
+    team: "OmahaaaSet$10",
+    league: "BBU3",
+    score: 76,
+    summary: "QB room: Joe Burrow, Jaxson Dart. Starter grade 75.9. Bench grade 72.1.",
+    core: "Ja'Marr Chase, Joe Burrow, Jaxson Dart, Kyren Williams, Ladd McConkey, C.J. Stroud, Jeremiyah Love"
   },
   {
     rank: 3,
-    team: "Adamgrifki",
+    team: "mguzz",
     league: "BBU1",
-    grades: { lineup: 91, depth: 91, bigWeeks: 90, scoringFit: 96 },
-    summary: "Bowers is a real edge at TE, and the WR room is strong. The RB depth is also good enough for a league where rosters are locked after the draft.",
-    core: "Jonathan Taylor, Amon-Ra St. Brown, Brock Bowers, Chris Olave, Marvin Harrison, Jameson Williams"
+    score: 75,
+    summary: "QB room: Joe Burrow, Baker Mayfield. Starter grade 77.2. Bench grade 71.",
+    core: "Puka Nacua, Joe Burrow, Nico Collins, Chase Brown, Derrick Henry, Zay Flowers, Baker Mayfield"
   },
   {
     rank: 4,
-    team: "bryanb460",
+    team: "Cameron74",
     league: "BBU2",
-    grades: { lineup: 91, depth: 88, bigWeeks: 92, scoringFit: 84 },
-    summary: "This is one of the best WR rooms in the field. That matters because BBU starts three WRs and two flex spots every week.",
-    core: "Justin Jefferson, Malik Nabers, A.J. Brown, DK Metcalf, James Cook"
+    score: 75,
+    summary: "QB room: Lamar Jackson, Justin Herbert. Starter grade 76.8. Bench grade 72.",
+    core: "Bijan Robinson, Lamar Jackson, Drake London, Josh Jacobs, Justin Herbert, Trevor Lawrence, David Montgomery"
   },
   {
     rank: 5,
-    team: "gunnar21",
-    league: "BBU1",
-    grades: { lineup: 90, depth: 86, bigWeeks: 90, scoringFit: 91 },
-    summary: "Bijan and Breece are a strong RB start, McBride helps at TE, and Lamar gives the roster a clear weekly advantage at QB.",
-    core: "Bijan Robinson, Breece Hall, Trey McBride, Lamar Jackson, Ladd McConkey, Rome Odunze"
+    team: "OutlawReturns",
+    league: "BBU2",
+    score: 75,
+    summary: "QB room: Drake Maye, Sam Darnold. Starter grade 77.2. Bench grade 70.9.",
+    core: "Drake Maye, Amon-Ra St. Brown, De'Von Achane, Breece Hall, D'Andre Swift, Zay Flowers, Sam Darnold"
   },
   {
     rank: 6,
-    team: "Cameron74",
-    league: "BBU2",
-    grades: { lineup: 88, depth: 84, bigWeeks: 88, scoringFit: 87 },
-    summary: "The top players are strong and the three-QB setup should help. The main concern is whether the WR depth is enough over a full season.",
-    core: "Bijan Robinson, Josh Jacobs, Drake London, Lamar Jackson, David Montgomery, Kyle Pitts, Justin Herbert"
+    team: "DSnyder5",
+    league: "BBU3",
+    score: 75,
+    summary: "QB room: Dak Prescott, Baker Mayfield. Starter grade 76.2. Bench grade 72.6.",
+    core: "Jaxon Smith-Njigba, De'Von Achane, Breece Hall, Dak Prescott, David Montgomery, Baker Mayfield, Rome Odunze"
   },
   {
     rank: 7,
-    team: "mguzz",
+    team: "ThrowwUpTheX",
     league: "BBU1",
-    grades: { lineup: 86, depth: 89, bigWeeks: 86, scoringFit: 83 },
-    summary: "This roster has useful depth at both RB and WR, which matters when there are no waivers. Burrow also gives it a strong weekly QB option.",
-    core: "Puka Nacua, Nico Collins, Derrick Henry, Chase Brown, Joe Burrow, Zay Flowers, Jordan Addison"
+    score: 74,
+    summary: "QB room: Jalen Hurts, Justin Herbert. Starter grade 76.6. Bench grade 71.6.",
+    core: "Ja'Marr Chase, Saquon Barkley, Justin Herbert, Jalen Hurts, Kyren Williams, George Pickens, Tony Pollard"
   },
   {
     rank: 8,
-    team: "swampraider",
-    league: "BBU2",
-    grades: { lineup: 86, depth: 83, bigWeeks: 89, scoringFit: 82 },
-    summary: "Chase and Burrow can carry big weeks together. The RB group has upside, but it also carries more risk than some teams above it.",
-    core: "Ja'Marr Chase, Kyren Williams, Chase Brown, Chris Olave, Joe Burrow, TreVeyon Henderson"
+    team: "jessegambo",
+    league: "BBU1",
+    score: 74,
+    summary: "QB room: Caleb Williams, Jared Goff. Starter grade 76.9. Bench grade 70.9.",
+    core: "Jahmyr Gibbs, Caleb Williams, Drake London, Josh Jacobs, Terry McLaurin, Jared Goff, Sam Darnold"
   },
   {
     rank: 9,
-    team: "PasqTheGoat",
-    league: "BBU2",
-    grades: { lineup: 84, depth: 80, bigWeeks: 91, scoringFit: 88 },
-    summary: "This team can have huge weeks because of CMC, Bowers, Daniels, Wilson, and Brian Thomas. The risk is that several key players have more uncertainty than the teams above.",
-    core: "Christian McCaffrey, Brock Bowers, Garrett Wilson, Jayden Daniels, Brian Thomas"
+    team: "gunnar21",
+    league: "BBU1",
+    score: 74,
+    summary: "QB room: Lamar Jackson, Malik Willis. Starter grade 77. Bench grade 68.9.",
+    core: "Bijan Robinson, Lamar Jackson, Trey McBride, Breece Hall, RJ Harvey, Ladd McConkey, Rome Odunze"
   },
   {
     rank: 10,
-    team: "jakeejk",
+    team: "swampraider",
     league: "BBU2",
-    grades: { lineup: 83, depth: 84, bigWeeks: 80, scoringFit: 92 },
-    summary: "The WR and TE groups are very strong for this scoring format. QB is the biggest reason this team is not ranked higher.",
-    core: "Ashton Jeanty, CeeDee Lamb, Trey McBride, Tee Higgins, DeVonta Smith, Emeka Egbuka"
+    score: 74,
+    summary: "QB room: Joe Burrow, Jaxson Dart. Starter grade 76.5. Bench grade 71.1.",
+    core: "Ja'Marr Chase, Joe Burrow, Jaxson Dart, Chase Brown, Kyren Williams, Chris Olave, TreVeyon Henderson"
   },
   {
     rank: 11,
-    team: "jakeejk",
-    league: "BBU1",
-    grades: { lineup: 83, depth: 80, bigWeeks: 82, scoringFit: 88 },
-    summary: "The WR group is excellent, especially in a three-WR format. The RB and QB groups are thinner than the teams above it.",
-    core: "Justin Jefferson, Garrett Wilson, Tetairoa McMillan, Luther Burden, Emeka Egbuka"
+    team: "OmahaaaSet$10",
+    league: "BBU4",
+    score: 74,
+    summary: "QB room: Joe Burrow, Jaxson Dart. Starter grade 76.2. Bench grade 70.4.",
+    core: "James Cook, Joe Burrow, Chase Brown, Nico Collins, Jaxson Dart, Terry McLaurin, Courtland Sutton"
   },
   {
     rank: 12,
-    team: "OutlawReturns",
-    league: "BBU2",
-    grades: { lineup: 81, depth: 82, bigWeeks: 82, scoringFit: 87 },
-    summary: "Amon-Ra gives this team a steady WR base, and the RBs can produce big weeks. The TE depth also helps because TEs get 0.75 per catch.",
-    core: "De'Von Achane, Amon-Ra St. Brown, Breece Hall, Drake Maye, D'Andre Swift, Zay Flowers, Sam LaPorta"
+    team: "Dropswitch",
+    league: "BBU4",
+    score: 74,
+    summary: "QB room: Justin Herbert, Bo Nix. Starter grade 76.9. Bench grade 70.",
+    core: "Jahmyr Gibbs, CeeDee Lamb, Justin Herbert, Josh Jacobs, RJ Harvey, Tee Higgins, Harold Fannin"
   },
   {
     rank: 13,
-    team: "RevDennis",
-    league: "BBU2",
-    grades: { lineup: 82, depth: 81, bigWeeks: 79, scoringFit: 83 },
-    summary: "Allen and Puka are a strong starting point. The roster also has enough RB and TE cover to handle a season without pickups.",
-    core: "Puka Nacua, Omarion Hampton, Josh Allen, Travis Etienne, DJ Moore, Rome Odunze"
+    team: "Tacious00",
+    league: "BBU4",
+    score: 74,
+    summary: "QB room: Jalen Hurts, Malik Willis. Starter grade 76.6. Bench grade 70.7.",
+    core: "Bijan Robinson, Drake London, Jalen Hurts, Tetairoa McMillan, TreVeyon Henderson, Matthew Stafford, Davante Adams"
   },
   {
     rank: 14,
-    team: "jessegambo",
-    league: "BBU1",
-    grades: { lineup: 81, depth: 80, bigWeeks: 80, scoringFit: 82 },
-    summary: "Gibbs and Jacobs give this team a strong RB base, and the WRs are good enough to keep the weekly score steady.",
-    core: "Jahmyr Gibbs, Josh Jacobs, Drake London, Tee Higgins, Terry McLaurin, Caleb Williams"
+    team: "DSnyder5",
+    league: "BBU4",
+    score: 74,
+    summary: "QB room: Trevor Lawrence, Baker Mayfield. Starter grade 75.9. Bench grade 71.4.",
+    core: "Jonathan Taylor, Derrick Henry, Trevor Lawrence, A.J. Brown, Baker Mayfield, Ladd McConkey, Jeremiyah Love"
   },
   {
     rank: 15,
-    team: "VanillaWafer",
-    league: "BBU1",
-    grades: { lineup: 80, depth: 76, bigWeeks: 86, scoringFit: 81 },
-    summary: "CMC, Nabers, DK, and Mahomes give this roster real upside. The lower rank is mostly because there is more injury and role risk here.",
-    core: "Christian McCaffrey, Malik Nabers, DJ Moore, DK Metcalf, Patrick Mahomes"
+    team: "jakeejk",
+    league: "BBU4",
+    score: 74,
+    summary: "QB room: Brock Purdy, C.J. Stroud. Starter grade 76. Bench grade 70.7.",
+    core: "Ashton Jeanty, De'Von Achane, Chris Olave, Brock Purdy, Kyren Williams, Rome Odunze, C.J. Stroud"
   },
   {
     rank: 16,
-    team: "Flagg Planters",
-    league: "BBU2",
-    grades: { lineup: 79, depth: 78, bigWeeks: 82, scoringFit: 79 },
-    summary: "This team is very RB-heavy and has two good QB options. It can win big weeks, but the WR room is thinner than most teams above it.",
-    core: "Jahmyr Gibbs, Bucky Irving, Derrick Henry, Tetairoa McMillan, Patrick Mahomes, Mark Andrews"
+    team: "jakeejk",
+    league: "BBU1",
+    score: 73,
+    summary: "QB room: Brock Purdy, Jordan Love. Starter grade 76.1. Bench grade 71.7.",
+    core: "James Cook, Justin Jefferson, Brock Purdy, Tetairoa McMillan, Jordan Love, Emeka Egbuka, Chuba Hubbard"
   },
   {
     rank: 17,
-    team: "kj0116",
-    league: "BBU1",
-    grades: { lineup: 80, depth: 75, bigWeeks: 79, scoringFit: 80 },
-    summary: "Lamb, A.J. Brown, Allen, and LaPorta are excellent. The concern is that the bench does not add as much weekly scoring help as the teams above it.",
-    core: "CeeDee Lamb, A.J. Brown, Josh Allen, Kenneth Walker, Sam LaPorta"
+    team: "Flagg Planters",
+    league: "BBU2",
+    score: 73,
+    summary: "QB room: Dak Prescott, Jared Goff. Starter grade 75.1. Bench grade 71.1.",
+    core: "Jahmyr Gibbs, Derrick Henry, Tetairoa McMillan, Dak Prescott, Jared Goff, Harold Fannin, Patrick Mahomes"
   },
   {
     rank: 18,
-    team: "SnoopDerek",
-    league: "BBU2",
-    grades: { lineup: 77, depth: 76, bigWeeks: 79, scoringFit: 77 },
-    summary: "The WR and QB groups can score well. The RB room needs to hit because there are no waivers or trades to fix it later.",
-    core: "Jaxon Smith-Njigba, Kenneth Walker, Rashee Rice, Jaylen Waddle, Caleb Williams, Bo Nix"
+    team: "Tacious00",
+    league: "BBU3",
+    score: 73,
+    summary: "QB room: Jalen Hurts, Jayden Daniels. Starter grade 75.6. Bench grade 70.6.",
+    core: "Ashton Jeanty, Jalen Hurts, Trey McBride, Javonte Williams, Tetairoa McMillan, Jayden Daniels, Emeka Egbuka"
   },
   {
     rank: 19,
-    team: "HopscotchDaisy",
-    league: "BBU1",
-    grades: { lineup: 76, depth: 77, bigWeeks: 75, scoringFit: 80 },
-    summary: "The RB and TE rooms are deep. The issue is that the WR and QB groups look less likely to keep up in total points.",
-    core: "Ashton Jeanty, De'Von Achane, Bucky Irving, Travis Etienne, Davante Adams, DeVonta Smith"
+    team: "XWILL07",
+    league: "BBU3",
+    score: 73,
+    summary: "QB room: Caleb Williams, Brock Purdy. Starter grade 77. Bench grade 71.4.",
+    core: "Kenneth Walker, Caleb Williams, Omarion Hampton, Drake London, Brock Purdy, A.J. Brown, Tee Higgins"
   },
   {
     rank: 20,
-    team: "2GunzTanner",
-    league: "BBU1",
-    grades: { lineup: 75, depth: 75, bigWeeks: 76, scoringFit: 78 },
-    summary: "There is plenty to like with Maye, Daniels, Kittle, JSN, and Hampton. The rank is lower because more of the roster still has to prove it.",
-    core: "Jaxon Smith-Njigba, Omarion Hampton, Rashee Rice, TreVeyon Henderson, Drake Maye, Jayden Daniels, George Kittle"
+    team: "Fradulent",
+    league: "BBU3",
+    score: 73,
+    summary: "QB room: Trevor Lawrence, Jordan Love. Starter grade 75.9. Bench grade 71.3.",
+    core: "Christian McCaffrey, Josh Jacobs, Trevor Lawrence, Jordan Love, Zay Flowers, Sam Darnold, Travis Etienne"
   }
 ];
 const bestBallCenterState = {
@@ -767,7 +767,7 @@ function renderPowerRankings() {
   list.innerHTML = "";
 
   BBU_POWER_RANKINGS.forEach(entry => {
-    const score = getBbuPowerScore(entry.grades);
+    const score = entry.score === undefined ? getBbuPowerScore(entry.grades) : toNumber(entry.score);
     const row = document.createElement("article");
     row.className = `power-ranking-row${entry.rank <= 3 ? " is-top" : ""}`;
 
@@ -797,7 +797,9 @@ function renderPowerRankings() {
 
     const breakdown = document.createElement("p");
     breakdown.className = "power-ranking-breakdown";
-    breakdown.textContent = `Score: ${score.toFixed(1)} = lineup ${entry.grades.lineup} x 45%, depth ${entry.grades.depth} x 30%, big-week players ${entry.grades.bigWeeks} x 15%, scoring fit ${entry.grades.scoringFit} x 10%.`;
+    breakdown.textContent = entry.grades
+      ? `Score: ${score.toFixed(1)} = lineup ${entry.grades.lineup} x 45%, depth ${entry.grades.depth} x 30%, big-week players ${entry.grades.bigWeeks} x 15%, scoring fit ${entry.grades.scoringFit} x 10%.`
+      : `Generated score: ${score.toFixed(1)} from the latest Sleeper roster, draft, player-value, depth, quarterback, and health inputs.`;
 
     header.append(name, scoreBadge);
     body.append(header, summary, core, breakdown);

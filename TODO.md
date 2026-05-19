@@ -52,6 +52,10 @@
 
 ### Automation Recommendations
 
+- [x] Add Redraft Bracket LeagueSafe import and reconciliation sheets to the private payment workbook.
+- [x] Add a private BBU LeagueSafe export importer that replaces the current raw export and normalized paid-row CSV.
+- [x] Add a formatted Excel workbook exporter for the private BBU payment reconciliation sheets.
+- [x] Add a private BBU payment reconciliation pilot that compares Sleeper managers with local LeagueSafe payment rows and reusable identity matches.
 - [x] Add a league occupancy report so published `filled` counts can be reviewed quickly without reading raw JSON.
 - [x] Add a missing-data autofill assistant that suggests likely `constitutionPage` and default format-specific fields for new league records.
 - [x] Add a first public Bracket Center page that renders division playoff counts and full combined standings from the local bracket ledger.

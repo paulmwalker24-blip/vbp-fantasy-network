@@ -162,6 +162,38 @@ Sync only one keeper league:
 Run the keeper ledger sync for KP1 only and summarize which managers were pulled into the local keeper tracker.
 ```
 
+## BBU Payment Reconciliation
+
+Import the latest downloaded Best Ball Union LeagueSafe export before rebuilding the tracker:
+
+```text
+Import this new BBU LeagueSafe export into the private tracker inputs, replacing the previous current export: C:\Users\pkwal\Downloads\VBP's Best Ball Union 2026 payment details (2).csv
+```
+
+Import the latest Redraft Bracket LeagueSafe export and rebuild its private reconciliation sheets:
+
+```text
+Import this Redraft Bracket LeagueSafe export into the private tracker inputs, replacing the previous current export: C:\Users\pkwal\Downloads\VBPs Redraft Bracket League 2026 payment details.csv
+```
+
+Build a private BBU payment report from Sleeper managers, LeagueSafe rows, and saved identity matches:
+
+```text
+Run the BBU payment reconciliation and summarize unmatched Sleeper entries, unmatched LeagueSafe payments, and anyone with extra matched payment.
+```
+
+Reconcile only one BBU room:
+
+```text
+Run the BBU payment reconciliation for BBU4 only and tell me who still needs identity/payment matching.
+```
+
+Rebuild the formatted Excel workbook from the latest BBU reconciliation CSVs:
+
+```text
+Build and open the formatted BBU payment tracker workbook from the latest private reconciliation CSVs.
+```
+
 ## Bracket Ledger
 
 Build or refresh the combined bracket seeding worksheet from Sleeper:
@@ -349,6 +381,8 @@ Run the one-command site check and tell me any errors or warnings before commit.
 - Use the sync report when you want current fill counts and a warning summary.
 - Use the donation workflow when you want to turn reported donations into updated homepage totals without inventing a new admin system.
 - Use the donation validator when you want to sanity-check `data/donations.json` before pushing donation updates.
+- Use the BBU payment reconciliation when you need to match shared Best Ball Union LeagueSafe payments to Sleeper managers across multiple BBU rooms.
+- Use the BBU payment workbook exporter when you want the private reconciliation CSVs turned into a formatted Excel file with filters, frozen headers, and color-coded statuses.
 - Use the league data diff report when you want a human-readable review of what changed in `data/leagues.json`.
 - Use the preview script when you want localhost reopened with a cache-busted URL.
 - Use the cache-busting helper when frontend changes are correct but your browser is still serving old CSS or JS.
