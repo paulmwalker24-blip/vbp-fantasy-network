@@ -348,6 +348,35 @@ function Get-FormatWeights {
   }
 }
 
+function Get-BestBallScore {
+  param(
+    [double]$LineupScore,
+    [double]$DepthScore,
+    [double]$QuarterbackScore,
+    [object[]]$PlayerEntries,
+    [object[]]$InjuredPlayers,
+    [double]$ManualContext
+  )
+
+  $eliteCount = @($PlayerEntries | Where-Object { (Get-NumberValue $_.value 0) -ge 84 }).Count
+  $differenceMakerCount = @($PlayerEntries | Where-Object { (Get-NumberValue $_.value 0) -ge 78 }).Count
+  $usefulDepthCount = @($PlayerEntries | Where-Object { (Get-NumberValue $_.value 0) -ge 70 }).Count
+  $injuryPenalty = Get-NumberValue (($InjuredPlayers | Measure-Object -Property injuryPenalty -Sum).Sum) 0
+
+  $score = 52
+  $score += ($LineupScore - 72) * 2.60
+  $score += ($DepthScore - 66) * 1.55
+  $score += ($QuarterbackScore - 70) * 0.70
+  $score += $eliteCount * 2.75
+  $score += $differenceMakerCount * 1.15
+  $score += [Math]::Min(6, [Math]::Max(0, $usefulDepthCount - 8)) * 0.75
+  $score -= [Math]::Max(0, 8 - $usefulDepthCount) * 1.25
+  $score -= $injuryPenalty * 0.32
+  $score += $ManualContext
+
+  return [Math]::Min(98, [Math]::Max(35, $score))
+}
+
 function Get-TeamAdjustment {
   param($Overrides, [string]$LeagueRecordId, [int]$RosterId)
   $adjustments = Convert-ToArray $Overrides.teamAdjustments
@@ -425,6 +454,15 @@ function New-TeamRanking {
     $rawScore += (Get-NumberValue $componentScores[$key] 0) * $weights[$key]
   }
   $rawScore += $manualContext
+  if ($format -eq "bestball") {
+    $rawScore = Get-BestBallScore `
+      -LineupScore $lineupScore `
+      -DepthScore $depthScore `
+      -QuarterbackScore $qbScore `
+      -PlayerEntries $playerEntries `
+      -InjuredPlayers $injuredPlayers `
+      -ManualContext $manualContext
+  }
   $score = [Math]::Min(100, [Math]::Max(0, $rawScore))
 
   $record = @{
@@ -440,6 +478,11 @@ function New-TeamRanking {
   if ($qbs.Count -gt 0) { $reasonBits.Add(("QB room: {0}" -f (($qbs | Select-Object -First 2 | ForEach-Object { $_.name }) -join ", "))) }
   if ($starters.Count -gt 0) { $reasonBits.Add(("Starter grade {0}" -f ([Math]::Round($lineupScore, 1)))) }
   if ($topBench.Count -gt 0) { $reasonBits.Add(("Bench grade {0}" -f ([Math]::Round($depthScore, 1)))) }
+  if ($format -eq "bestball") {
+    $differenceMakers = @($playerEntries | Where-Object { (Get-NumberValue $_.value 0) -ge 78 }).Count
+    $pieceLabel = if ($differenceMakers -eq 1) { "piece" } else { "pieces" }
+    $reasonBits.Add(("{0} spike-week {1} at 78+ value" -f $differenceMakers, $pieceLabel))
+  }
   if ($injuredPlayers.Count -gt 0) { $reasonBits.Add(("Health watch: {0}" -f (($injuredPlayers | Select-Object -First 3 | ForEach-Object { $_.name }) -join ", "))) }
   if ($teamAdjustment -and -not [string]::IsNullOrWhiteSpace((Get-TextValue $teamAdjustment.scheduleNote))) { $reasonBits.Add((Get-TextValue $teamAdjustment.scheduleNote)) }
   if ($teamAdjustment -and -not [string]::IsNullOrWhiteSpace((Get-TextValue $teamAdjustment.note))) { $reasonBits.Add((Get-TextValue $teamAdjustment.note)) }

@@ -36,162 +36,162 @@ const BBU_POWER_SCORE_WEIGHTS = {
 const BBU_POWER_RANKINGS = [
   {
     rank: 1,
-    team: "gunnar21",
-    league: "BBU3",
-    score: 76,
-    summary: "QB room: Drake Maye, Fernando Mendoza. Starter grade 77.8. Bench grade 70.",
-    core: "Drake Maye, Jahmyr Gibbs, Justin Jefferson, Nico Collins, RJ Harvey, DJ Moore, Tyler Warren"
-  },
-  {
-    rank: 2,
-    team: "OmahaaaSet$10",
-    league: "BBU3",
-    score: 76,
-    summary: "QB room: Joe Burrow, Jaxson Dart. Starter grade 75.9. Bench grade 72.1.",
-    core: "Ja'Marr Chase, Joe Burrow, Jaxson Dart, Kyren Williams, Ladd McConkey, C.J. Stroud, Jeremiyah Love"
-  },
-  {
-    rank: 3,
-    team: "mguzz",
-    league: "BBU1",
-    score: 75,
-    summary: "QB room: Joe Burrow, Baker Mayfield. Starter grade 77.2. Bench grade 71.",
-    core: "Puka Nacua, Joe Burrow, Nico Collins, Chase Brown, Derrick Henry, Zay Flowers, Baker Mayfield"
-  },
-  {
-    rank: 4,
     team: "Cameron74",
     league: "BBU2",
-    score: 75,
-    summary: "QB room: Lamar Jackson, Justin Herbert. Starter grade 76.8. Bench grade 72.",
+    score: 90,
+    summary: "QB room: Lamar Jackson, Justin Herbert. Starter grade 76.8. Bench grade 72. 5 spike-week pieces at 78+ value.",
     core: "Bijan Robinson, Lamar Jackson, Drake London, Josh Jacobs, Justin Herbert, Trevor Lawrence, David Montgomery"
   },
   {
-    rank: 5,
+    rank: 2,
+    team: "gunnar21",
+    league: "BBU3",
+    score: 89,
+    summary: "QB room: Drake Maye, Fernando Mendoza. Starter grade 77.8. Bench grade 70. 4 spike-week pieces at 78+ value.",
+    core: "Drake Maye, Jahmyr Gibbs, Justin Jefferson, Nico Collins, RJ Harvey, DJ Moore, Tyler Warren"
+  },
+  {
+    rank: 3,
+    team: "OmahaaaSet$10",
+    league: "BBU3",
+    score: 89,
+    summary: "QB room: Joe Burrow, Jaxson Dart. Starter grade 75.9. Bench grade 72.1. 3 spike-week pieces at 78+ value.",
+    core: "Ja'Marr Chase, Joe Burrow, Jaxson Dart, Kyren Williams, Ladd McConkey, C.J. Stroud, Jeremiyah Love"
+  },
+  {
+    rank: 4,
     team: "OutlawReturns",
     league: "BBU2",
-    score: 75,
-    summary: "QB room: Drake Maye, Sam Darnold. Starter grade 77.2. Bench grade 70.9.",
+    score: 88,
+    summary: "QB room: Drake Maye, Sam Darnold. Starter grade 77.2. Bench grade 70.9. 3 spike-week pieces at 78+ value.",
     core: "Drake Maye, Amon-Ra St. Brown, De'Von Achane, Breece Hall, D'Andre Swift, Zay Flowers, Sam Darnold"
   },
   {
-    rank: 6,
-    team: "DSnyder5",
-    league: "BBU3",
-    score: 75,
-    summary: "QB room: Dak Prescott, Baker Mayfield. Starter grade 76.2. Bench grade 72.6.",
-    core: "Jaxon Smith-Njigba, De'Von Achane, Breece Hall, Dak Prescott, David Montgomery, Baker Mayfield, Rome Odunze"
+    rank: 5,
+    team: "mguzz",
+    league: "BBU1",
+    score: 87,
+    summary: "QB room: Joe Burrow, Baker Mayfield. Starter grade 77.2. Bench grade 71. 4 spike-week pieces at 78+ value.",
+    core: "Puka Nacua, Joe Burrow, Nico Collins, Chase Brown, Derrick Henry, Zay Flowers, Baker Mayfield"
   },
   {
-    rank: 7,
+    rank: 6,
     team: "ThrowwUpTheX",
     league: "BBU1",
-    score: 74,
-    summary: "QB room: Jalen Hurts, Justin Herbert. Starter grade 76.6. Bench grade 71.6.",
+    score: 85,
+    summary: "QB room: Jalen Hurts, Justin Herbert. Starter grade 76.6. Bench grade 71.6. 4 spike-week pieces at 78+ value.",
     core: "Ja'Marr Chase, Saquon Barkley, Justin Herbert, Jalen Hurts, Kyren Williams, George Pickens, Tony Pollard"
   },
   {
-    rank: 8,
+    rank: 7,
     team: "jessegambo",
     league: "BBU1",
-    score: 74,
-    summary: "QB room: Caleb Williams, Jared Goff. Starter grade 76.9. Bench grade 70.9.",
+    score: 84,
+    summary: "QB room: Caleb Williams, Jared Goff. Starter grade 76.9. Bench grade 70.9. 4 spike-week pieces at 78+ value.",
     core: "Jahmyr Gibbs, Caleb Williams, Drake London, Josh Jacobs, Terry McLaurin, Jared Goff, Sam Darnold"
   },
   {
+    rank: 8,
+    team: "swampraider",
+    league: "BBU2",
+    score: 84,
+    summary: "QB room: Joe Burrow, Jaxson Dart. Starter grade 76.5. Bench grade 71.1. 4 spike-week pieces at 78+ value.",
+    core: "Ja'Marr Chase, Joe Burrow, Jaxson Dart, Chase Brown, Kyren Williams, Chris Olave, TreVeyon Henderson"
+  },
+  {
     rank: 9,
-    team: "gunnar21",
-    league: "BBU1",
-    score: 74,
-    summary: "QB room: Lamar Jackson, Malik Willis. Starter grade 77. Bench grade 68.9.",
-    core: "Bijan Robinson, Lamar Jackson, Trey McBride, Breece Hall, RJ Harvey, Ladd McConkey, Rome Odunze"
+    team: "DSnyder5",
+    league: "BBU3",
+    score: 84,
+    summary: "QB room: Dak Prescott, Baker Mayfield. Starter grade 76.2. Bench grade 72.6. 2 spike-week pieces at 78+ value.",
+    core: "Jaxon Smith-Njigba, De'Von Achane, Breece Hall, Dak Prescott, David Montgomery, Baker Mayfield, Rome Odunze"
   },
   {
     rank: 10,
-    team: "swampraider",
-    league: "BBU2",
-    score: 74,
-    summary: "QB room: Joe Burrow, Jaxson Dart. Starter grade 76.5. Bench grade 71.1.",
-    core: "Ja'Marr Chase, Joe Burrow, Jaxson Dart, Chase Brown, Kyren Williams, Chris Olave, TreVeyon Henderson"
+    team: "XWILL07",
+    league: "BBU3",
+    score: 82,
+    summary: "QB room: Caleb Williams, Brock Purdy. Starter grade 77. Bench grade 71.4. 4 spike-week pieces at 78+ value.",
+    core: "Kenneth Walker, Caleb Williams, Omarion Hampton, Drake London, Brock Purdy, A.J. Brown, Tee Higgins"
   },
   {
     rank: 11,
     team: "OmahaaaSet$10",
     league: "BBU4",
-    score: 74,
-    summary: "QB room: Joe Burrow, Jaxson Dart. Starter grade 76.2. Bench grade 70.4.",
+    score: 82,
+    summary: "QB room: Joe Burrow, Jaxson Dart. Starter grade 76.2. Bench grade 70.4. 5 spike-week pieces at 78+ value.",
     core: "James Cook, Joe Burrow, Chase Brown, Nico Collins, Jaxson Dart, Terry McLaurin, Courtland Sutton"
   },
   {
     rank: 12,
     team: "Dropswitch",
     league: "BBU4",
-    score: 74,
-    summary: "QB room: Justin Herbert, Bo Nix. Starter grade 76.9. Bench grade 70.",
+    score: 81,
+    summary: "QB room: Justin Herbert, Bo Nix. Starter grade 76.9. Bench grade 70. 4 spike-week pieces at 78+ value.",
     core: "Jahmyr Gibbs, CeeDee Lamb, Justin Herbert, Josh Jacobs, RJ Harvey, Tee Higgins, Harold Fannin"
   },
   {
     rank: 13,
     team: "Tacious00",
     league: "BBU4",
-    score: 74,
-    summary: "QB room: Jalen Hurts, Malik Willis. Starter grade 76.6. Bench grade 70.7.",
+    score: 81,
+    summary: "QB room: Jalen Hurts, Malik Willis. Starter grade 76.6. Bench grade 70.7. 3 spike-week pieces at 78+ value.",
     core: "Bijan Robinson, Drake London, Jalen Hurts, Tetairoa McMillan, TreVeyon Henderson, Matthew Stafford, Davante Adams"
   },
   {
     rank: 14,
     team: "DSnyder5",
     league: "BBU4",
-    score: 74,
-    summary: "QB room: Trevor Lawrence, Baker Mayfield. Starter grade 75.9. Bench grade 71.4.",
+    score: 80,
+    summary: "QB room: Trevor Lawrence, Baker Mayfield. Starter grade 75.9. Bench grade 71.4. 1 spike-week piece at 78+ value.",
     core: "Jonathan Taylor, Derrick Henry, Trevor Lawrence, A.J. Brown, Baker Mayfield, Ladd McConkey, Jeremiyah Love"
   },
   {
     rank: 15,
     team: "jakeejk",
     league: "BBU4",
-    score: 74,
-    summary: "QB room: Brock Purdy, C.J. Stroud. Starter grade 76. Bench grade 70.7.",
+    score: 80,
+    summary: "QB room: Brock Purdy, C.J. Stroud. Starter grade 76. Bench grade 70.7. 2 spike-week pieces at 78+ value.",
     core: "Ashton Jeanty, De'Von Achane, Chris Olave, Brock Purdy, Kyren Williams, Rome Odunze, C.J. Stroud"
   },
   {
     rank: 16,
-    team: "jakeejk",
-    league: "BBU1",
-    score: 73,
-    summary: "QB room: Brock Purdy, Jordan Love. Starter grade 76.1. Bench grade 71.7.",
-    core: "James Cook, Justin Jefferson, Brock Purdy, Tetairoa McMillan, Jordan Love, Emeka Egbuka, Chuba Hubbard"
+    team: "PeterJ555",
+    league: "BBU4",
+    score: 80,
+    summary: "QB room: Josh Allen, Kyler Murray. Starter grade 76.6. Bench grade 71.1. 3 spike-week pieces at 78+ value.",
+    core: "Ja'Marr Chase, Josh Allen, Justin Jefferson, Bhayshul Tuten, Kyler Murray, DJ Moore, Rashee Rice"
   },
   {
     rank: 17,
-    team: "Flagg Planters",
-    league: "BBU2",
-    score: 73,
-    summary: "QB room: Dak Prescott, Jared Goff. Starter grade 75.1. Bench grade 71.1.",
-    core: "Jahmyr Gibbs, Derrick Henry, Tetairoa McMillan, Dak Prescott, Jared Goff, Harold Fannin, Patrick Mahomes"
+    team: "gunnar21",
+    league: "BBU1",
+    score: 79,
+    summary: "QB room: Lamar Jackson, Malik Willis. Starter grade 77. Bench grade 68.9. 2 spike-week pieces at 78+ value.",
+    core: "Bijan Robinson, Lamar Jackson, Trey McBride, Breece Hall, RJ Harvey, Ladd McConkey, Rome Odunze"
   },
   {
     rank: 18,
-    team: "Tacious00",
-    league: "BBU3",
-    score: 73,
-    summary: "QB room: Jalen Hurts, Jayden Daniels. Starter grade 75.6. Bench grade 70.6.",
-    core: "Ashton Jeanty, Jalen Hurts, Trey McBride, Javonte Williams, Tetairoa McMillan, Jayden Daniels, Emeka Egbuka"
+    team: "jakeejk",
+    league: "BBU1",
+    score: 79,
+    summary: "QB room: Brock Purdy, Jordan Love. Starter grade 76.1. Bench grade 71.7. 2 spike-week pieces at 78+ value.",
+    core: "James Cook, Justin Jefferson, Brock Purdy, Tetairoa McMillan, Jordan Love, Emeka Egbuka, Chuba Hubbard"
   },
   {
     rank: 19,
-    team: "XWILL07",
-    league: "BBU3",
-    score: 73,
-    summary: "QB room: Caleb Williams, Brock Purdy. Starter grade 77. Bench grade 71.4.",
-    core: "Kenneth Walker, Caleb Williams, Omarion Hampton, Drake London, Brock Purdy, A.J. Brown, Tee Higgins"
+    team: "DSnyder5",
+    league: "BBU2",
+    score: 79,
+    summary: "QB room: Jalen Hurts, Baker Mayfield. Starter grade 77. Bench grade 71.9. 4 spike-week pieces at 78+ value.",
+    core: "Jonathan Taylor, Saquon Barkley, Nico Collins, Jalen Hurts, RJ Harvey, Baker Mayfield, Ladd McConkey"
   },
   {
     rank: 20,
     team: "Fradulent",
     league: "BBU3",
-    score: 73,
-    summary: "QB room: Trevor Lawrence, Jordan Love. Starter grade 75.9. Bench grade 71.3.",
+    score: 77,
+    summary: "QB room: Trevor Lawrence, Jordan Love. Starter grade 75.9. Bench grade 71.3. 2 spike-week pieces at 78+ value.",
     core: "Christian McCaffrey, Josh Jacobs, Trevor Lawrence, Jordan Love, Zay Flowers, Sam Darnold, Travis Etienne"
   }
 ];
@@ -921,3 +921,4 @@ Array.from(document.querySelectorAll("[data-bbu-section]")).forEach(button => {
 renderPowerRankings();
 updateBestBallSectionTabs();
 loadCenter();
+
