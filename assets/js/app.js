@@ -13,6 +13,7 @@ const ELEMENT_IDS = {
 
 const FORMAT_META = {
   bestball: { label: "Best Ball Union", description: "Draft once and let optimal scoring handle the lineup." },
+  gauntlet: { label: "Best Ball Gauntlet", description: "24-team micro best ball with doubleheader standings." },
   bracket: { label: "Redraft Bracket", description: "Tournament-style redraft competition across divisions." },
   chopped: { label: "Chopped", description: "Elimination redraft where the goal is to survive the weekly cut." },
   dynasty: { label: "Dynasty", description: "Build and manage a roster long term." },
@@ -60,6 +61,7 @@ function normalizeFormat(value) {
   const normalized = String(value || "").toLowerCase().replace(/[\s-]+/g, "").trim();
 
   if (normalized.includes("dynastybracket")) return "dynastybracket";
+  if (normalized.includes("gauntlet")) return "gauntlet";
   if (normalized.includes("best")) return "bestball";
   if (normalized.includes("bracket")) return "bracket";
   if (normalized.includes("dynasty")) return "dynasty";

@@ -24,7 +24,7 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
-$validFormats = @("redraft", "dynasty", "dynastybracket", "bestball", "bracket", "keeper", "chopped")
+$validFormats = @("redraft", "dynasty", "dynastybracket", "bestball", "gauntlet", "bracket", "keeper", "chopped")
 $validStatuses = @("open", "full", "coming-soon")
 $validDraftStyles = @("", "fast", "slow")
 $defaultConstitutionPageByFormat = @{
@@ -32,6 +32,7 @@ $defaultConstitutionPageByFormat = @{
   dynasty = "dynasty-constitution.html"
   dynastybracket = "dynasty-bracket-constitution.html"
   bestball = "bestball-constitution.html"
+  gauntlet = "bestball-gauntlet-constitution.html"
   bracket = "bracket-constitution.html"
   keeper = "keeper-constitution.html"
   chopped = "chopped-constitution.html"
@@ -41,6 +42,7 @@ $defaultTeamCountByFormat = @{
   dynasty = 12
   dynastybracket = 12
   bestball = 10
+  gauntlet = 24
   bracket = 12
   keeper = 12
   chopped = 18
@@ -80,6 +82,8 @@ function Normalize-Format {
     "dynastybracket" { return "dynastybracket" }
     "bestball" { return "bestball" }
     "bestballunion" { return "bestball" }
+    "gauntlet" { return "gauntlet" }
+    "bestballgauntlet" { return "gauntlet" }
     "bracket" { return "bracket" }
     "bracketredraft" { return "bracket" }
     "keeper" { return "keeper" }
@@ -129,6 +133,7 @@ function Get-NextLeagueId {
     dynasty = "DYN"
     dynastybracket = "DYB"
     bestball = "BBU"
+    gauntlet = "BG"
     bracket = "RDB"
     keeper = "KP"
     chopped = "CH"
@@ -224,6 +229,10 @@ function Get-NewLeagueDefaults {
   }
 
   if ($Format -eq "bestball" -and [string]::IsNullOrWhiteSpace($suggestedDraftStyle)) {
+    $suggestedDraftStyle = "fast"
+  }
+
+  if ($Format -eq "gauntlet" -and [string]::IsNullOrWhiteSpace($suggestedDraftStyle)) {
     $suggestedDraftStyle = "fast"
   }
 

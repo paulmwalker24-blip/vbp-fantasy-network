@@ -218,6 +218,24 @@
                         "sleeperFilled":  12
                     },
                     {
+                        "id":  "DYN8",
+                        "sleeperLeagueId":  "1362902973520306176",
+                        "sleeperSeason":  "2026",
+                        "name":  "VBP Dynasty 8",
+                        "format":  "dynasty",
+                        "draftStyle":  "slow",
+                        "division":  "",
+                        "buyIn":  10,
+                        "teams":  12,
+                        "filled":  0,
+                        "status":  "open",
+                        "inviteLink":  "https://sleeper.com/i/0NoQ5NMg2oe3V",
+                        "leagueSafeLink":  "https://www.leaguesafe.com/join/4423698",
+                        "constitutionPage":  "dynasty-constitution.html",
+                        "notes":  "Future Pick and Commitment Model: DYN8 requires the current season plus the next 2 seasons paid up front before startup. $10 per season, $30 due up front.",
+                        "lastUpdated":  "5/20/2026"
+                    },
+                    {
                         "id":  "DYB1",
                         "sleeperLeagueId":  "1350152770275020800",
                         "sleeperSeason":  "2026",
@@ -482,6 +500,25 @@
                         "notes":  "",
                         "lastUpdated":  "",
                         "sleeperFilled":  2
+                    },
+                    {
+                        "id":  "BG1",
+                        "sleeperLeagueId":  "1362908679824740352",
+                        "sleeperSeason":  "2026",
+                        "name":  "VBP Best Ball Gauntlet 1",
+                        "format":  "gauntlet",
+                        "draftStyle":  "fast",
+                        "division":  "",
+                        "buyIn":  5,
+                        "teams":  24,
+                        "filled":  0,
+                        "status":  "open",
+                        "inviteLink":  "https://sleeper.com/i/LVDOML8eZRmGM",
+                        "leagueSafeLink":  "https://www.leaguesafe.com/join/4423711",
+                        "constitutionPage":  "bestball-gauntlet-constitution.html",
+                        "notes":  "24-team doubleheader micro best ball. Winner take all: $120 to first place at full league size.",
+                        "lastUpdated":  "5/20/2026",
+                        "sleeperFilled":  1
                     },
                     {
                         "id":  "RDB1",
