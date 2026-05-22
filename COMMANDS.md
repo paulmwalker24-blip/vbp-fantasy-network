@@ -176,6 +176,12 @@ Import the latest Redraft Bracket LeagueSafe export and rebuild its private reco
 Import this Redraft Bracket LeagueSafe export into the private tracker inputs, replacing the previous current export: C:\Users\pkwal\Downloads\VBPs Redraft Bracket League 2026 payment details.csv
 ```
 
+Import the latest Best Ball Gauntlet LeagueSafe export:
+
+```text
+Import this Best Ball Gauntlet LeagueSafe export into the private tracker inputs, replacing the previous current export: C:\Users\pkwal\Downloads\VBP Bestball Gauntlet #1 payment details.csv
+```
+
 Build a private BBU payment report from Sleeper managers, LeagueSafe rows, and saved identity matches:
 
 ```text

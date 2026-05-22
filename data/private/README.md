@@ -7,6 +7,8 @@ Ignored local files:
 - `manager-identities.json`
 - `leaguesafe-payments.csv`
 - `leaguesafe-bbu-current.csv`
+- `leaguesafe-gauntlet-current.csv`
+- `leaguesafe-gauntlet-payments.csv`
 
 Do not commit real names, emails, or payment exports.
 
@@ -29,6 +31,12 @@ paymentId,leagueGroup,leagueRecordId,payerName,payerEmail,amount,date,status,not
 ```
 
 `leagueRecordId` can be a specific room such as `BBU4`, or blank when the payment belongs to the shared Best Ball Union pool but has not been assigned yet.
+
+For Best Ball Gauntlet, use:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\import-gauntlet-leaguesafe-export.ps1 -SourcePath "C:\Users\pkwal\Downloads\VBP Bestball Gauntlet #1 payment details.csv"
+```
 
 ## Identity Ledger Shape
 

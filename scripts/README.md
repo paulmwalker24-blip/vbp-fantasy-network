@@ -316,6 +316,16 @@ Example:
 powershell -ExecutionPolicy Bypass -File .\scripts\import-redraft-bracket-leaguesafe-export.ps1 -SourcePath "C:\Users\pkwal\Downloads\VBPs Redraft Bracket League 2026 payment details.csv"
 ```
 
+## `import-gauntlet-leaguesafe-export.ps1`
+
+Copies the latest downloaded Best Ball Gauntlet LeagueSafe export into `data/private/leaguesafe-gauntlet-current.csv`, then rewrites `data/private/leaguesafe-gauntlet-payments.csv` with the paid rows for BG1.
+
+Example:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\import-gauntlet-leaguesafe-export.ps1 -SourcePath "C:\Users\pkwal\Downloads\VBP Bestball Gauntlet #1 payment details.csv"
+```
+
 ## `reconcile-redraft-bracket-payments.ps1`
 
 Builds private Redraft Bracket payment reconciliation CSV files from Sleeper RDB league managers, the Redraft Bracket LeagueSafe paid rows, and saved identity matches.
@@ -333,6 +343,9 @@ Builds a formatted Excel workbook from the private BBU reconciliation CSV files.
 The workbook includes formatted tabs for:
 
 - Action Tracker
+- Bracket Tracker
+- Bracket Paid Not Assigned
+- Gauntlet Payments
 - Person Summary
 - Sleeper Entries
 - LeagueSafe Export

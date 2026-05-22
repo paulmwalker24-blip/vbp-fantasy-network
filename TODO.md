@@ -53,6 +53,7 @@
 ### Automation Recommendations
 
 - [x] Add Redraft Bracket LeagueSafe import and reconciliation sheets to the private payment workbook.
+- [x] Add a Best Ball Gauntlet LeagueSafe import for the new BG1 payment export.
 - [x] Add a private BBU LeagueSafe export importer that replaces the current raw export and normalized paid-row CSV.
 - [x] Add a formatted Excel workbook exporter for the private BBU payment reconciliation sheets.
 - [x] Add a private BBU payment reconciliation pilot that compares Sleeper managers with local LeagueSafe payment rows and reusable identity matches.

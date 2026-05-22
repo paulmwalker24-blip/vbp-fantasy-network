@@ -252,6 +252,17 @@ try {
       }
     },
     @{
+      name = "Gauntlet Payments"
+      csv = "..\..\..\data\private\leaguesafe-gauntlet-payments.csv"
+      options = @{
+        statusColumn = "status"
+        leagueColorColumn = "leagueRecordId"
+        moneyColumns = @("amount")
+        wideColumns = @("payerName", "payerEmail", "notes")
+        compactColumns = @("leagueRecordId", "amount", "status")
+      }
+    },
+    @{
       name = "Paid Not Assigned"
       csv = "paid-not-assigned.csv"
       options = @{

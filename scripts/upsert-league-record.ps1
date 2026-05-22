@@ -24,7 +24,7 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
-$validFormats = @("redraft", "dynasty", "dynastybracket", "bestball", "gauntlet", "bracket", "keeper", "chopped")
+$validFormats = @("redraft", "dynasty", "dynastybracket", "bestball", "gauntlet", "bracket", "keeper", "pickem", "chopped")
 $validStatuses = @("open", "full", "coming-soon")
 $validDraftStyles = @("", "fast", "slow")
 $defaultConstitutionPageByFormat = @{
@@ -35,6 +35,7 @@ $defaultConstitutionPageByFormat = @{
   gauntlet = "bestball-gauntlet-constitution.html"
   bracket = "bracket-constitution.html"
   keeper = "keeper-constitution.html"
+  pickem = "pickem-constitution.html"
   chopped = "chopped-constitution.html"
 }
 $defaultTeamCountByFormat = @{
@@ -45,6 +46,7 @@ $defaultTeamCountByFormat = @{
   gauntlet = 24
   bracket = 12
   keeper = 12
+  pickem = 500
   chopped = 18
 }
 
@@ -87,6 +89,8 @@ function Normalize-Format {
     "bracket" { return "bracket" }
     "bracketredraft" { return "bracket" }
     "keeper" { return "keeper" }
+    "pickem" { return "pickem" }
+    "pick'em" { return "pickem" }
     "chopped" { return "chopped" }
     default { throw "Unsupported format '$Value'." }
   }
@@ -136,6 +140,7 @@ function Get-NextLeagueId {
     gauntlet = "BG"
     bracket = "RDB"
     keeper = "KP"
+    pickem = "PK"
     chopped = "CH"
   }
 

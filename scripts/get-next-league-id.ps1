@@ -17,6 +17,7 @@ $prefixByFormat = @{
   bestball = "BBU"
   bracket = "RDB"
   keeper = "KP"
+  pickem = "PK"
   chopped = "CH"
 }
 
@@ -36,6 +37,8 @@ function Normalize-Format {
     "bracket" { return "bracket" }
     "bracketredraft" { return "bracket" }
     "keeper" { return "keeper" }
+    "pickem" { return "pickem" }
+    "pick'em" { return "pickem" }
     "chopped" { return "chopped" }
     default { throw "Unsupported format '$Value'." }
   }

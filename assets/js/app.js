@@ -19,6 +19,7 @@ const FORMAT_META = {
   dynasty: { label: "Dynasty", description: "Build and manage a roster long term." },
   dynastybracket: { label: "Dynasty Bracket", description: "Multi-division dynasty feeding a shared playoff bracket." },
   keeper: { label: "Keeper", description: "Annual redraft with keepers, rising costs, and long-term strategy." },
+  pickem: { label: "Pick'em", description: "Spread-based NFL picks across the regular season." },
   redraft: { label: "Redraft", description: "Standard seasonal competition with balanced scoring." }
 };
 
@@ -61,6 +62,7 @@ function normalizeFormat(value) {
   const normalized = String(value || "").toLowerCase().replace(/[\s-]+/g, "").trim();
 
   if (normalized.includes("dynastybracket")) return "dynastybracket";
+  if (normalized.includes("pickem") || normalized.includes("pick'em")) return "pickem";
   if (normalized.includes("gauntlet")) return "gauntlet";
   if (normalized.includes("best")) return "bestball";
   if (normalized.includes("bracket")) return "bracket";
@@ -235,6 +237,10 @@ function getLeagueContextNote(league) {
     return "Part of 60 Team Redraft Bracket";
   }
 
+  if (league.format === "pickem") {
+    return "Spread-based NFL pick'em";
+  }
+
   return "";
 }
 
@@ -292,24 +298,37 @@ async function fetchJson(url, label) {
 
 async function fetchSleeperLeagueData(sleeperLeagueId) {
   const encodedLeagueId = encodeURIComponent(sleeperLeagueId);
-  const [leagueResponse, rostersResponse] = await Promise.all([
-    fetch(`https://api.sleeper.app/v1/league/${encodedLeagueId}`, { cache: "no-store" }),
-    fetch(`https://api.sleeper.app/v1/league/${encodedLeagueId}/rosters`, { cache: "no-store" })
-  ]);
+  const leagueResponse = await fetch(`https://api.sleeper.app/v1/league/${encodedLeagueId}`, { cache: "no-store" });
 
   if (!leagueResponse.ok) {
     throw new Error(`Sleeper league request failed with status ${leagueResponse.status}`);
   }
 
-  if (!rostersResponse.ok) {
-    throw new Error(`Sleeper league rosters request failed with status ${rostersResponse.status}`);
-  }
-
   const league = await leagueResponse.json();
-  const rosters = await rostersResponse.json();
-  const filled = Array.isArray(rosters)
-    ? rosters.filter(roster => String(roster?.owner_id || "").trim() !== "").length
-    : 0;
+  const isPickemLeague = String(league.sport || "").toLowerCase().startsWith("pickem:");
+  let filled = 0;
+
+  if (isPickemLeague) {
+    const usersResponse = await fetch(`https://api.sleeper.app/v1/league/${encodedLeagueId}/users`, { cache: "no-store" });
+
+    if (!usersResponse.ok) {
+      throw new Error(`Sleeper league users request failed with status ${usersResponse.status}`);
+    }
+
+    const users = await usersResponse.json();
+    filled = Array.isArray(users) ? users.length : 0;
+  } else {
+    const rostersResponse = await fetch(`https://api.sleeper.app/v1/league/${encodedLeagueId}/rosters`, { cache: "no-store" });
+
+    if (!rostersResponse.ok) {
+      throw new Error(`Sleeper league rosters request failed with status ${rostersResponse.status}`);
+    }
+
+    const rosters = await rostersResponse.json();
+    filled = Array.isArray(rosters)
+      ? rosters.filter(roster => String(roster?.owner_id || "").trim() !== "").length
+      : 0;
+  }
 
   return {
     name: String(league.name || "").trim(),
