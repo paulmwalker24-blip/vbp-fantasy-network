@@ -4,7 +4,8 @@ const DATA_URLS = {
 };
 
 const ELEMENT_IDS = {
-  limitedSpots: "limitedSpotsContainer",
+  openNow: "openNowContainer",
+  networkSnapshot: "networkSnapshotContainer",
   formatFilters: "formatFilters",
   leagues: "leaguesContainer",
   donations: "donationProjectsContainer",
@@ -24,6 +25,19 @@ const FORMAT_META = {
 };
 
 const BEST_BALL_UNION_TOTAL_BUY_IN = 200;
+const OPEN_NOW_PRIORITY = [
+  { id: "RD4", note: "Standalone high-stakes redraft room." },
+  { id: "RDB1", note: "Slow draft redraft bracket priority room." },
+  { id: "RDB3", note: "Fast draft redraft bracket priority room." },
+  { id: "BG1", note: "Micro best ball with a 24-team standings race." },
+  { id: "BBU6", note: "Fast draft Best Ball Union room." },
+  { id: "PK1", note: "Season-long NFL picks against the spread." },
+  { id: "DYN8", note: "Superflex dynasty startup with slow draft." },
+  { id: "DYN7", note: "Lower buy-in superflex dynasty startup." },
+  { id: "DYB1", note: "First priority room for the 48-team dynasty bracket." },
+  { id: "KP1", note: "Keeper startup at the lower buy-in level." },
+  { id: "KP2", note: "Keeper startup at the higher buy-in level." }
+];
 
 let currentLeagueFilter = "all";
 
@@ -150,28 +164,12 @@ function isComingSoonLeague(league) {
   return String(league?.status || "").trim().toLowerCase() === "coming-soon";
 }
 
-function shouldUseAssignedRosterCount(league) {
-  return league?.format === "bracket" || league?.format === "dynastybracket";
-}
-
-function shouldUseExactAssignedRosterCount(league) {
-  return league?.format === "chopped";
-}
-
 function getLeagueDisplayFilledCount(league) {
   if (league.sleeperFilled === null || league.sleeperFilled === undefined) {
     return league.filled;
   }
 
-  if (shouldUseExactAssignedRosterCount(league)) {
-    return normalizeFilledCount(league.teams, league.sleeperFilled);
-  }
-
-  if (!shouldUseAssignedRosterCount(league)) {
-    return league.filled;
-  }
-
-  return normalizeFilledCount(league.teams, Math.max(league.filled, league.sleeperFilled));
+  return normalizeFilledCount(league.teams, league.sleeperFilled);
 }
 
 function getLeagueSpotsLeft(league) {
@@ -277,6 +275,30 @@ function createButton(label, className, href) {
   return span;
 }
 
+function createSiteButton(label, className, href) {
+  const safeHref = String(href || "").trim();
+  if (safeHref && !safeHref.includes(":") && !safeHref.startsWith("//")) {
+    const link = document.createElement("a");
+    link.className = className;
+    link.href = safeHref;
+    link.textContent = label;
+    return link;
+  }
+
+  return createButton(label, className, href);
+}
+
+function createSnapshotItem(label, value, detail) {
+  const item = document.createElement("article");
+  item.className = "snapshot-item";
+  item.append(
+    createTextElement("span", "snapshot-label", label),
+    createTextElement("strong", "snapshot-value", value),
+    createTextElement("span", "snapshot-detail", detail)
+  );
+  return item;
+}
+
 function createTextElement(tagName, className, text) {
   const element = document.createElement(tagName);
   if (className) {
@@ -325,9 +347,11 @@ async function fetchSleeperLeagueData(sleeperLeagueId) {
     }
 
     const rosters = await rostersResponse.json();
-    filled = Array.isArray(rosters)
+    const rosterAssignedCount = Array.isArray(rosters)
       ? rosters.filter(roster => String(roster?.owner_id || "").trim() !== "").length
       : 0;
+    const draftAssignedCount = await fetchSleeperDraftAssignedCount(encodedLeagueId);
+    filled = Math.max(rosterAssignedCount, draftAssignedCount);
   }
 
   return {
@@ -337,6 +361,29 @@ async function fetchSleeperLeagueData(sleeperLeagueId) {
     season: String(league.season || "").trim(),
     status: String(league.status || "").trim().toLowerCase()
   };
+}
+
+async function fetchSleeperDraftAssignedCount(encodedLeagueId) {
+  try {
+    const draftsResponse = await fetch(`https://api.sleeper.app/v1/league/${encodedLeagueId}/drafts`, { cache: "no-store" });
+
+    if (!draftsResponse.ok) {
+      return 0;
+    }
+
+    const drafts = await draftsResponse.json();
+    if (!Array.isArray(drafts) || !drafts.length) {
+      return 0;
+    }
+
+    const sortedDrafts = [...drafts].sort((a, b) => toNumber(b?.created) - toNumber(a?.created));
+    const latestDraftOrder = sortedDrafts[0]?.draft_order;
+    return latestDraftOrder && typeof latestDraftOrder === "object"
+      ? Object.keys(latestDraftOrder).filter(userId => String(userId || "").trim()).length
+      : 0;
+  } catch {
+    return 0;
+  }
 }
 
 function buildLeagueRenderModel(league, syncState, syncEligible = false) {
@@ -493,23 +540,80 @@ function createLeagueCard(league) {
   return card;
 }
 
-function renderLimitedSpots(leagues) {
-  const container = getElement(ELEMENT_IDS.limitedSpots);
+function createOpenNowCard(league, note) {
+  const isComingSoon = isComingSoonLeague(league);
+  const card = document.createElement("article");
+  card.className = "open-now-card";
+
+  const meta = FORMAT_META[league.format];
+  const divisionLabel = getLeagueDivisionLabel(league);
+  const filledCount = getLeagueDisplayFilledCount(league);
+  const fillStatus = `${filledCount}/${league.teams}`;
+  const spotsText = league.spotsLeft === 0
+    ? "Full"
+    : `${league.spotsLeft} left`;
+  const spotsBadge = getSpotsBadge(league);
+
+  const badges = document.createElement("div");
+  badges.className = "league-badges";
+  appendDraftBadges(badges, league, divisionLabel);
+  badges.appendChild(createTextElement("span", spotsBadge.className, spotsBadge.text));
+
+  const actions = document.createElement("div");
+  actions.className = "open-now-actions";
+  actions.appendChild(createLeagueAction(league, isComingSoon));
+  if (league.constitutionPage) {
+    actions.appendChild(createSiteButton("Rules", "btn btn-secondary", league.constitutionPage));
+  }
+
+  card.append(
+    createTextElement("div", "open-now-format", meta.label),
+    createTextElement("h3", "open-now-name", league.name),
+    createTextElement("div", "open-now-meta", `${formatCurrency(league.buyIn)} | ${fillStatus} filled | ${spotsText}`),
+    createTextElement("p", "open-now-note", note || getLeagueContextNote(league) || meta.description),
+    badges,
+    actions
+  );
+
+  return card;
+}
+
+function renderNetworkSnapshot(leagues) {
+  const container = getElement(ELEMENT_IDS.networkSnapshot);
   if (!container) return;
 
-  const limited = leagues
-    .filter(league => !isComingSoonLeague(league) && league.spotsLeft > 0)
-    .sort((a, b) => a.spotsLeft - b.spotsLeft || getLeagueDisplayFilledCount(a) - getLeagueDisplayFilledCount(b))
-    .slice(0, 2);
+  const joinableLeagues = leagues.filter(league => !isComingSoonLeague(league) && league.spotsLeft > 0);
+  const rosterLeagues = joinableLeagues.filter(league => league.format !== "pickem");
+  const rosterSpots = rosterLeagues.reduce((sum, league) => sum + Math.max(league.spotsLeft, 0), 0);
+  const formatsWithListings = new Set(leagues.map(league => league.format)).size;
+  const pickemLeague = leagues.find(league => league.format === "pickem");
+
+  clearElement(container);
+  container.append(
+    createSnapshotItem("Formats", String(formatsWithListings), "Roster leagues, bracket formats, best ball, and pick'em"),
+    createSnapshotItem("Open Rooms", String(joinableLeagues.length), "Current joinable listings across the network"),
+    createSnapshotItem("Roster Spots", String(rosterSpots), "Open roster-league seats, excluding pick'em entries"),
+    createSnapshotItem("Pick'em", pickemLeague && pickemLeague.spotsLeft > 0 ? "Open" : "Listed", "2026 NFL spread contest")
+  );
+}
+
+function renderOpenNow(leagues) {
+  const container = getElement(ELEMENT_IDS.openNow);
+  if (!container) return;
+
+  const leaguesById = new Map(leagues.map(league => [league.id, league]));
+  const openPriority = OPEN_NOW_PRIORITY
+    .map(item => ({ ...item, league: leaguesById.get(item.id) }))
+    .filter(item => item.league && !isComingSoonLeague(item.league) && item.league.spotsLeft > 0);
 
   clearElement(container);
 
-  if (!limited.length) {
-    container.appendChild(createEmptyState("No leagues currently have open spots."));
+  if (!openPriority.length) {
+    container.appendChild(createEmptyState("No priority openings are listed right now."));
     return;
   }
 
-  limited.forEach(league => container.appendChild(createLeagueCard(league)));
+  openPriority.forEach(item => container.appendChild(createOpenNowCard(item.league, item.note)));
 }
 
 function createLeagueGroupHeader(formatKey, grouped) {
@@ -717,23 +821,29 @@ function renderDonations(projects) {
 
 function renderLeagueLoadError() {
   const leaguesContainer = getElement(ELEMENT_IDS.leagues);
-  const limitedSpotsContainer = getElement(ELEMENT_IDS.limitedSpots);
+  const openNowContainer = getElement(ELEMENT_IDS.openNow);
+  const snapshotContainer = getElement(ELEMENT_IDS.networkSnapshot);
 
   if (leaguesContainer) {
     clearElement(leaguesContainer);
     leaguesContainer.appendChild(createEmptyState("Unable to load league data right now."));
   }
 
-  if (limitedSpotsContainer) {
-    clearElement(limitedSpotsContainer);
-    limitedSpotsContainer.appendChild(createEmptyState("Unable to load limited spot leagues right now."));
+  if (openNowContainer) {
+    clearElement(openNowContainer);
+    openNowContainer.appendChild(createEmptyState("Unable to load priority openings right now."));
+  }
+
+  if (snapshotContainer) {
+    clearElement(snapshotContainer);
   }
 }
 
 async function initLeagues() {
   try {
     const leagues = await loadLeagues();
-    renderLimitedSpots(leagues);
+    renderNetworkSnapshot(leagues);
+    renderOpenNow(leagues);
     renderLeagues(leagues);
     initLeagueFilters(leagues);
   } catch (error) {

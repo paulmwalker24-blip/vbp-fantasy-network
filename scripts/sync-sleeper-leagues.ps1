@@ -45,10 +45,29 @@ function Get-SleeperLeagueSnapshot {
   )
 
   $league = Invoke-RestMethod -Uri ("https://api.sleeper.app/v1/league/{0}" -f $SleeperLeagueId)
-  $rosters = Invoke-RestMethod -Uri ("https://api.sleeper.app/v1/league/{0}/rosters" -f $SleeperLeagueId)
-
   $teams = To-Number $league.total_rosters
-  $filled = Normalize-FilledCount -Teams $teams -Filled (@($rosters | Where-Object { -not [string]::IsNullOrWhiteSpace([string]$_.owner_id) }).Count)
+  $isPickemLeague = ([string]$league.sport).Trim().ToLowerInvariant().StartsWith("pickem:")
+
+  if ($isPickemLeague) {
+    $users = @(Invoke-RestMethod -Uri ("https://api.sleeper.app/v1/league/{0}/users" -f $SleeperLeagueId))
+    $filled = Normalize-FilledCount -Teams $teams -Filled $users.Count
+  } else {
+    $rosters = Invoke-RestMethod -Uri ("https://api.sleeper.app/v1/league/{0}/rosters" -f $SleeperLeagueId)
+    $drafts = @(Invoke-RestMethod -Uri ("https://api.sleeper.app/v1/league/{0}/drafts" -f $SleeperLeagueId))
+    $rosterAssignedCount = @($rosters | Where-Object { -not [string]::IsNullOrWhiteSpace([string]$_.owner_id) }).Count
+    $latestDraft = @($drafts | Sort-Object { [double]$_.created } -Descending | Select-Object -First 1)
+    $latestDraftOrder = if ($latestDraft -and $latestDraft.PSObject.Properties.Match('draft_order').Count -gt 0) {
+      $latestDraft.PSObject.Properties['draft_order'].Value
+    } else {
+      $null
+    }
+    $draftAssignedCount = if ($latestDraftOrder) {
+      @($latestDraftOrder.PSObject.Properties | Where-Object { -not [string]::IsNullOrWhiteSpace([string]$_.Name) }).Count
+    } else {
+      0
+    }
+    $filled = Normalize-FilledCount -Teams $teams -Filled ([math]::Max($rosterAssignedCount, $draftAssignedCount))
+  }
 
   [pscustomobject]@{
     sleeperLeagueId = $SleeperLeagueId

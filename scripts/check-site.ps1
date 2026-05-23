@@ -54,7 +54,7 @@ foreach ($file in $requiredFiles) {
 $indexHtml = Read-File -RelativePath "index.html"
 $appJs = Read-File -RelativePath "assets/js/app.js"
 
-foreach ($requiredId in @("limitedSpotsContainer", "formatFilters", "leaguesContainer", "donationProjectsContainer", "lastUpdated")) {
+foreach ($requiredId in @("networkSnapshotContainer", "openNowContainer", "formatFilters", "leaguesContainer", "donationProjectsContainer", "lastUpdated")) {
   if ($indexHtml -notmatch ("id=""{0}""" -f [regex]::Escape($requiredId))) {
     Add-Issue -Severity "error" -Source "index.html" -Message ("Missing required element id '{0}'." -f $requiredId)
   }

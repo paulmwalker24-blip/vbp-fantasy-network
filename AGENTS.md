@@ -41,11 +41,13 @@ The site is effectively data-driven through local league JSON, local donation JS
   - Can optionally fetch Sleeper league details for entries with `sleeperLeagueId`.
   - Preserves local display names while still using Sleeper to refresh counts and season data.
   - Caps hydrated filled counts so the homepage does not show impossible roster counts.
-  - Treats `filled` as the number of roster slots with an assigned `owner_id`, not simply the number of league members.
+  - Treats live availability as assigned Sleeper spots, not raw league members.
+  - For roster leagues, live availability uses the larger of assigned roster `owner_id` count and assigned draft `draft_order` slots so pre-draft leagues with set draft boards do not undercount.
+  - For Pick'em, live availability uses Sleeper league users because Pick'em leagues do not use normal fantasy rosters.
   - Normalizes league and donation rows.
   - Preserves league display order by internal ID sequence within each format.
   - Handles homepage format-filter interactions.
-  - Renders league cards, grouped format sections, limited-spots cards, and donation cards.
+  - Renders Open Now cards, network snapshot items, grouped format sections, league cards, and donation cards.
   - Normalizes local JSON rows into render models before display.
 
 - `data/leagues.json`
@@ -226,7 +228,7 @@ The current league rendering depends on:
 - `division`
 - `teams`
 - `filled`
-- `sleeperFilled` (optional reference copy of Sleeper owner-assigned roster count)
+- `sleeperFilled` (optional reference copy of live Sleeper assigned-spot count)
 - `buyIn`
 - `inviteLink`
 - `leagueSafeLink`
@@ -240,8 +242,10 @@ Recognized normalized formats:
 - `dynasty`
 - `dynastybracket`
 - `bestball`
+- `gauntlet`
 - `bracket`
 - `keeper`
+- `pickem`
 - `chopped`
 
 If a new format is introduced, update `FORMAT_META` and `normalizeFormat()`.
@@ -255,8 +259,10 @@ Current ID prefixes are:
 - `DYN` for dynasty
 - `DB` for dynasty bracket
 - `BBU` for best ball
+- `BG` for best ball gauntlet
 - `RDB` for bracket
 - `KP` for keeper
+- `PK` for pickem
 - `CH` for chopped
 
 Current league notes:
@@ -304,8 +310,10 @@ Current league notes:
 - Sleeper invite links can point to a newer live league than the currently stored `sleeperLeagueId`, especially on renewed dynasty leagues. If live counts look wrong, resolve the invite page's `league_id` before assuming the invite link is stale.
 - If the user provides a direct Sleeper league URL instead of a share invite, it is acceptable to store that direct league URL in `inviteLink` so the record can stay publicly actionable while still resolving and storing the numeric `sleeperLeagueId`.
 - When checking dynasty future-pick payment obligations, use Sleeper traded-pick data and only flag managers who traded away future picks. Do not flag the managers who received those picks unless they also traded away their own future picks.
-- `filled` is the commissioner-published occupancy count used by the site and local copy, except where a specific format note says the hub should follow live Sleeper availability.
-- Optional `sleeperFilled` can store the live Sleeper owner-assigned roster count as reference data when local published occupancy intentionally differs.
+- Homepage availability should follow live Sleeper assigned spots when the API is available, with `filled` and `sleeperFilled` acting as fallback data.
+- For roster leagues, assigned spots are the larger of assigned roster `owner_id` count and assigned draft `draft_order` slots.
+- For Pick'em leagues, assigned spots are Sleeper league users.
+- Optional `sleeperFilled` stores the latest synced Sleeper assigned-spot count.
 - Do not treat raw league member count as the true fill number.
 
 Current donation notes:
@@ -366,7 +374,7 @@ If donation rendering breaks:
 - Keep the format filter functional when changing homepage league rendering.
 - Keep planned empty formats visible in Active Leagues unless the user explicitly asks to hide them.
 - Do not reintroduce behavior that overwrites curated local league names with raw Sleeper names unless the user explicitly asks for that.
-- Do not overwrite commissioner-published `filled` counts from Sleeper unless the user explicitly asks for that sync behavior.
+- Homepage league availability should live-refresh from Sleeper assigned spots. Local `filled` counts are fallback data and may be synced with `scripts/sync-sleeper-leagues.ps1 -UpdateFilledFromSleeper -UpdateStatus` when the user asks to refresh availability.
 
 ### Local Automation
 
