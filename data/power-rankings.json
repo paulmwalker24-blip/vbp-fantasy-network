@@ -1,5 +1,5 @@
 ﻿{
-    "generatedAt":  "2026-05-23T12:51:23.6540922+00:00",
+    "generatedAt":  "2026-05-23T15:52:11.0126518+00:00",
     "snapshot":  {
                      "season":  "2026",
                      "seasonType":  "off",
@@ -77,7 +77,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314663050854305792/rosters",
-                                           "refreshedAt":  "2026-05-23T12:50:55.0539301+00:00",
+                                           "refreshedAt":  "2026-05-23T15:51:43.8990138+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -134,7 +134,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314662767977824256/rosters",
-                                           "refreshedAt":  "2026-05-23T12:50:55.6347102+00:00",
+                                           "refreshedAt":  "2026-05-23T15:51:44.3854671+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -191,7 +191,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314660487635427328/rosters",
-                                           "refreshedAt":  "2026-05-23T12:50:56.2137012+00:00",
+                                           "refreshedAt":  "2026-05-23T15:51:44.8492328+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -248,7 +248,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1344449488089014272/rosters",
-                                           "refreshedAt":  "2026-05-23T12:50:56.8013275+00:00",
+                                           "refreshedAt":  "2026-05-23T15:51:45.2573490+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -305,7 +305,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341650084122595328/rosters",
-                                           "refreshedAt":  "2026-05-23T12:50:57.4455530+00:00",
+                                           "refreshedAt":  "2026-05-23T15:51:45.8048430+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  389,
                                            "sleeperLeagueSeason":  "2026",
@@ -1125,12 +1125,12 @@
                                                             "ties":  0
                                                         },
                                              "components":  {
-                                                                "lineup":  75.6,
-                                                                "depth":  69.4,
+                                                                "lineup":  76.1,
+                                                                "depth":  69.6,
                                                                 "quarterback":  77,
                                                                 "eliteCeiling":  74,
-                                                                "health":  76,
-                                                                "dynastyValue":  69.7
+                                                                "health":  82,
+                                                                "dynastyValue":  69.9
                                                             },
                                              "topPlayers":  [
                                                                 {
@@ -1174,11 +1174,11 @@
                                                                     "value":  76
                                                                 },
                                                                 {
-                                                                    "name":  "Quinshon Judkins",
-                                                                    "position":  "RB",
-                                                                    "team":  "CLE",
-                                                                    "age":  22,
-                                                                    "injuryStatus":  "Questionable",
+                                                                    "name":  "Jordyn Tyson",
+                                                                    "position":  "WR",
+                                                                    "team":  "NO",
+                                                                    "age":  21,
+                                                                    "injuryStatus":  "",
                                                                     "value":  73
                                                                 },
                                                                 {
@@ -1190,12 +1190,12 @@
                                                                     "value":  73
                                                                 },
                                                                 {
-                                                                    "name":  "Mac Jones",
-                                                                    "position":  "QB",
-                                                                    "team":  "SF",
-                                                                    "age":  27,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  72
+                                                                    "name":  "Quinshon Judkins",
+                                                                    "position":  "RB",
+                                                                    "team":  "CLE",
+                                                                    "age":  22,
+                                                                    "injuryStatus":  "Questionable",
+                                                                    "value":  73
                                                                 }
                                                             ],
                                              "starterSnapshot":  [
@@ -1231,9 +1231,9 @@
                                                                      },
                                                                      {
                                                                          "slot":  "WR",
-                                                                         "name":  "Henry Ruggs",
+                                                                         "name":  "Jordyn Tyson",
                                                                          "position":  "WR",
-                                                                         "value":  71
+                                                                         "value":  73
                                                                      },
                                                                      {
                                                                          "slot":  "TE",
@@ -1249,14 +1249,14 @@
                                                                      },
                                                                      {
                                                                          "slot":  "FLEX",
-                                                                         "name":  "Kayshon Boutte",
+                                                                         "name":  "Henry Ruggs",
                                                                          "position":  "WR",
-                                                                         "value":  68
+                                                                         "value":  71
                                                                      },
                                                                      {
                                                                          "slot":  "FLEX",
-                                                                         "name":  "Kimani Vidal",
-                                                                         "position":  "RB",
+                                                                         "name":  "Kayshon Boutte",
+                                                                         "position":  "WR",
                                                                          "value":  68
                                                                      }
                                                                  ],
@@ -1277,14 +1277,14 @@
                                                                        "value":  70
                                                                    },
                                                                    {
-                                                                       "name":  "Riley Leonard",
-                                                                       "position":  "QB",
+                                                                       "name":  "Kimani Vidal",
+                                                                       "position":  "RB",
                                                                        "value":  68
                                                                    },
                                                                    {
-                                                                       "name":  "Jordyn Tyson",
-                                                                       "position":  "WR",
-                                                                       "value":  67
+                                                                       "name":  "Riley Leonard",
+                                                                       "position":  "QB",
+                                                                       "value":  68
                                                                    },
                                                                    {
                                                                        "name":  "Max Klare",
@@ -1299,9 +1299,9 @@
                                                                ],
                                              "reasons":  [
                                                              "QB room: Cam Ward, Sam Darnold",
-                                                             "Starter grade 75.6",
-                                                             "Bench grade 69.4",
-                                                             "Health watch: Quinshon Judkins, KeAndre Lambert-Smith, Jordyn Tyson"
+                                                             "Starter grade 76.1",
+                                                             "Bench grade 69.6",
+                                                             "Health watch: Quinshon Judkins, KeAndre Lambert-Smith, Tyreek Hill"
                                                          ],
                                              "rank":  5
                                          },
@@ -2689,7 +2689,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1340820529996640256/rosters",
-                                           "refreshedAt":  "2026-05-23T12:50:59.0662082+00:00",
+                                           "refreshedAt":  "2026-05-23T15:51:47.7255428+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  367,
                                            "sleeperLeagueSeason":  "2026",
@@ -3304,10 +3304,10 @@
                                              "rank":  3
                                          },
                                          {
-                                             "rosterId":  12,
-                                             "ownerId":  "992142466822234112",
-                                             "teamName":  "Thefish1220",
-                                             "score":  74,
+                                             "rosterId":  3,
+                                             "ownerId":  "1205629906461917184",
+                                             "teamName":  "Major Questions",
+                                             "score":  75,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -3316,183 +3316,183 @@
                                                             "ties":  0
                                                         },
                                              "components":  {
-                                                                "lineup":  76.1,
-                                                                "depth":  71.4,
-                                                                "quarterback":  78.5,
-                                                                "eliteCeiling":  58,
-                                                                "health":  82,
-                                                                "dynastyValue":  70.9
+                                                                "lineup":  79,
+                                                                "depth":  72.1,
+                                                                "quarterback":  80,
+                                                                "eliteCeiling":  82,
+                                                                "health":  52,
+                                                                "dynastyValue":  67.2
                                                             },
                                              "topPlayers":  [
                                                                 {
-                                                                    "name":  "Justin Jefferson",
+                                                                    "name":  "Bijan Robinson",
+                                                                    "position":  "RB",
+                                                                    "team":  "ATL",
+                                                                    "age":  24,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  90
+                                                                },
+                                                                {
+                                                                    "name":  "Puka Nacua",
                                                                     "position":  "WR",
-                                                                    "team":  "MIN",
+                                                                    "team":  "LAR",
+                                                                    "age":  24,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  86
+                                                                },
+                                                                {
+                                                                    "name":  "James Cook",
+                                                                    "position":  "RB",
+                                                                    "team":  "BUF",
                                                                     "age":  26,
                                                                     "injuryStatus":  "",
-                                                                    "value":  82
+                                                                    "value":  84
                                                                 },
                                                                 {
-                                                                    "name":  "Justin Herbert",
-                                                                    "position":  "QB",
-                                                                    "team":  "LAC",
-                                                                    "age":  28,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  80
-                                                                },
-                                                                {
-                                                                    "name":  "Ladd McConkey",
+                                                                    "name":  "Chris Olave",
                                                                     "position":  "WR",
-                                                                    "team":  "LAC",
-                                                                    "age":  24,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  79
-                                                                },
-                                                                {
-                                                                    "name":  "Kyren Williams",
-                                                                    "position":  "RB",
-                                                                    "team":  "LAR",
+                                                                    "team":  "NO",
                                                                     "age":  25,
                                                                     "injuryStatus":  "",
+                                                                    "value":  81
+                                                                },
+                                                                {
+                                                                    "name":  "Brock Purdy",
+                                                                    "position":  "QB",
+                                                                    "team":  "SF",
+                                                                    "age":  26,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  81
+                                                                },
+                                                                {
+                                                                    "name":  "Jayden Daniels",
+                                                                    "position":  "QB",
+                                                                    "team":  "WAS",
+                                                                    "age":  25,
+                                                                    "injuryStatus":  "Questionable",
                                                                     "value":  79
                                                                 },
                                                                 {
-                                                                    "name":  "Bryce Young",
-                                                                    "position":  "QB",
-                                                                    "team":  "CAR",
-                                                                    "age":  24,
+                                                                    "name":  "Tyler Warren",
+                                                                    "position":  "TE",
+                                                                    "team":  "IND",
+                                                                    "age":  23,
                                                                     "injuryStatus":  "",
                                                                     "value":  77
                                                                 },
                                                                 {
-                                                                    "name":  "Sam Darnold",
+                                                                    "name":  "Malik Willis",
                                                                     "position":  "QB",
-                                                                    "team":  "SEA",
-                                                                    "age":  28,
+                                                                    "team":  "MIA",
+                                                                    "age":  26,
                                                                     "injuryStatus":  "",
-                                                                    "value":  76
-                                                                },
-                                                                {
-                                                                    "name":  "Mark Andrews",
-                                                                    "position":  "TE",
-                                                                    "team":  "BAL",
-                                                                    "age":  30,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  74
-                                                                },
-                                                                {
-                                                                    "name":  "Wan\u0027Dale Robinson",
-                                                                    "position":  "WR",
-                                                                    "team":  "TEN",
-                                                                    "age":  25,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  74
+                                                                    "value":  77
                                                                 }
                                                             ],
                                              "starterSnapshot":  [
                                                                      {
                                                                          "slot":  "QB",
-                                                                         "name":  "Justin Herbert",
+                                                                         "name":  "Brock Purdy",
                                                                          "position":  "QB",
-                                                                         "value":  80
+                                                                         "value":  81
                                                                      },
                                                                      {
                                                                          "slot":  "SUPER_FLEX",
-                                                                         "name":  "Bryce Young",
-                                                                         "position":  "QB",
-                                                                         "value":  77
+                                                                         "name":  "Bijan Robinson",
+                                                                         "position":  "RB",
+                                                                         "value":  90
                                                                      },
                                                                      {
                                                                          "slot":  "RB",
-                                                                         "name":  "Kyren Williams",
+                                                                         "name":  "James Cook",
                                                                          "position":  "RB",
-                                                                         "value":  79
+                                                                         "value":  84
                                                                      },
                                                                      {
                                                                          "slot":  "RB",
-                                                                         "name":  "Jordan Mason",
+                                                                         "name":  "D\u0027Andre Swift",
                                                                          "position":  "RB",
-                                                                         "value":  72
+                                                                         "value":  74
                                                                      },
                                                                      {
                                                                          "slot":  "WR",
-                                                                         "name":  "Justin Jefferson",
+                                                                         "name":  "Puka Nacua",
                                                                          "position":  "WR",
-                                                                         "value":  82
+                                                                         "value":  86
                                                                      },
                                                                      {
                                                                          "slot":  "WR",
-                                                                         "name":  "Ladd McConkey",
+                                                                         "name":  "Chris Olave",
                                                                          "position":  "WR",
-                                                                         "value":  79
+                                                                         "value":  81
                                                                      },
                                                                      {
                                                                          "slot":  "TE",
-                                                                         "name":  "Mark Andrews",
+                                                                         "name":  "Tyler Warren",
                                                                          "position":  "TE",
-                                                                         "value":  74
+                                                                         "value":  77
                                                                      },
                                                                      {
                                                                          "slot":  "FLEX",
-                                                                         "name":  "Wan\u0027Dale Robinson",
+                                                                         "name":  "Jayden Higgins",
                                                                          "position":  "WR",
-                                                                         "value":  74
+                                                                         "value":  73
                                                                      },
                                                                      {
                                                                          "slot":  "FLEX",
-                                                                         "name":  "Tre Tucker",
+                                                                         "name":  "Jordyn Tyson",
                                                                          "position":  "WR",
-                                                                         "value":  72
+                                                                         "value":  73
                                                                      },
                                                                      {
                                                                          "slot":  "FLEX",
-                                                                         "name":  "Jadarian Price",
-                                                                         "position":  "RB",
-                                                                         "value":  72
+                                                                         "name":  "Christian Watson",
+                                                                         "position":  "WR",
+                                                                         "value":  71
                                                                      }
                                                                  ],
                                              "benchSnapshot":  [
                                                                    {
-                                                                       "name":  "Sam Darnold",
+                                                                       "name":  "Jayden Daniels",
                                                                        "position":  "QB",
-                                                                       "value":  76
+                                                                       "value":  79
                                                                    },
                                                                    {
-                                                                       "name":  "AJ Barner",
-                                                                       "position":  "TE",
+                                                                       "name":  "Malik Willis",
+                                                                       "position":  "QB",
+                                                                       "value":  77
+                                                                   },
+                                                                   {
+                                                                       "name":  "Mac Jones",
+                                                                       "position":  "QB",
                                                                        "value":  72
                                                                    },
                                                                    {
-                                                                       "name":  "Ray Davis",
-                                                                       "position":  "RB",
-                                                                       "value":  71
+                                                                       "name":  "Tucker Kraft",
+                                                                       "position":  "TE",
+                                                                       "value":  70
                                                                    },
                                                                    {
-                                                                       "name":  "Rashid Shaheed",
-                                                                       "position":  "WR",
-                                                                       "value":  71
-                                                                   },
-                                                                   {
-                                                                       "name":  "Demond Claiborne",
+                                                                       "name":  "Jaylen Wright",
                                                                        "position":  "RB",
                                                                        "value":  70
                                                                    },
                                                                    {
-                                                                       "name":  "Joe Milton",
+                                                                       "name":  "Marcus Mariota",
                                                                        "position":  "QB",
-                                                                       "value":  70
+                                                                       "value":  69
                                                                    },
                                                                    {
-                                                                       "name":  "Khalil Shakir",
-                                                                       "position":  "WR",
-                                                                       "value":  70
+                                                                       "name":  "Carson Beck",
+                                                                       "position":  "QB",
+                                                                       "value":  68
                                                                    }
                                                                ],
                                              "reasons":  [
-                                                             "QB room: Justin Herbert, Bryce Young",
-                                                             "Starter grade 76.1",
-                                                             "Bench grade 71.4",
-                                                             "Health watch: Trey Benson, Luke McCaffrey, Tory Horton"
+                                                             "QB room: Brock Purdy, Jayden Daniels",
+                                                             "Starter grade 79",
+                                                             "Bench grade 72.1",
+                                                             "Health watch: Jayden Daniels, Ja\u0027Tavion Sanders, Jaylin Lane"
                                                          ],
                                              "rank":  4
                                          },
@@ -3690,9 +3690,9 @@
                                              "rank":  5
                                          },
                                          {
-                                             "rosterId":  3,
-                                             "ownerId":  "1205629906461917184",
-                                             "teamName":  "Major Questions",
+                                             "rosterId":  12,
+                                             "ownerId":  "992142466822234112",
+                                             "teamName":  "Thefish1220",
                                              "score":  74,
                                              "record":  {
                                                             "wins":  0,
@@ -3702,183 +3702,183 @@
                                                             "ties":  0
                                                         },
                                              "components":  {
-                                                                "lineup":  78.7,
-                                                                "depth":  71.7,
-                                                                "quarterback":  80,
-                                                                "eliteCeiling":  82,
-                                                                "health":  46,
-                                                                "dynastyValue":  67.1
+                                                                "lineup":  76.1,
+                                                                "depth":  71.4,
+                                                                "quarterback":  78.5,
+                                                                "eliteCeiling":  58,
+                                                                "health":  82,
+                                                                "dynastyValue":  70.9
                                                             },
                                              "topPlayers":  [
                                                                 {
-                                                                    "name":  "Bijan Robinson",
-                                                                    "position":  "RB",
-                                                                    "team":  "ATL",
-                                                                    "age":  24,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  90
-                                                                },
-                                                                {
-                                                                    "name":  "Puka Nacua",
+                                                                    "name":  "Justin Jefferson",
                                                                     "position":  "WR",
-                                                                    "team":  "LAR",
-                                                                    "age":  24,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  86
-                                                                },
-                                                                {
-                                                                    "name":  "James Cook",
-                                                                    "position":  "RB",
-                                                                    "team":  "BUF",
+                                                                    "team":  "MIN",
                                                                     "age":  26,
                                                                     "injuryStatus":  "",
-                                                                    "value":  84
+                                                                    "value":  82
                                                                 },
                                                                 {
-                                                                    "name":  "Chris Olave",
+                                                                    "name":  "Justin Herbert",
+                                                                    "position":  "QB",
+                                                                    "team":  "LAC",
+                                                                    "age":  28,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  80
+                                                                },
+                                                                {
+                                                                    "name":  "Ladd McConkey",
                                                                     "position":  "WR",
-                                                                    "team":  "NO",
-                                                                    "age":  25,
+                                                                    "team":  "LAC",
+                                                                    "age":  24,
                                                                     "injuryStatus":  "",
-                                                                    "value":  81
-                                                                },
-                                                                {
-                                                                    "name":  "Brock Purdy",
-                                                                    "position":  "QB",
-                                                                    "team":  "SF",
-                                                                    "age":  26,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  81
-                                                                },
-                                                                {
-                                                                    "name":  "Jayden Daniels",
-                                                                    "position":  "QB",
-                                                                    "team":  "WAS",
-                                                                    "age":  25,
-                                                                    "injuryStatus":  "Questionable",
                                                                     "value":  79
                                                                 },
                                                                 {
-                                                                    "name":  "Tyler Warren",
-                                                                    "position":  "TE",
-                                                                    "team":  "IND",
-                                                                    "age":  23,
+                                                                    "name":  "Kyren Williams",
+                                                                    "position":  "RB",
+                                                                    "team":  "LAR",
+                                                                    "age":  25,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  79
+                                                                },
+                                                                {
+                                                                    "name":  "Bryce Young",
+                                                                    "position":  "QB",
+                                                                    "team":  "CAR",
+                                                                    "age":  24,
                                                                     "injuryStatus":  "",
                                                                     "value":  77
                                                                 },
                                                                 {
-                                                                    "name":  "Malik Willis",
+                                                                    "name":  "Sam Darnold",
                                                                     "position":  "QB",
-                                                                    "team":  "MIA",
-                                                                    "age":  26,
+                                                                    "team":  "SEA",
+                                                                    "age":  28,
                                                                     "injuryStatus":  "",
-                                                                    "value":  77
+                                                                    "value":  76
+                                                                },
+                                                                {
+                                                                    "name":  "Mark Andrews",
+                                                                    "position":  "TE",
+                                                                    "team":  "BAL",
+                                                                    "age":  30,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  74
+                                                                },
+                                                                {
+                                                                    "name":  "Wan\u0027Dale Robinson",
+                                                                    "position":  "WR",
+                                                                    "team":  "TEN",
+                                                                    "age":  25,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  74
                                                                 }
                                                             ],
                                              "starterSnapshot":  [
                                                                      {
                                                                          "slot":  "QB",
-                                                                         "name":  "Brock Purdy",
+                                                                         "name":  "Justin Herbert",
                                                                          "position":  "QB",
-                                                                         "value":  81
+                                                                         "value":  80
                                                                      },
                                                                      {
                                                                          "slot":  "SUPER_FLEX",
-                                                                         "name":  "Bijan Robinson",
-                                                                         "position":  "RB",
-                                                                         "value":  90
-                                                                     },
-                                                                     {
-                                                                         "slot":  "RB",
-                                                                         "name":  "James Cook",
-                                                                         "position":  "RB",
-                                                                         "value":  84
-                                                                     },
-                                                                     {
-                                                                         "slot":  "RB",
-                                                                         "name":  "D\u0027Andre Swift",
-                                                                         "position":  "RB",
-                                                                         "value":  74
-                                                                     },
-                                                                     {
-                                                                         "slot":  "WR",
-                                                                         "name":  "Puka Nacua",
-                                                                         "position":  "WR",
-                                                                         "value":  86
-                                                                     },
-                                                                     {
-                                                                         "slot":  "WR",
-                                                                         "name":  "Chris Olave",
-                                                                         "position":  "WR",
-                                                                         "value":  81
-                                                                     },
-                                                                     {
-                                                                         "slot":  "TE",
-                                                                         "name":  "Tyler Warren",
-                                                                         "position":  "TE",
+                                                                         "name":  "Bryce Young",
+                                                                         "position":  "QB",
                                                                          "value":  77
                                                                      },
                                                                      {
-                                                                         "slot":  "FLEX",
-                                                                         "name":  "Jayden Higgins",
-                                                                         "position":  "WR",
-                                                                         "value":  73
+                                                                         "slot":  "RB",
+                                                                         "name":  "Kyren Williams",
+                                                                         "position":  "RB",
+                                                                         "value":  79
                                                                      },
                                                                      {
-                                                                         "slot":  "FLEX",
-                                                                         "name":  "Christian Watson",
-                                                                         "position":  "WR",
-                                                                         "value":  71
+                                                                         "slot":  "RB",
+                                                                         "name":  "Jordan Mason",
+                                                                         "position":  "RB",
+                                                                         "value":  72
                                                                      },
                                                                      {
-                                                                         "slot":  "FLEX",
-                                                                         "name":  "Tucker Kraft",
+                                                                         "slot":  "WR",
+                                                                         "name":  "Justin Jefferson",
+                                                                         "position":  "WR",
+                                                                         "value":  82
+                                                                     },
+                                                                     {
+                                                                         "slot":  "WR",
+                                                                         "name":  "Ladd McConkey",
+                                                                         "position":  "WR",
+                                                                         "value":  79
+                                                                     },
+                                                                     {
+                                                                         "slot":  "TE",
+                                                                         "name":  "Mark Andrews",
                                                                          "position":  "TE",
-                                                                         "value":  70
+                                                                         "value":  74
+                                                                     },
+                                                                     {
+                                                                         "slot":  "FLEX",
+                                                                         "name":  "Wan\u0027Dale Robinson",
+                                                                         "position":  "WR",
+                                                                         "value":  74
+                                                                     },
+                                                                     {
+                                                                         "slot":  "FLEX",
+                                                                         "name":  "Tre Tucker",
+                                                                         "position":  "WR",
+                                                                         "value":  72
+                                                                     },
+                                                                     {
+                                                                         "slot":  "FLEX",
+                                                                         "name":  "Jadarian Price",
+                                                                         "position":  "RB",
+                                                                         "value":  72
                                                                      }
                                                                  ],
                                              "benchSnapshot":  [
                                                                    {
-                                                                       "name":  "Jayden Daniels",
+                                                                       "name":  "Sam Darnold",
                                                                        "position":  "QB",
-                                                                       "value":  79
+                                                                       "value":  76
                                                                    },
                                                                    {
-                                                                       "name":  "Malik Willis",
-                                                                       "position":  "QB",
-                                                                       "value":  77
-                                                                   },
-                                                                   {
-                                                                       "name":  "Mac Jones",
-                                                                       "position":  "QB",
+                                                                       "name":  "AJ Barner",
+                                                                       "position":  "TE",
                                                                        "value":  72
                                                                    },
                                                                    {
-                                                                       "name":  "Jaylen Wright",
+                                                                       "name":  "Ray Davis",
+                                                                       "position":  "RB",
+                                                                       "value":  71
+                                                                   },
+                                                                   {
+                                                                       "name":  "Rashid Shaheed",
+                                                                       "position":  "WR",
+                                                                       "value":  71
+                                                                   },
+                                                                   {
+                                                                       "name":  "Demond Claiborne",
                                                                        "position":  "RB",
                                                                        "value":  70
                                                                    },
                                                                    {
-                                                                       "name":  "Marcus Mariota",
+                                                                       "name":  "Joe Milton",
                                                                        "position":  "QB",
-                                                                       "value":  69
+                                                                       "value":  70
                                                                    },
                                                                    {
-                                                                       "name":  "Carson Beck",
-                                                                       "position":  "QB",
-                                                                       "value":  68
-                                                                   },
-                                                                   {
-                                                                       "name":  "Aaron Jones",
-                                                                       "position":  "RB",
-                                                                       "value":  67
+                                                                       "name":  "Khalil Shakir",
+                                                                       "position":  "WR",
+                                                                       "value":  70
                                                                    }
                                                                ],
                                              "reasons":  [
-                                                             "QB room: Brock Purdy, Jayden Daniels",
-                                                             "Starter grade 78.7",
-                                                             "Bench grade 71.7",
-                                                             "Health watch: Jayden Daniels, Ja\u0027Tavion Sanders, Jaylin Lane"
+                                                             "QB room: Justin Herbert, Bryce Young",
+                                                             "Starter grade 76.1",
+                                                             "Bench grade 71.4",
+                                                             "Health watch: Trey Benson, Luke McCaffrey, Tory Horton"
                                                          ],
                                              "rank":  6
                                          },
@@ -5073,7 +5073,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341646934816849920/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:00.3531226+00:00",
+                                           "refreshedAt":  "2026-05-23T15:51:49.3270625+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  372,
                                            "sleeperLeagueSeason":  "2026",
@@ -6280,12 +6280,12 @@
                                                             "ties":  0
                                                         },
                                              "components":  {
-                                                                "lineup":  76.4,
-                                                                "depth":  69.6,
+                                                                "lineup":  76.7,
+                                                                "depth":  70,
                                                                 "quarterback":  79.5,
                                                                 "eliteCeiling":  74,
-                                                                "health":  48,
-                                                                "dynastyValue":  76.8
+                                                                "health":  54,
+                                                                "dynastyValue":  76.9
                                                             },
                                              "topPlayers":  [
                                                                 {
@@ -6410,9 +6410,9 @@
                                                                      },
                                                                      {
                                                                          "slot":  "FLEX",
-                                                                         "name":  "Rashod Bateman",
+                                                                         "name":  "Jordyn Tyson",
                                                                          "position":  "WR",
-                                                                         "value":  70
+                                                                         "value":  73
                                                                      }
                                                                  ],
                                              "benchSnapshot":  [
@@ -6432,14 +6432,14 @@
                                                                        "value":  70
                                                                    },
                                                                    {
+                                                                       "name":  "Rashod Bateman",
+                                                                       "position":  "WR",
+                                                                       "value":  70
+                                                                   },
+                                                                   {
                                                                        "name":  "Mike Evans",
                                                                        "position":  "WR",
                                                                        "value":  69
-                                                                   },
-                                                                   {
-                                                                       "name":  "Trey Benson",
-                                                                       "position":  "RB",
-                                                                       "value":  68
                                                                    },
                                                                    {
                                                                        "name":  "Davis Mills",
@@ -6447,15 +6447,15 @@
                                                                        "value":  68
                                                                    },
                                                                    {
-                                                                       "name":  "Jordyn Tyson",
-                                                                       "position":  "WR",
-                                                                       "value":  67
+                                                                       "name":  "Trey Benson",
+                                                                       "position":  "RB",
+                                                                       "value":  68
                                                                    }
                                                                ],
                                              "reasons":  [
                                                              "QB room: Caleb Williams, Bo Nix",
-                                                             "Starter grade 76.4",
-                                                             "Bench grade 69.6",
+                                                             "Starter grade 76.7",
+                                                             "Bench grade 70",
                                                              "Health watch: Bo Nix, MarShawn Lloyd, Trey Benson"
                                                          ],
                                              "rank":  7
@@ -7457,7 +7457,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1342931950981091328/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:01.7066823+00:00",
+                                           "refreshedAt":  "2026-05-23T15:51:50.9170649+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  363,
                                            "sleeperLeagueSeason":  "2026",
@@ -8278,12 +8278,12 @@
                                                             "ties":  0
                                                         },
                                              "components":  {
-                                                                "lineup":  76.4,
-                                                                "depth":  68.9,
+                                                                "lineup":  76.7,
+                                                                "depth":  69.1,
                                                                 "quarterback":  79,
                                                                 "eliteCeiling":  66,
-                                                                "health":  88,
-                                                                "dynastyValue":  72
+                                                                "health":  94,
+                                                                "dynastyValue":  72.1
                                                             },
                                              "topPlayers":  [
                                                                 {
@@ -8402,25 +8402,30 @@
                                                                      },
                                                                      {
                                                                          "slot":  "FLEX",
-                                                                         "name":  "Jordan Mason",
-                                                                         "position":  "RB",
-                                                                         "value":  72
+                                                                         "name":  "Jordyn Tyson",
+                                                                         "position":  "WR",
+                                                                         "value":  73
                                                                      },
                                                                      {
                                                                          "slot":  "FLEX",
-                                                                         "name":  "Omar Cooper",
-                                                                         "position":  "WR",
-                                                                         "value":  70
+                                                                         "name":  "Jordan Mason",
+                                                                         "position":  "RB",
+                                                                         "value":  72
                                                                      }
                                                                  ],
                                              "benchSnapshot":  [
                                                                    {
-                                                                       "name":  "Elic Ayomanor",
+                                                                       "name":  "Omar Cooper",
                                                                        "position":  "WR",
                                                                        "value":  70
                                                                    },
                                                                    {
                                                                        "name":  "Jalen McMillan",
+                                                                       "position":  "WR",
+                                                                       "value":  70
+                                                                   },
+                                                                   {
+                                                                       "name":  "Elic Ayomanor",
                                                                        "position":  "WR",
                                                                        "value":  70
                                                                    },
@@ -8435,26 +8440,21 @@
                                                                        "value":  69
                                                                    },
                                                                    {
-                                                                       "name":  "Will Howard",
-                                                                       "position":  "QB",
-                                                                       "value":  68
-                                                                   },
-                                                                   {
                                                                        "name":  "Cade Klubnik",
                                                                        "position":  "QB",
                                                                        "value":  68
                                                                    },
                                                                    {
-                                                                       "name":  "Isiah Pacheco",
-                                                                       "position":  "RB",
+                                                                       "name":  "Will Howard",
+                                                                       "position":  "QB",
                                                                        "value":  68
                                                                    }
                                                                ],
                                              "reasons":  [
                                                              "QB room: Jaxson Dart, Tyler Shough",
-                                                             "Starter grade 76.4",
-                                                             "Bench grade 68.9",
-                                                             "Health watch: Jordyn Tyson, Alvin Kamara"
+                                                             "Starter grade 76.7",
+                                                             "Bench grade 69.1",
+                                                             "Health watch: Alvin Kamara"
                                                          ],
                                              "rank":  5
                                          },
@@ -9842,7 +9842,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345763335270400/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:03.0726570+00:00",
+                                           "refreshedAt":  "2026-05-23T15:51:52.5668640+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  375,
                                            "sleeperLeagueSeason":  "2026",
@@ -9891,12 +9891,12 @@
                                                             "ties":  0
                                                         },
                                              "components":  {
-                                                                "lineup":  78.4,
-                                                                "depth":  69.9,
+                                                                "lineup":  78.7,
+                                                                "depth":  70,
                                                                 "quarterback":  85,
                                                                 "eliteCeiling":  74,
-                                                                "health":  82,
-                                                                "dynastyValue":  71.5
+                                                                "health":  88,
+                                                                "dynastyValue":  71.7
                                                             },
                                              "topPlayers":  [
                                                                 {
@@ -9924,18 +9924,18 @@
                                                                     "value":  81
                                                                 },
                                                                 {
-                                                                    "name":  "A.J. Brown",
-                                                                    "position":  "WR",
-                                                                    "team":  "PHI",
-                                                                    "age":  28,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  79
-                                                                },
-                                                                {
                                                                     "name":  "Kyren Williams",
                                                                     "position":  "RB",
                                                                     "team":  "LAR",
                                                                     "age":  25,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  79
+                                                                },
+                                                                {
+                                                                    "name":  "A.J. Brown",
+                                                                    "position":  "WR",
+                                                                    "team":  "PHI",
+                                                                    "age":  28,
                                                                     "injuryStatus":  "",
                                                                     "value":  79
                                                                 },
@@ -9948,18 +9948,18 @@
                                                                     "value":  76
                                                                 },
                                                                 {
-                                                                    "name":  "D\u0027Andre Swift",
-                                                                    "position":  "RB",
-                                                                    "team":  "CHI",
-                                                                    "age":  27,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  74
-                                                                },
-                                                                {
                                                                     "name":  "Terry McLaurin",
                                                                     "position":  "WR",
                                                                     "team":  "WAS",
                                                                     "age":  30,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  74
+                                                                },
+                                                                {
+                                                                    "name":  "D\u0027Andre Swift",
+                                                                    "position":  "RB",
+                                                                    "team":  "CHI",
+                                                                    "age":  27,
                                                                     "injuryStatus":  "",
                                                                     "value":  74
                                                                 }
@@ -10015,15 +10015,15 @@
                                                                      },
                                                                      {
                                                                          "slot":  "FLEX",
-                                                                         "name":  "Keon Coleman",
+                                                                         "name":  "Jordyn Tyson",
                                                                          "position":  "WR",
-                                                                         "value":  72
+                                                                         "value":  73
                                                                      },
                                                                      {
                                                                          "slot":  "FLEX",
-                                                                         "name":  "Rashod Bateman",
+                                                                         "name":  "Keon Coleman",
                                                                          "position":  "WR",
-                                                                         "value":  70
+                                                                         "value":  72
                                                                      }
                                                                  ],
                                              "benchSnapshot":  [
@@ -10033,8 +10033,8 @@
                                                                        "value":  72
                                                                    },
                                                                    {
-                                                                       "name":  "Kaytron Allen",
-                                                                       "position":  "RB",
+                                                                       "name":  "Joe Milton",
+                                                                       "position":  "QB",
                                                                        "value":  70
                                                                    },
                                                                    {
@@ -10043,31 +10043,31 @@
                                                                        "value":  70
                                                                    },
                                                                    {
-                                                                       "name":  "Joe Milton",
-                                                                       "position":  "QB",
+                                                                       "name":  "Rashod Bateman",
+                                                                       "position":  "WR",
                                                                        "value":  70
                                                                    },
                                                                    {
-                                                                       "name":  "Kenneth Gainwell",
+                                                                       "name":  "Kaytron Allen",
                                                                        "position":  "RB",
-                                                                       "value":  69
-                                                                   },
-                                                                   {
-                                                                       "name":  "Ja\u0027Kobi Lane",
-                                                                       "position":  "WR",
-                                                                       "value":  69
+                                                                       "value":  70
                                                                    },
                                                                    {
                                                                        "name":  "Eli Stowers",
                                                                        "position":  "TE",
                                                                        "value":  69
+                                                                   },
+                                                                   {
+                                                                       "name":  "Kenneth Gainwell",
+                                                                       "position":  "RB",
+                                                                       "value":  69
                                                                    }
                                                                ],
                                              "reasons":  [
                                                              "QB room: Josh Allen, Brock Purdy",
-                                                             "Starter grade 78.4",
-                                                             "Bench grade 69.9",
-                                                             "Health watch: Jordyn Tyson, Chris Bell, Najee Harris"
+                                                             "Starter grade 78.7",
+                                                             "Bench grade 70",
+                                                             "Health watch: Chris Bell, Najee Harris"
                                                          ],
                                              "rank":  1
                                          },
@@ -12227,7 +12227,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345934114725888/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:04.4645028+00:00",
+                                           "refreshedAt":  "2026-05-23T15:51:54.2948476+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  370,
                                            "sleeperLeagueSeason":  "2026",
@@ -12843,6 +12843,198 @@
                                              "rank":  3
                                          },
                                          {
+                                             "rosterId":  11,
+                                             "ownerId":  "966666258466836480",
+                                             "teamName":  "Zaragoz",
+                                             "score":  75,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  78,
+                                                                "depth":  70.3,
+                                                                "quarterback":  73.5,
+                                                                "eliteCeiling":  66,
+                                                                "health":  100,
+                                                                "dynastyValue":  72.2
+                                                            },
+                                             "topPlayers":  [
+                                                                {
+                                                                    "name":  "De\u0027Von Achane",
+                                                                    "position":  "RB",
+                                                                    "team":  "MIA",
+                                                                    "age":  24,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  84
+                                                                },
+                                                                {
+                                                                    "name":  "Jonathan Taylor",
+                                                                    "position":  "RB",
+                                                                    "team":  "IND",
+                                                                    "age":  27,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  82
+                                                                },
+                                                                {
+                                                                    "name":  "Trey McBride",
+                                                                    "position":  "TE",
+                                                                    "team":  "ARI",
+                                                                    "age":  26,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  81
+                                                                },
+                                                                {
+                                                                    "name":  "Chase Brown",
+                                                                    "position":  "RB",
+                                                                    "team":  "CIN",
+                                                                    "age":  26,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  80
+                                                                },
+                                                                {
+                                                                    "name":  "A.J. Brown",
+                                                                    "position":  "WR",
+                                                                    "team":  "PHI",
+                                                                    "age":  28,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  79
+                                                                },
+                                                                {
+                                                                    "name":  "Jared Goff",
+                                                                    "position":  "QB",
+                                                                    "team":  "DET",
+                                                                    "age":  31,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  77
+                                                                },
+                                                                {
+                                                                    "name":  "Christian McCaffrey",
+                                                                    "position":  "RB",
+                                                                    "team":  "SF",
+                                                                    "age":  29,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  77
+                                                                },
+                                                                {
+                                                                    "name":  "Romeo Doubs",
+                                                                    "position":  "WR",
+                                                                    "team":  "NE",
+                                                                    "age":  26,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  75
+                                                                }
+                                                            ],
+                                             "starterSnapshot":  [
+                                                                     {
+                                                                         "slot":  "QB",
+                                                                         "name":  "Jared Goff",
+                                                                         "position":  "QB",
+                                                                         "value":  77
+                                                                     },
+                                                                     {
+                                                                         "slot":  "SUPER_FLEX",
+                                                                         "name":  "De\u0027Von Achane",
+                                                                         "position":  "RB",
+                                                                         "value":  84
+                                                                     },
+                                                                     {
+                                                                         "slot":  "RB",
+                                                                         "name":  "Jonathan Taylor",
+                                                                         "position":  "RB",
+                                                                         "value":  82
+                                                                     },
+                                                                     {
+                                                                         "slot":  "RB",
+                                                                         "name":  "Chase Brown",
+                                                                         "position":  "RB",
+                                                                         "value":  80
+                                                                     },
+                                                                     {
+                                                                         "slot":  "WR",
+                                                                         "name":  "A.J. Brown",
+                                                                         "position":  "WR",
+                                                                         "value":  79
+                                                                     },
+                                                                     {
+                                                                         "slot":  "WR",
+                                                                         "name":  "Romeo Doubs",
+                                                                         "position":  "WR",
+                                                                         "value":  75
+                                                                     },
+                                                                     {
+                                                                         "slot":  "TE",
+                                                                         "name":  "Trey McBride",
+                                                                         "position":  "TE",
+                                                                         "value":  81
+                                                                     },
+                                                                     {
+                                                                         "slot":  "FLEX",
+                                                                         "name":  "Christian McCaffrey",
+                                                                         "position":  "RB",
+                                                                         "value":  77
+                                                                     },
+                                                                     {
+                                                                         "slot":  "FLEX",
+                                                                         "name":  "DJ Moore",
+                                                                         "position":  "WR",
+                                                                         "value":  73
+                                                                     },
+                                                                     {
+                                                                         "slot":  "FLEX",
+                                                                         "name":  "Terrance Ferguson",
+                                                                         "position":  "TE",
+                                                                         "value":  72
+                                                                     }
+                                                                 ],
+                                             "benchSnapshot":  [
+                                                                   {
+                                                                       "name":  "Jordan Mason",
+                                                                       "position":  "RB",
+                                                                       "value":  72
+                                                                   },
+                                                                   {
+                                                                       "name":  "Ray Davis",
+                                                                       "position":  "RB",
+                                                                       "value":  71
+                                                                   },
+                                                                   {
+                                                                       "name":  "Matthew Stafford",
+                                                                       "position":  "QB",
+                                                                       "value":  70
+                                                                   },
+                                                                   {
+                                                                       "name":  "Jaylen Wright",
+                                                                       "position":  "RB",
+                                                                       "value":  70
+                                                                   },
+                                                                   {
+                                                                       "name":  "Joe Milton",
+                                                                       "position":  "QB",
+                                                                       "value":  70
+                                                                   },
+                                                                   {
+                                                                       "name":  "Parker Washington",
+                                                                       "position":  "WR",
+                                                                       "value":  70
+                                                                   },
+                                                                   {
+                                                                       "name":  "Mike Evans",
+                                                                       "position":  "WR",
+                                                                       "value":  69
+                                                                   }
+                                                               ],
+                                             "reasons":  [
+                                                             "QB room: Jared Goff, Matthew Stafford",
+                                                             "Starter grade 78",
+                                                             "Bench grade 70.3"
+                                                         ],
+                                             "rank":  4
+                                         },
+                                         {
                                              "rosterId":  9,
                                              "ownerId":  "754208102156484608",
                                              "teamName":  "dbangart",
@@ -13033,12 +13225,12 @@
                                                              "Bench grade 71.3",
                                                              "Health watch: Luke McCaffrey, Jaylin Lane, Zach Charbonnet"
                                                          ],
-                                             "rank":  4
+                                             "rank":  5
                                          },
                                          {
-                                             "rosterId":  11,
-                                             "ownerId":  "966666258466836480",
-                                             "teamName":  "Zaragoz",
+                                             "rosterId":  2,
+                                             "ownerId":  "909585818912845824",
+                                             "teamName":  "gucifer",
                                              "score":  75,
                                              "record":  {
                                                             "wins":  0,
@@ -13048,204 +13240,12 @@
                                                             "ties":  0
                                                         },
                                              "components":  {
-                                                                "lineup":  78,
-                                                                "depth":  70.3,
-                                                                "quarterback":  73.5,
-                                                                "eliteCeiling":  66,
-                                                                "health":  100,
-                                                                "dynastyValue":  72.2
-                                                            },
-                                             "topPlayers":  [
-                                                                {
-                                                                    "name":  "De\u0027Von Achane",
-                                                                    "position":  "RB",
-                                                                    "team":  "MIA",
-                                                                    "age":  24,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  84
-                                                                },
-                                                                {
-                                                                    "name":  "Jonathan Taylor",
-                                                                    "position":  "RB",
-                                                                    "team":  "IND",
-                                                                    "age":  27,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  82
-                                                                },
-                                                                {
-                                                                    "name":  "Trey McBride",
-                                                                    "position":  "TE",
-                                                                    "team":  "ARI",
-                                                                    "age":  26,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  81
-                                                                },
-                                                                {
-                                                                    "name":  "Chase Brown",
-                                                                    "position":  "RB",
-                                                                    "team":  "CIN",
-                                                                    "age":  26,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  80
-                                                                },
-                                                                {
-                                                                    "name":  "A.J. Brown",
-                                                                    "position":  "WR",
-                                                                    "team":  "PHI",
-                                                                    "age":  28,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  79
-                                                                },
-                                                                {
-                                                                    "name":  "Jared Goff",
-                                                                    "position":  "QB",
-                                                                    "team":  "DET",
-                                                                    "age":  31,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  77
-                                                                },
-                                                                {
-                                                                    "name":  "Christian McCaffrey",
-                                                                    "position":  "RB",
-                                                                    "team":  "SF",
-                                                                    "age":  29,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  77
-                                                                },
-                                                                {
-                                                                    "name":  "Romeo Doubs",
-                                                                    "position":  "WR",
-                                                                    "team":  "NE",
-                                                                    "age":  26,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  75
-                                                                }
-                                                            ],
-                                             "starterSnapshot":  [
-                                                                     {
-                                                                         "slot":  "QB",
-                                                                         "name":  "Jared Goff",
-                                                                         "position":  "QB",
-                                                                         "value":  77
-                                                                     },
-                                                                     {
-                                                                         "slot":  "SUPER_FLEX",
-                                                                         "name":  "De\u0027Von Achane",
-                                                                         "position":  "RB",
-                                                                         "value":  84
-                                                                     },
-                                                                     {
-                                                                         "slot":  "RB",
-                                                                         "name":  "Jonathan Taylor",
-                                                                         "position":  "RB",
-                                                                         "value":  82
-                                                                     },
-                                                                     {
-                                                                         "slot":  "RB",
-                                                                         "name":  "Chase Brown",
-                                                                         "position":  "RB",
-                                                                         "value":  80
-                                                                     },
-                                                                     {
-                                                                         "slot":  "WR",
-                                                                         "name":  "A.J. Brown",
-                                                                         "position":  "WR",
-                                                                         "value":  79
-                                                                     },
-                                                                     {
-                                                                         "slot":  "WR",
-                                                                         "name":  "Romeo Doubs",
-                                                                         "position":  "WR",
-                                                                         "value":  75
-                                                                     },
-                                                                     {
-                                                                         "slot":  "TE",
-                                                                         "name":  "Trey McBride",
-                                                                         "position":  "TE",
-                                                                         "value":  81
-                                                                     },
-                                                                     {
-                                                                         "slot":  "FLEX",
-                                                                         "name":  "Christian McCaffrey",
-                                                                         "position":  "RB",
-                                                                         "value":  77
-                                                                     },
-                                                                     {
-                                                                         "slot":  "FLEX",
-                                                                         "name":  "DJ Moore",
-                                                                         "position":  "WR",
-                                                                         "value":  73
-                                                                     },
-                                                                     {
-                                                                         "slot":  "FLEX",
-                                                                         "name":  "Terrance Ferguson",
-                                                                         "position":  "TE",
-                                                                         "value":  72
-                                                                     }
-                                                                 ],
-                                             "benchSnapshot":  [
-                                                                   {
-                                                                       "name":  "Jordan Mason",
-                                                                       "position":  "RB",
-                                                                       "value":  72
-                                                                   },
-                                                                   {
-                                                                       "name":  "Ray Davis",
-                                                                       "position":  "RB",
-                                                                       "value":  71
-                                                                   },
-                                                                   {
-                                                                       "name":  "Matthew Stafford",
-                                                                       "position":  "QB",
-                                                                       "value":  70
-                                                                   },
-                                                                   {
-                                                                       "name":  "Jaylen Wright",
-                                                                       "position":  "RB",
-                                                                       "value":  70
-                                                                   },
-                                                                   {
-                                                                       "name":  "Joe Milton",
-                                                                       "position":  "QB",
-                                                                       "value":  70
-                                                                   },
-                                                                   {
-                                                                       "name":  "Parker Washington",
-                                                                       "position":  "WR",
-                                                                       "value":  70
-                                                                   },
-                                                                   {
-                                                                       "name":  "Mike Evans",
-                                                                       "position":  "WR",
-                                                                       "value":  69
-                                                                   }
-                                                               ],
-                                             "reasons":  [
-                                                             "QB room: Jared Goff, Matthew Stafford",
-                                                             "Starter grade 78",
-                                                             "Bench grade 70.3"
-                                                         ],
-                                             "rank":  5
-                                         },
-                                         {
-                                             "rosterId":  2,
-                                             "ownerId":  "909585818912845824",
-                                             "teamName":  "gucifer",
-                                             "score":  74,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "components":  {
                                                                 "lineup":  77.3,
-                                                                "depth":  71.1,
+                                                                "depth":  71.6,
                                                                 "quarterback":  76,
                                                                 "eliteCeiling":  66,
-                                                                "health":  82,
-                                                                "dynastyValue":  72.5
+                                                                "health":  88,
+                                                                "dynastyValue":  72.6
                                                             },
                                              "topPlayers":  [
                                                                 {
@@ -13273,18 +13273,18 @@
                                                                     "value":  79
                                                                 },
                                                                 {
-                                                                    "name":  "Rome Odunze",
-                                                                    "position":  "WR",
-                                                                    "team":  "CHI",
-                                                                    "age":  23,
-                                                                    "injuryStatus":  "",
-                                                                    "value":  78
-                                                                },
-                                                                {
                                                                     "name":  "Colston Loveland",
                                                                     "position":  "TE",
                                                                     "team":  "CHI",
                                                                     "age":  22,
+                                                                    "injuryStatus":  "",
+                                                                    "value":  78
+                                                                },
+                                                                {
+                                                                    "name":  "Rome Odunze",
+                                                                    "position":  "WR",
+                                                                    "team":  "CHI",
+                                                                    "age":  23,
                                                                     "injuryStatus":  "",
                                                                     "value":  78
                                                                 },
@@ -13364,18 +13364,23 @@
                                                                      },
                                                                      {
                                                                          "slot":  "FLEX",
-                                                                         "name":  "Oronde Gadsden",
-                                                                         "position":  "TE",
+                                                                         "name":  "Jordyn Tyson",
+                                                                         "position":  "WR",
                                                                          "value":  73
                                                                      },
                                                                      {
                                                                          "slot":  "FLEX",
-                                                                         "name":  "Jayden Higgins",
-                                                                         "position":  "WR",
+                                                                         "name":  "Oronde Gadsden",
+                                                                         "position":  "TE",
                                                                          "value":  73
                                                                      }
                                                                  ],
                                              "benchSnapshot":  [
+                                                                   {
+                                                                       "name":  "Jayden Higgins",
+                                                                       "position":  "WR",
+                                                                       "value":  73
+                                                                   },
                                                                    {
                                                                        "name":  "J.J. McCarthy",
                                                                        "position":  "QB",
@@ -13402,12 +13407,7 @@
                                                                        "value":  70
                                                                    },
                                                                    {
-                                                                       "name":  "Nicholas Singleton",
-                                                                       "position":  "RB",
-                                                                       "value":  70
-                                                                   },
-                                                                   {
-                                                                       "name":  "Demond Claiborne",
+                                                                       "name":  "Kaytron Allen",
                                                                        "position":  "RB",
                                                                        "value":  70
                                                                    }
@@ -13415,8 +13415,8 @@
                                              "reasons":  [
                                                              "QB room: Malik Willis, Shedeur Sanders",
                                                              "Starter grade 77.3",
-                                                             "Bench grade 71.1",
-                                                             "Health watch: Erick All, Quinn Ewers, Jordyn Tyson"
+                                                             "Bench grade 71.6",
+                                                             "Health watch: Erick All, Quinn Ewers"
                                                          ],
                                              "rank":  6
                                          },
@@ -14611,7 +14611,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1360285262617284608/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:05.8648533+00:00",
+                                           "refreshedAt":  "2026-05-23T15:51:55.9749244+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -15088,7 +15088,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362902973520306176/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:06.7265162+00:00",
+                                           "refreshedAt":  "2026-05-23T15:51:56.7556972+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -15158,7 +15158,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350152770275020800/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:07.3078286+00:00",
+                                           "refreshedAt":  "2026-05-23T15:51:57.2921644+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -15228,7 +15228,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154389192474624/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:07.8631547+00:00",
+                                           "refreshedAt":  "2026-05-23T15:51:57.7143534+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -15298,7 +15298,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154561549004800/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:08.4525001+00:00",
+                                           "refreshedAt":  "2026-05-23T15:51:58.0826282+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -15368,7 +15368,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154695137570816/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:09.1135027+00:00",
+                                           "refreshedAt":  "2026-05-23T15:51:58.5105070+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -15438,7 +15438,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095209052508160/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:09.6962967+00:00",
+                                           "refreshedAt":  "2026-05-23T15:51:58.9574063+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -15832,7 +15832,7 @@
                                              "rosterId":  8,
                                              "ownerId":  "1126340979302178816",
                                              "teamName":  "jessegambo",
-                                             "score":  84,
+                                             "score":  86,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -15842,10 +15842,10 @@
                                                         },
                                              "components":  {
                                                                 "lineup":  76.9,
-                                                                "depth":  70.9,
+                                                                "depth":  71.1,
                                                                 "quarterback":  77.5,
                                                                 "eliteCeiling":  66,
-                                                                "health":  88,
+                                                                "health":  94,
                                                                 "context":  70
                                                             },
                                              "topPlayers":  [
@@ -15986,6 +15986,11 @@
                                                                        "value":  71
                                                                    },
                                                                    {
+                                                                       "name":  "Jordyn Tyson",
+                                                                       "position":  "WR",
+                                                                       "value":  69
+                                                                   },
+                                                                   {
                                                                        "name":  "Kyle Monangai",
                                                                        "position":  "RB",
                                                                        "value":  69
@@ -15994,19 +15999,14 @@
                                                                        "name":  "Tyler Allgeier",
                                                                        "position":  "RB",
                                                                        "value":  68
-                                                                   },
-                                                                   {
-                                                                       "name":  "Stefon Diggs",
-                                                                       "position":  "WR",
-                                                                       "value":  67
                                                                    }
                                                                ],
                                              "reasons":  [
                                                              "QB room: Caleb Williams, Jared Goff",
                                                              "Starter grade 76.9",
-                                                             "Bench grade 70.9",
+                                                             "Bench grade 71.1",
                                                              "4 spike-week pieces at 78+ value",
-                                                             "Health watch: Cam Skattebo, Jordyn Tyson"
+                                                             "Health watch: Cam Skattebo"
                                                          ],
                                              "rank":  3
                                          },
@@ -17317,7 +17317,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095313704554496/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:10.8298485+00:00",
+                                           "refreshedAt":  "2026-05-23T15:52:00.1626694+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -17894,7 +17894,7 @@
                                              "rosterId":  5,
                                              "ownerId":  "932097926850088960",
                                              "teamName":  "RevDennis",
-                                             "score":  80,
+                                             "score":  83,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -17904,10 +17904,10 @@
                                                         },
                                              "components":  {
                                                                 "lineup":  77.1,
-                                                                "depth":  68.9,
+                                                                "depth":  69.7,
                                                                 "quarterback":  82,
                                                                 "eliteCeiling":  66,
-                                                                "health":  82,
+                                                                "health":  88,
                                                                 "context":  70
                                                             },
                                              "topPlayers":  [
@@ -18038,13 +18038,18 @@
                                                                        "value":  71
                                                                    },
                                                                    {
+                                                                       "name":  "Kyle Monangai",
+                                                                       "position":  "RB",
+                                                                       "value":  69
+                                                                   },
+                                                                   {
                                                                        "name":  "Isiah Pacheco",
                                                                        "position":  "RB",
                                                                        "value":  69
                                                                    },
                                                                    {
-                                                                       "name":  "Kyle Monangai",
-                                                                       "position":  "RB",
+                                                                       "name":  "Jordyn Tyson",
+                                                                       "position":  "WR",
                                                                        "value":  69
                                                                    },
                                                                    {
@@ -18056,19 +18061,14 @@
                                                                        "name":  "Isaac TeSlaa",
                                                                        "position":  "WR",
                                                                        "value":  66
-                                                                   },
-                                                                   {
-                                                                       "name":  "Jordyn Tyson",
-                                                                       "position":  "WR",
-                                                                       "value":  63
                                                                    }
                                                                ],
                                              "reasons":  [
                                                              "QB room: Josh Allen, Brock Purdy",
                                                              "Starter grade 77.1",
-                                                             "Bench grade 68.9",
+                                                             "Bench grade 69.7",
                                                              "3 spike-week pieces at 78+ value",
-                                                             "Health watch: Jordyn Tyson, Tyreek Hill, Jake Tonges"
+                                                             "Health watch: Tyreek Hill, Jake Tonges"
                                                          ],
                                              "rank":  4
                                          },
@@ -19197,7 +19197,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095371091017728/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:11.9192263+00:00",
+                                           "refreshedAt":  "2026-05-23T15:52:01.3414347+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -19590,7 +19590,7 @@
                                              "rosterId":  9,
                                              "ownerId":  "331519009751060480",
                                              "teamName":  "XWILL07",
-                                             "score":  82,
+                                             "score":  84,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -19600,10 +19600,10 @@
                                                         },
                                              "components":  {
                                                                 "lineup":  77,
-                                                                "depth":  71.4,
+                                                                "depth":  71.7,
                                                                 "quarterback":  78.5,
                                                                 "eliteCeiling":  58,
-                                                                "health":  82,
+                                                                "health":  88,
                                                                 "context":  70
                                                             },
                                              "topPlayers":  [
@@ -19749,22 +19749,22 @@
                                                                        "value":  70
                                                                    },
                                                                    {
-                                                                       "name":  "Quinshon Judkins",
-                                                                       "position":  "RB",
+                                                                       "name":  "Jordyn Tyson",
+                                                                       "position":  "WR",
                                                                        "value":  69
                                                                    },
                                                                    {
-                                                                       "name":  "Stefon Diggs",
-                                                                       "position":  "WR",
-                                                                       "value":  67
+                                                                       "name":  "Quinshon Judkins",
+                                                                       "position":  "RB",
+                                                                       "value":  69
                                                                    }
                                                                ],
                                              "reasons":  [
                                                              "QB room: Caleb Williams, Brock Purdy",
                                                              "Starter grade 77",
-                                                             "Bench grade 71.4",
+                                                             "Bench grade 71.7",
                                                              "4 spike-week pieces at 78+ value",
-                                                             "Health watch: Quinshon Judkins, Travis Hunter, Jordyn Tyson"
+                                                             "Health watch: Quinshon Judkins, Travis Hunter"
                                                          ],
                                              "rank":  3
                                          },
@@ -21075,7 +21075,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095416859287552/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:13.0587272+00:00",
+                                           "refreshedAt":  "2026-05-23T15:52:02.4936017+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -22560,7 +22560,7 @@
                                              "rosterId":  3,
                                              "ownerId":  "1263107036925665280",
                                              "teamName":  "PickleRick702",
-                                             "score":  71,
+                                             "score":  74,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -22570,10 +22570,10 @@
                                                         },
                                              "components":  {
                                                                 "lineup":  76.6,
-                                                                "depth":  70.1,
+                                                                "depth":  70.4,
                                                                 "quarterback":  77.5,
                                                                 "eliteCeiling":  58,
-                                                                "health":  66,
+                                                                "health":  72,
                                                                 "context":  70
                                                             },
                                              "topPlayers":  [
@@ -22714,6 +22714,11 @@
                                                                        "value":  70
                                                                    },
                                                                    {
+                                                                       "name":  "Jordyn Tyson",
+                                                                       "position":  "WR",
+                                                                       "value":  69
+                                                                   },
+                                                                   {
                                                                        "name":  "Deebo Samuel",
                                                                        "position":  "WR",
                                                                        "value":  68
@@ -22722,19 +22727,14 @@
                                                                        "name":  "Rachaad White",
                                                                        "position":  "RB",
                                                                        "value":  67
-                                                                   },
-                                                                   {
-                                                                       "name":  "Jadarian Price",
-                                                                       "position":  "RB",
-                                                                       "value":  67
                                                                    }
                                                                ],
                                              "reasons":  [
                                                              "QB room: Lamar Jackson, Jayden Daniels",
                                                              "Starter grade 76.6",
-                                                             "Bench grade 70.1",
+                                                             "Bench grade 70.4",
                                                              "3 spike-week pieces at 78+ value",
-                                                             "Health watch: Jayden Daniels, Jordyn Tyson, George Kittle"
+                                                             "Health watch: Jayden Daniels, George Kittle"
                                                          ],
                                              "rank":  9
                                          },
@@ -22953,7 +22953,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095453291003904/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:14.2265919+00:00",
+                                           "refreshedAt":  "2026-05-23T15:52:03.6671468+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -24621,7 +24621,7 @@
                                              "rosterId":  4,
                                              "ownerId":  "1258993633240027136",
                                              "teamName":  "odaroloc",
-                                             "score":  51,
+                                             "score":  54,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -24631,10 +24631,10 @@
                                                         },
                                              "components":  {
                                                                 "lineup":  74,
-                                                                "depth":  68.1,
+                                                                "depth":  68.7,
                                                                 "quarterback":  73,
                                                                 "eliteCeiling":  66,
-                                                                "health":  48,
+                                                                "health":  54,
                                                                 "context":  70
                                                             },
                                              "topPlayers":  [
@@ -24695,11 +24695,11 @@
                                                                     "value":  71
                                                                 },
                                                                 {
-                                                                    "name":  "Michael Pittman",
-                                                                    "position":  "WR",
-                                                                    "team":  "PIT",
-                                                                    "age":  28,
-                                                                    "injuryStatus":  "",
+                                                                    "name":  "Brock Bowers",
+                                                                    "position":  "TE",
+                                                                    "team":  "LV",
+                                                                    "age":  23,
+                                                                    "injuryStatus":  "Questionable",
                                                                     "value":  70
                                                                 }
                                                             ],
@@ -24775,6 +24775,11 @@
                                                                        "value":  69
                                                                    },
                                                                    {
+                                                                       "name":  "Jordyn Tyson",
+                                                                       "position":  "WR",
+                                                                       "value":  69
+                                                                   },
+                                                                   {
                                                                        "name":  "Emmett Johnson",
                                                                        "position":  "RB",
                                                                        "value":  67
@@ -24783,17 +24788,12 @@
                                                                        "name":  "Mike Washington",
                                                                        "position":  "RB",
                                                                        "value":  66
-                                                                   },
-                                                                   {
-                                                                       "name":  "Eli Stowers",
-                                                                       "position":  "TE",
-                                                                       "value":  65
                                                                    }
                                                                ],
                                              "reasons":  [
                                                              "QB room: Jayden Daniels, Bo Nix",
                                                              "Starter grade 74",
-                                                             "Bench grade 68.1",
+                                                             "Bench grade 68.7",
                                                              "1 spike-week piece at 78+ value",
                                                              "Health watch: Bo Nix, Jayden Daniels, Brock Bowers"
                                                          ],
@@ -24832,7 +24832,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480393130868736/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:15.3825636+00:00",
+                                           "refreshedAt":  "2026-05-23T15:52:04.7972803+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -24893,7 +24893,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480515533242368/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:15.9647316+00:00",
+                                           "refreshedAt":  "2026-05-23T15:52:05.2383802+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -24954,7 +24954,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480638808064000/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:16.5374611+00:00",
+                                           "refreshedAt":  "2026-05-23T15:52:05.6662102+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -25015,7 +25015,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480857310302208/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:17.1265680+00:00",
+                                           "refreshedAt":  "2026-05-23T15:52:06.0898240+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -25076,7 +25076,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480992765353984/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:17.6906411+00:00",
+                                           "refreshedAt":  "2026-05-23T15:52:06.5269100+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -25137,7 +25137,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362908679824740352/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:18.3015358+00:00",
+                                           "refreshedAt":  "2026-05-23T15:52:07.0376509+00:00",
                                            "rosterCount":  24,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -25185,7 +25185,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338004997836640256/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:18.8800458+00:00",
+                                           "refreshedAt":  "2026-05-23T15:52:07.5083836+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -25243,7 +25243,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005036122279936/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:19.4477277+00:00",
+                                           "refreshedAt":  "2026-05-23T15:52:07.9026887+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -25301,7 +25301,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005075167035392/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:20.1017138+00:00",
+                                           "refreshedAt":  "2026-05-23T15:52:08.4094302+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -25359,7 +25359,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005113482022912/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:20.6837259+00:00",
+                                           "refreshedAt":  "2026-05-23T15:52:08.8556272+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -25417,7 +25417,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005158071660544/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:21.3159715+00:00",
+                                           "refreshedAt":  "2026-05-23T15:52:09.2574507+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -25475,7 +25475,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846317608992768/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:21.8902779+00:00",
+                                           "refreshedAt":  "2026-05-23T15:52:09.6889834+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -25532,7 +25532,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846742810775552/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:22.4971380+00:00",
+                                           "refreshedAt":  "2026-05-23T15:52:10.1397078+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -25589,7 +25589,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1363630886133694464/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:23.0513953+00:00",
+                                           "refreshedAt":  "2026-05-23T15:52:10.5802725+00:00",
                                            "rosterCount":  4,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -25633,7 +25633,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339342261023961088/rosters",
-                                           "refreshedAt":  "2026-05-23T12:51:23.6540922+00:00",
+                                           "refreshedAt":  "2026-05-23T15:52:11.0112634+00:00",
                                            "rosterCount":  18,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
