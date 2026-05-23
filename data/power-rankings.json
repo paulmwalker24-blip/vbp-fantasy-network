@@ -1,5 +1,5 @@
 ﻿{
-    "generatedAt":  "2026-05-23T10:18:57.2178077+00:00",
+    "generatedAt":  "2026-05-23T12:51:23.6540922+00:00",
     "snapshot":  {
                      "season":  "2026",
                      "seasonType":  "off",
@@ -24,7 +24,6 @@
                      "SKIP RD2: regular draft is pre_draft",
                      "SKIP RD3: regular draft is pre_draft",
                      "SKIP RD4: regular draft is pre_draft",
-                     "SKIP DYN7: startup draft is paused",
                      "SKIP DYN8: startup draft is pre_draft",
                      "SKIP DYB1: startup draft is pre_draft",
                      "SKIP DYB2: startup draft is pre_draft",
@@ -78,7 +77,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314663050854305792/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:38.8486176+00:00",
+                                           "refreshedAt":  "2026-05-23T12:50:55.0539301+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -135,7 +134,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314662767977824256/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:39.0865155+00:00",
+                                           "refreshedAt":  "2026-05-23T12:50:55.6347102+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -192,7 +191,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314660487635427328/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:39.3074048+00:00",
+                                           "refreshedAt":  "2026-05-23T12:50:56.2137012+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -249,7 +248,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1344449488089014272/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:39.5234238+00:00",
+                                           "refreshedAt":  "2026-05-23T12:50:56.8013275+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -306,7 +305,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341650084122595328/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:39.8470350+00:00",
+                                           "refreshedAt":  "2026-05-23T12:50:57.4455530+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  389,
                                            "sleeperLeagueSeason":  "2026",
@@ -2690,7 +2689,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1340820529996640256/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:41.5464635+00:00",
+                                           "refreshedAt":  "2026-05-23T12:50:59.0662082+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  367,
                                            "sleeperLeagueSeason":  "2026",
@@ -5074,7 +5073,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341646934816849920/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:42.8092257+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:00.3531226+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  372,
                                            "sleeperLeagueSeason":  "2026",
@@ -7458,7 +7457,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1342931950981091328/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:44.1560452+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:01.7066823+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  363,
                                            "sleeperLeagueSeason":  "2026",
@@ -9843,7 +9842,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345763335270400/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:45.5289340+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:03.0726570+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  375,
                                            "sleeperLeagueSeason":  "2026",
@@ -12228,7 +12227,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345934114725888/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:46.9576774+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:04.4645028+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  370,
                                            "sleeperLeagueSeason":  "2026",
@@ -14586,20 +14585,20 @@
                         "sleeperLeagueId":  "1360285262617284608",
                         "name":  "VBP Dynasty 7",
                         "format":  "dynasty",
-                        "publish":  false,
-                        "holdReason":  "startup draft is paused",
+                        "publish":  true,
+                        "holdReason":  "startup draft is drafting",
                         "draftStatuses":  [
-                                              "paused"
+                                              "drafting"
                                           ],
                         "draftReadiness":  {
-                                               "ready":  false,
+                                               "ready":  true,
                                                "stage":  "startup",
-                                               "label":  "Waiting on startup draft",
-                                               "reason":  "startup draft is paused",
+                                               "label":  "Live from current Sleeper rosters while draft is in progress",
+                                               "reason":  "startup draft is drafting",
                                                "drafts":  [
                                                               {
                                                                   "draftId":  "1360285263632306176",
-                                                                  "status":  "paused",
+                                                                  "status":  "drafting",
                                                                   "stage":  "startup",
                                                                   "type":  "snake",
                                                                   "season":  "2026",
@@ -14612,7 +14611,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1360285262617284608/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:48.3677469+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:05.8648533+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -14648,7 +14647,414 @@
                                                 "BN"
                                             ],
                         "rankings":  [
+                                         {
+                                             "rosterId":  9,
+                                             "ownerId":  "865634311846653952",
+                                             "teamName":  "Chanimal26",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.5
+                                                            },
+                                             "topPlayers":  [
 
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  1
+                                         },
+                                         {
+                                             "rosterId":  8,
+                                             "ownerId":  "434089153395683328",
+                                             "teamName":  "Buying 27/28 picks",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  22.8
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  2
+                                         },
+                                         {
+                                             "rosterId":  7,
+                                             "ownerId":  "909223841317208064",
+                                             "teamName":  "ChallengedKid",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.2
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  3
+                                         },
+                                         {
+                                             "rosterId":  12,
+                                             "ownerId":  "754942949455974400",
+                                             "teamName":  "mlnrd",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.1
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  4
+                                         },
+                                         {
+                                             "rosterId":  11,
+                                             "ownerId":  "460518950887747584",
+                                             "teamName":  "TrenchTitan79",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.5
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  5
+                                         },
+                                         {
+                                             "rosterId":  10,
+                                             "ownerId":  "341997123983695872",
+                                             "teamName":  "Sharksarenice",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.5
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  6
+                                         },
+                                         {
+                                             "rosterId":  3,
+                                             "ownerId":  "1001617293857693696",
+                                             "teamName":  "yiing",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.5
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  7
+                                         },
+                                         {
+                                             "rosterId":  2,
+                                             "ownerId":  "1312338477920055296",
+                                             "teamName":  "plus10chikage",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.1
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  8
+                                         },
+                                         {
+                                             "rosterId":  1,
+                                             "ownerId":  "1157437794151800832",
+                                             "teamName":  "dbookit1",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.4
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  9
+                                         },
+                                         {
+                                             "rosterId":  6,
+                                             "ownerId":  "465945491960492032",
+                                             "teamName":  "jbd4240",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.5
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  10
+                                         },
+                                         {
+                                             "rosterId":  5,
+                                             "ownerId":  "455579578132328448",
+                                             "teamName":  "xVENOMx",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.2
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  11
+                                         },
+                                         {
+                                             "rosterId":  4,
+                                             "ownerId":  "803498811140976640",
+                                             "teamName":  "StealthRUS",
+                                             "score":  16,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "components":  {
+                                                                "lineup":  0,
+                                                                "depth":  0,
+                                                                "quarterback":  0,
+                                                                "eliteCeiling":  58,
+                                                                "health":  100,
+                                                                "dynastyValue":  23.3
+                                                            },
+                                             "topPlayers":  [
+
+                                                            ],
+                                             "starterSnapshot":  [
+
+                                                                 ],
+                                             "benchSnapshot":  [
+
+                                                               ],
+                                             "reasons":  [
+
+                                                         ],
+                                             "rank":  12
+                                         }
                                      ]
                     },
                     {
@@ -14682,7 +15088,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362902973520306176/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:48.5954228+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:06.7265162+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -14752,7 +15158,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350152770275020800/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:48.8161184+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:07.3078286+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -14822,7 +15228,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154389192474624/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:49.0297144+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:07.8631547+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -14892,7 +15298,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154561549004800/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:49.2408101+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:08.4525001+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -14962,7 +15368,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154695137570816/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:49.4509743+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:09.1135027+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -15032,7 +15438,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095209052508160/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:49.6810875+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:09.6962967+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -16911,7 +17317,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095313704554496/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:50.6283659+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:10.8298485+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -18791,7 +19197,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095371091017728/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:51.4711685+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:11.9192263+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -20669,7 +21075,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095416859287552/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:52.3654494+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:13.0587272+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -22547,7 +22953,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095453291003904/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:53.2240984+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:14.2265919+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -24426,7 +24832,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480393130868736/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:54.0840099+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:15.3825636+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -24487,7 +24893,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480515533242368/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:54.2976977+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:15.9647316+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -24548,7 +24954,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480638808064000/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:54.5419220+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:16.5374611+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -24609,7 +25015,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480857310302208/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:54.7649947+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:17.1265680+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -24670,7 +25076,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480992765353984/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:54.9813384+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:17.6906411+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -24731,7 +25137,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362908679824740352/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:55.2146806+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:18.3015358+00:00",
                                            "rosterCount":  24,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -24779,7 +25185,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338004997836640256/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:55.4362076+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:18.8800458+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -24837,7 +25243,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005036122279936/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:55.6538255+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:19.4477277+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -24895,7 +25301,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005075167035392/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:55.8710829+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:20.1017138+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -24953,7 +25359,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005113482022912/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:56.0887021+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:20.6837259+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -25011,7 +25417,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005158071660544/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:56.3042713+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:21.3159715+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -25069,7 +25475,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846317608992768/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:56.5261238+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:21.8902779+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -25126,7 +25532,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846742810775552/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:56.7811780+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:22.4971380+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -25183,7 +25589,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1363630886133694464/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:56.9869060+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:23.0513953+00:00",
                                            "rosterCount":  4,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -25227,7 +25633,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339342261023961088/rosters",
-                                           "refreshedAt":  "2026-05-23T10:18:57.2168307+00:00",
+                                           "refreshedAt":  "2026-05-23T12:51:23.6540922+00:00",
                                            "rosterCount":  18,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
