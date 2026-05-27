@@ -289,6 +289,7 @@ Current league notes:
 - If no accepted trades exist yet, the Bracket Center trade tracker should show clearly labeled sample trades rather than an empty table, and sample rows must be marked as sample.
 - Trade tracker league cells should display division logos for Titan, Apex, Iron, Vanguard, Dominion, Foundry, Forge, Legacy, and Empire when the matching image asset exists.
 - The Bracket Center sample preview should turn off automatically once the grouped leagues are season-ready, fully populated, and showing meaningful live standings data rather than all-zero placeholders.
+- The Bracket Center snapshot should show clinched playoff spots against the target playoff field, not the full projected playoff field count. Sample, pre-draft, or not-ready groups should display `0 / target` for clinched spots.
 - The Best Ball Union Center sample preview should remain clearly labeled and may stay in place until live BBU results are meaningful enough to replace it cleanly.
 - For the Best Ball Union Center, weekly high scores refer to the single highest-scoring team across all BBU leagues for that week, not per-division weekly winners.
 - For the Best Ball Union Center, the public overall points leaderboard is intentionally limited to the top 20 teams.

@@ -14,9 +14,9 @@
   <meta name="twitter:title" content="Bracket Center | VBP Fantasy Network" />
   <meta name="twitter:description" content="Explore the VBP Bracket Center for public format info, standings, and bracket tracking." />
   <meta name="twitter:image" content="https://vbp-fantasy-network.vercel.app/assets/images/banner.png" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260512i" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260527d" />
 </head>
-<body class="constitution-page format-center-page">
+<body class="constitution-page format-center-page bracket-center-page">
   <div class="constitution-nav" id="top">
     <div class="container format-center-nav-links">
       <a href="index.html#league-centers" class="constitution-back-link">Back to Hub</a>
@@ -67,13 +67,14 @@
         </div>
       </section>
 
-      <section class="constitution-content">
-        <div class="section-heading">
+      <section class="constitution-content bbu-scoring-hero bracket-center-snapshot">
+        <div class="section-heading bbu-scoring-heading">
+          <p class="bbu-section-kicker">Bracket Snapshot</p>
           <h2>Center Snapshot</h2>
           <p>Published standings, division counts, and current cut-line context for the grouped bracket field.</p>
         </div>
-        <div class="format-center-meta-grid" id="centerMetaGrid">
-          <div class="format-center-metric">
+        <div class="format-center-meta-grid bbu-meta-grid bracket-meta-grid" id="centerMetaGrid">
+          <div class="format-center-metric bbu-featured-metric">
             <span class="format-center-metric-label">Group</span>
             <strong class="format-center-metric-value" id="centerGroupName">Loading...</strong>
           </div>
@@ -86,16 +87,19 @@
             <strong class="format-center-metric-value" id="centerTrackedTeams">Loading...</strong>
           </div>
           <div class="format-center-metric">
-            <span class="format-center-metric-label">Playoff Field</span>
-            <strong class="format-center-metric-value" id="centerPlayoffFieldSize">Loading...</strong>
+            <span class="format-center-metric-label">Clinched Spots</span>
+            <strong class="format-center-metric-value" id="centerClinchedPlayoffSpots">Loading...</strong>
           </div>
         </div>
         <div class="format-center-banner" id="centerStatusBanner" hidden></div>
       </section>
 
-      <section class="constitution-section-card" id="bracketVisualSection" hidden>
-        <div class="constitution-section-header">
-          <h2 id="bracketVisualHeading">Projected Playoff Bracket</h2>
+      <section class="constitution-section-card bbu-score-section bracket-center-section" id="bracketVisualSection" hidden>
+        <div class="constitution-section-header bbu-section-header">
+          <div>
+            <p class="bbu-section-kicker">Projected Path</p>
+            <h2 id="bracketVisualHeading">Projected Playoff Bracket</h2>
+          </div>
           <a href="#top" class="constitution-jump-link">Back to top</a>
         </div>
         <p class="format-center-scoreboard-copy" id="bracketVisualSummary">
@@ -106,9 +110,12 @@
         </div>
       </section>
 
-      <section class="constitution-section-card" id="divisionCountsSection">
-        <div class="constitution-section-header">
-          <h2 id="divisionCountsHeading">Division Playoff Counts</h2>
+      <section class="constitution-section-card bbu-score-section bracket-center-section" id="divisionCountsSection">
+        <div class="constitution-section-header bbu-section-header">
+          <div>
+            <p class="bbu-section-kicker">Division Race</p>
+            <h2 id="divisionCountsHeading">Division Playoff Counts</h2>
+          </div>
           <a href="#top" class="constitution-jump-link">Back to top</a>
         </div>
         <div class="format-center-division-grid" id="divisionCountsContainer">
@@ -116,9 +123,12 @@
         </div>
       </section>
 
-      <section class="constitution-section-card" id="scoreboardsSection">
-        <div class="constitution-section-header">
-          <h2 id="scoreboardsHeading">Live League Scoreboards</h2>
+      <section class="constitution-section-card bbu-score-section bracket-center-section" id="scoreboardsSection">
+        <div class="constitution-section-header bbu-section-header">
+          <div>
+            <p class="bbu-section-kicker">Live Matchups</p>
+            <h2 id="scoreboardsHeading">Live League Scoreboards</h2>
+          </div>
           <a href="#top" class="constitution-jump-link">Back to top</a>
         </div>
         <div class="format-center-scoreboard-header">
@@ -138,13 +148,16 @@
         </div>
       </section>
 
-      <section class="constitution-section-card" id="standingsSection">
-        <div class="constitution-section-header">
-          <h2 id="standingsHeading">Full Combined Standings</h2>
+      <section class="constitution-section-card bbu-score-section bracket-center-section" id="standingsSection">
+        <div class="constitution-section-header bbu-section-header">
+          <div>
+            <p class="bbu-section-kicker">Overall Field</p>
+            <h2 id="standingsHeading">Full Combined Standings</h2>
+          </div>
           <a href="#top" class="constitution-jump-link">Back to top</a>
         </div>
-        <div class="format-center-table-wrap">
-          <table class="constitution-table format-center-table">
+        <div class="format-center-table-wrap bbu-table-wrap bracket-table-wrap">
+          <table class="constitution-table format-center-table bbu-race-table bracket-race-table">
             <thead>
               <tr>
                 <th scope="col">Rank</th>
@@ -164,9 +177,12 @@
         </div>
       </section>
 
-      <section class="constitution-section-card" id="tradeTrackerSection" hidden>
-        <div class="constitution-section-header">
-          <h2 id="tradeTrackerHeading">Trade Tracker</h2>
+      <section class="constitution-section-card bbu-score-section bracket-center-section" id="tradeTrackerSection" hidden>
+        <div class="constitution-section-header bbu-section-header">
+          <div>
+            <p class="bbu-section-kicker">Market Watch</p>
+            <h2 id="tradeTrackerHeading">Trade Tracker</h2>
+          </div>
           <a href="#top" class="constitution-jump-link">Back to top</a>
         </div>
         <div class="format-center-scoreboard-header">
@@ -178,8 +194,8 @@
             <button type="button" class="btn btn-secondary" id="refreshTradesButton">Refresh Trades</button>
           </div>
         </div>
-        <div class="format-center-table-wrap">
-          <table class="constitution-table format-center-table format-center-trade-table">
+        <div class="format-center-table-wrap bbu-table-wrap bracket-table-wrap">
+          <table class="constitution-table format-center-table format-center-trade-table bbu-race-table bracket-race-table">
             <thead>
               <tr>
                 <th scope="col">Date</th>
@@ -199,6 +215,6 @@
     </div>
   </main>
 
-  <script src="assets/js/bracket-center.js?v=20260512i"></script>
+  <script src="assets/js/bracket-center.js?v=20260527d"></script>
 </body>
 </html>

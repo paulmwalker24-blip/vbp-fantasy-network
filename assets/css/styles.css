@@ -1074,6 +1074,51 @@ a { color: inherit; }
 .bbu-race-table tbody tr:hover td {
   background: #f8fbff;
 }
+.bracket-center-snapshot {
+  background:
+    radial-gradient(circle at 88% 10%, rgba(96, 165, 250, 0.28), transparent 30%),
+    linear-gradient(125deg, #091224 0%, #152a4a 62%, #203f67 100%);
+}
+.bracket-meta-grid .bbu-featured-metric {
+  flex: 1.5 1 250px;
+}
+.bracket-center-section {
+  padding: 26px 28px;
+}
+.bracket-center-section .format-center-scoreboard-header {
+  padding: 16px 18px;
+  border: 1px solid #dbe7f4;
+  border-radius: var(--radius-sm);
+  background: #f8fbff;
+}
+.bracket-table-wrap {
+  border-top-color: #1d4ed8;
+}
+.bracket-race-table tbody tr:nth-child(-n+5) td:first-child {
+  color: var(--blue);
+  font-weight: 800;
+}
+.bracket-race-table tbody tr:hover td {
+  background: #f8fbff;
+}
+.bracket-center-page .format-center-division-card {
+  border: 0;
+  border-top: 3px solid #2563eb;
+  background: #f8fbff;
+  box-shadow: none;
+}
+.bracket-center-page .format-center-division-card h3 {
+  color: #1d4ed8;
+}
+.bracket-center-page .format-center-matchup-card {
+  border: 0;
+  border-top: 3px solid #2563eb;
+  background: #fff;
+  box-shadow: none;
+}
+.bracket-center-page .format-center-matchup-header {
+  background: #f8fbff;
+}
 .format-center-trade-table td:nth-child(1),
 .format-center-trade-table th:nth-child(1) {
   white-space: nowrap;
@@ -1184,6 +1229,17 @@ a { color: inherit; }
   background: var(--surface);
   box-shadow: var(--shadow-soft);
 }
+.power-rankings-board-card,
+.power-rankings-method-card,
+.power-rankings-hub-selector {
+  padding: 26px 28px;
+}
+.power-rankings-hub-selector {
+  border-top: 3px solid #2563eb;
+  background:
+    radial-gradient(circle at top right, rgba(219, 234, 254, 0.7), transparent 28%),
+    #fff;
+}
 .power-rankings-selector-card {
   display: grid;
   gap: 18px;
@@ -1195,9 +1251,9 @@ a { color: inherit; }
   display: grid;
   gap: 12px;
   padding: 18px;
-  border: 1px solid var(--border);
+  border: 1px solid #dbe7f4;
   border-radius: var(--radius-sm);
-  background: var(--bg-alt);
+  background: #f8fbff;
 }
 .power-rankings-picker[hidden] {
   display: none;
@@ -1234,29 +1290,33 @@ a { color: inherit; }
   gap: 20px;
   align-items: center;
   background:
-    linear-gradient(135deg, #ffffff 0%, #f8fbff 54%, #eef6ff 100%);
+    radial-gradient(circle at 92% 14%, rgba(96, 165, 250, 0.25), transparent 30%),
+    linear-gradient(125deg, #08152c 0%, #122c55 65%, #173d73 100%);
+  border-color: #17355e;
+  color: #fff;
 }
 .power-rankings-feature h2 {
   margin: 0 0 10px;
+  color: #fff;
   font-size: clamp(1.5rem, 3vw, 2.2rem);
 }
 .power-rankings-feature p {
   margin: 0;
-  color: var(--muted);
+  color: rgba(226, 232, 240, 0.9);
 }
 .power-rankings-feature-score {
   display: grid;
   justify-items: center;
   gap: 6px;
   padding: 20px;
-  border: 1px solid #bfdbfe;
+  border: 1px solid rgba(147, 197, 253, 0.45);
   border-radius: var(--radius-sm);
-  background: #eff6ff;
-  color: var(--blue);
+  background: rgba(239, 246, 255, 0.1);
+  color: #bfdbfe;
   text-align: center;
 }
 .power-rankings-feature-score strong {
-  color: var(--text);
+  color: #fff;
   font-size: 3rem;
   line-height: 1;
 }
@@ -1268,22 +1328,23 @@ a { color: inherit; }
 }
 .power-rankings-list {
   display: grid;
-  gap: 14px;
+  gap: 10px;
   margin-top: 18px;
 }
 .power-ranking-row {
   display: grid;
   grid-template-columns: 54px minmax(0, 1fr);
   gap: 16px;
-  padding: 16px;
-  border: 1px solid var(--border);
+  padding: 15px 16px;
+  border: 0;
+  border-left: 3px solid #dbe7f4;
   border-radius: var(--radius-sm);
-  background: #fff;
+  background: #f8fbff;
 }
 .power-ranking-row.is-top {
-  border-color: #bfdbfe;
+  border-left-color: #2563eb;
   background:
-    linear-gradient(90deg, #eff6ff 0%, #ffffff 46%);
+    linear-gradient(90deg, #eff6ff 0%, #ffffff 58%);
 }
 .power-ranking-position {
   display: flex;
@@ -1353,12 +1414,13 @@ a { color: inherit; }
 }
 .power-ranking-position-board {
   overflow: hidden;
-  border: 1px solid var(--border);
+  border: 1px solid #dbe7f4;
   border-radius: var(--radius-sm);
+  background: #fff;
 }
 .power-ranking-position-board-header {
   padding: 12px 14px;
-  background: var(--bg-alt);
+  background: #f8fbff;
   border-bottom: 1px solid var(--border);
 }
 .power-ranking-position-board-header h3 {
@@ -1401,7 +1463,7 @@ a { color: inherit; }
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0 32px;
   max-width: 940px;
-  border-top: 1px solid var(--border);
+  border-top: 2px solid #0f172a;
 }
 .power-rankings-method {
   display: grid;

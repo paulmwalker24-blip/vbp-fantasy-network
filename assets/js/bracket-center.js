@@ -1276,7 +1276,7 @@ function renderMeta(group) {
   const groupName = document.getElementById("centerGroupName");
   const lastUpdated = document.getElementById("centerLastUpdated");
   const trackedTeams = document.getElementById("centerTrackedTeams");
-  const playoffFieldSize = document.getElementById("centerPlayoffFieldSize");
+  const clinchedPlayoffSpots = document.getElementById("centerClinchedPlayoffSpots");
   const statusBanner = document.getElementById("centerStatusBanner");
   const title = document.getElementById("centerPageTitle");
   const subtitle = document.getElementById("centerPageSubtitle");
@@ -1295,8 +1295,8 @@ function renderMeta(group) {
   const tradeTrackerHeading = document.getElementById("tradeTrackerHeading");
 
   const overallStandings = Array.isArray(group?.overallStandings) ? group.overallStandings : [];
-  const playoffField = Array.isArray(group?.playoffField) ? group.playoffField : [];
   const targetPlayoffSize = getTargetPlayoffFieldSize(group);
+  const clinchedField = Array.isArray(group?.clinchedPlayoffTeams) ? group.clinchedPlayoffTeams : [];
   const label = text(group?.label) || text(group?.groupId) || centerView.defaultGroupId;
   const seasonDataReady = Boolean(group?.seasonDataReady);
   const seedingReady = Boolean(group?.seedingReady);
@@ -1330,7 +1330,12 @@ function renderMeta(group) {
   groupName.textContent = label;
   lastUpdated.textContent = formatTimestamp(group?.lastSyncedAt);
   trackedTeams.textContent = `${overallStandings.length} tracked`;
-  playoffFieldSize.textContent = `${playoffField.length} / ${targetPlayoffSize}`;
+  if (clinchedPlayoffSpots) {
+    const clinchedCount = group?.isSample || !seasonDataReady || !seedingReady
+      ? 0
+      : clinchedField.length;
+    clinchedPlayoffSpots.textContent = `${clinchedCount} / ${targetPlayoffSize}`;
+  }
 
   if (divisionCountsHeading) {
     divisionCountsHeading.textContent = centerView.divisionHeading;
