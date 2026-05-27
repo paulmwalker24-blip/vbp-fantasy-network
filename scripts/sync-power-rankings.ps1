@@ -115,6 +115,161 @@ function Get-PositionBase {
   }
 }
 
+function Get-ScoringProfile {
+  param($League)
+
+  $settings = Get-ObjectProperty -Object $League -Name "scoring_settings"
+  $rec = Get-NumberValue (Get-ObjectProperty -Object $settings -Name "rec") 0
+  $rbBonus = Get-NumberValue (Get-ObjectProperty -Object $settings -Name "bonus_rec_rb") 0
+  $wrBonus = Get-NumberValue (Get-ObjectProperty -Object $settings -Name "bonus_rec_wr") 0
+  $teBonus = Get-NumberValue (Get-ObjectProperty -Object $settings -Name "bonus_rec_te") 0
+  $rbPpr = $rec + $rbBonus
+  $wrPpr = $rec + $wrBonus
+  $tePpr = $rec + $teBonus
+  $rushYard = Get-NumberValue (Get-ObjectProperty -Object $settings -Name "rush_yd") 0
+  $rushTd = Get-NumberValue (Get-ObjectProperty -Object $settings -Name "rush_td") 0
+  $receivingYard = Get-NumberValue (Get-ObjectProperty -Object $settings -Name "rec_yd") 0
+  $receivingTd = Get-NumberValue (Get-ObjectProperty -Object $settings -Name "rec_td") 0
+  $passingYard = Get-NumberValue (Get-ObjectProperty -Object $settings -Name "pass_yd") 0
+  $passingTd = Get-NumberValue (Get-ObjectProperty -Object $settings -Name "pass_td") 0
+  $interception = Get-NumberValue (Get-ObjectProperty -Object $settings -Name "pass_int") 0
+  $matchesVbpDefault = [Math]::Abs($rbPpr - 0.50) -lt 0.001 -and [Math]::Abs($wrPpr - 0.25) -lt 0.001 -and [Math]::Abs($tePpr - 0.75) -lt 0.001 -and
+    [Math]::Abs($rushYard - 0.10) -lt 0.001 -and [Math]::Abs($rushTd - 6) -lt 0.001 -and
+    [Math]::Abs($receivingYard - 0.10) -lt 0.001 -and [Math]::Abs($receivingTd - 6) -lt 0.001 -and
+    [Math]::Abs($passingYard - 0.04) -lt 0.001 -and [Math]::Abs($passingTd - 4) -lt 0.001 -and
+    [Math]::Abs($interception - (-1)) -lt 0.001
+
+  [pscustomobject]@{
+    source = "Live Sleeper league scoring_settings"
+    rec = [Math]::Round($rec, 2)
+    bonusRecRb = [Math]::Round($rbBonus, 2)
+    bonusRecWr = [Math]::Round($wrBonus, 2)
+    bonusRecTe = [Math]::Round($teBonus, 2)
+    rbPpr = [Math]::Round($rbPpr, 2)
+    wrPpr = [Math]::Round($wrPpr, 2)
+    tePpr = [Math]::Round($tePpr, 2)
+    rushYard = [Math]::Round($rushYard, 3)
+    rushTd = [Math]::Round($rushTd, 2)
+    receivingYard = [Math]::Round($receivingYard, 3)
+    receivingTd = [Math]::Round($receivingTd, 2)
+    passingYard = [Math]::Round($passingYard, 3)
+    passingTd = [Math]::Round($passingTd, 2)
+    interception = [Math]::Round($interception, 2)
+    usesConfiguredReceptionProfile = [bool]$matchesVbpDefault
+    strategy = "Scoring settings verified from Sleeper for this league."
+  }
+}
+
+function Get-LineupArchitecture {
+  param($League)
+
+  $positions = @(Convert-ToArray $League.roster_positions | ForEach-Object { (Get-TextValue $_).ToUpperInvariant() })
+  $teamCount = [int](Get-NumberValue (Get-ObjectProperty -Object $League.settings -Name "num_teams") 0)
+  $qbSlots = @($positions | Where-Object { $_ -eq "QB" }).Count
+  $superflexSlots = @($positions | Where-Object { $_ -eq "SUPER_FLEX" }).Count
+  $rbSlots = @($positions | Where-Object { $_ -eq "RB" }).Count
+  $wrSlots = @($positions | Where-Object { $_ -eq "WR" }).Count
+  $teSlots = @($positions | Where-Object { $_ -eq "TE" }).Count
+  $flexSlots = @($positions | Where-Object { $_ -in @("FLEX", "WRRB_FLEX", "REC_FLEX") }).Count
+
+  [pscustomobject]@{
+    teamCount = $teamCount
+    qbSlots = $qbSlots
+    superflexSlots = $superflexSlots
+    rbSlots = $rbSlots
+    wrSlots = $wrSlots
+    teSlots = $teSlots
+    flexSlots = $flexSlots
+    isSuperflex = [bool]($superflexSlots -gt 0 -or $qbSlots -gt 1)
+    summary = "{0} teams; starters: {1} QB, {2} RB, {3} WR, {4} TE, {5} FLEX, {6} SUPER_FLEX." -f $teamCount, $qbSlots, $rbSlots, $wrSlots, $teSlots, $flexSlots, $superflexSlots
+  }
+}
+
+function Get-FormatProfile {
+  param([string]$Format)
+
+  switch ($Format.ToLowerInvariant()) {
+    "dynasty" {
+      return [pscustomobject]@{
+        label = "Dynasty Superflex"
+        publicScope = "Individual league board"
+        emphasis = "Current roster strength, Superflex quarterback stability, long-term player value, and draft capital."
+      }
+    }
+    "dynastybracket" {
+      return [pscustomobject]@{
+        label = "Dynasty Bracket Superflex"
+        publicScope = "Combined bracket board once drafts are complete"
+        emphasis = "Current roster strength, Superflex quarterback stability, long-term player value, and draft capital across divisions."
+      }
+    }
+    "bestball" {
+      return [pscustomobject]@{
+        label = "Best Ball Union"
+        publicScope = "Combined Top 20 board"
+        emphasis = "Automated weekly ceiling and draft-and-hold depth with no waiver or trade recovery."
+      }
+    }
+    "gauntlet" {
+      return [pscustomobject]@{
+        label = "Best Ball Gauntlet"
+        publicScope = "Single-league board after the draft is complete"
+        emphasis = "Four-start micro-roster strength, Superflex ceiling, and availability risk in a locked roster format."
+      }
+    }
+    "bracket" {
+      return [pscustomobject]@{
+        label = "Redraft Bracket"
+        publicScope = "Combined bracket board once drafts are complete"
+        emphasis = "Starting-lineup strength and usable seasonal depth across the five tournament divisions."
+      }
+    }
+    "keeper" {
+      return [pscustomobject]@{
+        label = "Keeper"
+        publicScope = "Individual league board after the draft is complete"
+        emphasis = "Current roster strength with age runway relevant to future keeper choices."
+      }
+    }
+    "chopped" {
+      return [pscustomobject]@{
+        label = "Chopped"
+        publicScope = "Single-league survival board after the draft is complete"
+        emphasis = "Weekly floor, active lineup health, and top-end strength needed to avoid elimination."
+      }
+    }
+    "redraft" {
+      return [pscustomobject]@{
+        label = "Redraft"
+        publicScope = "Individual league board after the draft is complete"
+        emphasis = "Starting-lineup strength and usable in-season depth."
+      }
+    }
+    default {
+      return [pscustomobject]@{
+        label = "Not roster ranked"
+        publicScope = "No roster power-ranking board"
+        emphasis = "This format does not produce a standard fantasy-roster power ranking."
+      }
+    }
+  }
+}
+
+function Get-VbpScoringAdjustment {
+  param([string]$Position, $ScoringProfile, $LineupArchitecture)
+
+  $adjustment = 0.0
+  switch ($Position) {
+    "RB" { $adjustment = ((Get-NumberValue $ScoringProfile.rbPpr 0) - (Get-NumberValue $ScoringProfile.wrPpr 0)) * 10 }
+    "WR" { $adjustment = 0 }
+    "TE" { $adjustment = ((Get-NumberValue $ScoringProfile.tePpr 0) - (Get-NumberValue $ScoringProfile.wrPpr 0)) * 12 }
+    "QB" {
+      if ($LineupArchitecture.isSuperflex) { $adjustment = 8 }
+    }
+  }
+  return [Math]::Round($adjustment, 1)
+}
+
 function Get-AgeScore {
   param($Player, [string]$Format)
   $position = Get-PrimaryPosition $Player
@@ -175,7 +330,9 @@ function Get-PlayerValue {
     $Player,
     [string]$PlayerId,
     [string]$Format,
-    $Adjustment
+    $Adjustment,
+    $ScoringProfile,
+    $LineupArchitecture
   )
 
   $position = Get-PrimaryPosition $Player
@@ -185,8 +342,9 @@ function Get-PlayerValue {
   $depth = Get-DepthChartScore $Player
   $injuryPenalty = Get-InjuryPenalty -Player $Player -Adjustment $Adjustment
   $manual = if ($Adjustment) { Get-NumberValue (Get-ObjectProperty -Object $Adjustment -Name "valueAdjustment") 0 } else { 0 }
+  $vbpAdjustment = Get-VbpScoringAdjustment -Position $position -ScoringProfile $ScoringProfile -LineupArchitecture $LineupArchitecture
 
-  $value = ($base * 0.20) + ($market * 0.42) + ($age * 0.22) + ($depth * 0.16) - $injuryPenalty + $manual
+  $value = ($base * 0.20) + ($market * 0.42) + ($age * 0.22) + ($depth * 0.16) + $vbpAdjustment - $injuryPenalty + $manual
   $value = [Math]::Min(99, [Math]::Max(0, $value))
 
   [pscustomobject]@{
@@ -198,6 +356,7 @@ function Get-PlayerValue {
     injuryStatus = Get-TextValue $Player.injury_status
     searchRank = Get-NumberValue $Player.search_rank 0
     value = [Math]::Round($value, 1)
+    vbpAdjustment = $vbpAdjustment
     injuryPenalty = [Math]::Round($injuryPenalty, 1)
     note = if ($Adjustment) { Get-TextValue (Get-ObjectProperty -Object $Adjustment -Name "note") } else { "" }
   }
@@ -317,32 +476,66 @@ function Get-FormatWeights {
   switch ($Format) {
     "bestball" {
       return [ordered]@{
-        lineup = 0.28
-        depth = 0.34
+        lineup = 0.25
+        depth = 0.32
         quarterback = 0.10
-        eliteCeiling = 0.13
+        eliteCeiling = 0.12
         health = 0.10
+        scoringContext = 0.06
         context = 0.05
       }
     }
-    "dynasty" {
+    { $_ -in @("dynasty", "dynastybracket") } {
       return [ordered]@{
-        lineup = 0.32
-        depth = 0.18
+        lineup = 0.29
+        depth = 0.16
         quarterback = 0.18
-        eliteCeiling = 0.10
-        health = 0.07
+        eliteCeiling = 0.08
+        health = 0.06
         dynastyValue = 0.15
+        scoringContext = 0.08
+      }
+    }
+    "keeper" {
+      return [ordered]@{
+        lineup = 0.35
+        depth = 0.15
+        quarterback = 0.10
+        eliteCeiling = 0.09
+        health = 0.08
+        dynastyValue = 0.15
+        scoringContext = 0.08
+      }
+    }
+    "gauntlet" {
+      return [ordered]@{
+        lineup = 0.45
+        depth = 0.05
+        quarterback = 0.15
+        eliteCeiling = 0.15
+        health = 0.15
+        scoringContext = 0.05
+      }
+    }
+    "chopped" {
+      return [ordered]@{
+        lineup = 0.48
+        depth = 0.14
+        quarterback = 0.08
+        eliteCeiling = 0.10
+        health = 0.15
+        scoringContext = 0.05
       }
     }
     default {
       return [ordered]@{
-        lineup = 0.38
-        depth = 0.18
+        lineup = 0.34
+        depth = 0.17
         quarterback = 0.12
-        eliteCeiling = 0.12
+        eliteCeiling = 0.10
         health = 0.10
-        context = 0.10
+        scoringContext = 0.08
+        context = 0.09
       }
     }
   }
@@ -363,14 +556,14 @@ function Get-BestBallScore {
   $usefulDepthCount = @($PlayerEntries | Where-Object { (Get-NumberValue $_.value 0) -ge 70 }).Count
   $injuryPenalty = Get-NumberValue (($InjuredPlayers | Measure-Object -Property injuryPenalty -Sum).Sum) 0
 
-  $score = 52
-  $score += ($LineupScore - 72) * 2.60
-  $score += ($DepthScore - 66) * 1.55
-  $score += ($QuarterbackScore - 70) * 0.70
-  $score += $eliteCount * 2.75
-  $score += $differenceMakerCount * 1.15
-  $score += [Math]::Min(6, [Math]::Max(0, $usefulDepthCount - 8)) * 0.75
-  $score -= [Math]::Max(0, 8 - $usefulDepthCount) * 1.25
+  $score = 60
+  $score += ($LineupScore - 72) * 2.00
+  $score += ($DepthScore - 66) * 1.10
+  $score += ($QuarterbackScore - 70) * 0.40
+  $score += $eliteCount * 1.50
+  $score += $differenceMakerCount * 0.55
+  $score += [Math]::Min(6, [Math]::Max(0, $usefulDepthCount - 8)) * 0.45
+  $score -= [Math]::Max(0, 8 - $usefulDepthCount) * 0.90
   $score -= $injuryPenalty * 0.32
   $score += $ManualContext
 
@@ -396,7 +589,9 @@ function New-TeamRanking {
     $User,
     $PlayersById,
     $DraftCapitalByRosterId,
-    $Overrides
+    $Overrides,
+    $ScoringProfile,
+    $LineupArchitecture
   )
 
   $leagueRecordId = Get-TextValue $LeagueRecord.id
@@ -410,7 +605,7 @@ function New-TeamRanking {
     $player = Get-Player -PlayersById $PlayersById -PlayerId $playerId
     if ($null -eq $player) { continue }
     $adjustment = Get-ObjectProperty -Object $playerAdjustments -Name $playerId
-    $playerEntries += Get-PlayerValue -Player $player -PlayerId $playerId -Format $format -Adjustment $adjustment
+    $playerEntries += Get-PlayerValue -Player $player -PlayerId $playerId -Format $format -Adjustment $adjustment -ScoringProfile $ScoringProfile -LineupArchitecture $LineupArchitecture
   }
 
   $slots = Get-LineupSlots -League $LiveLeague
@@ -428,6 +623,7 @@ function New-TeamRanking {
   $eliteScore = [Math]::Min(100, 58 + ($elitePlayers.Count * 8))
   $healthScore = [Math]::Max(0, 100 - (($injuredPlayers | Measure-Object -Property injuryPenalty -Sum).Sum))
   $dynastyScore = Get-Average -Items $playerEntries -PropertyName "value"
+  $scoringContextScore = [Math]::Min(100, [Math]::Max(0, 68 + ((Get-Average -Items $starters -PropertyName "vbpAdjustment") * 3)))
   $draftCapitalScore = if ($DraftCapitalByRosterId.ContainsKey($rosterId)) { $DraftCapitalByRosterId[$rosterId] } else { 70 }
   $manualContext = if ($teamAdjustment) { Get-NumberValue (Get-ObjectProperty -Object $teamAdjustment -Name "contextAdjustment") 0 } else { 0 }
 
@@ -442,6 +638,7 @@ function New-TeamRanking {
     quarterback = [Math]::Round($qbScore, 1)
     eliteCeiling = [Math]::Round($eliteScore, 1)
     health = [Math]::Round($healthScore, 1)
+    scoringContext = [Math]::Round($scoringContextScore, 1)
   }
   if ($weights.Contains("dynastyValue")) {
     $componentScores.dynastyValue = [Math]::Round($dynastyScore, 1)
@@ -473,54 +670,92 @@ function New-TeamRanking {
     maxPointsFor = [Math]::Round((Get-NumberValue $Roster.settings.ppts 0) + ((Get-NumberValue $Roster.settings.ppts_decimal 0) / 100), 2)
   }
 
-  $topPlayers = @($playerEntries | Sort-Object @{ Expression = { $_.value }; Descending = $true } | Select-Object -First 8)
-  $reasonBits = New-Object System.Collections.Generic.List[string]
-  if ($qbs.Count -gt 0) { $reasonBits.Add(("QB room: {0}" -f (($qbs | Select-Object -First 2 | ForEach-Object { $_.name }) -join ", "))) }
-  if ($starters.Count -gt 0) { $reasonBits.Add(("Starter grade {0}" -f ([Math]::Round($lineupScore, 1)))) }
-  if ($topBench.Count -gt 0) { $reasonBits.Add(("Bench grade {0}" -f ([Math]::Round($depthScore, 1)))) }
-  if ($format -eq "bestball") {
-    $differenceMakers = @($playerEntries | Where-Object { (Get-NumberValue $_.value 0) -ge 78 }).Count
-    $pieceLabel = if ($differenceMakers -eq 1) { "piece" } else { "pieces" }
-    $reasonBits.Add(("{0} spike-week {1} at 78+ value" -f $differenceMakers, $pieceLabel))
-  }
-  if ($injuredPlayers.Count -gt 0) { $reasonBits.Add(("Health watch: {0}" -f (($injuredPlayers | Select-Object -First 3 | ForEach-Object { $_.name }) -join ", "))) }
-  if ($teamAdjustment -and -not [string]::IsNullOrWhiteSpace((Get-TextValue $teamAdjustment.scheduleNote))) { $reasonBits.Add((Get-TextValue $teamAdjustment.scheduleNote)) }
-  if ($teamAdjustment -and -not [string]::IsNullOrWhiteSpace((Get-TextValue $teamAdjustment.note))) { $reasonBits.Add((Get-TextValue $teamAdjustment.note)) }
-
   [pscustomobject]@{
     rosterId = $rosterId
     ownerId = Get-TextValue $Roster.owner_id
     teamName = Get-TeamName -User $User -Roster $Roster
-    score = [Math]::Round($score, 1)
+    score = [Math]::Round($score, 3)
     record = $record
-    components = $componentScores
-    topPlayers = @($topPlayers | ForEach-Object {
-      [pscustomobject]@{
-        name = $_.name
-        position = $_.position
-        team = $_.team
-        age = $_.age
-        injuryStatus = $_.injuryStatus
-        value = $_.value
-      }
-    })
-    starterSnapshot = @($starters | Select-Object -First 12 | ForEach-Object {
-      [pscustomobject]@{
-        slot = $_.selectedSlot
-        name = $_.name
-        position = $_.position
-        value = $_.value
-      }
-    })
-    benchSnapshot = @($topBench | ForEach-Object {
-      [pscustomobject]@{
-        name = $_.name
-        position = $_.position
-        value = $_.value
-      }
-    })
-    reasons = @($reasonBits)
   }
+}
+
+function Convert-ToPublishedTeamScores {
+  param([object[]]$Rankings, [string]$Format)
+
+  if ($Rankings.Count -eq 0) { return @() }
+  if ($Format -notin @("dynasty", "dynastybracket")) {
+    foreach ($ranking in $Rankings) {
+      $ranking.score = [Math]::Round((Get-NumberValue $ranking.score 0), 1)
+    }
+    return @($Rankings)
+  }
+
+  # Dynasty scores are displayed for comparison within one league. A fixed
+  # scale expands real model-score separation without awarding points by rank.
+  $averageScore = Get-Average -Items $Rankings -PropertyName "score"
+  foreach ($ranking in $Rankings) {
+    $relativeDifference = (Get-NumberValue $ranking.score 0) - $averageScore
+    $publishedScore = 80 + ($relativeDifference * 3)
+    $ranking.score = [Math]::Round([Math]::Min(98, [Math]::Max(35, $publishedScore)), 1)
+  }
+  return @($Rankings)
+}
+
+function Get-PositionGroupCount {
+  param([string]$Position, $Architecture)
+
+  switch ($Position) {
+    "QB" { return [Math]::Max(1, ([int]$Architecture.qbSlots + [int]$Architecture.superflexSlots)) }
+    "RB" { return [Math]::Max(1, [int]$Architecture.rbSlots) }
+    "WR" { return [Math]::Max(1, [int]$Architecture.wrSlots) }
+    "TE" { return [Math]::Max(1, [int]$Architecture.teSlots) }
+    default { return 1 }
+  }
+}
+
+function Get-PositionalRankings {
+  param([object[]]$PlayerEntries, [object[]]$TeamRankings, $Architecture)
+
+  $boards = [ordered]@{}
+  $availablePositions = @($PlayerEntries | ForEach-Object { Get-TextValue $_.position } | Where-Object { $_ -and $_ -ne "UNK" } | Sort-Object -Unique)
+  $preferredPositions = @("QB", "RB", "WR", "TE", "K", "DEF", "DL", "LB", "DB", "IDP")
+  $positionOrder = @($preferredPositions | Where-Object { $availablePositions -contains $_ })
+  $positionOrder += @($availablePositions | Where-Object { $preferredPositions -notcontains $_ } | Sort-Object)
+  foreach ($position in $positionOrder) {
+    $groupCount = Get-PositionGroupCount -Position $position -Architecture $Architecture
+    $teamRows = @($TeamRankings | ForEach-Object {
+      $team = $_
+      $positionPlayers = @($PlayerEntries | Where-Object {
+        [int](Get-NumberValue $_.rosterId 0) -eq [int](Get-NumberValue $team.rosterId 0) -and $_.position -eq $position
+      } | Sort-Object @{ Expression = { $_.value }; Descending = $true })
+      $positionScore = if ($positionPlayers.Count -gt 0) {
+        Get-Average -Items @($positionPlayers | Select-Object -First $groupCount) -PropertyName "value"
+      } else {
+        0
+      }
+      [pscustomobject]@{
+        manager = $team.teamName
+        rosterId = $team.rosterId
+        score = [Math]::Round($positionScore, 1)
+      }
+    } | Sort-Object @{ Expression = { $_.score }; Descending = $true }, @{ Expression = { $_.manager }; Descending = $false })
+    $rank = 1
+    $rows = @($teamRows | ForEach-Object {
+      $result = [pscustomobject]@{
+        rank = $rank
+        manager = $_.manager
+        rosterId = $_.rosterId
+        score = $_.score
+      }
+      $rank++
+      $result
+    })
+    $boards[$position] = [pscustomobject]@{
+      position = $position
+      rankings = $rows
+    }
+  }
+  return [pscustomobject]$boards
 }
 
 function Get-DraftCapitalByRosterId {
@@ -711,6 +946,7 @@ foreach ($leagueRecord in $selectedLeagues) {
   $leagueRecordId = Get-TextValue $leagueRecord.id
   $sleeperLeagueId = Get-TextValue $leagueRecord.sleeperLeagueId
   $leagueOverride = Get-LeagueOverride -Overrides $overrides -LeagueRecordId $leagueRecordId
+  $formatProfile = Get-FormatProfile -Format (Get-TextValue $leagueRecord.format)
 
   Write-Host ("Refreshing power ranking inputs for {0}..." -f $leagueRecordId)
 
@@ -729,6 +965,8 @@ foreach ($leagueRecord in $selectedLeagues) {
   $draftStatuses = @($draftReadiness.drafts | ForEach-Object { $_.status } | Where-Object { $_ })
   $publish = [bool]$draftReadiness.ready
   $holdReason = Get-TextValue $draftReadiness.reason
+  $scoringProfile = Get-ScoringProfile -League $liveLeague
+  $lineupArchitecture = Get-LineupArchitecture -League $liveLeague
   $rosterSync = [pscustomobject]@{
     source = $rosterSourceUrl
     refreshedAt = (Get-Date).ToString("o")
@@ -751,6 +989,10 @@ foreach ($leagueRecord in $selectedLeagues) {
       draftReadiness = $draftReadiness
       rosterSync = $rosterSync
       rosterPositions = @(Convert-ToArray $liveLeague.roster_positions)
+      scoringProfile = $scoringProfile
+      lineupArchitecture = $lineupArchitecture
+      formatProfile = $formatProfile
+      positionalRankings = [pscustomobject]@{}
       rankings = @()
     }
     continue
@@ -764,18 +1006,31 @@ foreach ($leagueRecord in $selectedLeagues) {
 
   $draftCapitalByRosterId = Get-DraftCapitalByRosterId -Drafts $drafts
   $rankings = @()
+  $allPlayerEntries = @()
   foreach ($roster in ($rosters | Where-Object { -not [string]::IsNullOrWhiteSpace((Get-TextValue $_.owner_id)) })) {
     $ownerId = Get-TextValue $roster.owner_id
     $user = if ($usersById.ContainsKey($ownerId)) { $usersById[$ownerId] } else { $null }
-    $rankings += New-TeamRanking -LeagueRecord $leagueRecord -LiveLeague $liveLeague -Roster $roster -User $user -PlayersById $playersById -DraftCapitalByRosterId $draftCapitalByRosterId -Overrides $overrides
+    $teamName = Get-TeamName -User $user -Roster $roster
+    $rankings += New-TeamRanking -LeagueRecord $leagueRecord -LiveLeague $liveLeague -Roster $roster -User $user -PlayersById $playersById -DraftCapitalByRosterId $draftCapitalByRosterId -Overrides $overrides -ScoringProfile $scoringProfile -LineupArchitecture $lineupArchitecture
+    foreach ($playerId in (Convert-ToArray $roster.players | ForEach-Object { Get-TextValue $_ } | Where-Object { $_ })) {
+      $player = Get-Player -PlayersById $playersById -PlayerId $playerId
+      if ($null -eq $player) { continue }
+      $adjustment = Get-ObjectProperty -Object $overrides.playerAdjustments -Name $playerId
+      $entry = Get-PlayerValue -Player $player -PlayerId $playerId -Format (Get-TextValue $leagueRecord.format) -Adjustment $adjustment -ScoringProfile $scoringProfile -LineupArchitecture $lineupArchitecture
+      $entry | Add-Member -NotePropertyName rosterId -NotePropertyValue ([int](Get-NumberValue $roster.roster_id 0)) -Force
+      $entry | Add-Member -NotePropertyName manager -NotePropertyValue $teamName -Force
+      $allPlayerEntries += $entry
+    }
   }
 
+  $rankings = Convert-ToPublishedTeamScores -Rankings $rankings -Format (Get-TextValue $leagueRecord.format)
   $rank = 1
   $rankings = @($rankings | Sort-Object @{ Expression = { $_.score }; Descending = $true }, @{ Expression = { $_.record.pointsFor }; Descending = $true } | ForEach-Object {
     $_ | Add-Member -NotePropertyName rank -NotePropertyValue $rank -Force
     $rank++
     $_
   })
+  $positionalRankings = Get-PositionalRankings -PlayerEntries $allPlayerEntries -TeamRankings $rankings -Architecture $lineupArchitecture
 
   $generatedLeagues += [pscustomobject]@{
     leagueRecordId = $leagueRecordId
@@ -788,6 +1043,10 @@ foreach ($leagueRecord in $selectedLeagues) {
     draftReadiness = $draftReadiness
     rosterSync = $rosterSync
     rosterPositions = @(Convert-ToArray $liveLeague.roster_positions)
+    scoringProfile = $scoringProfile
+    lineupArchitecture = $lineupArchitecture
+    formatProfile = $formatProfile
+    positionalRankings = $positionalRankings
     rankings = $rankings
   }
 }
@@ -804,17 +1063,16 @@ $output = [pscustomobject]@{
       "Current snapshot"
     }
   }
-  source = "Sleeper league, roster, user, draft, draft-pick, and player metadata endpoints plus data/power-ranking-overrides.json."
+  source = "Sleeper league scoring settings, roster, user, draft, draft-pick, and player metadata endpoints plus data/power-ranking-overrides.json."
   methodology = [pscustomobject]@{
-    summary = "Power rankings combine optimized starters, bench strength, quarterback room, elite-player count, health/injury flags, dynasty value, draft capital, standings, and commissioner context adjustments."
+    summary = "The board compares each roster within its league using current Sleeper data and the league's scoring rules. Scores are for relative team strength, not projected standings."
     components = @(
-      "Lineup: best legal starter set from Sleeper roster positions.",
-      "Depth: top bench pieces after the optimized lineup is filled.",
-      "Quarterback: top quarterback values, weighted higher in superflex/dynasty formats.",
-      "Elite ceiling: count of high-value players who can swing a week.",
-      "Health: current Sleeper injury/status flags plus manual injury overrides.",
-      "Dynasty value: age curve, player value, and draft capital for dynasty formats.",
-      "Context: commissioner-owned schedule, role, and league-readiness adjustments from overrides."
+      "League settings: active Sleeper scoring and starter requirements.",
+      "Roster quality: lineup strength, useful depth, and quarterback stability.",
+      "Dynasty outlook: age curve and future draft capital.",
+      "Availability: current injury and player-status information.",
+      "Position boards: each owner's strength at QB, RB, WR, and TE.",
+      "Score meaning: relative roster grade, not a season prediction."
     )
   }
   warnings = @($warnings)

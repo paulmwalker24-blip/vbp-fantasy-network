@@ -37,46 +37,6 @@ function formatRecord(record) {
   return `${wins}-${losses}${ties ? `-${ties}` : ""}, ${pointsFor.toFixed(2)} PF`;
 }
 
-function renderComponentGrid(container, components) {
-  const grid = createElement("div", "power-ranking-component-grid");
-  Object.entries(components || {}).forEach(([key, value]) => {
-    const item = createElement("div", "power-ranking-component");
-    item.appendChild(createElement("strong", "", number(value).toFixed(1)));
-    item.appendChild(createElement("span", "", key.replace(/([A-Z])/g, " $1").toLowerCase()));
-    grid.appendChild(item);
-  });
-  container.appendChild(grid);
-}
-
-function renderPlayerPills(container, players) {
-  const list = createElement("div", "power-ranking-pill-list");
-  (players || []).slice(0, 8).forEach(player => {
-    const label = [text(player.name), text(player.position), text(player.team)].filter(Boolean).join(" - ");
-    const pill = createElement("span", "power-ranking-pill", label);
-    if (text(player.injuryStatus)) {
-      pill.classList.add("has-status");
-      pill.title = `Sleeper status: ${text(player.injuryStatus)}`;
-    }
-    list.appendChild(pill);
-  });
-  container.appendChild(list);
-}
-
-function renderSnapshot(title, players) {
-  const section = createElement("div", "power-ranking-snapshot");
-  section.appendChild(createElement("strong", "", title));
-  const list = createElement("div", "power-ranking-mini-grid");
-  (players || []).forEach(player => {
-    const slot = text(player.slot);
-    const label = slot
-      ? `${slot}: ${text(player.name)} (${text(player.position)}, ${number(player.value).toFixed(1)})`
-      : `${text(player.name)} (${text(player.position)}, ${number(player.value).toFixed(1)})`;
-    list.appendChild(createElement("span", "", label));
-  });
-  section.appendChild(list);
-  return section;
-}
-
 function renderRankingRow(entry) {
   const row = createElement("article", `power-ranking-row${number(entry.rank) <= 3 ? " is-top" : ""}`);
   row.appendChild(createElement("div", "power-ranking-position", number(entry.rank).toString()));
@@ -88,18 +48,6 @@ function renderRankingRow(entry) {
   body.appendChild(header);
   body.appendChild(createElement("p", "", formatRecord(entry.record)));
 
-  const reasons = (entry.reasons || []).filter(Boolean);
-  if (reasons.length) body.appendChild(createElement("p", "power-ranking-core", reasons.join(" | ")));
-
-  renderComponentGrid(body, entry.components);
-  renderPlayerPills(body, entry.topPlayers);
-
-  const details = createElement("details", "power-ranking-details");
-  details.appendChild(createElement("summary", "", "Show starters, bench, and scoring trail"));
-  details.appendChild(renderSnapshot("Optimized starters", entry.starterSnapshot || []));
-  details.appendChild(renderSnapshot("Top bench", entry.benchSnapshot || []));
-  body.appendChild(details);
-
   row.appendChild(body);
   return row;
 }
@@ -108,13 +56,105 @@ function renderMethodology(methodology) {
   const container = document.querySelector("[data-ranking-methodology]");
   if (!container) return;
   container.innerHTML = "";
+  if (text(methodology?.summary)) {
+    container.appendChild(createElement("p", "power-rankings-method-summary", text(methodology.summary)));
+  }
+  const list = createElement("div", "power-rankings-method-list");
   (methodology?.components || []).forEach(component => {
     const item = createElement("div", "power-rankings-method");
     const parts = text(component).split(":");
     item.appendChild(createElement("strong", "", parts[0] || "Input"));
     item.appendChild(createElement("span", "", (parts.slice(1).join(":") || component).trim()));
-    container.appendChild(item);
+    list.appendChild(item);
   });
+  container.appendChild(list);
+}
+
+function formatScoringValue(value) {
+  return number(value).toFixed(2);
+}
+
+function renderScoringProfile(league) {
+  const container = document.querySelector("[data-scoring-profile]");
+  if (!container) return;
+  container.innerHTML = "";
+  const profile = league.scoringProfile;
+  if (!profile) {
+    container.textContent = "Verified scoring settings have not been generated for this league yet.";
+    return;
+  }
+
+  const grid = createElement("div", "power-ranking-scoring-grid");
+  const fields = [
+    ["Base Rec", profile.rec],
+    ["RB PPR", profile.rbPpr],
+    ["WR PPR", profile.wrPpr],
+    ["TE PPR", profile.tePpr],
+    ["Rush Yd", profile.rushYard],
+    ["Rec Yd", profile.receivingYard],
+    ["Rush TD", profile.rushTd],
+    ["Rec TD", profile.receivingTd],
+    ["Pass Yd", profile.passingYard],
+    ["Pass TD", profile.passingTd],
+    ["INT", profile.interception]
+  ];
+  fields.forEach(([label, value]) => {
+    const item = createElement("div", "power-ranking-component");
+    item.appendChild(createElement("strong", "", formatScoringValue(value)));
+    item.appendChild(createElement("span", "", label));
+    grid.appendChild(item);
+  });
+  container.appendChild(grid);
+  container.appendChild(createElement("p", "power-ranking-source-note", `${text(profile.source)}.`));
+}
+
+function renderPositionBoard(position, board) {
+  const card = createElement("article", "power-ranking-position-board");
+  const heading = createElement("div", "power-ranking-position-board-header");
+  heading.appendChild(createElement("h3", "", position));
+  card.appendChild(heading);
+
+  const table = createElement("table", "power-ranking-position-table");
+  const head = document.createElement("thead");
+  const headRow = document.createElement("tr");
+  ["#", "Owner", "Position Score"].forEach(label => headRow.appendChild(createElement("th", "", label)));
+  head.appendChild(headRow);
+  table.appendChild(head);
+  const body = document.createElement("tbody");
+  (board.rankings || []).forEach(owner => {
+    const row = document.createElement("tr");
+    row.appendChild(createElement("td", "", number(owner.rank).toString()));
+    row.appendChild(createElement("td", "", text(owner.manager)));
+    row.appendChild(createElement("td", "", number(owner.score).toFixed(1)));
+    body.appendChild(row);
+  });
+  table.appendChild(body);
+  card.appendChild(table);
+  return card;
+}
+
+function renderPositionalRankings(league) {
+  const container = document.querySelector("[data-positional-rankings]");
+  if (!container) return;
+  container.innerHTML = "";
+  const boards = league.positionalRankings || {};
+  const preferredOrder = ["QB", "RB", "WR", "TE", "K", "DEF", "DL", "LB", "DB", "IDP"];
+  const positions = Object.keys(boards).sort((a, b) => {
+    const aIndex = preferredOrder.indexOf(a);
+    const bIndex = preferredOrder.indexOf(b);
+    if (aIndex === -1 && bIndex === -1) return a.localeCompare(b);
+    if (aIndex === -1) return 1;
+    if (bIndex === -1) return -1;
+    return aIndex - bIndex;
+  });
+  positions.forEach(position => {
+    if (boards[position]?.rankings?.length) {
+      container.appendChild(renderPositionBoard(position, boards[position]));
+    }
+  });
+  if (!container.children.length) {
+    container.textContent = "Positional rankings are not available until the league has drafted rostered players.";
+  }
 }
 
 function renderLeague(data) {
@@ -162,6 +202,8 @@ function renderLeague(data) {
     list.innerHTML = "";
     rankings.forEach(entry => list.appendChild(renderRankingRow(entry)));
   }
+  renderScoringProfile(league);
+  renderPositionalRankings(league);
   renderMethodology(data.methodology);
 }
 

@@ -82,6 +82,7 @@ Use:
 ### Standard Dynasty Startups
 
 - `DYN6` is paid in full and should not be marketed as an active opening.
+- `DYN8` is currently `8/12 paid` and remains an active $30 Superflex startup opening.
 - Treat the current dynasty push as startup recruiting, not orphan or takeover recruiting.
 - Use `slow` vs `fast` as the main sorting choice.
 - Lead with trust, format, and owner quality before payment structure.
@@ -121,7 +122,7 @@ Use:
 
 - Keep redraft copy aligned with the rest of the recruiting strategy: trust first, clear structure, and fewer "listing" vibes.
 - For the current push, lead with `Redraft 4` and `Bracket Redraft` before dynasty, best ball, keeper, or chopped.
-- For `Redraft 4`, frame it as the sharper seasonal option for owners who want a more serious room with rules posted up front. Mention that it is 10/12 when urgency helps.
+- For `Redraft 4`, frame it as the sharper seasonal option for owners who want a more serious room with rules posted up front. Current paid count is `6/12`.
 - For `Bracket Redraft`, lead with the format hook and the fact that this is the third season the commissioner has run the format. Avoid phrasing that makes `Year 3 Bracket Redraft` sound like the formal format name.
 - Current Bracket Redraft recruiting should concentrate new owners into `Apex` and `Titan` for slow draft and `Iron` for fast draft before pushing Vanguard or Dominion equally.
 - Use `REDRAFT PRIORITY PUSH` when you want one post that lets people choose between the $100 standalone room and the $50 tournament format.
@@ -167,7 +168,7 @@ Body:
 ```text
 VBP Fantasy Network is pushing redraft right now with two active lanes:
 
-Redraft 4 is the sharper standalone seasonal room. It is a $100 league with Progressive PPR, no kicker or defense, and a 6-team playoff with top-two byes. Current count: 10/12.
+Redraft 4 is the sharper standalone seasonal room. It is a $100 league with Progressive PPR, no kicker or defense, and a 6-team playoff with top-two byes. Current paid count: 6/12.
 
 Bracket Redraft is the bigger tournament-style format. I am filling it for the third season I have run this setup. It is a $50 redraft format with fast and slow draft rooms feeding one shared 32-team playoff across the full 60-team field. The current push is Apex and Titan for slow draft, plus Iron as the priority fast room.
 
@@ -175,8 +176,8 @@ Redraft 4 ($100): https://sleeper.com/i/V9xKEeVN7AD4e
 
 Bracket Redraft priority rooms:
 Apex ($50, Slow, 11/12 paid): http://sleeper.com/i/zExweGWd6aPgb
-Titan ($50, Slow, 3/12 paid): http://sleeper.com/i/kM2GBe6qL228Y
-Iron ($50, Fast, 4/12 paid): http://sleeper.com/i/j7moDEZ337dn0
+Titan ($50, Slow, 8/12 paid): http://sleeper.com/i/kM2GBe6qL228Y
+Iron ($50, Fast, 5/12 paid): http://sleeper.com/i/j7moDEZ337dn0
 
 If you want slow draft, join Apex or Titan. If you want fast draft, join Iron. Vanguard and Dominion are part of the full format, but the push right now is to concentrate new joins into Apex, Titan, and Iron first.
 
@@ -585,8 +586,8 @@ This is a $50 redraft setup with both fast and slow draft options, Progressive P
 
 Current priority rooms:
 Apex ($50, Slow, 11/12 paid): http://sleeper.com/i/zExweGWd6aPgb
-Titan ($50, Slow, 3/12 paid): http://sleeper.com/i/kM2GBe6qL228Y
-Iron ($50, Fast, 4/12 paid): http://sleeper.com/i/j7moDEZ337dn0
+Titan ($50, Slow, 8/12 paid): http://sleeper.com/i/kM2GBe6qL228Y
+Iron ($50, Fast, 5/12 paid): http://sleeper.com/i/j7moDEZ337dn0
 
 If you want slow draft, join Apex or Titan. If you want fast draft, join Iron. Vanguard and Dominion are part of the full format, but the push right now is to fill Apex, Titan, and Iron first.
 
@@ -615,7 +616,7 @@ Body:
 ```text
 VBP Fantasy Network has Redraft 4 open right now for owners who want a sharper $100 seasonal league with clear rules posted up front.
 
-It uses Progressive PPR scoring, no kicker or defense spots, and a 6-team playoff with top-two byes. The room is currently 10/12, so there are only 2 spots left.
+It uses Progressive PPR scoring, no kicker or defense spots, and a 6-team playoff with top-two byes. The room is currently 6/12 paid.
 
 Redraft 4 ($100): https://sleeper.com/i/V9xKEeVN7AD4e
 Redraft constitution: https://vbp-fantasy-network.vercel.app/redraft-constitution.html

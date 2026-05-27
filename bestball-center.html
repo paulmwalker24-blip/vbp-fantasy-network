@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Best Ball Union Center | VBP Fantasy Network</title>
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260512i" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260527a" />
 </head>
 <body class="constitution-page format-center-page">
   <div class="constitution-nav" id="top">
@@ -75,17 +75,13 @@
       <section class="power-rankings-card power-rankings-feature" id="powerRankings" data-bbu-panel="power" hidden>
         <div>
           <p class="power-rankings-kicker">Draft-Build Snapshot</p>
-          <h2>Combined BBU1-BBU4 Power Rankings</h2>
-          <p>
-            These rankings are a draft-build snapshot for the first four completed Best Ball Union rooms. Once live
-            scoring becomes meaningful, the board can refresh weekly with BBU scoring, roster health, and overall
-            high-score context.
-          </p>
+          <h2 id="bbuPowerRankingsHeading">Combined BBU Power Rankings</h2>
+          <p id="bbuPowerRankingsCopy">Loading the completed Best Ball Union rooms from the latest generated snapshot.</p>
         </div>
         <div class="power-rankings-feature-score">
           <span class="power-rankings-score-label">Top Score</span>
-          <strong>90.0</strong>
-          <span>Cameron74, BBU2</span>
+          <strong id="bbuPowerTopScore">--</strong>
+          <span id="bbuPowerTopTeam">Loading...</span>
         </div>
       </section>
 
@@ -105,30 +101,35 @@
       <section class="power-rankings-card" data-bbu-panel="power" hidden>
         <div class="section-heading">
           <h2>Best Ball Methodology</h2>
-          <p>The point is not to predict standings perfectly. Each score is a weighted grade out of 100 based on the four categories below.</p>
+          <p>Scores compare drafted builds across completed Best Ball Union rooms on a consistent 100-point scale.</p>
         </div>
         <div class="power-rankings-method-grid">
-          <div class="power-rankings-method">
-            <strong>45%</strong>
-            <span>Best expected weekly lineup across 1 QB, 2 RB, 3 WR, 1 TE, and 2 FLEX</span>
-          </div>
-          <div class="power-rankings-method">
-            <strong>30%</strong>
-            <span>Bench depth, bye-week cover, and injury cover across all 18 spots</span>
-          </div>
-          <div class="power-rankings-method">
-            <strong>15%</strong>
-            <span>Players who can create big scoring weeks for the overall points race</span>
-          </div>
-          <div class="power-rankings-method">
-            <strong>10%</strong>
-            <span>Fit with BBU scoring, especially TE catches, RB catches, and WR volume</span>
+          <p class="power-rankings-method-summary">
+            Best Ball rewards a complete draft build: there are no pickups, trades, or weekly lineup decisions after the draft.
+          </p>
+          <div class="power-rankings-method-list">
+            <div class="power-rankings-method">
+              <strong>Starting ceiling</strong>
+              <span>Best automatic weekly lineup across the active Sleeper setup: 1 QB, 2 RB, 2 WR, 1 TE, and 2 FLEX.</span>
+            </div>
+            <div class="power-rankings-method">
+              <strong>Drafted depth</strong>
+              <span>Useful scoring and coverage throughout the locked 18-player roster.</span>
+            </div>
+            <div class="power-rankings-method">
+              <strong>Weekly upside</strong>
+              <span>Ceiling that matters in the overall season-points and weekly high-score races.</span>
+            </div>
+            <div class="power-rankings-method">
+              <strong>Availability</strong>
+              <span>Injury and role risk carry extra weight when a roster cannot be repaired in-season.</span>
+            </div>
           </div>
         </div>
         <div class="constitution-fulltext power-rankings-notes">
           <h3>Research Notes</h3>
           <ul>
-            <li>Best Ball Union starts 9 players: 1 QB, 2 RB, 3 WR, 1 TE, and 2 FLEX.</li>
+            <li>The completed 2026 BBU rooms currently use 8 starters in Sleeper: 1 QB, 2 RB, 2 WR, 1 TE, and 2 FLEX.</li>
             <li>Rosters are 18-player draft-and-hold builds with no waivers, trades, pickups, or weekly lineup decisions after the draft.</li>
             <li>Sleeper automatically uses each manager's best eligible lineup every week, so useful bench players can help without being manually started.</li>
             <li>Progressive PPR reception scoring is RB 0.5, WR 0.25, and TE 0.75, so TE depth and pass-catching RBs matter.</li>
@@ -198,6 +199,6 @@
     </div>
   </main>
 
-  <script src="assets/js/bestball-center.js?v=20260519a"></script>
+  <script src="assets/js/bestball-center.js?v=20260527a"></script>
 </body>
 </html>

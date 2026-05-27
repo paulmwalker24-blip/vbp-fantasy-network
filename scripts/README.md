@@ -288,6 +288,58 @@ Structured output:
 powershell -ExecutionPolicy Bypass -File .\scripts\reconcile-bbu-payments.ps1 -PassThru | ConvertTo-Json -Depth 6
 ```
 
+## `import-leaguesafe-export.ps1`
+
+Imports the latest LeagueSafe payment-details CSV for any single league into the organized private path `data/private/payments/exports/<LEAGUE-ID>-current.csv`. Use `-PaymentPeriod 2027` for separate future-season collections, which are stored as `<LEAGUE-ID>-2027.csv` instead of overwriting current data.
+
+The raw CSV remains local-only and ignored by git. Shared-pot formats such as Best Ball Union and Redraft Bracket retain their specialized import/reconciliation workflows because one payment export covers several public league records.
+
+Example:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\import-leaguesafe-export.ps1 -LeagueRecordId DYN8 -SourcePath "C:\Users\pkwal\Downloads\VBP Dynasty League #8 (Slow Draft) payment details (1).csv"
+```
+
+## `reconcile-league-payments.ps1`
+
+Cross-references a league's imported LeagueSafe export or exports with current Sleeper roster ownership and the private `manager-identities.json` ledger. Separate payment-period files for the same league are totaled together. Optional local-only `data/private/payment-status-overrides.json` entries preserve commissioner notes such as a departed owner awaiting a LeagueSafe refund without altering the imported export. It writes Excel-friendly private outputs under `reports/private/payments/<LEAGUE-ID>/`:
+
+- `tracker.csv` - each Sleeper assignment and its matched, candidate, or missing LeagueSafe row
+- `unmatched-leaguesafe-rows.csv` - payment rows that are not yet confidently tied to an assigned Sleeper roster
+- `summary.md` - a quick count of paid, review-needed, and unmatched records
+
+Example:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\reconcile-league-payments.ps1 -LeagueRecordId DYN8
+```
+
+## `build-payment-index.ps1`
+
+Creates a private network-wide index from `data/leagues.json`, noting whether each league has an imported individual export, an existing shared-pool export, or still needs a LeagueSafe file imported. It writes `reports/private/payments/README.md` and `league-payment-index.csv`.
+
+Example:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\build-payment-index.ps1
+```
+
+## `build-commissioner-payment-center.ps1`
+
+Creates the Explorer-friendly, private top-level `PAYMENT-CENTER/` folder. It combines generated reconciliation reports and the confirmed identity ledger into:
+
+- `START-HERE.md` - landing page
+- `ALL-LEAGUES-PAYMENT-INDEX.md` - readable links to every league page
+- `MASTER-CONFIRMED-MANAGERS.md` - readable reusable confirmed Sleeper/LeagueSafe identities
+- `LEAGUES/<LEAGUE-ID> - <LEAGUE-NAME>.md` - one readable payment page per league, with a placeholder reminder until its export is imported
+- `CSV-EXPORTS/` - separate spreadsheet-friendly versions
+
+Example:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\build-commissioner-payment-center.ps1
+```
+
 ## `import-bbu-leaguesafe-export.ps1`
 
 Copies the latest downloaded Best Ball Union LeagueSafe export into `data/private/leaguesafe-bbu-current.csv`, then rewrites `data/private/leaguesafe-payments.csv` with the paid rows used by reconciliation.
@@ -427,13 +479,15 @@ Every refresh reads the current Sleeper roster endpoint for each league and writ
 
 The generated dataset combines:
 
-- league settings and roster positions
+- live league scoring settings and roster positions
 - users and rosters
 - draft status and draft-pick data
 - Sleeper NFL player metadata
 - injury/status flags exposed by Sleeper
 - optimized starters and bench snapshots
 - commissioner-owned overrides from `data/power-ranking-overrides.json`
+
+The player and team calculations follow `docs/vbp-power-ranking-model.md`: the script verifies live reception/yardage/TD/interception settings first and publishes clean owner ranking boards. It records a format profile for dynasty, dynasty bracket, Best Ball Union, Gauntlet, Keeper, Chopped, Redraft, and Bracket boards so roster construction and risk are interpreted correctly. Dynasty owner scores use a fixed within-league display scale from their calculated strength difference, rather than points assigned by rank. Positional boards rank owners at each available position without publishing individual player lists. Sleeper metadata is not stat-component projection data, so generated scores are value signals rather than claimed projected fantasy points.
 
 Use `data/power-ranking-overrides.json` for facts Sleeper cannot reliably know, such as a commissioner publish hold, a schedule-context adjustment, or a manually reviewed player injury/value note.
 

@@ -1,9 +1,12 @@
 data/*.before-sync.json
 data/private/manager-identities.json
+data/private/payment-status-overrides.json
 data/private/leaguesafe-payments.csv
 data/private/leaguesafe-bbu-current.csv
 data/private/leaguesafe-bracket-current.csv
 data/private/leaguesafe-bracket-payments.csv
 data/private/leaguesafe-gauntlet-current.csv
 data/private/leaguesafe-gauntlet-payments.csv
+data/private/payments/
 reports/private/
+PAYMENT-CENTER/

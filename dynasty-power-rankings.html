@@ -14,7 +14,7 @@
   <meta name="twitter:title" content="Dynasty Power Rankings | VBP Fantasy Network" />
   <meta name="twitter:description" content="Dynasty power rankings for the VBP Fantasy Network." />
   <meta name="twitter:image" content="https://vbp-fantasy-network.vercel.app/assets/images/banner.png" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260512i" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260526b" />
 </head>
 <body class="constitution-page power-rankings-page">
   <div class="constitution-nav" id="top">
@@ -40,7 +40,7 @@
         <div>
           <p class="power-rankings-kicker" data-rankings-feature-kicker>Dynasty</p>
           <h2>Current Board</h2>
-          <p>Ranked from Sleeper rosters, draft data, player metadata, injury/status flags, optimized starters, bench strength, and commissioner-owned context.</p>
+          <p>Ranked from verified Sleeper scoring settings, current rosters, draft data, availability notes, and commissioner-owned context.</p>
         </div>
         <div class="power-rankings-feature-score">
           <span class="power-rankings-score-label">Top Score</span>
@@ -52,7 +52,7 @@
       <section class="power-rankings-card">
         <div class="section-heading">
           <h2 data-rankings-list-heading>Dynasty Rankings</h2>
-          <p>Each row shows the score, component grades, top players, and expandable starter/bench detail.</p>
+          <p>Each row shows the current team score and season result in a clean owner-by-owner board.</p>
         </div>
         <div class="power-rankings-list" data-rankings-list>
           <p class="format-center-table-empty">Loading generated dynasty rankings...</p>
@@ -61,15 +61,35 @@
 
       <section class="power-rankings-card">
         <div class="section-heading">
-          <h2>Scoring Method</h2>
-          <p>Scores are grades out of 100. They explain the ranking, but they do not replace the standings.</p>
+          <h2>Verified League Scoring</h2>
+          <p>The ranking model reads these values from Sleeper before calculating the board.</p>
+        </div>
+        <div data-scoring-profile>
+          <p class="format-center-table-empty">Loading live scoring profile...</p>
+        </div>
+      </section>
+
+      <section class="power-rankings-card">
+        <div class="section-heading">
+          <h2>Positional Power Rankings</h2>
+          <p>See which owners have the strongest position group, ranked from first through last in the league.</p>
+        </div>
+        <div class="power-ranking-position-boards" data-positional-rankings>
+          <p class="format-center-table-empty">Loading positional rankings...</p>
+        </div>
+      </section>
+
+      <section class="power-rankings-card">
+        <div class="section-heading">
+          <h2>How Rankings Work</h2>
+          <p>A simple view of what drives the board.</p>
         </div>
         <div class="power-rankings-method-grid" data-ranking-methodology>
-          <div class="power-rankings-method"><strong>Loading</strong><span>Reading generated methodology.</span></div>
+          <p class="format-center-table-empty">Loading ranking approach...</p>
         </div>
       </section>
     </div>
   </main>
-  <script src="assets/js/power-rankings.js?v=20260512i"></script>
+  <script src="assets/js/power-rankings.js?v=20260526c"></script>
 </body>
 </html>

@@ -52,6 +52,10 @@
 
 ### Automation Recommendations
 
+- [x] Upgrade generated power rankings to verify live league scoring settings and publish owner-by-position boards without public player breakdowns.
+- [x] Move the Best Ball Union Top 20 board onto generated completed-room rankings and add format-specific ranking profiles for current league setups.
+- [x] Add an organized private payment center with generic single-league LeagueSafe import, Sleeper reconciliation, and an all-league payment index, starting with `DYN8`.
+- [x] Add a top-level private `PAYMENT-CENTER` explorer view with one league sheet per record and a confirmed-manager master list.
 - [x] Add Redraft Bracket LeagueSafe import and reconciliation sheets to the private payment workbook.
 - [x] Add a Best Ball Gauntlet LeagueSafe import for the new BG1 payment export.
 - [x] Add a private BBU LeagueSafe export importer that replaces the current raw export and normalized paid-row CSV.

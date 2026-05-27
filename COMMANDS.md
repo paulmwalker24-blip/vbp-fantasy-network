@@ -162,7 +162,29 @@ Sync only one keeper league:
 Run the keeper ledger sync for KP1 only and summarize which managers were pulled into the local keeper tracker.
 ```
 
-## BBU Payment Reconciliation
+## Payment Center
+
+Import a LeagueSafe export for any single league and build its private roster/payment cross-reference:
+
+```text
+Import this LeagueSafe export for DYN8 into the private payment center, reconcile it against Sleeper managers, and summarize the unpaid or unmatched entries: C:\Users\pkwal\Downloads\VBP Dynasty League #8 (Slow Draft) payment details (1).csv
+```
+
+Refresh the private payment index for all league records:
+
+```text
+Build the private payment index for all leagues and tell me which leagues still do not have a stored LeagueSafe export.
+```
+
+Build the easy-to-open commissioner payment folder with a file per league and confirmed-manager master list:
+
+```text
+Rebuild my PAYMENT-CENTER folder with the latest league payment sheets and confirmed manager master list.
+```
+
+For ordinary single-league files, use `scripts/import-leaguesafe-export.ps1`, `scripts/reconcile-league-payments.ps1`, and `scripts/build-payment-index.ps1`. Use `scripts/build-commissioner-payment-center.ps1` for the Explorer-facing view. For payment pools shared across several rooms, continue with the specialized BBU or bracket workflows below.
+
+## Pooled Payment Reconciliation
 
 Import the latest downloaded Best Ball Union LeagueSafe export before rebuilding the tracker:
 
@@ -238,6 +260,12 @@ Refresh every eligible generated power-ranking board from Sleeper:
 
 ```text
 Run the power rankings sync and refresh data/power-rankings.json from Sleeper, using the commissioner overrides file for publish holds and manual context.
+```
+
+Refresh owner-by-position ranking boards and confirm the live scoring profile:
+
+```text
+Run the power rankings sync for DYN2, confirm its Sleeper scoring settings were read successfully, and summarize the owner rankings for QB, RB, WR, and TE.
 ```
 
 Refresh ranking readiness for every Sleeper-backed league:
@@ -387,6 +415,7 @@ Run the one-command site check and tell me any errors or warnings before commit.
 - Use the sync report when you want current fill counts and a warning summary.
 - Use the donation workflow when you want to turn reported donations into updated homepage totals without inventing a new admin system.
 - Use the donation validator when you want to sanity-check `data/donations.json` before pushing donation updates.
+- Use the payment center importer and one-league reconciliation for individual LeagueSafe exports such as `DYN8`, `RD4`, or `KP1`.
 - Use the BBU payment reconciliation when you need to match shared Best Ball Union LeagueSafe payments to Sleeper managers across multiple BBU rooms.
 - Use the BBU payment workbook exporter when you want the private reconciliation CSVs turned into a formatted Excel file with filters, frozen headers, and color-coded statuses.
 - Use the league data diff report when you want a human-readable review of what changed in `data/leagues.json`.
