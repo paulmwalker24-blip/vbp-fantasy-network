@@ -176,10 +176,10 @@ Refresh the private payment index for all league records:
 Build the private payment index for all leagues and tell me which leagues still do not have a stored LeagueSafe export.
 ```
 
-Build the easy-to-open commissioner payment folder with a file per league and confirmed-manager master list:
+Build the easy-to-open commissioner payment folder with a file per league and a running manager directory:
 
 ```text
-Rebuild my PAYMENT-CENTER folder with the latest league payment sheets and confirmed manager master list.
+Rebuild my PAYMENT-CENTER folder with the latest league payment sheets and cross-league manager directory, including paid names that still need a Sleeper match.
 ```
 
 For ordinary single-league files, use `scripts/import-leaguesafe-export.ps1`, `scripts/reconcile-league-payments.ps1`, and `scripts/build-payment-index.ps1`. Use `scripts/build-commissioner-payment-center.ps1` for the Explorer-facing view. For payment pools shared across several rooms, continue with the specialized BBU or bracket workflows below.
@@ -190,6 +190,12 @@ Import the latest downloaded Best Ball Union LeagueSafe export before rebuilding
 
 ```text
 Import this new BBU LeagueSafe export into the private tracker inputs, replacing the previous current export: C:\Users\pkwal\Downloads\VBP's Best Ball Union 2026 payment details (2).csv
+```
+
+Fast refresh after a new BBU CSV or identity confirmation, updating the readable Payment Center without waiting for Excel formatting:
+
+```text
+Quick-refresh my BBU Payment Center from this new LeagueSafe CSV and summarize what changed; skip the Excel workbook unless I ask for it: C:\Users\pkwal\Downloads\VBP's Best Ball Union 2026 payment details (8).csv
 ```
 
 Import the latest Redraft Bracket LeagueSafe export and rebuild its private reconciliation sheets:
@@ -221,6 +227,8 @@ Rebuild the formatted Excel workbook from the latest BBU reconciliation CSVs:
 ```text
 Build and open the formatted BBU payment tracker workbook from the latest private reconciliation CSVs.
 ```
+
+The formatted Excel rebuild is intentionally optional because it is much slower than the Markdown and CSV Payment Center refresh.
 
 ## Bracket Ledger
 
@@ -265,7 +273,7 @@ Run the power rankings sync and refresh data/power-rankings.json from Sleeper, u
 Refresh owner-by-position ranking boards and confirm the live scoring profile:
 
 ```text
-Run the power rankings sync for DYN2, confirm its Sleeper scoring settings were read successfully, and summarize the owner rankings for QB, RB, WR, and TE.
+Run the power rankings sync for DYN1, confirm its Sleeper scoring settings were read successfully, and summarize the owner rankings for QB, RB, WR, and TE.
 ```
 
 Refresh ranking readiness for every Sleeper-backed league:
@@ -280,10 +288,10 @@ Refresh live drafting boards from current Sleeper rosters:
 Run the power rankings sync with PublishDrafting so drafting leagues use the latest rosters from Sleeper right now.
 ```
 
-Refresh only DYN2:
+Refresh only DYN1:
 
 ```text
-Run the power rankings sync for DYN2 only, then summarize the new top five with their scores and biggest component strengths.
+Run the power rankings sync for DYN1 only, then summarize the new top five with their scores and strongest position groups.
 ```
 
 Refresh pending leagues too for commissioner review:

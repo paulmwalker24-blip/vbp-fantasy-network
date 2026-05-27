@@ -4,7 +4,9 @@ param(
   [string]$PaymentIndexPath = "reports/private/payments/league-payment-index.csv",
   [string]$GenericReportRoot = "reports/private/payments",
   [string]$BbuTrackerPath = "reports/private/bbu-payment-reconciliation/commissioner-tracker.csv",
+  [string]$BbuUnmatchedPaymentsPath = "reports/private/bbu-payment-reconciliation/unmatched-payments.csv",
   [string]$BracketTrackerPath = "reports/private/redraft-bracket-payment-reconciliation/commissioner-tracker.csv",
+  [string]$BracketUnmatchedPaymentsPath = "reports/private/redraft-bracket-payment-reconciliation/paid-not-assigned.csv",
   [string]$GauntletPaymentPath = "data/private/leaguesafe-gauntlet-payments.csv",
   [string]$OutputRoot = "PAYMENT-CENTER",
   [switch]$PassThru
@@ -88,6 +90,115 @@ foreach ($manager in $masterRows) {
   $masterLines += "| $(Convert-ToMarkdownText $manager.confirmedName) | $(Convert-ToMarkdownText $manager.sleeperNames) | $(Convert-ToMarkdownText $manager.leagueSafeNames) | $(Convert-ToMarkdownText $manager.notes) |"
 }
 $masterLines | Set-Content -LiteralPath $masterPath -Encoding UTF8
+
+$pendingPaidRows = [System.Collections.Generic.List[object]]::new()
+if (Test-Path -LiteralPath $BbuUnmatchedPaymentsPath) {
+  foreach ($payment in @(Import-Csv -LiteralPath $BbuUnmatchedPaymentsPath)) {
+    if ((Get-Text $payment.payerName) -and [decimal](Get-Text $payment.amount)) {
+      $pendingPaidRows.Add([pscustomobject]@{
+        paymentSource = "Best Ball Union"
+        leagueSafeName = Get-Text $payment.payerName
+        leagueSafeEmail = Get-Text $payment.payerEmail
+        paid = Get-Text $payment.amount
+        status = "Paid - needs Sleeper identity match"
+      }) | Out-Null
+    }
+  }
+}
+if (Test-Path -LiteralPath $BracketUnmatchedPaymentsPath) {
+  foreach ($payment in @(Import-Csv -LiteralPath $BracketUnmatchedPaymentsPath)) {
+    if ((Get-Text $payment.'LeagueSafe Name') -and [decimal](Get-Text $payment.Paid)) {
+      $pendingPaidRows.Add([pscustomobject]@{
+        paymentSource = "Redraft Bracket"
+        leagueSafeName = Get-Text $payment.'LeagueSafe Name'
+        leagueSafeEmail = Get-Text $payment.'LeagueSafe Email'
+        paid = Get-Text $payment.Paid
+        status = Get-Text $payment.Status
+      }) | Out-Null
+    }
+  }
+}
+if (Test-Path -LiteralPath $GenericReportRoot) {
+  foreach ($unmatchedFile in @(Get-ChildItem -LiteralPath $GenericReportRoot -Recurse -File -Filter "unmatched-leaguesafe-rows.csv")) {
+    $leagueId = Split-Path -Leaf (Split-Path -Parent $unmatchedFile.FullName)
+    foreach ($payment in @(Import-Csv -LiteralPath $unmatchedFile.FullName)) {
+      $paid = Get-Text $payment.paid
+      if ((Get-Text $payment.leagueSafeOwner) -and $paid -and [decimal]$paid -gt 0) {
+        $pendingPaidRows.Add([pscustomobject]@{
+          paymentSource = $leagueId
+          leagueSafeName = Get-Text $payment.leagueSafeOwner
+          leagueSafeEmail = Get-Text $payment.leagueSafeEmail
+          paid = $paid
+          status = Get-Text $payment.status
+        }) | Out-Null
+      }
+    }
+  }
+}
+$pendingPaidRows = @($pendingPaidRows | Sort-Object paymentSource, leagueSafeName)
+$pendingPaidCsvPath = Join-Path $csvRoot "PENDING-PAID-IDENTITIES.csv"
+$pendingPaidRows | Export-Csv -LiteralPath $pendingPaidCsvPath -NoTypeInformation -Encoding UTF8
+$unmatchedBbuSleeperRows = @()
+if (Test-Path -LiteralPath $BbuTrackerPath) {
+  $unmatchedBbuSleeperRows = @(Import-Csv -LiteralPath $BbuTrackerPath |
+    Where-Object { -not (Get-Text $_.'Person ID') } |
+    Group-Object 'Sleeper User ID' |
+    ForEach-Object {
+      $rows = @($_.Group)
+      $isAssigned = @($rows | Where-Object { (Get-Text $_.Assignment) -eq "Assigned team" }).Count -gt 0
+      [pscustomobject]@{
+        sleeperName = Get-Text $rows[0].'Sleeper Name'
+        sleeperUserId = Get-Text $rows[0].'Sleeper User ID'
+        leagues = Join-TextValues @($rows | ForEach-Object { $_.BBU })
+        status = if ($isAssigned) { "Assigned - needs LeagueSafe identity match" } else { "Waiting assignment - identity not matched" }
+      }
+    } | Sort-Object sleeperName)
+}
+$unmatchedBbuSleeperCsvPath = Join-Path $csvRoot "BBU-UNMATCHED-SLEEPER-MANAGERS.csv"
+$unmatchedBbuSleeperRows | Export-Csv -LiteralPath $unmatchedBbuSleeperCsvPath -NoTypeInformation -Encoding UTF8
+$directoryPath = Join-Path $OutputRoot "MASTER-MANAGER-DIRECTORY.md"
+$directoryLines = @(
+  "# Master Manager Directory",
+  "",
+  "Use this running cross-league lookup before matching a new payment or Sleeper manager. Confirmed identities can be reused immediately; pending paid names still need a confirmed Sleeper connection.",
+  "",
+  "## Confirmed Identities",
+  "",
+  "| Manager | Sleeper Name | LeagueSafe Name | Notes |",
+  "| --- | --- | --- | --- |"
+)
+foreach ($manager in $masterRows) {
+  $directoryLines += "| $(Convert-ToMarkdownText $manager.confirmedName) | $(Convert-ToMarkdownText $manager.sleeperNames) | $(Convert-ToMarkdownText $manager.leagueSafeNames) | $(Convert-ToMarkdownText $manager.notes) |"
+}
+$directoryLines += @(
+  "",
+  "## Paid Names Pending Sleeper Identity",
+  "",
+  "| Source | LeagueSafe Name | Paid | Status |",
+  "| --- | --- | ---: | --- |"
+)
+if ($pendingPaidRows.Count -eq 0) {
+  $directoryLines += "| - | No unresolved paid identities | - | - |"
+} else {
+  foreach ($payment in $pendingPaidRows) {
+    $directoryLines += "| $(Convert-ToMarkdownText $payment.paymentSource) | $(Convert-ToMarkdownText $payment.leagueSafeName) | $(Format-MoneyDisplay $payment.paid) | $(Convert-ToMarkdownText $payment.status) |"
+  }
+}
+$directoryLines += @(
+  "",
+  "## BBU Sleeper Names Pending Identity Review",
+  "",
+  "| Sleeper Name | BBU Room(s) | Status |",
+  "| --- | --- | --- |"
+)
+if ($unmatchedBbuSleeperRows.Count -eq 0) {
+    $directoryLines += "| No unresolved BBU Sleeper identities | - | - |"
+} else {
+  foreach ($manager in $unmatchedBbuSleeperRows) {
+    $directoryLines += "| $(Convert-ToMarkdownText $manager.sleeperName) | $(Convert-ToMarkdownText $manager.leagues) | $(Convert-ToMarkdownText $manager.status) |"
+  }
+}
+$directoryLines | Set-Content -LiteralPath $directoryPath -Encoding UTF8
 
 $indexRows = [System.Collections.Generic.List[object]]::new()
 foreach ($league in $leagues) {
@@ -215,6 +326,7 @@ foreach ($league in $leagues) {
     if ([decimal]::TryParse((Get-Text $row.paid), [ref]$amount)) { $paidTotal += $amount }
     if ([decimal]::TryParse((Get-Text $row.owes), [ref]$amount)) { $owedTotal += $amount }
   }
+  $paidTotalLabel = if ($source -eq "Shared Best Ball Union tracker") { "Confirmed allocated paid total" } else { "Imported paid total" }
   $leagueLines = @(
     "# $leagueId - $leagueName",
     "",
@@ -222,7 +334,7 @@ foreach ($league in $leagues) {
     "- League status: $(Get-Text $league.status)",
     "- Payment source: $source",
     "- Sleeper entries shown: $($assignedRows.Count)",
-    "- Imported paid total: $(Format-MoneyDisplay $paidTotal)",
+    "- ${paidTotalLabel}: $(Format-MoneyDisplay $paidTotal)",
     "- Imported owed total: $(Format-MoneyDisplay $owedTotal)",
     "",
     "## Needs Attention",
@@ -231,10 +343,10 @@ foreach ($league in $leagues) {
   if ($actionRows.Count -eq 0) {
     $leagueLines += "No unresolved entries in the current tracker."
   } else {
-    $leagueLines += "| Sleeper Manager | LeagueSafe Name | Paid | Owes | Status | Match Note |"
-    $leagueLines += "| --- | --- | ---: | ---: | --- | --- |"
+    $leagueLines += "| Sleeper Manager | LeagueSafe Name | Paid | Owes | Status | Match Note | Notes |"
+    $leagueLines += "| --- | --- | ---: | ---: | --- | --- | --- |"
     foreach ($row in $actionRows) {
-      $leagueLines += "| $(Convert-ToMarkdownText $row.sleeperName) | $(Convert-ToMarkdownText $row.leagueSafeName) | $(Format-MoneyDisplay $row.paid) | $(Format-MoneyDisplay $row.owes) | $(Convert-ToMarkdownText $row.status) | $(Convert-ToMarkdownText $row.matchMethod) |"
+      $leagueLines += "| $(Convert-ToMarkdownText $row.sleeperName) | $(Convert-ToMarkdownText $row.leagueSafeName) | $(Format-MoneyDisplay $row.paid) | $(Format-MoneyDisplay $row.owes) | $(Convert-ToMarkdownText $row.status) | $(Convert-ToMarkdownText $row.matchMethod) | $(Convert-ToMarkdownText $row.notes) |"
     }
   }
   $leagueLines += @(
@@ -317,6 +429,7 @@ $lines = @(
   "## Main Files",
   "",
   "- ``ALL-LEAGUES-PAYMENT-INDEX.md`` - readable list of every league with links to each league page.",
+  "- ``MASTER-MANAGER-DIRECTORY.md`` - running cross-league list of confirmed identities plus paid names still needing a Sleeper match.",
   "- ``MASTER-CONFIRMED-MANAGERS.md`` - readable confirmed Sleeper/LeagueSafe identity master list.",
   "- ``LEAGUES\`` - readable Markdown payment page for each league record.",
   "- ``CSV-EXPORTS\`` - spreadsheet versions for sorting or opening in Excel.",
@@ -326,6 +439,8 @@ $lines = @(
   "- League sheets created: $($indexRows.Count)",
   "- League sheets with existing payment/tracker content: $readySheets",
   "- Confirmed manager identities saved: $($masterRows.Count)",
+  "- Paid identities still needing a Sleeper match: $($pendingPaidRows.Count)",
+  "- BBU Sleeper identities still needing review: $($unmatchedBbuSleeperRows.Count)",
   "",
   "League pages with no payment input yet contain a reminder until the corresponding LeagueSafe export is imported and reconciled."
 )
@@ -345,6 +460,7 @@ $result = [pscustomobject]@{
   startHerePath = $startPath
   indexPath = $indexPath
   masterManagerPath = $masterPath
+  masterDirectoryPath = $directoryPath
   csvExportRoot = $csvRoot
   leagueSheetCount = $indexRows.Count
   populatedLeagueSheetCount = $readySheets

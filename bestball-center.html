@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Best Ball Union Center | VBP Fantasy Network</title>
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260527a" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260527c" />
 </head>
-<body class="constitution-page format-center-page">
+<body class="constitution-page format-center-page bbu-center-page">
   <div class="constitution-nav" id="top">
     <div class="container format-center-nav-links">
       <a href="index.html#league-centers" class="constitution-back-link">Back to Hub</a>
@@ -42,22 +42,23 @@
         </div>
       </section>
 
-      <section class="constitution-content" id="scoringCenter" data-bbu-panel="scoring">
-        <div class="section-heading">
-          <h2>Center Snapshot</h2>
-          <p>Current league leaders, overall points race, and weekly high-score tracking across Best Ball Union.</p>
+      <section class="constitution-content bbu-scoring-hero" id="scoringCenter" data-bbu-panel="scoring">
+        <div class="section-heading bbu-scoring-heading">
+          <p class="bbu-section-kicker">Union Scoreboard</p>
+          <h2>The Points Race</h2>
+          <p>One field, every room: season scoring leaders and the weekly high-score chase across Best Ball Union.</p>
         </div>
-        <div class="format-center-meta-grid">
+        <div class="format-center-meta-grid bbu-meta-grid">
+          <div class="format-center-metric bbu-featured-metric">
+            <span class="format-center-metric-label">Overall Points Leader</span>
+            <strong class="format-center-metric-value" id="centerOverallLeader">Loading...</strong>
+          </div>
           <div class="format-center-metric">
             <span class="format-center-metric-label">Season</span>
             <strong class="format-center-metric-value" id="centerSeasonLabel">Loading...</strong>
           </div>
           <div class="format-center-metric">
-            <span class="format-center-metric-label">Last Updated</span>
-            <strong class="format-center-metric-value" id="centerLastUpdated">Loading...</strong>
-          </div>
-          <div class="format-center-metric">
-            <span class="format-center-metric-label">Leagues Tracked</span>
+            <span class="format-center-metric-label">Rooms Tracked</span>
             <strong class="format-center-metric-value" id="centerLeagueCount">Loading...</strong>
           </div>
           <div class="format-center-metric">
@@ -65,8 +66,8 @@
             <strong class="format-center-metric-value" id="centerTeamCount">Loading...</strong>
           </div>
           <div class="format-center-metric">
-            <span class="format-center-metric-label">Overall Leader</span>
-            <strong class="format-center-metric-value" id="centerOverallLeader">Loading...</strong>
+            <span class="format-center-metric-label">Last Refresh</span>
+            <strong class="format-center-metric-value" id="centerLastUpdated">Loading...</strong>
           </div>
         </div>
         <div class="format-center-banner" id="centerStatusBanner" hidden></div>
@@ -74,14 +75,14 @@
 
       <section class="power-rankings-card power-rankings-feature" id="powerRankings" data-bbu-panel="power" hidden>
         <div>
-          <p class="power-rankings-kicker">Draft-Build Snapshot</p>
-          <h2 id="bbuPowerRankingsHeading">Combined BBU Power Rankings</h2>
-          <p id="bbuPowerRankingsCopy">Loading the completed Best Ball Union rooms from the latest generated snapshot.</p>
+          <p class="power-rankings-kicker">Current No. 1</p>
+          <h2 id="bbuPowerRankingsHeading">Loading overall leader...</h2>
+          <p id="bbuPowerRankingsCopy">Finding the top team in the Best Ball Union power rankings.</p>
         </div>
         <div class="power-rankings-feature-score">
-          <span class="power-rankings-score-label">Top Score</span>
+          <span class="power-rankings-score-label">Power Score</span>
           <strong id="bbuPowerTopScore">--</strong>
-          <span id="bbuPowerTopTeam">Loading...</span>
+          <span id="bbuPowerTopTeam">Overall Rank #1</span>
         </div>
       </section>
 
@@ -138,30 +139,37 @@
         </div>
       </section>
 
-      <section class="constitution-section-card" data-bbu-panel="scoring">
-        <div class="constitution-section-header">
-          <h2>Current League Leaders</h2>
+      <section class="constitution-section-card bbu-score-section bbu-room-front-runners" data-bbu-panel="scoring">
+        <div class="constitution-section-header bbu-section-header">
+          <div>
+            <p class="bbu-section-kicker">Room Race</p>
+            <h2>Front-Runners By Room</h2>
+          </div>
           <a href="#top" class="constitution-jump-link">Back to top</a>
         </div>
-        <div class="format-center-division-grid" id="leagueLeadersContainer">
+        <div class="format-center-division-grid bbu-room-grid" id="leagueLeadersContainer">
           <div class="empty-state">Loading league leaders...</div>
         </div>
       </section>
 
-      <section class="constitution-section-card" data-bbu-panel="scoring">
-        <div class="constitution-section-header">
-          <h2>Overall Points Leaderboard (Top 20)</h2>
+      <section class="constitution-section-card bbu-score-section bbu-points-race" data-bbu-panel="scoring">
+        <div class="constitution-section-header bbu-section-header">
+          <div>
+            <p class="bbu-section-kicker">Overall Field</p>
+            <h2>Union Points Race</h2>
+            <p class="bbu-section-copy">Top 20 teams across every active Best Ball Union room.</p>
+          </div>
           <a href="#top" class="constitution-jump-link">Back to top</a>
         </div>
-        <div class="format-center-table-wrap">
-          <table class="constitution-table format-center-table">
+        <div class="format-center-table-wrap bbu-table-wrap">
+          <table class="constitution-table format-center-table bbu-race-table">
             <thead>
               <tr>
-                <th scope="col">Rank</th>
+                <th scope="col">Place</th>
                 <th scope="col">Team</th>
-                <th scope="col">League</th>
+                <th scope="col">Room</th>
                 <th scope="col">Record</th>
-                <th scope="col">PF</th>
+                <th scope="col">Points</th>
               </tr>
             </thead>
             <tbody id="overallLeaderboardBody">
@@ -173,18 +181,21 @@
         </div>
       </section>
 
-      <section class="constitution-section-card" data-bbu-panel="scoring">
-        <div class="constitution-section-header">
-          <h2>Weekly High Scores</h2>
+      <section class="constitution-section-card bbu-score-section bbu-weekly-crowns" data-bbu-panel="scoring">
+        <div class="constitution-section-header bbu-section-header">
+          <div>
+            <p class="bbu-section-kicker">Weekly Chase</p>
+            <h2>Weekly Crown Winners</h2>
+          </div>
           <a href="#top" class="constitution-jump-link">Back to top</a>
         </div>
-        <div class="format-center-table-wrap">
-          <table class="constitution-table format-center-table">
+        <div class="format-center-table-wrap bbu-table-wrap">
+          <table class="constitution-table format-center-table bbu-race-table">
             <thead>
               <tr>
                 <th scope="col">Week</th>
                 <th scope="col">Team</th>
-                <th scope="col">League</th>
+                <th scope="col">Room</th>
                 <th scope="col">Score</th>
               </tr>
             </thead>
@@ -199,6 +210,6 @@
     </div>
   </main>
 
-  <script src="assets/js/bestball-center.js?v=20260527a"></script>
+  <script src="assets/js/bestball-center.js?v=20260527c"></script>
 </body>
 </html>

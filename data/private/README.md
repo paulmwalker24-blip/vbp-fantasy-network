@@ -48,6 +48,8 @@ This creates the local-only top-level `PAYMENT-CENTER/` folder with:
 - `START-HERE.md`
 - `ALL-LEAGUES-PAYMENT-INDEX.md`
 - `MASTER-CONFIRMED-MANAGERS.md`
+- `MASTER-MANAGER-DIRECTORY.md`, which includes confirmed identities plus paid names still needing a Sleeper match
+- `CSV-EXPORTS/BBU-UNMATCHED-SLEEPER-MANAGERS.csv`, which keeps unmatched BBU Sleeper identities easy to compare against paid names
 - `LEAGUES/<LEAGUE-ID> - <LEAGUE-NAME>.md` for each readable league page
 - `CSV-EXPORTS/` for spreadsheet versions
 

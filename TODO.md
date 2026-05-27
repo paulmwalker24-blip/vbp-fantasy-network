@@ -2,7 +2,9 @@
 
 ## Immediate
 
-- [ ] No immediate cleanup items right now.
+- [ ] Resolve the Best Ball Union lineup mismatch: the constitution says `3 WR` starters, while Sleeper currently reports `2 WR` starters for completed `BBU1` through `BBU5` and open `BBU6` through `BBU10`.
+- [ ] Verify and record the pending Mandalore LeagueSafe refund in `DYN8`; the league is now full and paid, so this remains a historical payment-record follow-up rather than a recruiting blocker.
+- [ ] Add public rendered ranking destinations for future completed Gauntlet, Redraft, Keeper, Chopped, Redraft Bracket, and Dynasty Bracket boards before their first board is promoted as live.
 
 ## Next Automation Ideas
 
@@ -56,6 +58,8 @@
 - [x] Move the Best Ball Union Top 20 board onto generated completed-room rankings and add format-specific ranking profiles for current league setups.
 - [x] Add an organized private payment center with generic single-league LeagueSafe import, Sleeper reconciliation, and an all-league payment index, starting with `DYN8`.
 - [x] Add a top-level private `PAYMENT-CENTER` explorer view with one league sheet per record and a confirmed-manager master list.
+- [x] Extend the payment center with a cross-league running manager directory and unmatched paid/Sleeper BBU queues.
+- [x] Add a fast BBU Payment Center refresh workflow that skips slow Excel formatting by default and preserves prior outputs on Sleeper fetch failures.
 - [x] Add Redraft Bracket LeagueSafe import and reconciliation sheets to the private payment workbook.
 - [x] Add a Best Ball Gauntlet LeagueSafe import for the new BG1 payment export.
 - [x] Add a private BBU LeagueSafe export importer that replaces the current raw export and normalized paid-row CSV.

@@ -264,6 +264,8 @@ Private inputs live under `data/private/` and are ignored by git:
 
 The script writes `reports/private/bbu-payment-reconciliation.md`, plus Excel-friendly CSV files under `reports/private/bbu-payment-reconciliation/`, also ignored by git.
 
+The script now stops without replacing existing reconciliation outputs if any live Sleeper league pull fails. Use `-AllowPartialSleeperData` only when an intentionally incomplete diagnostic report is needed.
+
 CSV outputs:
 
 - `sleeper-entries.csv` - one row per Sleeper manager entry by BBU room
@@ -286,6 +288,30 @@ Structured output:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\reconcile-bbu-payments.ps1 -PassThru | ConvertTo-Json -Depth 6
+```
+
+## `refresh-bbu-payment-center.ps1`
+
+Runs the routine BBU workflow in one command: optionally imports a new LeagueSafe CSV, reconciles current Sleeper identities, rebuilds the payment index, and regenerates the readable `PAYMENT-CENTER/` files.
+
+It intentionally skips the formatted Excel workbook by default because Excel automation is the slowest part of the workflow. Add `-Workbook` only when the `.xlsx` output needs to be refreshed.
+
+Quick refresh using the already imported BBU export:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\refresh-bbu-payment-center.ps1
+```
+
+Import a new export and refresh the readable payment center:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\refresh-bbu-payment-center.ps1 -SourcePath "C:\Users\pkwal\Downloads\VBP's Best Ball Union 2026 payment details (8).csv"
+```
+
+Refresh everything including the formatted Excel workbook:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\refresh-bbu-payment-center.ps1 -SourcePath "C:\Users\pkwal\Downloads\VBP's Best Ball Union 2026 payment details (8).csv" -Workbook
 ```
 
 ## `import-leaguesafe-export.ps1`
@@ -331,6 +357,8 @@ Creates the Explorer-friendly, private top-level `PAYMENT-CENTER/` folder. It co
 - `START-HERE.md` - landing page
 - `ALL-LEAGUES-PAYMENT-INDEX.md` - readable links to every league page
 - `MASTER-CONFIRMED-MANAGERS.md` - readable reusable confirmed Sleeper/LeagueSafe identities
+- `MASTER-MANAGER-DIRECTORY.md` - running cross-league lookup with confirmed identities plus paid names still waiting for a Sleeper match
+- `CSV-EXPORTS/BBU-UNMATCHED-SLEEPER-MANAGERS.csv` - unique unmatched BBU Sleeper identities, including unassigned waiting-room members
 - `LEAGUES/<LEAGUE-ID> - <LEAGUE-NAME>.md` - one readable payment page per league, with a placeholder reminder until its export is imported
 - `CSV-EXPORTS/` - separate spreadsheet-friendly versions
 
@@ -497,10 +525,10 @@ Default usage:
 powershell -ExecutionPolicy Bypass -File .\scripts\sync-power-rankings.ps1
 ```
 
-Sync only DYN2:
+Sync only DYN1:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\sync-power-rankings.ps1 -LeagueRecordIds DYN2
+powershell -ExecutionPolicy Bypass -File .\scripts\sync-power-rankings.ps1 -LeagueRecordIds DYN1
 ```
 
 Include pending or held leagues in the output for commissioner review:
@@ -518,7 +546,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\sync-power-rankings.ps1 -Publ
 Structured output:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\sync-power-rankings.ps1 -LeagueRecordIds DYN2 -PassThru | ConvertTo-Json -Depth 10
+powershell -ExecutionPolicy Bypass -File .\scripts\sync-power-rankings.ps1 -LeagueRecordIds DYN1 -PassThru | ConvertTo-Json -Depth 10
 ```
 
 ## `export-bracket-report.ps1`

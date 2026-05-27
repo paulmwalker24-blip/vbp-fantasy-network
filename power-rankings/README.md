@@ -13,7 +13,6 @@ Use this folder for:
 Runtime files stay in their existing public locations:
 - `power-rankings.html`
 - `dynasty-power-rankings.html`
-- `power-rankings-demo.html`
 - `assets/js/power-rankings.js`
 - `assets/js/bestball-center.js`
 - `data/power-rankings.json`

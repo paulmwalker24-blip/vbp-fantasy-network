@@ -1,5 +1,5 @@
 const POWER_RANKINGS_DATA_URL = "data/power-rankings.json";
-const DEFAULT_LEAGUE_RECORD_ID = "DYN2";
+const DEFAULT_LEAGUE_RECORD_ID = "DYN1";
 
 function getActiveLeagueRecordId() {
   const params = new URLSearchParams(window.location.search);

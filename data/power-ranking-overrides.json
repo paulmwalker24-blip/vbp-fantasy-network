@@ -2,7 +2,7 @@
   "version": 1,
   "notes": "Commissioner-owned overrides for generated power rankings. Use this for facts that Sleeper cannot know reliably, such as an unfinished rookie draft, manual injury context, schedule notes, or format-specific review holds.",
   "teamAdjustmentSchema": {
-    "leagueRecordId": "DYN2",
+    "leagueRecordId": "DYN1",
     "rosterId": 1,
     "contextAdjustment": 0,
     "scheduleNote": "Example: early schedule is easier/tougher than average, or playoff schedule has a clear edge.",

@@ -29,13 +29,16 @@ powershell -ExecutionPolicy Bypass -File .\scripts\sync-sleeper-leagues.ps1
 
 Manual fields such as `inviteLink`, `leagueSafeLink`, `constitutionPage`, `buyIn`, and curated public names should still be reviewed before pushing changes.
 
-- League type first: `redraft`, `dynasty`, `bestball`, `bracket`, `keeper`, or `chopped`
+- League type first: `redraft`, `dynasty`, `dynastybracket`, `bestball`, `gauntlet`, `bracket`, `keeper`, `pickem`, or `chopped`
 - Internal ID: leave blank if this is a new league; infer it by format sequence
   - `redraft` -> `RD1`, `RD2`, `RD3`
   - `dynasty` -> `DYN1`, `DYN2`, `DYN3`
+  - `dynastybracket` -> `DYB1`, `DYB2`, `DYB3`
   - `bestball` -> `BBU1`, `BBU2`, `BBU3`
+  - `gauntlet` -> `BG1`, `BG2`, `BG3`
   - `bracket` -> `RDB1`, `RDB2`, `RDB3`
   - `keeper` -> `KP1`, `KP2`, `KP3`
+  - `pickem` -> `PK1`, `PK2`, `PK3`
   - `chopped` -> `CH1`, `CH2`, `CH3`
 - Sleeper league ID:
 - Sleeper season:

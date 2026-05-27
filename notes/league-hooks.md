@@ -5,19 +5,23 @@ Short recruiting hooks capped at 200 characters or less.
 ## Standard Dynasty
 
 - `DYN6`: Paid in full. Do not use for active recruiting.
-- `DYN8`: $30 Superflex dynasty startup with a slow draft and three seasons due up front. Current paid count: 8/12.
+- `DYN8`: Full and paid. Do not use for active recruiting.
 
 ## Dynasty Bracket
 
 - Current dynasty bracket priority: 48-team $50 Superflex dynasty bracket, four 12-team divisions, $1,380 to champion; fill Foundry first.
-- `Foundry`: 48-team Superflex dynasty bracket division with a shared 16-team playoff, 3RR slow startup, taxi squads, and 3 years due up front. Current occupancy: 0/12.
-- `Forge`: 48-team Superflex dynasty bracket division with a shared 16-team playoff, 3RR slow startup, taxi squads, and 3 years due up front. Current occupancy: 0/12.
+- `Foundry`: 48-team Superflex dynasty bracket division with a shared 16-team playoff, 3RR slow startup, taxi squads, and 3 years due up front. Current occupancy: 7/12 assigned.
+- `Forge`: 48-team Superflex dynasty bracket division with a shared 16-team playoff, 3RR slow startup, taxi squads, and 3 years due up front. Current occupancy: 1/12 assigned.
 - `Legacy`: 48-team Superflex dynasty bracket division with a shared 16-team playoff, 3RR slow startup, taxi squads, and 3 years due up front. Current occupancy: 0/12.
 - `Empire`: 48-team Superflex dynasty bracket division with a shared 16-team playoff, 3RR slow startup, taxi squads, and 3 years due up front. Current occupancy: 0/12.
 
 ## Best Ball Union
 
-- `BBU3`: $10 fast-draft best ball, 7/10 paid. Drafts tonight at 8 PM CST. Auto lineups, Progressive PPR, and Union high-score tracking.
+- `BBU6`: $10 fast-draft best ball, currently 7/10 paid. Drafts within 24 hours after full and paid. Auto lineups, Progressive PPR, and Union high-score tracking.
+
+## Pick'em
+
+- `PK1`: $10 NFL spread pick'em on Sleeper. No draft or lineup setting; weekly picks count toward season standings, with weekly prizes beginning at 50 paid entries.
 
 ## Bracket Redraft
 
@@ -26,12 +30,12 @@ Short recruiting hooks capped at 200 characters or less.
 - `Apex`: $50 slow room in the 60-team bracket, one of five 12-team divisions, with $1,380 to champion. Current paid count: 11/12.
 - `Iron`: $50 fast room in the 60-team bracket, one of five 12-team divisions, with $1,380 to champion. Current paid count: 5/12.
 - `Vanguard`: Fast room in the returning bracket redraft format, but Iron is the current fast-draft priority because it already has paid owners.
-- `Dominion`: Slow room in the returning bracket redraft format with Progressive PPR and the same shared tournament structure. Current occupancy: 0/12.
+- `Dominion`: Slow room in the returning bracket redraft format with Progressive PPR and the same shared tournament structure. Current occupancy: 4/12 assigned.
 
 ## Standard Redraft
 
 - Current redraft priority: `RD4` is the sharper standalone seasonal push and should be paired with Bracket Redraft when you want a broader redraft post.
-- `RD4`: $100 standalone redraft with Progressive PPR, no kicker, no defense, and a 6-team playoff with top-two byes. Built for a sharper seasonal room. Current paid count: 6/12.
+- `RD4`: $100 standalone redraft with Progressive PPR, no kicker, no defense, and a 6-team playoff with top-two byes. Current count: 10/12 assigned, 6/12 paid.
 
 ## Keeper
 

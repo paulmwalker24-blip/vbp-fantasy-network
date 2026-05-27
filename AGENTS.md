@@ -99,6 +99,7 @@ The site is effectively data-driven through local league JSON, local donation JS
     - `export-bracket-report.ps1`
     - `sync-keeper-ledger.ps1`
     - `sync-power-rankings.ps1`
+    - `refresh-bbu-payment-center.ps1`
     - `bump-cache-bust.ps1`
     - `check-constitutions.ps1`
     - `league-data-diff-report.ps1`
@@ -187,8 +188,9 @@ The site is effectively data-driven through local league JSON, local donation JS
 - `power-rankings.html`
   - Public selector hub for network power rankings.
   - Keep all league records visible in the selector, even when a league is pre-draft or currently drafting.
-  - Redraft Bracket and Dynasty Bracket rankings should be combined Top 20 boards only, not separate division boards.
-  - Best Ball Union rankings should be combined Top 20 boards unless the commissioner asks for a different split.
+- Redraft Bracket and Dynasty Bracket rankings should be combined Top 20 boards only, not separate division boards.
+- Best Ball Union rankings should be combined Top 20 boards unless the commissioner asks for a different split.
+- Pick'em should be visible in the selector for completeness but should use standings rather than a roster power-ranking board.
 
 - `dynasty-power-rankings.html`
   - Standalone public page for completed-draft dynasty league power rankings.
@@ -290,7 +292,7 @@ Current league notes:
 - The Best Ball Union Center sample preview should remain clearly labeled and may stay in place until live BBU results are meaningful enough to replace it cleanly.
 - For the Best Ball Union Center, weekly high scores refer to the single highest-scoring team across all BBU leagues for that week, not per-division weekly winners.
 - For the Best Ball Union Center, the public overall points leaderboard is intentionally limited to the top 20 teams.
-- `BBU1` through `BBU5` are full and drafted. Their generated rankings feed the public combined Top 20 Best Ball Union board. Public BBU recruiting should focus on the next open room, currently `BBU6`, unless newer data says otherwise.
+- `BBU1` through `BBU5` are full and drafted. Their generated rankings feed the public combined Top 20 Best Ball Union board. Public BBU recruiting should focus on the next open room, currently `BBU6` at `7/10 paid`, unless newer data says otherwise.
 - The completed 2026 BBU rooms currently report `1 QB`, `2 RB`, `2 WR`, `1 TE`, and `2 FLEX` as active Sleeper starter positions; generated rankings should follow that live architecture even if older copy needs correction.
 - `power-rankings.html` is the public hub for rankings across the network. Keep format-specific rankings in the format center when a center exists, such as BBU rankings in `bestball-center.html` and bracket path rankings in `bracket-center.html`.
 - Individual league power rankings should use compact league-room boards after each league drafts, with simple reasons, visible scores, and format-specific methodology instead of one generic model for every format.
@@ -402,16 +404,16 @@ If donation rendering breaks:
 
 - For Reddit league-promotion requests, treat `VBP Fantasy Network` as an active brand with live leagues, not something that is still being built, unless the user explicitly wants a softer in-progress angle.
 - Current recruiting priority is Redraft 4 and Bracket Redraft. Lead with `REDRAFT PRIORITY PUSH`, `REDRAFT 4`, or `BRACKET REDRAFT` from `marketing/recruiting-copy-ready.txt` unless the user explicitly asks for another format.
-- Redraft 4 copy should frame the league as the sharper standalone seasonal room and may mention `6/12 paid` while that count remains current.
+- Redraft 4 copy should frame the league as the sharper standalone seasonal room and may mention `10/12 assigned` and `6/12 paid` while those counts remain current.
 - Bracket Redraft copy should lead with the established returning-format hook and may say this is the third season the commissioner has run it. Avoid making `Year 3 Bracket Redraft` sound like the formal format name.
 - Current Bracket Redraft recruiting may highlight Apex (`11/12 paid`) and Titan (`8/12 paid`) for slow draft and Iron (`5/12 paid`) for fast draft while those paid counts remain current.
 - Chopped is full and should not be included in active recruiting copy unless a new chopped opening appears.
 - DYN1 is full and should not be included as an active orphan/takeover recruiting post unless a new vacancy appears.
-- DYN8 is an active `$30` Superflex startup and may be described as `8/12 paid` while that count remains current.
+- DYN8 is full and paid and should not be included in active recruiting copy.
 - Best Ball Gauntlet 1 is full and drafting and should not be included in active recruiting copy.
-- Current Best Ball Union recruiting is on `BBU6`, a `$10` fast-draft best ball room; use the currently verified paid count before stating one publicly.
+- Current Best Ball Union recruiting is on `BBU6`, a `$10` fast-draft best ball room at `7/10 paid`; say it drafts within 24 hours after full and paid while that count remains current.
 - Dynasty Bracket recruiting titles should make the 48-team format visible, such as `VBP Fantasy Network | 48-Team Dynasty Bracket Open | Superflex Startup`.
-- Current Dynasty Bracket recruiting should concentrate new owners into Foundry for slow draft and Empire for fast draft before pushing Forge or Legacy equally.
+- Current Dynasty Bracket recruiting should concentrate new owners into Foundry first; offer Empire when an owner specifically prefers fast draft.
 - Dynasty Bracket and Bracket Redraft recruiting copy may mention that the Bracket Center includes a cross-division trade tracker.
 - Default early Reddit posts to short, direct recruiting copy focused on open spots, active owners, competitive formats, and clear rules.
 - Keep the network name in the title or first sentence so the brand still gets repeated exposure even when the body copy stays simple.

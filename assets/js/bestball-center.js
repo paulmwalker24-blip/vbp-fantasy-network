@@ -451,7 +451,7 @@ function renderMeta(snapshots, overallLeaderboard, mode) {
   leagueCount.textContent = String(snapshots.length);
   teamCount.textContent = String(totalTeams);
   overallLeader.textContent = mode.showData && leader
-    ? `${leader.teamName} (${leader.leagueName})`
+    ? `${leader.teamName} / ${leader.leagueRecordId}`
     : "Season not active yet";
 
   statusBanner.hidden = false;
@@ -463,7 +463,7 @@ function renderMeta(snapshots, overallLeaderboard, mode) {
     return;
   }
 
-  subtitle.textContent = "Public leaderboard and weekly high-score snapshot for Best Ball Union.";
+  subtitle.textContent = "The season-points race and weekly high-score chase across Best Ball Union.";
   statusBanner.className = "format-center-banner is-live";
   statusBanner.textContent = "Live standings and weekly high scores are being pulled directly from Sleeper for the current Best Ball Union field.";
 }
@@ -482,11 +482,17 @@ function renderLeagueLeaders(snapshots, overallWeeklyHighWins, mode) {
 
   snapshots.forEach(snapshot => {
     const card = document.createElement("article");
-    card.className = "format-center-division-card";
+    card.className = "format-center-division-card bbu-room-card";
 
+    const header = document.createElement("div");
+    header.className = "bbu-room-card-header";
+    const roomLabel = document.createElement("span");
+    roomLabel.className = "bbu-room-label";
+    roomLabel.textContent = "Room Leader";
     const name = document.createElement("h3");
-    name.textContent = snapshot.leagueName;
-    card.appendChild(name);
+    name.textContent = snapshot.leagueRecordId;
+    header.append(name, roomLabel);
+    card.appendChild(header);
 
     if (!mode.showData) {
       const status = document.createElement("p");
@@ -508,18 +514,26 @@ function renderLeagueLeaders(snapshots, overallWeeklyHighWins, mode) {
     }
 
     const leaderName = document.createElement("p");
-    leaderName.className = "format-center-division-count";
+    leaderName.className = "format-center-division-count bbu-room-leader-name";
     leaderName.textContent = leader.teamName;
 
-    const leaderMeta = document.createElement("p");
-    leaderMeta.className = "format-center-scoreboard-note";
-    leaderMeta.textContent = `${formatRecord(leader)} | ${leader.pointsForDisplay} PF`;
+    const stats = document.createElement("div");
+    stats.className = "bbu-room-stats";
+    [
+      { label: "Record", value: formatRecord(leader) },
+      { label: "Points", value: leader.pointsForDisplay },
+      { label: "Weekly Highs", value: String(overallWeeklyHighWins.get(getEntryKey(leader)) || 0) }
+    ].forEach(stat => {
+      const item = document.createElement("div");
+      const value = document.createElement("strong");
+      const label = document.createElement("span");
+      value.textContent = stat.value;
+      label.textContent = stat.label;
+      item.append(value, label);
+      stats.appendChild(item);
+    });
 
-    const overallWeeklyHighCount = document.createElement("p");
-    overallWeeklyHighCount.className = "format-center-scoreboard-note";
-    overallWeeklyHighCount.textContent = `Overall weekly highs: ${overallWeeklyHighWins.get(getEntryKey(leader)) || 0}`;
-
-    card.append(leaderName, leaderMeta, overallWeeklyHighCount);
+    card.append(leaderName, stats);
     container.appendChild(card);
   });
 }
@@ -535,6 +549,9 @@ function renderOverallLeaderboard(overallLeaderboard, weeklyHighWins, mode) {
 
   overallLeaderboard.slice(0, OVERALL_LEADERBOARD_LIMIT).forEach((entry, index) => {
     const row = document.createElement("tr");
+    if (index < 3) {
+      row.className = "is-podium";
+    }
 
     const rank = document.createElement("td");
     rank.textContent = String(index + 1);
@@ -545,7 +562,7 @@ function renderOverallLeaderboard(overallLeaderboard, weeklyHighWins, mode) {
     team.appendChild(teamName);
 
     const league = document.createElement("td");
-    league.textContent = entry.leagueName;
+    league.textContent = entry.leagueRecordId;
 
     const record = document.createElement("td");
     record.textContent = formatRecord(entry);
@@ -582,7 +599,7 @@ function renderWeeklyHighScores(weeklyHighRows, mode) {
     teams.textContent = rowData.winners.map(entry => entry.teamName).join(" / ");
 
     const leagues = document.createElement("td");
-    leagues.textContent = rowData.winners.map(entry => entry.leagueName).join(" / ");
+    leagues.textContent = rowData.winners.map(entry => entry.leagueRecordId).join(" / ");
 
     const score = document.createElement("td");
     score.textContent = formatPoints(rowData.score);
@@ -654,17 +671,15 @@ async function loadPowerRankings() {
 
     renderPowerRankings(entries);
 
-    const roomLabel = completedLeagues.map(league => league.leagueRecordId).join("-");
-    document.getElementById("bbuPowerRankingsHeading").textContent = roomLabel
-      ? `Combined ${roomLabel} Power Rankings`
-      : "Combined BBU Power Rankings";
-    document.getElementById("bbuPowerRankingsCopy").textContent = completedLeagues.length
-      ? `This board combines the ${completedLeagues.length} completed Best Ball Union rooms from the latest generated snapshot.`
-      : "This board will publish after a Best Ball Union room completes its draft.";
-
     const topEntry = entries[0];
+    document.getElementById("bbuPowerRankingsHeading").textContent = topEntry
+      ? topEntry.teamName
+      : "Overall Leader Not Available Yet";
+    document.getElementById("bbuPowerRankingsCopy").textContent = topEntry
+      ? `${topEntry.leagueId} currently holds the top overall Best Ball Union power ranking.`
+      : "The current No. 1 team will appear here after a completed room has a published ranking.";
     document.getElementById("bbuPowerTopScore").textContent = topEntry ? topEntry.score.toFixed(1) : "--";
-    document.getElementById("bbuPowerTopTeam").textContent = topEntry ? `${topEntry.teamName}, ${topEntry.leagueId}` : "Awaiting completed draft";
+    document.getElementById("bbuPowerTopTeam").textContent = topEntry ? "Overall Rank #1" : "Awaiting completed draft";
   } catch (error) {
     console.error("Best Ball Union power ranking load failed:", error);
     renderPowerRankings([]);

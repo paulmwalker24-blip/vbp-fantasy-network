@@ -82,7 +82,7 @@ Use:
 ### Standard Dynasty Startups
 
 - `DYN6` is paid in full and should not be marketed as an active opening.
-- `DYN8` is currently `8/12 paid` and remains an active $30 Superflex startup opening.
+- `DYN8` is full and paid. Do not market it as an active opening.
 - Treat the current dynasty push as startup recruiting, not orphan or takeover recruiting.
 - Use `slow` vs `fast` as the main sorting choice.
 - Lead with trust, format, and owner quality before payment structure.
@@ -92,7 +92,7 @@ Use:
 
 - Treat `Dynasty Bracket` as the premium startup lane.
 - Use the hub version when you want reach.
-- Current Dynasty Bracket recruiting should concentrate new owners into `Foundry` for slow draft and `Empire` for fast draft before pushing Forge or Legacy equally.
+- Current Dynasty Bracket recruiting should concentrate new owners into `Foundry` first; offer `Empire` when an owner specifically prefers fast draft.
 - Use division-specific versions when you want one-link clarity.
 - Keep the wording copy-first and simple.
 
@@ -101,8 +101,15 @@ Use:
 - Lead with the current active room when there is a scheduled draft time.
 - Always say `fast draft`.
 - Say new BBU leagues start drafting 24 hours after the league is filled and fully paid unless a same-day draft time has already been set.
+- `BBU6` is currently `7/10 paid`; use that paid count in the active post while it remains current.
 - Refresh the active `BBU` template when the current room changes so the pitch does not feel stale.
 - When a `BBU` post has a scheduled draft time, lead with that urgency and keep the description focused on the active room.
+
+### Pick'em
+
+- Frame `PK1` as the lowest-maintenance paid option in the network: weekly NFL picks against the spread with no fantasy roster management.
+- Make clear that it is spread-based, not a straight winner pool.
+- It is `$10` per entry through LeagueSafe; payouts scale with final paid entries, with weekly high-score prizes beginning at 50 paid entries.
 
 ### Platform Notes
 
@@ -122,7 +129,7 @@ Use:
 
 - Keep redraft copy aligned with the rest of the recruiting strategy: trust first, clear structure, and fewer "listing" vibes.
 - For the current push, lead with `Redraft 4` and `Bracket Redraft` before dynasty, best ball, keeper, or chopped.
-- For `Redraft 4`, frame it as the sharper seasonal option for owners who want a more serious room with rules posted up front. Current paid count is `6/12`.
+- For `Redraft 4`, frame it as the sharper seasonal option for owners who want a more serious room with rules posted up front. It is currently `10/12 assigned` and `6/12 paid`.
 - For `Bracket Redraft`, lead with the format hook and the fact that this is the third season the commissioner has run the format. Avoid phrasing that makes `Year 3 Bracket Redraft` sound like the formal format name.
 - Current Bracket Redraft recruiting should concentrate new owners into `Apex` and `Titan` for slow draft and `Iron` for fast draft before pushing Vanguard or Dominion equally.
 - Use `REDRAFT PRIORITY PUSH` when you want one post that lets people choose between the $100 standalone room and the $50 tournament format.
@@ -168,7 +175,7 @@ Body:
 ```text
 VBP Fantasy Network is pushing redraft right now with two active lanes:
 
-Redraft 4 is the sharper standalone seasonal room. It is a $100 league with Progressive PPR, no kicker or defense, and a 6-team playoff with top-two byes. Current paid count: 6/12.
+Redraft 4 is the sharper standalone seasonal room. It is a $100 league with Progressive PPR, no kicker or defense, and a 6-team playoff with top-two byes. It is currently 10/12 assigned and 6/12 paid.
 
 Bracket Redraft is the bigger tournament-style format. I am filling it for the third season I have run this setup. It is a $50 redraft format with fast and slow draft rooms feeding one shared 32-team playoff across the full 60-team field. The current push is Apex and Titan for slow draft, plus Iron as the priority fast room.
 
@@ -444,26 +451,25 @@ Reply or join the hub if interested.
 When to use:
 - broad bracket recruiting
 - when you want all bracket interest routed toward the current priority rooms first
-- current priority is `Foundry` for slow draft and `Empire` for fast draft
+- current primary priority is `Foundry`; use `Empire` when an owner specifically wants fast draft
 
 Title:
 
 ```text
-VBP Fantasy Network | 48-Team Dynasty Bracket | Foundry + Empire Filling First
+VBP Fantasy Network | 48-Team Dynasty Bracket | Foundry Filling First
 ```
 
 Body:
 
 ```text
-VBP Fantasy Network is filling its 48-team Dynasty Bracket format and concentrating new owners into two priority rooms first so the leagues build momentum together.
+VBP Fantasy Network is filling its 48-team Dynasty Bracket format and concentrating new owners into Foundry first so the format builds momentum cleanly.
 
 This is a $50 per season Superflex dynasty startup with $150 due up front. It uses 3 FLEX spots, 4 taxi, 4 IR, a 3RR startup draft, and one shared playoff structure across the full format.
 
-Current priority rooms:
-Foundry ($50, Slow): https://sleeper.com/i/Y2VajM5OZwN44
-Empire ($50, Fast): https://sleeper.com/i/JKo0Ejo4zKeY3
+Current priority room:
+Foundry ($50, Slow, 7/12 assigned): https://sleeper.com/i/Y2VajM5OZwN44
 
-If you want slow draft, join Foundry. If you want fast draft, join Empire. Forge and Legacy are part of the full format, but the push right now is to fill these two rooms first.
+If you want fast draft instead, Empire is also available. Forge and Legacy are part of the full format, but the current push is to fill Foundry first.
 
 Dynasty Bracket constitution: https://vbp-fantasy-network.vercel.app/dynasty-bracket-constitution.html
 Dynasty Bracket Center: https://vbp-fantasy-network.vercel.app/bracket-center.html?view=dynasty
@@ -535,30 +541,58 @@ Dynasty Bracket constitution: https://vbp-fantasy-network.vercel.app/dynasty-bra
 ### BBU
 
 When to use:
-- current BBU3 best ball recruiting post
+- current BBU6 best ball recruiting post
 
 Title:
 
 ```text
-VBP Fantasy Network | BBU3 $10 Best Ball | 7/10 Paid
+VBP Fantasy Network | BBU6 $10 Best Ball | 7/10 Paid
 ```
 
 Body:
 
 ```text
-VBP Fantasy Network has BBU3 open for anyone who wants a simple $10 best ball draft. The room is 7/10 paid right now, so there are 3 spots left.
+VBP Fantasy Network has BBU6 open for anyone who wants a simple $10 best ball draft. BBU1 through BBU5 are full and paid, and BBU6 is currently 7/10 paid.
 
-Draft is tonight at 8 PM CST.
+The draft will be scheduled within 24 hours after the room is full and everyone is paid.
 
 This is a 10-team draft-and-hold best ball league on Sleeper. It uses a 90-second snake draft, 18-player rosters, Progressive PPR scoring, and a weekly median matchup.
 
 After the draft, there are no waivers, trades, pickups, or weekly lineup decisions. Sleeper automatically uses your best lineup each week.
 
-Each BBU league has a $100 league prize pool, with the league champion prize plus Best Ball Union overall high-score tracking across the format.
+Each full BBU room pays $75 to that league winner. Another $25 per room goes to the manager with the single highest total season score across all Best Ball Union teams.
 
-Best Ball Union #3 ($10, Fast, 7/10 paid): http://sleeper.com/i/V9x7zRZzzqlXO
+Best Ball Union #6 ($10, Fast): https://sleeper.com/i/zEVbdZ1YnodXo
 Best Ball constitution: https://vbp-fantasy-network.vercel.app/bestball-constitution.html
 Best Ball Union Center: https://vbp-fantasy-network.vercel.app/bestball-center.html
+Main hub: https://vbp-fantasy-network.vercel.app/
+
+DM me or reply if interested.
+```
+
+### PICKEM
+
+When to use:
+- low-maintenance 2026 NFL spread pick'em recruiting
+- owners who want a season-long contest without managing a fantasy roster
+
+Title:
+
+```text
+VBP Fantasy Network | $10 NFL Spread Pick'em | No Draft, No Lineups
+```
+
+Body:
+
+```text
+VBP Fantasy Network is opening its 2026 NFL Spread Pick'em contest on Sleeper.
+
+This is a low-maintenance season-long contest: submit your weekly NFL picks against the spread and compete in the cumulative standings. There is no fantasy draft, no rosters, no waivers, and no lineup setting.
+
+Entry is $10 through LeagueSafe. Final payouts scale with the number of paid entries, and weekly high-score prizes begin if the contest reaches 50 paid entries.
+
+Pick'em league: https://sleeper.com/i/E8XXRlJd3n37G
+Pick'em rules and payout table: https://vbp-fantasy-network.vercel.app/pickem-constitution.html
 Main hub: https://vbp-fantasy-network.vercel.app/
 
 DM me or reply if interested.
@@ -616,7 +650,7 @@ Body:
 ```text
 VBP Fantasy Network has Redraft 4 open right now for owners who want a sharper $100 seasonal league with clear rules posted up front.
 
-It uses Progressive PPR scoring, no kicker or defense spots, and a 6-team playoff with top-two byes. The room is currently 6/12 paid.
+It uses Progressive PPR scoring, no kicker or defense spots, and a 6-team playoff with top-two byes. The room is currently 10/12 assigned and 6/12 paid.
 
 Redraft 4 ($100): https://sleeper.com/i/V9xKEeVN7AD4e
 Redraft constitution: https://vbp-fantasy-network.vercel.app/redraft-constitution.html

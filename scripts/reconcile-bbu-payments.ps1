@@ -5,6 +5,7 @@ param(
   [string]$OutputPath = "reports/private/bbu-payment-reconciliation.md",
   [string]$CsvOutputDirectory = "reports/private/bbu-payment-reconciliation",
   [string[]]$LeagueRecordIds,
+  [switch]$AllowPartialSleeperData,
   [switch]$PassThru
 )
 
@@ -353,6 +354,11 @@ foreach ($league in $bbuLeagues) {
       personName = if ($null -ne $person) { Get-StringValue (Get-PropertyValue $person "name") } else { "" }
     }) | Out-Null
   }
+}
+
+if ($fetchErrors.Count -gt 0 -and -not $AllowPartialSleeperData) {
+  $failedLeagues = (@($fetchErrors | ForEach-Object { $_.leagueId }) -join ", ")
+  throw "Sleeper refresh failed for $failedLeagues. Existing BBU reconciliation outputs were left unchanged. Rerun when Sleeper is reachable, or explicitly use -AllowPartialSleeperData for a partial report."
 }
 
 $paymentRows = [System.Collections.Generic.List[object]]::new()
@@ -715,8 +721,22 @@ $paymentCandidates = @($paymentRows | ForEach-Object {
   }
 
   $paidAmount = if ($candidate) { $candidate.amount } else { [decimal]0 }
+  $isIdentityMatch = $confidence -eq "Identity ledger"
+  $isFullyCoveredIdentity = $false
+  $identityShortfall = [decimal]0
+  if ($isIdentityMatch -and $entriesByPerson.ContainsKey($entry.personId) -and $paidByPerson.ContainsKey($entry.personId)) {
+    $personDue = [decimal](@($entriesByPerson[$entry.personId]).Count * $entry.buyIn)
+    $isFullyCoveredIdentity = [decimal]$paidByPerson[$entry.personId] -ge $personDue
+    if (-not $isFullyCoveredIdentity) {
+      $identityShortfall = $personDue - [decimal]$paidByPerson[$entry.personId]
+    }
+  }
   $status = if ($entry.assignmentStatus -eq "Waiting assignment") {
     "Waiting - not assigned/unpaid"
+  } elseif ($isFullyCoveredIdentity) {
+    "Matched - paid"
+  } elseif ($isIdentityMatch -and $paidAmount -gt 0) {
+    "Review - pooled payment shortfall"
   } elseif ($candidate -and $paidAmount -ge $entry.buyIn) {
     "Assigned + paid candidate"
   } elseif ($candidate -and $paidAmount -gt 0) {
@@ -733,12 +753,12 @@ $paymentCandidates = @($paymentRows | ForEach-Object {
     "Roster Slot" = $entry.rosterId
     "LeagueSafe Name" = if ($candidate) { $candidate.payerName } else { "" }
     "LeagueSafe Email" = if ($candidate) { $candidate.payerEmail } else { "" }
-    "Paid" = if ($candidate) { $candidate.amount } else { "" }
+    "Paid" = if ($isFullyCoveredIdentity) { $entry.buyIn } elseif ($isIdentityMatch) { "" } elseif ($candidate) { $candidate.amount } else { "" }
     "Status" = $status
     "Match" = $confidence
     "Person" = $entry.personName
     "Person ID" = $entry.personId
-    "Notes" = ""
+    "Notes" = if ($isIdentityMatch -and -not $isFullyCoveredIdentity) { "Known person owes $('${0:N2}' -f $identityShortfall) across all BBU entries; do not assign the shortfall to a specific room yet." } else { "" }
   }
 }) | Export-Csv -LiteralPath $commissionerTrackerCsvPath -NoTypeInformation -Encoding UTF8
 
