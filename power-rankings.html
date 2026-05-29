@@ -227,6 +227,7 @@
       const format = String(league?.format || "").trim().toLowerCase();
       if (!id || !league?.publish) return "";
       if (format === "dynasty") return `dynasty-power-rankings.html?league=${encodeURIComponent(id)}`;
+      if (format === "gauntlet") return `league-power-rankings.html?league=${encodeURIComponent(id)}`;
       return "";
     }
 

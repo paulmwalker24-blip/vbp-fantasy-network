@@ -188,6 +188,9 @@ The site is effectively data-driven through local league JSON, local donation JS
 - `power-rankings.html`
   - Public selector hub for network power rankings.
   - Keep all league records visible in the selector, even when a league is pre-draft or currently drafting.
+- `league-power-rankings.html`
+  - Generic public renderer for generated non-Dynasty single-league power rankings, such as Best Ball Gauntlet.
+  - Reads generated ranking data through `assets/js/power-rankings.js`.
 - Redraft Bracket and Dynasty Bracket rankings should be combined Top 20 boards only, not separate division boards.
 - Best Ball Union rankings should be combined Top 20 boards unless the commissioner asks for a different split.
 - Pick'em should be visible in the selector for completeness but should use standings rather than a roster power-ranking board.

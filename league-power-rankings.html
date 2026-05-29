@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>League Power Rankings | VBP Fantasy Network</title>
+  <meta name="description" content="Generated league power rankings for the VBP Fantasy Network." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="League Power Rankings | VBP Fantasy Network" />
+  <meta property="og:description" content="Generated league power rankings for the VBP Fantasy Network." />
+  <meta property="og:url" content="https://vbp-fantasy-network.vercel.app/league-power-rankings.html" />
+  <meta property="og:image" content="https://vbp-fantasy-network.vercel.app/assets/images/banner.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="League Power Rankings | VBP Fantasy Network" />
+  <meta name="twitter:description" content="Generated league power rankings for the VBP Fantasy Network." />
+  <meta name="twitter:image" content="https://vbp-fantasy-network.vercel.app/assets/images/banner.png" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260527d" />
+</head>
+<body class="constitution-page power-rankings-page">
+  <div class="constitution-nav" id="top">
+    <div class="container format-center-nav-links">
+      <a href="index.html#league-centers" class="constitution-back-link">Back to Hub</a>
+      <a href="power-rankings.html" class="constitution-back-link">Power Rankings</a>
+    </div>
+  </div>
+
+  <header class="power-rankings-hero power-rankings-hero-compact">
+    <div class="container power-rankings-hero-inner">
+      <p class="power-rankings-kicker" data-rankings-kicker>League</p>
+      <h1 data-rankings-title>League Power Rankings</h1>
+      <p data-rankings-subtitle>This page refreshes as a weekly snapshot when the power rankings sync is run.</p>
+      <p class="updated" data-generated-at></p>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container power-rankings-layout">
+      <section class="power-rankings-card power-rankings-feature">
+        <div>
+          <p class="power-rankings-kicker" data-rankings-feature-kicker>League</p>
+          <h2>Current Board</h2>
+          <p>Ranked from verified Sleeper scoring settings, current rosters, draft data, availability notes, and commissioner-owned context.</p>
+        </div>
+        <div class="power-rankings-feature-score">
+          <span class="power-rankings-score-label">Top Score</span>
+          <strong data-top-score>--</strong>
+          <span data-top-team>Loading...</span>
+        </div>
+      </section>
+
+      <section class="power-rankings-card power-rankings-board-card">
+        <div class="section-heading">
+          <p class="bbu-section-kicker">League Board</p>
+          <h2 data-rankings-list-heading>Rankings</h2>
+          <p>Each row shows the current team score and season result in a clean owner-by-owner board.</p>
+        </div>
+        <div class="power-rankings-list" data-rankings-list>
+          <p class="format-center-table-empty">Loading generated rankings...</p>
+        </div>
+      </section>
+
+      <section class="power-rankings-card power-rankings-board-card">
+        <div class="section-heading">
+          <p class="bbu-section-kicker">Scoring Profile</p>
+          <h2>Verified League Scoring</h2>
+          <p>The ranking model reads these values from Sleeper before calculating the board.</p>
+        </div>
+        <div data-scoring-profile>
+          <p class="format-center-table-empty">Loading live scoring profile...</p>
+        </div>
+      </section>
+
+      <section class="power-rankings-card power-rankings-board-card">
+        <div class="section-heading">
+          <p class="bbu-section-kicker">Position Groups</p>
+          <h2>Positional Power Rankings</h2>
+          <p>See which owners have the strongest position group, ranked from first through last in the league.</p>
+        </div>
+        <div class="power-ranking-position-boards" data-positional-rankings>
+          <p class="format-center-table-empty">Loading positional rankings...</p>
+        </div>
+      </section>
+
+      <section class="power-rankings-card power-rankings-method-card">
+        <div class="section-heading">
+          <p class="bbu-section-kicker">Ranking Model</p>
+          <h2>How Rankings Work</h2>
+          <p>A simple view of what drives the board.</p>
+        </div>
+        <div class="power-rankings-method-grid" data-ranking-methodology>
+          <p class="format-center-table-empty">Loading ranking approach...</p>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="assets/js/power-rankings.js?v=20260527d"></script>
+</body>
+</html>
