@@ -1,5 +1,5 @@
 ﻿{
-    "generatedAt":  "2026-05-29T12:01:06.7807529+00:00",
+    "generatedAt":  "2026-05-29T09:40:05.9051328-05:00",
     "snapshot":  {
                      "season":  "2026",
                      "seasonType":  "off",
@@ -8587,19 +8587,19 @@
                         "name":  "VBP Best Ball Gauntlet 1",
                         "format":  "gauntlet",
                         "publish":  true,
-                        "holdReason":  "regular draft is drafting",
+                        "holdReason":  "",
                         "draftStatuses":  [
-                                              "drafting"
+                                              "complete"
                                           ],
                         "draftReadiness":  {
                                                "ready":  true,
                                                "stage":  "regular",
-                                               "label":  "Live from current Sleeper rosters while draft is in progress",
-                                               "reason":  "regular draft is drafting",
+                                               "label":  "Regular draft complete",
+                                               "reason":  "",
                                                "drafts":  [
                                                               {
                                                                   "draftId":  "1362908680449699840",
-                                                                  "status":  "drafting",
+                                                                  "status":  "complete",
                                                                   "stage":  "regular",
                                                                   "type":  "snake",
                                                                   "season":  "2026",
@@ -8612,11 +8612,11 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362908679824740352/rosters",
-                                           "refreshedAt":  "2026-05-29T12:01:01.3673915+00:00",
+                                           "refreshedAt":  "2026-05-29T09:39:56.0106986-05:00",
                                            "rosterCount":  24,
-                                           "playerCount":  0,
+                                           "playerCount":  120,
                                            "sleeperLeagueSeason":  "2026",
-                                           "sleeperLeagueStatus":  "drafting"
+                                           "sleeperLeagueStatus":  "in_season"
                                        },
                         "rosterPositions":  [
                                                 "FLEX",
@@ -8661,14 +8661,609 @@
                                               "emphasis":  "Four-start micro-roster strength, Superflex ceiling, and availability risk in a locked roster format."
                                           },
                         "positionalRankings":  {
-
+                                                   "QB":  {
+                                                              "position":  "QB",
+                                                              "rankings":  [
+                                                                               {
+                                                                                   "rank":  1,
+                                                                                   "manager":  "swampraider",
+                                                                                   "rosterId":  3,
+                                                                                   "score":  95
+                                                                               },
+                                                                               {
+                                                                                   "rank":  2,
+                                                                                   "manager":  "DSnyder5",
+                                                                                   "rosterId":  2,
+                                                                                   "score":  93
+                                                                               },
+                                                                               {
+                                                                                   "rank":  3,
+                                                                                   "manager":  "LionsFan79",
+                                                                                   "rosterId":  18,
+                                                                                   "score":  89
+                                                                               },
+                                                                               {
+                                                                                   "rank":  4,
+                                                                                   "manager":  "ega4bstn",
+                                                                                   "rosterId":  4,
+                                                                                   "score":  88
+                                                                               },
+                                                                               {
+                                                                                   "rank":  5,
+                                                                                   "manager":  "GSH46",
+                                                                                   "rosterId":  7,
+                                                                                   "score":  88
+                                                                               },
+                                                                               {
+                                                                                   "rank":  6,
+                                                                                   "manager":  "VinsBroPaul",
+                                                                                   "rosterId":  1,
+                                                                                   "score":  88
+                                                                               },
+                                                                               {
+                                                                                   "rank":  7,
+                                                                                   "manager":  "Donny01",
+                                                                                   "rosterId":  17,
+                                                                                   "score":  86
+                                                                               },
+                                                                               {
+                                                                                   "rank":  8,
+                                                                                   "manager":  "OmahaaaSet",
+                                                                                   "rosterId":  5,
+                                                                                   "score":  86
+                                                                               },
+                                                                               {
+                                                                                   "rank":  9,
+                                                                                   "manager":  "shelbwinz",
+                                                                                   "rosterId":  24,
+                                                                                   "score":  86
+                                                                               },
+                                                                               {
+                                                                                   "rank":  10,
+                                                                                   "manager":  "crossthesea",
+                                                                                   "rosterId":  8,
+                                                                                   "score":  85
+                                                                               },
+                                                                               {
+                                                                                   "rank":  11,
+                                                                                   "manager":  "TryanboloneBB",
+                                                                                   "rosterId":  12,
+                                                                                   "score":  85
+                                                                               },
+                                                                               {
+                                                                                   "rank":  12,
+                                                                                   "manager":  "rbbarlow83",
+                                                                                   "rosterId":  14,
+                                                                                   "score":  84
+                                                                               },
+                                                                               {
+                                                                                   "rank":  13,
+                                                                                   "manager":  "AUNI10",
+                                                                                   "rosterId":  9,
+                                                                                   "score":  83
+                                                                               },
+                                                                               {
+                                                                                   "rank":  14,
+                                                                                   "manager":  "KingKadenn",
+                                                                                   "rosterId":  16,
+                                                                                   "score":  83
+                                                                               },
+                                                                               {
+                                                                                   "rank":  15,
+                                                                                   "manager":  "nordy0",
+                                                                                   "rosterId":  21,
+                                                                                   "score":  83
+                                                                               },
+                                                                               {
+                                                                                   "rank":  16,
+                                                                                   "manager":  "HopscotchDaisy",
+                                                                                   "rosterId":  11,
+                                                                                   "score":  82
+                                                                               },
+                                                                               {
+                                                                                   "rank":  17,
+                                                                                   "manager":  "TerribleTom",
+                                                                                   "rosterId":  20,
+                                                                                   "score":  82
+                                                                               },
+                                                                               {
+                                                                                   "rank":  18,
+                                                                                   "manager":  "ELF SHOT THE FOOD",
+                                                                                   "rosterId":  22,
+                                                                                   "score":  81
+                                                                               },
+                                                                               {
+                                                                                   "rank":  19,
+                                                                                   "manager":  "Tacious00",
+                                                                                   "rosterId":  13,
+                                                                                   "score":  81
+                                                                               },
+                                                                               {
+                                                                                   "rank":  20,
+                                                                                   "manager":  "TyKite55",
+                                                                                   "rosterId":  23,
+                                                                                   "score":  81
+                                                                               },
+                                                                               {
+                                                                                   "rank":  21,
+                                                                                   "manager":  "bryanb460",
+                                                                                   "rosterId":  15,
+                                                                                   "score":  80
+                                                                               },
+                                                                               {
+                                                                                   "rank":  22,
+                                                                                   "manager":  "ghopzy",
+                                                                                   "rosterId":  6,
+                                                                                   "score":  80
+                                                                               },
+                                                                               {
+                                                                                   "rank":  23,
+                                                                                   "manager":  "jessegambo",
+                                                                                   "rosterId":  10,
+                                                                                   "score":  79
+                                                                               },
+                                                                               {
+                                                                                   "rank":  24,
+                                                                                   "manager":  "StrangeAuto12",
+                                                                                   "rosterId":  19,
+                                                                                   "score":  59
+                                                                               }
+                                                                           ]
+                                                          },
+                                                   "RB":  {
+                                                              "position":  "RB",
+                                                              "rankings":  [
+                                                                               {
+                                                                                   "rank":  1,
+                                                                                   "manager":  "AUNI10",
+                                                                                   "rosterId":  9,
+                                                                                   "score":  88
+                                                                               },
+                                                                               {
+                                                                                   "rank":  2,
+                                                                                   "manager":  "StrangeAuto12",
+                                                                                   "rosterId":  19,
+                                                                                   "score":  86
+                                                                               },
+                                                                               {
+                                                                                   "rank":  3,
+                                                                                   "manager":  "Tacious00",
+                                                                                   "rosterId":  13,
+                                                                                   "score":  86
+                                                                               },
+                                                                               {
+                                                                                   "rank":  4,
+                                                                                   "manager":  "jessegambo",
+                                                                                   "rosterId":  10,
+                                                                                   "score":  85
+                                                                               },
+                                                                               {
+                                                                                   "rank":  5,
+                                                                                   "manager":  "KingKadenn",
+                                                                                   "rosterId":  16,
+                                                                                   "score":  85
+                                                                               },
+                                                                               {
+                                                                                   "rank":  6,
+                                                                                   "manager":  "HopscotchDaisy",
+                                                                                   "rosterId":  11,
+                                                                                   "score":  84
+                                                                               },
+                                                                               {
+                                                                                   "rank":  7,
+                                                                                   "manager":  "ELF SHOT THE FOOD",
+                                                                                   "rosterId":  22,
+                                                                                   "score":  82
+                                                                               },
+                                                                               {
+                                                                                   "rank":  8,
+                                                                                   "manager":  "TerribleTom",
+                                                                                   "rosterId":  20,
+                                                                                   "score":  82
+                                                                               },
+                                                                               {
+                                                                                   "rank":  9,
+                                                                                   "manager":  "OmahaaaSet",
+                                                                                   "rosterId":  5,
+                                                                                   "score":  81
+                                                                               },
+                                                                               {
+                                                                                   "rank":  10,
+                                                                                   "manager":  "shelbwinz",
+                                                                                   "rosterId":  24,
+                                                                                   "score":  80
+                                                                               },
+                                                                               {
+                                                                                   "rank":  11,
+                                                                                   "manager":  "TryanboloneBB",
+                                                                                   "rosterId":  12,
+                                                                                   "score":  80
+                                                                               },
+                                                                               {
+                                                                                   "rank":  12,
+                                                                                   "manager":  "ghopzy",
+                                                                                   "rosterId":  6,
+                                                                                   "score":  79
+                                                                               },
+                                                                               {
+                                                                                   "rank":  13,
+                                                                                   "manager":  "LionsFan79",
+                                                                                   "rosterId":  18,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  14,
+                                                                                   "manager":  "swampraider",
+                                                                                   "rosterId":  3,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  15,
+                                                                                   "manager":  "bryanb460",
+                                                                                   "rosterId":  15,
+                                                                                   "score":  77
+                                                                               },
+                                                                               {
+                                                                                   "rank":  16,
+                                                                                   "manager":  "DSnyder5",
+                                                                                   "rosterId":  2,
+                                                                                   "score":  77
+                                                                               },
+                                                                               {
+                                                                                   "rank":  17,
+                                                                                   "manager":  "VinsBroPaul",
+                                                                                   "rosterId":  1,
+                                                                                   "score":  76
+                                                                               },
+                                                                               {
+                                                                                   "rank":  18,
+                                                                                   "manager":  "GSH46",
+                                                                                   "rosterId":  7,
+                                                                                   "score":  75
+                                                                               },
+                                                                               {
+                                                                                   "rank":  19,
+                                                                                   "manager":  "crossthesea",
+                                                                                   "rosterId":  8,
+                                                                                   "score":  74
+                                                                               },
+                                                                               {
+                                                                                   "rank":  20,
+                                                                                   "manager":  "TyKite55",
+                                                                                   "rosterId":  23,
+                                                                                   "score":  74
+                                                                               },
+                                                                               {
+                                                                                   "rank":  21,
+                                                                                   "manager":  "Donny01",
+                                                                                   "rosterId":  17,
+                                                                                   "score":  72
+                                                                               },
+                                                                               {
+                                                                                   "rank":  22,
+                                                                                   "manager":  "ega4bstn",
+                                                                                   "rosterId":  4,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  23,
+                                                                                   "manager":  "nordy0",
+                                                                                   "rosterId":  21,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  24,
+                                                                                   "manager":  "rbbarlow83",
+                                                                                   "rosterId":  14,
+                                                                                   "score":  0
+                                                                               }
+                                                                           ]
+                                                          },
+                                                   "WR":  {
+                                                              "position":  "WR",
+                                                              "rankings":  [
+                                                                               {
+                                                                                   "rank":  1,
+                                                                                   "manager":  "nordy0",
+                                                                                   "rosterId":  21,
+                                                                                   "score":  84
+                                                                               },
+                                                                               {
+                                                                                   "rank":  2,
+                                                                                   "manager":  "Donny01",
+                                                                                   "rosterId":  17,
+                                                                                   "score":  82
+                                                                               },
+                                                                               {
+                                                                                   "rank":  3,
+                                                                                   "manager":  "TyKite55",
+                                                                                   "rosterId":  23,
+                                                                                   "score":  82
+                                                                               },
+                                                                               {
+                                                                                   "rank":  4,
+                                                                                   "manager":  "ega4bstn",
+                                                                                   "rosterId":  4,
+                                                                                   "score":  80
+                                                                               },
+                                                                               {
+                                                                                   "rank":  5,
+                                                                                   "manager":  "LionsFan79",
+                                                                                   "rosterId":  18,
+                                                                                   "score":  80
+                                                                               },
+                                                                               {
+                                                                                   "rank":  6,
+                                                                                   "manager":  "shelbwinz",
+                                                                                   "rosterId":  24,
+                                                                                   "score":  80
+                                                                               },
+                                                                               {
+                                                                                   "rank":  7,
+                                                                                   "manager":  "bryanb460",
+                                                                                   "rosterId":  15,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  8,
+                                                                                   "manager":  "ELF SHOT THE FOOD",
+                                                                                   "rosterId":  22,
+                                                                                   "score":  76
+                                                                               },
+                                                                               {
+                                                                                   "rank":  9,
+                                                                                   "manager":  "StrangeAuto12",
+                                                                                   "rosterId":  19,
+                                                                                   "score":  76
+                                                                               },
+                                                                               {
+                                                                                   "rank":  10,
+                                                                                   "manager":  "OmahaaaSet",
+                                                                                   "rosterId":  5,
+                                                                                   "score":  75
+                                                                               },
+                                                                               {
+                                                                                   "rank":  11,
+                                                                                   "manager":  "rbbarlow83",
+                                                                                   "rosterId":  14,
+                                                                                   "score":  75
+                                                                               },
+                                                                               {
+                                                                                   "rank":  12,
+                                                                                   "manager":  "swampraider",
+                                                                                   "rosterId":  3,
+                                                                                   "score":  75
+                                                                               },
+                                                                               {
+                                                                                   "rank":  13,
+                                                                                   "manager":  "AUNI10",
+                                                                                   "rosterId":  9,
+                                                                                   "score":  74
+                                                                               },
+                                                                               {
+                                                                                   "rank":  14,
+                                                                                   "manager":  "DSnyder5",
+                                                                                   "rosterId":  2,
+                                                                                   "score":  74
+                                                                               },
+                                                                               {
+                                                                                   "rank":  15,
+                                                                                   "manager":  "jessegambo",
+                                                                                   "rosterId":  10,
+                                                                                   "score":  74
+                                                                               },
+                                                                               {
+                                                                                   "rank":  16,
+                                                                                   "manager":  "ghopzy",
+                                                                                   "rosterId":  6,
+                                                                                   "score":  73
+                                                                               },
+                                                                               {
+                                                                                   "rank":  17,
+                                                                                   "manager":  "KingKadenn",
+                                                                                   "rosterId":  16,
+                                                                                   "score":  72
+                                                                               },
+                                                                               {
+                                                                                   "rank":  18,
+                                                                                   "manager":  "Tacious00",
+                                                                                   "rosterId":  13,
+                                                                                   "score":  71
+                                                                               },
+                                                                               {
+                                                                                   "rank":  19,
+                                                                                   "manager":  "TerribleTom",
+                                                                                   "rosterId":  20,
+                                                                                   "score":  69
+                                                                               },
+                                                                               {
+                                                                                   "rank":  20,
+                                                                                   "manager":  "HopscotchDaisy",
+                                                                                   "rosterId":  11,
+                                                                                   "score":  65
+                                                                               },
+                                                                               {
+                                                                                   "rank":  21,
+                                                                                   "manager":  "GSH46",
+                                                                                   "rosterId":  7,
+                                                                                   "score":  56
+                                                                               },
+                                                                               {
+                                                                                   "rank":  22,
+                                                                                   "manager":  "crossthesea",
+                                                                                   "rosterId":  8,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  23,
+                                                                                   "manager":  "TryanboloneBB",
+                                                                                   "rosterId":  12,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  24,
+                                                                                   "manager":  "VinsBroPaul",
+                                                                                   "rosterId":  1,
+                                                                                   "score":  0
+                                                                               }
+                                                                           ]
+                                                          },
+                                                   "TE":  {
+                                                              "position":  "TE",
+                                                              "rankings":  [
+                                                                               {
+                                                                                   "rank":  1,
+                                                                                   "manager":  "crossthesea",
+                                                                                   "rosterId":  8,
+                                                                                   "score":  83
+                                                                               },
+                                                                               {
+                                                                                   "rank":  2,
+                                                                                   "manager":  "ghopzy",
+                                                                                   "rosterId":  6,
+                                                                                   "score":  82
+                                                                               },
+                                                                               {
+                                                                                   "rank":  3,
+                                                                                   "manager":  "rbbarlow83",
+                                                                                   "rosterId":  14,
+                                                                                   "score":  80
+                                                                               },
+                                                                               {
+                                                                                   "rank":  4,
+                                                                                   "manager":  "Tacious00",
+                                                                                   "rosterId":  13,
+                                                                                   "score":  79
+                                                                               },
+                                                                               {
+                                                                                   "rank":  5,
+                                                                                   "manager":  "ega4bstn",
+                                                                                   "rosterId":  4,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  6,
+                                                                                   "manager":  "LionsFan79",
+                                                                                   "rosterId":  18,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  7,
+                                                                                   "manager":  "TryanboloneBB",
+                                                                                   "rosterId":  12,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  8,
+                                                                                   "manager":  "VinsBroPaul",
+                                                                                   "rosterId":  1,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  9,
+                                                                                   "manager":  "Donny01",
+                                                                                   "rosterId":  17,
+                                                                                   "score":  77
+                                                                               },
+                                                                               {
+                                                                                   "rank":  10,
+                                                                                   "manager":  "GSH46",
+                                                                                   "rosterId":  7,
+                                                                                   "score":  77
+                                                                               },
+                                                                               {
+                                                                                   "rank":  11,
+                                                                                   "manager":  "KingKadenn",
+                                                                                   "rosterId":  16,
+                                                                                   "score":  56
+                                                                               },
+                                                                               {
+                                                                                   "rank":  12,
+                                                                                   "manager":  "AUNI10",
+                                                                                   "rosterId":  9,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  13,
+                                                                                   "manager":  "bryanb460",
+                                                                                   "rosterId":  15,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  14,
+                                                                                   "manager":  "DSnyder5",
+                                                                                   "rosterId":  2,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  15,
+                                                                                   "manager":  "ELF SHOT THE FOOD",
+                                                                                   "rosterId":  22,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  16,
+                                                                                   "manager":  "HopscotchDaisy",
+                                                                                   "rosterId":  11,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  17,
+                                                                                   "manager":  "jessegambo",
+                                                                                   "rosterId":  10,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  18,
+                                                                                   "manager":  "nordy0",
+                                                                                   "rosterId":  21,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  19,
+                                                                                   "manager":  "OmahaaaSet",
+                                                                                   "rosterId":  5,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  20,
+                                                                                   "manager":  "shelbwinz",
+                                                                                   "rosterId":  24,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  21,
+                                                                                   "manager":  "StrangeAuto12",
+                                                                                   "rosterId":  19,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  22,
+                                                                                   "manager":  "swampraider",
+                                                                                   "rosterId":  3,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  23,
+                                                                                   "manager":  "TerribleTom",
+                                                                                   "rosterId":  20,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  24,
+                                                                                   "manager":  "TyKite55",
+                                                                                   "rosterId":  23,
+                                                                                   "score":  0
+                                                                               }
+                                                                           ]
+                                                          }
                                                },
                         "rankings":  [
                                          {
-                                             "rosterId":  16,
-                                             "ownerId":  "865119240984899584",
-                                             "teamName":  "KingKadenn",
-                                             "score":  27,
+                                             "rosterId":  3,
+                                             "ownerId":  "712531686138646528",
+                                             "teamName":  "swampraider",
+                                             "score":  83,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -8679,10 +9274,10 @@
                                              "rank":  1
                                          },
                                          {
-                                             "rosterId":  17,
-                                             "ownerId":  "870738058931265536",
-                                             "teamName":  "Donny01",
-                                             "score":  27,
+                                             "rosterId":  18,
+                                             "ownerId":  "446518033930776576",
+                                             "teamName":  "LionsFan79",
+                                             "score":  83,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -8693,10 +9288,10 @@
                                              "rank":  2
                                          },
                                          {
-                                             "rosterId":  18,
-                                             "ownerId":  "446518033930776576",
-                                             "teamName":  "LionsFan79",
-                                             "score":  27,
+                                             "rosterId":  24,
+                                             "ownerId":  "1107058168649195520",
+                                             "teamName":  "shelbwinz",
+                                             "score":  82,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -8707,10 +9302,10 @@
                                              "rank":  3
                                          },
                                          {
-                                             "rosterId":  13,
-                                             "ownerId":  "734717042283905024",
-                                             "teamName":  "Tacious00",
-                                             "score":  27,
+                                             "rosterId":  8,
+                                             "ownerId":  "1222026455337156610",
+                                             "teamName":  "crossthesea",
+                                             "score":  82,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -8721,10 +9316,10 @@
                                              "rank":  4
                                          },
                                          {
-                                             "rosterId":  14,
-                                             "ownerId":  "208420778578812928",
-                                             "teamName":  "rbbarlow83",
-                                             "score":  27,
+                                             "rosterId":  17,
+                                             "ownerId":  "870738058931265536",
+                                             "teamName":  "Donny01",
+                                             "score":  82,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -8735,10 +9330,10 @@
                                              "rank":  5
                                          },
                                          {
-                                             "rosterId":  15,
-                                             "ownerId":  "736433000019075072",
-                                             "teamName":  "bryanb460",
-                                             "score":  27,
+                                             "rosterId":  14,
+                                             "ownerId":  "208420778578812928",
+                                             "teamName":  "rbbarlow83",
+                                             "score":  82,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -8749,10 +9344,10 @@
                                              "rank":  6
                                          },
                                          {
-                                             "rosterId":  22,
-                                             "ownerId":  "471034769820348416",
-                                             "teamName":  "ELF SHOT THE FOOD",
-                                             "score":  27,
+                                             "rosterId":  4,
+                                             "ownerId":  "675856084065411072",
+                                             "teamName":  "ega4bstn",
+                                             "score":  82,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -8763,10 +9358,10 @@
                                              "rank":  7
                                          },
                                          {
-                                             "rosterId":  23,
-                                             "ownerId":  "653417120813621248",
-                                             "teamName":  "TyKite55",
-                                             "score":  27,
+                                             "rosterId":  12,
+                                             "ownerId":  "1175159775586222080",
+                                             "teamName":  "TryanboloneBB",
+                                             "score":  82,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -8777,10 +9372,10 @@
                                              "rank":  8
                                          },
                                          {
-                                             "rosterId":  24,
-                                             "ownerId":  "1107058168649195520",
-                                             "teamName":  "shelbwinz",
-                                             "score":  27,
+                                             "rosterId":  2,
+                                             "ownerId":  "738614393776001024",
+                                             "teamName":  "DSnyder5",
+                                             "score":  81,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -8791,10 +9386,10 @@
                                              "rank":  9
                                          },
                                          {
-                                             "rosterId":  19,
-                                             "ownerId":  "872990845027123200",
-                                             "teamName":  "StrangeAuto12",
-                                             "score":  27,
+                                             "rosterId":  5,
+                                             "ownerId":  "1115680444374302720",
+                                             "teamName":  "OmahaaaSet",
+                                             "score":  81,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -8805,10 +9400,10 @@
                                              "rank":  10
                                          },
                                          {
-                                             "rosterId":  20,
-                                             "ownerId":  "343172100665782272",
-                                             "teamName":  "TerribleTom",
-                                             "score":  27,
+                                             "rosterId":  9,
+                                             "ownerId":  "1128742490074480640",
+                                             "teamName":  "AUNI10",
+                                             "score":  81,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -8819,10 +9414,10 @@
                                              "rank":  11
                                          },
                                          {
-                                             "rosterId":  21,
-                                             "ownerId":  "1021326558428057600",
-                                             "teamName":  "nordy0",
-                                             "score":  27,
+                                             "rosterId":  20,
+                                             "ownerId":  "343172100665782272",
+                                             "teamName":  "TerribleTom",
+                                             "score":  80,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -8833,10 +9428,10 @@
                                              "rank":  12
                                          },
                                          {
-                                             "rosterId":  4,
-                                             "ownerId":  "675856084065411072",
-                                             "teamName":  "ega4bstn",
-                                             "score":  27,
+                                             "rosterId":  21,
+                                             "ownerId":  "1021326558428057600",
+                                             "teamName":  "nordy0",
+                                             "score":  80,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -8847,10 +9442,10 @@
                                              "rank":  13
                                          },
                                          {
-                                             "rosterId":  5,
-                                             "ownerId":  "1115680444374302720",
-                                             "teamName":  "OmahaaaSet",
-                                             "score":  27,
+                                             "rosterId":  1,
+                                             "ownerId":  "466785377303130112",
+                                             "teamName":  "VinsBroPaul",
+                                             "score":  80,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -8861,10 +9456,10 @@
                                              "rank":  14
                                          },
                                          {
-                                             "rosterId":  6,
-                                             "ownerId":  "1358651112126705664",
-                                             "teamName":  "ghopzy",
-                                             "score":  27,
+                                             "rosterId":  13,
+                                             "ownerId":  "734717042283905024",
+                                             "teamName":  "Tacious00",
+                                             "score":  80,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -8875,10 +9470,10 @@
                                              "rank":  15
                                          },
                                          {
-                                             "rosterId":  1,
-                                             "ownerId":  "466785377303130112",
-                                             "teamName":  "VinsBroPaul",
-                                             "score":  27,
+                                             "rosterId":  6,
+                                             "ownerId":  "1358651112126705664",
+                                             "teamName":  "ghopzy",
+                                             "score":  78,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -8889,10 +9484,10 @@
                                              "rank":  16
                                          },
                                          {
-                                             "rosterId":  2,
-                                             "ownerId":  "738614393776001024",
-                                             "teamName":  "DSnyder5",
-                                             "score":  27,
+                                             "rosterId":  11,
+                                             "ownerId":  "707317555764740096",
+                                             "teamName":  "HopscotchDaisy",
+                                             "score":  78,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -8903,10 +9498,10 @@
                                              "rank":  17
                                          },
                                          {
-                                             "rosterId":  3,
-                                             "ownerId":  "712531686138646528",
-                                             "teamName":  "swampraider",
-                                             "score":  27,
+                                             "rosterId":  10,
+                                             "ownerId":  "1126340979302178816",
+                                             "teamName":  "jessegambo",
+                                             "score":  78,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -8917,10 +9512,10 @@
                                              "rank":  18
                                          },
                                          {
-                                             "rosterId":  10,
-                                             "ownerId":  "1126340979302178816",
-                                             "teamName":  "jessegambo",
-                                             "score":  27,
+                                             "rosterId":  22,
+                                             "ownerId":  "471034769820348416",
+                                             "teamName":  "ELF SHOT THE FOOD",
+                                             "score":  78,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -8931,10 +9526,10 @@
                                              "rank":  19
                                          },
                                          {
-                                             "rosterId":  11,
-                                             "ownerId":  "707317555764740096",
-                                             "teamName":  "HopscotchDaisy",
-                                             "score":  27,
+                                             "rosterId":  23,
+                                             "ownerId":  "653417120813621248",
+                                             "teamName":  "TyKite55",
+                                             "score":  78,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -8945,10 +9540,10 @@
                                              "rank":  20
                                          },
                                          {
-                                             "rosterId":  12,
-                                             "ownerId":  "1175159775586222080",
-                                             "teamName":  "TryanboloneBB",
-                                             "score":  27,
+                                             "rosterId":  15,
+                                             "ownerId":  "736433000019075072",
+                                             "teamName":  "bryanb460",
+                                             "score":  77,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -8962,7 +9557,7 @@
                                              "rosterId":  7,
                                              "ownerId":  "942828168044544000",
                                              "teamName":  "GSH46",
-                                             "score":  27,
+                                             "score":  76,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -8973,10 +9568,10 @@
                                              "rank":  22
                                          },
                                          {
-                                             "rosterId":  8,
-                                             "ownerId":  "1222026455337156610",
-                                             "teamName":  "crossthesea",
-                                             "score":  27,
+                                             "rosterId":  16,
+                                             "ownerId":  "865119240984899584",
+                                             "teamName":  "KingKadenn",
+                                             "score":  76,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -8987,10 +9582,10 @@
                                              "rank":  23
                                          },
                                          {
-                                             "rosterId":  9,
-                                             "ownerId":  "1128742490074480640",
-                                             "teamName":  "AUNI10",
-                                             "score":  27,
+                                             "rosterId":  19,
+                                             "ownerId":  "872990845027123200",
+                                             "teamName":  "StrangeAuto12",
+                                             "score":  72,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
