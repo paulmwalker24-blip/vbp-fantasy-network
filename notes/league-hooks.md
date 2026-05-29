@@ -17,7 +17,7 @@ Short recruiting hooks capped at 200 characters or less.
 
 ## Best Ball Union
 
-- `BBU6`: $10 fast-draft best ball, currently 7/10 paid. Drafts within 24 hours after full and paid. Auto lineups, Progressive PPR, and Union high-score tracking.
+- `BBU7`: $10 fast-draft best ball, currently open and drafting tonight at 8 PM CST. Auto lineups, Progressive PPR, and Union high-score tracking.
 
 ## Pick'em
 

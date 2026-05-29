@@ -30,7 +30,7 @@ const OPEN_NOW_PRIORITY = [
   { id: "RDB1", note: "Slow draft redraft bracket priority room." },
   { id: "RDB3", note: "Fast draft redraft bracket priority room." },
   { id: "BG1", note: "Micro best ball with a 24-team standings race." },
-  { id: "BBU6", note: "Fast draft Best Ball Union room." },
+  { id: "BBU7", note: "Fast draft Best Ball Union room." },
   { id: "PK1", note: "Season-long NFL picks against the spread." },
   { id: "DYN7", note: "Lower buy-in superflex dynasty startup." },
   { id: "DYB1", note: "First priority room for the 48-team dynasty bracket." },

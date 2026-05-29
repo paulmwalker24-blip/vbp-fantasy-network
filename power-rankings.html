@@ -57,20 +57,20 @@
         <div class="power-rankings-picker" data-ranking-panel="bestball">
           <label for="bestballRankingSelect">Best Ball Union board</label>
           <select id="bestballRankingSelect" data-ranking-select>
-            <option value="bestball-center.html#powerRankings" data-note="The Best Ball Union board combines all currently completed draft rooms in the latest generated snapshot.">Combined BBU1-BBU5 Rankings</option>
+            <option value="bestball-center.html#powerRankings" data-note="The Best Ball Union board combines all currently completed draft rooms in the latest generated snapshot.">Combined BBU1-BBU6 Rankings</option>
             <option value="bestball-center.html" data-note="The full Best Ball Union Center shows league leaders, overall points, and weekly high scores.">Best Ball Union Center</option>
-            <option value="" data-note="BBU1 has drafted and is included in the combined BBU1-BBU5 board.">BBU1 - Best Ball Union #1</option>
-            <option value="" data-note="BBU2 has drafted and is included in the combined BBU1-BBU5 board.">BBU2 - Best Ball Union #2</option>
-            <option value="" data-note="BBU3 has drafted and is included in the combined BBU1-BBU5 board.">BBU3 - Best Ball Union #3</option>
-            <option value="" data-note="BBU4 has drafted and is included in the combined BBU1-BBU5 board.">BBU4 - Best Ball Union #4</option>
-            <option value="" data-note="BBU5 has drafted and is included in the combined BBU1-BBU5 board.">BBU5 - Best Ball Union #5</option>
-            <option value="" data-note="BBU6 is the next open Best Ball Union room and will unlock after it fills and drafts.">BBU6 - Best Ball Union #6</option>
+            <option value="" data-note="BBU1 has drafted and is included in the combined BBU1-BBU6 board.">BBU1 - Best Ball Union #1</option>
+            <option value="" data-note="BBU2 has drafted and is included in the combined BBU1-BBU6 board.">BBU2 - Best Ball Union #2</option>
+            <option value="" data-note="BBU3 has drafted and is included in the combined BBU1-BBU6 board.">BBU3 - Best Ball Union #3</option>
+            <option value="" data-note="BBU4 has drafted and is included in the combined BBU1-BBU6 board.">BBU4 - Best Ball Union #4</option>
+            <option value="" data-note="BBU5 has drafted and is included in the combined BBU1-BBU6 board.">BBU5 - Best Ball Union #5</option>
+            <option value="" data-note="BBU6 has drafted and is included in the combined BBU1-BBU6 board.">BBU6 - Best Ball Union #6</option>
             <option value="" data-note="BBU7 is open and will unlock after it fills and drafts.">BBU7 - Best Ball Union #7</option>
             <option value="" data-note="BBU8 is open and will unlock after it fills and drafts.">BBU8 - Best Ball Union #8</option>
             <option value="" data-note="BBU9 is open and will unlock after it fills and drafts.">BBU9 - Best Ball Union #9</option>
             <option value="" data-note="BBU10 is open and will unlock after it fills and drafts.">BBU10 - Best Ball Union #10</option>
           </select>
-          <p data-ranking-note>The current public Best Ball Union board combines completed rooms BBU1 through BBU5 from the latest generated snapshot.</p>
+          <p data-ranking-note>The current public Best Ball Union board combines completed rooms BBU1 through BBU6 from the latest generated snapshot.</p>
           <a href="bestball-center.html#powerRankings" class="btn btn-primary" data-ranking-open>Open Selected Board</a>
           <button type="button" class="btn btn-secondary" data-ranking-pending hidden disabled>Board Coming Soon</button>
         </div>
@@ -148,11 +148,11 @@
         <div class="power-rankings-picker" data-ranking-panel="gauntlet" hidden>
           <label for="gauntletRankingSelect">Best Ball Gauntlet league</label>
           <select id="gauntletRankingSelect" data-ranking-select>
-            <option value="" data-league-record-id="BG1" data-note="BG1 is full and drafting. Its locked-roster ranking board will unlock after the draft completes.">BG1 - VBP Best Ball Gauntlet 1</option>
+            <option value="" data-league-record-id="BG1" data-note="BG1 is full and drafting. Generated data may be available before a public Gauntlet board destination is wired into the hub.">BG1 - VBP Best Ball Gauntlet 1</option>
           </select>
-          <p data-ranking-note>BG1 is full and drafting. Its locked-roster ranking board will unlock after the draft completes.</p>
+          <p data-ranking-note>BG1 is full and drafting. Generated data may be available before a public Gauntlet board destination is wired into the hub.</p>
           <a href="" class="btn btn-primary" data-ranking-open hidden>Open Selected Board</a>
-          <button type="button" class="btn btn-secondary" data-ranking-pending disabled>Board Coming After Draft</button>
+          <button type="button" class="btn btn-secondary" data-ranking-pending disabled>Board Destination Coming</button>
         </div>
 
         <div class="power-rankings-picker" data-ranking-panel="chopped" hidden>
@@ -239,8 +239,11 @@
         return `${id} is listed for completeness. Pick'em will use season standings rather than roster power rankings.`;
       }
       const readiness = league.draftReadiness || {};
-      if (league.publish) {
+      if (league.publish && getBoardUrl(league)) {
         return `${id} is live: ${readiness.label || "draft data complete"}. Rankings refresh from Sleeper when the power-ranking sync runs.`;
+      }
+      if (league.publish) {
+        return `${id} has generated ranking data available, but its public board destination has not been wired into this hub yet.`;
       }
       return `${name} is pending: ${readiness.reason || league.holdReason || "Sleeper draft data is not complete yet."}`;
     }

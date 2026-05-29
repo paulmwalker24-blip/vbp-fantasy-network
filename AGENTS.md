@@ -195,7 +195,7 @@ The site is effectively data-driven through local league JSON, local donation JS
 - `dynasty-power-rankings.html`
   - Standalone public page for completed-draft dynasty league power rankings.
   - Reads generated ranking data through `assets/js/power-rankings.js`; do not hard-code the rankings unless the user explicitly asks for a one-off override.
-  - As of the May 27, 2026 Sleeper refresh, `DYN1` through `DYN7` have publishable completed-draft boards; `DYN8` remains pending while its startup is pre-draft.
+  - As of the May 29, 2026 Sleeper refresh, `DYN1` through `DYN7` have publishable completed-draft boards, and `DYN8` may publish a provisional live-from-rosters board while its startup is actively drafting.
 - Dynasty scores should show a score out of 100 in a clean owner ranking table without exposing internal scoring components or lineup-detail toggles.
 - Positional dynasty boards should rank owners from best to worst at each available position and should not list the underlying players.
 
@@ -280,7 +280,7 @@ Current league notes:
 - Use `data/bracket-groups.json`, `data/bracket-ledger.json`, `scripts/sync-bracket-ledger.ps1`, and `scripts/export-bracket-report.ps1` to manage combined bracket seeding and commissioner-facing standings reports across multiple `RDB` leagues.
 - Public format-center pages should live as standalone pages on the same site rather than becoming homepage focal sections.
 - Public format-center pages may use a clearly labeled sample preview until the live data is full enough to support a strong public-facing view.
-- Power ranking pages should only publish rankings for leagues with completed draft data or meaningful live season data. Drafting and pre-draft leagues should stay listed as pending.
+- Power ranking pages should only publish rankings for leagues with completed draft data or meaningful live season data. Drafting leagues may publish provisional live-from-rosters boards when the generated data marks them ready; pre-draft leagues should stay listed as pending.
 - Generated power rankings should prefer `scripts/sync-power-rankings.ps1`, `data/power-rankings.json`, and `data/power-ranking-overrides.json` over hand-authored rankings. Use overrides for league readiness, schedule context, injury notes, and manual commissioner adjustments.
 - Generated ranking methodology should follow each format: superflex and long-term value for dynasty, locked-depth and ceiling for Best Ball Union/Gauntlet, keeper runway for Keeper, weekly survival for Chopped, and current-season roster strength for Redraft/Bracket.
 - On the homepage, League Centers should live as a compact block after Active Leagues. This keeps recruiting/open leagues first while making standings, scoreboards, and rankings more discoverable than burying them below constitutions.
@@ -297,7 +297,7 @@ Current league notes:
 - The completed 2026 BBU rooms currently report `1 QB`, `2 RB`, `2 WR`, `1 TE`, and `2 FLEX` as active Sleeper starter positions; generated rankings should follow that live architecture even if older copy needs correction.
 - `power-rankings.html` is the public hub for rankings across the network. Keep format-specific rankings in the format center when a center exists, such as BBU rankings in `bestball-center.html` and bracket path rankings in `bracket-center.html`.
 - Individual league power rankings should use compact league-room boards after each league drafts, with simple reasons, visible scores, and format-specific methodology instead of one generic model for every format.
-- `BG1` is full and currently drafting; keep its ranking board pending until its locked draft build is complete.
+- `BG1` is full and currently drafting. Generated rankings may mark a provisional live-from-rosters board ready, but the public hub should not imply a finished locked-roster board until a rendered Gauntlet destination exists.
 - `CH1` is a live full chopped league and should continue pointing to `chopped-constitution.html`.
 - `CH1` hub-page availability should follow the live Sleeper owner-assigned roster count exactly when the API is available, with local `filled` / `sleeperFilled` acting only as fallback data.
 - `RD4` is a live 2026 redraft league at `$100` buy-in and currently uses the direct Sleeper predraft URL as its public link.
