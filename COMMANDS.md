@@ -106,6 +106,20 @@ Show only open leagues:
 Run the league occupancy report for open leagues only.
 ```
 
+## 100 Yard Rush
+
+Run a draft-order rush for a league record using the VBP default 100 Yard Rush settings: 3-8 yards, 2-6 seconds, Fast speed, no luck.
+
+```text
+Run a 100yardrush for BBU7, pull the current managers from Sleeper, and give me the replay link plus the draft order result.
+```
+
+Run a rush with an explicit manager list when local/Sleeper data needs a correction:
+
+```text
+Run a 100yardrush for BBU7 with these managers exactly: ManagerOne, ManagerTwo, ManagerThree, ManagerFour, ManagerFive, ManagerSix, ManagerSeven, ManagerEight, ManagerNine, ManagerTen.
+```
+
 ## League JSON Validation
 
 Run the local validator and summarize all errors and warnings:

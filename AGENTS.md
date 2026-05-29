@@ -293,7 +293,7 @@ Current league notes:
 - The Best Ball Union Center sample preview should remain clearly labeled and may stay in place until live BBU results are meaningful enough to replace it cleanly.
 - For the Best Ball Union Center, weekly high scores refer to the single highest-scoring team across all BBU leagues for that week, not per-division weekly winners.
 - For the Best Ball Union Center, the public overall points leaderboard is intentionally limited to the top 20 teams.
-- `BBU1` through `BBU5` are full and drafted. Their generated rankings feed the public combined Top 20 Best Ball Union board. Public BBU recruiting should focus on the next open room, currently `BBU6` at `7/10 paid`, unless newer data says otherwise.
+- `BBU1` through `BBU6` are full, paid, and drafted. Their generated rankings feed the public combined Top 20 Best Ball Union board when their completed-room rankings are available. Public BBU recruiting should focus on the next active room, currently `BBU7`, unless newer data says otherwise.
 - The completed 2026 BBU rooms currently report `1 QB`, `2 RB`, `2 WR`, `1 TE`, and `2 FLEX` as active Sleeper starter positions; generated rankings should follow that live architecture even if older copy needs correction.
 - `power-rankings.html` is the public hub for rankings across the network. Keep format-specific rankings in the format center when a center exists, such as BBU rankings in `bestball-center.html` and bracket path rankings in `bracket-center.html`.
 - Individual league power rankings should use compact league-room boards after each league drafts, with simple reasons, visible scores, and format-specific methodology instead of one generic model for every format.
@@ -412,7 +412,7 @@ If donation rendering breaks:
 - DYN1 is full and should not be included as an active orphan/takeover recruiting post unless a new vacancy appears.
 - DYN8 is full and paid and should not be included in active recruiting copy.
 - Best Ball Gauntlet 1 is full and drafting and should not be included in active recruiting copy.
-- Current Best Ball Union recruiting is on `BBU6`, a `$10` fast-draft best ball room at `7/10 paid`; say it drafts within 24 hours after full and paid while that count remains current.
+- Current Best Ball Union recruiting is on `BBU7`, a `$10` fast-draft best ball room drafting tonight at `8 PM CST`; use that same-day draft urgency while it remains current.
 - Dynasty Bracket recruiting titles should make the 48-team format visible, such as `VBP Fantasy Network | 48-Team Dynasty Bracket Open | Superflex Startup`.
 - Current Dynasty Bracket recruiting should concentrate new owners into Foundry first; offer Empire when an owner specifically prefers fast draft.
 - Dynasty Bracket and Bracket Redraft recruiting copy may mention that the Bracket Center includes a cross-division trade tracker.

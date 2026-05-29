@@ -101,7 +101,7 @@ Use:
 - Lead with the current active room when there is a scheduled draft time.
 - Always say `fast draft`.
 - Say new BBU leagues start drafting 24 hours after the league is filled and fully paid unless a same-day draft time has already been set.
-- `BBU6` is currently `7/10 paid`; use that paid count in the active post while it remains current.
+- `BBU6` is full, paid, drafted, and checked off. `BBU7` is the current active recruiting room and is drafting tonight at 8 PM CST.
 - Refresh the active `BBU` template when the current room changes so the pitch does not feel stale.
 - When a `BBU` post has a scheduled draft time, lead with that urgency and keep the description focused on the active room.
 
@@ -346,14 +346,16 @@ Dynasty Bracket (Year 1) - Startup
 - $50 per season with 3 years due up front
 - $2,400 total prize pool
 - payouts: $1,380 champion, $300 runner-up, $100 semifinal losers, $55 quarterfinal losers, $75 division winner bonus
+- looking for dedicated dynasty owners who want to build through a full startup and stick with a long-term bracket format
 
-Bracket Redraft - third season running this format
+Bracket Redraft - third season running this format, 27/60 filled
 - 60-team redraft format
 - 5 separate 12-team divisions
 - shared 32-team playoff bracket
 - $50 buy-in with fast and slow room options
 - $3,000 total prize pool
 - payouts: $1,380 champion, $500 runner-up, $200 semifinal losers, $55 quarterfinal losers, $100 division winner bonus
+- currently 27 of 60 spots filled
 
 If either format sounds interesting, start in the hub and I can point you to the best current opening.
 
@@ -541,20 +543,20 @@ Dynasty Bracket constitution: https://vbp-fantasy-network.vercel.app/dynasty-bra
 ### BBU
 
 When to use:
-- current BBU6 best ball recruiting post
+- current BBU7 best ball recruiting post
 
 Title:
 
 ```text
-VBP Fantasy Network | BBU6 $10 Best Ball | 7/10 Paid
+VBP Fantasy Network | BBU7 $10 Best Ball | Drafting Tonight
 ```
 
 Body:
 
 ```text
-VBP Fantasy Network has BBU6 open for anyone who wants a simple $10 best ball draft. BBU1 through BBU5 are full and paid, and BBU6 is currently 7/10 paid.
+VBP Fantasy Network has BBU7 open for anyone who wants a simple $10 best ball draft. BBU1 through BBU6 are full, paid, and drafted, so BBU7 is the next active room.
 
-The draft will be scheduled within 24 hours after the room is full and everyone is paid.
+BBU7 is drafting tonight at 8 PM CST.
 
 This is a 10-team draft-and-hold best ball league on Sleeper. It uses a 90-second snake draft, 18-player rosters, Progressive PPR scoring, and a weekly median matchup.
 
@@ -562,7 +564,7 @@ After the draft, there are no waivers, trades, pickups, or weekly lineup decisio
 
 Each full BBU room pays $75 to that league winner. Another $25 per room goes to the manager with the single highest total season score across all Best Ball Union teams.
 
-Best Ball Union #6 ($10, Fast): https://sleeper.com/i/zEVbdZ1YnodXo
+Best Ball Union #7 ($10, Fast): https://sleeper.com/i/m7VGz060E9KE5
 Best Ball constitution: https://vbp-fantasy-network.vercel.app/bestball-constitution.html
 Best Ball Union Center: https://vbp-fantasy-network.vercel.app/bestball-center.html
 Main hub: https://vbp-fantasy-network.vercel.app/

@@ -54,6 +54,7 @@
 
 ### Automation Recommendations
 
+- [x] Add a reusable 100 Yard Rush helper for league draft-order races using the VBP defaults of 3-8 yards, 2-6 seconds, Fast speed, and no luck.
 - [x] Upgrade generated power rankings to verify live league scoring settings and publish owner-by-position boards without public player breakdowns.
 - [x] Move the Best Ball Union Top 20 board onto generated completed-room rankings and add format-specific ranking profiles for current league setups.
 - [x] Add an organized private payment center with generic single-league LeagueSafe import, Sleeper reconciliation, and an all-league payment index, starting with `DYN8`.

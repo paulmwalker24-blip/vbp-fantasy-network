@@ -1,5 +1,36 @@
 # Local Scripts
 
+## `run-100yardrush.ps1`
+
+Creates a 100 Yard Rush replay URL without writing any repo data.
+
+By default it uses the VBP draft-order settings:
+
+- 3 to 8 yards per rush
+- 2 to 6 seconds per rush
+- Fast speed
+- no luck
+
+If no names are passed, it pulls manager names from the league's Sleeper draft order first, then assigned rosters as a fallback.
+
+Run BBU7 from Sleeper:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\run-100yardrush.ps1 -LeagueRecordId BBU7
+```
+
+Run with an explicit manager list:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\run-100yardrush.ps1 -LeagueRecordId BBU7 -ManagerNames ManagerOne,ManagerTwo,ManagerThree,ManagerFour,ManagerFive,ManagerSix,ManagerSeven,ManagerEight,ManagerNine,ManagerTen
+```
+
+Structured output:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\run-100yardrush.ps1 -LeagueRecordId BBU7 -PassThru | ConvertTo-Json -Depth 5
+```
+
 ## `set-sleeper-league-id.ps1`
 
 Parses a Sleeper league URL, Sleeper invite link, or raw numeric league ID and writes the resulting `sleeperLeagueId` into a league record inside `data/leagues.json`.

@@ -265,7 +265,7 @@
                         "division":  "",
                         "buyIn":  50,
                         "teams":  12,
-                        "filled":  1,
+                        "filled":  2,
                         "status":  "open",
                         "inviteLink":  "https://sleeper.com/i/m7oKYMV9ldoGg",
                         "leagueSafeLink":  "https://www.leaguesafe.com/join/4409855",
@@ -417,14 +417,14 @@
                         "division":  "",
                         "buyIn":  10,
                         "teams":  10,
-                        "filled":  8,
-                        "status":  "open",
+                        "filled":  10,
+                        "status":  "full",
                         "inviteLink":  "https://sleeper.com/i/zEVbdZ1YnodXo",
                         "leagueSafeLink":  "https://www.leaguesafe.com/join/4296858",
                         "constitutionPage":  "bestball-constitution.html",
                         "notes":  "",
-                        "lastUpdated":  "5/22/2026",
-                        "sleeperFilled":  8
+                        "lastUpdated":  "5/27/2026",
+                        "sleeperFilled":  10
                     },
                     {
                         "id":  "BBU7",
@@ -442,8 +442,8 @@
                         "leagueSafeLink":  "https://www.leaguesafe.com/join/4296858",
                         "constitutionPage":  "bestball-constitution.html",
                         "notes":  "",
-                        "lastUpdated":  "",
-                        "sleeperFilled":  1
+                        "lastUpdated":  "5/29/2026",
+                        "sleeperFilled":  2
                     },
                     {
                         "id":  "BBU8",
@@ -517,7 +517,7 @@
                         "inviteLink":  "https://sleeper.com/i/LVDOML8eZRmGM",
                         "leagueSafeLink":  "https://www.leaguesafe.com/join/4423711",
                         "constitutionPage":  "bestball-gauntlet-constitution.html",
-                        "notes":  "24-team doubleheader micro best ball. Winner take all: $120 to first place at full league size.",
+                        "notes":  "24-team doubleheader micro best ball. Full-size payouts: $110 to the standings champion and $10 to the highest single-week scorer.",
                         "lastUpdated":  "5/22/2026",
                         "sleeperFilled":  24
                     },

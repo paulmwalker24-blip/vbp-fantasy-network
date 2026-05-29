@@ -465,8 +465,8 @@ function Get-TeamName {
   param($User, $Roster)
   $metadata = if ($User) { $User.metadata } else { $null }
   $teamName = Get-TextValue (Get-ObjectProperty -Object $metadata -Name "team_name")
-  if (-not [string]::IsNullOrWhiteSpace($teamName)) { return $teamName }
   $displayName = if ($User) { Get-TextValue $User.display_name } else { "" }
+  if (-not [string]::IsNullOrWhiteSpace($teamName) -and $teamName -notmatch "^Slot\s+\d+$") { return $teamName }
   if (-not [string]::IsNullOrWhiteSpace($displayName)) { return $displayName }
   return "Roster $(Get-NumberValue $Roster.roster_id 0)"
 }
