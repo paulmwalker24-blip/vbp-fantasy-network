@@ -218,7 +218,7 @@ Import the latest Redraft Bracket LeagueSafe export and rebuild its private reco
 Import this Redraft Bracket LeagueSafe export into the private tracker inputs, replacing the previous current export: C:\Users\pkwal\Downloads\VBPs Redraft Bracket League 2026 payment details.csv
 ```
 
-The Redraft Bracket reconciliation writes bracket-only files under `reports/private/redraft-bracket-payment-reconciliation/`: `redraft-bracket-master.csv`, `redraft-bracket-paid-not-assigned.csv`, and easier editor-friendly `.txt` versions. It also keeps the universal-style aliases `commissioner-tracker.csv` and `paid-not-assigned.csv`.
+The Redraft Bracket reconciliation writes editor-friendly reports under `reports/private/redraft-bracket-payment-reconciliation/`: `redraft-bracket-master-readable.txt` and `redraft-bracket-paid-not-assigned-readable.txt`.
 
 Import the latest Best Ball Gauntlet LeagueSafe export:
 

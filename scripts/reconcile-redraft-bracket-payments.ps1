@@ -156,12 +156,8 @@ foreach ($league in $leagues) {
 if (-not (Test-Path -LiteralPath $CsvOutputDirectory)) { New-Item -ItemType Directory -Path $CsvOutputDirectory | Out-Null }
 
 $paymentCandidates = @($paymentRows | ForEach-Object { [pscustomobject]@{ row = $_; matchKey = $_.matchKey } })
-$trackerPath = Join-Path $CsvOutputDirectory "redraft-bracket-master.csv"
-$paidNotAssignedPath = Join-Path $CsvOutputDirectory "redraft-bracket-paid-not-assigned.csv"
 $readableTrackerPath = Join-Path $CsvOutputDirectory "redraft-bracket-master-readable.txt"
 $readablePaidNotAssignedPath = Join-Path $CsvOutputDirectory "redraft-bracket-paid-not-assigned-readable.txt"
-$universalTrackerAliasPath = Join-Path $CsvOutputDirectory "commissioner-tracker.csv"
-$universalPaidNotAssignedAliasPath = Join-Path $CsvOutputDirectory "paid-not-assigned.csv"
 
 $trackerRows = @($entries | Sort-Object leagueId, assignmentStatus, sleeperName | ForEach-Object {
   $entry = $_
@@ -198,8 +194,6 @@ $trackerRows = @($entries | Sort-Object leagueId, assignmentStatus, sleeperName 
     Notes = ""
   }
 })
-$trackerRows | Export-Csv -LiteralPath $trackerPath -NoTypeInformation -Encoding UTF8
-Copy-Item -LiteralPath $trackerPath -Destination $universalTrackerAliasPath -Force
 
 $assignedKeys = @{}
 $assignedPeople = @{}
@@ -219,8 +213,6 @@ $paidNotAssignedRows = @($paymentRows | Where-Object {
     Notes = $_.notes
   }
 })
-$paidNotAssignedRows | Export-Csv -LiteralPath $paidNotAssignedPath -NoTypeInformation -Encoding UTF8
-Copy-Item -LiteralPath $paidNotAssignedPath -Destination $universalPaidNotAssignedAliasPath -Force
 
 $readableLines = [System.Collections.Generic.List[string]]::new()
 $readableLines.Add("REDRAFT BRACKET PAYMENT MASTER") | Out-Null
@@ -274,15 +266,11 @@ $paidReadableLines | Set-Content -LiteralPath $readablePaidNotAssignedPath -Enco
 
 $result = [pscustomobject]@{
   csvOutputDirectory = $CsvOutputDirectory
-  redraftBracketMasterPath = $trackerPath
-  redraftBracketPaidNotAssignedPath = $paidNotAssignedPath
   redraftBracketReadableMasterPath = $readableTrackerPath
   redraftBracketReadablePaidNotAssignedPath = $readablePaidNotAssignedPath
-  universalTrackerAliasPath = $universalTrackerAliasPath
-  universalPaidNotAssignedAliasPath = $universalPaidNotAssignedAliasPath
   sleeperEntries = $entries.Count
   paidRows = $paymentRows.Count
-  assignedNeedsMatch = @((Import-Csv -LiteralPath $trackerPath) | Where-Object { $_.Status -eq "Assigned - needs payment match" }).Count
+  assignedNeedsMatch = @($trackerRows | Where-Object { $_.Status -eq "Assigned - needs payment match" }).Count
 }
 
 if ($PassThru) { $result } else {
