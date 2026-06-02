@@ -286,22 +286,21 @@ powershell -ExecutionPolicy Bypass -File .\scripts\sync-keeper-ledger.ps1 -PassT
 
 ## `reconcile-bbu-payments.ps1`
 
-Builds private commissioner reports that cross-reference Best Ball Union Sleeper managers against local LeagueSafe payment rows and saved identity matches.
+Builds private commissioner-readable reports that cross-reference Best Ball Union Sleeper managers against local LeagueSafe payment rows and saved identity matches.
 
 Private inputs live under `data/private/` and are ignored by git:
 
 - `manager-identities.json`
 - `leaguesafe-payments.csv`
 
-The script writes `reports/private/bbu-payment-reconciliation.md`, plus Excel-friendly CSV files under `reports/private/bbu-payment-reconciliation/`, also ignored by git.
+The script writes only the readable BBU reports under `reports/private/bbu-payment-reconciliation/`, also ignored by git.
 
 The script now stops without replacing existing reconciliation outputs if any live Sleeper league pull fails. Use `-AllowPartialSleeperData` only when an intentionally incomplete diagnostic report is needed.
 
-CSV outputs:
+Readable outputs:
 
-- `sleeper-entries.csv` - one row per Sleeper manager entry by BBU room
-- `person-summary.csv` - one row per matched person with total BBU entries, due, paid, and balance
-- `unmatched-payments.csv` - one row per LeagueSafe payment that still needs matching
+- `bbu-master-readable.txt` - room-by-room BBU payment master with short status labels.
+- `bbu-needs-attention-readable.txt` - concise list of payment matches, shortfalls, or paid rows that still need commissioner review.
 
 Default usage:
 
@@ -323,9 +322,9 @@ powershell -ExecutionPolicy Bypass -File .\scripts\reconcile-bbu-payments.ps1 -P
 
 ## `refresh-bbu-payment-center.ps1`
 
-Runs the routine BBU workflow in one command: optionally imports a new LeagueSafe CSV, reconciles current Sleeper identities, rebuilds the payment index, and regenerates the readable `PAYMENT-CENTER/` files.
+Runs the routine BBU workflow in one command: optionally imports a new LeagueSafe CSV, reconciles current Sleeper identities, and regenerates the readable BBU payment reports.
 
-It intentionally skips the formatted Excel workbook by default because Excel automation is the slowest part of the workflow. Add `-Workbook` only when the `.xlsx` output needs to be refreshed.
+The consolidated BBU workflow no longer writes routine CSV exports, Excel workbooks, or the broad `PAYMENT-CENTER/` tree.
 
 Quick refresh using the already imported BBU export:
 
@@ -333,16 +332,10 @@ Quick refresh using the already imported BBU export:
 powershell -ExecutionPolicy Bypass -File .\scripts\refresh-bbu-payment-center.ps1
 ```
 
-Import a new export and refresh the readable payment center:
+Import a new export and refresh the readable BBU reports:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\refresh-bbu-payment-center.ps1 -SourcePath "C:\Users\pkwal\Downloads\VBP's Best Ball Union 2026 payment details (8).csv"
-```
-
-Refresh everything including the formatted Excel workbook:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\refresh-bbu-payment-center.ps1 -SourcePath "C:\Users\pkwal\Downloads\VBP's Best Ball Union 2026 payment details (8).csv" -Workbook
 ```
 
 ## `import-leaguesafe-export.ps1`

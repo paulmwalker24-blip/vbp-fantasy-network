@@ -38,17 +38,7 @@ try {
     Invoke-TimedStep -Name "Import LeagueSafe export" -ScriptName "import-bbu-leaguesafe-export.ps1" -Arguments @{ SourcePath = $SourcePath }
   }
 
-  Invoke-TimedStep -Name "Reconcile BBU payments" -ScriptName "reconcile-bbu-payments.ps1"
-  Invoke-TimedStep -Name "Build payment index" -ScriptName "build-payment-index.ps1"
-  Invoke-TimedStep -Name "Build Payment Center" -ScriptName "build-commissioner-payment-center.ps1"
-
-  if ($Workbook) {
-    $workbookArguments = @{}
-    if ($OpenWorkbook) {
-      $workbookArguments.Open = $true
-    }
-    Invoke-TimedStep -Name "Build Excel workbook" -ScriptName "export-bbu-payment-workbook.ps1" -Arguments $workbookArguments
-  }
+  Invoke-TimedStep -Name "Reconcile BBU readable reports" -ScriptName "reconcile-bbu-payments.ps1"
 } finally {
   Pop-Location
   $totalWatch.Stop()
@@ -56,7 +46,7 @@ try {
 
 $summary = [pscustomobject]@{
   sourceImported = -not [string]::IsNullOrWhiteSpace($SourcePath)
-  workbookBuilt = [bool]$Workbook
+  workbookBuilt = $false
   totalSeconds = [math]::Round($totalWatch.Elapsed.TotalSeconds, 2)
   durations = [pscustomobject]$durations
 }
@@ -64,6 +54,6 @@ $summary = [pscustomobject]@{
 if ($PassThru) {
   $summary
 } else {
-  $workbookNote = if ($Workbook) { "Excel workbook rebuilt." } else { "Excel workbook skipped; add -Workbook only when you need the .xlsx file refreshed." }
-  Write-Host ("Quick BBU Payment Center refresh complete in {0:N2} seconds. {1}" -f $summary.totalSeconds, $workbookNote)
+  $workbookNote = if ($Workbook) { "Workbook output is skipped because the BBU workflow now uses readable text reports only." } else { "Readable BBU reports refreshed." }
+  Write-Host ("Quick BBU payment refresh complete in {0:N2} seconds. {1}" -f $summary.totalSeconds, $workbookNote)
 }

@@ -206,11 +206,13 @@ Import the latest downloaded Best Ball Union LeagueSafe export before rebuilding
 Import this new BBU LeagueSafe export into the private tracker inputs, replacing the previous current export: C:\Users\pkwal\Downloads\VBP's Best Ball Union 2026 payment details (2).csv
 ```
 
-Fast refresh after a new BBU CSV or identity confirmation, updating the readable Payment Center without waiting for Excel formatting:
+Fast refresh after a new BBU CSV or identity confirmation, updating only the readable BBU reports:
 
 ```text
-Quick-refresh my BBU Payment Center from this new LeagueSafe CSV and summarize what changed; skip the Excel workbook unless I ask for it: C:\Users\pkwal\Downloads\VBP's Best Ball Union 2026 payment details (8).csv
+Quick-refresh my BBU payment reports from this new LeagueSafe CSV and summarize what changed: C:\Users\pkwal\Downloads\VBP's Best Ball Union 2026 payment details (8).csv
 ```
+
+The BBU reconciliation writes editor-friendly reports under `reports/private/bbu-payment-reconciliation/`: `bbu-master-readable.txt` and `bbu-needs-attention-readable.txt`.
 
 Import the latest Redraft Bracket LeagueSafe export and rebuild its private reconciliation sheets:
 
@@ -237,14 +239,6 @@ Reconcile only one BBU room:
 ```text
 Run the BBU payment reconciliation for BBU4 only and tell me who still needs identity/payment matching.
 ```
-
-Rebuild the formatted Excel workbook from the latest BBU reconciliation CSVs:
-
-```text
-Build and open the formatted BBU payment tracker workbook from the latest private reconciliation CSVs.
-```
-
-The formatted Excel rebuild is intentionally optional because it is much slower than the Markdown and CSV Payment Center refresh.
 
 ## Bracket Ledger
 

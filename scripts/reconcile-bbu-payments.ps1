@@ -2,7 +2,7 @@ param(
   [string]$LeaguesJsonPath = "data/leagues.json",
   [string]$IdentityPath = "data/private/manager-identities.json",
   [string]$PaymentsCsvPath = "data/private/leaguesafe-payments.csv",
-  [string]$OutputPath = "reports/private/bbu-payment-reconciliation.md",
+  [string]$OutputPath = "reports/private/bbu-payment-reconciliation/bbu-master-readable.txt",
   [string]$CsvOutputDirectory = "reports/private/bbu-payment-reconciliation",
   [string[]]$LeagueRecordIds,
   [switch]$AllowPartialSleeperData,
@@ -445,140 +445,9 @@ $totalPaidMatched = Measure-DecimalSum -Items @($paymentRows | Where-Object { $_
 $totalPaidUnmatched = Measure-DecimalSum -Items @($unmatchedPayments) -PropertyName "amount"
 $totalSleeperEntries = $sleeperEntries.Count
 
-$lines = [System.Collections.Generic.List[string]]::new()
-$lines.Add("# BBU Payment Reconciliation") | Out-Null
-$lines.Add("") | Out-Null
-$lines.Add("Generated: $(Get-Date -Format 'yyyy-MM-dd HH:mm')") | Out-Null
-$lines.Add("") | Out-Null
-$lines.Add("## Summary") | Out-Null
-$lines.Add("") | Out-Null
-$lines.Add("- BBU Sleeper entries found: $totalSleeperEntries") | Out-Null
-$lines.Add("- Identity-matched people with BBU entries: $($matchedPeople.Count)") | Out-Null
-$lines.Add("- Unmatched Sleeper entries: $($unmatchedSleeperEntries.Count)") | Out-Null
-$lines.Add("- Matched LeagueSafe money: $(Format-Money $totalPaidMatched)") | Out-Null
-$lines.Add("- Unmatched LeagueSafe money: $(Format-Money $totalPaidUnmatched)") | Out-Null
-$lines.Add("- Known-person BBU amount due: $(Format-Money $totalDueKnownPeople)") | Out-Null
-$lines.Add("") | Out-Null
-
-if ($fetchErrors.Count -gt 0) {
-  $lines.Add("## Sleeper Fetch Warnings") | Out-Null
-  $lines.Add("") | Out-Null
-  foreach ($errorRow in @($fetchErrors)) {
-    $lines.Add("- $($errorRow.leagueId) $($errorRow.name): $($errorRow.error)") | Out-Null
-  }
-  $lines.Add("") | Out-Null
-}
-
-$lines.Add("## By BBU League") | Out-Null
-$lines.Add("") | Out-Null
-foreach ($league in $bbuLeagues) {
-  $leagueEntries = @($sleeperEntries | Where-Object { $_.leagueId -eq (Get-StringValue $league.id) } | Sort-Object rosterId)
-  $lines.Add("### $($league.id) - $($league.name)") | Out-Null
-  $lines.Add("") | Out-Null
-  if ($leagueEntries.Count -eq 0) {
-    $lines.Add("- No Sleeper managers found yet.") | Out-Null
-  } else {
-    foreach ($entry in $leagueEntries) {
-      $identity = if ([string]::IsNullOrWhiteSpace($entry.personName)) { "UNMATCHED" } else { "$($entry.personName) [$($entry.personId)]" }
-      $lines.Add("- $($entry.teamName) / $($entry.username) / $($entry.displayName) / Sleeper $($entry.sleeperUserId) -> $identity") | Out-Null
-    }
-  }
-  $lines.Add("") | Out-Null
-}
-
-$lines.Add("## Matched People") | Out-Null
-$lines.Add("") | Out-Null
-if ($matchedPeople.Count -eq 0) {
-  $lines.Add("- No matched people yet. Add known identities to `$IdentityPath`.") | Out-Null
-} else {
-  foreach ($personSummary in @($matchedPeople | Sort-Object personName)) {
-    $status = if ($personSummary.balance -gt 0) { "OWES $(Format-Money $personSummary.balance)" } elseif ($personSummary.balance -lt 0) { "EXTRA $(Format-Money ([Math]::Abs($personSummary.balance)))" } else { "PAID EVEN" }
-    $leagueList = (@($personSummary.entries) | ForEach-Object { $_.leagueId }) -join ", "
-    $lines.Add("- $($personSummary.personName) [$($personSummary.personId)] - $leagueList - due $(Format-Money $personSummary.due), matched paid $(Format-Money $personSummary.paid) - $status") | Out-Null
-  }
-}
-$lines.Add("") | Out-Null
-
-$lines.Add("## Unmatched Sleeper Entries") | Out-Null
-$lines.Add("") | Out-Null
-if ($unmatchedSleeperEntries.Count -eq 0) {
-  $lines.Add("- None.") | Out-Null
-} else {
-  foreach ($entry in @($unmatchedSleeperEntries | Sort-Object leagueId, username)) {
-    $lines.Add("- $($entry.leagueId): $($entry.teamName) / $($entry.username) / $($entry.displayName) / Sleeper $($entry.sleeperUserId)") | Out-Null
-  }
-}
-$lines.Add("") | Out-Null
-
-$lines.Add("## Unmatched LeagueSafe Payments") | Out-Null
-$lines.Add("") | Out-Null
-if ($unmatchedPayments.Count -eq 0) {
-  $lines.Add("- None.") | Out-Null
-} else {
-  foreach ($payment in @($unmatchedPayments | Sort-Object date, payerName)) {
-    $where = if ([string]::IsNullOrWhiteSpace($payment.leagueRecordId)) { $payment.leagueGroup } else { $payment.leagueRecordId }
-    $lines.Add("- $($payment.date) - $($payment.payerName) <$($payment.payerEmail)> - $(Format-Money $payment.amount) - $where - $($payment.notes)") | Out-Null
-  }
-}
-$lines.Add("") | Out-Null
-
-$lines.Add("## Next Matching Steps") | Out-Null
-$lines.Add("") | Out-Null
-$lines.Add("1. For each unmatched Sleeper entry, ask for the LeagueSafe payer name/email.") | Out-Null
-$lines.Add("2. Add one person record to `$IdentityPath` with that Sleeper user and LeagueSafe identity.") | Out-Null
-$lines.Add("3. For each unmatched payment, add `personId` in `$PaymentsCsvPath` if the payer name/email is not enough to match automatically.") | Out-Null
-$lines.Add("4. Re-run this script. People in multiple BBU rooms will roll up under one person total.") | Out-Null
-
-$outputDirectory = Split-Path -Parent $OutputPath
-if (-not [string]::IsNullOrWhiteSpace($outputDirectory) -and -not (Test-Path -LiteralPath $outputDirectory)) {
-  New-Item -ItemType Directory -Path $outputDirectory | Out-Null
-}
-
-$lines | Set-Content -LiteralPath $OutputPath -Encoding UTF8
-
 if (-not (Test-Path -LiteralPath $CsvOutputDirectory)) {
   New-Item -ItemType Directory -Path $CsvOutputDirectory | Out-Null
 }
-
-$sleeperEntriesCsvPath = Join-Path $CsvOutputDirectory "sleeper-entries.csv"
-$personSummaryCsvPath = Join-Path $CsvOutputDirectory "person-summary.csv"
-$unmatchedPaymentsCsvPath = Join-Path $CsvOutputDirectory "unmatched-payments.csv"
-$leagueSafeExportCsvPath = Join-Path $CsvOutputDirectory "leaguesafe-export.csv"
-$actionTrackerCsvPath = Join-Path $CsvOutputDirectory "bbu-action-tracker.csv"
-$commissionerTrackerCsvPath = Join-Path $CsvOutputDirectory "commissioner-tracker.csv"
-$paidUnassignedCsvPath = Join-Path $CsvOutputDirectory "paid-not-assigned.csv"
-
-@($sleeperEntries | Sort-Object leagueId, teamName | ForEach-Object {
-  [pscustomobject]@{
-    leagueId = $_.leagueId
-    leagueName = $_.leagueName
-    buyIn = $_.buyIn
-    rosterId = $_.rosterId
-    assignmentStatus = $_.assignmentStatus
-    teamName = $_.teamName
-    sleeperDisplayName = $_.displayName
-    sleeperUsername = $_.username
-    sleeperUserId = $_.sleeperUserId
-    personId = $_.personId
-    personName = $_.personName
-    matchStatus = if ([string]::IsNullOrWhiteSpace($_.personId)) { "Needs identity match" } else { "Matched" }
-  }
-}) | Export-Csv -LiteralPath $sleeperEntriesCsvPath -NoTypeInformation -Encoding UTF8
-
-@($paymentRows | Sort-Object payerName | ForEach-Object {
-  [pscustomobject]@{
-    owner = $_.payerName
-    ownerEmail = $_.payerEmail
-    paid = $_.amount
-    status = $_.status
-    leagueGroup = $_.leagueGroup
-    leagueRecordId = $_.leagueRecordId
-    paymentId = $_.paymentId
-    personId = $_.personId
-    matched = $_.matched
-    notes = $_.notes
-  }
-}) | Export-Csv -LiteralPath $leagueSafeExportCsvPath -NoTypeInformation -Encoding UTF8
 
 function Get-MatchKey {
   param(
@@ -589,6 +458,19 @@ function Get-MatchKey {
   return ((Get-StringValue $Value).ToLowerInvariant() -replace '[^a-z0-9]', '')
 }
 
+function Format-TableLine {
+  param([object[]]$Values, [int[]]$Widths)
+  $parts = @()
+  for ($i = 0; $i -lt $Widths.Count; $i++) {
+    $value = Get-StringValue $Values[$i]
+    if ($value.Length -gt $Widths[$i]) {
+      $value = $value.Substring(0, [Math]::Max(0, $Widths[$i] - 1)) + "."
+    }
+    $parts += $value.PadRight($Widths[$i])
+  }
+  return ($parts -join "  ").TrimEnd()
+}
+
 $paymentCandidates = @($paymentRows | ForEach-Object {
   [pscustomobject]@{
     row = $_
@@ -596,132 +478,47 @@ $paymentCandidates = @($paymentRows | ForEach-Object {
   }
 })
 
-@($sleeperEntries | Sort-Object leagueId, assignmentStatus, teamName | ForEach-Object {
-  $entry = $_
+function Get-BbuPaymentCandidate {
+  param($Entry)
   $keys = @(
-    Get-MatchKey $entry.teamName
-    Get-MatchKey $entry.displayName
-    Get-MatchKey $entry.username
+    Get-MatchKey $Entry.teamName
+    Get-MatchKey $Entry.displayName
+    Get-MatchKey $Entry.username
   ) | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
 
-  $candidate = $null
-  $confidence = ""
-  if (-not [string]::IsNullOrWhiteSpace($entry.personId)) {
+  if (-not [string]::IsNullOrWhiteSpace($Entry.personId)) {
     foreach ($paymentCandidate in $paymentCandidates) {
-      if ((Get-StringValue $paymentCandidate.row.personId) -eq (Get-StringValue $entry.personId)) {
-        $candidate = $paymentCandidate.row
-        $confidence = "Identity ledger match"
-        break
+      if ((Get-StringValue $paymentCandidate.row.personId) -eq (Get-StringValue $Entry.personId)) {
+        return [pscustomobject]@{ row = $paymentCandidate.row; confidence = "Identity" }
       }
     }
   }
 
-  if ($null -eq $candidate) {
-    foreach ($paymentCandidate in $paymentCandidates) {
-      if ($keys -contains $paymentCandidate.matchKey) {
-        $candidate = $paymentCandidate.row
-        $confidence = "Exact name/username match"
-        break
+  foreach ($paymentCandidate in $paymentCandidates) {
+    if ($keys -contains $paymentCandidate.matchKey) {
+      return [pscustomobject]@{ row = $paymentCandidate.row; confidence = "Exact" }
+    }
+  }
+
+  foreach ($paymentCandidate in $paymentCandidates) {
+    foreach ($key in $keys) {
+      if ($key.Length -ge 5 -and $paymentCandidate.matchKey.Length -ge 5 -and ($paymentCandidate.matchKey.Contains($key) -or $key.Contains($paymentCandidate.matchKey))) {
+        return [pscustomobject]@{ row = $paymentCandidate.row; confidence = "Possible" }
       }
     }
   }
 
-  if ($null -eq $candidate) {
-    foreach ($paymentCandidate in $paymentCandidates) {
-      foreach ($key in $keys) {
-        if ($key.Length -ge 5 -and $paymentCandidate.matchKey.Length -ge 5 -and ($paymentCandidate.matchKey.Contains($key) -or $key.Contains($paymentCandidate.matchKey))) {
-          $candidate = $paymentCandidate.row
-          $confidence = "Possible partial match"
-          break
-        }
-      }
-      if ($null -ne $candidate) {
-        break
-      }
-    }
-  }
+  return $null
+}
 
-  $actionStatus = if ($entry.assignmentStatus -eq "Waiting assignment") {
-    "Waiting assignment - unpaid"
-  } elseif ($null -eq $candidate) {
-    "Assigned - needs LeagueSafe match"
-  } elseif ($candidate.amount -ge $entry.buyIn) {
-    "Assigned - possible paid match"
-  } elseif ($candidate.amount -gt 0) {
-    "Assigned - partial/extra review"
-  } else {
-    "Assigned - matched name but not paid"
-  }
-
-  [pscustomobject]@{
-    leagueId = $entry.leagueId
-    leagueName = $entry.leagueName
-    buyIn = $entry.buyIn
-    assignmentStatus = $entry.assignmentStatus
-    rosterId = $entry.rosterId
-    sleeperTeamName = $entry.teamName
-    sleeperDisplayName = $entry.displayName
-    sleeperUsername = $entry.username
-    sleeperUserId = $entry.sleeperUserId
-    leagueSafeOwnerCandidate = if ($candidate) { $candidate.payerName } else { "" }
-    leagueSafeEmailCandidate = if ($candidate) { $candidate.payerEmail } else { "" }
-    leagueSafePaid = if ($candidate) { $candidate.amount } else { "" }
-    leagueSafeStatus = if ($candidate) { $candidate.status } else { "" }
-    leagueSafePaymentId = if ($candidate) { $candidate.paymentId } else { "" }
-    matchConfidence = $confidence
-    actionStatus = $actionStatus
-    confirmedPersonId = $entry.personId
-    commissionerNotes = ""
-  }
-}) | Export-Csv -LiteralPath $actionTrackerCsvPath -NoTypeInformation -Encoding UTF8
-
-@($sleeperEntries | Sort-Object leagueId, assignmentStatus, teamName | ForEach-Object {
+$trackerRows = @($sleeperEntries | Sort-Object leagueId, assignmentStatus, teamName | ForEach-Object {
   $entry = $_
-  $keys = @(
-    Get-MatchKey $entry.teamName
-    Get-MatchKey $entry.displayName
-    Get-MatchKey $entry.username
-  ) | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
-
-  $candidate = $null
-  $confidence = ""
-  if (-not [string]::IsNullOrWhiteSpace($entry.personId)) {
-    foreach ($paymentCandidate in $paymentCandidates) {
-      if ((Get-StringValue $paymentCandidate.row.personId) -eq (Get-StringValue $entry.personId)) {
-        $candidate = $paymentCandidate.row
-        $confidence = "Identity ledger"
-        break
-      }
-    }
-  }
-
-  if ($null -eq $candidate) {
-    foreach ($paymentCandidate in $paymentCandidates) {
-      if ($keys -contains $paymentCandidate.matchKey) {
-        $candidate = $paymentCandidate.row
-        $confidence = "Exact"
-        break
-      }
-    }
-  }
-
-  if ($null -eq $candidate) {
-    foreach ($paymentCandidate in $paymentCandidates) {
-      foreach ($key in $keys) {
-        if ($key.Length -ge 5 -and $paymentCandidate.matchKey.Length -ge 5 -and ($paymentCandidate.matchKey.Contains($key) -or $key.Contains($paymentCandidate.matchKey))) {
-          $candidate = $paymentCandidate.row
-          $confidence = "Possible"
-          break
-        }
-      }
-      if ($null -ne $candidate) {
-        break
-      }
-    }
-  }
+  $match = Get-BbuPaymentCandidate -Entry $entry
+  $candidate = if ($match) { $match.row } else { $null }
+  $confidence = if ($match) { $match.confidence } else { "" }
 
   $paidAmount = if ($candidate) { $candidate.amount } else { [decimal]0 }
-  $isIdentityMatch = $confidence -eq "Identity ledger"
+  $isIdentityMatch = $confidence -eq "Identity"
   $isFullyCoveredIdentity = $false
   $identityShortfall = [decimal]0
   if ($isIdentityMatch -and $entriesByPerson.ContainsKey($entry.personId) -and $paidByPerson.ContainsKey($entry.personId)) {
@@ -731,36 +528,43 @@ $paymentCandidates = @($paymentRows | ForEach-Object {
       $identityShortfall = $personDue - [decimal]$paidByPerson[$entry.personId]
     }
   }
-  $status = if ($entry.assignmentStatus -eq "Waiting assignment") {
-    "Waiting - not assigned/unpaid"
+  $status = if ($entry.assignmentStatus -eq "Waiting assignment" -and $candidate -and $paidAmount -gt 0) {
+    "Paid / waiting assignment"
+  } elseif ($entry.assignmentStatus -eq "Waiting assignment") {
+    "Waiting / unpaid"
   } elseif ($isFullyCoveredIdentity) {
-    "Matched - paid"
+    "Paid"
   } elseif ($isIdentityMatch -and $paidAmount -gt 0) {
-    "Review - pooled payment shortfall"
+    "Shortfall review"
   } elseif ($candidate -and $paidAmount -ge $entry.buyIn) {
-    "Assigned + paid candidate"
+    "Paid candidate"
   } elseif ($candidate -and $paidAmount -gt 0) {
-    "Assigned + payment review"
+    "Payment review"
   } else {
-    "Assigned - needs payment match"
+    "Needs match"
   }
 
   [pscustomobject]@{
     BBU = $entry.leagueId
-    "Sleeper Name" = if ([string]::IsNullOrWhiteSpace($entry.teamName)) { $entry.displayName } else { $entry.teamName }
-    "Sleeper User ID" = $entry.sleeperUserId
-    "Assignment" = $entry.assignmentStatus
-    "Roster Slot" = $entry.rosterId
-    "LeagueSafe Name" = if ($candidate) { $candidate.payerName } else { "" }
-    "LeagueSafe Email" = if ($candidate) { $candidate.payerEmail } else { "" }
-    "Paid" = if ($isFullyCoveredIdentity) { $entry.buyIn } elseif ($isIdentityMatch) { "" } elseif ($candidate) { $candidate.amount } else { "" }
-    "Status" = $status
-    "Match" = $confidence
-    "Person" = $entry.personName
-    "Person ID" = $entry.personId
-    "Notes" = if ($isIdentityMatch -and -not $isFullyCoveredIdentity) { "Known person owes $('${0:N2}' -f $identityShortfall) across all BBU entries; do not assign the shortfall to a specific room yet." } else { "" }
+    leagueName = $entry.leagueName
+    sleeperName = if ([string]::IsNullOrWhiteSpace($entry.teamName)) { if ([string]::IsNullOrWhiteSpace($entry.displayName)) { $entry.username } else { $entry.displayName } } else { $entry.teamName }
+    sleeperUserId = $entry.sleeperUserId
+    assignment = if ($entry.assignmentStatus -eq "Assigned team") { "Assigned" } else { "Waiting" }
+    rosterSlot = $entry.rosterId
+    leagueSafeName = if ($candidate) { $candidate.payerName } else { "" }
+    paymentId = if ($candidate) { $candidate.paymentId } else { "" }
+    paid = if ($isFullyCoveredIdentity) { $entry.buyIn } elseif ($isIdentityMatch) { "" } elseif ($candidate) { $candidate.amount } else { "" }
+    status = $status
+    match = $confidence
+    person = $entry.personName
+    notes = if ($isIdentityMatch -and -not $isFullyCoveredIdentity) { "Known person owes $('${0:N2}' -f $identityShortfall) across all BBU entries." } else { "" }
   }
-}) | Export-Csv -LiteralPath $commissionerTrackerCsvPath -NoTypeInformation -Encoding UTF8
+})
+
+$candidatePaymentIds = @{}
+foreach ($row in @($trackerRows | Where-Object { -not [string]::IsNullOrWhiteSpace($_.paymentId) })) {
+  $candidatePaymentIds[(Get-StringValue $row.paymentId)] = $true
+}
 
 $assignedPersonIds = @{}
 $assignedSleeperKeys = @{}
@@ -777,11 +581,13 @@ foreach ($entry in @($sleeperEntries | Where-Object { $_.assignmentStatus -eq "A
 
 $waitingEntries = @($sleeperEntries | Where-Object { $_.assignmentStatus -eq "Waiting assignment" })
 
-@($paymentRows | Where-Object {
+$paidNotAssignedRows = @($paymentRows | Where-Object {
   $paymentKey = Get-MatchKey $_.payerName
+  $paymentId = Get-StringValue $_.paymentId
   $hasAssignedPerson = -not [string]::IsNullOrWhiteSpace($_.personId) -and $assignedPersonIds.ContainsKey((Get-StringValue $_.personId))
   $hasAssignedName = -not [string]::IsNullOrWhiteSpace($paymentKey) -and $assignedSleeperKeys.ContainsKey($paymentKey)
-  -not $hasAssignedPerson -and -not $hasAssignedName
+  $isCandidateForSleeper = -not [string]::IsNullOrWhiteSpace($paymentId) -and $candidatePaymentIds.ContainsKey($paymentId)
+  -not $hasAssignedPerson -and -not $hasAssignedName -and -not $isCandidateForSleeper
 } | Sort-Object payerName | ForEach-Object {
   $payment = $_
   $paymentKey = Get-MatchKey $payment.payerName
@@ -828,61 +634,129 @@ $waitingEntries = @($sleeperEntries | Where-Object { $_.assignmentStatus -eq "Wa
     "Status" = if ($candidate) { "Paid - possible waiting Sleeper" } else { "Paid - no assigned team found" }
     "Notes" = $payment.notes
   }
-}) | Export-Csv -LiteralPath $paidUnassignedCsvPath -NoTypeInformation -Encoding UTF8
+})
 
-@($matchedPeople | Sort-Object personName | ForEach-Object {
-  [pscustomobject]@{
-    personId = $_.personId
-    personName = $_.personName
-    bbuEntries = (@($_.entries) | ForEach-Object { $_.leagueId }) -join "; "
-    entryCount = @($_.entries).Count
-    amountDue = $_.due
-    matchedPaid = $_.paid
-    balance = $_.balance
-    paymentStatus = if ($_.balance -gt 0) { "Owes" } elseif ($_.balance -lt 0) { "Extra paid" } else { "Paid even" }
-  }
-}) | Export-Csv -LiteralPath $personSummaryCsvPath -NoTypeInformation -Encoding UTF8
+$needsAttentionRows = @($trackerRows | Where-Object { $_.status -notin @("Paid", "Waiting / unpaid") })
+$shortfallRows = @($matchedPeople | Where-Object { $_.balance -gt 0 } | Sort-Object personName)
+$attentionOutputPath = Join-Path $CsvOutputDirectory "bbu-needs-attention-readable.txt"
 
-@($unmatchedPayments | Sort-Object date, payerName | ForEach-Object {
-  [pscustomobject]@{
-    paymentId = $_.paymentId
-    date = $_.date
-    payerName = $_.payerName
-    payerEmail = $_.payerEmail
-    amount = $_.amount
-    leagueGroup = $_.leagueGroup
-    leagueRecordId = $_.leagueRecordId
-    status = $_.status
-    notes = $_.notes
-    personId = $_.personId
-    matchStatus = "Needs payment match"
+$masterLines = [System.Collections.Generic.List[string]]::new()
+$masterLines.Add("BBU PAYMENT MASTER") | Out-Null
+$masterLines.Add(("Generated: {0}" -f (Get-Date).ToString("M/d/yyyy h:mm tt"))) | Out-Null
+$masterLines.Add("") | Out-Null
+$masterLines.Add(("Sleeper entries: {0}" -f $totalSleeperEntries)) | Out-Null
+$masterLines.Add(("Matched people: {0}" -f $matchedPeople.Count)) | Out-Null
+$masterLines.Add(("Known-person amount due: {0}" -f (Format-Money $totalDueKnownPeople))) | Out-Null
+$masterLines.Add(("Matched LeagueSafe money: {0}" -f (Format-Money $totalPaidMatched))) | Out-Null
+$masterLines.Add(("Unmatched LeagueSafe money: {0}" -f (Format-Money $totalPaidUnmatched))) | Out-Null
+$masterLines.Add(("Rows needing attention: {0}" -f $needsAttentionRows.Count)) | Out-Null
+$masterLines.Add("") | Out-Null
+
+if ($fetchErrors.Count -gt 0) {
+  $masterLines.Add("SLEEPER FETCH WARNINGS") | Out-Null
+  foreach ($errorRow in @($fetchErrors)) {
+    $masterLines.Add(("- {0} {1}: {2}" -f $errorRow.leagueId, $errorRow.name, $errorRow.error)) | Out-Null
   }
-}) | Export-Csv -LiteralPath $unmatchedPaymentsCsvPath -NoTypeInformation -Encoding UTF8
+  $masterLines.Add("") | Out-Null
+}
+
+foreach ($leagueGroup in @($trackerRows | Sort-Object @{ Expression = { [int](($_.BBU -replace '\D', '')) } }, assignment, sleeperName | Group-Object BBU)) {
+  $rows = @($leagueGroup.Group)
+  $first = $rows[0]
+  $masterLines.Add(("{0} - {1}" -f $first.BBU, $first.leagueName).ToUpperInvariant()) | Out-Null
+  $masterLines.Add(("Paid: {0} | Paid candidate: {1} | Needs match: {2} | Waiting unpaid: {3}" -f
+      @($rows | Where-Object { $_.status -eq "Paid" }).Count,
+      @($rows | Where-Object { $_.status -eq "Paid candidate" }).Count,
+      @($rows | Where-Object { $_.status -eq "Needs match" }).Count,
+      @($rows | Where-Object { $_.status -eq "Waiting / unpaid" }).Count)) | Out-Null
+  $masterLines.Add((Format-TableLine -Values @("Sleeper", "Assign", "Slot", "Paid", "LeagueSafe", "Status") -Widths @(24, 9, 4, 8, 22, 22))) | Out-Null
+  $masterLines.Add((Format-TableLine -Values @("-------", "------", "----", "----", "----------", "------") -Widths @(24, 9, 4, 8, 22, 22))) | Out-Null
+  foreach ($row in $rows) {
+    $paid = if ([string]::IsNullOrWhiteSpace((Get-StringValue $row.paid))) { "" } else { "$" + ("{0:N0}" -f (Convert-ToDecimal $row.paid)) }
+    $masterLines.Add((Format-TableLine -Values @($row.sleeperName, $row.assignment, $row.rosterSlot, $paid, $row.leagueSafeName, $row.status) -Widths @(24, 9, 4, 8, 22, 22))) | Out-Null
+  }
+  $masterLines.Add("") | Out-Null
+}
+
+$attentionLines = [System.Collections.Generic.List[string]]::new()
+$attentionLines.Add("BBU PAYMENT ITEMS NEEDING ATTENTION") | Out-Null
+$attentionLines.Add(("Generated: {0}" -f (Get-Date).ToString("M/d/yyyy h:mm tt"))) | Out-Null
+$attentionLines.Add("") | Out-Null
+
+if ($needsAttentionRows.Count -eq 0 -and $shortfallRows.Count -eq 0 -and $paidNotAssignedRows.Count -eq 0) {
+  $attentionLines.Add("No BBU payment items currently need attention.") | Out-Null
+} else {
+  if ($needsAttentionRows.Count -gt 0) {
+    $attentionLines.Add("SLEEPER ROWS TO REVIEW") | Out-Null
+    $attentionLines.Add((Format-TableLine -Values @("BBU", "Sleeper", "Paid", "LeagueSafe", "Status", "Match") -Widths @(6, 24, 8, 22, 22, 10))) | Out-Null
+    $attentionLines.Add((Format-TableLine -Values @("---", "-------", "----", "----------", "------", "-----") -Widths @(6, 24, 8, 22, 22, 10))) | Out-Null
+    foreach ($row in $needsAttentionRows) {
+      $paid = if ([string]::IsNullOrWhiteSpace((Get-StringValue $row.paid))) { "" } else { "$" + ("{0:N0}" -f (Convert-ToDecimal $row.paid)) }
+      $attentionLines.Add((Format-TableLine -Values @($row.BBU, $row.sleeperName, $paid, $row.leagueSafeName, $row.status, $row.match) -Widths @(6, 24, 8, 22, 22, 10))) | Out-Null
+    }
+    $attentionLines.Add("") | Out-Null
+  }
+
+  if ($shortfallRows.Count -gt 0) {
+    $attentionLines.Add("KNOWN PEOPLE WITH BALANCE DUE") | Out-Null
+    foreach ($personSummary in $shortfallRows) {
+      $leagueList = (@($personSummary.entries) | ForEach-Object { $_.leagueId }) -join ", "
+      $attentionLines.Add(("- {0}: {1}; due {2}, paid {3}, owes {4}" -f $personSummary.personName, $leagueList, (Format-Money $personSummary.due), (Format-Money $personSummary.paid), (Format-Money $personSummary.balance))) | Out-Null
+    }
+    $attentionLines.Add("") | Out-Null
+  }
+
+  if ($paidNotAssignedRows.Count -gt 0) {
+    $attentionLines.Add("PAID LEAGUESAFE ROWS NOT TIED TO AN ASSIGNED ROSTER") | Out-Null
+    $attentionLines.Add((Format-TableLine -Values @("LeagueSafe", "Paid", "Possible Sleeper", "Possible BBU", "Status") -Widths @(26, 8, 24, 12, 32))) | Out-Null
+    $attentionLines.Add((Format-TableLine -Values @("----------", "----", "----------------", "------------", "------") -Widths @(26, 8, 24, 12, 32))) | Out-Null
+    foreach ($payment in $paidNotAssignedRows) {
+      $paid = "$" + ("{0:N0}" -f (Convert-ToDecimal $payment.Paid))
+      $attentionLines.Add((Format-TableLine -Values @($payment."LeagueSafe Name", $paid, $payment."Possible Sleeper", $payment."Possible BBU", $payment.Status) -Widths @(26, 8, 24, 12, 32))) | Out-Null
+    }
+  }
+}
+
+$legacyFiles = @(
+  "bbu-action-tracker.csv",
+  "commissioner-tracker.csv",
+  "leaguesafe-export.csv",
+  "paid-not-assigned.csv",
+  "person-summary.csv",
+  "sleeper-entries.csv",
+  "unmatched-payments.csv",
+  "bbu-payment-reconciliation.md"
+)
+foreach ($legacyFile in $legacyFiles) {
+  $legacyPath = if ($legacyFile -eq "bbu-payment-reconciliation.md") { Join-Path (Split-Path -Parent $CsvOutputDirectory) $legacyFile } else { Join-Path $CsvOutputDirectory $legacyFile }
+  if (Test-Path -LiteralPath $legacyPath) {
+    Remove-Item -LiteralPath $legacyPath -Force
+  }
+}
+
+Get-ChildItem -LiteralPath $CsvOutputDirectory -Filter "*.xlsx" -ErrorAction SilentlyContinue | Remove-Item -Force
+$masterLines | Set-Content -LiteralPath $OutputPath -Encoding UTF8
+$attentionLines | Set-Content -LiteralPath $attentionOutputPath -Encoding UTF8
 
 $result = [pscustomobject]@{
-  outputPath = $OutputPath
-  csvOutputDirectory = $CsvOutputDirectory
-  sleeperEntriesCsvPath = $sleeperEntriesCsvPath
-  personSummaryCsvPath = $personSummaryCsvPath
-  unmatchedPaymentsCsvPath = $unmatchedPaymentsCsvPath
-  leagueSafeExportCsvPath = $leagueSafeExportCsvPath
-  actionTrackerCsvPath = $actionTrackerCsvPath
-  commissionerTrackerCsvPath = $commissionerTrackerCsvPath
-  paidUnassignedCsvPath = $paidUnassignedCsvPath
+  masterReadablePath = $OutputPath
+  needsAttentionReadablePath = $attentionOutputPath
+  reportDirectory = $CsvOutputDirectory
   bbuLeagues = @($bbuLeagues | ForEach-Object { Get-StringValue $_.id })
   sleeperEntries = $totalSleeperEntries
   matchedPeople = $matchedPeople.Count
   unmatchedSleeperEntries = $unmatchedSleeperEntries.Count
   matchedPaymentTotal = $totalPaidMatched
   unmatchedPaymentTotal = $totalPaidUnmatched
+  needsAttentionRows = $needsAttentionRows.Count
   fetchErrors = @($fetchErrors)
 }
 
 if ($PassThru) {
   $result
 } else {
-  Write-Host "BBU payment reconciliation written to $OutputPath"
-  Write-Host "Excel CSV exports written to $CsvOutputDirectory"
+  Write-Host "BBU readable payment master written to $OutputPath"
+  Write-Host "BBU needs-attention report written to $attentionOutputPath"
   Write-Host "Sleeper entries: $($result.sleeperEntries)"
   Write-Host "Matched people: $($result.matchedPeople)"
   Write-Host "Unmatched Sleeper entries: $($result.unmatchedSleeperEntries)"
