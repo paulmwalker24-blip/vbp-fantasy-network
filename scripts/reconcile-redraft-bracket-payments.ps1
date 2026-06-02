@@ -144,8 +144,10 @@ foreach ($league in $leagues) {
 if (-not (Test-Path -LiteralPath $CsvOutputDirectory)) { New-Item -ItemType Directory -Path $CsvOutputDirectory | Out-Null }
 
 $paymentCandidates = @($paymentRows | ForEach-Object { [pscustomobject]@{ row = $_; matchKey = $_.matchKey } })
-$trackerPath = Join-Path $CsvOutputDirectory "commissioner-tracker.csv"
-$paidNotAssignedPath = Join-Path $CsvOutputDirectory "paid-not-assigned.csv"
+$trackerPath = Join-Path $CsvOutputDirectory "redraft-bracket-master.csv"
+$paidNotAssignedPath = Join-Path $CsvOutputDirectory "redraft-bracket-paid-not-assigned.csv"
+$universalTrackerAliasPath = Join-Path $CsvOutputDirectory "commissioner-tracker.csv"
+$universalPaidNotAssignedAliasPath = Join-Path $CsvOutputDirectory "paid-not-assigned.csv"
 
 @($entries | Sort-Object leagueId, assignmentStatus, sleeperName | ForEach-Object {
   $entry = $_
@@ -182,6 +184,7 @@ $paidNotAssignedPath = Join-Path $CsvOutputDirectory "paid-not-assigned.csv"
     Notes = ""
   }
 }) | Export-Csv -LiteralPath $trackerPath -NoTypeInformation -Encoding UTF8
+Copy-Item -LiteralPath $trackerPath -Destination $universalTrackerAliasPath -Force
 
 $assignedKeys = @{}
 $assignedPeople = @{}
@@ -201,9 +204,14 @@ foreach ($entry in @($entries | Where-Object { $_.assignmentStatus -eq "Assigned
     Notes = $_.notes
   }
 }) | Export-Csv -LiteralPath $paidNotAssignedPath -NoTypeInformation -Encoding UTF8
+Copy-Item -LiteralPath $paidNotAssignedPath -Destination $universalPaidNotAssignedAliasPath -Force
 
 $result = [pscustomobject]@{
   csvOutputDirectory = $CsvOutputDirectory
+  redraftBracketMasterPath = $trackerPath
+  redraftBracketPaidNotAssignedPath = $paidNotAssignedPath
+  universalTrackerAliasPath = $universalTrackerAliasPath
+  universalPaidNotAssignedAliasPath = $universalPaidNotAssignedAliasPath
   sleeperEntries = $entries.Count
   paidRows = $paymentRows.Count
   assignedNeedsMatch = @((Import-Csv -LiteralPath $trackerPath) | Where-Object { $_.Status -eq "Assigned - needs payment match" }).Count

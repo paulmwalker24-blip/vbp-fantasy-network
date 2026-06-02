@@ -441,6 +441,16 @@ powershell -ExecutionPolicy Bypass -File .\scripts\import-gauntlet-leaguesafe-ex
 
 Builds private Redraft Bracket payment reconciliation CSV files from Sleeper RDB league managers, the Redraft Bracket LeagueSafe paid rows, and saved identity matches.
 
+It writes bracket-specific files under `reports/private/redraft-bracket-payment-reconciliation/`:
+
+- `redraft-bracket-master.csv` - Redraft Bracket-only master tracker across all RDB divisions.
+- `redraft-bracket-paid-not-assigned.csv` - paid LeagueSafe rows that are not matched to an assigned RDB roster.
+
+For compatibility with older local workflows, it also keeps universal-style aliases in the same folder:
+
+- `commissioner-tracker.csv`
+- `paid-not-assigned.csv`
+
 Default usage:
 
 ```powershell
