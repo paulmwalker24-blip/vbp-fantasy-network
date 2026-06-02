@@ -1,5 +1,5 @@
 const LEAGUES_JSON_URL = "data/leagues.json";
-const POWER_RANKINGS_JSON_URL = "data/power-rankings.json";
+const POWER_RANKINGS_JSON_URL = "data/power-rankings.json?v=20260602b";
 const CENTER_FORMAT = "bestball";
 const MAX_BBU_WEEKS = 17;
 const SAMPLE_PREVIEW_WEEK = 5;
