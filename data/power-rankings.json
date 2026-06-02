@@ -1,5 +1,5 @@
 ﻿{
-    "generatedAt":  "2026-06-01T22:55:13.9148792+00:00",
+    "generatedAt":  "2026-06-02T02:08:50.5138459+00:00",
     "snapshot":  {
                      "season":  "2026",
                      "seasonType":  "off",
@@ -27,7 +27,6 @@
                      "SKIP DYB2: startup draft is pre_draft",
                      "SKIP DYB3: startup draft is pre_draft",
                      "SKIP DYB4: startup draft is pre_draft",
-                     "SKIP BBU7: regular draft is pre_draft",
                      "SKIP BBU8: regular draft is pre_draft",
                      "SKIP BBU9: regular draft is pre_draft",
                      "SKIP BBU10: regular draft is pre_draft",
@@ -73,7 +72,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314663050854305792/rosters",
-                                           "refreshedAt":  "2026-06-01T22:54:24.3259142+00:00",
+                                           "refreshedAt":  "2026-06-02T02:07:57.2724267+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -168,7 +167,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314662767977824256/rosters",
-                                           "refreshedAt":  "2026-06-01T22:54:24.5930459+00:00",
+                                           "refreshedAt":  "2026-06-02T02:07:57.7122571+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -263,7 +262,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314660487635427328/rosters",
-                                           "refreshedAt":  "2026-06-01T22:54:24.8424449+00:00",
+                                           "refreshedAt":  "2026-06-02T02:07:58.2223973+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -358,7 +357,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1344449488089014272/rosters",
-                                           "refreshedAt":  "2026-06-01T22:54:25.0765511+00:00",
+                                           "refreshedAt":  "2026-06-02T02:07:58.7579421+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -453,7 +452,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341650084122595328/rosters",
-                                           "refreshedAt":  "2026-06-01T22:54:25.4389074+00:00",
+                                           "refreshedAt":  "2026-06-02T02:07:59.1878299+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  389,
                                            "sleeperLeagueSeason":  "2026",
@@ -1035,7 +1034,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1340820529996640256/rosters",
-                                           "refreshedAt":  "2026-06-01T22:54:30.0714539+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:03.5045407+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  367,
                                            "sleeperLeagueSeason":  "2026",
@@ -1420,7 +1419,7 @@
                                              "rosterId":  9,
                                              "ownerId":  "992228616983359488",
                                              "teamName":  "christhemann64",
-                                             "score":  90,
+                                             "score":  91,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -1431,10 +1430,10 @@
                                              "rank":  1
                                          },
                                          {
-                                             "rosterId":  8,
-                                             "ownerId":  "430873754986360832",
-                                             "teamName":  "Silver Sox",
-                                             "score":  90,
+                                             "rosterId":  3,
+                                             "ownerId":  "1205629906461917184",
+                                             "teamName":  "Major Questions",
+                                             "score":  88,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -1445,9 +1444,9 @@
                                              "rank":  2
                                          },
                                          {
-                                             "rosterId":  3,
-                                             "ownerId":  "1205629906461917184",
-                                             "teamName":  "Major Questions",
+                                             "rosterId":  8,
+                                             "ownerId":  "430873754986360832",
+                                             "teamName":  "Silver Sox",
                                              "score":  88,
                                              "record":  {
                                                             "wins":  0,
@@ -1462,7 +1461,7 @@
                                              "rosterId":  7,
                                              "ownerId":  "577616667429867520",
                                              "teamName":  "lushlou88",
-                                             "score":  84,
+                                             "score":  85,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -1490,7 +1489,7 @@
                                              "rosterId":  10,
                                              "ownerId":  "1225158362597949440",
                                              "teamName":  "Jizzle",
-                                             "score":  78,
+                                             "score":  79,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -1504,7 +1503,7 @@
                                              "rosterId":  4,
                                              "ownerId":  "76847552544522240",
                                              "teamName":  "BertoGenosis",
-                                             "score":  78,
+                                             "score":  79,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -1518,7 +1517,7 @@
                                              "rosterId":  12,
                                              "ownerId":  "992142466822234112",
                                              "teamName":  "Thefish1220",
-                                             "score":  78,
+                                             "score":  79,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -1560,7 +1559,7 @@
                                              "rosterId":  5,
                                              "ownerId":  "465050123617955840",
                                              "teamName":  "TheJuanAndOnly15",
-                                             "score":  72,
+                                             "score":  73,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -1574,7 +1573,7 @@
                                              "rosterId":  2,
                                              "ownerId":  "738614393776001024",
                                              "teamName":  "DSnyder5",
-                                             "score":  66,
+                                             "score":  67,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -1617,7 +1616,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341646934816849920/rosters",
-                                           "refreshedAt":  "2026-06-01T22:54:34.0271795+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:07.0575253+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  372,
                                            "sleeperLeagueSeason":  "2026",
@@ -1859,21 +1858,21 @@
                                                                                },
                                                                                {
                                                                                    "rank":  3,
+                                                                                   "manager":  "evwray",
+                                                                                   "rosterId":  4,
+                                                                                   "score":  81.5
+                                                                               },
+                                                                               {
+                                                                                   "rank":  4,
                                                                                    "manager":  "SnoopDerek",
                                                                                    "rosterId":  12,
                                                                                    "score":  81.5
                                                                                },
                                                                                {
-                                                                                   "rank":  4,
+                                                                                   "rank":  5,
                                                                                    "manager":  "MattyBRaps97",
                                                                                    "rosterId":  10,
                                                                                    "score":  81
-                                                                               },
-                                                                               {
-                                                                                   "rank":  5,
-                                                                                   "manager":  "evwray",
-                                                                                   "rosterId":  4,
-                                                                                   "score":  80.5
                                                                                },
                                                                                {
                                                                                    "rank":  6,
@@ -2199,7 +2198,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1342931950981091328/rosters",
-                                           "refreshedAt":  "2026-06-01T22:54:38.0903109+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:10.6499801+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  363,
                                            "sleeperLeagueSeason":  "2026",
@@ -2491,7 +2490,7 @@
                                                                                    "rank":  11,
                                                                                    "manager":  "Frieza",
                                                                                    "rosterId":  8,
-                                                                                   "score":  77
+                                                                                   "score":  75.5
                                                                                },
                                                                                {
                                                                                    "rank":  12,
@@ -2781,7 +2780,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345763335270400/rosters",
-                                           "refreshedAt":  "2026-06-01T22:54:42.2393594+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:14.4929376+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  377,
                                            "sleeperLeagueSeason":  "2026",
@@ -3363,7 +3362,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345934114725888/rosters",
-                                           "refreshedAt":  "2026-06-01T22:54:46.4091648+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:18.1477396+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  371,
                                            "sleeperLeagueSeason":  "2026",
@@ -3643,7 +3642,7 @@
                                                                                    "rank":  9,
                                                                                    "manager":  "Zaragoz",
                                                                                    "rosterId":  11,
-                                                                                   "score":  77
+                                                                                   "score":  76
                                                                                },
                                                                                {
                                                                                    "rank":  10,
@@ -3945,7 +3944,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1360285262617284608/rosters",
-                                           "refreshedAt":  "2026-06-01T22:54:50.5883044+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:21.7794039+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  368,
                                            "sleeperLeagueSeason":  "2026",
@@ -4527,7 +4526,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362902973520306176/rosters",
-                                           "refreshedAt":  "2026-06-01T22:54:54.7113998+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:25.4189336+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -4602,6 +4601,20 @@
                                                },
                         "rankings":  [
                                          {
+                                             "rosterId":  9,
+                                             "ownerId":  "1231289575532404736",
+                                             "teamName":  "SpartanCook",
+                                             "score":  80,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "rank":  1
+                                         },
+                                         {
                                              "rosterId":  8,
                                              "ownerId":  "1129618663734272000",
                                              "teamName":  "Raccoon",
@@ -4613,7 +4626,7 @@
                                                             "losses":  0,
                                                             "ties":  0
                                                         },
-                                             "rank":  1
+                                             "rank":  2
                                          },
                                          {
                                              "rosterId":  7,
@@ -4627,49 +4640,7 @@
                                                             "losses":  0,
                                                             "ties":  0
                                                         },
-                                             "rank":  2
-                                         },
-                                         {
-                                             "rosterId":  9,
-                                             "ownerId":  "1231289575532404736",
-                                             "teamName":  "SpartanCook",
-                                             "score":  80,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
                                              "rank":  3
-                                         },
-                                         {
-                                             "rosterId":  11,
-                                             "ownerId":  "1130521166885564416",
-                                             "teamName":  "sellrya",
-                                             "score":  80,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "rank":  4
-                                         },
-                                         {
-                                             "rosterId":  10,
-                                             "ownerId":  "731006428101324800",
-                                             "teamName":  "KeyzerSoze12",
-                                             "score":  80,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "rank":  5
                                          },
                                          {
                                              "rosterId":  12,
@@ -4683,35 +4654,35 @@
                                                             "losses":  0,
                                                             "ties":  0
                                                         },
+                                             "rank":  4
+                                         },
+                                         {
+                                             "rosterId":  11,
+                                             "ownerId":  "1130521166885564416",
+                                             "teamName":  "sellrya",
+                                             "score":  80,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "rank":  5
+                                         },
+                                         {
+                                             "rosterId":  10,
+                                             "ownerId":  "731006428101324800",
+                                             "teamName":  "KeyzerSoze12",
+                                             "score":  80,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
                                              "rank":  6
-                                         },
-                                         {
-                                             "rosterId":  2,
-                                             "ownerId":  "875504374850461696",
-                                             "teamName":  "RiceCat88",
-                                             "score":  80,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "rank":  7
-                                         },
-                                         {
-                                             "rosterId":  1,
-                                             "ownerId":  "1130630426395185152",
-                                             "teamName":  "ZuPlum",
-                                             "score":  80,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "rank":  8
                                          },
                                          {
                                              "rosterId":  3,
@@ -4725,7 +4696,49 @@
                                                             "losses":  0,
                                                             "ties":  0
                                                         },
+                                             "rank":  7
+                                         },
+                                         {
+                                             "rosterId":  2,
+                                             "ownerId":  "875504374850461696",
+                                             "teamName":  "RiceCat88",
+                                             "score":  80,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "rank":  8
+                                         },
+                                         {
+                                             "rosterId":  1,
+                                             "ownerId":  "1130630426395185152",
+                                             "teamName":  "ZuPlum",
+                                             "score":  80,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
                                              "rank":  9
+                                         },
+                                         {
+                                             "rosterId":  6,
+                                             "ownerId":  "1133514404269637632",
+                                             "teamName":  "HTownSwarm",
+                                             "score":  80,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "rank":  10
                                          },
                                          {
                                              "rosterId":  5,
@@ -4739,27 +4752,13 @@
                                                             "losses":  0,
                                                             "ties":  0
                                                         },
-                                             "rank":  10
+                                             "rank":  11
                                          },
                                          {
                                              "rosterId":  4,
                                              "ownerId":  "1266499648198021120",
                                              "teamName":  "CaptainKnots25",
                                              "score":  80,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "rank":  11
-                                         },
-                                         {
-                                             "rosterId":  6,
-                                             "ownerId":  "1133514404269637632",
-                                             "teamName":  "HTownSwarm",
-                                             "score":  77,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -4802,7 +4801,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350152770275020800/rosters",
-                                           "refreshedAt":  "2026-06-01T22:54:55.1504266+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:26.1991347+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -4910,7 +4909,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154389192474624/rosters",
-                                           "refreshedAt":  "2026-06-01T22:54:55.3879784+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:26.6830577+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -5018,7 +5017,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154561549004800/rosters",
-                                           "refreshedAt":  "2026-06-01T22:54:55.6162712+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:27.1421799+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -5126,7 +5125,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154695137570816/rosters",
-                                           "refreshedAt":  "2026-06-01T22:54:55.8411531+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:27.6123647+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -5234,7 +5233,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095209052508160/rosters",
-                                           "refreshedAt":  "2026-06-01T22:54:56.0616393+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:28.1779942+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -5481,7 +5480,7 @@
                                                                                    "rank":  9,
                                                                                    "manager":  "HopscotchDaisy",
                                                                                    "rosterId":  1,
-                                                                                   "score":  73.5
+                                                                                   "score":  74.5
                                                                                },
                                                                                {
                                                                                    "rank":  10,
@@ -5643,9 +5642,9 @@
                                              "rank":  6
                                          },
                                          {
-                                             "rosterId":  7,
-                                             "ownerId":  "997553035867922432",
-                                             "teamName":  "Adamgrifki",
+                                             "rosterId":  1,
+                                             "ownerId":  "707317555764740096",
+                                             "teamName":  "HopscotchDaisy",
                                              "score":  77,
                                              "record":  {
                                                             "wins":  0,
@@ -5657,10 +5656,10 @@
                                              "rank":  7
                                          },
                                          {
-                                             "rosterId":  1,
-                                             "ownerId":  "707317555764740096",
-                                             "teamName":  "HopscotchDaisy",
-                                             "score":  76,
+                                             "rosterId":  7,
+                                             "ownerId":  "997553035867922432",
+                                             "teamName":  "Adamgrifki",
+                                             "score":  77,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -5731,7 +5730,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095313704554496/rosters",
-                                           "refreshedAt":  "2026-06-01T22:54:58.2070673+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:30.2147842+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -6228,7 +6227,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095371091017728/rosters",
-                                           "refreshedAt":  "2026-06-01T22:55:00.3211305+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:32.2254062+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -6682,7 +6681,7 @@
                                              "rosterId":  6,
                                              "ownerId":  "1263107036925665280",
                                              "teamName":  "PickleRick702",
-                                             "score":  64,
+                                             "score":  65,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -6725,7 +6724,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095416859287552/rosters",
-                                           "refreshedAt":  "2026-06-01T22:55:02.4423181+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:34.2200375+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -6952,20 +6951,20 @@
                                                                                },
                                                                                {
                                                                                    "rank":  6,
+                                                                                   "manager":  "jakeejk",
+                                                                                   "rosterId":  2,
+                                                                                   "score":  76
+                                                                               },
+                                                                               {
+                                                                                   "rank":  7,
                                                                                    "manager":  "Tacious00",
                                                                                    "rosterId":  9,
                                                                                    "score":  76
                                                                                },
                                                                                {
-                                                                                   "rank":  7,
+                                                                                   "rank":  8,
                                                                                    "manager":  "DSnyder5",
                                                                                    "rosterId":  1,
-                                                                                   "score":  75.5
-                                                                               },
-                                                                               {
-                                                                                   "rank":  8,
-                                                                                   "manager":  "jakeejk",
-                                                                                   "rosterId":  2,
                                                                                    "score":  75.5
                                                                                },
                                                                                {
@@ -7222,7 +7221,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095453291003904/rosters",
-                                           "refreshedAt":  "2026-06-01T22:55:04.5573165+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:36.2757562+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -7461,15 +7460,15 @@
                                                                                },
                                                                                {
                                                                                    "rank":  8,
-                                                                                   "manager":  "JimmyWojo",
-                                                                                   "rosterId":  7,
-                                                                                   "score":  74
+                                                                                   "manager":  "ZiggyAwesomeX",
+                                                                                   "rosterId":  5,
+                                                                                   "score":  74.5
                                                                                },
                                                                                {
                                                                                    "rank":  9,
-                                                                                   "manager":  "ZiggyAwesomeX",
-                                                                                   "rosterId":  5,
-                                                                                   "score":  73
+                                                                                   "manager":  "JimmyWojo",
+                                                                                   "rosterId":  7,
+                                                                                   "score":  74
                                                                                },
                                                                                {
                                                                                    "rank":  10,
@@ -7719,7 +7718,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480393130868736/rosters",
-                                           "refreshedAt":  "2026-06-01T22:55:06.6733882+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:38.2312048+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -7972,7 +7971,7 @@
                                                                                    "rank":  10,
                                                                                    "manager":  "Tacious00",
                                                                                    "rosterId":  3,
-                                                                                   "score":  72
+                                                                                   "score":  73.5
                                                                                }
                                                                            ]
                                                           },
@@ -8190,20 +8189,20 @@
                         "sleeperLeagueId":  "1362480515533242368",
                         "name":  "Best Ball Union #7",
                         "format":  "bestball",
-                        "publish":  false,
-                        "holdReason":  "regular draft is pre_draft",
+                        "publish":  true,
+                        "holdReason":  "",
                         "draftStatuses":  [
-                                              "pre_draft"
+                                              "complete"
                                           ],
                         "draftReadiness":  {
-                                               "ready":  false,
+                                               "ready":  true,
                                                "stage":  "regular",
-                                               "label":  "Waiting on regular draft",
-                                               "reason":  "regular draft is pre_draft",
+                                               "label":  "Regular draft complete",
+                                               "reason":  "",
                                                "drafts":  [
                                                               {
                                                                   "draftId":  "1362480516216942592",
-                                                                  "status":  "pre_draft",
+                                                                  "status":  "complete",
                                                                   "stage":  "regular",
                                                                   "type":  "snake",
                                                                   "season":  "2026",
@@ -8216,11 +8215,11 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480515533242368/rosters",
-                                           "refreshedAt":  "2026-06-01T22:55:08.7888031+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:40.3422328+00:00",
                                            "rosterCount":  10,
-                                           "playerCount":  0,
+                                           "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
-                                           "sleeperLeagueStatus":  "pre_draft"
+                                           "sleeperLeagueStatus":  "in_season"
                                        },
                         "rosterPositions":  [
                                                 "QB",
@@ -8278,10 +8277,408 @@
                                               "emphasis":  "Automated weekly ceiling and draft-and-hold depth with no waiver or trade recovery."
                                           },
                         "positionalRankings":  {
-
+                                                   "QB":  {
+                                                              "position":  "QB",
+                                                              "rankings":  [
+                                                                               {
+                                                                                   "rank":  1,
+                                                                                   "manager":  "glosque",
+                                                                                   "rosterId":  4,
+                                                                                   "score":  87
+                                                                               },
+                                                                               {
+                                                                                   "rank":  2,
+                                                                                   "manager":  "Cheese Burger Lacy",
+                                                                                   "rosterId":  7,
+                                                                                   "score":  85
+                                                                               },
+                                                                               {
+                                                                                   "rank":  3,
+                                                                                   "manager":  "TySegall",
+                                                                                   "rosterId":  9,
+                                                                                   "score":  81
+                                                                               },
+                                                                               {
+                                                                                   "rank":  4,
+                                                                                   "manager":  "8-bit Usain Bolt",
+                                                                                   "rosterId":  6,
+                                                                                   "score":  80
+                                                                               },
+                                                                               {
+                                                                                   "rank":  5,
+                                                                                   "manager":  "MethEnjoyer14",
+                                                                                   "rosterId":  1,
+                                                                                   "score":  80
+                                                                               },
+                                                                               {
+                                                                                   "rank":  6,
+                                                                                   "manager":  "VinsBroPaul",
+                                                                                   "rosterId":  10,
+                                                                                   "score":  80
+                                                                               },
+                                                                               {
+                                                                                   "rank":  7,
+                                                                                   "manager":  "BakDraft",
+                                                                                   "rosterId":  5,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  8,
+                                                                                   "manager":  "Tacious00",
+                                                                                   "rosterId":  3,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  9,
+                                                                                   "manager":  "Biebs",
+                                                                                   "rosterId":  8,
+                                                                                   "score":  77
+                                                                               },
+                                                                               {
+                                                                                   "rank":  10,
+                                                                                   "manager":  "hankburnem",
+                                                                                   "rosterId":  2,
+                                                                                   "score":  74
+                                                                               }
+                                                                           ]
+                                                          },
+                                                   "RB":  {
+                                                              "position":  "RB",
+                                                              "rankings":  [
+                                                                               {
+                                                                                   "rank":  1,
+                                                                                   "manager":  "8-bit Usain Bolt",
+                                                                                   "rosterId":  6,
+                                                                                   "score":  83.5
+                                                                               },
+                                                                               {
+                                                                                   "rank":  2,
+                                                                                   "manager":  "Cheese Burger Lacy",
+                                                                                   "rosterId":  7,
+                                                                                   "score":  83
+                                                                               },
+                                                                               {
+                                                                                   "rank":  3,
+                                                                                   "manager":  "VinsBroPaul",
+                                                                                   "rosterId":  10,
+                                                                                   "score":  83
+                                                                               },
+                                                                               {
+                                                                                   "rank":  4,
+                                                                                   "manager":  "Biebs",
+                                                                                   "rosterId":  8,
+                                                                                   "score":  82.5
+                                                                               },
+                                                                               {
+                                                                                   "rank":  5,
+                                                                                   "manager":  "BakDraft",
+                                                                                   "rosterId":  5,
+                                                                                   "score":  81.5
+                                                                               },
+                                                                               {
+                                                                                   "rank":  6,
+                                                                                   "manager":  "hankburnem",
+                                                                                   "rosterId":  2,
+                                                                                   "score":  81.5
+                                                                               },
+                                                                               {
+                                                                                   "rank":  7,
+                                                                                   "manager":  "MethEnjoyer14",
+                                                                                   "rosterId":  1,
+                                                                                   "score":  81.5
+                                                                               },
+                                                                               {
+                                                                                   "rank":  8,
+                                                                                   "manager":  "TySegall",
+                                                                                   "rosterId":  9,
+                                                                                   "score":  81
+                                                                               },
+                                                                               {
+                                                                                   "rank":  9,
+                                                                                   "manager":  "Tacious00",
+                                                                                   "rosterId":  3,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  10,
+                                                                                   "manager":  "glosque",
+                                                                                   "rosterId":  4,
+                                                                                   "score":  76.5
+                                                                               }
+                                                                           ]
+                                                          },
+                                                   "WR":  {
+                                                              "position":  "WR",
+                                                              "rankings":  [
+                                                                               {
+                                                                                   "rank":  1,
+                                                                                   "manager":  "glosque",
+                                                                                   "rosterId":  4,
+                                                                                   "score":  81
+                                                                               },
+                                                                               {
+                                                                                   "rank":  2,
+                                                                                   "manager":  "Cheese Burger Lacy",
+                                                                                   "rosterId":  7,
+                                                                                   "score":  79.5
+                                                                               },
+                                                                               {
+                                                                                   "rank":  3,
+                                                                                   "manager":  "Tacious00",
+                                                                                   "rosterId":  3,
+                                                                                   "score":  79.5
+                                                                               },
+                                                                               {
+                                                                                   "rank":  4,
+                                                                                   "manager":  "BakDraft",
+                                                                                   "rosterId":  5,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  5,
+                                                                                   "manager":  "Biebs",
+                                                                                   "rosterId":  8,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  6,
+                                                                                   "manager":  "VinsBroPaul",
+                                                                                   "rosterId":  10,
+                                                                                   "score":  76.5
+                                                                               },
+                                                                               {
+                                                                                   "rank":  7,
+                                                                                   "manager":  "8-bit Usain Bolt",
+                                                                                   "rosterId":  6,
+                                                                                   "score":  76
+                                                                               },
+                                                                               {
+                                                                                   "rank":  8,
+                                                                                   "manager":  "hankburnem",
+                                                                                   "rosterId":  2,
+                                                                                   "score":  75
+                                                                               },
+                                                                               {
+                                                                                   "rank":  9,
+                                                                                   "manager":  "MethEnjoyer14",
+                                                                                   "rosterId":  1,
+                                                                                   "score":  74
+                                                                               },
+                                                                               {
+                                                                                   "rank":  10,
+                                                                                   "manager":  "TySegall",
+                                                                                   "rosterId":  9,
+                                                                                   "score":  73.5
+                                                                               }
+                                                                           ]
+                                                          },
+                                                   "TE":  {
+                                                              "position":  "TE",
+                                                              "rankings":  [
+                                                                               {
+                                                                                   "rank":  1,
+                                                                                   "manager":  "MethEnjoyer14",
+                                                                                   "rosterId":  1,
+                                                                                   "score":  83
+                                                                               },
+                                                                               {
+                                                                                   "rank":  2,
+                                                                                   "manager":  "Tacious00",
+                                                                                   "rosterId":  3,
+                                                                                   "score":  82
+                                                                               },
+                                                                               {
+                                                                                   "rank":  3,
+                                                                                   "manager":  "TySegall",
+                                                                                   "rosterId":  9,
+                                                                                   "score":  80
+                                                                               },
+                                                                               {
+                                                                                   "rank":  4,
+                                                                                   "manager":  "8-bit Usain Bolt",
+                                                                                   "rosterId":  6,
+                                                                                   "score":  79
+                                                                               },
+                                                                               {
+                                                                                   "rank":  5,
+                                                                                   "manager":  "BakDraft",
+                                                                                   "rosterId":  5,
+                                                                                   "score":  79
+                                                                               },
+                                                                               {
+                                                                                   "rank":  6,
+                                                                                   "manager":  "hankburnem",
+                                                                                   "rosterId":  2,
+                                                                                   "score":  79
+                                                                               },
+                                                                               {
+                                                                                   "rank":  7,
+                                                                                   "manager":  "VinsBroPaul",
+                                                                                   "rosterId":  10,
+                                                                                   "score":  79
+                                                                               },
+                                                                               {
+                                                                                   "rank":  8,
+                                                                                   "manager":  "Biebs",
+                                                                                   "rosterId":  8,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  9,
+                                                                                   "manager":  "Cheese Burger Lacy",
+                                                                                   "rosterId":  7,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  10,
+                                                                                   "manager":  "glosque",
+                                                                                   "rosterId":  4,
+                                                                                   "score":  77
+                                                                               }
+                                                                           ]
+                                                          }
                                                },
                         "rankings":  [
-
+                                         {
+                                             "rosterId":  7,
+                                             "ownerId":  "1000256251382611968",
+                                             "teamName":  "Cheese Burger Lacy",
+                                             "score":  97,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "rank":  1
+                                         },
+                                         {
+                                             "rosterId":  8,
+                                             "ownerId":  "969086423548694528",
+                                             "teamName":  "Biebs",
+                                             "score":  88,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "rank":  2
+                                         },
+                                         {
+                                             "rosterId":  4,
+                                             "ownerId":  "1142134704305569792",
+                                             "teamName":  "glosque",
+                                             "score":  87,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "rank":  3
+                                         },
+                                         {
+                                             "rosterId":  3,
+                                             "ownerId":  "734717042283905024",
+                                             "teamName":  "Tacious00",
+                                             "score":  85,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "rank":  4
+                                         },
+                                         {
+                                             "rosterId":  9,
+                                             "ownerId":  "609817786394406912",
+                                             "teamName":  "TySegall",
+                                             "score":  84,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "rank":  5
+                                         },
+                                         {
+                                             "rosterId":  6,
+                                             "ownerId":  "1175159775586222080",
+                                             "teamName":  "8-bit Usain Bolt",
+                                             "score":  83,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "rank":  6
+                                         },
+                                         {
+                                             "rosterId":  10,
+                                             "ownerId":  "466785377303130112",
+                                             "teamName":  "VinsBroPaul",
+                                             "score":  82,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "rank":  7
+                                         },
+                                         {
+                                             "rosterId":  2,
+                                             "ownerId":  "830702843102076928",
+                                             "teamName":  "hankburnem",
+                                             "score":  75,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "rank":  8
+                                         },
+                                         {
+                                             "rosterId":  5,
+                                             "ownerId":  "735404892704874496",
+                                             "teamName":  "BakDraft",
+                                             "score":  75,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "rank":  9
+                                         },
+                                         {
+                                             "rosterId":  1,
+                                             "ownerId":  "738614393776001024",
+                                             "teamName":  "MethEnjoyer14",
+                                             "score":  71,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "rank":  10
+                                         }
                                      ]
                     },
                     {
@@ -8315,7 +8712,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480638808064000/rosters",
-                                           "refreshedAt":  "2026-06-01T22:55:09.0184549+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:42.3012159+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -8414,7 +8811,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480857310302208/rosters",
-                                           "refreshedAt":  "2026-06-01T22:55:09.2421719+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:42.7386887+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -8513,7 +8910,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480992765353984/rosters",
-                                           "refreshedAt":  "2026-06-01T22:55:09.4652314+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:43.2789407+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -8612,7 +9009,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362908679824740352/rosters",
-                                           "refreshedAt":  "2026-06-01T22:55:09.7047515+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:43.7543031+00:00",
                                            "rosterCount":  24,
                                            "playerCount":  120,
                                            "sleeperLeagueSeason":  "2026",
@@ -9018,51 +9415,51 @@
                                                                                },
                                                                                {
                                                                                    "rank":  10,
+                                                                                   "manager":  "KingKadenn",
+                                                                                   "rosterId":  16,
+                                                                                   "score":  75
+                                                                               },
+                                                                               {
+                                                                                   "rank":  11,
                                                                                    "manager":  "OmahaaaSet$5",
                                                                                    "rosterId":  5,
                                                                                    "score":  75
                                                                                },
                                                                                {
-                                                                                   "rank":  11,
+                                                                                   "rank":  12,
                                                                                    "manager":  "rbbarlow83",
                                                                                    "rosterId":  14,
                                                                                    "score":  75
                                                                                },
                                                                                {
-                                                                                   "rank":  12,
+                                                                                   "rank":  13,
                                                                                    "manager":  "swampraider",
                                                                                    "rosterId":  3,
                                                                                    "score":  75
                                                                                },
                                                                                {
-                                                                                   "rank":  13,
+                                                                                   "rank":  14,
                                                                                    "manager":  "DSnyder5",
                                                                                    "rosterId":  2,
                                                                                    "score":  74
                                                                                },
                                                                                {
-                                                                                   "rank":  14,
+                                                                                   "rank":  15,
                                                                                    "manager":  "jessegambo",
                                                                                    "rosterId":  10,
                                                                                    "score":  74
                                                                                },
                                                                                {
-                                                                                   "rank":  15,
+                                                                                   "rank":  16,
                                                                                    "manager":  "Upside Uncs",
                                                                                    "rosterId":  9,
                                                                                    "score":  74
                                                                                },
                                                                                {
-                                                                                   "rank":  16,
+                                                                                   "rank":  17,
                                                                                    "manager":  "ghopzy",
                                                                                    "rosterId":  6,
                                                                                    "score":  73
-                                                                               },
-                                                                               {
-                                                                                   "rank":  17,
-                                                                                   "manager":  "KingKadenn",
-                                                                                   "rosterId":  16,
-                                                                                   "score":  72
                                                                                },
                                                                                {
                                                                                    "rank":  18,
@@ -9628,7 +10025,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338004997836640256/rosters",
-                                           "refreshedAt":  "2026-06-01T22:55:12.0194038+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:45.9290662+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9724,7 +10121,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005036122279936/rosters",
-                                           "refreshedAt":  "2026-06-01T22:55:12.2527809+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:46.4228936+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9820,7 +10217,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005075167035392/rosters",
-                                           "refreshedAt":  "2026-06-01T22:55:12.4883254+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:46.9382052+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9916,7 +10313,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005113482022912/rosters",
-                                           "refreshedAt":  "2026-06-01T22:55:12.7116411+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:47.4183342+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10012,7 +10409,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005158071660544/rosters",
-                                           "refreshedAt":  "2026-06-01T22:55:12.9470602+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:48.4951494+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10108,7 +10505,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846317608992768/rosters",
-                                           "refreshedAt":  "2026-06-01T22:55:13.1811172+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:48.9867683+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10203,7 +10600,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846742810775552/rosters",
-                                           "refreshedAt":  "2026-06-01T22:55:13.4604628+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:49.5101724+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10298,7 +10695,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1363630886133694464/rosters",
-                                           "refreshedAt":  "2026-06-01T22:55:13.6862581+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:50.0431808+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10380,7 +10777,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339342261023961088/rosters",
-                                           "refreshedAt":  "2026-06-01T22:55:13.9128505+00:00",
+                                           "refreshedAt":  "2026-06-02T02:08:50.5118354+00:00",
                                            "rosterCount":  18,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
