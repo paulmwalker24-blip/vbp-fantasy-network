@@ -445,6 +445,8 @@ It writes bracket-specific files under `reports/private/redraft-bracket-payment-
 
 - `redraft-bracket-master.csv` - Redraft Bracket-only master tracker across all RDB divisions.
 - `redraft-bracket-paid-not-assigned.csv` - paid LeagueSafe rows that are not matched to an assigned RDB roster.
+- `redraft-bracket-master-readable.txt` - plain-text grouped view for quick commissioner review in the editor.
+- `redraft-bracket-paid-not-assigned-readable.txt` - plain-text unmatched paid list.
 
 For compatibility with older local workflows, it also keeps universal-style aliases in the same folder:
 

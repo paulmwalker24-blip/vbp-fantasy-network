@@ -38,6 +38,18 @@ function Add-PersonIndex {
   $normalized = Get-MatchKey $Key
   if (-not [string]::IsNullOrWhiteSpace($normalized) -and -not $Index.ContainsKey($normalized)) { $Index[$normalized] = $Person }
 }
+function Format-TableLine {
+  param([object[]]$Values, [int[]]$Widths)
+  $parts = @()
+  for ($i = 0; $i -lt $Widths.Count; $i++) {
+    $value = Get-StringValue $Values[$i]
+    if ($value.Length -gt $Widths[$i]) {
+      $value = $value.Substring(0, [Math]::Max(0, $Widths[$i] - 1)) + "."
+    }
+    $parts += $value.PadRight($Widths[$i])
+  }
+  return ($parts -join "  ").TrimEnd()
+}
 
 $leaguesDocument = Get-Content -LiteralPath $LeaguesJsonPath -Raw | ConvertFrom-Json
 $identityDocument = if (Test-Path -LiteralPath $IdentityPath) { Get-Content -LiteralPath $IdentityPath -Raw | ConvertFrom-Json } else { '{ "people": [] }' | ConvertFrom-Json }
@@ -146,10 +158,12 @@ if (-not (Test-Path -LiteralPath $CsvOutputDirectory)) { New-Item -ItemType Dire
 $paymentCandidates = @($paymentRows | ForEach-Object { [pscustomobject]@{ row = $_; matchKey = $_.matchKey } })
 $trackerPath = Join-Path $CsvOutputDirectory "redraft-bracket-master.csv"
 $paidNotAssignedPath = Join-Path $CsvOutputDirectory "redraft-bracket-paid-not-assigned.csv"
+$readableTrackerPath = Join-Path $CsvOutputDirectory "redraft-bracket-master-readable.txt"
+$readablePaidNotAssignedPath = Join-Path $CsvOutputDirectory "redraft-bracket-paid-not-assigned-readable.txt"
 $universalTrackerAliasPath = Join-Path $CsvOutputDirectory "commissioner-tracker.csv"
 $universalPaidNotAssignedAliasPath = Join-Path $CsvOutputDirectory "paid-not-assigned.csv"
 
-@($entries | Sort-Object leagueId, assignmentStatus, sleeperName | ForEach-Object {
+$trackerRows = @($entries | Sort-Object leagueId, assignmentStatus, sleeperName | ForEach-Object {
   $entry = $_
   $entryKey = Get-MatchKey $entry.sleeperName
   $candidate = $null
@@ -183,7 +197,8 @@ $universalPaidNotAssignedAliasPath = Join-Path $CsvOutputDirectory "paid-not-ass
     Person = $entry.personName
     Notes = ""
   }
-}) | Export-Csv -LiteralPath $trackerPath -NoTypeInformation -Encoding UTF8
+})
+$trackerRows | Export-Csv -LiteralPath $trackerPath -NoTypeInformation -Encoding UTF8
 Copy-Item -LiteralPath $trackerPath -Destination $universalTrackerAliasPath -Force
 
 $assignedKeys = @{}
@@ -192,7 +207,7 @@ foreach ($entry in @($entries | Where-Object { $_.assignmentStatus -eq "Assigned
   $assignedKeys[(Get-MatchKey $entry.sleeperName)] = $true
   if ($entry.personId) { $assignedPeople[$entry.personId] = $true }
 }
-@($paymentRows | Where-Object {
+$paidNotAssignedRows = @($paymentRows | Where-Object {
   -not $assignedKeys.ContainsKey($_.matchKey) -and ([string]::IsNullOrWhiteSpace($_.personId) -or -not $assignedPeople.ContainsKey($_.personId))
 } | Sort-Object payerName | ForEach-Object {
   [pscustomobject]@{
@@ -203,13 +218,66 @@ foreach ($entry in @($entries | Where-Object { $_.assignmentStatus -eq "Assigned
     Status = "Paid - no assigned team found"
     Notes = $_.notes
   }
-}) | Export-Csv -LiteralPath $paidNotAssignedPath -NoTypeInformation -Encoding UTF8
+})
+$paidNotAssignedRows | Export-Csv -LiteralPath $paidNotAssignedPath -NoTypeInformation -Encoding UTF8
 Copy-Item -LiteralPath $paidNotAssignedPath -Destination $universalPaidNotAssignedAliasPath -Force
+
+$readableLines = [System.Collections.Generic.List[string]]::new()
+$readableLines.Add("REDRAFT BRACKET PAYMENT MASTER") | Out-Null
+$readableLines.Add(("Generated: {0}" -f (Get-Date).ToString("M/d/yyyy h:mm tt"))) | Out-Null
+$readableLines.Add("") | Out-Null
+$readableLines.Add(("Sleeper entries: {0}" -f $entries.Count)) | Out-Null
+$readableLines.Add(("Paid LeagueSafe rows: {0}" -f $paymentRows.Count)) | Out-Null
+$readableLines.Add(("Assigned teams needing payment match: {0}" -f @($trackerRows | Where-Object { $_.Status -eq "Assigned - needs payment match" }).Count)) | Out-Null
+$readableLines.Add(("Paid but not assigned: {0}" -f $paidNotAssignedRows.Count)) | Out-Null
+$readableLines.Add("") | Out-Null
+
+foreach ($divisionGroup in @($trackerRows | Sort-Object Bracket, Assignment, "Sleeper Name" | Group-Object Bracket)) {
+  $divisionRows = @($divisionGroup.Group)
+  $first = $divisionRows[0]
+  $readableLines.Add(("{0} - {1} ({2})" -f $first.Bracket, $first.Division, $first.Draft).ToUpperInvariant()) | Out-Null
+  $readableLines.Add(("Assigned paid: {0} | Assigned needs match: {1} | Waiting assignment: {2}" -f
+      @($divisionRows | Where-Object { $_.Status -eq "Assigned + paid candidate" }).Count,
+      @($divisionRows | Where-Object { $_.Status -eq "Assigned - needs payment match" }).Count,
+      @($divisionRows | Where-Object { $_.Assignment -eq "Waiting assignment" }).Count)) | Out-Null
+  $readableLines.Add((Format-TableLine -Values @("Sleeper", "Assign", "Slot", "Paid", "LeagueSafe", "Status") -Widths @(22, 11, 4, 8, 22, 26))) | Out-Null
+  $readableLines.Add((Format-TableLine -Values @("-------", "------", "----", "----", "----------", "------") -Widths @(22, 11, 4, 8, 22, 26))) | Out-Null
+  foreach ($row in $divisionRows) {
+    $paid = if ([string]::IsNullOrWhiteSpace((Get-StringValue $row.Paid))) { "" } else { "$" + ("{0:N0}" -f (Convert-ToDecimal $row.Paid)) }
+    $assignment = if ($row.Assignment -eq "Assigned team") { "Assigned" } else { "Waiting" }
+    $statusLabel = if ($row.Status -eq "Assigned + paid candidate") { "Paid" }
+      elseif ($row.Status -eq "Assigned - needs payment match") { "Needs match" }
+      elseif ($row.Assignment -eq "Waiting assignment" -and -not [string]::IsNullOrWhiteSpace((Get-StringValue $row.Paid))) { "Paid / waiting assignment" }
+      elseif ($row.Assignment -eq "Waiting assignment") { "Waiting / unpaid" }
+      else { Get-StringValue $row.Status }
+    $readableLines.Add((Format-TableLine -Values @($row."Sleeper Name", $assignment, $row."Roster Slot", $paid, $row."LeagueSafe Name", $statusLabel) -Widths @(22, 11, 4, 8, 22, 26))) | Out-Null
+  }
+  $readableLines.Add("") | Out-Null
+}
+$readableLines | Set-Content -LiteralPath $readableTrackerPath -Encoding UTF8
+
+$paidReadableLines = [System.Collections.Generic.List[string]]::new()
+$paidReadableLines.Add("REDRAFT BRACKET PAID BUT NOT ASSIGNED") | Out-Null
+$paidReadableLines.Add(("Generated: {0}" -f (Get-Date).ToString("M/d/yyyy h:mm tt"))) | Out-Null
+$paidReadableLines.Add("") | Out-Null
+if ($paidNotAssignedRows.Count -eq 0) {
+  $paidReadableLines.Add("No paid LeagueSafe rows are currently unmatched to an assigned Redraft Bracket roster.") | Out-Null
+} else {
+  $paidReadableLines.Add((Format-TableLine -Values @("LeagueSafe Name", "Paid", "Payment ID", "Notes") -Widths @(26, 8, 14, 64))) | Out-Null
+  $paidReadableLines.Add((Format-TableLine -Values @("---------------", "----", "----------", "-----") -Widths @(26, 8, 14, 64))) | Out-Null
+  foreach ($row in $paidNotAssignedRows) {
+    $paid = "$" + ("{0:N0}" -f (Convert-ToDecimal $row.Paid))
+    $paidReadableLines.Add((Format-TableLine -Values @($row."LeagueSafe Name", $paid, $row."Payment ID", $row.Notes) -Widths @(26, 8, 14, 64))) | Out-Null
+  }
+}
+$paidReadableLines | Set-Content -LiteralPath $readablePaidNotAssignedPath -Encoding UTF8
 
 $result = [pscustomobject]@{
   csvOutputDirectory = $CsvOutputDirectory
   redraftBracketMasterPath = $trackerPath
   redraftBracketPaidNotAssignedPath = $paidNotAssignedPath
+  redraftBracketReadableMasterPath = $readableTrackerPath
+  redraftBracketReadablePaidNotAssignedPath = $readablePaidNotAssignedPath
   universalTrackerAliasPath = $universalTrackerAliasPath
   universalPaidNotAssignedAliasPath = $universalPaidNotAssignedAliasPath
   sleeperEntries = $entries.Count
