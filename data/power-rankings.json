@@ -1,5 +1,5 @@
 ﻿{
-    "generatedAt":  "2026-06-03T18:39:10.5587184+00:00",
+    "generatedAt":  "2026-06-03T22:56:59.6826523+00:00",
     "snapshot":  {
                      "season":  "2026",
                      "seasonType":  "off",
@@ -72,7 +72,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314663050854305792/rosters",
-                                           "refreshedAt":  "2026-06-03T18:38:24.6985660+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:01.6102515+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -167,7 +167,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314662767977824256/rosters",
-                                           "refreshedAt":  "2026-06-03T18:38:24.8394027+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:02.0427034+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -262,7 +262,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314660487635427328/rosters",
-                                           "refreshedAt":  "2026-06-03T18:38:24.9793754+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:02.6064922+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -357,7 +357,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1344449488089014272/rosters",
-                                           "refreshedAt":  "2026-06-03T18:38:25.1151918+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:03.0203689+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -452,7 +452,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341650084122595328/rosters",
-                                           "refreshedAt":  "2026-06-03T18:38:25.3447025+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:03.4241754+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  389,
                                            "sleeperLeagueSeason":  "2026",
@@ -848,10 +848,10 @@
                                              "rank":  1
                                          },
                                          {
-                                             "rosterId":  9,
-                                             "ownerId":  "785920658600271872",
-                                             "teamName":  "Cell Block One",
-                                             "score":  81,
+                                             "rosterId":  1,
+                                             "ownerId":  "466785377303130112",
+                                             "teamName":  "VinsBroPaul",
+                                             "score":  84,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -862,9 +862,9 @@
                                              "rank":  2
                                          },
                                          {
-                                             "rosterId":  7,
-                                             "ownerId":  "734206916703686656",
-                                             "teamName":  "benhamean",
+                                             "rosterId":  11,
+                                             "ownerId":  "734717042283905024",
+                                             "teamName":  "Tacious00",
                                              "score":  81,
                                              "record":  {
                                                             "wins":  0,
@@ -890,9 +890,9 @@
                                              "rank":  4
                                          },
                                          {
-                                             "rosterId":  11,
-                                             "ownerId":  "734717042283905024",
-                                             "teamName":  "Tacious00",
+                                             "rosterId":  9,
+                                             "ownerId":  "785920658600271872",
+                                             "teamName":  "Cell Block One",
                                              "score":  81,
                                              "record":  {
                                                             "wins":  0,
@@ -902,20 +902,6 @@
                                                             "ties":  0
                                                         },
                                              "rank":  5
-                                         },
-                                         {
-                                             "rosterId":  1,
-                                             "ownerId":  "466785377303130112",
-                                             "teamName":  "VinsBroPaul",
-                                             "score":  81,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "rank":  6
                                          },
                                          {
                                              "rosterId":  3,
@@ -929,12 +915,26 @@
                                                             "losses":  0,
                                                             "ties":  0
                                                         },
-                                             "rank":  7
+                                             "rank":  6
                                          },
                                          {
                                              "rosterId":  2,
                                              "ownerId":  "1205629906461917184",
                                              "teamName":  "Full of Excuses",
+                                             "score":  81,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "rank":  7
+                                         },
+                                         {
+                                             "rosterId":  5,
+                                             "ownerId":  "738614393776001024",
+                                             "teamName":  "DSnyder5",
                                              "score":  81,
                                              "record":  {
                                                             "wins":  0,
@@ -960,10 +960,10 @@
                                              "rank":  9
                                          },
                                          {
-                                             "rosterId":  5,
-                                             "ownerId":  "738614393776001024",
-                                             "teamName":  "DSnyder5",
-                                             "score":  81,
+                                             "rosterId":  7,
+                                             "ownerId":  "734206916703686656",
+                                             "teamName":  "benhamean",
+                                             "score":  78,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -974,9 +974,9 @@
                                              "rank":  10
                                          },
                                          {
-                                             "rosterId":  10,
-                                             "ownerId":  "1106247859193679872",
-                                             "teamName":  "benestrem",
+                                             "rosterId":  8,
+                                             "ownerId":  "673058459607990272",
+                                             "teamName":  "DoubleTap ($30✅)",
                                              "score":  72,
                                              "record":  {
                                                             "wins":  0,
@@ -988,9 +988,9 @@
                                              "rank":  11
                                          },
                                          {
-                                             "rosterId":  8,
-                                             "ownerId":  "673058459607990272",
-                                             "teamName":  "DoubleTap ($30✅)",
+                                             "rosterId":  10,
+                                             "ownerId":  "1106247859193679872",
+                                             "teamName":  "benestrem",
                                              "score":  72,
                                              "record":  {
                                                             "wins":  0,
@@ -1034,7 +1034,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1340820529996640256/rosters",
-                                           "refreshedAt":  "2026-06-03T18:38:29.7379615+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:08.0740468+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  367,
                                            "sleeperLeagueSeason":  "2026",
@@ -1419,7 +1419,7 @@
                                              "rosterId":  9,
                                              "ownerId":  "992228616983359488",
                                              "teamName":  "christhemann64",
-                                             "score":  90,
+                                             "score":  91,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -1428,20 +1428,6 @@
                                                             "ties":  0
                                                         },
                                              "rank":  1
-                                         },
-                                         {
-                                             "rosterId":  3,
-                                             "ownerId":  "1205629906461917184",
-                                             "teamName":  "Major Questions",
-                                             "score":  88,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "rank":  2
                                          },
                                          {
                                              "rosterId":  8,
@@ -1455,13 +1441,27 @@
                                                             "losses":  0,
                                                             "ties":  0
                                                         },
-                                             "rank":  3
+                                             "rank":  2
                                          },
                                          {
                                              "rosterId":  7,
                                              "ownerId":  "577616667429867520",
                                              "teamName":  "lushlou88",
-                                             "score":  84,
+                                             "score":  85,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "rank":  3
+                                         },
+                                         {
+                                             "rosterId":  3,
+                                             "ownerId":  "1205629906461917184",
+                                             "teamName":  "Major Questions",
+                                             "score":  85,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -1489,7 +1489,7 @@
                                              "rosterId":  10,
                                              "ownerId":  "1225158362597949440",
                                              "teamName":  "Jizzle",
-                                             "score":  78,
+                                             "score":  79,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -1503,7 +1503,7 @@
                                              "rosterId":  4,
                                              "ownerId":  "76847552544522240",
                                              "teamName":  "BertoGenosis",
-                                             "score":  78,
+                                             "score":  79,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -1517,7 +1517,7 @@
                                              "rosterId":  12,
                                              "ownerId":  "992142466822234112",
                                              "teamName":  "Thefish1220",
-                                             "score":  78,
+                                             "score":  79,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -1559,7 +1559,7 @@
                                              "rosterId":  5,
                                              "ownerId":  "465050123617955840",
                                              "teamName":  "TheJuanAndOnly15",
-                                             "score":  72,
+                                             "score":  73,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -1616,7 +1616,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341646934816849920/rosters",
-                                           "refreshedAt":  "2026-06-03T18:38:33.4008678+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:12.1551196+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  372,
                                            "sleeperLeagueSeason":  "2026",
@@ -2198,7 +2198,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1342931950981091328/rosters",
-                                           "refreshedAt":  "2026-06-03T18:38:37.3099762+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:16.7543117+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  363,
                                            "sleeperLeagueSeason":  "2026",
@@ -2780,7 +2780,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345763335270400/rosters",
-                                           "refreshedAt":  "2026-06-03T18:38:41.1830078+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:21.1149833+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  377,
                                            "sleeperLeagueSeason":  "2026",
@@ -3319,7 +3319,7 @@
                                              "rosterId":  5,
                                              "ownerId":  "1003362527729803264",
                                              "teamName":  "All You Need is Love",
-                                             "score":  69,
+                                             "score":  72,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -3362,7 +3362,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345934114725888/rosters",
-                                           "refreshedAt":  "2026-06-03T18:38:45.1260878+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:25.4715699+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  371,
                                            "sleeperLeagueSeason":  "2026",
@@ -3772,10 +3772,10 @@
                                              "rank":  2
                                          },
                                          {
-                                             "rosterId":  2,
-                                             "ownerId":  "909585818912845824",
-                                             "teamName":  "gucifer",
-                                             "score":  84,
+                                             "rosterId":  12,
+                                             "ownerId":  "1294086099936751616",
+                                             "teamName":  "kuhnyboy",
+                                             "score":  81,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -3814,9 +3814,9 @@
                                              "rank":  5
                                          },
                                          {
-                                             "rosterId":  12,
-                                             "ownerId":  "1294086099936751616",
-                                             "teamName":  "kuhnyboy",
+                                             "rosterId":  2,
+                                             "ownerId":  "909585818912845824",
+                                             "teamName":  "gucifer",
                                              "score":  81,
                                              "record":  {
                                                             "wins":  0,
@@ -3828,9 +3828,9 @@
                                              "rank":  6
                                          },
                                          {
-                                             "rosterId":  4,
-                                             "ownerId":  "445692816987779072",
-                                             "teamName":  "chandler222",
+                                             "rosterId":  9,
+                                             "ownerId":  "754208102156484608",
+                                             "teamName":  "dbangart",
                                              "score":  78,
                                              "record":  {
                                                             "wins":  0,
@@ -3856,9 +3856,9 @@
                                              "rank":  8
                                          },
                                          {
-                                             "rosterId":  9,
-                                             "ownerId":  "754208102156484608",
-                                             "teamName":  "dbangart",
+                                             "rosterId":  4,
+                                             "ownerId":  "445692816987779072",
+                                             "teamName":  "chandler222",
                                              "score":  78,
                                              "record":  {
                                                             "wins":  0,
@@ -3944,7 +3944,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1360285262617284608/rosters",
-                                           "refreshedAt":  "2026-06-03T18:38:49.0538814+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:29.8483243+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  368,
                                            "sleeperLeagueSeason":  "2026",
@@ -4340,10 +4340,10 @@
                                              "rank":  1
                                          },
                                          {
-                                             "rosterId":  9,
-                                             "ownerId":  "865634311846653952",
-                                             "teamName":  "Chanimal26",
-                                             "score":  87,
+                                             "rosterId":  4,
+                                             "ownerId":  "803498811140976640",
+                                             "teamName":  "StealthRUS",
+                                             "score":  84,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -4368,9 +4368,9 @@
                                              "rank":  3
                                          },
                                          {
-                                             "rosterId":  4,
-                                             "ownerId":  "803498811140976640",
-                                             "teamName":  "StealthRUS",
+                                             "rosterId":  10,
+                                             "ownerId":  "341997123983695872",
+                                             "teamName":  "Sharksarenice",
                                              "score":  84,
                                              "record":  {
                                                             "wins":  0,
@@ -4382,9 +4382,9 @@
                                              "rank":  4
                                          },
                                          {
-                                             "rosterId":  10,
-                                             "ownerId":  "341997123983695872",
-                                             "teamName":  "Sharksarenice",
+                                             "rosterId":  9,
+                                             "ownerId":  "865634311846653952",
+                                             "teamName":  "Chanimal26",
                                              "score":  84,
                                              "record":  {
                                                             "wins":  0,
@@ -4526,7 +4526,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362902973520306176/rosters",
-                                           "refreshedAt":  "2026-06-03T18:38:52.9117983+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:34.2782058+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -4685,9 +4685,9 @@
                                              "rank":  6
                                          },
                                          {
-                                             "rosterId":  2,
-                                             "ownerId":  "875504374850461696",
-                                             "teamName":  "RiceCat88",
+                                             "rosterId":  3,
+                                             "ownerId":  "867554433905606656",
+                                             "teamName":  "zygryan",
                                              "score":  80,
                                              "record":  {
                                                             "wins":  0,
@@ -4699,9 +4699,9 @@
                                              "rank":  7
                                          },
                                          {
-                                             "rosterId":  1,
-                                             "ownerId":  "1130630426395185152",
-                                             "teamName":  "ZuPlum",
+                                             "rosterId":  2,
+                                             "ownerId":  "875504374850461696",
+                                             "teamName":  "RiceCat88",
                                              "score":  80,
                                              "record":  {
                                                             "wins":  0,
@@ -4713,9 +4713,9 @@
                                              "rank":  8
                                          },
                                          {
-                                             "rosterId":  4,
-                                             "ownerId":  "1266499648198021120",
-                                             "teamName":  "CaptainKnots25",
+                                             "rosterId":  1,
+                                             "ownerId":  "1130630426395185152",
+                                             "teamName":  "ZuPlum",
                                              "score":  80,
                                              "record":  {
                                                             "wins":  0,
@@ -4755,10 +4755,10 @@
                                              "rank":  11
                                          },
                                          {
-                                             "rosterId":  3,
-                                             "ownerId":  "867554433905606656",
-                                             "teamName":  "zygryan",
-                                             "score":  77,
+                                             "rosterId":  4,
+                                             "ownerId":  "1266499648198021120",
+                                             "teamName":  "CaptainKnots25",
+                                             "score":  80,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -4801,7 +4801,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350152770275020800/rosters",
-                                           "refreshedAt":  "2026-06-03T18:38:53.2862253+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:34.9908707+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -4909,7 +4909,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154389192474624/rosters",
-                                           "refreshedAt":  "2026-06-03T18:38:53.4247933+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:35.3741624+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -5017,7 +5017,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154561549004800/rosters",
-                                           "refreshedAt":  "2026-06-03T18:38:53.5520314+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:35.8149478+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -5125,7 +5125,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154695137570816/rosters",
-                                           "refreshedAt":  "2026-06-03T18:38:53.6942083+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:36.2209402+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -5233,7 +5233,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095209052508160/rosters",
-                                           "refreshedAt":  "2026-06-03T18:38:53.8264656+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:36.5965721+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -5730,7 +5730,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095313704554496/rosters",
-                                           "refreshedAt":  "2026-06-03T18:38:55.7330665+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:38.8854046+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -6227,7 +6227,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095371091017728/rosters",
-                                           "refreshedAt":  "2026-06-03T18:38:57.5728038+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:41.1482439+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -6724,7 +6724,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095416859287552/rosters",
-                                           "refreshedAt":  "2026-06-03T18:38:59.4263752+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:43.4274662+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -7150,7 +7150,7 @@
                                              "rosterId":  2,
                                              "ownerId":  "1254553997973389313",
                                              "teamName":  "jakeejk",
-                                             "score":  81,
+                                             "score":  79,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -7221,7 +7221,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095453291003904/rosters",
-                                           "refreshedAt":  "2026-06-03T18:39:01.3288651+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:45.6355234+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -7718,7 +7718,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480393130868736/rosters",
-                                           "refreshedAt":  "2026-06-03T18:39:03.1990196+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:47.9399531+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -8215,7 +8215,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480515533242368/rosters",
-                                           "refreshedAt":  "2026-06-03T18:39:05.0676286+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:50.1326910+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -8712,7 +8712,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480638808064000/rosters",
-                                           "refreshedAt":  "2026-06-03T18:39:06.9597949+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:52.3759087+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -8811,7 +8811,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480857310302208/rosters",
-                                           "refreshedAt":  "2026-06-03T18:39:07.0859941+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:52.7656102+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -8910,7 +8910,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480992765353984/rosters",
-                                           "refreshedAt":  "2026-06-03T18:39:07.2186723+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:53.5117171+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9009,7 +9009,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362908679824740352/rosters",
-                                           "refreshedAt":  "2026-06-03T18:39:07.3651971+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:53.9563522+00:00",
                                            "rosterCount":  24,
                                            "playerCount":  120,
                                            "sleeperLeagueSeason":  "2026",
@@ -10025,7 +10025,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338004997836640256/rosters",
-                                           "refreshedAt":  "2026-06-03T18:39:09.4571440+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:56.3874746+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10121,7 +10121,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005036122279936/rosters",
-                                           "refreshedAt":  "2026-06-03T18:39:09.5798942+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:56.8188445+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10217,7 +10217,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005075167035392/rosters",
-                                           "refreshedAt":  "2026-06-03T18:39:09.7053372+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:57.2082273+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10313,7 +10313,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005113482022912/rosters",
-                                           "refreshedAt":  "2026-06-03T18:39:09.8449032+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:57.5926577+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10409,7 +10409,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005158071660544/rosters",
-                                           "refreshedAt":  "2026-06-03T18:39:09.9735546+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:58.0035928+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10505,7 +10505,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846317608992768/rosters",
-                                           "refreshedAt":  "2026-06-03T18:39:10.1002896+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:58.4286323+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10600,7 +10600,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846742810775552/rosters",
-                                           "refreshedAt":  "2026-06-03T18:39:10.2475251+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:58.8847966+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10695,7 +10695,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1363630886133694464/rosters",
-                                           "refreshedAt":  "2026-06-03T18:39:10.3779402+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:59.2811430+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10777,7 +10777,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339342261023961088/rosters",
-                                           "refreshedAt":  "2026-06-03T18:39:10.5567092+00:00",
+                                           "refreshedAt":  "2026-06-03T22:56:59.6806311+00:00",
                                            "rosterCount":  18,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
