@@ -16,6 +16,11 @@ Use `marketing/recruiting-copy-ready.txt` for:
 - direct copy/paste into apps or sites
 - quick access when you already know what you want to post
 
+Use `marketing/recruiting-strategy-2026.md` for:
+- the current room-closing recruiting pivot
+- posting rules for shorter, higher-conversion ads
+- platform-specific guidance for the new approach
+
 Use `marketing/recruiting-archive.md` for:
 - retired copy
 - old room-specific pushes
@@ -63,6 +68,18 @@ Use:
 
 ## Current Recruiting Priorities
 
+### Current Strategy
+
+Use room-closing marketing before catalog marketing.
+
+- Lead with one room, one reason to join, and one next action.
+- Put the paid count in the first content line of every recruiting post.
+- Keep `VBP Fantasy Network` as the trust layer, not always the first sentence.
+- Avoid listing every active league in public posts unless someone asks for options.
+- Use one join link and one rules link in most posts.
+- Use reply prompts such as `redraft`, `bracket`, `fast`, `Foundry`, or `BBU`.
+- Concentrate new joins into the healthiest rooms first.
+
 ### Primary Push
 
 - `Redraft 4`
@@ -101,9 +118,16 @@ Use:
 - Lead with the current active room when there is a scheduled draft time.
 - Always say `fast draft`.
 - Say new BBU leagues start drafting 24 hours after the league is filled and fully paid unless a same-day draft time has already been set.
-- `BBU6` is full, paid, drafted, and checked off. `BBU7` is the current active recruiting room and is drafting tonight at 8 PM CST.
+- `BBU1` through `BBU7` are full or already drafting. `BBU8` is the current active recruiting room and is drafting June 3 at 8 PM CST.
 - Refresh the active `BBU` template when the current room changes so the pitch does not feel stale.
 - When a `BBU` post has a scheduled draft time, lead with that urgency and keep the description focused on the active room.
+
+### Best Ball Gauntlet
+
+- `BG1` is full and should not be used for active recruiting.
+- If `BG2` opens, lead with the paid count in the first line and frame it as the weird micro best-ball lane.
+- The tentative `BG2` roster build is 6 total players, 4 starters, and 2 bench spots.
+- Keep Gauntlet copy separate from Best Ball Union copy because the appeal is different: compact, uncomfortable roster decisions instead of standard 10-team best ball.
 
 ### Pick'em
 
@@ -129,7 +153,7 @@ Use:
 
 - Keep redraft copy aligned with the rest of the recruiting strategy: trust first, clear structure, and fewer "listing" vibes.
 - For the current push, lead with `Redraft 4` and `Bracket Redraft` before dynasty, best ball, keeper, or chopped.
-- For `Redraft 4`, frame it as the sharper seasonal option for owners who want a more serious room with rules posted up front. It is currently `10/12 assigned` and `6/12 paid`.
+- For `Redraft 4`, frame it as the sharper seasonal option for owners who want a more serious room with rules posted up front. It is currently `7/12 paid`.
 - For `Bracket Redraft`, lead with the format hook and the fact that this is the third season the commissioner has run the format. Avoid phrasing that makes `Year 3 Bracket Redraft` sound like the formal format name.
 - Current Bracket Redraft recruiting should concentrate new owners into `Apex` and `Titan` for slow draft and `Iron` for fast draft before pushing Vanguard or Dominion equally.
 - Use `REDRAFT PRIORITY PUSH` when you want one post that lets people choose between the $100 standalone room and the $50 tournament format.
@@ -175,7 +199,7 @@ Body:
 ```text
 VBP Fantasy Network is pushing redraft right now with two active lanes:
 
-Redraft 4 is the sharper standalone seasonal room. It is a $100 league with Progressive PPR, no kicker or defense, and a 6-team playoff with top-two byes. It is currently 10/12 assigned and 6/12 paid.
+Redraft 4 is the sharper standalone seasonal room. It is a $100 league with Progressive PPR, no kicker or defense, and a 6-team playoff with top-two byes. It is currently 7/12 paid.
 
 Bracket Redraft is the bigger tournament-style format. I am filling it for the third season I have run this setup. It is a $50 redraft format with fast and slow draft rooms feeding one shared 32-team playoff across the full 60-team field. The current push is Apex and Titan for slow draft, plus Iron as the priority fast room.
 
@@ -183,7 +207,7 @@ Redraft 4 ($100): https://sleeper.com/i/V9xKEeVN7AD4e
 
 Bracket Redraft priority rooms:
 Apex ($50, Slow, 11/12 paid): http://sleeper.com/i/zExweGWd6aPgb
-Titan ($50, Slow, 8/12 paid): http://sleeper.com/i/kM2GBe6qL228Y
+Titan ($50, Slow, 9/12 paid assigned): http://sleeper.com/i/kM2GBe6qL228Y
 Iron ($50, Fast, 5/12 paid): http://sleeper.com/i/j7moDEZ337dn0
 
 If you want slow draft, join Apex or Titan. If you want fast draft, join Iron. Vanguard and Dominion are part of the full format, but the push right now is to concentrate new joins into Apex, Titan, and Iron first.
@@ -348,14 +372,14 @@ Dynasty Bracket (Year 1) - Startup
 - payouts: $1,380 champion, $300 runner-up, $100 semifinal losers, $55 quarterfinal losers, $75 division winner bonus
 - looking for dedicated dynasty owners who want to build through a full startup and stick with a long-term bracket format
 
-Bracket Redraft - third season running this format, 27/60 filled
+Bracket Redraft - third season running this format, 29/60 paid assigned
 - 60-team redraft format
 - 5 separate 12-team divisions
 - shared 32-team playoff bracket
 - $50 buy-in with fast and slow room options
 - $3,000 total prize pool
 - payouts: $1,380 champion, $500 runner-up, $200 semifinal losers, $55 quarterfinal losers, $100 division winner bonus
-- currently 27 of 60 spots filled
+- currently 29 of 60 spots paid assigned
 
 If either format sounds interesting, start in the hub and I can point you to the best current opening.
 
@@ -543,20 +567,20 @@ Dynasty Bracket constitution: https://vbp-fantasy-network.vercel.app/dynasty-bra
 ### BBU
 
 When to use:
-- current BBU7 best ball recruiting post
+- current BBU8 best ball recruiting post
 
 Title:
 
 ```text
-VBP Fantasy Network | BBU7 $10 Best Ball | Drafting Tonight
+VBP Fantasy Network | BBU8 $10 Best Ball | Drafting June 3 at 8 PM CST
 ```
 
 Body:
 
 ```text
-VBP Fantasy Network has BBU7 open for anyone who wants a simple $10 best ball draft. BBU1 through BBU6 are full, paid, and drafted, so BBU7 is the next active room.
+VBP Fantasy Network has BBU8 open for anyone who wants a simple $10 best ball draft. BBU1 through BBU6 are full, paid, and drafted, and BBU7 is full and drafting tonight, so BBU8 is the next active room.
 
-BBU7 is drafting tonight at 8 PM CST.
+BBU8 is drafting June 3 at 8 PM CST.
 
 This is a 10-team draft-and-hold best ball league on Sleeper. It uses a 90-second snake draft, 18-player rosters, Progressive PPR scoring, and a weekly median matchup.
 
@@ -564,7 +588,7 @@ After the draft, there are no waivers, trades, pickups, or weekly lineup decisio
 
 Each full BBU room pays $75 to that league winner. Another $25 per room goes to the manager with the single highest total season score across all Best Ball Union teams.
 
-Best Ball Union #7 ($10, Fast): https://sleeper.com/i/m7VGz060E9KE5
+Best Ball Union #8 ($10, Fast): https://sleeper.com/i/Y21R6kl0dWBDD
 Best Ball constitution: https://vbp-fantasy-network.vercel.app/bestball-constitution.html
 Best Ball Union Center: https://vbp-fantasy-network.vercel.app/bestball-center.html
 Main hub: https://vbp-fantasy-network.vercel.app/
@@ -622,7 +646,7 @@ This is a $50 redraft setup with both fast and slow draft options, Progressive P
 
 Current priority rooms:
 Apex ($50, Slow, 11/12 paid): http://sleeper.com/i/zExweGWd6aPgb
-Titan ($50, Slow, 8/12 paid): http://sleeper.com/i/kM2GBe6qL228Y
+Titan ($50, Slow, 9/12 paid assigned): http://sleeper.com/i/kM2GBe6qL228Y
 Iron ($50, Fast, 5/12 paid): http://sleeper.com/i/j7moDEZ337dn0
 
 If you want slow draft, join Apex or Titan. If you want fast draft, join Iron. Vanguard and Dominion are part of the full format, but the push right now is to fill Apex, Titan, and Iron first.
@@ -652,7 +676,7 @@ Body:
 ```text
 VBP Fantasy Network has Redraft 4 open right now for owners who want a sharper $100 seasonal league with clear rules posted up front.
 
-It uses Progressive PPR scoring, no kicker or defense spots, and a 6-team playoff with top-two byes. The room is currently 10/12 assigned and 6/12 paid.
+It uses Progressive PPR scoring, no kicker or defense spots, and a 6-team playoff with top-two byes. The room is currently 7/12 paid.
 
 Redraft 4 ($100): https://sleeper.com/i/V9xKEeVN7AD4e
 Redraft constitution: https://vbp-fantasy-network.vercel.app/redraft-constitution.html

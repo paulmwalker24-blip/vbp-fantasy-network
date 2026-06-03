@@ -17,7 +17,12 @@ Short recruiting hooks capped at 200 characters or less.
 
 ## Best Ball Union
 
-- `BBU7`: $10 fast-draft best ball, currently open and drafting tonight at 8 PM CST. Auto lineups, Progressive PPR, and Union high-score tracking.
+- `BBU8`: $10 fast-draft best ball, drafting June 3 at 8 PM CST. Current paid count: 3/10.
+
+## Best Ball Gauntlet
+
+- `BG1`: Full and drafting. Do not use for active recruiting.
+- `BG2`: Tentative $5 micro best ball follow-up with 6-player rosters, 4 starters, and 2 bench spots. Current paid count: 0/24 until opened.
 
 ## Pick'em
 
@@ -25,8 +30,8 @@ Short recruiting hooks capped at 200 characters or less.
 
 ## Bracket Redraft
 
-- Current redraft priority: push Bracket Redraft alongside `RD4`; 60-team, five 12-team divisions, $50 entry, $1,380 to champion.
-- `Titan`: $50 slow room in the 60-team bracket, one of five 12-team divisions, with $1,380 to champion. Current paid count: 8/12.
+- Current redraft priority: close Apex first, keep `RD4` visible, then use Titan as the next slow room and Iron as the fast-draft focus.
+- `Titan`: $50 slow room in the 60-team bracket, one of five 12-team divisions, with $1,380 to champion. Current paid count: 9/12.
 - `Apex`: $50 slow room in the 60-team bracket, one of five 12-team divisions, with $1,380 to champion. Current paid count: 11/12.
 - `Iron`: $50 fast room in the 60-team bracket, one of five 12-team divisions, with $1,380 to champion. Current paid count: 5/12.
 - `Vanguard`: Fast room in the returning bracket redraft format, but Iron is the current fast-draft priority because it already has paid owners.
@@ -35,7 +40,7 @@ Short recruiting hooks capped at 200 characters or less.
 ## Standard Redraft
 
 - Current redraft priority: `RD4` is the sharper standalone seasonal push and should be paired with Bracket Redraft when you want a broader redraft post.
-- `RD4`: $100 standalone redraft with Progressive PPR, no kicker, no defense, and a 6-team playoff with top-two byes. Current count: 10/12 assigned, 6/12 paid.
+- `RD4`: $100 standalone redraft with Progressive PPR, no kicker, no defense, and a 6-team playoff. Current count: 7/12 paid.
 
 ## Keeper
 
