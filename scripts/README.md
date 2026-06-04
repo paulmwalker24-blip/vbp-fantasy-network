@@ -548,6 +548,10 @@ The player and team calculations follow `docs/vbp-power-ranking-model.md`: the s
 
 Each standard dynasty league publishes two owner boards from the same live roster pull. Its standard Dynasty Outlook includes long-term player value and future draft capital. Its `currentSeasonRankings` board measures current-season contention only, emphasizing the strongest legal lineup, usable depth, Superflex quarterback strength, health, and league scoring while excluding age runway and future picks.
 
+Each generated owner row includes three league-relative explanations: the roster's two strongest model components and its clearest concern. Dynasty Outlook and current-season contender boards calculate their explanations separately.
+
+The GitHub Actions workflow in `.github/workflows/power-rankings-sync.yml` refreshes and commits the generated rankings once daily at `11:00 UTC`, and it can also be run manually.
+
 Use `data/power-ranking-overrides.json` for facts Sleeper cannot reliably know, such as a commissioner publish hold, a schedule-context adjustment, or a manually reviewed player injury/value note.
 
 Default usage:

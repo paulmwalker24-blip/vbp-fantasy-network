@@ -48,6 +48,14 @@ function renderRankingRow(entry) {
   header.appendChild(createElement("span", "power-ranking-score", number(entry.score).toFixed(1)));
   body.appendChild(header);
   body.appendChild(createElement("p", "", formatRecord(entry.record)));
+  if (Array.isArray(entry.reasons) && entry.reasons.length) {
+    const reasons = createElement("ul", "power-ranking-reasons");
+    entry.reasons.forEach(reason => {
+      const tone = text(reason.tone) === "concern" ? "concern" : "positive";
+      reasons.appendChild(createElement("li", `is-${tone}`, text(reason.text)));
+    });
+    body.appendChild(reasons);
+  }
 
   row.appendChild(body);
   return row;

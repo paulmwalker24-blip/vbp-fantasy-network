@@ -51,6 +51,7 @@ function Invoke-SleeperJson {
 function Get-ObjectProperty {
   param($Object, [string]$Name)
   if ($null -eq $Object -or [string]::IsNullOrWhiteSpace($Name)) { return $null }
+  if ($Object -is [System.Collections.IDictionary] -and $Object.Contains($Name)) { return $Object[$Name] }
   $property = $Object.PSObject.Properties[$Name]
   if ($null -eq $property) { return $null }
   return $property.Value
@@ -573,7 +574,7 @@ function Get-BestBallScore {
   return [Math]::Min(98, [Math]::Max(35, $score))
 }
 
-function Get-CurrentSeasonScore {
+function Get-CurrentSeasonProfile {
   param(
     [object[]]$PlayerEntries,
     $LiveLeague,
@@ -601,7 +602,112 @@ function Get-CurrentSeasonScore {
   $eliteScore = [Math]::Min(100, 58 + ($elitePlayers.Count * 8))
   $healthScore = [Math]::Max(0, 100 - $injuryPenalty)
 
-  return (($lineupScore * 0.50) + ($depthScore * 0.18) + ($quarterbackScore * 0.14) + ($eliteScore * 0.08) + ($healthScore * 0.10) + $ManualContext)
+  $components = [ordered]@{
+    lineup = [Math]::Round($lineupScore, 1)
+    depth = [Math]::Round($depthScore, 1)
+    quarterback = [Math]::Round($quarterbackScore, 1)
+    eliteCeiling = [Math]::Round($eliteScore, 1)
+    health = [Math]::Round($healthScore, 1)
+  }
+
+  [pscustomobject]@{
+    score = (($lineupScore * 0.50) + ($depthScore * 0.18) + ($quarterbackScore * 0.14) + ($eliteScore * 0.08) + ($healthScore * 0.10) + $ManualContext)
+    components = $components
+  }
+}
+
+function Get-RankingReasonText {
+  param([string]$Component, [string]$Tone, [double]$Difference)
+
+  $positive = @{
+    lineup = "Starting lineup strength is a clear advantage relative to the league."
+    depth = "Usable depth gives this roster strong weekly flexibility."
+    quarterback = "Quarterback strength is a major advantage, especially in Superflex."
+    eliteCeiling = "Top-end difference-makers give this roster a strong weekly ceiling."
+    health = "Current player availability is a relative strength."
+    scoringContext = "The roster is built to benefit from this league's scoring settings."
+    dynastyValue = "Long-term player value and future draft capital strengthen the dynasty outlook."
+    context = "Commissioner-reviewed context supports the current ranking."
+  }
+  $concern = @{
+    lineup = "The starting lineup trails the league's stronger weekly cores."
+    depth = "Usable depth is the roster's clearest weakness."
+    quarterback = "Quarterback strength creates risk, especially in Superflex."
+    eliteCeiling = "The roster lacks the top-end ceiling of the league's strongest teams."
+    health = "Current player availability lowers the roster's outlook."
+    scoringContext = "The roster gains less from this league's scoring settings than most."
+    dynastyValue = "Long-term player value and future draft capital trail the league."
+    context = "Commissioner-reviewed context is the clearest drag on the current ranking."
+  }
+  $buildingBlock = @{
+    lineup = "Starting lineup strength is one of this roster's better building blocks."
+    depth = "Usable depth is one of this roster's better building blocks."
+    quarterback = "The quarterback room is one of this roster's better building blocks."
+    eliteCeiling = "Top-end ceiling is one of this roster's better building blocks."
+    health = "Current player availability is one of this roster's better building blocks."
+    scoringContext = "Fit with the league's scoring settings is one of this roster's better traits."
+    dynastyValue = "Long-term player value and future draft capital are among this roster's better traits."
+    context = "Commissioner-reviewed context is one of this roster's better traits."
+  }
+  $leastStrong = @{
+    lineup = "Starting lineup strength is the roster's least dominant area."
+    depth = "Usable depth is the roster's least dominant area."
+    quarterback = "Quarterback strength is the roster's least dominant area."
+    eliteCeiling = "Top-end ceiling is the roster's least dominant area."
+    health = "Current player availability is the roster's least dominant area."
+    scoringContext = "Fit with the league's scoring settings is the roster's least dominant area."
+    dynastyValue = "Long-term player value and future draft capital are the roster's least dominant area."
+    context = "Commissioner-reviewed context is the roster's least dominant area."
+  }
+  if ($Tone -eq "positive" -and $Difference -lt 0.5 -and $buildingBlock.ContainsKey($Component)) { return $buildingBlock[$Component] }
+  if ($Tone -eq "concern" -and $Difference -gt -0.5 -and $leastStrong.ContainsKey($Component)) { return $leastStrong[$Component] }
+  $lookup = if ($Tone -eq "positive") { $positive } else { $concern }
+  if ($lookup.ContainsKey($Component)) { return $lookup[$Component] }
+  if ($Tone -eq "positive") { return "This roster has a meaningful relative strength." }
+  return "This roster has a meaningful area of concern."
+}
+
+function Add-RankingReasons {
+  param([object[]]$Rankings, [string]$ComponentPropertyName)
+
+  if ($Rankings.Count -eq 0) { return @() }
+  $firstComponents = Get-ObjectProperty -Object $Rankings[0] -Name $ComponentPropertyName
+  $componentNames = if ($firstComponents -is [System.Collections.IDictionary]) {
+    @($firstComponents.Keys)
+  } else {
+    @($firstComponents.PSObject.Properties.Name)
+  }
+  $averages = @{}
+  $spreads = @{}
+  foreach ($componentName in $componentNames) {
+    $values = @($Rankings | ForEach-Object {
+      $components = Get-ObjectProperty -Object $_ -Name $ComponentPropertyName
+      Get-NumberValue (Get-ObjectProperty -Object $components -Name $componentName) 0
+    })
+    $measure = $values | Measure-Object -Average -Minimum -Maximum
+    $averages[$componentName] = $measure.Average
+    $spreads[$componentName] = $measure.Maximum - $measure.Minimum
+  }
+  $meaningfulComponents = @($componentNames | Where-Object { $spreads[$_] -ge 0.5 })
+  if ($meaningfulComponents.Count -ge 3) { $componentNames = $meaningfulComponents }
+
+  foreach ($ranking in $Rankings) {
+    $components = Get-ObjectProperty -Object $ranking -Name $ComponentPropertyName
+    $differences = @($componentNames | ForEach-Object {
+      [pscustomobject]@{
+        component = $_
+        difference = (Get-NumberValue (Get-ObjectProperty -Object $components -Name $_) 0) - $averages[$_]
+      }
+    })
+    $strengths = @($differences | Sort-Object @{ Expression = { $_.difference }; Descending = $true } | Select-Object -First 2)
+    $concern = $differences | Sort-Object @{ Expression = { $_.difference }; Descending = $false } | Select-Object -First 1
+    $reasons = @($strengths | ForEach-Object {
+      [pscustomobject]@{ tone = "positive"; text = Get-RankingReasonText -Component $_.component -Tone "positive" -Difference $_.difference }
+    })
+    $reasons += [pscustomobject]@{ tone = "concern"; text = Get-RankingReasonText -Component $concern.component -Tone "concern" -Difference $concern.difference }
+    $ranking | Add-Member -NotePropertyName reasons -NotePropertyValue $reasons -Force
+  }
+  return @($Rankings)
 }
 
 function Get-TeamAdjustment {
@@ -695,7 +801,7 @@ function New-TeamRanking {
       -ManualContext $manualContext
   }
   $score = [Math]::Min(100, [Math]::Max(0, $rawScore))
-  $currentSeasonScore = Get-CurrentSeasonScore -PlayerEntries $playerEntries -LiveLeague $LiveLeague -ManualContext $manualContext
+  $currentSeasonProfile = Get-CurrentSeasonProfile -PlayerEntries $playerEntries -LiveLeague $LiveLeague -ManualContext $manualContext
 
   $record = @{
     wins = [int](Get-NumberValue $Roster.settings.wins 0)
@@ -710,7 +816,9 @@ function New-TeamRanking {
     ownerId = Get-TextValue $Roster.owner_id
     teamName = Get-TeamName -User $User -Roster $Roster
     score = [Math]::Round($score, 3)
-    currentSeasonScore = [Math]::Round($currentSeasonScore, 3)
+    currentSeasonScore = [Math]::Round($currentSeasonProfile.score, 3)
+    componentScores = $componentScores
+    currentSeasonComponents = $currentSeasonProfile.components
     record = $record
   }
 }
@@ -749,6 +857,7 @@ function Get-CurrentSeasonRankings {
       ownerId = $_.ownerId
       teamName = $_.teamName
       score = [Math]::Round([Math]::Min(98, [Math]::Max(35, (80 + ($relativeDifference * 3)))), 1)
+      reasons = $_.reasons
       record = $_.record
     }
   })
@@ -1083,6 +1192,7 @@ foreach ($leagueRecord in $selectedLeagues) {
     }
   }
 
+  $rankings = Add-RankingReasons -Rankings $rankings -ComponentPropertyName "componentScores"
   $rankings = Convert-ToPublishedTeamScores -Rankings $rankings -Format (Get-TextValue $leagueRecord.format)
   $rank = 1
   $rankings = @($rankings | Sort-Object @{ Expression = { $_.score }; Descending = $true }, @{ Expression = { $_.record.pointsFor }; Descending = $true } | ForEach-Object {
@@ -1091,9 +1201,16 @@ foreach ($leagueRecord in $selectedLeagues) {
     $_
   })
   $positionalRankings = Get-PositionalRankings -PlayerEntries $allPlayerEntries -TeamRankings $rankings -Architecture $lineupArchitecture
-  $currentSeasonRankings = if ((Get-TextValue $leagueRecord.format) -eq "dynasty") { Get-CurrentSeasonRankings -Rankings $rankings } else { @() }
+  $currentSeasonRankings = @()
+  if ((Get-TextValue $leagueRecord.format) -eq "dynasty") {
+    $rankings = Add-RankingReasons -Rankings $rankings -ComponentPropertyName "currentSeasonComponents"
+    $currentSeasonRankings = Get-CurrentSeasonRankings -Rankings $rankings
+    $rankings = Add-RankingReasons -Rankings $rankings -ComponentPropertyName "componentScores"
+  }
   foreach ($ranking in $rankings) {
     $ranking.PSObject.Properties.Remove("currentSeasonScore")
+    $ranking.PSObject.Properties.Remove("componentScores")
+    $ranking.PSObject.Properties.Remove("currentSeasonComponents")
   }
 
   $generatedLeagues += [pscustomobject]@{

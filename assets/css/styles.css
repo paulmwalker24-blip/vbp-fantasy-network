@@ -1389,6 +1389,33 @@ a { color: inherit; }
   margin: 0;
   color: var(--muted);
 }
+.power-ranking-reasons {
+  display: grid;
+  gap: 5px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  color: #334155;
+  font-size: 0.9rem;
+}
+.power-ranking-reasons li {
+  position: relative;
+  padding-left: 16px;
+}
+.power-ranking-reasons li::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 900;
+}
+.power-ranking-reasons .is-positive::before {
+  content: "+";
+  color: #15803d;
+}
+.power-ranking-reasons .is-concern::before {
+  content: "-";
+  color: #b91c1c;
+}
 .power-ranking-component {
   padding: 0.55rem 0.65rem;
   border: 1px solid rgba(15, 23, 42, 0.08);
