@@ -616,55 +616,53 @@ function Get-CurrentSeasonProfile {
   }
 }
 
-function Get-RankingReasonText {
-  param([string]$Component, [string]$Tone, [double]$Difference)
+function Get-Ordinal {
+  param([int]$Value)
+  $suffix = "th"
+  if (($Value % 100) -notin @(11, 12, 13)) {
+    switch ($Value % 10) {
+      1 { $suffix = "st" }
+      2 { $suffix = "nd" }
+      3 { $suffix = "rd" }
+    }
+  }
+  return "{0}{1}" -f $Value, $suffix
+}
 
-  $positive = @{
-    lineup = "Starting lineup strength is a clear advantage relative to the league."
-    depth = "Usable depth gives this roster strong weekly flexibility."
-    quarterback = "Quarterback strength is a major advantage, especially in Superflex."
-    eliteCeiling = "Top-end difference-makers give this roster a strong weekly ceiling."
-    health = "Current player availability is a relative strength."
-    scoringContext = "The roster is built to benefit from this league's scoring settings."
-    dynastyValue = "Long-term player value and future draft capital strengthen the dynasty outlook."
-    context = "Commissioner-reviewed context supports the current ranking."
+function Get-RankingReasonText {
+  param(
+    [string]$Component,
+    [string]$Tone,
+    [double]$Score,
+    [int]$Rank,
+    [int]$TeamCount
+  )
+
+  $labels = @{
+    lineup = "Starting lineup"
+    depth = "Usable depth"
+    quarterback = "Quarterback room"
+    eliteCeiling = "Top-end ceiling"
+    health = "Player availability"
+    scoringContext = "Scoring-system fit"
+    dynastyValue = "Dynasty value and draft capital"
+    context = "Commissioner-reviewed context"
   }
-  $concern = @{
-    lineup = "The starting lineup trails the league's stronger weekly cores."
-    depth = "Usable depth is the roster's clearest weakness."
-    quarterback = "Quarterback strength creates risk, especially in Superflex."
-    eliteCeiling = "The roster lacks the top-end ceiling of the league's strongest teams."
-    health = "Current player availability lowers the roster's outlook."
-    scoringContext = "The roster gains less from this league's scoring settings than most."
-    dynastyValue = "Long-term player value and future draft capital trail the league."
-    context = "Commissioner-reviewed context is the clearest drag on the current ranking."
+  $impacts = @{
+    lineup = "drives the weekly baseline"
+    depth = "shapes bye-week and injury resilience"
+    quarterback = "is especially important in Superflex"
+    eliteCeiling = "creates matchup-winning upside"
+    health = "affects how much of the roster is immediately usable"
+    scoringContext = "shows how well the roster matches league scoring"
+    dynastyValue = "supports the roster beyond the current season"
+    context = "captures reviewed factors outside Sleeper's raw data"
   }
-  $buildingBlock = @{
-    lineup = "Starting lineup strength is one of this roster's better building blocks."
-    depth = "Usable depth is one of this roster's better building blocks."
-    quarterback = "The quarterback room is one of this roster's better building blocks."
-    eliteCeiling = "Top-end ceiling is one of this roster's better building blocks."
-    health = "Current player availability is one of this roster's better building blocks."
-    scoringContext = "Fit with the league's scoring settings is one of this roster's better traits."
-    dynastyValue = "Long-term player value and future draft capital are among this roster's better traits."
-    context = "Commissioner-reviewed context is one of this roster's better traits."
-  }
-  $leastStrong = @{
-    lineup = "Starting lineup strength is the roster's least dominant area."
-    depth = "Usable depth is the roster's least dominant area."
-    quarterback = "Quarterback strength is the roster's least dominant area."
-    eliteCeiling = "Top-end ceiling is the roster's least dominant area."
-    health = "Current player availability is the roster's least dominant area."
-    scoringContext = "Fit with the league's scoring settings is the roster's least dominant area."
-    dynastyValue = "Long-term player value and future draft capital are the roster's least dominant area."
-    context = "Commissioner-reviewed context is the roster's least dominant area."
-  }
-  if ($Tone -eq "positive" -and $Difference -lt 0.5 -and $buildingBlock.ContainsKey($Component)) { return $buildingBlock[$Component] }
-  if ($Tone -eq "concern" -and $Difference -gt -0.5 -and $leastStrong.ContainsKey($Component)) { return $leastStrong[$Component] }
-  $lookup = if ($Tone -eq "positive") { $positive } else { $concern }
-  if ($lookup.ContainsKey($Component)) { return $lookup[$Component] }
-  if ($Tone -eq "positive") { return "This roster has a meaningful relative strength." }
-  return "This roster has a meaningful area of concern."
+  $label = if ($labels.ContainsKey($Component)) { $labels[$Component] } else { $Component }
+  $impact = if ($impacts.ContainsKey($Component)) { $impacts[$Component] } else { "affects the overall outlook" }
+  $rankLabel = Get-Ordinal -Value $Rank
+  $ending = if ($Tone -eq "positive") { "one of this roster's strongest pillars" } else { "the clearest area holding the roster back" }
+  return "{0}: {1:N1} grade, {2} of {3}; {4} and is {5}." -f $label, $Score, $rankLabel, $TeamCount, $impact, $ending
 }
 
 function Add-RankingReasons {
@@ -679,6 +677,7 @@ function Add-RankingReasons {
   }
   $averages = @{}
   $spreads = @{}
+  $valuesByComponent = @{}
   foreach ($componentName in $componentNames) {
     $values = @($Rankings | ForEach-Object {
       $components = Get-ObjectProperty -Object $_ -Name $ComponentPropertyName
@@ -687,6 +686,7 @@ function Add-RankingReasons {
     $measure = $values | Measure-Object -Average -Minimum -Maximum
     $averages[$componentName] = $measure.Average
     $spreads[$componentName] = $measure.Maximum - $measure.Minimum
+    $valuesByComponent[$componentName] = $values
   }
   $meaningfulComponents = @($componentNames | Where-Object { $spreads[$_] -ge 0.5 })
   if ($meaningfulComponents.Count -ge 3) { $componentNames = $meaningfulComponents }
@@ -694,20 +694,181 @@ function Add-RankingReasons {
   foreach ($ranking in $Rankings) {
     $components = Get-ObjectProperty -Object $ranking -Name $ComponentPropertyName
     $differences = @($componentNames | ForEach-Object {
+      $score = Get-NumberValue (Get-ObjectProperty -Object $components -Name $_) 0
       [pscustomobject]@{
         component = $_
-        difference = (Get-NumberValue (Get-ObjectProperty -Object $components -Name $_) 0) - $averages[$_]
+        score = $score
+        rank = 1 + @($valuesByComponent[$_] | Where-Object { $_ -gt $score }).Count
+        difference = $score - $averages[$_]
       }
     })
     $strengths = @($differences | Sort-Object @{ Expression = { $_.difference }; Descending = $true } | Select-Object -First 2)
     $concern = $differences | Sort-Object @{ Expression = { $_.difference }; Descending = $false } | Select-Object -First 1
     $reasons = @($strengths | ForEach-Object {
-      [pscustomobject]@{ tone = "positive"; text = Get-RankingReasonText -Component $_.component -Tone "positive" -Difference $_.difference }
+      [pscustomobject]@{ tone = "positive"; text = Get-RankingReasonText -Component $_.component -Tone "positive" -Score $_.score -Rank $_.rank -TeamCount $Rankings.Count }
     })
-    $reasons += [pscustomobject]@{ tone = "concern"; text = Get-RankingReasonText -Component $concern.component -Tone "concern" -Difference $concern.difference }
+    $reasons += [pscustomobject]@{ tone = "concern"; text = Get-RankingReasonText -Component $concern.component -Tone "concern" -Score $concern.score -Rank $concern.rank -TeamCount $Rankings.Count }
     $ranking | Add-Member -NotePropertyName reasons -NotePropertyValue $reasons -Force
   }
   return @($Rankings)
+}
+
+function Join-PlayerNames {
+  param([object[]]$Players, [int]$Limit = 3)
+  $names = @($Players | Select-Object -First $Limit | ForEach-Object { Get-TextValue $_.name } | Where-Object { $_ })
+  if ($names.Count -eq 0) { return "" }
+  if ($names.Count -eq 1) { return $names[0] }
+  if ($names.Count -eq 2) { return "{0} and {1}" -f $names[0], $names[1] }
+  return "{0}, {1}, and {2}" -f $names[0], $names[1], $names[2]
+}
+
+function New-NarrativeReason {
+  param([string]$Tone, [int]$Priority, [string]$Text)
+  [pscustomobject]@{ tone = $Tone; priority = $Priority; text = $Text }
+}
+
+function Get-DynastyNarrativeReasons {
+  param(
+    [object[]]$PlayerEntries,
+    $LiveLeague,
+    [double]$DraftCapitalScore,
+    [string]$Mode
+  )
+
+  $seasonEntries = @($PlayerEntries | ForEach-Object {
+    [pscustomobject]@{
+      name = $_.name
+      position = $_.position
+      age = $_.age
+      value = Get-NumberValue $_.seasonValue 0
+      dynastyValue = Get-NumberValue $_.value 0
+      injuryPenalty = Get-NumberValue $_.injuryPenalty 0
+    }
+  })
+  $seasonOptimized = Get-OptimizedLineup -Players $seasonEntries -Slots (Get-LineupSlots -League $LiveLeague)
+  $seasonStarters = @($seasonOptimized.starters)
+  $seasonBench = @($seasonOptimized.bench | Select-Object -First 7)
+  $startingQbs = @($seasonStarters | Where-Object position -eq "QB" | Sort-Object value -Descending)
+  $startingRbs = @($seasonStarters | Where-Object position -eq "RB" | Sort-Object value -Descending)
+  $startingWrs = @($seasonStarters | Where-Object position -eq "WR" | Sort-Object value -Descending)
+  $seasonStars = @($seasonEntries | Where-Object { $_.value -ge 82 } | Sort-Object value -Descending)
+  $youngStarters = @($seasonStarters | Where-Object { $_.age -gt 0 -and $_.age -le 24 })
+  $lineupScore = Get-Average -Items $seasonStarters -PropertyName "value"
+  $depthScore = Get-Average -Items $seasonBench -PropertyName "value"
+  $qbScore = Get-Average -Items (@($startingQbs | Select-Object -First 2)) -PropertyName "value"
+
+  $positives = New-Object System.Collections.Generic.List[object]
+  $concerns = New-Object System.Collections.Generic.List[object]
+
+  if ($Mode -eq "current") {
+    if ($startingQbs.Count -ge 2 -and $qbScore -ge 72) {
+      $positives.Add((New-NarrativeReason "positive" 95 ("Strong Superflex quarterbacks: {0} give this roster two dependable weekly QB options." -f (Join-PlayerNames $startingQbs 2)))) | Out-Null
+    }
+    if ($seasonStars.Count -ge 3) {
+      $positives.Add((New-NarrativeReason "positive" 92 ("Difference-making stars: {0} give this lineup multiple players capable of swinging weekly matchups." -f (Join-PlayerNames $seasonStars 3)))) | Out-Null
+    }
+    if ($lineupScore -ge 75) {
+      $positives.Add((New-NarrativeReason "positive" 88 ("Championship-ready starters: the projected starting lineup is built around proven weekly production led by {0}." -f (Join-PlayerNames ($seasonStarters | Sort-Object value -Descending) 3)))) | Out-Null
+    }
+    if ($depthScore -ge 69) {
+      $positives.Add((New-NarrativeReason "positive" 82 ("Excellent usable depth: {0} provide credible injury and bye-week coverage." -f (Join-PlayerNames $seasonBench 3)))) | Out-Null
+    }
+    if ((Get-Average -Items $startingWrs -PropertyName "value") -ge 74) {
+      $positives.Add((New-NarrativeReason "positive" 78 ("Reliable receiving corps: {0} give the lineup a strong weekly floor at WR and FLEX." -f (Join-PlayerNames $startingWrs 3)))) | Out-Null
+    }
+    if ((Get-Average -Items $startingRbs -PropertyName "value") -ge 72) {
+      $positives.Add((New-NarrativeReason "positive" 76 ("Immediate RB production: {0} anchor a backfield positioned to contribute right away." -f (Join-PlayerNames $startingRbs 3)))) | Out-Null
+    }
+
+    if ($startingQbs.Count -lt 2 -or $qbScore -lt 67) {
+      $concerns.Add((New-NarrativeReason "concern" 98 ("Quarterback uncertainty: the roster lacks two dependable Superflex starters behind {0}." -f (Join-PlayerNames $startingQbs 1)))) | Out-Null
+    }
+    if ($depthScore -lt 65) {
+      $concerns.Add((New-NarrativeReason "concern" 94 "Thin behind the starters: an injury or heavy bye week could force unreliable bench options into the lineup.")) | Out-Null
+    }
+    if ($seasonStars.Count -lt 2) {
+      $concerns.Add((New-NarrativeReason "concern" 88 "Missing weekly ceiling: the roster has usable players but few proven difference-makers who can decide matchups.")) | Out-Null
+    }
+    if ($youngStarters.Count -ge 4) {
+      $concerns.Add((New-NarrativeReason "concern" 84 ("Too breakout-dependent: {0} still need young players to become immediate weekly producers." -f (Join-PlayerNames $youngStarters 3)))) | Out-Null
+    }
+    if ((Get-Average -Items $startingRbs -PropertyName "value") -lt 67) {
+      $concerns.Add((New-NarrativeReason "concern" 80 ("Running back risk: the projected backfield led by {0} lacks secure immediate production." -f (Join-PlayerNames $startingRbs 2)))) | Out-Null
+    }
+  } else {
+    $youngCore = @($PlayerEntries | Where-Object {
+      $_.value -ge 78 -and $_.age -gt 0 -and (($_.position -eq "QB" -and $_.age -le 28) -or ($_.position -ne "QB" -and $_.age -le 25))
+    } | Sort-Object value -Descending)
+    $youngQbs = @($PlayerEntries | Where-Object { $_.position -eq "QB" -and $_.age -gt 0 -and $_.age -le 28 -and $_.value -ge 70 } | Sort-Object value -Descending)
+    $youngWrs = @($PlayerEntries | Where-Object { $_.position -eq "WR" -and $_.age -gt 0 -and $_.age -le 25 -and $_.value -ge 70 } | Sort-Object value -Descending)
+    $agingCore = @($PlayerEntries | Where-Object {
+      $_.value -ge 72 -and $_.age -gt 0 -and (($_.position -eq "QB" -and $_.age -ge 34) -or ($_.position -ne "QB" -and $_.age -ge 29))
+    } | Sort-Object value -Descending)
+    $cornerstones = @($PlayerEntries | Where-Object { $_.value -ge 84 } | Sort-Object value -Descending)
+
+    if ($youngCore.Count -ge 3) {
+      $positives.Add((New-NarrativeReason "positive" 98 ("Elite young foundation: {0} give this roster multiple cornerstone assets entering or already within their prime." -f (Join-PlayerNames $youngCore 3)))) | Out-Null
+    }
+    if ($youngQbs.Count -ge 2) {
+      $positives.Add((New-NarrativeReason "positive" 94 ("Long-term quarterback security: {0} provide stability at dynasty's most valuable position." -f (Join-PlayerNames $youngQbs 2)))) | Out-Null
+    }
+    if ($youngWrs.Count -ge 3) {
+      $positives.Add((New-NarrativeReason "positive" 90 ("Ascending receiving corps: {0} combine current production with long-term upside." -f (Join-PlayerNames $youngWrs 3)))) | Out-Null
+    }
+    if ($DraftCapitalScore -ge 76) {
+      $positives.Add((New-NarrativeReason "positive" 86 "Future flexibility: the rookie-pick inventory gives this manager options to add young talent or trade for proven help.")) | Out-Null
+    }
+    if ($cornerstones.Count -ge 3 -and $agingCore.Count -le 2) {
+      $positives.Add((New-NarrativeReason "positive" 82 ("Extended championship window: {0} support competing now without forcing an immediate rebuild." -f (Join-PlayerNames $cornerstones 3)))) | Out-Null
+    }
+
+    if ($agingCore.Count -ge 4) {
+      $concerns.Add((New-NarrativeReason "concern" 98 ("Aging core: {0} may lose dynasty value quickly and shorten the roster's competitive window." -f (Join-PlayerNames $agingCore 3)))) | Out-Null
+    }
+    if ($DraftCapitalScore -le 64) {
+      $concerns.Add((New-NarrativeReason "concern" 94 "Limited future draft capital: the roster has fewer rookie-pick resources available to repair weaknesses or acquire help.")) | Out-Null
+    }
+    if ($youngQbs.Count -eq 0) {
+      $concerns.Add((New-NarrativeReason "concern" 92 "No young quarterback foundation: long-term Superflex stability remains a major concern.")) | Out-Null
+    }
+    if ($cornerstones.Count -lt 2) {
+      $concerns.Add((New-NarrativeReason "concern" 88 "Missing cornerstone assets: the roster lacks enough players capable of anchoring its value for several seasons.")) | Out-Null
+    }
+    if ($youngCore.Count -ge 5 -and $lineupScore -lt 73) {
+      $concerns.Add((New-NarrativeReason "concern" 84 ("Prospect-heavy roster: {0} provide upside, but the team still needs young assets to become proven producers." -f (Join-PlayerNames $youngCore 3)))) | Out-Null
+    }
+  }
+
+  if ($positives.Count -lt 2) {
+    $bestPlayers = if ($Mode -eq "current") { @($seasonEntries | Sort-Object value -Descending) } else { @($PlayerEntries | Sort-Object value -Descending) }
+    $positives.Add((New-NarrativeReason "positive" 20 ("Core building blocks: {0} give the roster a credible foundation for its next move." -f (Join-PlayerNames $bestPlayers 3)))) | Out-Null
+    $positives.Add((New-NarrativeReason "positive" 10 "Balanced roster construction: the team has enough usable pieces across positions to remain flexible.")) | Out-Null
+  }
+  if ($concerns.Count -eq 0) {
+    if ($Mode -eq "current") {
+      if ($depthScore -le $qbScore -and $depthScore -le $lineupScore) {
+        $concerns.Add((New-NarrativeReason "concern" 20 ("Depth pressure: behind {0}, the bench has fewer proven weekly options if injuries or bye weeks hit together." -f (Join-PlayerNames $seasonBench 3)))) | Out-Null
+      } elseif ($qbScore -le $lineupScore) {
+        $concerns.Add((New-NarrativeReason "concern" 20 ("Quarterback depth: {0} form a strong starting pair, but the roster has limited protection behind them in Superflex." -f (Join-PlayerNames $startingQbs 2)))) | Out-Null
+      } else {
+        $concerns.Add((New-NarrativeReason "concern" 20 ("Flex volatility: after {0}, the final weekly starting spots carry more uncertainty than the roster's stars." -f (Join-PlayerNames ($seasonStarters | Sort-Object value -Descending) 3)))) | Out-Null
+      }
+    } else {
+      if ($agingCore.Count -gt 0) {
+        $concerns.Add((New-NarrativeReason "concern" 20 ("Succession planning: veterans such as {0} remain valuable, but the roster will eventually need younger replacements behind them." -f (Join-PlayerNames $agingCore 3)))) | Out-Null
+      } elseif ($youngQbs.Count -lt 2) {
+        $concerns.Add((New-NarrativeReason "concern" 20 ("Quarterback succession: {0} provide a foundation, but another young long-term starter would strengthen the Superflex outlook." -f (Join-PlayerNames $youngQbs 2)))) | Out-Null
+      } elseif ($youngWrs.Count -lt 3) {
+        $concerns.Add((New-NarrativeReason "concern" 20 ("Receiving succession: the roster needs another young long-term WR alongside {0}." -f (Join-PlayerNames $youngWrs 2)))) | Out-Null
+      } else {
+        $concerns.Add((New-NarrativeReason "concern" 20 "Future flexibility: the roster is strong, but preserving rookie picks will matter when the current core eventually needs reinforcement.")) | Out-Null
+      }
+    }
+  }
+
+  $selected = @($positives | Sort-Object priority -Descending | Select-Object -First 2)
+  $selected += @($concerns | Sort-Object priority -Descending | Select-Object -First 1)
+  return @($selected | ForEach-Object { [pscustomobject]@{ tone = $_.tone; text = $_.text } })
 }
 
 function Get-TeamAdjustment {
@@ -802,6 +963,8 @@ function New-TeamRanking {
   }
   $score = [Math]::Min(100, [Math]::Max(0, $rawScore))
   $currentSeasonProfile = Get-CurrentSeasonProfile -PlayerEntries $playerEntries -LiveLeague $LiveLeague -ManualContext $manualContext
+  $futureReasons = if ($format -eq "dynasty") { Get-DynastyNarrativeReasons -PlayerEntries $playerEntries -LiveLeague $LiveLeague -DraftCapitalScore $draftCapitalScore -Mode "future" } else { @() }
+  $currentSeasonReasons = if ($format -eq "dynasty") { Get-DynastyNarrativeReasons -PlayerEntries $playerEntries -LiveLeague $LiveLeague -DraftCapitalScore $draftCapitalScore -Mode "current" } else { @() }
 
   $record = @{
     wins = [int](Get-NumberValue $Roster.settings.wins 0)
@@ -819,6 +982,8 @@ function New-TeamRanking {
     currentSeasonScore = [Math]::Round($currentSeasonProfile.score, 3)
     componentScores = $componentScores
     currentSeasonComponents = $currentSeasonProfile.components
+    futureReasons = $futureReasons
+    currentSeasonReasons = $currentSeasonReasons
     record = $record
   }
 }
@@ -857,7 +1022,7 @@ function Get-CurrentSeasonRankings {
       ownerId = $_.ownerId
       teamName = $_.teamName
       score = [Math]::Round([Math]::Min(98, [Math]::Max(35, (80 + ($relativeDifference * 3)))), 1)
-      reasons = $_.reasons
+      reasons = $_.currentSeasonReasons
       record = $_.record
     }
   })
@@ -1192,7 +1357,13 @@ foreach ($leagueRecord in $selectedLeagues) {
     }
   }
 
-  $rankings = Add-RankingReasons -Rankings $rankings -ComponentPropertyName "componentScores"
+  if ((Get-TextValue $leagueRecord.format) -eq "dynasty") {
+    foreach ($ranking in $rankings) {
+      $ranking | Add-Member -NotePropertyName reasons -NotePropertyValue $ranking.futureReasons -Force
+    }
+  } else {
+    $rankings = Add-RankingReasons -Rankings $rankings -ComponentPropertyName "componentScores"
+  }
   $rankings = Convert-ToPublishedTeamScores -Rankings $rankings -Format (Get-TextValue $leagueRecord.format)
   $rank = 1
   $rankings = @($rankings | Sort-Object @{ Expression = { $_.score }; Descending = $true }, @{ Expression = { $_.record.pointsFor }; Descending = $true } | ForEach-Object {
@@ -1203,14 +1374,14 @@ foreach ($leagueRecord in $selectedLeagues) {
   $positionalRankings = Get-PositionalRankings -PlayerEntries $allPlayerEntries -TeamRankings $rankings -Architecture $lineupArchitecture
   $currentSeasonRankings = @()
   if ((Get-TextValue $leagueRecord.format) -eq "dynasty") {
-    $rankings = Add-RankingReasons -Rankings $rankings -ComponentPropertyName "currentSeasonComponents"
     $currentSeasonRankings = Get-CurrentSeasonRankings -Rankings $rankings
-    $rankings = Add-RankingReasons -Rankings $rankings -ComponentPropertyName "componentScores"
   }
   foreach ($ranking in $rankings) {
     $ranking.PSObject.Properties.Remove("currentSeasonScore")
     $ranking.PSObject.Properties.Remove("componentScores")
     $ranking.PSObject.Properties.Remove("currentSeasonComponents")
+    $ranking.PSObject.Properties.Remove("futureReasons")
+    $ranking.PSObject.Properties.Remove("currentSeasonReasons")
   }
 
   $generatedLeagues += [pscustomobject]@{
