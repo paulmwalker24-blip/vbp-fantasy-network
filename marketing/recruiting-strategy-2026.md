@@ -28,7 +28,7 @@ The network still matters, but it should usually be the trust layer after the ho
 1. Close Apex first for Bracket Redraft.
 2. Keep Redraft 4 visible as the higher-buy-in standalone seasonal room.
 3. Use BBU posts only when there is real draft urgency.
-4. Use Best Ball Gauntlet 2 as a novelty best-ball lane if it opens.
+4. Use the active Best Ball Gauntlet 2 as a novelty best-ball lane.
 5. Push Foundry as the only Dynasty Bracket priority unless someone specifically asks for fast draft.
 6. Use Keeper and Pick'em as secondary options when they match a responder's preference.
 
@@ -88,7 +88,7 @@ Best Ball Union:
 - `$10 best ball, no waivers, no lineups after the draft.`
 
 Best Ball Gauntlet 2:
-- `0/24 paid for Best Ball Gauntlet 2, a $5 micro best ball league.`
+- `3/24 paid for Best Ball Gauntlet 2, a $5 micro best ball league.`
 - `6-player rosters: 4 starters and 2 bench.`
 
 Keeper:

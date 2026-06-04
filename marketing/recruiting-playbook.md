@@ -125,8 +125,8 @@ Use room-closing marketing before catalog marketing.
 ### Best Ball Gauntlet
 
 - `BG1` is full and should not be used for active recruiting.
-- If `BG2` opens, lead with the paid count in the first line and frame it as the weird micro best-ball lane.
-- The tentative `BG2` roster build is 6 total players, 4 starters, and 2 bench spots.
+- `BG2` is active at `3/24 paid`; lead with the paid count in the first line and frame it as the weird micro best-ball lane.
+- The `BG2` roster build is 6 total players, 4 starters, and 2 bench spots.
 - Keep Gauntlet copy separate from Best Ball Union copy because the appeal is different: compact, uncomfortable roster decisions instead of standard 10-team best ball.
 
 ### Pick'em

@@ -1,26 +1,32 @@
 # Sacrifice Redraft Launch Draft
 
-This is a commissioner-facing first draft for launching Sacrifice Redraft as a cheap experimental league.
+This is a commissioner-facing first draft for launching Sacrifice Redraft 1 as a free experimental league.
 
 ## Working Pitch
 
 ```text
-0/12 paid for Sacrifice Redraft, a VBP Progressive PPR redraft league with one weekly twist.
+2/12 assigned for Sacrifice Redraft 1, a free Progressive PPR test league with 6-point passing touchdowns and one weekly twist.
 
 Each week, your highest-scoring starter must be dropped. Everyone else can claim that player immediately, but you cannot re-add your own sacrificed player until the following NFL week has been completed.
 
-Standard Sleeper redraft rosters, VBP Progressive PPR scoring, FAAB waivers, and a 6-team playoff. Big weeks help you win now, but they also cost you the player for at least one week.
+Standard Sleeper redraft rosters, Progressive PPR, 6-point passing touchdowns, FAAB waivers, and a 6-team playoff. Big weeks help you win now, but they also cost you the player for at least one week.
 
-Join: [Sleeper link]
+ Join: https://sleeper.com/i/j7zjVWa4qYqP0
  Rules: https://vbp-fantasy-network.vercel.app/sacrifice-redraft-constitution.html
 ```
 
 ## Recommended Launch Settings
 
-- Buy-in: $10 for the first test.
+- League name: Sacrifice Redraft 1.
+- Sleeper league ID: `1368081408932712448`.
+- Public invite link: `https://sleeper.com/i/j7zjVWa4qYqP0`.
+- Direct league link: `https://sleeper.com/leagues/1368081408932712448`.
+- Current live assigned count: 2/12, verified through Sleeper roster `owner_id` assignments.
+- Entry: Free for the first test.
+- Prize pool: None.
 - Teams: 12.
 - Platform: Sleeper.
-- Scoring: VBP Progressive PPR.
+- Scoring: VBP Progressive PPR with 6-point passing touchdowns.
 - Roster: standard VBP redraft roster.
 - Waivers: $200 FAAB.
 - Trade deadline: end of Week 11.
@@ -34,12 +40,21 @@ Join: [Sleeper link]
 - Re-add lockout: if a player is sacrificed after Week X, the original manager cannot add that player back until Week X+2 at the earliest.
 - Stat corrections: only monitored closely when two players are extremely close at the top of a team's sacrifice block.
 
+## Live Count Rule
+
+Recruiting copy should use the active Sleeper assigned-spot count.
+
+- Count assigned roster `owner_id` values.
+- Compare that count against assigned draft `draft_order` slots when draft order exists.
+- Use the larger count.
+- Do not use raw Sleeper member count.
+
 ## Why This Could Work
 
 - It is easy to explain in one sentence.
 - It uses mostly standard Sleeper settings.
 - The weirdness comes from roster churn, not manual scoring.
-- The buy-in can stay cheap because the format is experimental.
+- The first league is free so the format can be tested without asking managers to pay for an unproven ruleset.
 - Waiver strategy becomes the main skill test.
 
 ## Main Risk
@@ -48,11 +63,6 @@ Commissioner workload is real.
 
 The league needs a weekly sacrifice list and a simple lockout tracker so original managers do not re-add their own sacrificed player too early.
 
-## Name Options
+## Final Name
 
-- Sacrifice Redraft
-- Top Scorer Tax
-- Drop Your Stud
-- The Offering
-- Hot Hand Redraft
-- King Must Fall
+Sacrifice Redraft

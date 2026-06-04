@@ -19,8 +19,15 @@ So if your wide receiver scores 31 points in Week 1, great, you got the win boos
 ## Baseline League Settings
 
 - League format: 12-team seasonal redraft.
+- Format name: Sacrifice Redraft.
+- First test league: Sacrifice Redraft 1.
+- First test league entry: Free.
+- Sleeper league ID: `1368081408932712448`.
+- Public invite link: `https://sleeper.com/i/j7zjVWa4qYqP0`.
+- Direct Sleeper league link: `https://sleeper.com/leagues/1368081408932712448`.
+- Current live assigned count: 2/12 as verified through Sleeper roster assignments.
 - Platform: Sleeper.
-- Scoring: VBP Progressive PPR.
+- Scoring: VBP Progressive PPR with 6-point passing touchdowns.
 - Regular season: Weeks 1-14.
 - Playoffs: 6 teams, Weeks 15-17, with top two seeds receiving first-round byes.
 - Waivers: FAAB.
@@ -56,6 +63,8 @@ Use the VBP Progressive PPR scoring model:
 | RB | 0.5 |
 | WR | 0.25 |
 | TE | 0.75 |
+
+Passing touchdowns are worth 6 points.
 
 All other scoring categories follow standard Sleeper scoring settings.
 
@@ -142,13 +151,12 @@ Team 12: [Player] - original manager cannot re-add until Week [X+2]
 
 ## Open Questions Before Launch
 
-- What buy-in is best for the first test league: $5, $10, or $15?
 - What point gap should count as "extremely close" for stat-correction caution: 0.10, 0.25, 0.50, or commissioner judgment?
 
 ## Recruiting Lines
 
 ```text
-$10 Sacrifice Redraft: VBP Progressive PPR, but your highest-scoring starter each week has to be dropped.
+Free Sacrifice Redraft test league: Progressive PPR with 6-point passing touchdowns, but your highest-scoring starter each week has to be dropped.
 ```
 
 ```text

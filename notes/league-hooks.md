@@ -22,7 +22,7 @@ Short recruiting hooks capped at 200 characters or less.
 ## Best Ball Gauntlet
 
 - `BG1`: Full and drafting. Do not use for active recruiting.
-- `BG2`: Tentative $5 micro best ball follow-up with 6-player rosters, 4 starters, and 2 bench spots. Current paid count: 0/24 until opened.
+- `BG2`: Active $5 micro best ball league with 6-player rosters, 4 starters, and 2 bench spots. Current paid count: 3/24.
 
 ## Pick'em
 
