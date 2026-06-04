@@ -546,6 +546,8 @@ The generated dataset combines:
 
 The player and team calculations follow `docs/vbp-power-ranking-model.md`: the script verifies live reception/yardage/TD/interception settings first and publishes clean owner ranking boards. It records a format profile for dynasty, dynasty bracket, Best Ball Union, Gauntlet, Keeper, Chopped, Redraft, and Bracket boards so roster construction and risk are interpreted correctly. Dynasty owner scores use a fixed within-league display scale from their calculated strength difference, rather than points assigned by rank. Positional boards rank owners at each available position without publishing individual player lists. Sleeper metadata is not stat-component projection data, so generated scores are value signals rather than claimed projected fantasy points.
 
+Each standard dynasty league publishes two owner boards from the same live roster pull. Its standard Dynasty Outlook includes long-term player value and future draft capital. Its `currentSeasonRankings` board measures current-season contention only, emphasizing the strongest legal lineup, usable depth, Superflex quarterback strength, health, and league scoring while excluding age runway and future picks.
+
 Use `data/power-ranking-overrides.json` for facts Sleeper cannot reliably know, such as a commissioner publish hold, a schedule-context adjustment, or a manually reviewed player injury/value note.
 
 Default usage:

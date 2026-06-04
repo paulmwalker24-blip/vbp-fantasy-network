@@ -14,7 +14,7 @@
   <meta name="twitter:title" content="Dynasty Power Rankings | VBP Fantasy Network" />
   <meta name="twitter:description" content="Dynasty power rankings for the VBP Fantasy Network." />
   <meta name="twitter:image" content="https://vbp-fantasy-network.vercel.app/assets/images/banner.png" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260527d" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260604a" />
 </head>
 <body class="constitution-page power-rankings-page">
   <div class="constitution-nav" id="top">
@@ -39,8 +39,8 @@
       <section class="power-rankings-card power-rankings-feature">
         <div>
           <p class="power-rankings-kicker" data-rankings-feature-kicker>Dynasty</p>
-          <h2>Current Board</h2>
-          <p>Ranked from verified Sleeper scoring settings, current rosters, draft data, availability notes, and commissioner-owned context.</p>
+          <h2 data-rankings-feature-heading>Current Board</h2>
+          <p data-rankings-feature-description>Ranked from verified Sleeper scoring settings, current rosters, draft data, availability notes, and commissioner-owned context.</p>
         </div>
         <div class="power-rankings-feature-score">
           <span class="power-rankings-score-label">Top Score</span>
@@ -53,14 +53,18 @@
         <div class="section-heading">
           <p class="bbu-section-kicker">League Board</p>
           <h2 data-rankings-list-heading>Dynasty Rankings</h2>
-          <p>Each row shows the current team score and season result in a clean owner-by-owner board.</p>
+          <p data-rankings-list-description>Each row shows the current team score and season result in a clean owner-by-owner board.</p>
+        </div>
+        <div class="format-center-tabs power-ranking-view-tabs" data-ranking-view-controls hidden aria-label="Dynasty ranking view">
+          <button type="button" class="format-center-tab is-active" data-ranking-view="dynasty">Dynasty Outlook</button>
+          <button type="button" class="format-center-tab" data-ranking-view="current-season">2026 Contenders</button>
         </div>
         <div class="power-rankings-list" data-rankings-list>
           <p class="format-center-table-empty">Loading generated dynasty rankings...</p>
         </div>
       </section>
 
-      <section class="power-rankings-card power-rankings-board-card">
+      <section class="power-rankings-card power-rankings-board-card" data-positional-section>
         <div class="section-heading">
           <p class="bbu-section-kicker">Scoring Profile</p>
           <h2>Verified League Scoring</h2>
@@ -94,6 +98,6 @@
       </section>
     </div>
   </main>
-  <script src="assets/js/power-rankings.js?v=20260527d"></script>
+  <script src="assets/js/power-rankings.js?v=20260604a"></script>
 </body>
 </html>

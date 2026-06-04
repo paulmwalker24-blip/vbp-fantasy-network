@@ -346,6 +346,8 @@ function Get-PlayerValue {
 
   $value = ($base * 0.20) + ($market * 0.42) + ($age * 0.22) + ($depth * 0.16) + $vbpAdjustment - $injuryPenalty + $manual
   $value = [Math]::Min(99, [Math]::Max(0, $value))
+  $seasonValue = ($base * 0.18) + ($market * 0.52) + ($depth * 0.30) + $vbpAdjustment - $injuryPenalty + $manual
+  $seasonValue = [Math]::Min(99, [Math]::Max(0, $seasonValue))
 
   [pscustomobject]@{
     playerId = $PlayerId
@@ -356,6 +358,7 @@ function Get-PlayerValue {
     injuryStatus = Get-TextValue $Player.injury_status
     searchRank = Get-NumberValue $Player.search_rank 0
     value = [Math]::Round($value, 1)
+    seasonValue = [Math]::Round($seasonValue, 1)
     vbpAdjustment = $vbpAdjustment
     injuryPenalty = [Math]::Round($injuryPenalty, 1)
     note = if ($Adjustment) { Get-TextValue (Get-ObjectProperty -Object $Adjustment -Name "note") } else { "" }
@@ -570,6 +573,37 @@ function Get-BestBallScore {
   return [Math]::Min(98, [Math]::Max(35, $score))
 }
 
+function Get-CurrentSeasonScore {
+  param(
+    [object[]]$PlayerEntries,
+    $LiveLeague,
+    [double]$ManualContext
+  )
+
+  $seasonEntries = @($PlayerEntries | ForEach-Object {
+    [pscustomobject]@{
+      position = $_.position
+      value = Get-NumberValue $_.seasonValue 0
+      injuryPenalty = Get-NumberValue $_.injuryPenalty 0
+    }
+  })
+  $slots = Get-LineupSlots -League $LiveLeague
+  $optimized = Get-OptimizedLineup -Players $seasonEntries -Slots $slots
+  $starters = @($optimized.starters)
+  $bench = @($optimized.bench | Select-Object -First 7)
+  $qbs = @($seasonEntries | Where-Object { $_.position -eq "QB" } | Sort-Object @{ Expression = { $_.value }; Descending = $true } | Select-Object -First 2)
+  $elitePlayers = @($seasonEntries | Where-Object { $_.value -ge 84 })
+  $injuryPenalty = Get-NumberValue (($seasonEntries | Measure-Object -Property injuryPenalty -Sum).Sum) 0
+
+  $lineupScore = Get-Average -Items $starters -PropertyName "value"
+  $depthScore = Get-Average -Items $bench -PropertyName "value"
+  $quarterbackScore = Get-Average -Items $qbs -PropertyName "value"
+  $eliteScore = [Math]::Min(100, 58 + ($elitePlayers.Count * 8))
+  $healthScore = [Math]::Max(0, 100 - $injuryPenalty)
+
+  return (($lineupScore * 0.50) + ($depthScore * 0.18) + ($quarterbackScore * 0.14) + ($eliteScore * 0.08) + ($healthScore * 0.10) + $ManualContext)
+}
+
 function Get-TeamAdjustment {
   param($Overrides, [string]$LeagueRecordId, [int]$RosterId)
   $adjustments = Convert-ToArray $Overrides.teamAdjustments
@@ -661,6 +695,7 @@ function New-TeamRanking {
       -ManualContext $manualContext
   }
   $score = [Math]::Min(100, [Math]::Max(0, $rawScore))
+  $currentSeasonScore = Get-CurrentSeasonScore -PlayerEntries $playerEntries -LiveLeague $LiveLeague -ManualContext $manualContext
 
   $record = @{
     wins = [int](Get-NumberValue $Roster.settings.wins 0)
@@ -675,6 +710,7 @@ function New-TeamRanking {
     ownerId = Get-TextValue $Roster.owner_id
     teamName = Get-TeamName -User $User -Roster $Roster
     score = [Math]::Round($score, 3)
+    currentSeasonScore = [Math]::Round($currentSeasonScore, 3)
     record = $record
   }
 }
@@ -699,6 +735,30 @@ function Convert-ToPublishedTeamScores {
     $ranking.score = [Math]::Round([Math]::Min(98, [Math]::Max(35, $publishedScore)), 1)
   }
   return @($Rankings)
+}
+
+function Get-CurrentSeasonRankings {
+  param([object[]]$Rankings)
+
+  if ($Rankings.Count -eq 0) { return @() }
+  $averageScore = Get-Average -Items $Rankings -PropertyName "currentSeasonScore"
+  $rows = @($Rankings | ForEach-Object {
+    $relativeDifference = (Get-NumberValue $_.currentSeasonScore 0) - $averageScore
+    [pscustomobject]@{
+      rosterId = $_.rosterId
+      ownerId = $_.ownerId
+      teamName = $_.teamName
+      score = [Math]::Round([Math]::Min(98, [Math]::Max(35, (80 + ($relativeDifference * 3)))), 1)
+      record = $_.record
+    }
+  })
+
+  $rank = 1
+  return @($rows | Sort-Object @{ Expression = { $_.score }; Descending = $true }, @{ Expression = { $_.record.pointsFor }; Descending = $true } | ForEach-Object {
+    $_ | Add-Member -NotePropertyName rank -NotePropertyValue $rank -Force
+    $rank++
+    $_
+  })
 }
 
 function Get-PositionGroupCount {
@@ -1031,6 +1091,10 @@ foreach ($leagueRecord in $selectedLeagues) {
     $_
   })
   $positionalRankings = Get-PositionalRankings -PlayerEntries $allPlayerEntries -TeamRankings $rankings -Architecture $lineupArchitecture
+  $currentSeasonRankings = if ((Get-TextValue $leagueRecord.format) -eq "dynasty") { Get-CurrentSeasonRankings -Rankings $rankings } else { @() }
+  foreach ($ranking in $rankings) {
+    $ranking.PSObject.Properties.Remove("currentSeasonScore")
+  }
 
   $generatedLeagues += [pscustomobject]@{
     leagueRecordId = $leagueRecordId
@@ -1047,6 +1111,7 @@ foreach ($leagueRecord in $selectedLeagues) {
     lineupArchitecture = $lineupArchitecture
     formatProfile = $formatProfile
     positionalRankings = $positionalRankings
+    currentSeasonRankings = $currentSeasonRankings
     rankings = $rankings
   }
 }

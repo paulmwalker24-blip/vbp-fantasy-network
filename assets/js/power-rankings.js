@@ -1,5 +1,6 @@
 const POWER_RANKINGS_DATA_URL = "data/power-rankings.json";
 const DEFAULT_LEAGUE_RECORD_ID = "DYN1";
+let activeRankingView = "dynasty";
 
 function getActiveLeagueRecordId() {
   const params = new URLSearchParams(window.location.search);
@@ -166,7 +167,11 @@ function renderLeague(data) {
     return;
   }
 
-  const rankings = [...league.rankings].sort((a, b) => number(a.rank) - number(b.rank));
+  const hasCurrentSeasonBoard = text(league.format).toLowerCase() === "dynasty" && Array.isArray(league.currentSeasonRankings) && league.currentSeasonRankings.length;
+  if (!hasCurrentSeasonBoard) activeRankingView = "dynasty";
+  const isCurrentSeason = hasCurrentSeasonBoard && activeRankingView === "current-season";
+  const sourceRankings = isCurrentSeason ? league.currentSeasonRankings : league.rankings;
+  const rankings = [...sourceRankings].sort((a, b) => number(a.rank) - number(b.rank));
   const leader = rankings[0];
   const generatedAt = document.querySelector("[data-generated-at]");
   const topScore = document.querySelector("[data-top-score]");
@@ -175,7 +180,23 @@ function renderLeague(data) {
   const kicker = document.querySelector("[data-rankings-kicker]");
   const title = document.querySelector("[data-rankings-title]");
   const featureKicker = document.querySelector("[data-rankings-feature-kicker]");
+  const featureHeading = document.querySelector("[data-rankings-feature-heading]");
+  const featureDescription = document.querySelector("[data-rankings-feature-description]");
   const listHeading = document.querySelector("[data-rankings-list-heading]");
+  const listDescription = document.querySelector("[data-rankings-list-description]");
+  const viewControls = document.querySelector("[data-ranking-view-controls]");
+  const positionalSection = document.querySelector("[data-positional-section]");
+
+  if (viewControls) {
+    viewControls.hidden = !hasCurrentSeasonBoard;
+    viewControls.querySelectorAll("[data-ranking-view]").forEach(button => {
+      button.classList.toggle("is-active", button.dataset.rankingView === activeRankingView);
+      button.onclick = () => {
+        activeRankingView = button.dataset.rankingView;
+        renderLeague(data);
+      };
+    });
+  }
 
   if (generatedAt) {
     const snapshotLabel = text(data.snapshot?.display);
@@ -185,9 +206,21 @@ function renderLeague(data) {
   if (kicker) kicker.textContent = text(league.leagueRecordId);
   if (title) title.textContent = `${text(league.name)} Power Rankings`;
   if (featureKicker) featureKicker.textContent = text(league.name);
-  if (listHeading) listHeading.textContent = `${text(league.leagueRecordId)} Rankings`;
+  if (featureHeading) featureHeading.textContent = isCurrentSeason ? "2026 Favorite" : "Dynasty Leader";
+  if (featureDescription) {
+    featureDescription.textContent = isCurrentSeason
+      ? `Built from current-season lineup strength, depth, quarterback play, health, and ${text(league.leagueRecordId)} scoring.`
+      : "Built from current roster strength, long-term player value, Superflex quarterbacks, and future draft capital.";
+  }
+  if (listHeading) listHeading.textContent = isCurrentSeason ? `${text(league.leagueRecordId)} 2026 Contenders` : `${text(league.leagueRecordId)} Dynasty Outlook`;
+  if (listDescription) {
+    listDescription.textContent = isCurrentSeason
+      ? "This board focuses only on who is best positioned to win the current season."
+      : "This board balances current roster strength with long-term player value and future draft capital.";
+  }
   if (topScore) topScore.textContent = number(leader.score).toFixed(1);
   if (topTeam) topTeam.textContent = text(leader.teamName);
+  if (positionalSection) positionalSection.hidden = isCurrentSeason;
   if (subtitle) {
     const rosterLabel = formatDate(league.rosterSync?.refreshedAt);
     const readinessLabel = text(league.draftReadiness?.label);
@@ -204,7 +237,16 @@ function renderLeague(data) {
   }
   renderScoringProfile(league);
   renderPositionalRankings(league);
-  renderMethodology(data.methodology);
+  renderMethodology(isCurrentSeason ? {
+    summary: `The 2026 Contenders board measures ${text(league.leagueRecordId)} only for the current season and does not reward youth or future draft capital.`,
+    components: [
+      "Starting lineup: the strongest legal weekly lineup carries the most weight.",
+      "Usable depth: the best immediate bench options support injuries and bye weeks.",
+      "Quarterbacks: Superflex quarterback strength is measured for this season only.",
+      "Health and ceiling: active availability and current difference-makers shape the final score.",
+      "Excluded: player age runway and future rookie picks do not affect this board."
+    ]
+  } : data.methodology);
 }
 
 async function initPowerRankings() {
