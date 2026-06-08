@@ -84,8 +84,8 @@ Dynasty Bracket:
 - `48-team Superflex startup, slow 3RR, three seasons paid up front.`
 
 Best Ball Union:
-- `3/10 paid for BBU8, drafting tonight, June 3, at 8 PM CST.`
-- `$10 best ball, no waivers, no lineups after the draft.`
+- `BBU8 is full and paid; do not use old June 3 BBU8 recruiting copy.`
+- `$10 best ball, no waivers, no lineups after the draft. Refresh the active room before posting the next BBU push.`
 
 Best Ball Gauntlet 2:
 - `3/24 paid for Best Ball Gauntlet 2, a $5 micro best ball league.`

@@ -17,6 +17,7 @@ const FORMAT_META = {
   gauntlet: { label: "Best Ball Gauntlet", description: "24-team micro best ball with doubleheader standings." },
   bracket: { label: "Redraft Bracket", description: "Tournament-style redraft competition across divisions." },
   chopped: { label: "Chopped", description: "Elimination redraft where the goal is to survive the weekly cut." },
+  comanager: { label: "Co-Manager Redraft", description: "Superflex redraft where each team is run by a 2-3 manager front office." },
   dynasty: { label: "Dynasty", description: "Build and manage a roster long term." },
   dynastybracket: { label: "Dynasty Bracket", description: "Multi-division dynasty feeding a shared playoff bracket." },
   keeper: { label: "Keeper", description: "Annual redraft with keepers, rising costs, and long-term strategy." },
@@ -75,6 +76,7 @@ function normalizeFormat(value) {
   const normalized = String(value || "").toLowerCase().replace(/[\s-]+/g, "").trim();
 
   if (normalized.includes("dynastybracket")) return "dynastybracket";
+  if (normalized.includes("comanager") || normalized.includes("coowner")) return "comanager";
   if (normalized.includes("pickem") || normalized.includes("pick'em")) return "pickem";
   if (normalized.includes("gauntlet")) return "gauntlet";
   if (normalized.includes("best")) return "bestball";

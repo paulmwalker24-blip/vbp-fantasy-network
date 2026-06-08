@@ -152,6 +152,7 @@ The site is effectively data-driven through local league JSON, local donation JS
   - Documents the lightweight manual process for applying Google Form donation responses to `data/donations.json`.
 
 - `redraft-constitution.html`
+- `co-manager-constitution.html`
 - `dynasty-constitution.html`
 - `dynasty-bracket-constitution.html`
 - `bestball-constitution.html`
@@ -245,6 +246,7 @@ The current league rendering depends on:
 Recognized normalized formats:
 
 - `redraft`
+- `comanager`
 - `dynasty`
 - `dynastybracket`
 - `bestball`
@@ -262,6 +264,7 @@ If the user provides a Sleeper league URL or invite link instead of a raw ID, re
 Current ID prefixes are:
 
 - `RD` for redraft
+- `CM` for co-manager redraft
 - `DYN` for dynasty
 - `DB` for dynasty bracket
 - `BBU` for best ball
@@ -273,6 +276,7 @@ Current ID prefixes are:
 
 Current league notes:
 
+- `CM1` is the first Co-Manager Redraft league. It uses Sleeper league ID `1369795448134463488`, invite link `https://sleeper.com/i/Y21DGAYzl5QMa`, and LeagueSafe link `https://www.leaguesafe.com/join/4429350`. Each team must have 2-3 co-managers, the buy-in is `$50` per team, scoring is traditional `0.5 PPR` with TE premium and 6-point passing touchdowns, and the lineup is `1 QB`, `2 RB`, `2 WR`, `1 TE`, `2 FLEX`, `1 SUPER FLEX`, `5 BN`, and `1 IR`. The intended draft is 3RR slow draft starting July 15 with a 2-hour pick timer and a 10:00 PM to 7:00 AM CST overnight pause.
 - `division` is currently used as draft type for bracket leagues, such as `Fast` or `Slow`.
 - Bracket league cards should display `division` on the homepage as `Fast Draft` or `Slow Draft`.
 - Current bracket automation assumes a 2026 combined tournament group of `RDB1` through `RDB5`, representing five separate 12-team leagues and 60 total teams.
@@ -415,7 +419,7 @@ If donation rendering breaks:
 - DYN1 is full and should not be included as an active orphan/takeover recruiting post unless a new vacancy appears.
 - DYN8 is full and paid and should not be included in active recruiting copy.
 - Best Ball Gauntlet 1 is full and drafting and should not be included in active recruiting copy.
-- Current Best Ball Union recruiting is on `BBU7`, a `$10` fast-draft best ball room drafting tonight at `8 PM CST`; use that same-day draft urgency while it remains current.
+- `BBU8` is full and paid with its draft order generated. Do not use old BBU7 or BBU8 same-day draft urgency; refresh the current open Best Ball Union room before posting new BBU recruiting copy.
 - Dynasty Bracket recruiting titles should make the 48-team format visible, such as `VBP Fantasy Network | 48-Team Dynasty Bracket Open | Superflex Startup`.
 - Current Dynasty Bracket recruiting should concentrate new owners into Foundry first; offer Empire when an owner specifically prefers fast draft.
 - Dynasty Bracket and Bracket Redraft recruiting copy may mention that the Bracket Center includes a cross-division trade tracker.

@@ -118,7 +118,7 @@ Use room-closing marketing before catalog marketing.
 - Lead with the current active room when there is a scheduled draft time.
 - Always say `fast draft`.
 - Say new BBU leagues start drafting 24 hours after the league is filled and fully paid unless a same-day draft time has already been set.
-- `BBU1` through `BBU7` are full or already drafting. `BBU8` is the current active recruiting room and is drafting June 3 at 8 PM CST.
+- `BBU1` through `BBU8` are full or already drafting. Do not use the old BBU8 June 3 recruiting copy.
 - Refresh the active `BBU` template when the current room changes so the pitch does not feel stale.
 - When a `BBU` post has a scheduled draft time, lead with that urgency and keep the description focused on the active room.
 
@@ -567,20 +567,20 @@ Dynasty Bracket constitution: https://vbp-fantasy-network.vercel.app/dynasty-bra
 ### BBU
 
 When to use:
-- current BBU8 best ball recruiting post
+- next active Best Ball Union recruiting post after confirming the current open room
 
 Title:
 
 ```text
-VBP Fantasy Network | BBU8 $10 Best Ball | Drafting June 3 at 8 PM CST
+VBP Fantasy Network | $10 Best Ball Union | Current Room Open
 ```
 
 Body:
 
 ```text
-VBP Fantasy Network has BBU8 open for anyone who wants a simple $10 best ball draft. BBU1 through BBU6 are full, paid, and drafted, and BBU7 is full and drafting tonight, so BBU8 is the next active room.
+VBP Fantasy Network has a $10 Best Ball Union room open for anyone who wants a simple best ball draft. Confirm the current active room and paid count before posting.
 
-BBU8 is drafting June 3 at 8 PM CST.
+New rooms start drafting after they fill and are fully paid unless a specific draft time has already been announced.
 
 This is a 10-team draft-and-hold best ball league on Sleeper. It uses a 90-second snake draft, 18-player rosters, Progressive PPR scoring, and a weekly median matchup.
 

@@ -73,6 +73,24 @@
                         "sleeperFilled":  11
                     },
                     {
+                        "id":  "CM1",
+                        "sleeperLeagueId":  "1369795448134463488",
+                        "sleeperSeason":  "2026",
+                        "name":  "VBP Co-Manager Redraft League 1",
+                        "format":  "comanager",
+                        "division":  "Superflex",
+                        "buyIn":  50,
+                        "teams":  12,
+                        "filled":  0,
+                        "status":  "open",
+                        "inviteLink":  "https://sleeper.com/i/Y21DGAYzl5QMa",
+                        "leagueSafeLink":  "https://www.leaguesafe.com/join/4429350",
+                        "constitutionPage":  "co-manager-constitution.html",
+                        "notes":  "Co-manager redraft: each team must have 2-3 managers. 3RR slow draft starts July 15 with a 2-hour pick timer and 10 PM CST to 7 AM CST overnight pause. Lineup is 1 QB, 2 RB, 2 WR, 1 TE, 2 FLEX, 1 SUPER FLEX, 5 bench, 1 IR. Traditional 0.5 PPR with TE premium and 6-point passing touchdowns.",
+                        "lastUpdated":  "6/8/2026",
+                        "sleeperFilled":  0
+                    },
+                    {
                         "id":  "DYN1",
                         "sleeperLeagueId":  "1341650084122595328",
                         "sleeperSeason":  "2026",
@@ -455,14 +473,14 @@
                         "division":  "",
                         "buyIn":  10,
                         "teams":  10,
-                        "filled":  1,
-                        "status":  "open",
+                        "filled":  10,
+                        "status":  "full",
                         "inviteLink":  "https://sleeper.com/i/Y21R6kl0dWBDD",
                         "leagueSafeLink":  "https://www.leaguesafe.com/join/4296858",
                         "constitutionPage":  "bestball-constitution.html",
                         "notes":  "",
                         "lastUpdated":  "",
-                        "sleeperFilled":  4
+                        "sleeperFilled":  10
                     },
                     {
                         "id":  "BBU9",
