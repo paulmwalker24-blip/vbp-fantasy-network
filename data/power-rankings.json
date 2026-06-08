@@ -1,5 +1,5 @@
 ﻿{
-    "generatedAt":  "2026-06-07T12:18:38.3526374+00:00",
+    "generatedAt":  "2026-06-08T14:45:13.3899697+00:00",
     "snapshot":  {
                      "season":  "2026",
                      "seasonType":  "off",
@@ -72,7 +72,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314663050854305792/rosters",
-                                           "refreshedAt":  "2026-06-07T12:17:32.7082770+00:00",
+                                           "refreshedAt":  "2026-06-08T14:44:07.8077578+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -167,7 +167,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314662767977824256/rosters",
-                                           "refreshedAt":  "2026-06-07T12:17:33.2569101+00:00",
+                                           "refreshedAt":  "2026-06-08T14:44:08.5046659+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -262,7 +262,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314660487635427328/rosters",
-                                           "refreshedAt":  "2026-06-07T12:17:33.6599241+00:00",
+                                           "refreshedAt":  "2026-06-08T14:44:09.1543198+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -357,7 +357,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1344449488089014272/rosters",
-                                           "refreshedAt":  "2026-06-07T12:17:34.1573901+00:00",
+                                           "refreshedAt":  "2026-06-08T14:44:09.7457152+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -452,7 +452,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341650084122595328/rosters",
-                                           "refreshedAt":  "2026-06-07T12:17:34.6250284+00:00",
+                                           "refreshedAt":  "2026-06-08T14:44:10.3300859+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  374,
                                            "sleeperLeagueSeason":  "2026",
@@ -1540,7 +1540,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1340820529996640256/rosters",
-                                           "refreshedAt":  "2026-06-07T12:17:40.2613317+00:00",
+                                           "refreshedAt":  "2026-06-08T14:44:15.6692706+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  368,
                                            "sleeperLeagueSeason":  "2026",
@@ -2628,7 +2628,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341646934816849920/rosters",
-                                           "refreshedAt":  "2026-06-07T12:17:45.0339688+00:00",
+                                           "refreshedAt":  "2026-06-08T14:44:20.0778982+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  369,
                                            "sleeperLeagueSeason":  "2026",
@@ -3716,7 +3716,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1342931950981091328/rosters",
-                                           "refreshedAt":  "2026-06-07T12:17:49.8452156+00:00",
+                                           "refreshedAt":  "2026-06-08T14:44:24.4834706+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  361,
                                            "sleeperLeagueSeason":  "2026",
@@ -4804,7 +4804,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345763335270400/rosters",
-                                           "refreshedAt":  "2026-06-07T12:17:54.6550699+00:00",
+                                           "refreshedAt":  "2026-06-08T14:44:28.9212750+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  377,
                                            "sleeperLeagueSeason":  "2026",
@@ -5214,38 +5214,10 @@
                                                           "rank":  1
                                                       },
                                                       {
-                                                          "rosterId":  6,
-                                                          "ownerId":  "737338308111241216",
-                                                          "teamName":  "MattyCRuzzlers",
-                                                          "score":  88,
-                                                          "reasons":  [
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Strong Superflex quarterbacks: Jaxson Dart and Kyler Murray give this roster two dependable weekly QB options."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Difference-making stars: Christian McCaffrey, Jaxson Dart, and Trey McBride give this lineup multiple players capable of swinging weekly matchups."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "concern",
-                                                                              "text":  "Depth pressure: behind Jacoby Brissett, J.J. McCarthy, and Brian Robinson, the bench has fewer proven weekly options if injuries or bye weeks hit together."
-                                                                          }
-                                                                      ],
-                                                          "record":  {
-                                                                         "wins":  0,
-                                                                         "pointsFor":  0,
-                                                                         "maxPointsFor":  0,
-                                                                         "losses":  0,
-                                                                         "ties":  0
-                                                                     },
-                                                          "rank":  2
-                                                      },
-                                                      {
                                                           "rosterId":  3,
                                                           "ownerId":  "1130521166885564416",
                                                           "teamName":  "sellrya",
-                                                          "score":  87,
+                                                          "score":  88,
                                                           "reasons":  [
                                                                           {
                                                                               "tone":  "positive",
@@ -5258,6 +5230,34 @@
                                                                           {
                                                                               "tone":  "concern",
                                                                               "text":  "Too breakout-dependent: Caleb Williams, TreVeyon Henderson, and Gunnar Helm still need young players to become immediate weekly producers."
+                                                                          }
+                                                                      ],
+                                                          "record":  {
+                                                                         "wins":  0,
+                                                                         "pointsFor":  0,
+                                                                         "maxPointsFor":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0
+                                                                     },
+                                                          "rank":  2
+                                                      },
+                                                      {
+                                                          "rosterId":  6,
+                                                          "ownerId":  "737338308111241216",
+                                                          "teamName":  "MattyCRuzzlers",
+                                                          "score":  86,
+                                                          "reasons":  [
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Strong Superflex quarterbacks: Jaxson Dart and Kyler Murray give this roster two dependable weekly QB options."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Difference-making stars: Christian McCaffrey, Jaxson Dart, and Trey McBride give this lineup multiple players capable of swinging weekly matchups."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "concern",
+                                                                              "text":  "Depth pressure: behind Jacoby Brissett, J.J. McCarthy, and Brian Robinson, the bench has fewer proven weekly options if injuries or bye weeks hit together."
                                                                           }
                                                                       ],
                                                           "record":  {
@@ -5326,6 +5326,34 @@
                                                           "rank":  5
                                                       },
                                                       {
+                                                          "rosterId":  1,
+                                                          "ownerId":  "585729828611727360",
+                                                          "teamName":  "FrankiieG23",
+                                                          "score":  80,
+                                                          "reasons":  [
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Strong Superflex quarterbacks: Drake Maye and Jalen Hurts give this roster two dependable weekly QB options."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Difference-making stars: Drake Maye, Jalen Hurts, and CeeDee Lamb give this lineup multiple players capable of swinging weekly matchups."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "concern",
+                                                                              "text":  "Depth pressure: behind Daniel Jones, Anthony Richardson, and Jalen Milroe, the bench has fewer proven weekly options if injuries or bye weeks hit together."
+                                                                          }
+                                                                      ],
+                                                          "record":  {
+                                                                         "wins":  0,
+                                                                         "pointsFor":  0,
+                                                                         "maxPointsFor":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0
+                                                                     },
+                                                          "rank":  6
+                                                      },
+                                                      {
                                                           "rosterId":  9,
                                                           "ownerId":  "862197117240860672",
                                                           "teamName":  "bickey22",
@@ -5342,34 +5370,6 @@
                                                                           {
                                                                               "tone":  "concern",
                                                                               "text":  "Depth pressure: behind Fernando Mendoza, Jacory Croskey-Merritt, and Ricky Pearsall, the bench has fewer proven weekly options if injuries or bye weeks hit together."
-                                                                          }
-                                                                      ],
-                                                          "record":  {
-                                                                         "wins":  0,
-                                                                         "pointsFor":  0,
-                                                                         "maxPointsFor":  0,
-                                                                         "losses":  0,
-                                                                         "ties":  0
-                                                                     },
-                                                          "rank":  6
-                                                      },
-                                                      {
-                                                          "rosterId":  1,
-                                                          "ownerId":  "585729828611727360",
-                                                          "teamName":  "FrankiieG23",
-                                                          "score":  79,
-                                                          "reasons":  [
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Strong Superflex quarterbacks: Drake Maye and Jalen Hurts give this roster two dependable weekly QB options."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Difference-making stars: Drake Maye, Jalen Hurts, and CeeDee Lamb give this lineup multiple players capable of swinging weekly matchups."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "concern",
-                                                                              "text":  "Depth pressure: behind Daniel Jones, Anthony Richardson, and Jalen Milroe, the bench has fewer proven weekly options if injuries or bye weeks hit together."
                                                                           }
                                                                       ],
                                                           "record":  {
@@ -5892,7 +5892,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345934114725888/rosters",
-                                           "refreshedAt":  "2026-06-07T12:17:59.5657799+00:00",
+                                           "refreshedAt":  "2026-06-08T14:44:33.4434794+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  371,
                                            "sleeperLeagueSeason":  "2026",
@@ -6980,9 +6980,9 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1360285262617284608/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:04.4158540+00:00",
+                                           "refreshedAt":  "2026-06-08T14:44:37.9015178+00:00",
                                            "rosterCount":  12,
-                                           "playerCount":  367,
+                                           "playerCount":  365,
                                            "sleeperLeagueSeason":  "2026",
                                            "sleeperLeagueStatus":  "in_season"
                                        },
@@ -7517,7 +7517,7 @@
                                                                           },
                                                                           {
                                                                               "tone":  "concern",
-                                                                              "text":  "Depth pressure: behind Gunnar Helm, Kirk Cousins, and Rome Odunze, the bench has fewer proven weekly options if injuries or bye weeks hit together."
+                                                                              "text":  "Too breakout-dependent: C.J. Stroud, Bijan Robinson, and Rome Odunze still need young players to become immediate weekly producers."
                                                                           }
                                                                       ],
                                                           "record":  {
@@ -8068,7 +8068,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362902973520306176/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:09.2835828+00:00",
+                                           "refreshedAt":  "2026-06-08T14:44:42.3281751+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  354,
                                            "sleeperLeagueSeason":  "2026",
@@ -9156,7 +9156,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350152770275020800/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:13.9657399+00:00",
+                                           "refreshedAt":  "2026-06-08T14:44:46.7891967+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9264,7 +9264,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154389192474624/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:14.3955602+00:00",
+                                           "refreshedAt":  "2026-06-08T14:44:47.3692381+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9372,7 +9372,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154561549004800/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:14.8701068+00:00",
+                                           "refreshedAt":  "2026-06-08T14:44:47.9676103+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9480,7 +9480,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154695137570816/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:15.2717933+00:00",
+                                           "refreshedAt":  "2026-06-08T14:44:48.5468079+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9588,7 +9588,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095209052508160/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:15.7777007+00:00",
+                                           "refreshedAt":  "2026-06-08T14:44:49.1323042+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -10228,7 +10228,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095313704554496/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:17.9868122+00:00",
+                                           "refreshedAt":  "2026-06-08T14:44:51.5935906+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -10868,7 +10868,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095371091017728/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:20.1426692+00:00",
+                                           "refreshedAt":  "2026-06-08T14:44:53.7282761+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -11508,7 +11508,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095416859287552/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:22.3730389+00:00",
+                                           "refreshedAt":  "2026-06-08T14:44:55.8209137+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -12148,7 +12148,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095453291003904/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:24.5010470+00:00",
+                                           "refreshedAt":  "2026-06-08T14:44:57.9840059+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  179,
                                            "sleeperLeagueSeason":  "2026",
@@ -12788,7 +12788,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480393130868736/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:26.6673817+00:00",
+                                           "refreshedAt":  "2026-06-08T14:45:00.1296280+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -13428,7 +13428,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480515533242368/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:28.7819778+00:00",
+                                           "refreshedAt":  "2026-06-08T14:45:02.2517307+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -14068,7 +14068,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480638808064000/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:30.8749484+00:00",
+                                           "refreshedAt":  "2026-06-08T14:45:04.4303758+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -14167,7 +14167,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480857310302208/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:31.3316090+00:00",
+                                           "refreshedAt":  "2026-06-08T14:45:05.0516394+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -14266,7 +14266,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480992765353984/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:31.8225934+00:00",
+                                           "refreshedAt":  "2026-06-08T14:45:05.6726479+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -14365,7 +14365,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362908679824740352/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:32.2996874+00:00",
+                                           "refreshedAt":  "2026-06-08T14:45:06.2717429+00:00",
                                            "rosterCount":  24,
                                            "playerCount":  120,
                                            "sleeperLeagueSeason":  "2026",
@@ -14431,7 +14431,7 @@
                                                                                },
                                                                                {
                                                                                    "rank":  3,
-                                                                                   "manager":  "LionsFan79",
+                                                                                   "manager":  "Almost Competitive",
                                                                                    "rosterId":  18,
                                                                                    "score":  89
                                                                                },
@@ -14640,7 +14640,7 @@
                                                                                },
                                                                                {
                                                                                    "rank":  13,
-                                                                                   "manager":  "LionsFan79",
+                                                                                   "manager":  "Almost Competitive",
                                                                                    "rosterId":  18,
                                                                                    "score":  78
                                                                                },
@@ -14735,14 +14735,14 @@
                                                                                },
                                                                                {
                                                                                    "rank":  4,
-                                                                                   "manager":  "ega4bstn",
-                                                                                   "rosterId":  4,
+                                                                                   "manager":  "Almost Competitive",
+                                                                                   "rosterId":  18,
                                                                                    "score":  80
                                                                                },
                                                                                {
                                                                                    "rank":  5,
-                                                                                   "manager":  "LionsFan79",
-                                                                                   "rosterId":  18,
+                                                                                   "manager":  "ega4bstn",
+                                                                                   "rosterId":  4,
                                                                                    "score":  80
                                                                                },
                                                                                {
@@ -14890,14 +14890,14 @@
                                                                                },
                                                                                {
                                                                                    "rank":  5,
-                                                                                   "manager":  "ega4bstn",
-                                                                                   "rosterId":  4,
+                                                                                   "manager":  "Almost Competitive",
+                                                                                   "rosterId":  18,
                                                                                    "score":  78
                                                                                },
                                                                                {
                                                                                    "rank":  6,
-                                                                                   "manager":  "LionsFan79",
-                                                                                   "rosterId":  18,
+                                                                                   "manager":  "ega4bstn",
+                                                                                   "rosterId":  4,
                                                                                    "score":  78
                                                                                },
                                                                                {
@@ -15046,7 +15046,7 @@
                                          {
                                              "rosterId":  18,
                                              "ownerId":  "446518033930776576",
-                                             "teamName":  "LionsFan79",
+                                             "teamName":  "Almost Competitive",
                                              "score":  83,
                                              "record":  {
                                                             "wins":  0,
@@ -15720,7 +15720,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338004997836640256/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:34.6827857+00:00",
+                                           "refreshedAt":  "2026-06-08T14:45:08.5595489+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -15816,7 +15816,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005036122279936/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:35.1502097+00:00",
+                                           "refreshedAt":  "2026-06-08T14:45:09.1484560+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -15912,7 +15912,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005075167035392/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:35.6180070+00:00",
+                                           "refreshedAt":  "2026-06-08T14:45:09.7347216+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -16008,7 +16008,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005113482022912/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:36.0456373+00:00",
+                                           "refreshedAt":  "2026-06-08T14:45:10.3299669+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -16104,7 +16104,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005158071660544/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:36.4468159+00:00",
+                                           "refreshedAt":  "2026-06-08T14:45:10.9337064+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -16200,7 +16200,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846317608992768/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:36.8559389+00:00",
+                                           "refreshedAt":  "2026-06-08T14:45:11.5461796+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -16295,7 +16295,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846742810775552/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:37.3719907+00:00",
+                                           "refreshedAt":  "2026-06-08T14:45:12.2135564+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -16390,7 +16390,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1363630886133694464/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:37.8735131+00:00",
+                                           "refreshedAt":  "2026-06-08T14:45:12.7996122+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -16472,7 +16472,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339342261023961088/rosters",
-                                           "refreshedAt":  "2026-06-07T12:18:38.3506277+00:00",
+                                           "refreshedAt":  "2026-06-08T14:45:13.3879564+00:00",
                                            "rosterCount":  18,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
