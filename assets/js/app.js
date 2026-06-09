@@ -22,12 +22,13 @@ const FORMAT_META = {
   dynastybracket: { label: "Dynasty Bracket", description: "Multi-division dynasty feeding a shared playoff bracket." },
   keeper: { label: "Keeper", description: "Annual redraft with keepers, rising costs, and long-term strategy." },
   pickem: { label: "Pick'em", description: "Spread-based NFL picks across the regular season." },
-  redraft: { label: "Redraft", description: "Standard seasonal competition with balanced scoring." }
+  redraft: { label: "Redraft", description: "Standard seasonal competition with balanced scoring." },
+  redraft32: { label: "32-Team Redraft", description: "A 32-team seasonal room with shallow rosters and an 8-team playoff." }
 };
 
 const BEST_BALL_UNION_TOTAL_BUY_IN = 200;
 const OPEN_NOW_PRIORITY = [
-  { id: "RD5", note: "New 32-team redraft tournament with shallow rosters." },
+  { id: "RD32T1", note: "New 32-team redraft tournament with shallow rosters." },
   { id: "RD4", note: "Standalone high-stakes redraft room." },
   { id: "RDB1", note: "Slow draft redraft bracket priority room." },
   { id: "RDB3", note: "Fast draft redraft bracket priority room." },
@@ -85,6 +86,7 @@ function normalizeFormat(value) {
   if (normalized.includes("dynasty")) return "dynasty";
   if (normalized.includes("keeper")) return "keeper";
   if (normalized.includes("chopped")) return "chopped";
+  if (normalized.includes("redraft32") || (normalized.includes("32team") && normalized.includes("redraft"))) return "redraft32";
   if (normalized.includes("redraft")) return "redraft";
 
   return "";

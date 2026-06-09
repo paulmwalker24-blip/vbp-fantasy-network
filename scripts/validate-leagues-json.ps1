@@ -7,11 +7,12 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
-$validFormats = @("redraft", "comanager", "dynasty", "dynastybracket", "bestball", "gauntlet", "bracket", "keeper", "pickem", "chopped")
+$validFormats = @("redraft", "redraft32", "comanager", "dynasty", "dynastybracket", "bestball", "gauntlet", "bracket", "keeper", "pickem", "chopped")
 $validStatuses = @("open", "full", "coming-soon")
 $validDraftStyles = @("", "fast", "slow")
 $idPrefixByFormat = @{
   redraft = "RD"
+  redraft32 = "RD32T"
   comanager = "CM"
   dynasty = "DYN"
   dynastybracket = "DYB"
@@ -24,6 +25,7 @@ $idPrefixByFormat = @{
 }
 $expectedConstitutionPageByFormat = @{
   redraft = "redraft-constitution.html"
+  redraft32 = "32-team-redraft-constitution.html"
   comanager = "co-manager-constitution.html"
   dynasty = "dynasty-constitution.html"
   dynastybracket = "dynasty-bracket-constitution.html"
@@ -34,9 +36,7 @@ $expectedConstitutionPageByFormat = @{
   pickem = "pickem-constitution.html"
   chopped = "chopped-constitution.html"
 }
-$alternateConstitutionPagesByFormat = @{
-  redraft = @("32-team-redraft-constitution.html")
-}
+$alternateConstitutionPagesByFormat = @{}
 $knownConstitutionPages = @(
   "redraft-constitution.html",
   "32-team-redraft-constitution.html",

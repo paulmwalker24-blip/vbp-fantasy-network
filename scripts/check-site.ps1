@@ -60,7 +60,7 @@ foreach ($requiredId in @("networkSnapshotContainer", "openNowContainer", "forma
   }
 }
 
-foreach ($format in @("all", "redraft", "dynasty", "dynastybracket", "bestball", "gauntlet", "bracket", "keeper", "pickem", "chopped")) {
+foreach ($format in @("all", "redraft", "redraft32", "dynasty", "dynastybracket", "bestball", "gauntlet", "bracket", "keeper", "pickem", "chopped")) {
   if ($indexHtml -notmatch ("data-format=""{0}""" -f [regex]::Escape($format))) {
     Add-Issue -Severity "error" -Source "index.html" -Message ("Missing format filter '{0}'." -f $format)
   }
@@ -96,7 +96,7 @@ if ($indexHtml -notmatch 'assets/js/app\.js\?v=') {
   Add-Issue -Severity "warning" -Source "index.html" -Message "Missing cache-busting query string on assets/js/app.js."
 }
 
-foreach ($formatKey in @("redraft", "dynasty", "dynastybracket", "bestball", "gauntlet", "bracket", "keeper", "pickem", "chopped")) {
+foreach ($formatKey in @("redraft", "redraft32", "dynasty", "dynastybracket", "bestball", "gauntlet", "bracket", "keeper", "pickem", "chopped")) {
   if ($appJs -notmatch ("{0}:" -f [regex]::Escape($formatKey))) {
     Add-Issue -Severity "error" -Source "assets/js/app.js" -Message ("FORMAT_META appears to be missing '{0}'." -f $formatKey)
   }
