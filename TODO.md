@@ -3,7 +3,6 @@
 ## Immediate
 
 - [ ] Resolve the Best Ball Union lineup mismatch: the constitution says `3 WR` starters, while Sleeper currently reports `2 WR` starters for completed `BBU1` through `BBU6` and open `BBU7` through `BBU10`.
-- [ ] Create a dedicated Co-Manager Redraft header/banner asset and replace the temporary redraft banner on `co-manager-constitution.html`.
 - [ ] Verify and record the pending Mandalore LeagueSafe refund in `DYN8`; the league is now full and paid, so this remains a historical payment-record follow-up rather than a recruiting blocker.
 - [ ] Add public rendered ranking destinations for future completed Redraft, Keeper, Chopped, Redraft Bracket, and Dynasty Bracket boards before their first board is promoted as live.
 
@@ -15,6 +14,7 @@
 
 ### Immediate
 
+- [x] Replace the temporary constitution headers for Redraft, Dynasty, Dynasty Bracket, Redraft Bracket, Chopped, Pick'em, Co-Manager Redraft, Sacrifice Redraft, Best Ball Gauntlet, and Keeper with dedicated wide header assets.
 - [x] Split the Bracket Center into redraft and dynasty views inside the same page and scaffold the dynasty-bracket ledger path so both formats can share the same public center pattern.
 - [x] Add the LeagueSafe links for `DYN4`, `KP1`, and `KP2`, clearing the remaining active league-data validation warnings.
 - [x] Add dated addendum and revision-history sections to the public constitutions, and update the draft-timing language to reflect the post-NFL-draft rule change.

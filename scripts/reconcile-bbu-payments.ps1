@@ -1,6 +1,7 @@
 param(
   [string]$LeaguesJsonPath = "data/leagues.json",
   [string]$IdentityPath = "data/private/manager-identities.json",
+  [string]$PaymentStatusOverridesPath = "data/private/payment-status-overrides.json",
   [string]$PaymentsCsvPath = "data/private/leaguesafe-payments.csv",
   [string]$OutputPath = "reports/private/bbu-payment-reconciliation/bbu-master-readable.txt",
   [string]$CsvOutputDirectory = "reports/private/bbu-payment-reconciliation",
@@ -200,6 +201,7 @@ function Add-PersonIndex {
 
 $leaguesDocument = Read-JsonFile -Path $LeaguesJsonPath -DefaultJson '{ "leagues": [] }'
 $identityDocument = Read-JsonFile -Path $IdentityPath -DefaultJson '{ "people": [] }'
+$paymentStatusDocument = Read-JsonFile -Path $PaymentStatusOverridesPath -DefaultJson '{ "entries": [] }'
 
 $allLeagues = @($leaguesDocument.leagues)
 $bbuLeagues = @($allLeagues | Where-Object { (Get-StringValue $_.format) -eq "bestball" })
@@ -216,6 +218,7 @@ if ($bbuLeagues.Count -eq 0) {
 }
 
 $people = @($identityDocument.people)
+$paymentStatusOverrides = @($paymentStatusDocument.entries)
 $peopleById = @{}
 $peopleBySleeperUserId = @{}
 $peopleBySleeperUsername = @{}
@@ -458,6 +461,51 @@ function Get-MatchKey {
   return ((Get-StringValue $Value).ToLowerInvariant() -replace '[^a-z0-9]', '')
 }
 
+function Get-BbuReviewOverride {
+  param($Entry, $Candidate, [object[]]$Overrides)
+
+  $leagueId = Normalize-Key $Entry.leagueId
+  $entryKeys = @(
+    Get-MatchKey $Entry.teamName
+    Get-MatchKey $Entry.displayName
+    Get-MatchKey $Entry.username
+    Get-MatchKey $Entry.personName
+  ) | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
+  $candidateNameKey = if ($Candidate) { Get-MatchKey $Candidate.payerName } else { "" }
+  $candidateEmailKey = if ($Candidate) { Normalize-Key $Candidate.payerEmail } else { "" }
+
+  foreach ($override in @($Overrides)) {
+    $overrideLeagueId = Normalize-Key (Get-PropertyValue $override "leagueRecordId")
+    if ($overrideLeagueId -ne $leagueId) {
+      continue
+    }
+
+    $reviewComplete = [bool](Get-PropertyValue $override "reviewComplete")
+    if (-not $reviewComplete) {
+      continue
+    }
+
+    $sleeperNameKey = Get-MatchKey (Get-PropertyValue $override "sleeperName")
+    $leagueSafeOwnerKey = Get-MatchKey (Get-PropertyValue $override "leagueSafeOwner")
+    $leagueSafeEmailKey = Normalize-Key (Get-PropertyValue $override "leagueSafeEmail")
+
+    $matchesSleeper = [string]::IsNullOrWhiteSpace($sleeperNameKey) -or ($entryKeys -contains $sleeperNameKey)
+    $matchesLeagueSafe = (
+      [string]::IsNullOrWhiteSpace($leagueSafeOwnerKey) -and [string]::IsNullOrWhiteSpace($leagueSafeEmailKey)
+    ) -or (
+      -not [string]::IsNullOrWhiteSpace($leagueSafeOwnerKey) -and $leagueSafeOwnerKey -eq $candidateNameKey
+    ) -or (
+      -not [string]::IsNullOrWhiteSpace($leagueSafeEmailKey) -and $leagueSafeEmailKey -eq $candidateEmailKey
+    )
+
+    if ($matchesSleeper -and $matchesLeagueSafe) {
+      return $override
+    }
+  }
+
+  return $null
+}
+
 function Format-TableLine {
   param([object[]]$Values, [int[]]$Widths)
   $parts = @()
@@ -516,9 +564,11 @@ $trackerRows = @($sleeperEntries | Sort-Object leagueId, assignmentStatus, teamN
   $match = Get-BbuPaymentCandidate -Entry $entry
   $candidate = if ($match) { $match.row } else { $null }
   $confidence = if ($match) { $match.confidence } else { "" }
+  $reviewOverride = Get-BbuReviewOverride -Entry $entry -Candidate $candidate -Overrides $paymentStatusOverrides
 
   $paidAmount = if ($candidate) { $candidate.amount } else { [decimal]0 }
   $isIdentityMatch = $confidence -eq "Identity"
+  $isReviewComplete = $null -ne $reviewOverride
   $isFullyCoveredIdentity = $false
   $identityShortfall = [decimal]0
   if ($isIdentityMatch -and $entriesByPerson.ContainsKey($entry.personId) -and $paidByPerson.ContainsKey($entry.personId)) {
@@ -532,10 +582,12 @@ $trackerRows = @($sleeperEntries | Sort-Object leagueId, assignmentStatus, teamN
     "Paid / waiting assignment"
   } elseif ($entry.assignmentStatus -eq "Waiting assignment") {
     "Waiting / unpaid"
+  } elseif ($isReviewComplete -and $candidate -and $paidAmount -gt 0) {
+    "Paid"
   } elseif ($isFullyCoveredIdentity) {
     "Paid"
   } elseif ($isIdentityMatch -and $paidAmount -gt 0) {
-    "Shortfall review"
+    "Balance due"
   } elseif ($candidate -and $paidAmount -ge $entry.buyIn) {
     "Paid candidate"
   } elseif ($candidate -and $paidAmount -gt 0) {
@@ -553,11 +605,11 @@ $trackerRows = @($sleeperEntries | Sort-Object leagueId, assignmentStatus, teamN
     rosterSlot = $entry.rosterId
     leagueSafeName = if ($candidate) { $candidate.payerName } else { "" }
     paymentId = if ($candidate) { $candidate.paymentId } else { "" }
-    paid = if ($isFullyCoveredIdentity) { $entry.buyIn } elseif ($isIdentityMatch) { "" } elseif ($candidate) { $candidate.amount } else { "" }
+    paid = if ($isFullyCoveredIdentity -or ($isReviewComplete -and $candidate -and $paidAmount -gt 0)) { $entry.buyIn } elseif ($isIdentityMatch) { "" } elseif ($candidate) { $candidate.amount } else { "" }
     status = $status
     match = $confidence
     person = $entry.personName
-    notes = if ($isIdentityMatch -and -not $isFullyCoveredIdentity) { "Known person owes $('${0:N2}' -f $identityShortfall) across all BBU entries." } else { "" }
+    notes = if ($isReviewComplete) { Get-StringValue (Get-PropertyValue $reviewOverride "note") } elseif ($isIdentityMatch -and -not $isFullyCoveredIdentity) { "Known person owes $('${0:N2}' -f $identityShortfall) across all BBU entries." } else { "" }
   }
 })
 
@@ -637,7 +689,20 @@ $paidNotAssignedRows = @($paymentRows | Where-Object {
 })
 
 $needsAttentionRows = @($trackerRows | Where-Object { $_.status -notin @("Paid", "Waiting / unpaid") })
-$shortfallRows = @($matchedPeople | Where-Object { $_.balance -gt 0 } | Sort-Object personName)
+$shortfallRows = @($trackerRows |
+  Where-Object { $_.status -eq "Balance due" } |
+  Group-Object person |
+  Sort-Object Name |
+  ForEach-Object {
+    $rows = @($_.Group)
+    [pscustomobject]@{
+      personName = $_.Name
+      entries = @($rows | ForEach-Object { $_.BBU })
+      due = [decimal]($rows.Count * 10)
+      paid = [decimal]0
+      balance = [decimal]($rows.Count * 10)
+    }
+  })
 $attentionOutputPath = Join-Path $CsvOutputDirectory "bbu-needs-attention-readable.txt"
 
 $masterLines = [System.Collections.Generic.List[string]]::new()
@@ -700,7 +765,7 @@ if ($needsAttentionRows.Count -eq 0 -and $shortfallRows.Count -eq 0 -and $paidNo
   if ($shortfallRows.Count -gt 0) {
     $attentionLines.Add("KNOWN PEOPLE WITH BALANCE DUE") | Out-Null
     foreach ($personSummary in $shortfallRows) {
-      $leagueList = (@($personSummary.entries) | ForEach-Object { $_.leagueId }) -join ", "
+      $leagueList = (@($personSummary.entries) | ForEach-Object { Get-StringValue $_ }) -join ", "
       $attentionLines.Add(("- {0}: {1}; due {2}, paid {3}, owes {4}" -f $personSummary.personName, $leagueList, (Format-Money $personSummary.due), (Format-Money $personSummary.paid), (Format-Money $personSummary.balance))) | Out-Null
     }
     $attentionLines.Add("") | Out-Null
