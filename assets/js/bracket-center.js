@@ -1569,17 +1569,21 @@ function createBracketScoreCard(label, topLabel, topScore, bottomLabel, bottomSc
 
   entries.forEach(entry => {
     const row = document.createElement("div");
-    row.className = `format-center-bracket-score-row${Number(entry.score) === Math.max(topScore, bottomScore) ? " is-winner" : ""}`;
+    const score = Number(entry.score);
+    const maxScore = Math.max(topScore, bottomScore);
+    const minScore = Math.min(topScore, bottomScore);
+    const isTie = topScore === bottomScore;
+    row.className = `format-center-bracket-score-row${!isTie && score === maxScore ? " is-winner" : ""}${!isTie && score === minScore ? " is-loser" : ""}`;
 
     const team = document.createElement("span");
     team.className = "format-center-bracket-score-label";
     team.textContent = entry.label;
 
-    const score = document.createElement("span");
-    score.className = "format-center-bracket-score-value";
-    score.textContent = Number(entry.score).toFixed(2);
+    const scoreEl = document.createElement("span");
+    scoreEl.className = "format-center-bracket-score-value";
+    scoreEl.textContent = Number(entry.score).toFixed(2);
 
-    row.append(team, score);
+    row.append(team, scoreEl);
     body.appendChild(row);
   });
 
@@ -1610,40 +1614,103 @@ function createBracketSection(titleText, summaryText = "") {
 }
 
 function createBracketDiagramPaths() {
-  const paths = [
-    "M236 54 H252 V182 H268",
-    "M236 310 H252 V182 H268",
-    "M236 566 H252 V694 H268",
-    "M236 822 H252 V694 H268",
-    "M468 182 H484 V438 H500",
-    "M468 694 H484 V438 H500",
-    "M670 438 H702",
-    "M1404 54 H1388 V182 H1372",
-    "M1404 310 H1388 V182 H1372",
-    "M1404 566 H1388 V694 H1372",
-    "M1404 822 H1388 V694 H1372",
-    "M1172 182 H1156 V438 H1140",
-    "M1172 694 H1156 V438 H1140",
-    "M970 438 H938"
-  ];
-
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   svg.setAttribute("class", "format-center-bracket-svg");
-  svg.setAttribute("viewBox", "0 0 1640 876");
   svg.setAttribute("aria-hidden", "true");
-
-  paths.forEach(d => {
-    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    path.setAttribute("d", d);
-    path.setAttribute("fill", "none");
-    path.setAttribute("stroke", "#9fb3c8");
-    path.setAttribute("stroke-width", "4");
-    path.setAttribute("stroke-linecap", "round");
-    path.setAttribute("stroke-linejoin", "round");
-    svg.appendChild(path);
-  });
-
   return svg;
+}
+
+function createBracketConnectorPath(d) {
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  path.setAttribute("d", d);
+  path.setAttribute("fill", "none");
+  path.setAttribute("stroke", "#9fb3c8");
+  path.setAttribute("stroke-width", "3");
+  path.setAttribute("stroke-linecap", "round");
+  path.setAttribute("stroke-linejoin", "round");
+  return path;
+}
+
+function getBracketNodeCardRect(node, diagramRect) {
+  const card = node?.querySelector(".format-center-bracket-matchup");
+  if (!card) return null;
+
+  const rect = card.getBoundingClientRect();
+  return {
+    left: rect.left - diagramRect.left,
+    right: rect.right - diagramRect.left,
+    top: rect.top - diagramRect.top,
+    bottom: rect.bottom - diagramRect.top,
+    centerY: rect.top - diagramRect.top + (rect.height / 2)
+  };
+}
+
+function connectBracketCards(svg, source, target, side) {
+  const diagram = svg.closest(".format-center-bracket-diagram");
+  const diagramRect = diagram.getBoundingClientRect();
+  const sourceRect = getBracketNodeCardRect(source, diagramRect);
+  const targetRect = getBracketNodeCardRect(target, diagramRect);
+
+  if (!sourceRect || !targetRect) return;
+
+  const isLeftSide = side === "left";
+  const sourceX = isLeftSide ? sourceRect.right : sourceRect.left;
+  const targetX = isLeftSide ? targetRect.left : targetRect.right;
+  const midX = sourceX + ((targetX - sourceX) / 2);
+  const d = `M${sourceX.toFixed(1)} ${sourceRect.centerY.toFixed(1)} H${midX.toFixed(1)} V${targetRect.centerY.toFixed(1)} H${targetX.toFixed(1)}`;
+
+  svg.appendChild(createBracketConnectorPath(d));
+}
+
+function getBracketNodeByPosition(nodes, round, side, row) {
+  return nodes.find(node =>
+    node.dataset.round === round &&
+    node.dataset.side === side &&
+    Number(node.style.gridRow) === row
+  );
+}
+
+function drawBracketDiagramPaths(diagram, grid) {
+  const svg = diagram.querySelector(".format-center-bracket-svg");
+  if (!svg || !grid) return;
+
+  const diagramRect = diagram.getBoundingClientRect();
+  const width = Math.max(diagramRect.width, 1);
+  const height = Math.max(diagramRect.height, 1);
+  const nodes = Array.from(grid.querySelectorAll(".format-center-bracket-node"));
+
+  svg.innerHTML = "";
+  svg.setAttribute("viewBox", `0 0 ${width.toFixed(1)} ${height.toFixed(1)}`);
+
+  const leftRoundOne = [1, 3, 5, 7].map(row => getBracketNodeByPosition(nodes, "round-of-16", "left", row));
+  const leftQuarterfinals = [2, 6].map(row => getBracketNodeByPosition(nodes, "quarterfinals", "left", row));
+  const leftSemifinal = getBracketNodeByPosition(nodes, "semifinals", "left", 4);
+  const championship = getBracketNodeByPosition(nodes, "championship", "center", 4);
+  const rightRoundOne = [1, 3, 5, 7].map(row => getBracketNodeByPosition(nodes, "round-of-16", "right", row));
+  const rightQuarterfinals = [2, 6].map(row => getBracketNodeByPosition(nodes, "quarterfinals", "right", row));
+  const rightSemifinal = getBracketNodeByPosition(nodes, "semifinals", "right", 4);
+
+  connectBracketCards(svg, leftRoundOne[0], leftQuarterfinals[0], "left");
+  connectBracketCards(svg, leftRoundOne[1], leftQuarterfinals[0], "left");
+  connectBracketCards(svg, leftRoundOne[2], leftQuarterfinals[1], "left");
+  connectBracketCards(svg, leftRoundOne[3], leftQuarterfinals[1], "left");
+  connectBracketCards(svg, leftQuarterfinals[0], leftSemifinal, "left");
+  connectBracketCards(svg, leftQuarterfinals[1], leftSemifinal, "left");
+  connectBracketCards(svg, leftSemifinal, championship, "left");
+
+  connectBracketCards(svg, rightRoundOne[0], rightQuarterfinals[0], "right");
+  connectBracketCards(svg, rightRoundOne[1], rightQuarterfinals[0], "right");
+  connectBracketCards(svg, rightRoundOne[2], rightQuarterfinals[1], "right");
+  connectBracketCards(svg, rightRoundOne[3], rightQuarterfinals[1], "right");
+  connectBracketCards(svg, rightQuarterfinals[0], rightSemifinal, "right");
+  connectBracketCards(svg, rightQuarterfinals[1], rightSemifinal, "right");
+  connectBracketCards(svg, rightSemifinal, championship, "right");
+}
+
+function redrawBracketDiagramPaths() {
+  document.querySelectorAll(".format-center-bracket-diagram").forEach(diagram => {
+    drawBracketDiagramPaths(diagram, diagram.querySelector(".format-center-bracket-grid"));
+  });
 }
 
 function createBracketDiagramNode(column, row, roundKey, sideKey, card) {
@@ -1660,41 +1727,41 @@ function createBracketDiagramNode(column, row, roundKey, sideKey, card) {
 
 function getMockDynastyPlayoffNodes() {
   return [
-    createBracketDiagramNode(1, 1, "round-of-16", "left", createBracketScoreCard("Round of 16 A", "Seed 1", 156.42, "Seed 16", 118.77)),
-    createBracketDiagramNode(1, 3, "round-of-16", "left", createBracketScoreCard("Round of 16 B", "Seed 8", 133.58, "Seed 9", 141.21)),
-    createBracketDiagramNode(1, 5, "round-of-16", "left", createBracketScoreCard("Round of 16 C", "Seed 5", 149.06, "Seed 12", 136.44)),
-    createBracketDiagramNode(1, 7, "round-of-16", "left", createBracketScoreCard("Round of 16 D", "Seed 4", 127.13, "Seed 13", 130.89)),
-    createBracketDiagramNode(2, 2, "quarterfinals", "left", createBracketScoreCard("Quarterfinal 1", "Seed 1", 151.88, "Seed 9", 146.22)),
-    createBracketDiagramNode(2, 6, "quarterfinals", "left", createBracketScoreCard("Quarterfinal 2", "Seed 5", 138.74, "Seed 13", 144.37)),
-    createBracketDiagramNode(3, 4, "semifinals", "left", createBracketScoreCard("Semifinal 1", "Seed 1", 162.54, "Seed 13", 154.91)),
-    createBracketDiagramNode(4, 4, "championship", "center", createBracketScoreCard("Title Game", "Seed 1", 168.02, "Seed 2", 159.47)),
-    createBracketDiagramNode(5, 4, "semifinals", "right", createBracketScoreCard("Semifinal 2", "Seed 2", 148.35, "Seed 6", 141.92)),
-    createBracketDiagramNode(6, 2, "quarterfinals", "right", createBracketScoreCard("Quarterfinal 3", "Seed 6", 140.68, "Seed 3", 134.11)),
-    createBracketDiagramNode(6, 6, "quarterfinals", "right", createBracketScoreCard("Quarterfinal 4", "Seed 7", 126.94, "Seed 2", 145.76)),
-    createBracketDiagramNode(7, 1, "round-of-16", "right", createBracketScoreCard("Round of 16 E", "Seed 6", 137.85, "Seed 11", 132.09)),
-    createBracketDiagramNode(7, 3, "round-of-16", "right", createBracketScoreCard("Round of 16 F", "Seed 3", 144.63, "Seed 14", 121.47)),
-    createBracketDiagramNode(7, 5, "round-of-16", "right", createBracketScoreCard("Round of 16 G", "Seed 7", 135.14, "Seed 10", 128.39)),
-    createBracketDiagramNode(7, 7, "round-of-16", "right", createBracketScoreCard("Round of 16 H", "Seed 2", 152.27, "Seed 15", 117.84))
+    createBracketDiagramNode(1, 1, "round-of-16", "left", createBracketScoreCard("Round of 16 A", "Foundry Night Shift", 156.42, "Legacy Taxi Squad", 118.77)),
+    createBracketDiagramNode(1, 3, "round-of-16", "left", createBracketScoreCard("Round of 16 B", "Empire Rookie Vault", 133.58, "Forge Future Picks", 141.21)),
+    createBracketDiagramNode(1, 5, "round-of-16", "left", createBracketScoreCard("Round of 16 C", "Startup Capital Kings", 149.06, "Waiver Wire Dynasty", 136.44)),
+    createBracketDiagramNode(1, 7, "round-of-16", "left", createBracketScoreCard("Round of 16 D", "Superflex Syndicate", 127.13, "Rookie Draft Rebels", 130.89)),
+    createBracketDiagramNode(2, 2, "quarterfinals", "left", createBracketScoreCard("Quarterfinal 1", "Foundry Night Shift", 151.88, "Forge Future Picks", 146.22)),
+    createBracketDiagramNode(2, 6, "quarterfinals", "left", createBracketScoreCard("Quarterfinal 2", "Startup Capital Kings", 138.74, "Rookie Draft Rebels", 144.37)),
+    createBracketDiagramNode(3, 4, "semifinals", "left", createBracketScoreCard("Semifinal 1", "Foundry Night Shift", 162.54, "Rookie Draft Rebels", 154.91)),
+    createBracketDiagramNode(4, 4, "championship", "center", createBracketScoreCard("Title Game", "Foundry Night Shift", 168.02, "Apex Asset Managers", 159.47)),
+    createBracketDiagramNode(5, 4, "semifinals", "right", createBracketScoreCard("Semifinal 2", "Apex Asset Managers", 148.35, "Taxi Squad Titans", 141.92)),
+    createBracketDiagramNode(6, 2, "quarterfinals", "right", createBracketScoreCard("Quarterfinal 3", "Taxi Squad Titans", 140.68, "Prospect War Room", 134.11)),
+    createBracketDiagramNode(6, 6, "quarterfinals", "right", createBracketScoreCard("Quarterfinal 4", "Devy Market Makers", 126.94, "Apex Asset Managers", 145.76)),
+    createBracketDiagramNode(7, 1, "round-of-16", "right", createBracketScoreCard("Round of 16 E", "Taxi Squad Titans", 137.85, "Contract Year Crew", 132.09)),
+    createBracketDiagramNode(7, 3, "round-of-16", "right", createBracketScoreCard("Round of 16 F", "Prospect War Room", 144.63, "Rebuild Deadline Club", 121.47)),
+    createBracketDiagramNode(7, 5, "round-of-16", "right", createBracketScoreCard("Round of 16 G", "Devy Market Makers", 135.14, "Three Year Window", 128.39)),
+    createBracketDiagramNode(7, 7, "round-of-16", "right", createBracketScoreCard("Round of 16 H", "Apex Asset Managers", 152.27, "Trade Block Brigade", 117.84))
   ];
 }
 
 function getMockRedraftPlayoffNodes() {
   return [
-    createBracketDiagramNode(1, 1, "round-of-16", "left", createBracketScoreCard("Round of 16 A", "Seed 1", 142.61, "Seed 29", 126.12)),
-    createBracketDiagramNode(1, 3, "round-of-16", "left", createBracketScoreCard("Round of 16 B", "Seed 12", 136.84, "Wild Card winner", 133.44)),
-    createBracketDiagramNode(1, 5, "round-of-16", "left", createBracketScoreCard("Round of 16 C", "Seed 5", 147.28, "Seed 21", 138.93)),
-    createBracketDiagramNode(1, 7, "round-of-16", "left", createBracketScoreCard("Round of 16 D", "Seed 14", 131.55, "Seed 18", 135.02)),
-    createBracketDiagramNode(2, 2, "quarterfinals", "left", createBracketScoreCard("Quarterfinal 1", "Seed 1", 150.9, "Seed 12", 141.16)),
-    createBracketDiagramNode(2, 6, "quarterfinals", "left", createBracketScoreCard("Quarterfinal 2", "Seed 5", 143.31, "Seed 18", 148.08)),
-    createBracketDiagramNode(3, 4, "semifinals", "left", createBracketScoreCard("Semifinal 1", "Seed 1", 155.67, "Seed 18", 149.54)),
-    createBracketDiagramNode(4, 4, "championship", "center", createBracketScoreCard("Title Game", "Seed 1", 161.48, "Seed 3", 157.83)),
-    createBracketDiagramNode(5, 4, "semifinals", "right", createBracketScoreCard("Semifinal 2", "Seed 3", 146.22, "Seed 10", 139.75)),
-    createBracketDiagramNode(6, 2, "quarterfinals", "right", createBracketScoreCard("Quarterfinal 3", "Seed 3", 138.94, "Seed 19", 134.5)),
-    createBracketDiagramNode(6, 6, "quarterfinals", "right", createBracketScoreCard("Quarterfinal 4", "Seed 10", 132.18, "Seed 16", 144.73)),
-    createBracketDiagramNode(7, 1, "round-of-16", "right", createBracketScoreCard("Round of 16 E", "Seed 10", 127.41, "Seed 19", 134.88)),
-    createBracketDiagramNode(7, 3, "round-of-16", "right", createBracketScoreCard("Round of 16 F", "Seed 3", 151.07, "Seed 14", 122.95)),
-    createBracketDiagramNode(7, 5, "round-of-16", "right", createBracketScoreCard("Round of 16 G", "Seed 16", 140.62, "Seed 20", 136.2)),
-    createBracketDiagramNode(7, 7, "round-of-16", "right", createBracketScoreCard("Round of 16 H", "Seed 11", 148.19, "Seed 18", 130.44))
+    createBracketDiagramNode(1, 1, "round-of-16", "left", createBracketScoreCard("Round of 16 A", "Apex Midnight Riders", 142.61, "Dominion Draft Room", 126.12)),
+    createBracketDiagramNode(1, 3, "round-of-16", "left", createBracketScoreCard("Round of 16 B", "Titan Touchdown Trust", 136.84, "Iron Wild Card Club", 133.44)),
+    createBracketDiagramNode(1, 5, "round-of-16", "left", createBracketScoreCard("Round of 16 C", "Vanguard Point Chasers", 147.28, "Apex Waiver Wire", 138.93)),
+    createBracketDiagramNode(1, 7, "round-of-16", "left", createBracketScoreCard("Round of 16 D", "Dominion Red Zone", 131.55, "Titan Sunday Syndicate", 135.02)),
+    createBracketDiagramNode(2, 2, "quarterfinals", "left", createBracketScoreCard("Quarterfinal 1", "Apex Midnight Riders", 150.9, "Titan Touchdown Trust", 141.16)),
+    createBracketDiagramNode(2, 6, "quarterfinals", "left", createBracketScoreCard("Quarterfinal 2", "Vanguard Point Chasers", 143.31, "Titan Sunday Syndicate", 148.08)),
+    createBracketDiagramNode(3, 4, "semifinals", "left", createBracketScoreCard("Semifinal 1", "Apex Midnight Riders", 155.67, "Titan Sunday Syndicate", 149.54)),
+    createBracketDiagramNode(4, 4, "championship", "center", createBracketScoreCard("Title Game", "Apex Midnight Riders", 161.48, "Iron Goal Line Gang", 157.83)),
+    createBracketDiagramNode(5, 4, "semifinals", "right", createBracketScoreCard("Semifinal 2", "Iron Goal Line Gang", 146.22, "Vanguard Flex Appeal", 139.75)),
+    createBracketDiagramNode(6, 2, "quarterfinals", "right", createBracketScoreCard("Quarterfinal 3", "Iron Goal Line Gang", 138.94, "Dominion Bench Mob", 134.5)),
+    createBracketDiagramNode(6, 6, "quarterfinals", "right", createBracketScoreCard("Quarterfinal 4", "Vanguard Flex Appeal", 132.18, "Apex Bye Week Bandits", 144.73)),
+    createBracketDiagramNode(7, 1, "round-of-16", "right", createBracketScoreCard("Round of 16 E", "Vanguard Flex Appeal", 127.41, "Dominion Bench Mob", 134.88)),
+    createBracketDiagramNode(7, 3, "round-of-16", "right", createBracketScoreCard("Round of 16 F", "Iron Goal Line Gang", 151.07, "Titan Clock Managers", 122.95)),
+    createBracketDiagramNode(7, 5, "round-of-16", "right", createBracketScoreCard("Round of 16 G", "Apex Bye Week Bandits", 140.62, "Iron FAAB Accountants", 136.2)),
+    createBracketDiagramNode(7, 7, "round-of-16", "right", createBracketScoreCard("Round of 16 H", "Dominion Deep Threats", 148.19, "Titan Sunday Syndicate", 130.44))
   ];
 }
 
@@ -1731,6 +1798,7 @@ function renderMainBracket(container, nodes) {
   diagram.appendChild(grid);
   board.append(labels, diagram);
   container.appendChild(board);
+  window.requestAnimationFrame(() => drawBracketDiagramPaths(diagram, grid));
 }
 
 function renderDynastyBracketView(group, container) {
@@ -1756,31 +1824,31 @@ function renderRedraftBracketView(group, container) {
   playInCards.push(
     createBracketScoreCard(
       "Wild Card Play-In",
-      "Seed 31",
+      "Iron Bubble Watch",
       118.94,
-      "Seed 32",
+      "Dominion Last Chance",
       124.66,
-      "Seed 32 advances into the opening-round funnel."
+      "Dominion Last Chance advances into the opening-round funnel."
     )
   );
 
   const openingRound = [];
   [
-    ["1 vs 30", "Seed 1", 143.8, "Seed 30", 109.44],
-    ["2 vs 29", "Seed 2", 132.17, "Seed 29", 137.52],
-    ["3 vs 28", "Seed 3", 149.93, "Seed 28", 121.38],
-    ["4 vs 27", "Seed 4", 141.04, "Seed 27", 126.15],
-    ["5 vs 26", "Seed 5", 145.66, "Seed 26", 115.81],
-    ["6 vs 25", "Seed 6", 128.45, "Seed 25", 134.09],
-    ["7 vs 24", "Seed 7", 138.97, "Seed 24", 119.72],
-    ["8 vs 23", "Seed 8", 130.88, "Seed 23", 117.14],
-    ["9 vs 22", "Seed 9", 136.51, "Seed 22", 111.26],
-    ["10 vs 21", "Seed 10", 142.64, "Seed 21", 140.37],
-    ["11 vs 20", "Seed 11", 138.42, "Seed 20", 131.48],
-    ["12 vs 19", "Seed 12", 144.55, "Seed 19", 121.91],
-    ["13 vs 18", "Seed 13", 126.04, "Seed 18", 133.29],
-    ["14 vs 17", "Seed 14", 139.83, "Seed 17", 120.62],
-    ["15 vs 16", "Seed 15", 113.58, "Seed 16", 127.41]
+    ["1 vs 30", "Apex Midnight Riders", 143.8, "Iron Bubble Watch", 109.44],
+    ["2 vs 29", "Iron Goal Line Gang", 132.17, "Dominion Draft Room", 137.52],
+    ["3 vs 28", "Titan Touchdown Trust", 149.93, "Apex Last Minute Adds", 121.38],
+    ["4 vs 27", "Vanguard Point Chasers", 141.04, "Titan Clock Managers", 126.15],
+    ["5 vs 26", "Dominion Red Zone", 145.66, "Iron Two Minute Drill", 115.81],
+    ["6 vs 25", "Vanguard Flex Appeal", 128.45, "Titan Sunday Syndicate", 134.09],
+    ["7 vs 24", "Apex Bye Week Bandits", 138.97, "Dominion Bench Mob", 119.72],
+    ["8 vs 23", "Iron FAAB Accountants", 130.88, "Vanguard Deep Bench", 117.14],
+    ["9 vs 22", "Dominion Deep Threats", 136.51, "Apex Waiver Wire", 111.26],
+    ["10 vs 21", "Titan Trade Desk", 142.64, "Iron Wild Card Club", 140.37],
+    ["11 vs 20", "Vanguard Goal Posts", 138.42, "Dominion Last Chance", 131.48],
+    ["12 vs 19", "Titan Red Zone Trust", 144.55, "Iron Sunday Ledger", 121.91],
+    ["13 vs 18", "Apex Clock Killers", 126.04, "Titan Fourth Quarter", 133.29],
+    ["14 vs 17", "Dominion Chain Movers", 139.83, "Vanguard Play Action", 120.62],
+    ["15 vs 16", "Iron Route Tree", 113.58, "Apex End Zone Equity", 127.41]
   ].forEach(([label, topSeed, topScore, bottomSeed, bottomScore]) => {
     openingRound.push(createBracketScoreCard(label, topSeed, topScore, bottomSeed, bottomScore));
   });
@@ -1864,6 +1932,10 @@ function updateCenterSectionTabs() {
   bracketSection.hidden = selectedSection !== "bracket";
   if (tradeTrackerSection) {
     tradeTrackerSection.hidden = !showTrades;
+  }
+
+  if (selectedSection === "bracket") {
+    window.requestAnimationFrame(redrawBracketDiagramPaths);
   }
 }
 
@@ -1971,6 +2043,22 @@ document.getElementById("refreshTradesButton")?.addEventListener("click", async 
   }
 
   await renderTradeTracker(scoreboardState.liveGroup);
+});
+
+let bracketResizeFrame = null;
+window.addEventListener("resize", () => {
+  if (scoreboardState.selectedSection !== "bracket") {
+    return;
+  }
+
+  if (bracketResizeFrame) {
+    window.cancelAnimationFrame(bracketResizeFrame);
+  }
+
+  bracketResizeFrame = window.requestAnimationFrame(() => {
+    bracketResizeFrame = null;
+    redrawBracketDiagramPaths();
+  });
 });
 
 if (scoreboardState.refreshTimer) {

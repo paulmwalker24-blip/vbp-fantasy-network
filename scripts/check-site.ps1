@@ -68,6 +68,7 @@ foreach ($format in @("all", "redraft", "dynasty", "dynastybracket", "bestball",
 
 foreach ($page in @(
   "redraft-constitution.html",
+  "32-team-redraft-constitution.html",
   "co-manager-constitution.html",
   "dynasty-constitution.html",
   "dynasty-bracket-constitution.html",

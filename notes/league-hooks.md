@@ -18,6 +18,7 @@ Short recruiting hooks capped at 200 characters or less.
 ## Best Ball Union
 
 - `BBU8`: full and paid; draft order has been generated. Do not use as an active recruiting hook.
+- `BBU9`: active $10 fast best ball room. Current paid count: 4/10. Drafts Tuesday 6/9 at 8 PM CST.
 
 ## Best Ball Gauntlet
 

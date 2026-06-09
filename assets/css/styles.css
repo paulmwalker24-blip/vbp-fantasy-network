@@ -1201,6 +1201,9 @@ a { color: inherit; }
 .bracket-center-section {
   padding: 26px 28px;
 }
+#bracketVisualSection {
+  overflow: visible;
+}
 .bracket-center-section .format-center-scoreboard-header {
   padding: 16px 18px;
   border: 1px solid #dbe7f4;
@@ -1650,6 +1653,7 @@ a { color: inherit; }
   border-radius: var(--radius-sm);
   background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
   box-shadow: var(--shadow-soft);
+  overflow-x: auto;
 }
 .format-center-bracket-stage-header {
   margin-bottom: 18px;
@@ -1685,14 +1689,15 @@ a { color: inherit; }
 .format-center-bracket-board {
   display: grid;
   gap: 16px;
-  overflow-x: auto;
+  overflow-x: visible;
+  max-width: 100%;
   padding: 8px 0 12px;
 }
 .format-center-bracket-label-row {
   display: grid;
-  grid-template-columns: 248px 212px 184px 248px 184px 212px 248px;
-  gap: 28px;
-  min-width: 1632px;
+  grid-template-columns: 1.22fr 1.02fr 0.9fr 1.22fr 0.9fr 1.02fr 1.22fr;
+  gap: clamp(8px, 1vw, 16px);
+  min-width: 0;
 }
 .format-center-bracket-label {
   text-align: center;
@@ -1704,8 +1709,8 @@ a { color: inherit; }
 }
 .format-center-bracket-diagram {
   position: relative;
-  min-width: 1632px;
-  padding: 24px;
+  min-width: 0;
+  padding: clamp(12px, 1.5vw, 20px);
   border-radius: var(--radius-sm);
   background:
     radial-gradient(circle at top left, rgba(219, 234, 254, 0.55), transparent 30%),
@@ -1715,17 +1720,18 @@ a { color: inherit; }
 }
 .format-center-bracket-svg {
   position: absolute;
-  inset: 24px;
-  width: calc(100% - 48px);
-  height: calc(100% - 48px);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 .format-center-bracket-grid {
   position: relative;
   display: grid;
-  grid-template-columns: 248px 212px 184px 248px 184px 212px 248px;
-  grid-template-rows: repeat(7, 108px);
-  gap: 22px 28px;
-  min-width: 1584px;
+  grid-template-columns: 1.22fr 1.02fr 0.9fr 1.22fr 0.9fr 1.02fr 1.22fr;
+  grid-template-rows: repeat(7, minmax(116px, 1fr));
+  gap: clamp(12px, 1.3vw, 18px) clamp(8px, 1vw, 16px);
+  min-width: 0;
 }
 .format-center-bracket-node {
   position: relative;
@@ -1748,17 +1754,17 @@ a { color: inherit; }
   border: 1px solid #d6e2f0;
   border-radius: var(--radius-sm);
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-  padding: 11px;
+  padding: clamp(7px, 0.8vw, 10px);
   min-height: var(--matchup-min-height);
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .format-center-bracket-diagram-card {
-  min-height: 108px;
+  min-height: 116px;
   height: 100%;
   width: 100%;
-  max-width: 248px;
+  max-width: none;
 }
 .format-center-bracket-matchup.is-compact {
   min-height: auto;
@@ -1778,7 +1784,7 @@ a { color: inherit; }
 }
 .format-center-bracket-matchup-header h3 {
   margin: 0;
-  font-size: 0.86rem;
+  font-size: clamp(0.68rem, 0.78vw, 0.82rem);
   line-height: 1.08;
 }
 .format-center-bracket-text-body {
@@ -1790,25 +1796,29 @@ a { color: inherit; }
 }
 .format-center-bracket-score-body {
   display: grid;
-  gap: 8px;
+  gap: 6px;
 }
 .format-center-bracket-score-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 8px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 5px;
   align-items: center;
-  padding: 7px 8px;
+  padding: 5px 6px;
   border-radius: var(--radius-sm);
   border: 1px solid #d9e4f0;
   background: #f8fbff;
 }
 .format-center-bracket-score-row.is-winner {
-  background: #eaf3ff;
-  border-color: #bfd4ee;
+  background: rgba(187, 247, 208, 0.42);
+  border-color: rgba(34, 197, 94, 0.3);
+}
+.format-center-bracket-score-row.is-loser {
+  background: rgba(254, 202, 202, 0.42);
+  border-color: rgba(239, 68, 68, 0.25);
 }
 .format-center-bracket-score-label {
   color: #244466;
-  font-size: 0.8rem;
+  font-size: clamp(0.64rem, 0.72vw, 0.76rem);
   font-weight: 700;
   line-height: 1.12;
   min-width: 0;
@@ -1816,9 +1826,10 @@ a { color: inherit; }
 }
 .format-center-bracket-score-value {
   color: #0f172a;
-  font-size: 0.86rem;
+  font-size: clamp(0.64rem, 0.72vw, 0.76rem);
   font-weight: 700;
   white-space: nowrap;
+  justify-self: end;
 }
 .format-center-bracket-matchup-note {
   margin: 6px 0 0;
@@ -1880,13 +1891,13 @@ a { color: inherit; }
   box-shadow: var(--shadow);
 }
 .format-center-bracket-node[data-round="quarterfinals"] .format-center-bracket-diagram-card {
-  max-width: 212px;
+  max-width: none;
 }
 .format-center-bracket-node[data-round="semifinals"] .format-center-bracket-diagram-card {
-  max-width: 184px;
+  max-width: none;
 }
 .format-center-bracket-node[data-round="championship"] .format-center-bracket-diagram-card {
-  max-width: 248px;
+  max-width: none;
 }
 .format-center-bracket-node[data-round="championship"] .format-center-bracket-matchup-header h3 {
   color: #0f172a;

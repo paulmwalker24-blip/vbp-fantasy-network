@@ -27,6 +27,7 @@ const FORMAT_META = {
 
 const BEST_BALL_UNION_TOTAL_BUY_IN = 200;
 const OPEN_NOW_PRIORITY = [
+  { id: "RD5", note: "New 32-team redraft tournament with shallow rosters." },
   { id: "RD4", note: "Standalone high-stakes redraft room." },
   { id: "RDB1", note: "Slow draft redraft bracket priority room." },
   { id: "RDB3", note: "Fast draft redraft bracket priority room." },

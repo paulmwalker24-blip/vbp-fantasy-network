@@ -118,7 +118,7 @@ Use room-closing marketing before catalog marketing.
 - Lead with the current active room when there is a scheduled draft time.
 - Always say `fast draft`.
 - Say new BBU leagues start drafting 24 hours after the league is filled and fully paid unless a same-day draft time has already been set.
-- `BBU1` through `BBU8` are full or already drafting. Do not use the old BBU8 June 3 recruiting copy.
+- `BBU1` through `BBU8` are full or already drafting. `BBU9` is the current active room at `4/10 paid` and drafts Tuesday 6/9 at 8 PM CST.
 - Refresh the active `BBU` template when the current room changes so the pitch does not feel stale.
 - When a `BBU` post has a scheduled draft time, lead with that urgency and keep the description focused on the active room.
 
@@ -567,20 +567,20 @@ Dynasty Bracket constitution: https://vbp-fantasy-network.vercel.app/dynasty-bra
 ### BBU
 
 When to use:
-- next active Best Ball Union recruiting post after confirming the current open room
+- current active Best Ball Union recruiting post
 
 Title:
 
 ```text
-VBP Fantasy Network | $10 Best Ball Union | Current Room Open
+VBP Fantasy Network | $10 Best Ball Union #9 | Drafts Tuesday 6/9
 ```
 
 Body:
 
 ```text
-VBP Fantasy Network has a $10 Best Ball Union room open for anyone who wants a simple best ball draft. Confirm the current active room and paid count before posting.
+VBP Fantasy Network has Best Ball Union #9 open for anyone who wants a simple $10 best ball draft. It is 4/10 paid and drafts Tuesday 6/9 at 8 PM CST.
 
-New rooms start drafting after they fill and are fully paid unless a specific draft time has already been announced.
+This is the current active BBU room.
 
 This is a 10-team draft-and-hold best ball league on Sleeper. It uses a 90-second snake draft, 18-player rosters, Progressive PPR scoring, and a weekly median matchup.
 
@@ -588,7 +588,7 @@ After the draft, there are no waivers, trades, pickups, or weekly lineup decisio
 
 Each full BBU room pays $75 to that league winner. Another $25 per room goes to the manager with the single highest total season score across all Best Ball Union teams.
 
-Best Ball Union #8 ($10, Fast): https://sleeper.com/i/Y21R6kl0dWBDD
+Best Ball Union #9 ($10, Fast): https://sleeper.com/i/LVDOk2Z9n57e0
 Best Ball constitution: https://vbp-fantasy-network.vercel.app/bestball-constitution.html
 Best Ball Union Center: https://vbp-fantasy-network.vercel.app/bestball-center.html
 Main hub: https://vbp-fantasy-network.vercel.app/

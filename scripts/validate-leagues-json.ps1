@@ -34,8 +34,12 @@ $expectedConstitutionPageByFormat = @{
   pickem = "pickem-constitution.html"
   chopped = "chopped-constitution.html"
 }
+$alternateConstitutionPagesByFormat = @{
+  redraft = @("32-team-redraft-constitution.html")
+}
 $knownConstitutionPages = @(
   "redraft-constitution.html",
+  "32-team-redraft-constitution.html",
   "co-manager-constitution.html",
   "dynasty-constitution.html",
   "dynasty-bracket-constitution.html",
@@ -181,8 +185,12 @@ foreach ($league in $payload.leagues) {
     Add-Issue -Issues $issues -Severity "warning" -LeagueId $leagueId -Message ("Unknown constitutionPage '{0}'." -f $constitutionPage)
   } elseif (-not (Test-Path -LiteralPath (Join-Path (Split-Path -Parent $jsonFullPath | Split-Path -Parent) $constitutionPage))) {
     Add-Issue -Issues $issues -Severity "error" -LeagueId $leagueId -Message ("constitutionPage file does not exist: {0}" -f $constitutionPage)
-  } elseif ($expectedConstitutionPageByFormat.ContainsKey($format) -and $constitutionPage -ne $expectedConstitutionPageByFormat[$format]) {
-    Add-Issue -Issues $issues -Severity "error" -LeagueId $leagueId -Message ("constitutionPage '{0}' does not match expected page for format '{1}'." -f $constitutionPage, $format)
+  } elseif ($expectedConstitutionPageByFormat.ContainsKey($format)) {
+    $expectedConstitutionPage = $expectedConstitutionPageByFormat[$format]
+    $alternateConstitutionPages = if ($alternateConstitutionPagesByFormat.ContainsKey($format)) { @($alternateConstitutionPagesByFormat[$format]) } else { @() }
+    if ($constitutionPage -ne $expectedConstitutionPage -and $constitutionPage -notin $alternateConstitutionPages) {
+      Add-Issue -Issues $issues -Severity "error" -LeagueId $leagueId -Message ("constitutionPage '{0}' does not match expected page for format '{1}'." -f $constitutionPage, $format)
+    }
   }
 
   if ($status -eq "open" -and [string]::IsNullOrWhiteSpace($inviteLink)) {
