@@ -14,7 +14,7 @@
 
 ### Immediate
 
-- [x] Replace the temporary constitution headers for Redraft, Dynasty, Dynasty Bracket, Redraft Bracket, Chopped, Pick'em, Co-Manager Redraft, Sacrifice Redraft, Best Ball Gauntlet, and Keeper with dedicated wide header assets.
+- [x] Replace the temporary constitution headers for Redraft, Dynasty, Dynasty Bracket, Redraft Bracket, Chopped, Pick'em, Co-Manager Redraft, Sacrifice Redraft, Best Ball Union, Best Ball Gauntlet, and Keeper with dedicated wide header assets.
 - [x] Split the Bracket Center into redraft and dynasty views inside the same page and scaffold the dynasty-bracket ledger path so both formats can share the same public center pattern.
 - [x] Add the LeagueSafe links for `DYN4`, `KP1`, and `KP2`, clearing the remaining active league-data validation warnings.
 - [x] Add dated addendum and revision-history sections to the public constitutions, and update the draft-timing language to reflect the post-NFL-draft rule change.
