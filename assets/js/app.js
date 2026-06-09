@@ -35,7 +35,7 @@ const OPEN_NOW_PRIORITY = [
   { id: "BG1", note: "Micro best ball with a 24-team standings race." },
   { id: "BBU7", note: "Fast draft Best Ball Union room." },
   { id: "PK1", note: "Season-long NFL picks against the spread." },
-  { id: "DYN7", note: "Lower buy-in superflex dynasty startup." },
+  { id: "DYN9", note: "Slow draft superflex dynasty startup with the DYN8+ cutdown model." },
   { id: "DYB1", note: "First priority room for the 48-team dynasty bracket." },
   { id: "KP1", note: "Keeper startup at the lower buy-in level." },
   { id: "KP2", note: "Keeper startup at the higher buy-in level." }
