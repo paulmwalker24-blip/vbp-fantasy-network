@@ -9,41 +9,32 @@
   <meta property="og:title" content="VBP Fantasy Network" />
   <meta property="og:description" content="Competitive fantasy football leagues built around structure, transparency, and a community that gives back." />
   <meta property="og:url" content="https://vbp-fantasy-network.vercel.app/" />
-  <meta property="og:image" content="https://vbp-fantasy-network.vercel.app/assets/images/banner.png" />
+  <meta property="og:image" content="https://vbp-fantasy-network.vercel.app/assets/images/vbp-network-home-hero.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="VBP Fantasy Network" />
   <meta name="twitter:description" content="Competitive fantasy football leagues built around structure, transparency, and a community that gives back." />
-  <meta name="twitter:image" content="https://vbp-fantasy-network.vercel.app/assets/images/banner.png" />
+  <meta name="twitter:image" content="https://vbp-fantasy-network.vercel.app/assets/images/vbp-network-home-hero.png" />
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260522h" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260608r" />
 </head>
 <body>
-  <header class="site-banner">
-    <img src="assets/images/banner.png" alt="VBP Fantasy Network" class="site-banner-image" />
+  <header class="network-hero">
+    <img src="assets/images/vbp-network-home-hero.png" alt="VBP Fantasy Network fantasy football leagues" class="network-hero-image" />
+    <div class="network-hero-actions" aria-label="Primary navigation">
+      <a href="#open-now" class="btn btn-primary">Open Now</a>
+      <a href="#league-centers" class="btn btn-secondary">League Centers</a>
+      <a href="#directory" class="btn btn-secondary">All Formats</a>
+      <a href="#constitutions" class="btn btn-secondary">Rules Library</a>
+    </div>
   </header>
 
   <main>
-    <section class="intro-section">
-      <div class="container narrow">
-        <h1>VBP Fantasy Network</h1>
-        <p class="intro-copy">
-          Competitive fantasy football leagues with clear rules, secure payouts, live openings, and a community that gives back.
-        </p>
-        <div class="top-actions">
-          <a href="#open-now" class="btn btn-primary">Open Now</a>
-          <a href="#league-centers" class="btn btn-secondary">League Centers</a>
-          <a href="#constitutions" class="btn btn-secondary">Rules Library</a>
-          <a href="#donations" class="btn btn-secondary">Support Classrooms</a>
-        </div>
-      </div>
-    </section>
-
     <section id="open-now" class="section hub-dashboard-section">
       <div class="container hub-dashboard-layout">
         <div class="hub-main">
           <div class="section-header">
             <h2>Open Now</h2>
-            <p>Current recruiting priorities across the network, with join links and rule pages close at hand.</p>
+            <p>Current recruiting priorities, live openings, and the fastest paths into the network.</p>
           </div>
           <div id="openNowContainer" class="open-now-grid"></div>
         </div>
@@ -60,22 +51,6 @@
               <a href="bracket-center.html">Bracket Center</a>
               <a href="bestball-center.html">Best Ball Union Center</a>
               <a href="power-rankings.html">Power Rankings Hub</a>
-            </div>
-          </section>
-
-          <section class="hub-panel" id="constitutions">
-            <h2>Rules Library</h2>
-            <div class="hub-link-list hub-link-columns">
-              <a href="redraft-constitution.html">Redraft</a>
-              <a href="co-manager-constitution.html">Co-Manager Redraft</a>
-              <a href="dynasty-constitution.html">Dynasty</a>
-              <a href="dynasty-bracket-constitution.html">Dynasty Bracket</a>
-              <a href="bestball-constitution.html">Best Ball Union</a>
-              <a href="bestball-gauntlet-constitution.html">Best Ball Gauntlet</a>
-              <a href="bracket-constitution.html">Redraft Bracket</a>
-              <a href="keeper-constitution.html">Keeper</a>
-              <a href="pickem-constitution.html">Pick'em</a>
-              <a href="chopped-constitution.html">Chopped</a>
             </div>
           </section>
         </aside>
@@ -99,6 +74,7 @@
           <button type="button" class="directory-card format-filter" data-format="keeper">Keeper</button>
           <button type="button" class="directory-card format-filter" data-format="pickem">Pick'em</button>
           <button type="button" class="directory-card format-filter" data-format="redraft">Redraft</button>
+          <button type="button" class="directory-card format-filter" data-format="comanager">Co-Manager</button>
         </div>
       </div>
     </section>
@@ -110,6 +86,61 @@
           <p id="lastUpdated" class="updated"></p>
         </div>
         <div id="leaguesContainer"></div>
+      </div>
+    </section>
+
+    <section id="constitutions" class="section rules-showcase-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Rules Library</h2>
+          <p>Every format has a dedicated constitution, public structure, and one place to check the details.</p>
+        </div>
+        <div class="rules-showcase-grid">
+          <a class="rules-showcase-card" href="redraft-constitution.html">
+            <img src="assets/images/constitution-redraft.png" alt="Redraft League Constitution" />
+            <span>Redraft</span>
+          </a>
+          <a class="rules-showcase-card" href="bracket-constitution.html">
+            <img src="assets/images/constitution-redraft-bracket.png" alt="Redraft Bracket Constitution" />
+            <span>Redraft Bracket</span>
+          </a>
+          <a class="rules-showcase-card" href="dynasty-constitution.html">
+            <img src="assets/images/constitution-dynasty.png" alt="Dynasty League Constitution" />
+            <span>Dynasty</span>
+          </a>
+          <a class="rules-showcase-card" href="dynasty-bracket-constitution.html">
+            <img src="assets/images/constitution-dynasty-bracket.png" alt="Dynasty Bracket Constitution" />
+            <span>Dynasty Bracket</span>
+          </a>
+          <a class="rules-showcase-card" href="bestball-constitution.html">
+            <img src="assets/images/constitution-bestball-union.png" alt="Best Ball Union Constitution" />
+            <span>Best Ball Union</span>
+          </a>
+          <a class="rules-showcase-card" href="bestball-gauntlet-constitution.html">
+            <img src="assets/images/constitution-bestball-gauntlet.png" alt="Best Ball Gauntlet Constitution" />
+            <span>Best Ball Gauntlet</span>
+          </a>
+          <a class="rules-showcase-card" href="co-manager-constitution.html">
+            <img src="assets/images/constitution-co-manager.png" alt="Co-Manager League Constitution" />
+            <span>Co-Manager</span>
+          </a>
+          <a class="rules-showcase-card" href="keeper-constitution.html">
+            <img src="assets/images/constitution-keeper.png" alt="Keeper League Constitution" />
+            <span>Keeper</span>
+          </a>
+          <a class="rules-showcase-card" href="chopped-constitution.html">
+            <img src="assets/images/constitution-chopped.png" alt="Chopped League Constitution" />
+            <span>Chopped</span>
+          </a>
+          <a class="rules-showcase-card" href="pickem-constitution.html">
+            <img src="assets/images/constitution-pickem.png" alt="Pick'em League Constitution" />
+            <span>Pick'em</span>
+          </a>
+          <a class="rules-showcase-card" href="sacrifice-redraft-constitution.html">
+            <img src="assets/images/constitution-sacrifice.png" alt="Sacrifice League Constitution" />
+            <span>Sacrifice</span>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -130,6 +161,6 @@
     </section>
   </main>
 
-  <script src="assets/js/app.js?v=20260522h"></script>
+  <script src="assets/js/app.js?v=20260608r"></script>
 </body>
 </html>
