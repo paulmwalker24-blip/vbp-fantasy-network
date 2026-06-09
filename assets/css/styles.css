@@ -72,7 +72,7 @@ a { color: inherit; }
   position: relative;
   z-index: 1;
   width: min(var(--max), calc(100% - 32px));
-  margin: -28px auto 28px;
+  margin: 18px auto 28px;
   padding: 12px;
   display: flex;
   flex-wrap: wrap;
