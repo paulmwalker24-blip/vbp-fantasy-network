@@ -98,6 +98,24 @@ function ConvertTo-TitleText {
   return $culture.TextInfo.ToTitleCase($text.ToLowerInvariant())
 }
 
+function Get-LeagueStatusMarker {
+  param(
+    [string]$Status,
+    [int]$OpenSpots,
+    [bool]$IsFull
+  )
+
+  if ($IsFull -or $OpenSpots -le 0 -or $Status -eq "full" -or $Status -eq "closed") {
+    return [char]::ConvertFromUtf32(0x1F534)
+  }
+
+  if ($Status -eq "open") {
+    return [char]::ConvertFromUtf32(0x1F7E2)
+  }
+
+  return [char]::ConvertFromUtf32(0x1F7E1)
+}
+
 function Get-FormatConfig {
   param(
     [string]$Key
@@ -421,10 +439,14 @@ $leagueRows = foreach ($league in $leaguePayload.leagues) {
     $constitutionPage = $config.constitutionPage
   }
 
+  $isFull = ($teams -gt 0 -and ($assigned -ge $teams -or $status -eq "full"))
+  $statusMarker = Get-LeagueStatusMarker -Status $status -OpenSpots $openSpots -IsFull $isFull
+
   [pscustomobject]@{
     id = $leagueId
     name = [string]$league.name
     status = $status
+    statusMarker = $statusMarker
     statusLabel = ConvertTo-TitleText $status
     sleeperStatus = $sleeperStatus
     sleeperStatusLabel = if ($sleeperStatus) { ConvertTo-TitleText $sleeperStatus } else { "" }
@@ -434,7 +456,7 @@ $leagueRows = foreach ($league in $leaguePayload.leagues) {
     assigned = $assigned
     teams = $teams
     openSpots = $openSpots
-    isFull = ($teams -gt 0 -and ($assigned -ge $teams -or $status -eq "full"))
+    isFull = $isFull
     paid = $paid
     inviteLink = ([string]$league.inviteLink).Trim()
     rulesLink = ("{0}/{1}" -f $AssetBaseUrl.TrimEnd('/'), $constitutionPage)
@@ -454,6 +476,9 @@ $openRows = @($leagueRows | Where-Object { -not $_.isFull })
 
 $updatedAt = Get-Date
 $timestamp = $updatedAt.ToUniversalTime().ToString("o")
+$openMarker = [char]::ConvertFromUtf32(0x1F7E2)
+$pendingMarker = [char]::ConvertFromUtf32(0x1F7E1)
+$closedMarker = [char]::ConvertFromUtf32(0x1F534)
 $imageUrl = ("{0}/assets/images/{1}" -f $AssetBaseUrl.TrimEnd('/'), $config.image)
 $rulesUrl = ("{0}/{1}" -f $AssetBaseUrl.TrimEnd('/'), $config.constitutionPage)
 $paidText = if ($null -ne $totalPaid -and $totalTeams -gt 0) {
@@ -467,7 +492,7 @@ $snapshotText = if ($totalTeams -gt 0) {
   $config.emptyText
 }
 $fullSummaryLines = @($fullRows | ForEach-Object {
-  "- $($_.name): full ($($_.assigned)/$($_.teams))"
+  "- $($_.statusMarker) $($_.name): full ($($_.assigned)/$($_.teams))"
 })
 $fullSummaryText = if ($fullSummaryLines.Count -gt 0) {
   $fullSummaryLines -join "`n"
@@ -484,6 +509,7 @@ $openSummaryText = if ($openRows.Count -gt 0) {
 
 $overviewDescription = @(
   "**Current Snapshot**",
+  ("{0} Open | {1} Coming soon / pending | {2} Full / closed" -f $openMarker, $pendingMarker, $closedMarker),
   "$($leagueRows.Count) league record(s)",
   $snapshotText,
   $paidText,
@@ -522,7 +548,7 @@ $leagueEmbeds = foreach ($row in $visibleRows) {
   $sleeperLine = if ($row.sleeperStatusLabel) { "**Sleeper status:** $($row.sleeperStatusLabel)" } else { $null }
   $notesLine = if ($row.notes) { "**Notes:** $($row.notes)" } else { $null }
   $descriptionLines = @(
-    "**Status:** $($row.statusLabel)",
+    "**Status:** $($row.statusMarker) $($row.statusLabel)",
     $sleeperLine,
     $draftLine,
     "**Buy-in:** $($row.buyIn)",
@@ -535,7 +561,7 @@ $leagueEmbeds = foreach ($row in $visibleRows) {
   ) | Where-Object { -not [string]::IsNullOrWhiteSpace([string]$_) }
 
   $embed = @{
-    title = $row.name
+    title = ("{0} {1}" -f $row.statusMarker, $row.name)
     description = ($descriptionLines -join "`n")
     color = $config.color
     thumbnail = @{
