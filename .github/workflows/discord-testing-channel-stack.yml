@@ -64,6 +64,12 @@ jobs:
               "sacrifice-testing" = $env:DISCORD_WEBHOOK_SACRIFICE_TESTING
             }
           }
+
+          $configuredCount = @($config.channels.GetEnumerator() | Where-Object { -not [string]::IsNullOrWhiteSpace([string]$_.Value) }).Count
+          if ($configuredCount -eq 0) {
+            throw "No Discord webhook secrets are configured. Add the DISCORD_WEBHOOK_*_TESTING repository secrets listed in docs/discord-server/testing-channel-map.md, then rerun this workflow."
+          }
+
           $config | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath data/private/discord-webhooks.json
 
       - name: Post Discord testing channel stack
