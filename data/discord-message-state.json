@@ -1,0 +1,174 @@
+{
+    "redraft-bracket-status":  {
+                                   "messageId":  "1515833084753219665",
+                                   "groupId":  "BRACKET-2026-1",
+                                   "updatedAt":  "2026-06-16T11:22:17"
+                               },
+    "redraft-status":  {
+                           "messageId":  "1516478051683143923",
+                           "updatedAt":  "2026-06-16T11:22:22"
+                       },
+    "dynasty-bracket-status":  {
+                                   "messageId":  "1515845386433200179",
+                                   "updatedAt":  "2026-06-16T11:21:52"
+                               },
+    "bbu-status":  {
+                       "messageId":  "1515845390325383218",
+                       "updatedAt":  "2026-06-16T11:21:36"
+                   },
+    "keeper-status":  {
+                          "messageId":  "1515848648091500745",
+                          "updatedAt":  "2026-06-16T11:22:06"
+                      },
+    "pickem-status":  {
+                          "messageId":  "1515848672817188996",
+                          "updatedAt":  "2026-06-16T11:22:10"
+                      },
+    "chopped-status":  {
+                           "messageId":  "1515848701594308739",
+                           "updatedAt":  "2026-06-16T11:21:40"
+                       },
+    "sacrifice-status":  {
+                             "messageId":  "1515848727636611112",
+                             "updatedAt":  "2026-06-16T11:22:26"
+                         },
+    "dynasty-status":  {
+                           "messageId":  "1515848755826524230",
+                           "updatedAt":  "2026-06-16T11:22:01"
+                       },
+    "bbg-status":  {
+                       "messageId":  "1515848786017255564",
+                       "updatedAt":  "2026-06-16T11:21:26"
+                   },
+    "comanager-status":  {
+                             "messageId":  "1516477896171065525",
+                             "updatedAt":  "2026-06-16T11:21:45"
+                         },
+    "redraft32-status":  {
+                             "messageId":  "1516300994646904893",
+                             "updatedAt":  "2026-06-16T11:21:22"
+                         },
+    "league-directory-status":  {
+                                    "messageId":  "1515915805563293717",
+                                    "updatedAt":  "2026-06-14T22:13:08"
+                                },
+    "server-rules":  {
+                         "messageId":  "1515917412615196743",
+                         "updatedAt":  "2026-06-14T22:14:42"
+                     },
+    "constitution-index":  {
+                               "messageId":  "1515918519345221676",
+                               "threadId":  "1515918519345221676",
+                               "updatedAt":  "2026-06-14T22:19:06"
+                           },
+    "constitution-forum-posts":  {
+                                     "redraft":  {
+                                                     "messageId":  "1515919460681253035",
+                                                     "threadId":  "1515919460681253035",
+                                                     "updatedAt":  "2026-06-14T22:22:58"
+                                                 },
+                                     "redraft-bracket":  {
+                                                             "messageId":  "1515919464187559976",
+                                                             "threadId":  "1515919464187559976",
+                                                             "updatedAt":  "2026-06-14T22:22:58"
+                                                         },
+                                     "32-team-redraft":  {
+                                                             "messageId":  "1515919467517972481",
+                                                             "threadId":  "1515919467517972481",
+                                                             "updatedAt":  "2026-06-14T22:22:59"
+                                                         },
+                                     "co-manager-redraft":  {
+                                                                "messageId":  "1515919469803733072",
+                                                                "threadId":  "1515919469803733072",
+                                                                "updatedAt":  "2026-06-14T22:22:59"
+                                                            },
+                                     "sacrifice-redraft":  {
+                                                               "messageId":  "1515919472232370207",
+                                                               "threadId":  "1515919472232370207",
+                                                               "updatedAt":  "2026-06-14T22:22:59"
+                                                           },
+                                     "dynasty":  {
+                                                     "messageId":  "1515919474073538661",
+                                                     "threadId":  "1515919474073538661",
+                                                     "updatedAt":  "2026-06-14T22:23:00"
+                                                 },
+                                     "dynasty-bracket":  {
+                                                             "messageId":  "1515919475998724228",
+                                                             "threadId":  "1515919475998724228",
+                                                             "updatedAt":  "2026-06-14T22:23:00"
+                                                         },
+                                     "keeper":  {
+                                                    "messageId":  "1515919479018881125",
+                                                    "threadId":  "1515919479018881125",
+                                                    "updatedAt":  "2026-06-14T22:23:00"
+                                                },
+                                     "best-ball-union":  {
+                                                             "messageId":  "1515919481665487070",
+                                                             "threadId":  "1515919481665487070",
+                                                             "updatedAt":  "2026-06-14T22:23:01"
+                                                         },
+                                     "best-ball-gauntlet":  {
+                                                                "messageId":  "1515919484903358476",
+                                                                "threadId":  "1515919484903358476",
+                                                                "updatedAt":  "2026-06-14T22:23:01"
+                                                            },
+                                     "chopped":  {
+                                                     "messageId":  "1515919487625592993",
+                                                     "threadId":  "1515919487625592993",
+                                                     "updatedAt":  "2026-06-14T22:23:01"
+                                                 },
+                                     "pickem":  {
+                                                    "messageId":  "1515919489407909889",
+                                                    "threadId":  "1515919489407909889",
+                                                    "updatedAt":  "2026-06-14T22:23:02"
+                                                }
+                                 },
+    "redraft32-guide":  {
+                            "messageId":  "1516300950074163280",
+                            "updatedAt":  "2026-06-16T11:21:19"
+                        },
+    "bbg-guide":  {
+                      "messageId":  "1516477803971874847",
+                      "updatedAt":  "2026-06-16T11:21:23"
+                  },
+    "bestball-guide":  {
+                           "messageId":  "1516477822355378307",
+                           "updatedAt":  "2026-06-16T11:21:28"
+                       },
+    "chopped-guide":  {
+                          "messageId":  "1516477864806191175",
+                          "updatedAt":  "2026-06-16T11:21:38"
+                      },
+    "comanager-guide":  {
+                            "messageId":  "1516477882711408700",
+                            "updatedAt":  "2026-06-16T11:21:42"
+                        },
+    "dynastybracket-guide":  {
+                                 "messageId":  "1516477902127104202",
+                                 "updatedAt":  "2026-06-16T11:21:47"
+                             },
+    "dynasty-guide":  {
+                          "messageId":  "1516477932086759646",
+                          "updatedAt":  "2026-06-16T11:21:54"
+                      },
+    "keeper-guide":  {
+                         "messageId":  "1516477970913558648",
+                         "updatedAt":  "2026-06-16T11:22:03"
+                     },
+    "pickem-guide":  {
+                         "messageId":  "1516477991952060478",
+                         "updatedAt":  "2026-06-16T11:22:08"
+                     },
+    "bracket-guide":  {
+                          "messageId":  "1516478008347594924",
+                          "updatedAt":  "2026-06-16T11:22:12"
+                      },
+    "redraft-guide":  {
+                          "messageId":  "1516478038127149109",
+                          "updatedAt":  "2026-06-16T11:22:19"
+                      },
+    "sacrifice-guide":  {
+                            "messageId":  "1516478058264268993",
+                            "updatedAt":  "2026-06-16T11:22:24"
+                        }
+}
