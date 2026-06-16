@@ -129,6 +129,7 @@ function Get-FormatConfig {
         label = "Keeper"
         title = "VBP Keeper Openings"
         description = "Keeper leagues with escalating keeper costs, future-pick payment rules, and long-term roster decisions."
+        basics = @("Escalating keeper costs with multi-year roster planning.", "Future draft picks may be traded up to two years out.", "Keeper decisions and payment obligations are governed by the constitution.")
         image = "constitution-keeper.png"
         color = 0xF2C94C
         constitutionPage = "keeper-constitution.html"
@@ -143,6 +144,7 @@ function Get-FormatConfig {
         label = "Pick'em"
         title = "VBP Pick'em Openings"
         description = "Spread-based NFL pick'em contest. This board uses Sleeper league users because Pick'em does not use normal fantasy rosters."
+        basics = @("NFL pick'em contest using weekly picks instead of fantasy rosters.", "Live availability uses Sleeper league users.", "Best fit for managers who want a lighter weekly commitment.")
         image = "constitution-pickem.png"
         color = 0x56CCF2
         constitutionPage = "pickem-constitution.html"
@@ -157,6 +159,7 @@ function Get-FormatConfig {
         label = "Chopped"
         title = "VBP Chopped Status"
         description = "18-team elimination redraft. One team is chopped each week until the final survivor path is settled."
+        basics = @("18-team elimination redraft.", "One team is chopped each week during the elimination phase.", "Draft-pick trading and chop rules are handled by the Chopped constitution.")
         image = "constitution-chopped.png"
         color = 0xEB5757
         constitutionPage = "chopped-constitution.html"
@@ -171,6 +174,7 @@ function Get-FormatConfig {
         label = "Sacrifice Redraft"
         title = "VBP Sacrifice Redraft Status"
         description = "Sacrifice Redraft is a separate test format with its own rules page. No active public league record is listed yet."
+        basics = @("Experimental redraft format with its own rules page.", "No active public league record is listed yet.", "Use this channel for format status once a public room opens.")
         image = "constitution-sacrifice.png"
         color = 0xBB6BD9
         constitutionPage = "sacrifice-redraft-constitution.html"
@@ -185,6 +189,7 @@ function Get-FormatConfig {
         label = "Dynasty"
         title = "VBP Dynasty Status"
         description = "Standalone dynasty leagues with long-term roster building, rookie drafts, and future-pick payment rules."
+        basics = @("Long-term roster building with rookie drafts.", "Future-pick trades require payment coverage for the involved season.", "Full leagues may be listed for network context without join details.")
         image = "constitution-dynasty.png"
         color = 0x9B51E0
         constitutionPage = "dynasty-constitution.html"
@@ -199,6 +204,7 @@ function Get-FormatConfig {
         label = "Best Ball Gauntlet"
         title = "VBP Best Ball Gauntlet Status"
         description = '24-team micro best ball gauntlet. The full-room payout is $110 to the standings champion and $10 to the highest single-week scorer.'
+        basics = @("24-team micro best ball gauntlet.", "Best ball scoring means no weekly lineup setting.", "Full-room payout: `$110 standings champion and `$10 highest single-week scorer.")
         image = "constitution-bestball-gauntlet.png"
         color = 0xF2994A
         constitutionPage = "bestball-gauntlet-constitution.html"
@@ -216,6 +222,7 @@ function Get-FormatConfig {
         label = "Co-Manager Redraft"
         title = "VBP Co-Manager Redraft Status"
         description = "Co-manager redraft where each team has 2-3 managers, with superflex scoring and a scheduled slow draft."
+        basics = @("12-team co-manager redraft.", "Each team must have 2-3 co-managers.", "Lineup uses superflex scoring with TE premium and 6-point passing TDs.")
         image = "constitution-co-manager.png"
         color = 0x27AE60
         constitutionPage = "co-manager-constitution.html"
@@ -233,6 +240,7 @@ function Get-FormatConfig {
         label = "32-Team Redraft"
         title = "VBP 32-Team Redraft Status"
         description = "32-team redraft with deep lineup decisions and a separate channel from standard seasonal redraft."
+        basics = @("32-team seasonal redraft with scarce player supply.", "Lineup: 1 RB, 2 WR, 3 FLEX, 1 SUPER FLEX.", "Bench: 4. Waivers: `$200 FAAB. No kicker or defense.")
         image = "constitution-32-team-redraft.png"
         color = 0x2F80ED
         constitutionPage = "32-team-redraft-constitution.html"
@@ -517,6 +525,12 @@ $openSummaryText = if ($openRows.Count -gt 0) {
 } else {
   $config.emptyText
 }
+$formatBasicLines = @($config.basics | ForEach-Object { "- $_" })
+$formatBasicsText = if ($formatBasicLines.Count -gt 0) {
+  $formatBasicLines -join "`n"
+} else {
+  $config.description
+}
 
 $overviewDescription = @(
   "**Current Snapshot**",
@@ -530,8 +544,8 @@ $overviewDescription = @(
   "**Current Openings**",
   $openSummaryText,
   "",
-  "**Setup**",
-  $config.description,
+  "**Format Basics**",
+  $formatBasicsText,
   "",
   "**Rules:** $rulesUrl"
 ) -join "`n"

@@ -309,7 +309,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-format-guide.ps1
 
 ## `post-discord-testing-channel-stack.ps1`
 
-Posts the guide plus matching status board into every Discord `League Openings` testing channel, using channel-specific webhook URLs from `data/private/discord-webhooks.json`.
+Posts one consolidated format/openings status board into every Discord `League Openings` testing channel, using channel-specific webhook URLs from `data/private/discord-webhooks.json`.
 
 Create the private config first:
 

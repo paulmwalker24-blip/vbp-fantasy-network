@@ -79,9 +79,6 @@ $results = foreach ($item in $stack) {
     continue
   }
 
-  Write-Host ("Posting guide for {0}..." -f $item.channel)
-  Invoke-PostScript -ScriptPath "scripts/post-discord-format-guide.ps1" -WebhookUrl $webhookUrl -Arguments @{ FormatKey = $item.guideKey; StatePath = $StatePath }
-
   Write-Host ("Posting status board for {0}..." -f $item.channel)
   $statusArgs = @{} + $item.statusArgs
   $statusArgs.StatePath = $StatePath

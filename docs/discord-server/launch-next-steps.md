@@ -12,7 +12,7 @@ Minimum ready state:
 
 - New members land in `start-here`.
 - Old channels are archived or hidden below the new structure.
-- `League Openings` testing channels have format explanations plus current webhook boards.
+- `League Openings` testing channels have one consolidated format/openings webhook board each.
 - `rules-and-links` points to the public hub, constitutions, and league centers.
 - Discord automation can dry-run into `automation-test`.
 - The first live posts are made only after the dry-runs look clean.
@@ -96,14 +96,14 @@ Post these first, manually if needed:
 
 - `start-here`: short welcome, what the server is for, where to go.
 - `rules-and-links`: main site, constitutions, Bracket Center, Best Ball Union Center, power rankings.
-- League Opening testing channels: format explanation first, then full/opening status webhooks underneath.
+- League Opening testing channels: one consolidated status webhook with format basics, full context, openings, and join links.
 - `announcements`: leave quiet unless there is a true network-wide note.
 
 Source docs:
 
 - Full rebuild outline: `docs/discord-server/discord-audit-template.md`
 - Testing channel map: `docs/discord-server/testing-channel-map.md`
-- Open-leagues guide source: `docs/discord-server/league-openings-top-post.md`
+- Open-leagues source copy: `docs/discord-server/league-openings-top-post.md`
 - Paste-ready recruiting copy: `marketing/recruiting-copy-ready.txt`
 - Public hub: `https://vbp-fantasy-network.vercel.app/`
 
@@ -114,7 +114,7 @@ Use `automation-test` first. Do not post live automation into public channels un
 Dry-run these in this order:
 
 ```text
-Post or update the Discord redraft guide webhook in the redraft testing channel before posting the redraft status board.
+Post or update the Discord testing channel stack with one consolidated format/openings status board per League Openings channel.
 ```
 
 ```text
@@ -148,7 +148,7 @@ If a post looks too long, stale, or confusing, fix the script or data before pos
 Once the dry-runs look clean, post publicly in this order:
 
 1. `rules-and-links`: server rules and constitution/forum links.
-2. League Opening testing channels: explanation first, then the matching status board webhook.
+2. League Opening testing channels: one consolidated status board webhook per channel.
 3. `announcements`: one short launch note pointing members to `League Openings` and `rules-and-links`.
 
 Keep public posts living and update-in-place where the scripts support saved Discord message state.
@@ -193,6 +193,6 @@ Add those only after the simple version is working and owners are actually using
 - [ ] Add or confirm the Discord webhooks for `automation-test`, `rules-and-links`, each League Opening testing channel, and any forum-style constitution channel.
 - [ ] Run all Discord scripts as dry-runs.
 - [ ] Post server rules and constitution links.
-- [ ] Post each League Opening channel explanation, then the matching active format board underneath it.
+- [ ] Post each consolidated League Opening channel board.
 - [ ] Test a fresh invite.
 - [ ] Start sharing the Discord invite in recruiting replies after the test passes.

@@ -173,7 +173,7 @@ Post or update the Discord open-leagues guide webhook with the format descriptio
 Post a format channel guide:
 
 ```text
-Post or update the Discord redraft guide webhook in the redraft testing channel before posting the redraft status board.
+Post or update the optional Discord redraft guide webhook.
 ```
 
 Supported guide words are redraft, 32 team redraft, co manager, redraft bracket, dynasty bracket, dynasty, keeper, best ball union, best ball gauntlet, chopped, pickem, and sacrifice.
@@ -181,7 +181,7 @@ Supported guide words are redraft, 32 team redraft, co manager, redraft bracket,
 Post the testing channel stack:
 
 ```text
-Post the Discord testing channel stack: guide webhook first, then matching status board underneath, for every configured League Openings testing channel.
+Post the Discord testing channel stack: one consolidated format/openings status board for every configured League Openings testing channel.
 ```
 
 Post only one testing channel stack:

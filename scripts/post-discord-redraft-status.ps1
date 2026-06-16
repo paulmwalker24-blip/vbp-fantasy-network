@@ -300,6 +300,11 @@ $openSummaryText = if ($openRows.Count -gt 0) {
 } else {
   "No standard redraft records are currently listed."
 }
+$formatBasicsText = @(
+  "- Seasonal redraft league with VBP Progressive PPR scoring.",
+  "- Typical lineup: 1 QB, 2 RB, 2 WR, 1 TE, 2 FLEX.",
+  "- Bench: 6. Waivers: `$200 FAAB."
+) -join "`n"
 
 $overviewDescription = @(
   "**Current Snapshot**",
@@ -312,6 +317,9 @@ $overviewDescription = @(
   "",
   "**Current Openings**",
   $openSummaryText,
+  "",
+  "**Format Basics**",
+  $formatBasicsText,
   "",
   "**Board Notes**",
   "Assigned teams update from Sleeper rosters/draft slots.",
