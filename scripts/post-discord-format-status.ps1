@@ -490,9 +490,6 @@ $openRows = @($leagueRows | Where-Object { -not $_.isFull })
 
 $updatedAt = Get-Date
 $timestamp = $updatedAt.ToUniversalTime().ToString("o")
-$openMarker = [char]::ConvertFromUtf32(0x1F7E2)
-$pendingMarker = [char]::ConvertFromUtf32(0x1F7E1)
-$closedMarker = [char]::ConvertFromUtf32(0x1F534)
 $imageUrl = ("{0}/assets/images/{1}" -f $AssetBaseUrl.TrimEnd('/'), $config.image)
 $rulesUrl = ("{0}/{1}" -f $AssetBaseUrl.TrimEnd('/'), $config.constitutionPage)
 $paidText = if ($null -ne $totalPaid -and $totalTeams -gt 0) {
@@ -506,7 +503,7 @@ $snapshotText = if ($totalTeams -gt 0) {
   $config.emptyText
 }
 $fullSummaryLines = @($fullRows | ForEach-Object {
-  "- $($_.statusMarker) $($_.name): full ($($_.assigned)/$($_.teams))"
+  "- $($_.name): full ($($_.assigned)/$($_.teams))"
 })
 $fullSummaryText = if ($fullSummaryLines.Count -gt 0) {
   $fullSummaryLines -join "`n"
@@ -523,7 +520,6 @@ $openSummaryText = if ($openRows.Count -gt 0) {
 
 $overviewDescription = @(
   "**Current Snapshot**",
-  ("{0} Open | {1} Coming soon / pending | {2} Full / closed" -f $openMarker, $pendingMarker, $closedMarker),
   "$($leagueRows.Count) league record(s)",
   $snapshotText,
   $paidText,
@@ -575,7 +571,7 @@ $leagueEmbeds = foreach ($row in $visibleRows) {
   ) | Where-Object { -not [string]::IsNullOrWhiteSpace([string]$_) }
 
   $embed = @{
-    title = ("{0} {1}" -f $row.statusMarker, $row.name)
+    title = $row.name
     description = ($descriptionLines -join "`n")
     color = $config.color
     thumbnail = @{
