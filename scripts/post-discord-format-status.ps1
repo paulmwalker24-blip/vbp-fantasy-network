@@ -376,6 +376,20 @@ function New-EmbedObject {
   return $Values
 }
 
+function Invoke-DiscordJsonRequest {
+  param(
+    [Parameter(Mandatory = $true)]
+    [string]$Uri,
+    [Parameter(Mandatory = $true)]
+    [string]$Method,
+    [Parameter(Mandatory = $true)]
+    [string]$JsonBody
+  )
+
+  $bodyBytes = [System.Text.Encoding]::UTF8.GetBytes($JsonBody)
+  return Invoke-RestMethod -Uri $Uri -Method $Method -ContentType "application/json; charset=utf-8" -Body $bodyBytes
+}
+
 function Get-PropertySum {
   param(
     [object[]]$Rows,
@@ -625,7 +639,7 @@ if (-not $DryRun) {
 
   if (-not [string]::IsNullOrWhiteSpace($existingMessageId)) {
     try {
-      Invoke-RestMethod -Uri ("{0}/messages/{1}" -f $WebhookUrl.TrimEnd('/'), $existingMessageId) -Method Patch -ContentType "application/json" -Body $payload | Out-Null
+      Invoke-DiscordJsonRequest -Uri ("{0}/messages/{1}" -f $WebhookUrl.TrimEnd('/'), $existingMessageId) -Method Patch -JsonBody $payload | Out-Null
       $result.messageId = $existingMessageId
       $result.action = "updated"
     } catch {
@@ -634,7 +648,7 @@ if (-not $DryRun) {
   }
 
   if ([string]::IsNullOrWhiteSpace([string]$result.messageId)) {
-    $postResponse = Invoke-RestMethod -Uri ("{0}?wait=true" -f $WebhookUrl) -Method Post -ContentType "application/json" -Body $payload
+    $postResponse = Invoke-DiscordJsonRequest -Uri ("{0}?wait=true" -f $WebhookUrl) -Method Post -JsonBody $payload
     $newMessageId = [string]$postResponse.id
     if ([string]::IsNullOrWhiteSpace($newMessageId)) {
       throw "Discord did not return a message ID. Cannot save update state."
