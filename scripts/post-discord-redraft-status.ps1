@@ -263,6 +263,7 @@ $leagueRows = foreach ($league in $leaguePayload.leagues) {
     openSpots = $snapshot.openSpots
     isFull = ($snapshot.teams -gt 0 -and ($snapshot.assigned -ge $snapshot.teams -or $status -eq "full"))
     paid = $paid
+    unpaidSpots = if ($null -ne $paid) { [math]::Max($snapshot.teams - $paid, 0) } else { $null }
     inviteLink = [string]$league.inviteLink
     rulesLink = ("{0}/{1}" -f $AssetBaseUrl.TrimEnd('/'), ([string]$league.constitutionPage).Trim())
     imageUrl = Get-FormatImageUrl -Format $format -BaseUrl $AssetBaseUrl
@@ -275,8 +276,8 @@ $totalAssigned = [int](@($leagueRows | Measure-Object -Property assigned -Sum).S
 $totalOpen = [int](@($leagueRows | Measure-Object -Property openSpots -Sum).Sum)
 $paidRows = @($leagueRows | Where-Object { $null -ne $_.paid })
 $totalPaid = if ($paidRows.Count -gt 0) { [int](@($paidRows | Measure-Object -Property paid -Sum).Sum) } else { $null }
-$fullRows = @($leagueRows | Where-Object { $_.isFull })
-$openRows = @($leagueRows | Where-Object { -not $_.isFull })
+$fullRows = @($leagueRows | Where-Object { $_.isFull -and ($null -eq $_.unpaidSpots -or $_.unpaidSpots -le 0) })
+$openRows = @($leagueRows | Where-Object { -not $_.isFull -or ($null -ne $_.unpaidSpots -and $_.unpaidSpots -gt 0) })
 
 $updatedAt = Get-Date
 $timestamp = $updatedAt.ToUniversalTime().ToString("o")
@@ -340,12 +341,17 @@ $overviewEmbed = @{
 
 $leagueEmbeds = foreach ($row in $openRows) {
   $paidText = if ($null -ne $row.paid) { "$($row.paid)/$($row.teams)" } else { "Not supplied" }
+  $openLabel = if ($null -ne $row.unpaidSpots -and $row.unpaidSpots -gt 0 -and $row.assigned -ge $row.teams) {
+    "**Payment spots needed:** $($row.unpaidSpots)"
+  } else {
+    "**Open spots:** $($row.openSpots)"
+  }
   $description = @(
     "**Type:** $($row.formatLabel)",
     "**Buy-in:** $($row.buyIn)",
     "**Assigned teams:** $($row.assigned)/$($row.teams)",
     "**Paid teams:** $paidText",
-    "**Open spots:** $($row.openSpots)",
+    $openLabel,
     "**Join:** $($row.inviteLink)",
     "**Rules:** $($row.rulesLink)"
   ) -join "`n"
