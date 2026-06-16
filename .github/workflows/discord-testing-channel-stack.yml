@@ -1,6 +1,11 @@
 name: Discord Testing Channel Stack
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/discord-testing-channel-stack.yml"
   schedule:
     - cron: "0 */6 * * *"
   workflow_dispatch:
