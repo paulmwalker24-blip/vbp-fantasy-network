@@ -124,6 +124,274 @@ powershell -ExecutionPolicy Bypass -File .\scripts\league-occupancy-report.ps1 -
 powershell -ExecutionPolicy Bypass -File .\scripts\league-occupancy-report.ps1 -PassThru | ConvertTo-Json -Depth 5
 ```
 
+## `post-discord-league-status.ps1`
+
+Builds a Discord-ready league status message from live Sleeper assigned spots.
+
+For normal fantasy leagues, assigned spots are calculated from the larger of assigned roster owners and assigned draft-order slots. For Pick'em leagues, the script uses Sleeper users because Pick'em does not use normal fantasy rosters.
+
+When a league record has a `constitutionPage`, the script pulls the public winnings/payout summary from that constitution. Use `-WinningsText` only when you need to override the constitution wording for a one-off post.
+
+The script posts only when `DISCORD_WEBHOOK_URL` is set or `-WebhookUrl` is passed. Use `-DryRun` to preview the exact Discord message without posting.
+
+Preview Best Ball Gauntlet 2:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-league-status.ps1 -SleeperLeagueId 1368003315815686144 -DisplayName "VBP $5 Bestball Gauntlet 2" -ConstitutionPage bestball-gauntlet-constitution.html -PaidCount 3 -DryRun
+```
+
+Preview with an explicit join link:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-league-status.ps1 -SleeperLeagueId 1368003315815686144 -DisplayName "VBP $5 Bestball Gauntlet 2" -PaidCount 3 -BuyIn "$5" -WinningsText "$110 Week 17 standings champion; $10 highest full-season points total." -JoinUrl "https://sleeper.com/leagues/1368003315815686144/predraft" -DryRun
+```
+
+Post a repo league record to Discord:
+
+```powershell
+$env:DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/..."
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-league-status.ps1 -LeagueRecordId RD4 -PaidCount 9 -WinningsText "Set by the league constitution."
+```
+
+## `post-discord-redraft-bracket-status.ps1`
+
+Builds one Discord post for the full Redraft Bracket group.
+
+The post includes a short format overview, the combined assigned/open totals, the latest assigned-paid count from `reports/private/redraft-bracket-payment-reconciliation/redraft-bracket-master-readable.txt`, and all five divisions in alphabetical order as Discord embeds. Division availability is pulled live from Sleeper assigned roster/draft slots.
+
+Each division embed uses the public division artwork from `assets/images/`, served from `https://vbp-fantasy-network.vercel.app` by default. Discord needs public image URLs; it cannot render local files directly from the repo. Use `-AssetBaseUrl` if the deployed site URL changes.
+
+The script updates one existing webhook message when `data/private/discord-message-state.json` contains a saved message ID. On the first successful post, Discord returns the message ID and the script saves it locally. If the saved message cannot be updated, the script posts a new one and saves the new ID.
+
+Preview without posting:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-redraft-bracket-status.ps1 -DryRun
+```
+
+Post to the configured Discord webhook:
+
+```powershell
+$env:DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/..."
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-redraft-bracket-status.ps1
+```
+
+## `post-discord-redraft-status.ps1`
+
+Builds one living Discord post for open standard seasonal redraft leagues only. 32-team redraft and co-manager redraft should use their own Discord channels/scripts.
+
+Assigned/open spots are pulled live from Sleeper assigned roster/draft slots. Paid counts come from `data/private/discord-status-overrides.json`, which is intentionally ignored by git.
+
+Preview without posting:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-redraft-status.ps1 -DryRun
+```
+
+Post to the configured Discord webhook:
+
+```powershell
+$env:DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/..."
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-redraft-status.ps1
+```
+
+## `post-discord-dynasty-bracket-status.ps1`
+
+Builds one living Discord post for the Dynasty Bracket group. It shows the four divisions, live assigned/open counts from Sleeper, division artwork, and the published Dynasty Bracket payout structure.
+
+Preview without posting:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-dynasty-bracket-status.ps1 -DryRun
+```
+
+Post to the configured Discord webhook:
+
+```powershell
+$env:DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/..."
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-dynasty-bracket-status.ps1
+```
+
+## `post-discord-bbu-status.ps1`
+
+Builds one living Discord post for Best Ball Union. It shows how many rooms are filled, how many filled rooms are drafted, and the current overall high-score pot based on drafted full rooms. The pot uses the standard `$25` overall high-score contribution per drafted full room.
+
+Preview without posting:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-bbu-status.ps1 -DryRun
+```
+
+Post to the configured Discord webhook:
+
+```powershell
+$env:DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/..."
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-bbu-status.ps1
+```
+
+## `post-discord-format-status.ps1`
+
+Builds one living Discord post for a single league type channel, using the same update-in-place message state pattern as the other Discord scripts. Supported `-FormatKey` values include `keeper`, `pickem`, `chopped`, `sacrifice`, `dynasty`, `bbg`, `comanager`, and `redraft32`.
+
+The script pulls live Sleeper assigned spots for roster leagues, uses Sleeper users for Pick'em, displays the public constitution graphic, and reads optional paid counts from `data/private/discord-status-overrides.json`. Full leagues are summarized near the top as established rooms so the detailed embeds stay focused on current openings. Sacrifice currently posts a clean no-active-record status until a league record exists in `data/leagues.json`.
+
+Preview without posting:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-format-status.ps1 -FormatKey keeper -DryRun
+```
+
+Post to the configured Discord webhook:
+
+```powershell
+$env:DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/..."
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-format-status.ps1 -FormatKey keeper
+```
+
+## `post-discord-directory-status.ps1`
+
+Builds one living Discord post for the server league directory. This is the front-door summary: it pulls the same local league data and live Sleeper assigned-spot counts as the league-type status boards, then summarizes each destination channel in a short Open Now / Full or Info Boards layout.
+
+The directory webhook does not read Discord channel messages, because a webhook cannot read channels. Instead, it updates from the same source data used by the individual status boards, which keeps the directory aligned without needing a bot token.
+
+Preview without posting:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-directory-status.ps1 -DryRun
+```
+
+Post to the configured Discord webhook:
+
+```powershell
+$env:DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/..."
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-directory-status.ps1
+```
+
+## `post-discord-open-leagues-guide.ps1`
+
+Builds one living Discord guide post for the top of the `open-leagues` channel. This is the stable format map: it explains league types, roster structures, and which live boards to use underneath it.
+
+The guide lists full or established rooms for context only. It does not include join links or detailed recruiting instructions for full leagues; live join links belong in the status-board webhooks below the guide.
+
+Preview without posting:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-open-leagues-guide.ps1 -DryRun
+```
+
+Post to the configured Discord webhook:
+
+```powershell
+$env:DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/..."
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-open-leagues-guide.ps1
+```
+
+## `post-discord-format-guide.ps1`
+
+Builds one living Discord explanation post for a single league-opening channel. Use this before the matching status-board webhook in each `*-testing` channel.
+
+Supported `-FormatKey` values include `redraft`, `redraft32`, `comanager`, `bracket`, `dynastybracket`, `dynasty`, `keeper`, `bestball`, `bbg`, `chopped`, `pickem`, and `sacrifice`.
+
+The guide explains what the format is, who it fits, roster/scoring basics, and the rule that full leagues may be listed for context without join details.
+
+Preview without posting:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-format-guide.ps1 -FormatKey redraft -DryRun
+```
+
+Post to the configured Discord webhook:
+
+```powershell
+$env:DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/..."
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-format-guide.ps1 -FormatKey redraft
+```
+
+## `post-discord-testing-channel-stack.ps1`
+
+Posts the guide plus matching status board into every Discord `League Openings` testing channel, using channel-specific webhook URLs from `data/private/discord-webhooks.json`.
+
+Create the private config first:
+
+```powershell
+Copy-Item .\data\private\discord-webhooks.example.json .\data\private\discord-webhooks.json
+```
+
+Then paste the real webhook URL for each testing channel into the `channels` object. The real config is ignored by git.
+
+Dry-run the stack:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-testing-channel-stack.ps1 -DryRun
+```
+
+Post every configured channel:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-testing-channel-stack.ps1
+```
+
+Post only one channel:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-testing-channel-stack.ps1 -Channels redraft-testing
+```
+
+## `post-discord-server-rules.ps1`
+
+Builds one polished Discord rules post for the VBP server. It covers server conduct, league operations, payment/assigned-spot expectations, constitutions as the source of truth, competitive integrity, and commissioner enforcement.
+
+Preview without posting:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-server-rules.ps1 -DryRun
+```
+
+Post to the configured Discord webhook:
+
+```powershell
+$env:DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/..."
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-server-rules.ps1
+```
+
+## `post-discord-constitutions.ps1`
+
+Builds one Discord constitution index post, intended for a forum-style channel thread. It groups every public VBP constitution link into seasonal/redraft, dynasty/keeper, and specialty format sections, with a short source-of-truth note.
+
+When the webhook belongs to a Discord forum channel, the script creates a `League Constitutions` thread on first post and saves the returned message/thread ID in private state. Future runs update that same forum post.
+
+Preview without posting:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-constitutions.ps1 -DryRun
+```
+
+Post to the configured Discord webhook:
+
+```powershell
+$env:DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/..."
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-constitutions.ps1
+```
+
+## `post-discord-constitution-forum-posts.ps1`
+
+Builds separate Discord forum posts for each public VBP constitution. This is the preferred constitution-channel layout when the Discord channel is a forum: each league type gets its own post/thread, such as Redraft Constitution, Dynasty Constitution, Keeper Constitution, and Best Ball Union Constitution.
+
+The script saves each returned message/thread ID under private state so future runs update the same forum posts rather than creating duplicates.
+
+Preview without posting:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-constitution-forum-posts.ps1 -DryRun
+```
+
+Post to the configured Discord webhook:
+
+```powershell
+$env:DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/..."
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-constitution-forum-posts.ps1
+```
+
 ## `validate-leagues-json.ps1`
 
 Runs local structural validation against `data/leagues.json` without calling Sleeper.

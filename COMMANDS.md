@@ -106,6 +106,118 @@ Show only open leagues:
 Run the league occupancy report for open leagues only.
 ```
 
+## Discord League Status Test
+
+Preview a Discord league-status message from live Sleeper assigned spots without posting:
+
+```text
+Run a dry-run Discord league status test for Sleeper league 1368003315815686144, display name VBP $5 Bestball Gauntlet 2, and paid count 3.
+```
+
+Preview with a specific join link:
+
+```text
+Run a dry-run Discord league status test for Sleeper league 1368003315815686144, display name VBP $5 Bestball Gauntlet 2, paid count 3, buy-in $5, winnings "$110 Week 17 standings champion; $10 highest full-season points total.", and this join link: https://sleeper.com/leagues/1368003315815686144/predraft
+```
+
+Post a league-status message to the configured Discord webhook:
+
+```text
+Post a Discord league status update for RD4 using paid count 9. Use assigned Sleeper spots, not joined users.
+```
+
+Post the full Redraft Bracket status:
+
+```text
+Post or update the Discord redraft bracket status message with the overview at the top and all five divisions alphabetically underneath it as embeds with division graphics. Use live assigned Sleeper spots and the current redraft bracket payment report.
+```
+
+Post the open redraft league status:
+
+```text
+Post or update the Discord redraft openings status message with only open standard seasonal redraft leagues. Use live assigned Sleeper spots and the local Discord paid-count overrides.
+```
+
+Post the Dynasty Bracket status:
+
+```text
+Post or update the Discord dynasty bracket status message with all four divisions, live assigned Sleeper spots, division graphics, and payout details.
+```
+
+Post the Best Ball Union status:
+
+```text
+Post or update the Discord Best Ball Union status message with filled rooms, drafted full rooms, the current overall high-score pot, and active room cards.
+```
+
+Post a format-specific Discord status board:
+
+```text
+Post or update the Discord keeper status message using live Sleeper assigned spots, the keeper constitution graphic, and any local paid-count overrides.
+```
+
+Supported format words for this reusable path are keeper, pickem, chopped, sacrifice, dynasty, bbg, co manager, and 32 team.
+
+Post the league directory status:
+
+```text
+Post or update the Discord league directory message with the network snapshot, league-type channel list, and quick openings summary.
+```
+
+Post the open-leagues guide:
+
+```text
+Post or update the Discord open-leagues guide webhook with the format descriptions at the top of the channel.
+```
+
+Post a format channel guide:
+
+```text
+Post or update the Discord redraft guide webhook in the redraft testing channel before posting the redraft status board.
+```
+
+Supported guide words are redraft, 32 team redraft, co manager, redraft bracket, dynasty bracket, dynasty, keeper, best ball union, best ball gauntlet, chopped, pickem, and sacrifice.
+
+Post the testing channel stack:
+
+```text
+Post the Discord testing channel stack: guide webhook first, then matching status board underneath, for every configured League Openings testing channel.
+```
+
+Post only one testing channel stack:
+
+```text
+Post the Discord testing channel stack for redraft-testing only.
+```
+
+Run the GitHub Actions testing stack:
+
+```text
+Use the GitHub Discord Testing Channel Stack workflow to dry-run all configured League Openings testing channels.
+```
+
+```text
+Use the GitHub Discord Testing Channel Stack workflow to post redraft-testing only.
+```
+
+Post the server rules:
+
+```text
+Post or update the Discord server rules message with professional VBP server conduct, league operations, payment, integrity, and enforcement standards.
+```
+
+Post the constitution index:
+
+```text
+Post or update the Discord constitution forum post with grouped links to every public VBP league constitution.
+```
+
+Post separate constitution forum posts:
+
+```text
+Post or update separate Discord forum posts for each public VBP league constitution, one post per league type.
+```
+
 ## 100 Yard Rush
 
 Run a draft-order rush for a league record using the VBP default 100 Yard Rush settings: 3-8 yards, 2-6 seconds, Fast speed, no luck.

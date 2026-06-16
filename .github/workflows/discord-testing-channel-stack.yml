@@ -1,0 +1,103 @@
+name: Discord Testing Channel Stack
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      channels:
+        description: "Optional comma-separated channel keys, such as redraft-testing,best-ball-union-testing. Leave blank for all configured channels."
+        required: false
+        default: ""
+      dry_run:
+        description: "Run without posting to Discord."
+        required: false
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  post:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build private Discord webhook config
+        shell: pwsh
+        env:
+          DISCORD_WEBHOOK_32_TEAM_REDRAFT_TESTING: ${{ secrets.DISCORD_WEBHOOK_32_TEAM_REDRAFT_TESTING }}
+          DISCORD_WEBHOOK_BEST_BALL_GAUNTLET_TESTING: ${{ secrets.DISCORD_WEBHOOK_BEST_BALL_GAUNTLET_TESTING }}
+          DISCORD_WEBHOOK_BEST_BALL_UNION_TESTING: ${{ secrets.DISCORD_WEBHOOK_BEST_BALL_UNION_TESTING }}
+          DISCORD_WEBHOOK_CHOPPED_TESTING: ${{ secrets.DISCORD_WEBHOOK_CHOPPED_TESTING }}
+          DISCORD_WEBHOOK_CO_MANAGER_TESTING: ${{ secrets.DISCORD_WEBHOOK_CO_MANAGER_TESTING }}
+          DISCORD_WEBHOOK_DYNASTY_BRACKET_TESTING: ${{ secrets.DISCORD_WEBHOOK_DYNASTY_BRACKET_TESTING }}
+          DISCORD_WEBHOOK_DYNASTY_TESTING: ${{ secrets.DISCORD_WEBHOOK_DYNASTY_TESTING }}
+          DISCORD_WEBHOOK_KEEPER_TESTING: ${{ secrets.DISCORD_WEBHOOK_KEEPER_TESTING }}
+          DISCORD_WEBHOOK_PICKEM_TESTING: ${{ secrets.DISCORD_WEBHOOK_PICKEM_TESTING }}
+          DISCORD_WEBHOOK_REDRAFT_BRACKET_TESTING: ${{ secrets.DISCORD_WEBHOOK_REDRAFT_BRACKET_TESTING }}
+          DISCORD_WEBHOOK_REDRAFT_TESTING: ${{ secrets.DISCORD_WEBHOOK_REDRAFT_TESTING }}
+          DISCORD_WEBHOOK_SACRIFICE_TESTING: ${{ secrets.DISCORD_WEBHOOK_SACRIFICE_TESTING }}
+        run: |
+          New-Item -ItemType Directory -Path data/private -Force | Out-Null
+          $config = [ordered]@{
+            channels = [ordered]@{
+              "32-team-redraft-testing" = $env:DISCORD_WEBHOOK_32_TEAM_REDRAFT_TESTING
+              "best-ball-gauntlet-testing" = $env:DISCORD_WEBHOOK_BEST_BALL_GAUNTLET_TESTING
+              "best-ball-union-testing" = $env:DISCORD_WEBHOOK_BEST_BALL_UNION_TESTING
+              "chopped-testing" = $env:DISCORD_WEBHOOK_CHOPPED_TESTING
+              "co-manager-testing" = $env:DISCORD_WEBHOOK_CO_MANAGER_TESTING
+              "dynasty-bracket-testing" = $env:DISCORD_WEBHOOK_DYNASTY_BRACKET_TESTING
+              "dynasty-testing" = $env:DISCORD_WEBHOOK_DYNASTY_TESTING
+              "keeper-testing" = $env:DISCORD_WEBHOOK_KEEPER_TESTING
+              "pickem-testing" = $env:DISCORD_WEBHOOK_PICKEM_TESTING
+              "redraft-bracket-testing" = $env:DISCORD_WEBHOOK_REDRAFT_BRACKET_TESTING
+              "redraft-testing" = $env:DISCORD_WEBHOOK_REDRAFT_TESTING
+              "sacrifice-testing" = $env:DISCORD_WEBHOOK_SACRIFICE_TESTING
+            }
+          }
+          $config | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath data/private/discord-webhooks.json
+
+      - name: Post Discord testing channel stack
+        shell: pwsh
+        run: |
+          $args = @("-ExecutionPolicy", "Bypass", "-File", ".\scripts\post-discord-testing-channel-stack.ps1")
+          $args += "-StatePath"
+          $args += "data/discord-message-state.json"
+
+          $channels = "${{ inputs.channels }}".Trim()
+          if (-not [string]::IsNullOrWhiteSpace($channels)) {
+            $args += "-Channels"
+            $args += ($channels -split "," | ForEach-Object { $_.Trim() } | Where-Object { $_ })
+          }
+
+          if ("${{ inputs.dry_run }}" -eq "true") {
+            $args += "-DryRun"
+          }
+
+          powershell @args
+
+      - name: Save Discord message state
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.dry_run == false }}
+        shell: pwsh
+        run: |
+          if (-not (Test-Path -LiteralPath data/discord-message-state.json)) {
+            Write-Host "No Discord message state file was created."
+            exit 0
+          }
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/discord-message-state.json
+
+          $changes = git status --porcelain
+          if ([string]::IsNullOrWhiteSpace($changes)) {
+            Write-Host "Discord message state is already current."
+            exit 0
+          }
+
+          git commit -m "Save Discord message state"
+          git push

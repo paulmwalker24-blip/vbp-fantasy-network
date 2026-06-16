@@ -1,0 +1,17 @@
+{
+  "notes": "Copy this to data/private/discord-webhooks.json and paste the real webhook URL for each Discord channel. The real file is gitignored.",
+  "channels": {
+    "32-team-redraft-testing": "",
+    "best-ball-gauntlet-testing": "",
+    "best-ball-union-testing": "",
+    "chopped-testing": "",
+    "co-manager-testing": "",
+    "dynasty-bracket-testing": "",
+    "dynasty-testing": "",
+    "keeper-testing": "",
+    "pickem-testing": "",
+    "redraft-bracket-testing": "",
+    "redraft-testing": "",
+    "sacrifice-testing": ""
+  }
+}
