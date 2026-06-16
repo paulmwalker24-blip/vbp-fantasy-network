@@ -243,7 +243,7 @@ $leagueRows = foreach ($league in $leaguePayload.leagues) {
   $status = ([string]$league.status).Trim().ToLowerInvariant()
   $sleeperLeagueId = ([string]$league.sleeperLeagueId).Trim()
 
-  if (-not ($redraftFormats -contains $format) -or $status -ne "open" -or -not $sleeperLeagueId) {
+  if (-not ($redraftFormats -contains $format) -or -not $sleeperLeagueId) {
     continue
   }
 
@@ -254,6 +254,7 @@ $leagueRows = foreach ($league in $leaguePayload.leagues) {
   [pscustomobject]@{
     id = $leagueId
     name = [string]$league.name
+    status = $status
     format = $format
     formatLabel = Get-FormatLabel -Format $format
     formatRank = Get-FormatRank -Format $format
@@ -276,8 +277,8 @@ $totalAssigned = [int](@($leagueRows | Measure-Object -Property assigned -Sum).S
 $totalOpen = [int](@($leagueRows | Measure-Object -Property openSpots -Sum).Sum)
 $paidRows = @($leagueRows | Where-Object { $null -ne $_.paid })
 $totalPaid = if ($paidRows.Count -gt 0) { [int](@($paidRows | Measure-Object -Property paid -Sum).Sum) } else { $null }
-$fullRows = @($leagueRows | Where-Object { $_.isFull -and ($null -eq $_.unpaidSpots -or $_.unpaidSpots -le 0) })
-$openRows = @($leagueRows | Where-Object { -not $_.isFull -or ($null -ne $_.unpaidSpots -and $_.unpaidSpots -gt 0) })
+$fullRows = @($leagueRows | Where-Object { $_.status -ne "open" -or ($_.isFull -and ($null -eq $_.unpaidSpots -or $_.unpaidSpots -le 0)) })
+$openRows = @($leagueRows | Where-Object { $_.status -eq "open" -and (-not $_.isFull -or ($null -ne $_.unpaidSpots -and $_.unpaidSpots -gt 0)) })
 
 $updatedAt = Get-Date
 $timestamp = $updatedAt.ToUniversalTime().ToString("o")
