@@ -1,5 +1,5 @@
 ﻿{
-    "generatedAt":  "2026-06-18T13:59:55.7707035+00:00",
+    "generatedAt":  "2026-06-19T14:00:20.2896383+00:00",
     "snapshot":  {
                      "season":  "2026",
                      "seasonType":  "off",
@@ -31,6 +31,7 @@
                      "SKIP DYB3: startup draft is pre_draft",
                      "SKIP DYB4: startup draft is pre_draft",
                      "SKIP BBU10: regular draft is pre_draft",
+                     "SKIP BG2: regular draft is pre_draft",
                      "SKIP RDB1: regular draft is pre_draft",
                      "SKIP RDB2: regular draft is pre_draft",
                      "SKIP RDB3: regular draft is pre_draft",
@@ -73,7 +74,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314663050854305792/rosters",
-                                           "refreshedAt":  "2026-06-18T13:58:42.5472901+00:00",
+                                           "refreshedAt":  "2026-06-19T13:59:06.1815390+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -168,7 +169,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314662767977824256/rosters",
-                                           "refreshedAt":  "2026-06-18T13:58:42.8103981+00:00",
+                                           "refreshedAt":  "2026-06-19T13:59:06.6892651+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -263,7 +264,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314660487635427328/rosters",
-                                           "refreshedAt":  "2026-06-18T13:58:43.0421439+00:00",
+                                           "refreshedAt":  "2026-06-19T13:59:07.2442812+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -358,7 +359,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1344449488089014272/rosters",
-                                           "refreshedAt":  "2026-06-18T13:58:43.3689010+00:00",
+                                           "refreshedAt":  "2026-06-19T13:59:07.6932859+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -453,7 +454,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1370097572764450816/rosters",
-                                           "refreshedAt":  "2026-06-18T13:58:43.5941004+00:00",
+                                           "refreshedAt":  "2026-06-19T13:59:08.2106611+00:00",
                                            "rosterCount":  32,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -545,7 +546,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1369795448134463488/rosters",
-                                           "refreshedAt":  "2026-06-18T13:58:43.8015882+00:00",
+                                           "refreshedAt":  "2026-06-19T13:59:08.6217575+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -640,7 +641,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341650084122595328/rosters",
-                                           "refreshedAt":  "2026-06-18T13:58:44.0424976+00:00",
+                                           "refreshedAt":  "2026-06-19T13:59:09.0731461+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  374,
                                            "sleeperLeagueSeason":  "2026",
@@ -902,7 +903,7 @@
                                                                                    "rank":  6,
                                                                                    "manager":  "benestrem",
                                                                                    "rosterId":  10,
-                                                                                   "score":  78.5
+                                                                                   "score":  79.5
                                                                                },
                                                                                {
                                                                                    "rank":  7,
@@ -932,7 +933,7 @@
                                                                                    "rank":  11,
                                                                                    "manager":  "VinsBroPaul",
                                                                                    "rosterId":  1,
-                                                                                   "score":  75.5
+                                                                                   "score":  74.5
                                                                                },
                                                                                {
                                                                                    "rank":  12,
@@ -1249,7 +1250,7 @@
                                                           "rosterId":  3,
                                                           "ownerId":  "523226668740952064",
                                                           "teamName":  "GoatWoat",
-                                                          "score":  76,
+                                                          "score":  77,
                                                           "reasons":  [
                                                                           {
                                                                               "tone":  "positive",
@@ -1274,6 +1275,34 @@
                                                           "rank":  9
                                                       },
                                                       {
+                                                          "rosterId":  10,
+                                                          "ownerId":  "1106247859193679872",
+                                                          "teamName":  "benestrem",
+                                                          "score":  74,
+                                                          "reasons":  [
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Strong Superflex quarterbacks: Trevor Lawrence and Tyler Shough give this roster two dependable weekly QB options."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Difference-making stars: Trevor Lawrence, Chase Brown, and C.J. Stroud give this lineup multiple players capable of swinging weekly matchups."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "concern",
+                                                                              "text":  "Depth pressure: behind C.J. Stroud, Antonio Williams, and Will Howard, the bench has fewer proven weekly options if injuries or bye weeks hit together."
+                                                                          }
+                                                                      ],
+                                                          "record":  {
+                                                                         "wins":  0,
+                                                                         "pointsFor":  0,
+                                                                         "maxPointsFor":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0
+                                                                     },
+                                                          "rank":  10
+                                                      },
+                                                      {
                                                           "rosterId":  8,
                                                           "ownerId":  "673058459607990272",
                                                           "teamName":  "DoubleTap ($30✅)",
@@ -1290,34 +1319,6 @@
                                                                           {
                                                                               "tone":  "concern",
                                                                               "text":  "Missing weekly ceiling: the roster has usable players but few proven difference-makers who can decide matchups."
-                                                                          }
-                                                                      ],
-                                                          "record":  {
-                                                                         "wins":  0,
-                                                                         "pointsFor":  0,
-                                                                         "maxPointsFor":  0,
-                                                                         "losses":  0,
-                                                                         "ties":  0
-                                                                     },
-                                                          "rank":  10
-                                                      },
-                                                      {
-                                                          "rosterId":  10,
-                                                          "ownerId":  "1106247859193679872",
-                                                          "teamName":  "benestrem",
-                                                          "score":  73,
-                                                          "reasons":  [
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Strong Superflex quarterbacks: Trevor Lawrence and Tyler Shough give this roster two dependable weekly QB options."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Difference-making stars: Trevor Lawrence, Chase Brown, and C.J. Stroud give this lineup multiple players capable of swinging weekly matchups."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "concern",
-                                                                              "text":  "Depth pressure: behind C.J. Stroud, Antonio Williams, and Drew Allar, the bench has fewer proven weekly options if injuries or bye weeks hit together."
                                                                           }
                                                                       ],
                                                           "record":  {
@@ -1363,7 +1364,7 @@
                                              "rosterId":  4,
                                              "ownerId":  "604079269555011584",
                                              "teamName":  "zXzRollCoalzXz",
-                                             "score":  86,
+                                             "score":  87,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -1391,7 +1392,7 @@
                                              "rosterId":  9,
                                              "ownerId":  "785920658600271872",
                                              "teamName":  "Cell Block One",
-                                             "score":  83,
+                                             "score":  84,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -1419,7 +1420,7 @@
                                              "rosterId":  6,
                                              "ownerId":  "84354136958976000",
                                              "teamName":  "briann",
-                                             "score":  83,
+                                             "score":  84,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -1447,7 +1448,7 @@
                                              "rosterId":  1,
                                              "ownerId":  "466785377303130112",
                                              "teamName":  "VinsBroPaul",
-                                             "score":  83,
+                                             "score":  84,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -1475,7 +1476,7 @@
                                              "rosterId":  12,
                                              "ownerId":  "1129788526960402432",
                                              "teamName":  "Team Humble Champion",
-                                             "score":  80,
+                                             "score":  81,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -1503,7 +1504,7 @@
                                              "rosterId":  11,
                                              "ownerId":  "734717042283905024",
                                              "teamName":  "Tacious00",
-                                             "score":  80,
+                                             "score":  81,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -1531,7 +1532,7 @@
                                              "rosterId":  3,
                                              "ownerId":  "523226668740952064",
                                              "teamName":  "GoatWoat",
-                                             "score":  80,
+                                             "score":  81,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -1559,7 +1560,7 @@
                                              "rosterId":  5,
                                              "ownerId":  "738614393776001024",
                                              "teamName":  "DSnyder5",
-                                             "score":  80,
+                                             "score":  81,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -1587,7 +1588,7 @@
                                              "rosterId":  7,
                                              "ownerId":  "734206916703686656",
                                              "teamName":  "benhamean",
-                                             "score":  77,
+                                             "score":  78,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -1612,38 +1613,10 @@
                                              "rank":  9
                                          },
                                          {
-                                             "rosterId":  2,
-                                             "ownerId":  "1205629906461917184",
-                                             "teamName":  "Full of Excuses",
-                                             "score":  77,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Elite young foundation: Kyren Williams, J.J. McCarthy, and Gunnar Helm give this roster multiple cornerstone assets entering or already within their prime."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Long-term quarterback security: J.J. McCarthy and Carson Beck provide stability at dynasty\u0027s most valuable position."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Succession planning: veterans such as Saquon Barkley and Terry McLaurin remain valuable, but the roster will eventually need younger replacements behind them."
-                                                             }
-                                                         ],
-                                             "rank":  10
-                                         },
-                                         {
                                              "rosterId":  8,
                                              "ownerId":  "673058459607990272",
                                              "teamName":  "DoubleTap ($30✅)",
-                                             "score":  74,
+                                             "score":  75,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -1665,13 +1638,41 @@
                                                                  "text":  "Missing cornerstone assets: the roster lacks enough players capable of anchoring its value for several seasons."
                                                              }
                                                          ],
+                                             "rank":  10
+                                         },
+                                         {
+                                             "rosterId":  2,
+                                             "ownerId":  "1205629906461917184",
+                                             "teamName":  "Full of Excuses",
+                                             "score":  75,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Elite young foundation: Kyren Williams, J.J. McCarthy, and Gunnar Helm give this roster multiple cornerstone assets entering or already within their prime."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Long-term quarterback security: J.J. McCarthy and Carson Beck provide stability at dynasty\u0027s most valuable position."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Succession planning: veterans such as Saquon Barkley and Terry McLaurin remain valuable, but the roster will eventually need younger replacements behind them."
+                                                             }
+                                                         ],
                                              "rank":  11
                                          },
                                          {
                                              "rosterId":  10,
                                              "ownerId":  "1106247859193679872",
                                              "teamName":  "benestrem",
-                                             "score":  74,
+                                             "score":  75,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -1728,7 +1729,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1340820529996640256/rosters",
-                                           "refreshedAt":  "2026-06-18T13:58:50.0423706+00:00",
+                                           "refreshedAt":  "2026-06-19T13:59:15.1004609+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  368,
                                            "sleeperLeagueSeason":  "2026",
@@ -2253,7 +2254,7 @@
                                                           "rosterId":  2,
                                                           "ownerId":  "738614393776001024",
                                                           "teamName":  "DSnyder5",
-                                                          "score":  80,
+                                                          "score":  79,
                                                           "reasons":  [
                                                                           {
                                                                               "tone":  "positive",
@@ -2265,7 +2266,7 @@
                                                                           },
                                                                           {
                                                                               "tone":  "concern",
-                                                                              "text":  "Depth pressure: behind Justin Fields, Deshaun Watson, and Courtland Sutton, the bench has fewer proven weekly options if injuries or bye weeks hit together."
+                                                                              "text":  "Depth pressure: behind Justin Fields, Deshaun Watson, and Quentin Johnston, the bench has fewer proven weekly options if injuries or bye weeks hit together."
                                                                           }
                                                                       ],
                                                           "record":  {
@@ -2433,7 +2434,7 @@
                                                                           },
                                                                           {
                                                                               "tone":  "concern",
-                                                                              "text":  "Depth pressure: behind Bryce Young, Joe Milton, and Wan\u0027Dale Robinson, the bench has fewer proven weekly options if injuries or bye weeks hit together."
+                                                                              "text":  "Depth pressure: behind Bryce Young, Joe Milton, and Khalil Shakir, the bench has fewer proven weekly options if injuries or bye weeks hit together."
                                                                           }
                                                                       ],
                                                           "record":  {
@@ -2554,7 +2555,7 @@
                                                              },
                                                              {
                                                                  "tone":  "concern",
-                                                                 "text":  "Receiving succession: the roster needs another young long-term WR alongside Luther Burden and Chris Brazzell."
+                                                                 "text":  "Receiving succession: the roster needs another young long-term WR alongside Luther Burden."
                                                              }
                                                          ],
                                              "rank":  4
@@ -2644,34 +2645,6 @@
                                              "rank":  7
                                          },
                                          {
-                                             "rosterId":  11,
-                                             "ownerId":  "608874867592347648",
-                                             "teamName":  "Shoulda Won the Stanley",
-                                             "score":  78,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Elite young foundation: Kenneth Walker, Cam Ward, and Tua Tagovailoa give this roster multiple cornerstone assets entering or already within their prime."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Long-term quarterback security: Cam Ward and Tua Tagovailoa provide stability at dynasty\u0027s most valuable position."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Succession planning: veterans such as Geno Smith and David Njoku remain valuable, but the roster will eventually need younger replacements behind them."
-                                                             }
-                                                         ],
-                                             "rank":  8
-                                         },
-                                         {
                                              "rosterId":  4,
                                              "ownerId":  "76847552544522240",
                                              "teamName":  "BertoGenosis",
@@ -2695,6 +2668,34 @@
                                                              {
                                                                  "tone":  "concern",
                                                                  "text":  "Succession planning: veterans such as Aaron Rodgers remain valuable, but the roster will eventually need younger replacements behind them."
+                                                             }
+                                                         ],
+                                             "rank":  8
+                                         },
+                                         {
+                                             "rosterId":  11,
+                                             "ownerId":  "608874867592347648",
+                                             "teamName":  "Shoulda Won the Stanley",
+                                             "score":  75,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Elite young foundation: Kenneth Walker, Cam Ward, and Tua Tagovailoa give this roster multiple cornerstone assets entering or already within their prime."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Long-term quarterback security: Cam Ward and Tua Tagovailoa provide stability at dynasty\u0027s most valuable position."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Succession planning: veterans such as Geno Smith and David Njoku remain valuable, but the roster will eventually need younger replacements behind them."
                                                              }
                                                          ],
                                              "rank":  9
@@ -2816,7 +2817,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341646934816849920/rosters",
-                                           "refreshedAt":  "2026-06-18T13:58:55.5126385+00:00",
+                                           "refreshedAt":  "2026-06-19T13:59:20.2647865+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  368,
                                            "sleeperLeagueSeason":  "2026",
@@ -3076,21 +3077,21 @@
                                                                                },
                                                                                {
                                                                                    "rank":  6,
-                                                                                   "manager":  "Bootyhole Trolls",
-                                                                                   "rosterId":  11,
-                                                                                   "score":  78
-                                                                               },
-                                                                               {
-                                                                                   "rank":  7,
                                                                                    "manager":  "DSnyder5",
                                                                                    "rosterId":  9,
                                                                                    "score":  78
                                                                                },
                                                                                {
-                                                                                   "rank":  8,
+                                                                                   "rank":  7,
                                                                                    "manager":  "wador808",
                                                                                    "rosterId":  1,
                                                                                    "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  8,
+                                                                                   "manager":  "Bootyhole Trolls",
+                                                                                   "rosterId":  11,
+                                                                                   "score":  77.5
                                                                                },
                                                                                {
                                                                                    "rank":  9,
@@ -3366,6 +3367,34 @@
                                                           "rank":  6
                                                       },
                                                       {
+                                                          "rosterId":  2,
+                                                          "ownerId":  "740316773081030656",
+                                                          "teamName":  "Dsquad04",
+                                                          "score":  78,
+                                                          "reasons":  [
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Difference-making stars: Jahmyr Gibbs, Saquon Barkley, and Baker Mayfield give this lineup multiple players capable of swinging weekly matchups."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Championship-ready starters: the projected starting lineup is built around proven weekly production led by Jahmyr Gibbs, Saquon Barkley, and Baker Mayfield."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "concern",
+                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind Baker Mayfield."
+                                                                          }
+                                                                      ],
+                                                          "record":  {
+                                                                         "wins":  0,
+                                                                         "pointsFor":  0,
+                                                                         "maxPointsFor":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0
+                                                                     },
+                                                          "rank":  7
+                                                      },
+                                                      {
                                                           "rosterId":  4,
                                                           "ownerId":  "450183844482510848",
                                                           "teamName":  "evwray",
@@ -3382,34 +3411,6 @@
                                                                           {
                                                                               "tone":  "concern",
                                                                               "text":  "Depth pressure: behind Mike Evans, Kirk Cousins, and George Kittle, the bench has fewer proven weekly options if injuries or bye weeks hit together."
-                                                                          }
-                                                                      ],
-                                                          "record":  {
-                                                                         "wins":  0,
-                                                                         "pointsFor":  0,
-                                                                         "maxPointsFor":  0,
-                                                                         "losses":  0,
-                                                                         "ties":  0
-                                                                     },
-                                                          "rank":  7
-                                                      },
-                                                      {
-                                                          "rosterId":  2,
-                                                          "ownerId":  "740316773081030656",
-                                                          "teamName":  "Dsquad04",
-                                                          "score":  77,
-                                                          "reasons":  [
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Difference-making stars: Jahmyr Gibbs, Saquon Barkley, and Baker Mayfield give this lineup multiple players capable of swinging weekly matchups."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Championship-ready starters: the projected starting lineup is built around proven weekly production led by Jahmyr Gibbs, Saquon Barkley, and Baker Mayfield."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "concern",
-                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind Baker Mayfield."
                                                                           }
                                                                       ],
                                                           "record":  {
@@ -3437,7 +3438,7 @@
                                                                           },
                                                                           {
                                                                               "tone":  "concern",
-                                                                              "text":  "Too breakout-dependent: Malik Nabers, Colston Loveland, and De\u0027Von Achane still need young players to become immediate weekly producers."
+                                                                              "text":  "Too breakout-dependent: De\u0027Von Achane, Malik Nabers, and Colston Loveland still need young players to become immediate weekly producers."
                                                                           }
                                                                       ],
                                                           "record":  {
@@ -3453,7 +3454,7 @@
                                                           "rosterId":  9,
                                                           "ownerId":  "738614393776001024",
                                                           "teamName":  "DSnyder5",
-                                                          "score":  72,
+                                                          "score":  73,
                                                           "reasons":  [
                                                                           {
                                                                               "tone":  "positive",
@@ -3539,7 +3540,7 @@
                                              "rosterId":  11,
                                              "ownerId":  "1048334055684591616",
                                              "teamName":  "Bootyhole Trolls",
-                                             "score":  92,
+                                             "score":  93,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -3567,7 +3568,7 @@
                                              "rosterId":  12,
                                              "ownerId":  "996914165291745280",
                                              "teamName":  "SnoopDerek",
-                                             "score":  89,
+                                             "score":  90,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -3595,7 +3596,7 @@
                                              "rosterId":  6,
                                              "ownerId":  "774709870313185280",
                                              "teamName":  "k-han",
-                                             "score":  83,
+                                             "score":  84,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -3623,7 +3624,7 @@
                                              "rosterId":  7,
                                              "ownerId":  "76847552544522240",
                                              "teamName":  "BertoGenosis",
-                                             "score":  83,
+                                             "score":  84,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -3651,7 +3652,7 @@
                                              "rosterId":  10,
                                              "ownerId":  "921627885746712576",
                                              "teamName":  "MattyBRaps97",
-                                             "score":  83,
+                                             "score":  84,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -3679,7 +3680,7 @@
                                              "rosterId":  1,
                                              "ownerId":  "741223157700194304",
                                              "teamName":  "wador808",
-                                             "score":  80,
+                                             "score":  81,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -3707,7 +3708,7 @@
                                              "rosterId":  9,
                                              "ownerId":  "738614393776001024",
                                              "teamName":  "DSnyder5",
-                                             "score":  80,
+                                             "score":  81,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -3735,7 +3736,7 @@
                                              "rosterId":  3,
                                              "ownerId":  "465050123617955840",
                                              "teamName":  "TheJuanAndOnly15",
-                                             "score":  77,
+                                             "score":  78,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -3763,7 +3764,7 @@
                                              "rosterId":  4,
                                              "ownerId":  "450183844482510848",
                                              "teamName":  "evwray",
-                                             "score":  77,
+                                             "score":  78,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -3791,7 +3792,7 @@
                                              "rosterId":  2,
                                              "ownerId":  "740316773081030656",
                                              "teamName":  "Dsquad04",
-                                             "score":  74,
+                                             "score":  75,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -3819,7 +3820,7 @@
                                              "rosterId":  8,
                                              "ownerId":  "946501502510682112",
                                              "teamName":  "PasqTheGoat",
-                                             "score":  74,
+                                             "score":  72,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -3847,7 +3848,7 @@
                                              "rosterId":  5,
                                              "ownerId":  "1045843158745198592",
                                              "teamName":  "Hillbilly Brawlers",
-                                             "score":  65,
+                                             "score":  66,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -3904,7 +3905,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1342931950981091328/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:00.9508088+00:00",
+                                           "refreshedAt":  "2026-06-19T13:59:25.3916440+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  361,
                                            "sleeperLeagueSeason":  "2026",
@@ -4385,7 +4386,7 @@
                                                                           },
                                                                           {
                                                                               "tone":  "concern",
-                                                                              "text":  "Depth pressure: behind C.J. Stroud, Jaylen Warren, and Rhamondre Stevenson, the bench has fewer proven weekly options if injuries or bye weeks hit together."
+                                                                              "text":  "Depth pressure: behind C.J. Stroud, Rhamondre Stevenson, and Jaylen Warren, the bench has fewer proven weekly options if injuries or bye weeks hit together."
                                                                           }
                                                                       ],
                                                           "record":  {
@@ -4497,7 +4498,7 @@
                                                                           },
                                                                           {
                                                                               "tone":  "concern",
-                                                                              "text":  "Depth pressure: behind Shedeur Sanders, Michael Wilson, and Brian Thomas, the bench has fewer proven weekly options if injuries or bye weeks hit together."
+                                                                              "text":  "Depth pressure: behind Shedeur Sanders, Parker Washington, and Michael Wilson, the bench has fewer proven weekly options if injuries or bye weeks hit together."
                                                                           }
                                                                       ],
                                                           "record":  {
@@ -4508,34 +4509,6 @@
                                                                          "ties":  0
                                                                      },
                                                           "rank":  8
-                                                      },
-                                                      {
-                                                          "rosterId":  4,
-                                                          "ownerId":  "994351130131902464",
-                                                          "teamName":  "notoriousblt23",
-                                                          "score":  77,
-                                                          "reasons":  [
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Strong Superflex quarterbacks: Caleb Williams and Baker Mayfield give this roster two dependable weekly QB options."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Difference-making stars: Caleb Williams, Baker Mayfield, and Justin Jefferson give this lineup multiple players capable of swinging weekly matchups."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "concern",
-                                                                              "text":  "Too breakout-dependent: Caleb Williams, Bucky Irving, and Colston Loveland still need young players to become immediate weekly producers."
-                                                                          }
-                                                                      ],
-                                                          "record":  {
-                                                                         "wins":  0,
-                                                                         "pointsFor":  0,
-                                                                         "maxPointsFor":  0,
-                                                                         "losses":  0,
-                                                                         "ties":  0
-                                                                     },
-                                                          "rank":  9
                                                       },
                                                       {
                                                           "rosterId":  7,
@@ -4554,6 +4527,34 @@
                                                                           {
                                                                               "tone":  "concern",
                                                                               "text":  "Depth pressure: behind Tua Tagovailoa, Theo Johnson, and Brian Robinson, the bench has fewer proven weekly options if injuries or bye weeks hit together."
+                                                                          }
+                                                                      ],
+                                                          "record":  {
+                                                                         "wins":  0,
+                                                                         "pointsFor":  0,
+                                                                         "maxPointsFor":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0
+                                                                     },
+                                                          "rank":  9
+                                                      },
+                                                      {
+                                                          "rosterId":  4,
+                                                          "ownerId":  "994351130131902464",
+                                                          "teamName":  "notoriousblt23",
+                                                          "score":  77,
+                                                          "reasons":  [
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Strong Superflex quarterbacks: Caleb Williams and Baker Mayfield give this roster two dependable weekly QB options."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Difference-making stars: Caleb Williams, Baker Mayfield, and Justin Jefferson give this lineup multiple players capable of swinging weekly matchups."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "concern",
+                                                                              "text":  "Too breakout-dependent: Caleb Williams, Bucky Irving, and Colston Loveland still need young players to become immediate weekly producers."
                                                                           }
                                                                       ],
                                                           "record":  {
@@ -4764,34 +4765,6 @@
                                              "rank":  5
                                          },
                                          {
-                                             "rosterId":  4,
-                                             "ownerId":  "994351130131902464",
-                                             "teamName":  "notoriousblt23",
-                                             "score":  80,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Elite young foundation: Caleb Williams, Colston Loveland, and Breece Hall give this roster multiple cornerstone assets entering or already within their prime."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Long-term quarterback security: Caleb Williams and Carson Beck provide stability at dynasty\u0027s most valuable position."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Future flexibility: the roster is strong, but preserving rookie picks will matter when the current core eventually needs reinforcement."
-                                                             }
-                                                         ],
-                                             "rank":  6
-                                         },
-                                         {
                                              "rosterId":  7,
                                              "ownerId":  "712531686138646528",
                                              "teamName":  "swampraider",
@@ -4817,13 +4790,41 @@
                                                                  "text":  "Future flexibility: the roster is strong, but preserving rookie picks will matter when the current core eventually needs reinforcement."
                                                              }
                                                          ],
+                                             "rank":  6
+                                         },
+                                         {
+                                             "rosterId":  4,
+                                             "ownerId":  "994351130131902464",
+                                             "teamName":  "notoriousblt23",
+                                             "score":  80,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Elite young foundation: Caleb Williams, Colston Loveland, and Breece Hall give this roster multiple cornerstone assets entering or already within their prime."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Long-term quarterback security: Caleb Williams and Carson Beck provide stability at dynasty\u0027s most valuable position."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Future flexibility: the roster is strong, but preserving rookie picks will matter when the current core eventually needs reinforcement."
+                                                             }
+                                                         ],
                                              "rank":  7
                                          },
                                          {
                                              "rosterId":  11,
                                              "ownerId":  "791162591366983680",
                                              "teamName":  "JavarisonLamar",
-                                             "score":  80,
+                                             "score":  77,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -4992,9 +4993,9 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345763335270400/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:06.6840996+00:00",
+                                           "refreshedAt":  "2026-06-19T13:59:30.4023122+00:00",
                                            "rosterCount":  12,
-                                           "playerCount":  377,
+                                           "playerCount":  376,
                                            "sleeperLeagueSeason":  "2026",
                                            "sleeperLeagueStatus":  "in_season"
                                        },
@@ -5080,14 +5081,14 @@
                                                                                },
                                                                                {
                                                                                    "rank":  3,
-                                                                                   "manager":  "Bizo",
-                                                                                   "rosterId":  11,
+                                                                                   "manager":  "KingGrizz69",
+                                                                                   "rosterId":  8,
                                                                                    "score":  89.5
                                                                                },
                                                                                {
                                                                                    "rank":  4,
-                                                                                   "manager":  "KingGrizz69",
-                                                                                   "rosterId":  8,
+                                                                                   "manager":  "Tank Like Bigsby",
+                                                                                   "rosterId":  11,
                                                                                    "score":  89.5
                                                                                },
                                                                                {
@@ -5211,7 +5212,7 @@
                                                                                },
                                                                                {
                                                                                    "rank":  12,
-                                                                                   "manager":  "Bizo",
+                                                                                   "manager":  "Tank Like Bigsby",
                                                                                    "rosterId":  11,
                                                                                    "score":  76
                                                                                }
@@ -5276,7 +5277,7 @@
                                                                                },
                                                                                {
                                                                                    "rank":  10,
-                                                                                   "manager":  "Bizo",
+                                                                                   "manager":  "Tank Like Bigsby",
                                                                                    "rosterId":  11,
                                                                                    "score":  77
                                                                                },
@@ -5359,7 +5360,7 @@
                                                                                },
                                                                                {
                                                                                    "rank":  11,
-                                                                                   "manager":  "Bizo",
+                                                                                   "manager":  "Tank Like Bigsby",
                                                                                    "rosterId":  11,
                                                                                    "score":  77
                                                                                },
@@ -5405,7 +5406,7 @@
                                                           "rosterId":  6,
                                                           "ownerId":  "737338308111241216",
                                                           "teamName":  "MattyCRuzzlers",
-                                                          "score":  88,
+                                                          "score":  89,
                                                           "reasons":  [
                                                                           {
                                                                               "tone":  "positive",
@@ -5417,7 +5418,7 @@
                                                                           },
                                                                           {
                                                                               "tone":  "concern",
-                                                                              "text":  "Depth pressure: behind Jacoby Brissett, J.J. McCarthy, and Brian Robinson, the bench has fewer proven weekly options if injuries or bye weeks hit together."
+                                                                              "text":  "Depth pressure: behind Jacoby Brissett, J.J. McCarthy, and George Kittle, the bench has fewer proven weekly options if injuries or bye weeks hit together."
                                                                           }
                                                                       ],
                                                           "record":  {
@@ -5445,7 +5446,7 @@
                                                                           },
                                                                           {
                                                                               "tone":  "concern",
-                                                                              "text":  "Depth pressure: behind Matthew Stafford, Mason Taylor, and Kenyon Sadiq, the bench has fewer proven weekly options if injuries or bye weeks hit together."
+                                                                              "text":  "Too breakout-dependent: Fernando Mendoza, Malik Nabers, and Brock Bowers still need young players to become immediate weekly producers."
                                                                           }
                                                                       ],
                                                           "record":  {
@@ -5570,34 +5571,6 @@
                                                           "rank":  7
                                                       },
                                                       {
-                                                          "rosterId":  12,
-                                                          "ownerId":  "715780421882843136",
-                                                          "teamName":  "MJ23Sandberg",
-                                                          "score":  77,
-                                                          "reasons":  [
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Strong Superflex quarterbacks: Trevor Lawrence and Patrick Mahomes give this roster two dependable weekly QB options."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Difference-making stars: Trevor Lawrence, Patrick Mahomes, and Breece Hall give this lineup multiple players capable of swinging weekly matchups."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "concern",
-                                                                              "text":  "Too breakout-dependent: Bhayshul Tuten, Carnell Tate, and Parker Washington still need young players to become immediate weekly producers."
-                                                                          }
-                                                                      ],
-                                                          "record":  {
-                                                                         "wins":  0,
-                                                                         "pointsFor":  0,
-                                                                         "maxPointsFor":  0,
-                                                                         "losses":  0,
-                                                                         "ties":  0
-                                                                     },
-                                                          "rank":  8
-                                                      },
-                                                      {
                                                           "rosterId":  4,
                                                           "ownerId":  "467969640677502976",
                                                           "teamName":  "Akkido907",
@@ -5614,6 +5587,34 @@
                                                                           {
                                                                               "tone":  "concern",
                                                                               "text":  "Too breakout-dependent: Bryce Young, Jahmyr Gibbs, and De\u0027Von Achane still need young players to become immediate weekly producers."
+                                                                          }
+                                                                      ],
+                                                          "record":  {
+                                                                         "wins":  0,
+                                                                         "pointsFor":  0,
+                                                                         "maxPointsFor":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0
+                                                                     },
+                                                          "rank":  8
+                                                      },
+                                                      {
+                                                          "rosterId":  12,
+                                                          "ownerId":  "715780421882843136",
+                                                          "teamName":  "MJ23Sandberg",
+                                                          "score":  76,
+                                                          "reasons":  [
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Strong Superflex quarterbacks: Trevor Lawrence and Patrick Mahomes give this roster two dependable weekly QB options."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Difference-making stars: Trevor Lawrence, Patrick Mahomes, and Breece Hall give this lineup multiple players capable of swinging weekly matchups."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "concern",
+                                                                              "text":  "Depth pressure: behind Justin Fields, Dylan Sampson, and Alvin Kamara, the bench has fewer proven weekly options if injuries or bye weeks hit together."
                                                                           }
                                                                       ],
                                                           "record":  {
@@ -5656,7 +5657,7 @@
                                                       {
                                                           "rosterId":  11,
                                                           "ownerId":  "839700362360360960",
-                                                          "teamName":  "Bizo",
+                                                          "teamName":  "Tank Like Bigsby",
                                                           "score":  74,
                                                           "reasons":  [
                                                                           {
@@ -5669,7 +5670,7 @@
                                                                           },
                                                                           {
                                                                               "tone":  "concern",
-                                                                              "text":  "Too breakout-dependent: C.J. Stroud, Braelon Allen, and Rome Odunze still need young players to become immediate weekly producers."
+                                                                              "text":  "Too breakout-dependent: C.J. Stroud, Rome Odunze, and KC Concepcion still need young players to become immediate weekly producers."
                                                                           }
                                                                       ],
                                                           "record":  {
@@ -5798,7 +5799,7 @@
                                          {
                                              "rosterId":  11,
                                              "ownerId":  "839700362360360960",
-                                             "teamName":  "Bizo",
+                                             "teamName":  "Tank Like Bigsby",
                                              "score":  81,
                                              "record":  {
                                                             "wins":  0,
@@ -6038,7 +6039,7 @@
                                                              },
                                                              {
                                                                  "tone":  "positive",
-                                                                 "text":  "Long-term quarterback security: Tua Tagovailoa and Drew Allar provide stability at dynasty\u0027s most valuable position."
+                                                                 "text":  "Long-term quarterback security: Tua Tagovailoa and Will Levis provide stability at dynasty\u0027s most valuable position."
                                                              },
                                                              {
                                                                  "tone":  "concern",
@@ -6080,7 +6081,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345934114725888/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:12.5568042+00:00",
+                                           "refreshedAt":  "2026-06-19T13:59:35.6356704+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  372,
                                            "sleeperLeagueSeason":  "2026",
@@ -6352,21 +6353,21 @@
                                                                                },
                                                                                {
                                                                                    "rank":  8,
-                                                                                   "manager":  "Zaragoz",
-                                                                                   "rosterId":  11,
-                                                                                   "score":  78
-                                                                               },
-                                                                               {
-                                                                                   "rank":  9,
                                                                                    "manager":  "kuhnyboy",
                                                                                    "rosterId":  12,
                                                                                    "score":  77.5
                                                                                },
                                                                                {
-                                                                                   "rank":  10,
+                                                                                   "rank":  9,
                                                                                    "manager":  "Trading for 27/28 picks",
                                                                                    "rosterId":  10,
                                                                                    "score":  77.5
+                                                                               },
+                                                                               {
+                                                                                   "rank":  10,
+                                                                                   "manager":  "Zaragoz",
+                                                                                   "rosterId":  11,
+                                                                                   "score":  77
                                                                                },
                                                                                {
                                                                                    "rank":  11,
@@ -6493,7 +6494,7 @@
                                                           "rosterId":  3,
                                                           "ownerId":  "738614393776001024",
                                                           "teamName":  "DSnyder5",
-                                                          "score":  88,
+                                                          "score":  89,
                                                           "reasons":  [
                                                                           {
                                                                               "tone":  "positive",
@@ -6505,7 +6506,7 @@
                                                                           },
                                                                           {
                                                                               "tone":  "concern",
-                                                                              "text":  "Depth pressure: behind Tom Brady, Deshaun Watson, and Brian Thomas, the bench has fewer proven weekly options if injuries or bye weeks hit together."
+                                                                              "text":  "Depth pressure: behind Tom Brady, Deshaun Watson, and Tre Tucker, the bench has fewer proven weekly options if injuries or bye weeks hit together."
                                                                           }
                                                                       ],
                                                           "record":  {
@@ -7168,7 +7169,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1360285262617284608/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:18.2182443+00:00",
+                                           "refreshedAt":  "2026-06-19T13:59:40.8210218+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  375,
                                            "sleeperLeagueSeason":  "2026",
@@ -7446,14 +7447,14 @@
                                                                                },
                                                                                {
                                                                                    "rank":  9,
-                                                                                   "manager":  "StealthRUS",
-                                                                                   "rosterId":  4,
-                                                                                   "score":  77
+                                                                                   "manager":  "Sharksarenice",
+                                                                                   "rosterId":  10,
+                                                                                   "score":  76
                                                                                },
                                                                                {
                                                                                    "rank":  10,
-                                                                                   "manager":  "Sharksarenice",
-                                                                                   "rosterId":  10,
+                                                                                   "manager":  "StealthRUS",
+                                                                                   "rosterId":  4,
                                                                                    "score":  76
                                                                                },
                                                                                {
@@ -7466,7 +7467,7 @@
                                                                                    "rank":  12,
                                                                                    "manager":  "jbd4240",
                                                                                    "rosterId":  6,
-                                                                                   "score":  74.5
+                                                                                   "score":  75
                                                                                }
                                                                            ]
                                                           },
@@ -7649,7 +7650,7 @@
                                                                           },
                                                                           {
                                                                               "tone":  "concern",
-                                                                              "text":  "Depth pressure: behind Sam Darnold, Kenneth Gainwell, and Michael Trigg, the bench has fewer proven weekly options if injuries or bye weeks hit together."
+                                                                              "text":  "Depth pressure: behind Sam Darnold, Kenneth Gainwell, and Mike Washington, the bench has fewer proven weekly options if injuries or bye weeks hit together."
                                                                           }
                                                                       ],
                                                           "record":  {
@@ -8256,9 +8257,9 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362902973520306176/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:23.9802093+00:00",
+                                           "refreshedAt":  "2026-06-19T13:59:46.0356037+00:00",
                                            "rosterCount":  12,
-                                           "playerCount":  354,
+                                           "playerCount":  352,
                                            "sleeperLeagueSeason":  "2026",
                                            "sleeperLeagueStatus":  "in_season"
                                        },
@@ -8530,7 +8531,7 @@
                                                                                    "rank":  8,
                                                                                    "manager":  "sellrya",
                                                                                    "rosterId":  11,
-                                                                                   "score":  77
+                                                                                   "score":  77.5
                                                                                },
                                                                                {
                                                                                    "rank":  9,
@@ -8694,10 +8695,38 @@
                                                           "rank":  2
                                                       },
                                                       {
+                                                          "rosterId":  8,
+                                                          "ownerId":  "1129618663734272000",
+                                                          "teamName":  "Raccoon",
+                                                          "score":  87,
+                                                          "reasons":  [
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Strong Superflex quarterbacks: Josh Allen and Matthew Stafford give this roster two dependable weekly QB options."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Difference-making stars: Josh Allen, Jonathan Taylor, and Josh Jacobs give this lineup multiple players capable of swinging weekly matchups."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "concern",
+                                                                              "text":  "Depth pressure: behind J.K. Dobbins, Ty Simpson, and Jalen Milroe, the bench has fewer proven weekly options if injuries or bye weeks hit together."
+                                                                          }
+                                                                      ],
+                                                          "record":  {
+                                                                         "wins":  0,
+                                                                         "pointsFor":  0,
+                                                                         "maxPointsFor":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0
+                                                                     },
+                                                          "rank":  3
+                                                      },
+                                                      {
                                                           "rosterId":  12,
                                                           "ownerId":  "869019215724752896",
                                                           "teamName":  "Bucket List Ballers",
-                                                          "score":  86,
+                                                          "score":  85,
                                                           "reasons":  [
                                                                           {
                                                                               "tone":  "positive",
@@ -8719,63 +8748,7 @@
                                                                          "losses":  0,
                                                                          "ties":  0
                                                                      },
-                                                          "rank":  3
-                                                      },
-                                                      {
-                                                          "rosterId":  3,
-                                                          "ownerId":  "867554433905606656",
-                                                          "teamName":  "Sunnyvale Mah’fuckahs",
-                                                          "score":  85,
-                                                          "reasons":  [
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Strong Superflex quarterbacks: Brock Purdy and Tyler Shough give this roster two dependable weekly QB options."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Difference-making stars: Ja\u0027Marr Chase, Brock Purdy, and Jaxon Smith-Njigba give this lineup multiple players capable of swinging weekly matchups."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "concern",
-                                                                              "text":  "Depth pressure: behind Dak Prescott, Theo Johnson, and Kenneth Gainwell, the bench has fewer proven weekly options if injuries or bye weeks hit together."
-                                                                          }
-                                                                      ],
-                                                          "record":  {
-                                                                         "wins":  0,
-                                                                         "pointsFor":  0,
-                                                                         "maxPointsFor":  0,
-                                                                         "losses":  0,
-                                                                         "ties":  0
-                                                                     },
                                                           "rank":  4
-                                                      },
-                                                      {
-                                                          "rosterId":  1,
-                                                          "ownerId":  "1130630426395185152",
-                                                          "teamName":  "ZuPlum",
-                                                          "score":  84,
-                                                          "reasons":  [
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Difference-making stars: Jahmyr Gibbs, Justin Herbert, and Saquon Barkley give this lineup multiple players capable of swinging weekly matchups."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Championship-ready starters: the projected starting lineup is built around proven weekly production led by Jahmyr Gibbs, Justin Herbert, and Saquon Barkley."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "concern",
-                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind Justin Herbert."
-                                                                          }
-                                                                      ],
-                                                          "record":  {
-                                                                         "wins":  0,
-                                                                         "pointsFor":  0,
-                                                                         "maxPointsFor":  0,
-                                                                         "losses":  0,
-                                                                         "ties":  0
-                                                                     },
-                                                          "rank":  5
                                                       },
                                                       {
                                                           "rosterId":  11,
@@ -8803,25 +8776,53 @@
                                                                          "losses":  0,
                                                                          "ties":  0
                                                                      },
-                                                          "rank":  6
+                                                          "rank":  5
                                                       },
                                                       {
-                                                          "rosterId":  8,
-                                                          "ownerId":  "1129618663734272000",
-                                                          "teamName":  "Raccoon",
-                                                          "score":  81,
+                                                          "rosterId":  3,
+                                                          "ownerId":  "867554433905606656",
+                                                          "teamName":  "Sunnyvale Mah’fuckahs",
+                                                          "score":  84,
                                                           "reasons":  [
                                                                           {
                                                                               "tone":  "positive",
-                                                                              "text":  "Strong Superflex quarterbacks: Josh Allen and Matthew Stafford give this roster two dependable weekly QB options."
+                                                                              "text":  "Strong Superflex quarterbacks: Brock Purdy and Tyler Shough give this roster two dependable weekly QB options."
                                                                           },
                                                                           {
                                                                               "tone":  "positive",
-                                                                              "text":  "Difference-making stars: Josh Allen, Jonathan Taylor, and Josh Jacobs give this lineup multiple players capable of swinging weekly matchups."
+                                                                              "text":  "Difference-making stars: Ja\u0027Marr Chase, Brock Purdy, and Jaxon Smith-Njigba give this lineup multiple players capable of swinging weekly matchups."
                                                                           },
                                                                           {
                                                                               "tone":  "concern",
-                                                                              "text":  "Depth pressure: behind J.K. Dobbins, Ty Simpson, and Jalen Milroe, the bench has fewer proven weekly options if injuries or bye weeks hit together."
+                                                                              "text":  "Depth pressure: behind Dak Prescott, Kenneth Gainwell, and Tre Tucker, the bench has fewer proven weekly options if injuries or bye weeks hit together."
+                                                                          }
+                                                                      ],
+                                                          "record":  {
+                                                                         "wins":  0,
+                                                                         "pointsFor":  0,
+                                                                         "maxPointsFor":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0
+                                                                     },
+                                                          "rank":  6
+                                                      },
+                                                      {
+                                                          "rosterId":  1,
+                                                          "ownerId":  "1130630426395185152",
+                                                          "teamName":  "ZuPlum",
+                                                          "score":  83,
+                                                          "reasons":  [
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Difference-making stars: Jahmyr Gibbs, Justin Herbert, and Saquon Barkley give this lineup multiple players capable of swinging weekly matchups."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Championship-ready starters: the projected starting lineup is built around proven weekly production led by Jahmyr Gibbs, Justin Herbert, and Saquon Barkley."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "concern",
+                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind Justin Herbert."
                                                                           }
                                                                       ],
                                                           "record":  {
@@ -8865,7 +8866,7 @@
                                                           "rosterId":  5,
                                                           "ownerId":  "1081283448758804480",
                                                           "teamName":  "Likely Mid",
-                                                          "score":  78,
+                                                          "score":  77,
                                                           "reasons":  [
                                                                           {
                                                                               "tone":  "positive",
@@ -8921,7 +8922,7 @@
                                                           "rosterId":  9,
                                                           "ownerId":  "1231289575532404736",
                                                           "teamName":  "Bucky Around and Find Out",
-                                                          "score":  66,
+                                                          "score":  65,
                                                           "reasons":  [
                                                                           {
                                                                               "tone":  "positive",
@@ -8949,7 +8950,7 @@
                                                           "rosterId":  7,
                                                           "ownerId":  "786671327842009088",
                                                           "teamName":  "dchase05",
-                                                          "score":  65,
+                                                          "score":  64,
                                                           "reasons":  [
                                                                           {
                                                                               "tone":  "positive",
@@ -9091,7 +9092,7 @@
                                              "rosterId":  8,
                                              "ownerId":  "1129618663734272000",
                                              "teamName":  "Raccoon",
-                                             "score":  79,
+                                             "score":  82,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -9344,7 +9345,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1370134727394066432/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:29.5802588+00:00",
+                                           "refreshedAt":  "2026-06-19T13:59:50.8959957+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9452,7 +9453,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350152770275020800/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:29.8100164+00:00",
+                                           "refreshedAt":  "2026-06-19T13:59:51.3462435+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9560,7 +9561,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154389192474624/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:30.0420638+00:00",
+                                           "refreshedAt":  "2026-06-19T13:59:51.8274012+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9668,7 +9669,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154561549004800/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:30.2757477+00:00",
+                                           "refreshedAt":  "2026-06-19T13:59:52.2408583+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9776,7 +9777,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154695137570816/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:30.4995897+00:00",
+                                           "refreshedAt":  "2026-06-19T13:59:52.6313296+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9884,7 +9885,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095209052508160/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:30.7151585+00:00",
+                                           "refreshedAt":  "2026-06-19T13:59:53.0412475+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -10107,7 +10108,7 @@
                                                                                    "rank":  5,
                                                                                    "manager":  "2GunzTanner",
                                                                                    "rosterId":  2,
-                                                                                   "score":  76.5
+                                                                                   "score":  77.5
                                                                                },
                                                                                {
                                                                                    "rank":  6,
@@ -10324,6 +10325,34 @@
                                              "rank":  4
                                          },
                                          {
+                                             "rosterId":  2,
+                                             "ownerId":  "1031424079259197440",
+                                             "teamName":  "2GunzTanner",
+                                             "score":  83,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Quarterback room: 83.0 grade, 1st of 10; is especially important in Superflex and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Top-end ceiling: 66.0 grade, 2nd of 10; creates matchup-winning upside and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Player availability: 70.0 grade, 9th of 10; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  5
+                                         },
+                                         {
                                              "rosterId":  4,
                                              "ownerId":  "995900688305733632",
                                              "teamName":  "kj0116",
@@ -10347,34 +10376,6 @@
                                                              {
                                                                  "tone":  "concern",
                                                                  "text":  "Player availability: 76.0 grade, 7th of 10; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  5
-                                         },
-                                         {
-                                             "rosterId":  2,
-                                             "ownerId":  "1031424079259197440",
-                                             "teamName":  "2GunzTanner",
-                                             "score":  82,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Quarterback room: 83.0 grade, 1st of 10; is especially important in Superflex and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Top-end ceiling: 66.0 grade, 2nd of 10; creates matchup-winning upside and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Player availability: 70.0 grade, 9th of 10; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
                                                              }
                                                          ],
                                              "rank":  6
@@ -10524,7 +10525,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095313704554496/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:33.0678161+00:00",
+                                           "refreshedAt":  "2026-06-19T13:59:55.3642311+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -10883,7 +10884,7 @@
                                              "rosterId":  10,
                                              "ownerId":  "1290192913556340736",
                                              "teamName":  "OutlawReturns",
-                                             "score":  89,
+                                             "score":  88,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -11164,7 +11165,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095371091017728/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:35.5585242+00:00",
+                                           "refreshedAt":  "2026-06-19T13:59:57.6338194+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -11417,7 +11418,7 @@
                                                                                    "rank":  10,
                                                                                    "manager":  "Tacious00",
                                                                                    "rosterId":  5,
-                                                                                   "score":  74
+                                                                                   "score":  73
                                                                                }
                                                                            ]
                                                           },
@@ -11594,7 +11595,7 @@
                                                              },
                                                              {
                                                                  "tone":  "positive",
-                                                                 "text":  "Usable depth: 74.4 grade, 1st of 10; shapes bye-week and injury resilience and is one of this roster\u0027s strongest pillars."
+                                                                 "text":  "Usable depth: 74.1 grade, 1st of 10; shapes bye-week and injury resilience and is one of this roster\u0027s strongest pillars."
                                                              },
                                                              {
                                                                  "tone":  "concern",
@@ -11607,7 +11608,7 @@
                                              "rosterId":  5,
                                              "ownerId":  "734717042283905024",
                                              "teamName":  "Tacious00",
-                                             "score":  87,
+                                             "score":  86,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -11730,7 +11731,7 @@
                                              "reasons":  [
                                                              {
                                                                  "tone":  "positive",
-                                                                 "text":  "Usable depth: 73.4 grade, 2nd of 10; shapes bye-week and injury resilience and is one of this roster\u0027s strongest pillars."
+                                                                 "text":  "Usable depth: 73.7 grade, 2nd of 10; shapes bye-week and injury resilience and is one of this roster\u0027s strongest pillars."
                                                              },
                                                              {
                                                                  "tone":  "positive",
@@ -11804,7 +11805,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095416859287552/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:37.7951266+00:00",
+                                           "refreshedAt":  "2026-06-19T13:59:59.7885021+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -12238,10 +12239,38 @@
                                                              },
                                                              {
                                                                  "tone":  "concern",
-                                                                 "text":  "Scoring-system fit: 78.0 grade, 8th of 10; shows how well the roster matches league scoring and is the clearest area holding the roster back."
+                                                                 "text":  "Starting lineup: 77.9 grade, 9th of 10; drives the weekly baseline and is the clearest area holding the roster back."
                                                              }
                                                          ],
                                              "rank":  4
+                                         },
+                                         {
+                                             "rosterId":  1,
+                                             "ownerId":  "738614393776001024",
+                                             "teamName":  "DSnyder5",
+                                             "score":  86,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Player availability: 88.0 grade, 1st of 10; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Top-end ceiling: 66.0 grade, 3rd of 10; creates matchup-winning upside and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Scoring-system fit: 78.0 grade, 9th of 10; shows how well the roster matches league scoring and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  5
                                          },
                                          {
                                              "rosterId":  9,
@@ -12267,34 +12296,6 @@
                                                              {
                                                                  "tone":  "concern",
                                                                  "text":  "Quarterback room: 75.5 grade, 7th of 10; is especially important in Superflex and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  5
-                                         },
-                                         {
-                                             "rosterId":  1,
-                                             "ownerId":  "738614393776001024",
-                                             "teamName":  "DSnyder5",
-                                             "score":  85,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 88.0 grade, 1st of 10; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Top-end ceiling: 66.0 grade, 3rd of 10; creates matchup-winning upside and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Scoring-system fit: 78.0 grade, 8th of 10; shows how well the roster matches league scoring and is the clearest area holding the roster back."
                                                              }
                                                          ],
                                              "rank":  6
@@ -12374,7 +12375,7 @@
                                                              },
                                                              {
                                                                  "tone":  "positive",
-                                                                 "text":  "Usable depth: 73.1 grade, 3rd of 10; shapes bye-week and injury resilience and is one of this roster\u0027s strongest pillars."
+                                                                 "text":  "Usable depth: 73.1 grade, 2nd of 10; shapes bye-week and injury resilience and is one of this roster\u0027s strongest pillars."
                                                              },
                                                              {
                                                                  "tone":  "concern",
@@ -12444,7 +12445,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095453291003904/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:40.0298674+00:00",
+                                           "refreshedAt":  "2026-06-19T14:00:02.1062583+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  179,
                                            "sleeperLeagueSeason":  "2026",
@@ -12915,7 +12916,7 @@
                                              "rosterId":  9,
                                              "ownerId":  "584235527943798784",
                                              "teamName":  "fatty17",
-                                             "score":  84,
+                                             "score":  85,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -12971,7 +12972,7 @@
                                              "rosterId":  1,
                                              "ownerId":  "1263107036925665280",
                                              "teamName":  "PickleRick702",
-                                             "score":  83,
+                                             "score":  82,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -13084,7 +13085,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480393130868736/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:42.2532036+00:00",
+                                           "refreshedAt":  "2026-06-19T14:00:04.3602834+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -13486,7 +13487,7 @@
                                                              },
                                                              {
                                                                  "tone":  "positive",
-                                                                 "text":  "Top-end ceiling: 66.0 grade, 3rd of 10; creates matchup-winning upside and is one of this roster\u0027s strongest pillars."
+                                                                 "text":  "Usable depth: 73.6 grade, 2nd of 10; shapes bye-week and injury resilience and is one of this roster\u0027s strongest pillars."
                                                              },
                                                              {
                                                                  "tone":  "concern",
@@ -13678,7 +13679,7 @@
                                              "reasons":  [
                                                              {
                                                                  "tone":  "positive",
-                                                                 "text":  "Usable depth: 72.1 grade, 7th of 10; shapes bye-week and injury resilience and is one of this roster\u0027s strongest pillars."
+                                                                 "text":  "Usable depth: 71.9 grade, 8th of 10; shapes bye-week and injury resilience and is one of this roster\u0027s strongest pillars."
                                                              },
                                                              {
                                                                  "tone":  "positive",
@@ -13724,7 +13725,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480515533242368/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:44.4697076+00:00",
+                                           "refreshedAt":  "2026-06-19T14:00:06.6027518+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -13977,7 +13978,7 @@
                                                                                    "rank":  10,
                                                                                    "manager":  "TySegall",
                                                                                    "rosterId":  9,
-                                                                                   "score":  74
+                                                                                   "score":  73.5
                                                                                }
                                                                            ]
                                                           },
@@ -14074,7 +14075,7 @@
                                                              },
                                                              {
                                                                  "tone":  "concern",
-                                                                 "text":  "Usable depth: 71.6 grade, 10th of 10; shapes bye-week and injury resilience and is the clearest area holding the roster back."
+                                                                 "text":  "Usable depth: 71.9 grade, 8th of 10; shapes bye-week and injury resilience and is the clearest area holding the roster back."
                                                              }
                                                          ],
                                              "rank":  1
@@ -14364,7 +14365,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480638808064000/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:46.6921187+00:00",
+                                           "refreshedAt":  "2026-06-19T14:00:08.8266583+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -14695,7 +14696,7 @@
                                              "rosterId":  9,
                                              "ownerId":  "1175159775586222080",
                                              "teamName":  "TryanboloneBB",
-                                             "score":  94,
+                                             "score":  93,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -14804,6 +14805,34 @@
                                              "rank":  4
                                          },
                                          {
+                                             "rosterId":  1,
+                                             "ownerId":  "738614393776001024",
+                                             "teamName":  "DSnyder5",
+                                             "score":  88,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Player availability: 88.0 grade, 3rd of 10; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Top-end ceiling: 66.0 grade, 3rd of 10; creates matchup-winning upside and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Quarterback room: 76.0 grade, 6th of 10; is especially important in Superflex and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  5
+                                         },
+                                         {
                                              "rosterId":  2,
                                              "ownerId":  "466785377303130112",
                                              "teamName":  "VinsBroPaul",
@@ -14827,34 +14856,6 @@
                                                              {
                                                                  "tone":  "concern",
                                                                  "text":  "Usable depth: 71.7 grade, 8th of 10; shapes bye-week and injury resilience and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  5
-                                         },
-                                         {
-                                             "rosterId":  1,
-                                             "ownerId":  "738614393776001024",
-                                             "teamName":  "DSnyder5",
-                                             "score":  87,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 88.0 grade, 3rd of 10; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Top-end ceiling: 66.0 grade, 3rd of 10; creates matchup-winning upside and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Quarterback room: 76.0 grade, 6th of 10; is especially important in Superflex and is the clearest area holding the roster back."
                                                              }
                                                          ],
                                              "rank":  6
@@ -15004,7 +15005,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480857310302208/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:48.9106795+00:00",
+                                           "refreshedAt":  "2026-06-19T14:00:11.0347595+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -15462,7 +15463,7 @@
                                                              },
                                                              {
                                                                  "tone":  "positive",
-                                                                 "text":  "Usable depth: 72.9 grade, 4th of 10; shapes bye-week and injury resilience and is one of this roster\u0027s strongest pillars."
+                                                                 "text":  "Starting lineup: 78.6 grade, 5th of 10; drives the weekly baseline and is one of this roster\u0027s strongest pillars."
                                                              },
                                                              {
                                                                  "tone":  "concern",
@@ -15518,7 +15519,7 @@
                                                              },
                                                              {
                                                                  "tone":  "positive",
-                                                                 "text":  "Usable depth: 73.0 grade, 3rd of 10; shapes bye-week and injury resilience and is one of this roster\u0027s strongest pillars."
+                                                                 "text":  "Usable depth: 73.3 grade, 3rd of 10; shapes bye-week and injury resilience and is one of this roster\u0027s strongest pillars."
                                                              },
                                                              {
                                                                  "tone":  "concern",
@@ -15644,7 +15645,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480992765353984/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:51.1204652+00:00",
+                                           "refreshedAt":  "2026-06-19T14:00:13.2651689+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -15743,7 +15744,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362908679824740352/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:51.3537204+00:00",
+                                           "refreshedAt":  "2026-06-19T14:00:13.7175756+00:00",
                                            "rosterCount":  24,
                                            "playerCount":  120,
                                            "sleeperLeagueSeason":  "2026",
@@ -16191,15 +16192,15 @@
                                                                                },
                                                                                {
                                                                                    "rank":  17,
-                                                                                   "manager":  "GSH46",
-                                                                                   "rosterId":  7,
-                                                                                   "score":  72
+                                                                                   "manager":  "ghopzy",
+                                                                                   "rosterId":  6,
+                                                                                   "score":  73
                                                                                },
                                                                                {
                                                                                    "rank":  18,
-                                                                                   "manager":  "ghopzy",
-                                                                                   "rosterId":  6,
-                                                                                   "score":  71
+                                                                                   "manager":  "GSH46",
+                                                                                   "rosterId":  7,
+                                                                                   "score":  72
                                                                                },
                                                                                {
                                                                                    "rank":  19,
@@ -16612,7 +16613,7 @@
                                                              },
                                                              {
                                                                  "tone":  "concern",
-                                                                 "text":  "Usable depth: 71.0 grade, 15th of 24; shapes bye-week and injury resilience and is the clearest area holding the roster back."
+                                                                 "text":  "Usable depth: 71.0 grade, 14th of 24; shapes bye-week and injury resilience and is the clearest area holding the roster back."
                                                              }
                                                          ],
                                              "rank":  8
@@ -16668,7 +16669,7 @@
                                                              },
                                                              {
                                                                  "tone":  "concern",
-                                                                 "text":  "Usable depth: 71.0 grade, 15th of 24; shapes bye-week and injury resilience and is the clearest area holding the roster back."
+                                                                 "text":  "Usable depth: 71.0 grade, 14th of 24; shapes bye-week and injury resilience and is the clearest area holding the roster back."
                                                              }
                                                          ],
                                              "rank":  10
@@ -16720,7 +16721,7 @@
                                                              },
                                                              {
                                                                  "tone":  "positive",
-                                                                 "text":  "Starting lineup: 80.8 grade, 2nd of 24; drives the weekly baseline and is one of this roster\u0027s strongest pillars."
+                                                                 "text":  "Usable depth: 74.0 grade, 6th of 24; shapes bye-week and injury resilience and is one of this roster\u0027s strongest pillars."
                                                              },
                                                              {
                                                                  "tone":  "concern",
@@ -16832,7 +16833,7 @@
                                                              },
                                                              {
                                                                  "tone":  "positive",
-                                                                 "text":  "Usable depth: 73.0 grade, 9th of 24; shapes bye-week and injury resilience and is one of this roster\u0027s strongest pillars."
+                                                                 "text":  "Scoring-system fit: 84.0 grade, 7th of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
                                                              },
                                                              {
                                                                  "tone":  "concern",
@@ -17000,7 +17001,7 @@
                                                              },
                                                              {
                                                                  "tone":  "positive",
-                                                                 "text":  "Usable depth: 72.0 grade, 11th of 24; shapes bye-week and injury resilience and is one of this roster\u0027s strongest pillars."
+                                                                 "text":  "Usable depth: 72.0 grade, 10th of 24; shapes bye-week and injury resilience and is one of this roster\u0027s strongest pillars."
                                                              },
                                                              {
                                                                  "tone":  "concern",
@@ -17013,7 +17014,7 @@
                                              "rosterId":  6,
                                              "ownerId":  "1358651112126705664",
                                              "teamName":  "ghopzy",
-                                             "score":  76,
+                                             "score":  77,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -17028,7 +17029,7 @@
                                                              },
                                                              {
                                                                  "tone":  "positive",
-                                                                 "text":  "Starting lineup: 78.0 grade, 20th of 24; drives the weekly baseline and is one of this roster\u0027s strongest pillars."
+                                                                 "text":  "Starting lineup: 78.5 grade, 19th of 24; drives the weekly baseline and is one of this roster\u0027s strongest pillars."
                                                              },
                                                              {
                                                                  "tone":  "concern",
@@ -17068,6 +17069,93 @@
                                      ]
                     },
                     {
+                        "leagueRecordId":  "BG2",
+                        "sleeperLeagueId":  "1368003315815686144",
+                        "name":  "VBP Best Ball Gauntlet 2",
+                        "format":  "gauntlet",
+                        "publish":  false,
+                        "holdReason":  "regular draft is pre_draft",
+                        "draftStatuses":  [
+                                              "pre_draft"
+                                          ],
+                        "draftReadiness":  {
+                                               "ready":  false,
+                                               "stage":  "regular",
+                                               "label":  "Waiting on regular draft",
+                                               "reason":  "regular draft is pre_draft",
+                                               "drafts":  [
+                                                              {
+                                                                  "draftId":  "1368003316625178624",
+                                                                  "status":  "pre_draft",
+                                                                  "stage":  "regular",
+                                                                  "type":  "snake",
+                                                                  "season":  "2026",
+                                                                  "seasonType":  "regular",
+                                                                  "playerType":  0,
+                                                                  "rounds":  6,
+                                                                  "name":  "VBP $5 Bestball Gauntlet 2"
+                                                              }
+                                                          ]
+                                           },
+                        "rosterSync":  {
+                                           "source":  "https://api.sleeper.app/v1/league/1368003315815686144/rosters",
+                                           "refreshedAt":  "2026-06-19T14:00:16.2198412+00:00",
+                                           "rosterCount":  24,
+                                           "playerCount":  0,
+                                           "sleeperLeagueSeason":  "2026",
+                                           "sleeperLeagueStatus":  "pre_draft"
+                                       },
+                        "rosterPositions":  [
+                                                "FLEX",
+                                                "FLEX",
+                                                "FLEX",
+                                                "SUPER_FLEX",
+                                                "BN",
+                                                "BN"
+                                            ],
+                        "scoringProfile":  {
+                                               "source":  "Live Sleeper league scoring_settings",
+                                               "rec":  0,
+                                               "bonusRecRb":  0.5,
+                                               "bonusRecWr":  0.25,
+                                               "bonusRecTe":  0.75,
+                                               "rbPpr":  0.5,
+                                               "wrPpr":  0.25,
+                                               "tePpr":  0.75,
+                                               "rushYard":  0.1,
+                                               "rushTd":  6,
+                                               "receivingYard":  0.1,
+                                               "receivingTd":  6,
+                                               "passingYard":  0.04,
+                                               "passingTd":  4,
+                                               "interception":  -1,
+                                               "usesConfiguredReceptionProfile":  true,
+                                               "strategy":  "Scoring settings verified from Sleeper for this league."
+                                           },
+                        "lineupArchitecture":  {
+                                                   "teamCount":  24,
+                                                   "qbSlots":  0,
+                                                   "superflexSlots":  1,
+                                                   "rbSlots":  0,
+                                                   "wrSlots":  0,
+                                                   "teSlots":  0,
+                                                   "flexSlots":  3,
+                                                   "isSuperflex":  true,
+                                                   "summary":  "24 teams; starters: 0 QB, 0 RB, 0 WR, 0 TE, 3 FLEX, 1 SUPER_FLEX."
+                                               },
+                        "formatProfile":  {
+                                              "label":  "Best Ball Gauntlet",
+                                              "publicScope":  "Single-league board after the draft is complete",
+                                              "emphasis":  "Four-start micro-roster strength, Superflex ceiling, and availability risk in a locked roster format."
+                                          },
+                        "positionalRankings":  {
+
+                                               },
+                        "rankings":  [
+
+                                     ]
+                    },
+                    {
                         "leagueRecordId":  "RDB1",
                         "sleeperLeagueId":  "1338004997836640256",
                         "name":  "Titan",
@@ -17098,7 +17186,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338004997836640256/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:53.8604959+00:00",
+                                           "refreshedAt":  "2026-06-19T14:00:16.6417703+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -17194,7 +17282,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005036122279936/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:54.0938508+00:00",
+                                           "refreshedAt":  "2026-06-19T14:00:17.1007953+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -17290,7 +17378,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005075167035392/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:54.3196264+00:00",
+                                           "refreshedAt":  "2026-06-19T14:00:17.6746913+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -17386,7 +17474,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005113482022912/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:54.6481816+00:00",
+                                           "refreshedAt":  "2026-06-19T14:00:18.1030012+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -17482,7 +17570,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005158071660544/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:54.8657969+00:00",
+                                           "refreshedAt":  "2026-06-19T14:00:18.5214367+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -17578,7 +17666,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846317608992768/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:55.0983305+00:00",
+                                           "refreshedAt":  "2026-06-19T14:00:19.0087663+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -17673,7 +17761,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846742810775552/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:55.3151774+00:00",
+                                           "refreshedAt":  "2026-06-19T14:00:19.4534651+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -17768,7 +17856,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1363630886133694464/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:55.5264193+00:00",
+                                           "refreshedAt":  "2026-06-19T14:00:19.8872119+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -17850,7 +17938,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339342261023961088/rosters",
-                                           "refreshedAt":  "2026-06-18T13:59:55.7686832+00:00",
+                                           "refreshedAt":  "2026-06-19T14:00:20.2896383+00:00",
                                            "rosterCount":  18,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
