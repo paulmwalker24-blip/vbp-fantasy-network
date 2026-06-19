@@ -71,6 +71,12 @@ Once `data/private/discord-webhooks.json` contains the real testing-channel webh
 powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-testing-channel-stack.ps1
 ```
 
+Normal runs update the saved Discord message in place. For a paid-count change that should be visible as a fresh channel post, run the same command with `-ForceNewPost` and a specific channel:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-testing-channel-stack.ps1 -Channels redraft-testing -ForceNewPost
+```
+
 The same stack can also run through GitHub Actions with `.github/workflows/discord-testing-channel-stack.yml`. That workflow expects these repository secret names:
 
 ```text

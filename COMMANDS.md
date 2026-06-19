@@ -190,6 +190,12 @@ Post only one testing channel stack:
 Post the Discord testing channel stack for redraft-testing only.
 ```
 
+Post a new visible update after a paid-count change:
+
+```text
+Post a new Discord status post for redraft-testing after updating paid counts, and save that new message as the one future refreshes edit.
+```
+
 Run the GitHub Actions testing stack:
 
 ```text

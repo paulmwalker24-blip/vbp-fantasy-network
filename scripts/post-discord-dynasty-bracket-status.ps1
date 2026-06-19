@@ -5,6 +5,7 @@ param(
   [string]$StatePath = "data/private/discord-message-state.json",
   [string]$StateKey = "dynasty-bracket-status",
   [string]$WebhookUrl = $env:DISCORD_WEBHOOK_URL,
+  [switch]$ForceNewPost,
   [switch]$DryRun,
   [switch]$PassThru
 )
@@ -206,7 +207,7 @@ if (-not $DryRun) {
   if ([string]::IsNullOrWhiteSpace($WebhookUrl)) { throw "Set DISCORD_WEBHOOK_URL or pass -WebhookUrl before posting to Discord." }
   $existingState = Get-DiscordMessageState -Path $StatePath -Key $StateKey
   $existingMessageId = if ($existingState) { [string]$existingState.messageId } else { "" }
-  if (-not [string]::IsNullOrWhiteSpace($existingMessageId)) {
+  if (-not $ForceNewPost -and -not [string]::IsNullOrWhiteSpace($existingMessageId)) {
     try {
       Invoke-RestMethod -Uri ("{0}/messages/{1}" -f $WebhookUrl.TrimEnd('/'), $existingMessageId) -Method Patch -ContentType "application/json" -Body $payload | Out-Null
       $result.messageId = $existingMessageId
@@ -221,7 +222,7 @@ if (-not $DryRun) {
     if ([string]::IsNullOrWhiteSpace($newMessageId)) { throw "Discord did not return a message ID. Cannot save update state." }
     Save-DiscordMessageState -Path $StatePath -Key $StateKey -MessageId $newMessageId
     $result.messageId = $newMessageId
-    $result.action = "created"
+    $result.action = if ($ForceNewPost) { "created-new-for-update" } else { "created" }
   } else {
     Save-DiscordMessageState -Path $StatePath -Key $StateKey -MessageId ([string]$result.messageId)
   }

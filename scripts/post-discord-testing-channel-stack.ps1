@@ -2,6 +2,7 @@ param(
   [string]$WebhookConfigPath = "data/private/discord-webhooks.json",
   [string]$StatePath = "data/private/discord-message-state.json",
   [string[]]$Channels = @(),
+  [switch]$ForceNewPost,
   [switch]$DryRun,
   [switch]$PassThru
 )
@@ -26,6 +27,11 @@ function Invoke-PostScript {
 
   $command = @("-ExecutionPolicy", "Bypass", "-File", $ScriptPath)
   foreach ($key in $Arguments.Keys) {
+    if ($Arguments[$key] -is [bool]) {
+      if ($Arguments[$key]) { $command += "-$key" }
+      continue
+    }
+
     $command += "-$key"
     $command += [string]$Arguments[$key]
   }
@@ -82,6 +88,7 @@ $results = foreach ($item in $stack) {
   Write-Host ("Posting status board for {0}..." -f $item.channel)
   $statusArgs = @{} + $item.statusArgs
   $statusArgs.StatePath = $StatePath
+  if ($ForceNewPost) { $statusArgs.ForceNewPost = $true }
   Invoke-PostScript -ScriptPath $item.statusScript -WebhookUrl $webhookUrl -Arguments $statusArgs
 
   [pscustomobject]@{

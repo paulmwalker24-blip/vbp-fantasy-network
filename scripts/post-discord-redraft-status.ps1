@@ -5,6 +5,7 @@ param(
   [string]$StatePath = "data/private/discord-message-state.json",
   [string]$StateKey = "redraft-status",
   [string]$WebhookUrl = $env:DISCORD_WEBHOOK_URL,
+  [switch]$ForceNewPost,
   [switch]$DryRun,
   [switch]$PassThru
 )
@@ -406,7 +407,7 @@ if (-not $DryRun) {
   $existingState = Get-DiscordMessageState -Path $StatePath -Key $StateKey
   $existingMessageId = if ($existingState) { [string]$existingState.messageId } else { "" }
 
-  if (-not [string]::IsNullOrWhiteSpace($existingMessageId)) {
+  if (-not $ForceNewPost -and -not [string]::IsNullOrWhiteSpace($existingMessageId)) {
     try {
       Invoke-RestMethod -Uri ("{0}/messages/{1}" -f $WebhookUrl.TrimEnd('/'), $existingMessageId) -Method Patch -ContentType "application/json" -Body $payload | Out-Null
       $result.messageId = $existingMessageId
@@ -425,7 +426,7 @@ if (-not $DryRun) {
 
     Save-DiscordMessageState -Path $StatePath -Key $StateKey -MessageId $newMessageId
     $result.messageId = $newMessageId
-    $result.action = "created"
+    $result.action = if ($ForceNewPost) { "created-new-for-update" } else { "created" }
   } else {
     Save-DiscordMessageState -Path $StatePath -Key $StateKey -MessageId ([string]$result.messageId)
   }

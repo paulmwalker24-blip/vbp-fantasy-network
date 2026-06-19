@@ -331,6 +331,12 @@ Post every configured channel:
 powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-testing-channel-stack.ps1
 ```
 
+Post a fresh visible update after paid counts change:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-testing-channel-stack.ps1 -Channels redraft-testing -ForceNewPost
+```
+
 Post only one channel:
 
 ```powershell
