@@ -578,6 +578,25 @@
                         "sleeperFilled":  24
                     },
                     {
+                        "id":  "BG2",
+                        "sleeperLeagueId":  "1368003315815686144",
+                        "sleeperSeason":  "2026",
+                        "name":  "VBP Best Ball Gauntlet 2",
+                        "format":  "gauntlet",
+                        "draftStyle":  "slow",
+                        "division":  "",
+                        "buyIn":  5,
+                        "teams":  24,
+                        "filled":  12,
+                        "status":  "open",
+                        "inviteLink":  "https://sleeper.com/i/Y21Y8R6dYmxlj",
+                        "leagueSafeLink":  "",
+                        "constitutionPage":  "bestball-gauntlet-constitution.html",
+                        "notes":  "24-team micro best ball with 6-player rosters: 4 starters and 2 bench. Draft-only best ball with no waivers, no trades, no pickups, and no lineup setting.",
+                        "lastUpdated":  "6/18/2026",
+                        "sleeperFilled":  12
+                    },
+                    {
                         "id":  "RDB1",
                         "sleeperLeagueId":  "1338004997836640256",
                         "sleeperSeason":  "2026",
