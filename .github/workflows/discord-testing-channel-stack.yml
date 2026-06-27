@@ -23,6 +23,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: discord-testing-channel-stack
+  cancel-in-progress: false
+
 jobs:
   post:
     runs-on: windows-latest
