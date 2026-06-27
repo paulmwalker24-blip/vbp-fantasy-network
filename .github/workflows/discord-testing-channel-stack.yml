@@ -111,4 +111,5 @@ jobs:
           }
 
           git commit -m "Save Discord message state"
+          git pull --rebase origin main
           git push
