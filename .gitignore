@@ -1,4 +1,5 @@
 data/*.before-sync.json
+.tools/
 data/private/manager-identities.json
 data/private/payment-status-overrides.json
 data/private/discord-message-state.json

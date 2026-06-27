@@ -25,8 +25,8 @@ The network still matters, but it should usually be the trust layer after the ho
 
 ## Current Order Of Operations
 
-1. Close Apex first for Bracket Redraft.
-2. Keep Redraft 4 visible as the higher-buy-in standalone seasonal room.
+1. Route Bracket Redraft slow-draft interest to Titan first now that Apex is full.
+2. Treat Redraft 4 as proof-of-network context, not an active opening.
 3. Use BBU posts only when there is real draft urgency.
 4. Use the active Best Ball Gauntlet 2 as a novelty best-ball lane.
 5. Push Foundry as the only Dynasty Bracket priority unless someone specifically asks for fast draft.
@@ -72,11 +72,12 @@ Discord:
 ## Current Hooks
 
 Redraft 4:
-- `7/12 paid for Redraft 4, a $100 Sleeper redraft league.`
+- `Redraft 4 is full at 12/12 assigned.`
 - `Progressive PPR, no kicker/defense, rules posted up front.`
 
 Bracket Redraft:
-- `11/12 paid assigned for Apex, the closest $50 Bracket Redraft slow room.`
+- `37/60 assigned and paid across the $50 Bracket Redraft tournament.`
+- `Titan is 10/12 for slow draft, Iron is 8/12 for fast draft, Apex is full, and Dominion is 6/12 as the next slow lane.`
 - `Five normal Sleeper leagues feeding one shared 60-team bracket playoff.`
 
 Dynasty Bracket:
@@ -84,11 +85,11 @@ Dynasty Bracket:
 - `48-team Superflex startup, slow 3RR, three seasons paid up front.`
 
 Best Ball Union:
-- `BBU8 is full and paid; do not use old June 3 BBU8 recruiting copy.`
+- `BBU10 is the active room at 6/10 assigned; BBU1 through BBU9 are full or already drafting.`
 - `$10 best ball, no waivers, no lineups after the draft. Refresh the active room before posting the next BBU push.`
 
 Best Ball Gauntlet 2:
-- `3/24 paid for Best Ball Gauntlet 2, a $5 micro best ball league.`
+- `14/24 paid for Best Ball Gauntlet 2, a $5 micro best ball league.`
 - `6-player rosters: 4 starters and 2 bench.`
 
 Keeper:

@@ -18,7 +18,7 @@ Short recruiting hooks capped at 200 characters or less.
 ## Best Ball Union
 
 - `BBU8`: full and paid; draft order has been generated. Do not use as an active recruiting hook.
-- `BBU9`: active $10 fast best ball room. Current paid count: 4/10. Drafts Tuesday 6/9 at 8 PM CST.
+- `BBU10`: active $10 fast best ball room. Current assigned count: 5/10.
 
 ## Best Ball Gauntlet
 
@@ -31,17 +31,19 @@ Short recruiting hooks capped at 200 characters or less.
 
 ## Bracket Redraft
 
-- Current redraft priority: close Apex first, keep `RD4` visible, then use Titan as the next slow room and Iron as the fast-draft focus.
-- `Titan`: $50 slow room in the 60-team bracket, one of five 12-team divisions, with $1,380 to champion. Current paid count: 9/12.
-- `Apex`: $50 slow room in the 60-team bracket, one of five 12-team divisions, with $1,380 to champion. Current paid count: 11/12.
-- `Iron`: $50 fast room in the 60-team bracket, one of five 12-team divisions, with $1,380 to champion. Current paid count: 5/12.
+- Current redraft priority: Apex is full, so route slow-draft interest to Titan first, use Dominion as the next slow lane, and keep Iron as the fast-draft focus.
+- `Titan`: $50 slow room in the 60-team bracket, one of five 12-team divisions, with $1,380 to champion. Current assigned and paid count: 10/12.
+- `Apex`: $50 slow room in the 60-team bracket, one of five 12-team divisions, with $1,380 to champion. Current assigned and paid count: 12/12.
+- `Iron`: $50 fast room in the 60-team bracket, one of five 12-team divisions, with $1,380 to champion. Current assigned and paid count: 8/12.
+- `Vanguard`: $50 fast room in the 60-team bracket, one of five 12-team divisions, with $1,380 to champion. Current assigned and paid count: 1/12.
+- `Dominion`: $50 slow room in the 60-team bracket, one of five 12-team divisions, with $1,380 to champion. Current assigned and paid count: 6/12.
 - `Vanguard`: Fast room in the returning bracket redraft format, but Iron is the current fast-draft priority because it already has paid owners.
 - `Dominion`: Slow room in the returning bracket redraft format with Progressive PPR and the same shared tournament structure. Current occupancy: 4/12 assigned.
 
 ## Standard Redraft
 
-- Current redraft priority: `RD4` is the sharper standalone seasonal push and should be paired with Bracket Redraft when you want a broader redraft post.
-- `RD4`: $100 standalone redraft with Progressive PPR, no kicker, no defense, and a 6-team playoff. Current count: 7/12 paid.
+- Current redraft priority: `RD4` is full, so standalone redraft copy should be proof-of-network context rather than an active recruiting lane.
+- `RD4`: $100 standalone redraft with Progressive PPR, no kicker, no defense, and a 6-team playoff. Current count: 12/12 assigned.
 
 ## Keeper
 

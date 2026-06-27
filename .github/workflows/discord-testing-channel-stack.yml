@@ -82,7 +82,7 @@ jobs:
           $channels = "${{ inputs.channels }}".Trim()
           if (-not [string]::IsNullOrWhiteSpace($channels)) {
             $args += "-Channels"
-            $args += ($channels -split "," | ForEach-Object { $_.Trim() } | Where-Object { $_ })
+            $args += (($channels -split "," | ForEach-Object { $_.Trim() } | Where-Object { $_ }) -join ",")
           }
 
           if ("${{ inputs.dry_run }}" -eq "true") {

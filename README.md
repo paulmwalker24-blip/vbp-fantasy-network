@@ -11,6 +11,17 @@ A static site for the VBP Fantasy Network: league discovery, constitutions, and 
 - `assets/reference/` holds non-wired reference files that should not clutter the live app surface.
 - `data/`, `docs/`, `marketing/`, and `scripts/` keep commissioner data, process notes, reusable copy, and local automation separated from the web assets.
 
+## Daily Navigation
+
+- Website and league work: `docs/todo-website-leagues.md`
+- Discord work: `docs/todo-discord.md`
+- Fast recruiting copy: `marketing/recruiting-copy-ready.txt`
+- League hooks: `notes/league-hooks.md`
+- Local command catalog: `COMMANDS.md`
+- Long completed-work archive: `TODO.md`
+
+Keep new planning notes inside `docs/`, `marketing/`, `notes/`, or `ideas/` so the repo root stays mostly reserved for public pages and entry-point docs.
+
 ## Local Preview
 
 ```powershell

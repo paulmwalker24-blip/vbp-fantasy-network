@@ -2,14 +2,12 @@
 
 ## Immediate
 
-- [ ] Launch the VBP Discord server from `docs/discord-server/launch-next-steps.md`: archive the old structure, publish the front-door posts, dry-run automation in `automation-test`, and test a fresh invite before broad promotion.
-- [ ] Resolve the Best Ball Union lineup mismatch: the constitution says `3 WR` starters, while Sleeper currently reports `2 WR` starters for completed `BBU1` through `BBU6` and open `BBU7` through `BBU10`.
-- [ ] Verify and record the pending Mandalore LeagueSafe refund in `DYN8`; the league is now full and paid, so this remains a historical payment-record follow-up rather than a recruiting blocker.
-- [ ] Add public rendered ranking destinations for future completed Redraft, Keeper, Chopped, Redraft Bracket, and Dynasty Bracket boards before their first board is promoted as live.
+- [ ] Use `docs/todo-website-leagues.md` as the active website, league-data, recruiting-copy, and payment cleanup list.
+- [ ] Use `docs/todo-discord.md` as the active Discord launch, webhook, and GitHub Actions automation list.
 
 ## Next Automation Ideas
 
-- [ ] Decide whether to add an optional Tuesday GitHub Action that republishes bracket standings snapshots automatically, or keep standings updates fully manual while live scoreboards continue to refresh from Sleeper in the browser.
+- [ ] Keep new active work in the split TODO files above; preserve this file mainly as the completed-work archive and root pointer.
 
 ## Completed
 

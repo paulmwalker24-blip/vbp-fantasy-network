@@ -5,6 +5,7 @@ Use this folder for one thing right now: gathering the Discord server and automa
 Start with:
 
 - `launch-next-steps.md`
+- `start-here-post.md`
 - `testing-channel-map.md`
 - `discord-audit-template.md`
 

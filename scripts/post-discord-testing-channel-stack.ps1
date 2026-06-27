@@ -39,7 +39,16 @@ function Invoke-PostScript {
   $command += $WebhookUrl
   if ($DryRun) { $command += "-DryRun" }
 
-  & powershell @command
+  $output = & powershell @command 2>&1
+  $exitCode = $LASTEXITCODE
+
+  foreach ($line in $output) {
+    Write-Host $line
+  }
+
+  if ($exitCode -ne 0) {
+    throw ("{0} failed with exit code {1}." -f $ScriptPath, $exitCode)
+  }
 }
 
 if (-not (Test-Path -LiteralPath $WebhookConfigPath)) {
@@ -69,7 +78,9 @@ $stack = @(
 
 if ($Channels.Count -gt 0) {
   $wanted = @{}
-  foreach ($channel in $Channels) { $wanted[$channel] = $true }
+  foreach ($channel in @($Channels | ForEach-Object { ([string]$_) -split "," } | ForEach-Object { $_.Trim() } | Where-Object { $_ })) {
+    $wanted[$channel] = $true
+  }
   $stack = @($stack | Where-Object { $wanted.ContainsKey($_.channel) })
 }
 

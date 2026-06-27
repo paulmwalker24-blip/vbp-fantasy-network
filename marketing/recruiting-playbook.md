@@ -118,7 +118,7 @@ Use room-closing marketing before catalog marketing.
 - Lead with the current active room when there is a scheduled draft time.
 - Always say `fast draft`.
 - Say new BBU leagues start drafting 24 hours after the league is filled and fully paid unless a same-day draft time has already been set.
-- `BBU1` through `BBU8` are full or already drafting. `BBU9` is the current active room at `4/10 paid` and drafts Tuesday 6/9 at 8 PM CST.
+- `BBU1` through `BBU9` are full or already drafting. `BBU10` is the current active room at `6/10 assigned`.
 - Refresh the active `BBU` template when the current room changes so the pitch does not feel stale.
 - When a `BBU` post has a scheduled draft time, lead with that urgency and keep the description focused on the active room.
 
@@ -152,10 +152,10 @@ Use room-closing marketing before catalog marketing.
 ### Redraft
 
 - Keep redraft copy aligned with the rest of the recruiting strategy: trust first, clear structure, and fewer "listing" vibes.
-- For the current push, lead with `Redraft 4` and `Bracket Redraft` before dynasty, best ball, keeper, or chopped.
-- For `Redraft 4`, frame it as the sharper seasonal option for owners who want a more serious room with rules posted up front. It is currently `7/12 paid`.
+- For the current push, lead with `Bracket Redraft` and `Best Ball Gauntlet 2` before dynasty, best ball, keeper, or chopped.
+- For `Redraft 4`, frame it only as proof that the higher-buy-in seasonal room filled. It is currently `12/12 assigned`.
 - For `Bracket Redraft`, lead with the format hook and the fact that this is the third season the commissioner has run the format. Avoid phrasing that makes `Year 3 Bracket Redraft` sound like the formal format name.
-- Current Bracket Redraft recruiting should concentrate new owners into `Apex` and `Titan` for slow draft and `Iron` for fast draft before pushing Vanguard or Dominion equally.
+- Current Bracket Redraft recruiting should route slow-draft interest to `Titan` first now that `Apex` is full, use `Dominion` as the next slow room, and keep `Iron` as the fast-draft priority.
 - Use `REDRAFT PRIORITY PUSH` when you want one post that lets people choose between the $100 standalone room and the $50 tournament format.
 - Keep both redraft posts direct, but make them sound curated rather than generic.
 
@@ -199,16 +199,14 @@ Body:
 ```text
 VBP Fantasy Network is pushing redraft right now with two active lanes:
 
-Redraft 4 is the sharper standalone seasonal room. It is a $100 league with Progressive PPR, no kicker or defense, and a 6-team playoff with top-two byes. It is currently 7/12 paid.
+Redraft 4 is the sharper standalone seasonal room. It is a $100 league with Progressive PPR, no kicker or defense, and a 6-team playoff with top-two byes. It is currently full at 12/12 assigned, so use it as trust context rather than an active opening.
 
-Bracket Redraft is the bigger tournament-style format. I am filling it for the third season I have run this setup. It is a $50 redraft format with fast and slow draft rooms feeding one shared 32-team playoff across the full 60-team field. The current push is Apex and Titan for slow draft, plus Iron as the priority fast room.
-
-Redraft 4 ($100): https://sleeper.com/i/V9xKEeVN7AD4e
+Bracket Redraft is the bigger tournament-style format. I am filling it for the third season I have run this setup. It is a $50 redraft format with fast and slow draft rooms feeding one shared 32-team playoff across the full 60-team field. The current push is Titan for slow draft, Dominion as the next slow lane, and Iron as the priority fast room.
 
 Bracket Redraft priority rooms:
-Apex ($50, Slow, 11/12 paid): http://sleeper.com/i/zExweGWd6aPgb
-Titan ($50, Slow, 9/12 paid assigned): http://sleeper.com/i/kM2GBe6qL228Y
-Iron ($50, Fast, 5/12 paid): http://sleeper.com/i/j7moDEZ337dn0
+Titan ($50, Slow, 10/12 assigned and paid): http://sleeper.com/i/kM2GBe6qL228Y
+Iron ($50, Fast, 8/12 assigned and paid): http://sleeper.com/i/j7moDEZ337dn0
+Dominion ($50, Slow, 6/12 assigned and paid): http://sleeper.com/i/Y2VXxZ02Y850R
 
 If you want slow draft, join Apex or Titan. If you want fast draft, join Iron. Vanguard and Dominion are part of the full format, but the push right now is to concentrate new joins into Apex, Titan, and Iron first.
 
@@ -372,7 +370,7 @@ Dynasty Bracket (Year 1) - Startup
 - payouts: $1,380 champion, $300 runner-up, $100 semifinal losers, $55 quarterfinal losers, $75 division winner bonus
 - looking for dedicated dynasty owners who want to build through a full startup and stick with a long-term bracket format
 
-Bracket Redraft - third season running this format, 29/60 paid assigned
+Bracket Redraft - third season running this format, 37/60 assigned and paid
 - 60-team redraft format
 - 5 separate 12-team divisions
 - shared 32-team playoff bracket
@@ -572,13 +570,13 @@ When to use:
 Title:
 
 ```text
-VBP Fantasy Network | $10 Best Ball Union #9 | Drafts Tuesday 6/9
+VBP Fantasy Network | $10 Best Ball Union #10 | 6/10 Assigned
 ```
 
 Body:
 
 ```text
-VBP Fantasy Network has Best Ball Union #9 open for anyone who wants a simple $10 best ball draft. It is 4/10 paid and drafts Tuesday 6/9 at 8 PM CST.
+VBP Fantasy Network has Best Ball Union #10 open for anyone who wants a simple $10 best ball draft. It is 6/10 assigned.
 
 This is the current active BBU room.
 
@@ -588,7 +586,7 @@ After the draft, there are no waivers, trades, pickups, or weekly lineup decisio
 
 Each full BBU room pays $75 to that league winner. Another $25 per room goes to the manager with the single highest total season score across all Best Ball Union teams.
 
-Best Ball Union #9 ($10, Fast): https://sleeper.com/i/LVDOk2Z9n57e0
+Best Ball Union #10 ($10, Fast): https://sleeper.com/i/QB8JbxPlxaqG0
 Best Ball constitution: https://vbp-fantasy-network.vercel.app/bestball-constitution.html
 Best Ball Union Center: https://vbp-fantasy-network.vercel.app/bestball-center.html
 Main hub: https://vbp-fantasy-network.vercel.app/
@@ -629,12 +627,12 @@ DM me or reply if interested.
 When to use:
 - focused tournament-style redraft recruiting
 - when you want bracket interest routed toward the current priority rooms first
-- current priority is `Apex` and `Titan` for slow draft and `Iron` for fast draft
+- current priority is `Titan` for slow draft, `Dominion` as the next slow lane, and `Iron` for fast draft
 
 Title:
 
 ```text
-VBP Fantasy Network | Bracket Redraft Returns | Apex + Titan + Iron Filling
+VBP Fantasy Network | Bracket Redraft Returns | Titan + Iron Filling
 ```
 
 Body:
@@ -645,11 +643,11 @@ VBP Fantasy Network has Bracket Redraft openings for owners who want a bigger to
 This is a $50 redraft setup with both fast and slow draft options, Progressive PPR scoring, and one shared 32-team playoff across the full 60-team field. It gives the season a bigger tournament feel than a standard home league while still keeping each room familiar and manageable.
 
 Current priority rooms:
-Apex ($50, Slow, 11/12 paid): http://sleeper.com/i/zExweGWd6aPgb
-Titan ($50, Slow, 9/12 paid assigned): http://sleeper.com/i/kM2GBe6qL228Y
-Iron ($50, Fast, 5/12 paid): http://sleeper.com/i/j7moDEZ337dn0
+Titan ($50, Slow, 10/12 assigned and paid): http://sleeper.com/i/kM2GBe6qL228Y
+Iron ($50, Fast, 8/12 assigned and paid): http://sleeper.com/i/j7moDEZ337dn0
+Dominion ($50, Slow, 6/12 assigned and paid): http://sleeper.com/i/Y2VXxZ02Y850R
 
-If you want slow draft, join Apex or Titan. If you want fast draft, join Iron. Vanguard and Dominion are part of the full format, but the push right now is to fill Apex, Titan, and Iron first.
+If you want slow draft, join Titan first or Dominion if Titan fills before you get in. If you want fast draft, join Iron. Apex is full, and Vanguard is part of the full format but is not the current priority lane.
 
 Bracket constitution: https://vbp-fantasy-network.vercel.app/bracket-constitution.html
 Bracket Center: https://vbp-fantasy-network.vercel.app/bracket-center.html
@@ -659,26 +657,25 @@ Main hub: https://vbp-fantasy-network.vercel.app/
 DM me or reply if interested.
 ```
 
-### REDRAFT 4
+### REDRAFT 4 - FULL
 
 When to use:
-- standard higher-buy-in seasonal redraft recruiting
-- direct post for `RD4`
+- proof-of-network context for higher-buy-in seasonal redraft
+- do not use as an active recruiting post unless a spot reopens
 
 Title:
 
 ```text
-VBP Fantasy Network | Redraft 4 Open | $100 Competitive Redraft
+VBP Fantasy Network | Redraft 4 Filled | $100 Competitive Redraft
 ```
 
 Body:
 
 ```text
-VBP Fantasy Network has Redraft 4 open right now for owners who want a sharper $100 seasonal league with clear rules posted up front.
+VBP Fantasy Network filled Redraft 4 for owners who want a sharper $100 seasonal league with clear rules posted up front.
 
-It uses Progressive PPR scoring, no kicker or defense spots, and a 6-team playoff with top-two byes. The room is currently 7/12 paid.
+It uses Progressive PPR scoring, no kicker or defense spots, and a 6-team playoff with top-two byes. The room is currently 12/12 assigned.
 
-Redraft 4 ($100): https://sleeper.com/i/V9xKEeVN7AD4e
 Redraft constitution: https://vbp-fantasy-network.vercel.app/redraft-constitution.html
 Main hub: https://vbp-fantasy-network.vercel.app/
 
