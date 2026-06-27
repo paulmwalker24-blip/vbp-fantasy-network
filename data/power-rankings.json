@@ -1,5 +1,5 @@
 ﻿{
-    "generatedAt":  "2026-06-26T13:06:49.1873907+00:00",
+    "generatedAt":  "2026-06-27T12:06:53.9287294+00:00",
     "snapshot":  {
                      "season":  "2026",
                      "seasonType":  "off",
@@ -74,7 +74,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314663050854305792/rosters",
-                                           "refreshedAt":  "2026-06-26T13:05:38.0864844+00:00",
+                                           "refreshedAt":  "2026-06-27T12:05:32.5020979+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -169,7 +169,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314662767977824256/rosters",
-                                           "refreshedAt":  "2026-06-26T13:05:38.2361666+00:00",
+                                           "refreshedAt":  "2026-06-27T12:05:32.9152727+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -264,7 +264,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314660487635427328/rosters",
-                                           "refreshedAt":  "2026-06-26T13:05:38.3648033+00:00",
+                                           "refreshedAt":  "2026-06-27T12:05:33.3681894+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -359,7 +359,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1344449488089014272/rosters",
-                                           "refreshedAt":  "2026-06-26T13:05:38.5996772+00:00",
+                                           "refreshedAt":  "2026-06-27T12:05:33.8338251+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -454,7 +454,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1370097572764450816/rosters",
-                                           "refreshedAt":  "2026-06-26T13:05:38.7361696+00:00",
+                                           "refreshedAt":  "2026-06-27T12:05:34.2641033+00:00",
                                            "rosterCount":  32,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -546,7 +546,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1369795448134463488/rosters",
-                                           "refreshedAt":  "2026-06-26T13:05:38.8550740+00:00",
+                                           "refreshedAt":  "2026-06-27T12:05:34.6331159+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -641,7 +641,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341650084122595328/rosters",
-                                           "refreshedAt":  "2026-06-26T13:05:38.9916933+00:00",
+                                           "refreshedAt":  "2026-06-27T12:05:35.0363064+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  374,
                                            "sleeperLeagueSeason":  "2026",
@@ -909,7 +909,7 @@
                                                                                    "rank":  7,
                                                                                    "manager":  "briann",
                                                                                    "rosterId":  6,
-                                                                                   "score":  79
+                                                                                   "score":  78.5
                                                                                },
                                                                                {
                                                                                    "rank":  8,
@@ -1729,7 +1729,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1340820529996640256/rosters",
-                                           "refreshedAt":  "2026-06-26T13:05:44.9938749+00:00",
+                                           "refreshedAt":  "2026-06-27T12:05:41.4520464+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  368,
                                            "sleeperLeagueSeason":  "2026",
@@ -1961,7 +1961,7 @@
                                                                                    "rank":  1,
                                                                                    "manager":  "Major Questions",
                                                                                    "rosterId":  3,
-                                                                                   "score":  83.5
+                                                                                   "score":  83
                                                                                },
                                                                                {
                                                                                    "rank":  2,
@@ -2817,7 +2817,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341646934816849920/rosters",
-                                           "refreshedAt":  "2026-06-26T13:05:50.3904651+00:00",
+                                           "refreshedAt":  "2026-06-27T12:05:47.2578884+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  368,
                                            "sleeperLeagueSeason":  "2026",
@@ -3079,7 +3079,7 @@
                                                                                    "rank":  6,
                                                                                    "manager":  "Dsquad04",
                                                                                    "rosterId":  2,
-                                                                                   "score":  80
+                                                                                   "score":  79.5
                                                                                },
                                                                                {
                                                                                    "rank":  7,
@@ -3803,11 +3803,11 @@
                                              "reasons":  [
                                                              {
                                                                  "tone":  "positive",
-                                                                 "text":  "Elite young foundation: Jahmyr Gibbs, Chris Olave, and Breece Hall give this roster multiple cornerstone assets entering or already within their prime."
+                                                                 "text":  "Elite young foundation: Jahmyr Gibbs, Breece Hall, and George Pickens give this roster multiple cornerstone assets entering or already within their prime."
                                                              },
                                                              {
                                                                  "tone":  "positive",
-                                                                 "text":  "Ascending receiving corps: Chris Olave, George Pickens, and Jameson Williams combine current production with long-term upside."
+                                                                 "text":  "Ascending receiving corps: George Pickens, Jameson Williams, and Jalen Coker combine current production with long-term upside."
                                                              },
                                                              {
                                                                  "tone":  "concern",
@@ -3905,7 +3905,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1342931950981091328/rosters",
-                                           "refreshedAt":  "2026-06-26T13:05:55.8045953+00:00",
+                                           "refreshedAt":  "2026-06-27T12:05:53.0392214+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  364,
                                            "sleeperLeagueSeason":  "2026",
@@ -4177,15 +4177,15 @@
                                                                                },
                                                                                {
                                                                                    "rank":  8,
-                                                                                   "manager":  "Arby’s",
-                                                                                   "rosterId":  2,
+                                                                                   "manager":  "Steel City Football",
+                                                                                   "rosterId":  12,
                                                                                    "score":  79
                                                                                },
                                                                                {
                                                                                    "rank":  9,
-                                                                                   "manager":  "Steel City Football",
-                                                                                   "rosterId":  12,
-                                                                                   "score":  79
+                                                                                   "manager":  "Arby’s",
+                                                                                   "rosterId":  2,
+                                                                                   "score":  78.5
                                                                                },
                                                                                {
                                                                                    "rank":  10,
@@ -4807,11 +4807,11 @@
                                              "reasons":  [
                                                              {
                                                                  "tone":  "positive",
-                                                                 "text":  "Elite young foundation: Drake Maye, Kyler Murray, and Chris Olave give this roster multiple cornerstone assets entering or already within their prime."
+                                                                 "text":  "Long-term quarterback security: Drake Maye and Kyler Murray provide stability at dynasty\u0027s most valuable position."
                                                              },
                                                              {
                                                                  "tone":  "positive",
-                                                                 "text":  "Long-term quarterback security: Drake Maye and Kyler Murray provide stability at dynasty\u0027s most valuable position."
+                                                                 "text":  "Ascending receiving corps: Drake London, Jordan Addison, and Ja\u0027Kobi Lane combine current production with long-term upside."
                                                              },
                                                              {
                                                                  "tone":  "concern",
@@ -4993,7 +4993,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345763335270400/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:01.2395381+00:00",
+                                           "refreshedAt":  "2026-06-27T12:05:58.7874584+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  376,
                                            "sleeperLeagueSeason":  "2026",
@@ -5237,7 +5237,7 @@
                                                                                    "rank":  3,
                                                                                    "manager":  "FrankiieG23",
                                                                                    "rosterId":  1,
-                                                                                   "score":  81.5
+                                                                                   "score":  81
                                                                                },
                                                                                {
                                                                                    "rank":  4,
@@ -5923,7 +5923,7 @@
                                              "reasons":  [
                                                              {
                                                                  "tone":  "positive",
-                                                                 "text":  "Elite young foundation: Drake Maye, Jalen Hurts, and Chris Olave give this roster multiple cornerstone assets entering or already within their prime."
+                                                                 "text":  "Elite young foundation: Drake Maye, Jalen Hurts, and Anthony Richardson give this roster multiple cornerstone assets entering or already within their prime."
                                                              },
                                                              {
                                                                  "tone":  "positive",
@@ -5931,7 +5931,7 @@
                                                              },
                                                              {
                                                                  "tone":  "concern",
-                                                                 "text":  "Future flexibility: the roster is strong, but preserving rookie picks will matter when the current core eventually needs reinforcement."
+                                                                 "text":  "Receiving succession: the roster needs another young long-term WR alongside Jameson Williams and Zachariah Branch."
                                                              }
                                                          ],
                                              "rank":  8
@@ -6081,7 +6081,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345934114725888/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:06.8330203+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:04.7205356+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  372,
                                            "sleeperLeagueSeason":  "2026",
@@ -6341,14 +6341,14 @@
                                                                                },
                                                                                {
                                                                                    "rank":  6,
-                                                                                   "manager":  "kuhnyboy",
-                                                                                   "rosterId":  12,
-                                                                                   "score":  79.5
+                                                                                   "manager":  "dbangart",
+                                                                                   "rosterId":  9,
+                                                                                   "score":  79
                                                                                },
                                                                                {
                                                                                    "rank":  7,
-                                                                                   "manager":  "dbangart",
-                                                                                   "rosterId":  9,
+                                                                                   "manager":  "kuhnyboy",
+                                                                                   "rosterId":  12,
                                                                                    "score":  79
                                                                                },
                                                                                {
@@ -7095,7 +7095,7 @@
                                              "reasons":  [
                                                              {
                                                                  "tone":  "positive",
-                                                                 "text":  "Elite young foundation: Drake Maye, Chris Olave, and Mason Taylor give this roster multiple cornerstone assets entering or already within their prime."
+                                                                 "text":  "Elite young foundation: Drake Maye, Carnell Tate, and Mason Taylor give this roster multiple cornerstone assets entering or already within their prime."
                                                              },
                                                              {
                                                                  "tone":  "positive",
@@ -7169,7 +7169,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1360285262617284608/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:12.3407655+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:10.6435355+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  375,
                                            "sleeperLeagueSeason":  "2026",
@@ -7425,7 +7425,7 @@
                                                                                    "rank":  5,
                                                                                    "manager":  "dbookit1",
                                                                                    "rosterId":  1,
-                                                                                   "score":  80.5
+                                                                                   "score":  80
                                                                                },
                                                                                {
                                                                                    "rank":  6,
@@ -8127,7 +8127,7 @@
                                              "reasons":  [
                                                              {
                                                                  "tone":  "positive",
-                                                                 "text":  "Elite young foundation: Omarion Hampton, Kyler Murray, and Chris Olave give this roster multiple cornerstone assets entering or already within their prime."
+                                                                 "text":  "Elite young foundation: Omarion Hampton, Kyler Murray, and De\u0027Von Achane give this roster multiple cornerstone assets entering or already within their prime."
                                                              },
                                                              {
                                                                  "tone":  "positive",
@@ -8257,7 +8257,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362902973520306176/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:18.3642126+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:16.8230752+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  354,
                                            "sleeperLeagueSeason":  "2026",
@@ -8517,27 +8517,27 @@
                                                                                },
                                                                                {
                                                                                    "rank":  6,
-                                                                                   "manager":  "DarkSide",
-                                                                                   "rosterId":  10,
-                                                                                   "score":  78.5
-                                                                               },
-                                                                               {
-                                                                                   "rank":  7,
                                                                                    "manager":  "HTownSwarm",
                                                                                    "rosterId":  6,
                                                                                    "score":  78.5
                                                                                },
                                                                                {
-                                                                                   "rank":  8,
+                                                                                   "rank":  7,
                                                                                    "manager":  "Likely Mid",
                                                                                    "rosterId":  5,
                                                                                    "score":  78.5
                                                                                },
                                                                                {
-                                                                                   "rank":  9,
+                                                                                   "rank":  8,
                                                                                    "manager":  "sellrya",
                                                                                    "rosterId":  11,
                                                                                    "score":  78.5
+                                                                               },
+                                                                               {
+                                                                                   "rank":  9,
+                                                                                   "manager":  "DarkSide",
+                                                                                   "rosterId":  10,
+                                                                                   "score":  78
                                                                                },
                                                                                {
                                                                                    "rank":  10,
@@ -9131,7 +9131,7 @@
                                              "reasons":  [
                                                              {
                                                                  "tone":  "positive",
-                                                                 "text":  "Elite young foundation: Jalen Hurts, Trevor Lawrence, and Chris Olave give this roster multiple cornerstone assets entering or already within their prime."
+                                                                 "text":  "Elite young foundation: Jalen Hurts, Trevor Lawrence, and Jadarian Price give this roster multiple cornerstone assets entering or already within their prime."
                                                              },
                                                              {
                                                                  "tone":  "positive",
@@ -9345,7 +9345,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1370134727394066432/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:24.1476782+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:22.5224293+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9453,7 +9453,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350152770275020800/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:24.2761698+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:22.9453657+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9561,7 +9561,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154389192474624/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:24.4020318+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:23.3499907+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9669,7 +9669,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154561549004800/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:24.5237316+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:23.7494756+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9777,7 +9777,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154695137570816/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:24.6489683+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:24.1345704+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9885,7 +9885,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095209052508160/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:24.7717264+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:24.5205142+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -10525,7 +10525,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095313704554496/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:27.3337673+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:27.0462042+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -11165,7 +11165,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095371091017728/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:29.9405113+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:29.5926680+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -11805,7 +11805,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095416859287552/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:32.4592850+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:32.0811362+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -12445,7 +12445,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095453291003904/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:34.6278089+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:34.5800200+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  179,
                                            "sleeperLeagueSeason":  "2026",
@@ -13085,7 +13085,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480393130868736/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:36.7627658+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:37.0349278+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -13725,7 +13725,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480515533242368/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:38.9591621+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:39.5172160+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -14365,7 +14365,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480638808064000/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:41.0980752+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:42.0358418+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -15005,7 +15005,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480857310302208/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:43.2046915+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:44.5191788+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -15645,7 +15645,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480992765353984/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:45.3189135+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:47.0208697+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -15744,7 +15744,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362908679824740352/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:45.4507134+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:47.4242596+00:00",
                                            "rosterCount":  24,
                                            "playerCount":  120,
                                            "sleeperLeagueSeason":  "2026",
@@ -17099,7 +17099,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1368003315815686144/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:47.9241071+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:50.2192534+00:00",
                                            "rosterCount":  24,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -17186,7 +17186,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338004997836640256/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:48.0607798+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:50.6032522+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -17282,7 +17282,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005036122279936/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:48.1976750+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:51.0294368+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -17378,7 +17378,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005075167035392/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:48.4257690+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:51.5064412+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -17474,7 +17474,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005113482022912/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:48.5466245+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:51.8564366+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -17570,7 +17570,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005158071660544/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:48.6794269+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:52.2699311+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -17666,7 +17666,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846317608992768/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:48.8102006+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:52.6766226+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -17761,7 +17761,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846742810775552/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:48.9408546+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:53.1443347+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -17856,7 +17856,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1363630886133694464/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:49.0591341+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:53.5406622+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -17938,7 +17938,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339342261023961088/rosters",
-                                           "refreshedAt":  "2026-06-26T13:06:49.1857307+00:00",
+                                           "refreshedAt":  "2026-06-27T12:06:53.9226949+00:00",
                                            "rosterCount":  18,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
