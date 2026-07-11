@@ -1,5 +1,5 @@
 ﻿{
-    "generatedAt":  "2026-07-10T13:07:25.0228618+00:00",
+    "generatedAt":  "2026-07-11T11:46:48.5783897+00:00",
     "snapshot":  {
                      "season":  "2026",
                      "seasonType":  "off",
@@ -25,10 +25,12 @@
                      "SKIP RD4: regular draft is pre_draft",
                      "SKIP RD32T1: regular draft is pre_draft",
                      "SKIP CM1: regular draft is pre_draft",
+                     "SKIP DYN9: startup draft is paused",
                      "SKIP DYB1: startup draft is pre_draft",
                      "SKIP DYB2: startup draft is pre_draft",
                      "SKIP DYB3: startup draft is pre_draft",
                      "SKIP DYB4: startup draft is pre_draft",
+                     "SKIP BG2: regular draft is paused",
                      "SKIP RDB1: regular draft is pre_draft",
                      "SKIP RDB2: regular draft is pre_draft",
                      "SKIP RDB3: regular draft is pre_draft",
@@ -71,7 +73,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314663050854305792/rosters",
-                                           "refreshedAt":  "2026-07-10T13:06:09.4291518+00:00",
+                                           "refreshedAt":  "2026-07-11T11:45:34.8047009+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -166,7 +168,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314662767977824256/rosters",
-                                           "refreshedAt":  "2026-07-10T13:06:09.5916578+00:00",
+                                           "refreshedAt":  "2026-07-11T11:45:35.0327374+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -261,7 +263,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314660487635427328/rosters",
-                                           "refreshedAt":  "2026-07-10T13:06:09.7417588+00:00",
+                                           "refreshedAt":  "2026-07-11T11:45:35.2418457+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -356,7 +358,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1344449488089014272/rosters",
-                                           "refreshedAt":  "2026-07-10T13:06:09.9736749+00:00",
+                                           "refreshedAt":  "2026-07-11T11:45:35.5328590+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -451,7 +453,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1370097572764450816/rosters",
-                                           "refreshedAt":  "2026-07-10T13:06:10.1186139+00:00",
+                                           "refreshedAt":  "2026-07-11T11:45:35.7297805+00:00",
                                            "rosterCount":  32,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -543,7 +545,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1369795448134463488/rosters",
-                                           "refreshedAt":  "2026-07-10T13:06:10.2550386+00:00",
+                                           "refreshedAt":  "2026-07-11T11:45:35.9328477+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -638,7 +640,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341650084122595328/rosters",
-                                           "refreshedAt":  "2026-07-10T13:06:10.3992693+00:00",
+                                           "refreshedAt":  "2026-07-11T11:45:36.1445998+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  374,
                                            "sleeperLeagueSeason":  "2026",
@@ -1726,7 +1728,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1340820529996640256/rosters",
-                                           "refreshedAt":  "2026-07-10T13:06:16.7373790+00:00",
+                                           "refreshedAt":  "2026-07-11T11:45:42.2392110+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  368,
                                            "sleeperLeagueSeason":  "2026",
@@ -2814,7 +2816,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341646934816849920/rosters",
-                                           "refreshedAt":  "2026-07-10T13:06:22.5193587+00:00",
+                                           "refreshedAt":  "2026-07-11T11:45:47.6657060+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  368,
                                            "sleeperLeagueSeason":  "2026",
@@ -3902,7 +3904,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1342931950981091328/rosters",
-                                           "refreshedAt":  "2026-07-10T13:06:28.3971518+00:00",
+                                           "refreshedAt":  "2026-07-11T11:45:53.1308349+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  364,
                                            "sleeperLeagueSeason":  "2026",
@@ -4990,7 +4992,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345763335270400/rosters",
-                                           "refreshedAt":  "2026-07-10T13:06:34.0958292+00:00",
+                                           "refreshedAt":  "2026-07-11T11:45:58.7589669+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  376,
                                            "sleeperLeagueSeason":  "2026",
@@ -6078,7 +6080,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345934114725888/rosters",
-                                           "refreshedAt":  "2026-07-10T13:06:39.9603905+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:04.6463813+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  372,
                                            "sleeperLeagueSeason":  "2026",
@@ -7166,7 +7168,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1360285262617284608/rosters",
-                                           "refreshedAt":  "2026-07-10T13:06:45.7229017+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:10.2681106+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  373,
                                            "sleeperLeagueSeason":  "2026",
@@ -8254,7 +8256,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362902973520306176/rosters",
-                                           "refreshedAt":  "2026-07-10T13:06:51.5455422+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:15.8718545+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  354,
                                            "sleeperLeagueSeason":  "2026",
@@ -9316,20 +9318,20 @@
                         "sleeperLeagueId":  "1370134727394066432",
                         "name":  "VBP Dynasty League #9 (Slow Draft)",
                         "format":  "dynasty",
-                        "publish":  true,
-                        "holdReason":  "startup draft is drafting",
+                        "publish":  false,
+                        "holdReason":  "startup draft is paused",
                         "draftStatuses":  [
-                                              "drafting"
+                                              "paused"
                                           ],
                         "draftReadiness":  {
-                                               "ready":  true,
+                                               "ready":  false,
                                                "stage":  "startup",
-                                               "label":  "Live from current Sleeper rosters while draft is in progress",
-                                               "reason":  "startup draft is drafting",
+                                               "label":  "Waiting on startup draft",
+                                               "reason":  "startup draft is paused",
                                                "drafts":  [
                                                               {
                                                                   "draftId":  "1370134728274870272",
-                                                                  "status":  "drafting",
+                                                                  "status":  "paused",
                                                                   "stage":  "startup",
                                                                   "type":  "snake",
                                                                   "season":  "2026",
@@ -9342,7 +9344,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1370134727394066432/rosters",
-                                           "refreshedAt":  "2026-07-10T13:06:57.1824625+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:21.3068498+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9415,681 +9417,8 @@
                         "positionalRankings":  {
 
                                                },
-                        "currentSeasonRankings":  [
-                                                      {
-                                                          "rosterId":  3,
-                                                          "ownerId":  "699188610297044992",
-                                                          "teamName":  "Carter1217",
-                                                          "score":  80,
-                                                          "reasons":  [
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Core building blocks:  give the roster a credible foundation for its next move."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "concern",
-                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind ."
-                                                                          }
-                                                                      ],
-                                                          "record":  {
-                                                                         "wins":  0,
-                                                                         "pointsFor":  0,
-                                                                         "maxPointsFor":  0,
-                                                                         "losses":  0,
-                                                                         "ties":  0
-                                                                     },
-                                                          "rank":  1
-                                                      },
-                                                      {
-                                                          "rosterId":  4,
-                                                          "ownerId":  "1195136617623166976",
-                                                          "teamName":  "gratefulhead",
-                                                          "score":  80,
-                                                          "reasons":  [
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Core building blocks:  give the roster a credible foundation for its next move."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "concern",
-                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind ."
-                                                                          }
-                                                                      ],
-                                                          "record":  {
-                                                                         "wins":  0,
-                                                                         "pointsFor":  0,
-                                                                         "maxPointsFor":  0,
-                                                                         "losses":  0,
-                                                                         "ties":  0
-                                                                     },
-                                                          "rank":  2
-                                                      },
-                                                      {
-                                                          "rosterId":  1,
-                                                          "ownerId":  "466785377303130112",
-                                                          "teamName":  "VinsBroPaul",
-                                                          "score":  80,
-                                                          "reasons":  [
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Core building blocks:  give the roster a credible foundation for its next move."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "concern",
-                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind ."
-                                                                          }
-                                                                      ],
-                                                          "record":  {
-                                                                         "wins":  0,
-                                                                         "pointsFor":  0,
-                                                                         "maxPointsFor":  0,
-                                                                         "losses":  0,
-                                                                         "ties":  0
-                                                                     },
-                                                          "rank":  3
-                                                      },
-                                                      {
-                                                          "rosterId":  9,
-                                                          "ownerId":  "966666258466836480",
-                                                          "teamName":  "Zaragoz",
-                                                          "score":  80,
-                                                          "reasons":  [
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Core building blocks:  give the roster a credible foundation for its next move."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "concern",
-                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind ."
-                                                                          }
-                                                                      ],
-                                                          "record":  {
-                                                                         "wins":  0,
-                                                                         "pointsFor":  0,
-                                                                         "maxPointsFor":  0,
-                                                                         "losses":  0,
-                                                                         "ties":  0
-                                                                     },
-                                                          "rank":  4
-                                                      },
-                                                      {
-                                                          "rosterId":  8,
-                                                          "ownerId":  "397982436304101376",
-                                                          "teamName":  "Turd_Ferguson",
-                                                          "score":  80,
-                                                          "reasons":  [
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Core building blocks:  give the roster a credible foundation for its next move."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "concern",
-                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind ."
-                                                                          }
-                                                                      ],
-                                                          "record":  {
-                                                                         "wins":  0,
-                                                                         "pointsFor":  0,
-                                                                         "maxPointsFor":  0,
-                                                                         "losses":  0,
-                                                                         "ties":  0
-                                                                     },
-                                                          "rank":  5
-                                                      },
-                                                      {
-                                                          "rosterId":  12,
-                                                          "ownerId":  "1146637535649746944",
-                                                          "teamName":  "weatherman172",
-                                                          "score":  80,
-                                                          "reasons":  [
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Core building blocks:  give the roster a credible foundation for its next move."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "concern",
-                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind ."
-                                                                          }
-                                                                      ],
-                                                          "record":  {
-                                                                         "wins":  0,
-                                                                         "pointsFor":  0,
-                                                                         "maxPointsFor":  0,
-                                                                         "losses":  0,
-                                                                         "ties":  0
-                                                                     },
-                                                          "rank":  6
-                                                      },
-                                                      {
-                                                          "rosterId":  11,
-                                                          "ownerId":  "1310133686179491840",
-                                                          "teamName":  "OrbitalLizards",
-                                                          "score":  80,
-                                                          "reasons":  [
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Core building blocks:  give the roster a credible foundation for its next move."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "concern",
-                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind ."
-                                                                          }
-                                                                      ],
-                                                          "record":  {
-                                                                         "wins":  0,
-                                                                         "pointsFor":  0,
-                                                                         "maxPointsFor":  0,
-                                                                         "losses":  0,
-                                                                         "ties":  0
-                                                                     },
-                                                          "rank":  7
-                                                      },
-                                                      {
-                                                          "rosterId":  6,
-                                                          "ownerId":  "434089153395683328",
-                                                          "teamName":  "mdogsizzle",
-                                                          "score":  80,
-                                                          "reasons":  [
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Core building blocks:  give the roster a credible foundation for its next move."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "concern",
-                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind ."
-                                                                          }
-                                                                      ],
-                                                          "record":  {
-                                                                         "wins":  0,
-                                                                         "pointsFor":  0,
-                                                                         "maxPointsFor":  0,
-                                                                         "losses":  0,
-                                                                         "ties":  0
-                                                                     },
-                                                          "rank":  8
-                                                      },
-                                                      {
-                                                          "rosterId":  7,
-                                                          "ownerId":  "958208850555904000",
-                                                          "teamName":  "BenF83",
-                                                          "score":  80,
-                                                          "reasons":  [
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Core building blocks:  give the roster a credible foundation for its next move."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "concern",
-                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind ."
-                                                                          }
-                                                                      ],
-                                                          "record":  {
-                                                                         "wins":  0,
-                                                                         "pointsFor":  0,
-                                                                         "maxPointsFor":  0,
-                                                                         "losses":  0,
-                                                                         "ties":  0
-                                                                     },
-                                                          "rank":  9
-                                                      },
-                                                      {
-                                                          "rosterId":  2,
-                                                          "ownerId":  "1370139541914013696",
-                                                          "teamName":  "BynxBalls603",
-                                                          "score":  80,
-                                                          "reasons":  [
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Core building blocks:  give the roster a credible foundation for its next move."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "concern",
-                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind ."
-                                                                          }
-                                                                      ],
-                                                          "record":  {
-                                                                         "wins":  0,
-                                                                         "pointsFor":  0,
-                                                                         "maxPointsFor":  0,
-                                                                         "losses":  0,
-                                                                         "ties":  0
-                                                                     },
-                                                          "rank":  10
-                                                      },
-                                                      {
-                                                          "rosterId":  5,
-                                                          "ownerId":  "76623368878964736",
-                                                          "teamName":  "BXBenny",
-                                                          "score":  80,
-                                                          "reasons":  [
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Core building blocks:  give the roster a credible foundation for its next move."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "concern",
-                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind ."
-                                                                          }
-                                                                      ],
-                                                          "record":  {
-                                                                         "wins":  0,
-                                                                         "pointsFor":  0,
-                                                                         "maxPointsFor":  0,
-                                                                         "losses":  0,
-                                                                         "ties":  0
-                                                                     },
-                                                          "rank":  11
-                                                      },
-                                                      {
-                                                          "rosterId":  10,
-                                                          "ownerId":  "712337207368699904",
-                                                          "teamName":  "ItsATravesty",
-                                                          "score":  80,
-                                                          "reasons":  [
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Core building blocks:  give the roster a credible foundation for its next move."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "positive",
-                                                                              "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
-                                                                          },
-                                                                          {
-                                                                              "tone":  "concern",
-                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind ."
-                                                                          }
-                                                                      ],
-                                                          "record":  {
-                                                                         "wins":  0,
-                                                                         "pointsFor":  0,
-                                                                         "maxPointsFor":  0,
-                                                                         "losses":  0,
-                                                                         "ties":  0
-                                                                     },
-                                                          "rank":  12
-                                                      }
-                                                  ],
                         "rankings":  [
-                                         {
-                                             "rosterId":  7,
-                                             "ownerId":  "958208850555904000",
-                                             "teamName":  "BenF83",
-                                             "score":  81,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Future flexibility: the rookie-pick inventory gives this manager options to add young talent or trade for proven help."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Core building blocks:  give the roster a credible foundation for its next move."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "No young quarterback foundation: long-term Superflex stability remains a major concern."
-                                                             }
-                                                         ],
-                                             "rank":  1
-                                         },
-                                         {
-                                             "rosterId":  6,
-                                             "ownerId":  "434089153395683328",
-                                             "teamName":  "mdogsizzle",
-                                             "score":  81,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Future flexibility: the rookie-pick inventory gives this manager options to add young talent or trade for proven help."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Core building blocks:  give the roster a credible foundation for its next move."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "No young quarterback foundation: long-term Superflex stability remains a major concern."
-                                                             }
-                                                         ],
-                                             "rank":  2
-                                         },
-                                         {
-                                             "rosterId":  11,
-                                             "ownerId":  "1310133686179491840",
-                                             "teamName":  "OrbitalLizards",
-                                             "score":  81,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Future flexibility: the rookie-pick inventory gives this manager options to add young talent or trade for proven help."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Core building blocks:  give the roster a credible foundation for its next move."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "No young quarterback foundation: long-term Superflex stability remains a major concern."
-                                                             }
-                                                         ],
-                                             "rank":  3
-                                         },
-                                         {
-                                             "rosterId":  10,
-                                             "ownerId":  "712337207368699904",
-                                             "teamName":  "ItsATravesty",
-                                             "score":  81,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Future flexibility: the rookie-pick inventory gives this manager options to add young talent or trade for proven help."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Core building blocks:  give the roster a credible foundation for its next move."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "No young quarterback foundation: long-term Superflex stability remains a major concern."
-                                                             }
-                                                         ],
-                                             "rank":  4
-                                         },
-                                         {
-                                             "rosterId":  5,
-                                             "ownerId":  "76623368878964736",
-                                             "teamName":  "BXBenny",
-                                             "score":  81,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Future flexibility: the rookie-pick inventory gives this manager options to add young talent or trade for proven help."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Core building blocks:  give the roster a credible foundation for its next move."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "No young quarterback foundation: long-term Superflex stability remains a major concern."
-                                                             }
-                                                         ],
-                                             "rank":  5
-                                         },
-                                         {
-                                             "rosterId":  2,
-                                             "ownerId":  "1370139541914013696",
-                                             "teamName":  "BynxBalls603",
-                                             "score":  81,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Future flexibility: the rookie-pick inventory gives this manager options to add young talent or trade for proven help."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Core building blocks:  give the roster a credible foundation for its next move."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "No young quarterback foundation: long-term Superflex stability remains a major concern."
-                                                             }
-                                                         ],
-                                             "rank":  6
-                                         },
-                                         {
-                                             "rosterId":  1,
-                                             "ownerId":  "466785377303130112",
-                                             "teamName":  "VinsBroPaul",
-                                             "score":  81,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Future flexibility: the rookie-pick inventory gives this manager options to add young talent or trade for proven help."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Core building blocks:  give the roster a credible foundation for its next move."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "No young quarterback foundation: long-term Superflex stability remains a major concern."
-                                                             }
-                                                         ],
-                                             "rank":  7
-                                         },
-                                         {
-                                             "rosterId":  4,
-                                             "ownerId":  "1195136617623166976",
-                                             "teamName":  "gratefulhead",
-                                             "score":  81,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Future flexibility: the rookie-pick inventory gives this manager options to add young talent or trade for proven help."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Core building blocks:  give the roster a credible foundation for its next move."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "No young quarterback foundation: long-term Superflex stability remains a major concern."
-                                                             }
-                                                         ],
-                                             "rank":  8
-                                         },
-                                         {
-                                             "rosterId":  3,
-                                             "ownerId":  "699188610297044992",
-                                             "teamName":  "Carter1217",
-                                             "score":  81,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Future flexibility: the rookie-pick inventory gives this manager options to add young talent or trade for proven help."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Core building blocks:  give the roster a credible foundation for its next move."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "No young quarterback foundation: long-term Superflex stability remains a major concern."
-                                                             }
-                                                         ],
-                                             "rank":  9
-                                         },
-                                         {
-                                             "rosterId":  12,
-                                             "ownerId":  "1146637535649746944",
-                                             "teamName":  "weatherman172",
-                                             "score":  78,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Core building blocks:  give the roster a credible foundation for its next move."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "No young quarterback foundation: long-term Superflex stability remains a major concern."
-                                                             }
-                                                         ],
-                                             "rank":  10
-                                         },
-                                         {
-                                             "rosterId":  8,
-                                             "ownerId":  "397982436304101376",
-                                             "teamName":  "Turd_Ferguson",
-                                             "score":  78,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Core building blocks:  give the roster a credible foundation for its next move."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "No young quarterback foundation: long-term Superflex stability remains a major concern."
-                                                             }
-                                                         ],
-                                             "rank":  11
-                                         },
-                                         {
-                                             "rosterId":  9,
-                                             "ownerId":  "966666258466836480",
-                                             "teamName":  "Zaragoz",
-                                             "score":  78,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Core building blocks:  give the roster a credible foundation for its next move."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "No young quarterback foundation: long-term Superflex stability remains a major concern."
-                                                             }
-                                                         ],
-                                             "rank":  12
-                                         }
+
                                      ]
                     },
                     {
@@ -10123,7 +9452,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350152770275020800/rosters",
-                                           "refreshedAt":  "2026-07-10T13:06:57.6679355+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:21.4894796+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10231,7 +9560,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154389192474624/rosters",
-                                           "refreshedAt":  "2026-07-10T13:06:57.8148810+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:21.6850874+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10339,7 +9668,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154561549004800/rosters",
-                                           "refreshedAt":  "2026-07-10T13:06:57.9514061+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:21.8688753+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10447,7 +9776,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154695137570816/rosters",
-                                           "refreshedAt":  "2026-07-10T13:06:58.0900532+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:22.0562144+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10555,7 +9884,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095209052508160/rosters",
-                                           "refreshedAt":  "2026-07-10T13:06:58.2346112+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:22.2486740+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -11195,7 +10524,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095313704554496/rosters",
-                                           "refreshedAt":  "2026-07-10T13:07:00.5370312+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:24.7096854+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -11835,7 +11164,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095371091017728/rosters",
-                                           "refreshedAt":  "2026-07-10T13:07:02.7957738+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:26.8859121+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -12475,7 +11804,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095416859287552/rosters",
-                                           "refreshedAt":  "2026-07-10T13:07:05.0470482+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:29.0638625+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -13115,7 +12444,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095453291003904/rosters",
-                                           "refreshedAt":  "2026-07-10T13:07:07.2899757+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:31.2618551+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  179,
                                            "sleeperLeagueSeason":  "2026",
@@ -13755,7 +13084,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480393130868736/rosters",
-                                           "refreshedAt":  "2026-07-10T13:07:09.5364001+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:33.4426846+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -14395,7 +13724,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480515533242368/rosters",
-                                           "refreshedAt":  "2026-07-10T13:07:11.7865375+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:35.6230145+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -15035,7 +14364,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480638808064000/rosters",
-                                           "refreshedAt":  "2026-07-10T13:07:14.0566530+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:37.7997889+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -15675,7 +15004,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480857310302208/rosters",
-                                           "refreshedAt":  "2026-07-10T13:07:16.2917364+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:39.9875201+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -16315,7 +15644,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480992765353984/rosters",
-                                           "refreshedAt":  "2026-07-10T13:07:18.5431625+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:42.1539616+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -16955,7 +16284,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362908679824740352/rosters",
-                                           "refreshedAt":  "2026-07-10T13:07:20.8212820+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:44.3256380+00:00",
                                            "rosterCount":  24,
                                            "playerCount":  120,
                                            "sleeperLeagueSeason":  "2026",
@@ -18284,20 +17613,20 @@
                         "sleeperLeagueId":  "1368003315815686144",
                         "name":  "VBP Best Ball Gauntlet 2",
                         "format":  "gauntlet",
-                        "publish":  true,
-                        "holdReason":  "regular draft is drafting",
+                        "publish":  false,
+                        "holdReason":  "regular draft is paused",
                         "draftStatuses":  [
-                                              "drafting"
+                                              "paused"
                                           ],
                         "draftReadiness":  {
-                                               "ready":  true,
+                                               "ready":  false,
                                                "stage":  "regular",
-                                               "label":  "Live from current Sleeper rosters while draft is in progress",
-                                               "reason":  "regular draft is drafting",
+                                               "label":  "Waiting on regular draft",
+                                               "reason":  "regular draft is paused",
                                                "drafts":  [
                                                               {
                                                                   "draftId":  "1368003316625178624",
-                                                                  "status":  "drafting",
+                                                                  "status":  "paused",
                                                                   "stage":  "regular",
                                                                   "type":  "snake",
                                                                   "season":  "2026",
@@ -18310,7 +17639,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1368003315815686144/rosters",
-                                           "refreshedAt":  "2026-07-10T13:07:23.3933482+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:46.7445219+00:00",
                                            "rosterCount":  24,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -18362,682 +17691,8 @@
                         "positionalRankings":  {
 
                                                },
-                        "currentSeasonRankings":  [
-
-                                                  ],
                         "rankings":  [
-                                         {
-                                             "rosterId":  16,
-                                             "ownerId":  "433906844256169984",
-                                             "teamName":  "bencurl",
-                                             "score":  27,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Scoring-system fit: 68.0 grade, 1st of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  1
-                                         },
-                                         {
-                                             "rosterId":  17,
-                                             "ownerId":  "475164268451328000",
-                                             "teamName":  "Gabepvm3",
-                                             "score":  27,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Scoring-system fit: 68.0 grade, 1st of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  2
-                                         },
-                                         {
-                                             "rosterId":  18,
-                                             "ownerId":  "735321227564064768",
-                                             "teamName":  "PatsChampsAgain",
-                                             "score":  27,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Scoring-system fit: 68.0 grade, 1st of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  3
-                                         },
-                                         {
-                                             "rosterId":  13,
-                                             "ownerId":  "720807497186775040",
-                                             "teamName":  "Quietstorm22",
-                                             "score":  27,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Scoring-system fit: 68.0 grade, 1st of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  4
-                                         },
-                                         {
-                                             "rosterId":  14,
-                                             "ownerId":  "735321005978959872",
-                                             "teamName":  "Jackfancher",
-                                             "score":  27,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Scoring-system fit: 68.0 grade, 1st of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  5
-                                         },
-                                         {
-                                             "rosterId":  15,
-                                             "ownerId":  "577536103842615296",
-                                             "teamName":  "webthree",
-                                             "score":  27,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Scoring-system fit: 68.0 grade, 1st of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  6
-                                         },
-                                         {
-                                             "rosterId":  22,
-                                             "ownerId":  "1224474144247136257",
-                                             "teamName":  "Bookerj7",
-                                             "score":  27,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Scoring-system fit: 68.0 grade, 1st of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  7
-                                         },
-                                         {
-                                             "rosterId":  23,
-                                             "ownerId":  "863396031688192000",
-                                             "teamName":  "TheCharlieSmith",
-                                             "score":  27,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Scoring-system fit: 68.0 grade, 1st of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  8
-                                         },
-                                         {
-                                             "rosterId":  24,
-                                             "ownerId":  "902427543800729600",
-                                             "teamName":  "NangBean",
-                                             "score":  27,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Scoring-system fit: 68.0 grade, 1st of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  9
-                                         },
-                                         {
-                                             "rosterId":  19,
-                                             "ownerId":  "444890909310447616",
-                                             "teamName":  "WOZZER--BB",
-                                             "score":  27,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Scoring-system fit: 68.0 grade, 1st of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  10
-                                         },
-                                         {
-                                             "rosterId":  20,
-                                             "ownerId":  "736433000019075072",
-                                             "teamName":  "bryanb460",
-                                             "score":  27,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Scoring-system fit: 68.0 grade, 1st of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  11
-                                         },
-                                         {
-                                             "rosterId":  21,
-                                             "ownerId":  "1133242089002745856",
-                                             "teamName":  "abettertime",
-                                             "score":  27,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Scoring-system fit: 68.0 grade, 1st of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  12
-                                         },
-                                         {
-                                             "rosterId":  4,
-                                             "ownerId":  "633359171764449280",
-                                             "teamName":  "StickyPicky",
-                                             "score":  27,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Scoring-system fit: 68.0 grade, 1st of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  13
-                                         },
-                                         {
-                                             "rosterId":  5,
-                                             "ownerId":  "870738058931265536",
-                                             "teamName":  "Donny01",
-                                             "score":  27,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Scoring-system fit: 68.0 grade, 1st of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  14
-                                         },
-                                         {
-                                             "rosterId":  6,
-                                             "ownerId":  "965104651420966912",
-                                             "teamName":  "dupusboomer",
-                                             "score":  27,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Scoring-system fit: 68.0 grade, 1st of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  15
-                                         },
-                                         {
-                                             "rosterId":  1,
-                                             "ownerId":  "466785377303130112",
-                                             "teamName":  "VinsBroPaul",
-                                             "score":  27,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Scoring-system fit: 68.0 grade, 1st of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  16
-                                         },
-                                         {
-                                             "rosterId":  2,
-                                             "ownerId":  "1175159775586222080",
-                                             "teamName":  "TryanboloneBB",
-                                             "score":  27,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Scoring-system fit: 68.0 grade, 1st of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  17
-                                         },
-                                         {
-                                             "rosterId":  3,
-                                             "ownerId":  "1131621606251466752",
-                                             "teamName":  "dangoose",
-                                             "score":  27,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Scoring-system fit: 68.0 grade, 1st of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  18
-                                         },
-                                         {
-                                             "rosterId":  10,
-                                             "ownerId":  "426916866766671872",
-                                             "teamName":  "Uhhyooaaah",
-                                             "score":  27,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Scoring-system fit: 68.0 grade, 1st of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  19
-                                         },
-                                         {
-                                             "rosterId":  11,
-                                             "ownerId":  "722130473156947968",
-                                             "teamName":  "ZiggyAwesomeX",
-                                             "score":  27,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Scoring-system fit: 68.0 grade, 1st of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  20
-                                         },
-                                         {
-                                             "rosterId":  12,
-                                             "ownerId":  "472617396415229952",
-                                             "teamName":  "runyan",
-                                             "score":  27,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Scoring-system fit: 68.0 grade, 1st of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  21
-                                         },
-                                         {
-                                             "rosterId":  7,
-                                             "ownerId":  "734717042283905024",
-                                             "teamName":  "Tacious00",
-                                             "score":  27,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Scoring-system fit: 68.0 grade, 1st of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  22
-                                         },
-                                         {
-                                             "rosterId":  8,
-                                             "ownerId":  "78264787146260480",
-                                             "teamName":  "backmask",
-                                             "score":  27,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Scoring-system fit: 68.0 grade, 1st of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  23
-                                         },
-                                         {
-                                             "rosterId":  9,
-                                             "ownerId":  "736202688349454336",
-                                             "teamName":  "Smartinny",
-                                             "score":  27,
-                                             "record":  {
-                                                            "wins":  0,
-                                                            "pointsFor":  0,
-                                                            "maxPointsFor":  0,
-                                                            "losses":  0,
-                                                            "ties":  0
-                                                        },
-                                             "reasons":  [
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "positive",
-                                                                 "text":  "Scoring-system fit: 68.0 grade, 1st of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
-                                                             },
-                                                             {
-                                                                 "tone":  "concern",
-                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
-                                                             }
-                                                         ],
-                                             "rank":  24
-                                         }
+
                                      ]
                     },
                     {
@@ -19071,7 +17726,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338004997836640256/rosters",
-                                           "refreshedAt":  "2026-07-10T13:07:23.9198854+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:46.9437848+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -19167,7 +17822,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005036122279936/rosters",
-                                           "refreshedAt":  "2026-07-10T13:07:24.0726208+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:47.1459069+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -19263,7 +17918,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005075167035392/rosters",
-                                           "refreshedAt":  "2026-07-10T13:07:24.2253335+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:47.4353579+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -19359,7 +18014,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005113482022912/rosters",
-                                           "refreshedAt":  "2026-07-10T13:07:24.3540358+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:47.6232928+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -19455,7 +18110,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005158071660544/rosters",
-                                           "refreshedAt":  "2026-07-10T13:07:24.4966255+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:47.8233491+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -19551,7 +18206,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846317608992768/rosters",
-                                           "refreshedAt":  "2026-07-10T13:07:24.6257007+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:48.0107353+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -19646,7 +18301,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846742810775552/rosters",
-                                           "refreshedAt":  "2026-07-10T13:07:24.7575582+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:48.1963959+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -19741,7 +18396,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1363630886133694464/rosters",
-                                           "refreshedAt":  "2026-07-10T13:07:24.8843277+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:48.3864065+00:00",
                                            "rosterCount":  15,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -19823,7 +18478,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339342261023961088/rosters",
-                                           "refreshedAt":  "2026-07-10T13:07:25.0208397+00:00",
+                                           "refreshedAt":  "2026-07-11T11:46:48.5763804+00:00",
                                            "rosterCount":  18,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
