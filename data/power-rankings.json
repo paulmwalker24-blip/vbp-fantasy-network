@@ -1,5 +1,5 @@
 ﻿{
-    "generatedAt":  "2026-07-11T11:46:48.5783897+00:00",
+    "generatedAt":  "2026-07-12T11:53:35.6904752+00:00",
     "snapshot":  {
                      "season":  "2026",
                      "seasonType":  "off",
@@ -30,7 +30,6 @@
                      "SKIP DYB2: startup draft is pre_draft",
                      "SKIP DYB3: startup draft is pre_draft",
                      "SKIP DYB4: startup draft is pre_draft",
-                     "SKIP BG2: regular draft is paused",
                      "SKIP RDB1: regular draft is pre_draft",
                      "SKIP RDB2: regular draft is pre_draft",
                      "SKIP RDB3: regular draft is pre_draft",
@@ -73,7 +72,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314663050854305792/rosters",
-                                           "refreshedAt":  "2026-07-11T11:45:34.8047009+00:00",
+                                           "refreshedAt":  "2026-07-12T11:52:14.1091858+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -168,7 +167,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314662767977824256/rosters",
-                                           "refreshedAt":  "2026-07-11T11:45:35.0327374+00:00",
+                                           "refreshedAt":  "2026-07-12T11:52:14.3657089+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -263,7 +262,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314660487635427328/rosters",
-                                           "refreshedAt":  "2026-07-11T11:45:35.2418457+00:00",
+                                           "refreshedAt":  "2026-07-12T11:52:14.6010929+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -358,7 +357,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1344449488089014272/rosters",
-                                           "refreshedAt":  "2026-07-11T11:45:35.5328590+00:00",
+                                           "refreshedAt":  "2026-07-12T11:52:14.9324846+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -453,7 +452,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1370097572764450816/rosters",
-                                           "refreshedAt":  "2026-07-11T11:45:35.7297805+00:00",
+                                           "refreshedAt":  "2026-07-12T11:52:15.1708984+00:00",
                                            "rosterCount":  32,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -545,7 +544,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1369795448134463488/rosters",
-                                           "refreshedAt":  "2026-07-11T11:45:35.9328477+00:00",
+                                           "refreshedAt":  "2026-07-12T11:52:15.3989179+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -640,7 +639,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341650084122595328/rosters",
-                                           "refreshedAt":  "2026-07-11T11:45:36.1445998+00:00",
+                                           "refreshedAt":  "2026-07-12T11:52:15.6380321+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  374,
                                            "sleeperLeagueSeason":  "2026",
@@ -1728,7 +1727,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1340820529996640256/rosters",
-                                           "refreshedAt":  "2026-07-11T11:45:42.2392110+00:00",
+                                           "refreshedAt":  "2026-07-12T11:52:22.0664616+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  368,
                                            "sleeperLeagueSeason":  "2026",
@@ -2816,7 +2815,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341646934816849920/rosters",
-                                           "refreshedAt":  "2026-07-11T11:45:47.6657060+00:00",
+                                           "refreshedAt":  "2026-07-12T11:52:27.8473346+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  368,
                                            "sleeperLeagueSeason":  "2026",
@@ -3904,7 +3903,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1342931950981091328/rosters",
-                                           "refreshedAt":  "2026-07-11T11:45:53.1308349+00:00",
+                                           "refreshedAt":  "2026-07-12T11:52:33.6672078+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  364,
                                            "sleeperLeagueSeason":  "2026",
@@ -4992,7 +4991,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345763335270400/rosters",
-                                           "refreshedAt":  "2026-07-11T11:45:58.7589669+00:00",
+                                           "refreshedAt":  "2026-07-12T11:52:39.4625135+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  376,
                                            "sleeperLeagueSeason":  "2026",
@@ -6080,7 +6079,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345934114725888/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:04.6463813+00:00",
+                                           "refreshedAt":  "2026-07-12T11:52:45.3897276+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  372,
                                            "sleeperLeagueSeason":  "2026",
@@ -7168,7 +7167,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1360285262617284608/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:10.2681106+00:00",
+                                           "refreshedAt":  "2026-07-12T11:52:51.2994048+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  373,
                                            "sleeperLeagueSeason":  "2026",
@@ -8256,7 +8255,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362902973520306176/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:15.8718545+00:00",
+                                           "refreshedAt":  "2026-07-12T11:52:57.2495395+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  354,
                                            "sleeperLeagueSeason":  "2026",
@@ -9344,7 +9343,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1370134727394066432/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:21.3068498+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:02.9781419+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9452,7 +9451,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350152770275020800/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:21.4894796+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:03.2210317+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9560,7 +9559,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154389192474624/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:21.6850874+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:03.4637554+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9668,7 +9667,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154561549004800/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:21.8688753+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:03.6875737+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9776,7 +9775,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154695137570816/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:22.0562144+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:03.9162033+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9884,7 +9883,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095209052508160/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:22.2486740+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:04.1478628+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -10524,7 +10523,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095313704554496/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:24.7096854+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:06.8034270+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -11164,7 +11163,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095371091017728/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:26.8859121+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:09.1652242+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -11804,7 +11803,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095416859287552/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:29.0638625+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:11.5301581+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -12444,7 +12443,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095453291003904/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:31.2618551+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:13.9040839+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  179,
                                            "sleeperLeagueSeason":  "2026",
@@ -13084,7 +13083,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480393130868736/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:33.4426846+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:16.2629588+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -13724,7 +13723,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480515533242368/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:35.6230145+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:18.6123438+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -14364,7 +14363,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480638808064000/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:37.7997889+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:20.9817976+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -15004,7 +15003,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480857310302208/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:39.9875201+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:23.3553587+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -15644,7 +15643,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480992765353984/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:42.1539616+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:25.7320523+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -16284,7 +16283,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362908679824740352/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:44.3256380+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:28.0856423+00:00",
                                            "rosterCount":  24,
                                            "playerCount":  120,
                                            "sleeperLeagueSeason":  "2026",
@@ -17613,20 +17612,20 @@
                         "sleeperLeagueId":  "1368003315815686144",
                         "name":  "VBP Best Ball Gauntlet 2",
                         "format":  "gauntlet",
-                        "publish":  false,
-                        "holdReason":  "regular draft is paused",
+                        "publish":  true,
+                        "holdReason":  "",
                         "draftStatuses":  [
-                                              "paused"
+                                              "complete"
                                           ],
                         "draftReadiness":  {
-                                               "ready":  false,
+                                               "ready":  true,
                                                "stage":  "regular",
-                                               "label":  "Waiting on regular draft",
-                                               "reason":  "regular draft is paused",
+                                               "label":  "Regular draft complete",
+                                               "reason":  "",
                                                "drafts":  [
                                                               {
                                                                   "draftId":  "1368003316625178624",
-                                                                  "status":  "paused",
+                                                                  "status":  "complete",
                                                                   "stage":  "regular",
                                                                   "type":  "snake",
                                                                   "season":  "2026",
@@ -17639,11 +17638,11 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1368003315815686144/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:46.7445219+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:30.7274312+00:00",
                                            "rosterCount":  24,
-                                           "playerCount":  0,
+                                           "playerCount":  144,
                                            "sleeperLeagueSeason":  "2026",
-                                           "sleeperLeagueStatus":  "drafting"
+                                           "sleeperLeagueStatus":  "in_season"
                                        },
                         "rosterPositions":  [
                                                 "FLEX",
@@ -17689,10 +17688,1279 @@
                                               "emphasis":  "Four-start micro-roster strength, Superflex ceiling, and availability risk in a locked roster format."
                                           },
                         "positionalRankings":  {
-
+                                                   "QB":  {
+                                                              "position":  "QB",
+                                                              "rankings":  [
+                                                                               {
+                                                                                   "rank":  1,
+                                                                                   "manager":  "StickyPicky",
+                                                                                   "rosterId":  4,
+                                                                                   "score":  95
+                                                                               },
+                                                                               {
+                                                                                   "rank":  2,
+                                                                                   "manager":  "Bookerj7",
+                                                                                   "rosterId":  22,
+                                                                                   "score":  93
+                                                                               },
+                                                                               {
+                                                                                   "rank":  3,
+                                                                                   "manager":  "Smartinny",
+                                                                                   "rosterId":  9,
+                                                                                   "score":  89
+                                                                               },
+                                                                               {
+                                                                                   "rank":  4,
+                                                                                   "manager":  "Donny01",
+                                                                                   "rosterId":  5,
+                                                                                   "score":  88
+                                                                               },
+                                                                               {
+                                                                                   "rank":  5,
+                                                                                   "manager":  "TryanboloneBB",
+                                                                                   "rosterId":  2,
+                                                                                   "score":  88
+                                                                               },
+                                                                               {
+                                                                                   "rank":  6,
+                                                                                   "manager":  "VinsBroPaul",
+                                                                                   "rosterId":  1,
+                                                                                   "score":  88
+                                                                               },
+                                                                               {
+                                                                                   "rank":  7,
+                                                                                   "manager":  "backmask",
+                                                                                   "rosterId":  8,
+                                                                                   "score":  86
+                                                                               },
+                                                                               {
+                                                                                   "rank":  8,
+                                                                                   "manager":  "Gabepvm3",
+                                                                                   "rosterId":  17,
+                                                                                   "score":  86
+                                                                               },
+                                                                               {
+                                                                                   "rank":  9,
+                                                                                   "manager":  "WOZZER--BB",
+                                                                                   "rosterId":  19,
+                                                                                   "score":  86
+                                                                               },
+                                                                               {
+                                                                                   "rank":  10,
+                                                                                   "manager":  "bencurl",
+                                                                                   "rosterId":  16,
+                                                                                   "score":  85
+                                                                               },
+                                                                               {
+                                                                                   "rank":  11,
+                                                                                   "manager":  "ZiggyAwesomeX",
+                                                                                   "rosterId":  11,
+                                                                                   "score":  85
+                                                                               },
+                                                                               {
+                                                                                   "rank":  12,
+                                                                                   "manager":  "bryanb460",
+                                                                                   "rosterId":  20,
+                                                                                   "score":  83
+                                                                               },
+                                                                               {
+                                                                                   "rank":  13,
+                                                                                   "manager":  "Jackfancher",
+                                                                                   "rosterId":  14,
+                                                                                   "score":  83
+                                                                               },
+                                                                               {
+                                                                                   "rank":  14,
+                                                                                   "manager":  "webthree",
+                                                                                   "rosterId":  15,
+                                                                                   "score":  83
+                                                                               },
+                                                                               {
+                                                                                   "rank":  15,
+                                                                                   "manager":  "dangoose",
+                                                                                   "rosterId":  3,
+                                                                                   "score":  82
+                                                                               },
+                                                                               {
+                                                                                   "rank":  16,
+                                                                                   "manager":  "dupusboomer",
+                                                                                   "rosterId":  6,
+                                                                                   "score":  82
+                                                                               },
+                                                                               {
+                                                                                   "rank":  17,
+                                                                                   "manager":  "NangBean",
+                                                                                   "rosterId":  24,
+                                                                                   "score":  82
+                                                                               },
+                                                                               {
+                                                                                   "rank":  18,
+                                                                                   "manager":  "Uhhyooaaah",
+                                                                                   "rosterId":  10,
+                                                                                   "score":  82
+                                                                               },
+                                                                               {
+                                                                                   "rank":  19,
+                                                                                   "manager":  "PatsChampsAgain",
+                                                                                   "rosterId":  18,
+                                                                                   "score":  81
+                                                                               },
+                                                                               {
+                                                                                   "rank":  20,
+                                                                                   "manager":  "TheCharlieSmith",
+                                                                                   "rosterId":  23,
+                                                                                   "score":  81
+                                                                               },
+                                                                               {
+                                                                                   "rank":  21,
+                                                                                   "manager":  "runyan",
+                                                                                   "rosterId":  12,
+                                                                                   "score":  79
+                                                                               },
+                                                                               {
+                                                                                   "rank":  22,
+                                                                                   "manager":  "Quietstorm22",
+                                                                                   "rosterId":  13,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  23,
+                                                                                   "manager":  "Tacious00",
+                                                                                   "rosterId":  7,
+                                                                                   "score":  75
+                                                                               },
+                                                                               {
+                                                                                   "rank":  24,
+                                                                                   "manager":  "abettertime",
+                                                                                   "rosterId":  21,
+                                                                                   "score":  0
+                                                                               }
+                                                                           ]
+                                                          },
+                                                   "RB":  {
+                                                              "position":  "RB",
+                                                              "rankings":  [
+                                                                               {
+                                                                                   "rank":  1,
+                                                                                   "manager":  "TheCharlieSmith",
+                                                                                   "rosterId":  23,
+                                                                                   "score":  88
+                                                                               },
+                                                                               {
+                                                                                   "rank":  2,
+                                                                                   "manager":  "NangBean",
+                                                                                   "rosterId":  24,
+                                                                                   "score":  86
+                                                                               },
+                                                                               {
+                                                                                   "rank":  3,
+                                                                                   "manager":  "webthree",
+                                                                                   "rosterId":  15,
+                                                                                   "score":  86
+                                                                               },
+                                                                               {
+                                                                                   "rank":  4,
+                                                                                   "manager":  "Jackfancher",
+                                                                                   "rosterId":  14,
+                                                                                   "score":  85
+                                                                               },
+                                                                               {
+                                                                                   "rank":  5,
+                                                                                   "manager":  "runyan",
+                                                                                   "rosterId":  12,
+                                                                                   "score":  85
+                                                                               },
+                                                                               {
+                                                                                   "rank":  6,
+                                                                                   "manager":  "bryanb460",
+                                                                                   "rosterId":  20,
+                                                                                   "score":  84
+                                                                               },
+                                                                               {
+                                                                                   "rank":  7,
+                                                                                   "manager":  "bencurl",
+                                                                                   "rosterId":  16,
+                                                                                   "score":  82
+                                                                               },
+                                                                               {
+                                                                                   "rank":  8,
+                                                                                   "manager":  "dupusboomer",
+                                                                                   "rosterId":  6,
+                                                                                   "score":  82
+                                                                               },
+                                                                               {
+                                                                                   "rank":  9,
+                                                                                   "manager":  "ZiggyAwesomeX",
+                                                                                   "rosterId":  11,
+                                                                                   "score":  82
+                                                                               },
+                                                                               {
+                                                                                   "rank":  10,
+                                                                                   "manager":  "PatsChampsAgain",
+                                                                                   "rosterId":  18,
+                                                                                   "score":  81
+                                                                               },
+                                                                               {
+                                                                                   "rank":  11,
+                                                                                   "manager":  "Uhhyooaaah",
+                                                                                   "rosterId":  10,
+                                                                                   "score":  81
+                                                                               },
+                                                                               {
+                                                                                   "rank":  12,
+                                                                                   "manager":  "Bookerj7",
+                                                                                   "rosterId":  22,
+                                                                                   "score":  79
+                                                                               },
+                                                                               {
+                                                                                   "rank":  13,
+                                                                                   "manager":  "StickyPicky",
+                                                                                   "rosterId":  4,
+                                                                                   "score":  79
+                                                                               },
+                                                                               {
+                                                                                   "rank":  14,
+                                                                                   "manager":  "backmask",
+                                                                                   "rosterId":  8,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  15,
+                                                                                   "manager":  "dangoose",
+                                                                                   "rosterId":  3,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  16,
+                                                                                   "manager":  "Tacious00",
+                                                                                   "rosterId":  7,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  17,
+                                                                                   "manager":  "WOZZER--BB",
+                                                                                   "rosterId":  19,
+                                                                                   "score":  77
+                                                                               },
+                                                                               {
+                                                                                   "rank":  18,
+                                                                                   "manager":  "Quietstorm22",
+                                                                                   "rosterId":  13,
+                                                                                   "score":  75
+                                                                               },
+                                                                               {
+                                                                                   "rank":  19,
+                                                                                   "manager":  "TryanboloneBB",
+                                                                                   "rosterId":  2,
+                                                                                   "score":  74
+                                                                               },
+                                                                               {
+                                                                                   "rank":  20,
+                                                                                   "manager":  "VinsBroPaul",
+                                                                                   "rosterId":  1,
+                                                                                   "score":  74
+                                                                               },
+                                                                               {
+                                                                                   "rank":  21,
+                                                                                   "manager":  "abettertime",
+                                                                                   "rosterId":  21,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  22,
+                                                                                   "manager":  "Donny01",
+                                                                                   "rosterId":  5,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  23,
+                                                                                   "manager":  "Gabepvm3",
+                                                                                   "rosterId":  17,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  24,
+                                                                                   "manager":  "Smartinny",
+                                                                                   "rosterId":  9,
+                                                                                   "score":  0
+                                                                               }
+                                                                           ]
+                                                          },
+                                                   "WR":  {
+                                                              "position":  "WR",
+                                                              "rankings":  [
+                                                                               {
+                                                                                   "rank":  1,
+                                                                                   "manager":  "abettertime",
+                                                                                   "rosterId":  21,
+                                                                                   "score":  84
+                                                                               },
+                                                                               {
+                                                                                   "rank":  2,
+                                                                                   "manager":  "dangoose",
+                                                                                   "rosterId":  3,
+                                                                                   "score":  82
+                                                                               },
+                                                                               {
+                                                                                   "rank":  3,
+                                                                                   "manager":  "Uhhyooaaah",
+                                                                                   "rosterId":  10,
+                                                                                   "score":  82
+                                                                               },
+                                                                               {
+                                                                                   "rank":  4,
+                                                                                   "manager":  "backmask",
+                                                                                   "rosterId":  8,
+                                                                                   "score":  80
+                                                                               },
+                                                                               {
+                                                                                   "rank":  5,
+                                                                                   "manager":  "bryanb460",
+                                                                                   "rosterId":  20,
+                                                                                   "score":  80
+                                                                               },
+                                                                               {
+                                                                                   "rank":  6,
+                                                                                   "manager":  "Gabepvm3",
+                                                                                   "rosterId":  17,
+                                                                                   "score":  80
+                                                                               },
+                                                                               {
+                                                                                   "rank":  7,
+                                                                                   "manager":  "Donny01",
+                                                                                   "rosterId":  5,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  8,
+                                                                                   "manager":  "TheCharlieSmith",
+                                                                                   "rosterId":  23,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  9,
+                                                                                   "manager":  "Bookerj7",
+                                                                                   "rosterId":  22,
+                                                                                   "score":  76
+                                                                               },
+                                                                               {
+                                                                                   "rank":  10,
+                                                                                   "manager":  "dupusboomer",
+                                                                                   "rosterId":  6,
+                                                                                   "score":  76
+                                                                               },
+                                                                               {
+                                                                                   "rank":  11,
+                                                                                   "manager":  "bencurl",
+                                                                                   "rosterId":  16,
+                                                                                   "score":  75
+                                                                               },
+                                                                               {
+                                                                                   "rank":  12,
+                                                                                   "manager":  "PatsChampsAgain",
+                                                                                   "rosterId":  18,
+                                                                                   "score":  75
+                                                                               },
+                                                                               {
+                                                                                   "rank":  13,
+                                                                                   "manager":  "Quietstorm22",
+                                                                                   "rosterId":  13,
+                                                                                   "score":  75
+                                                                               },
+                                                                               {
+                                                                                   "rank":  14,
+                                                                                   "manager":  "StickyPicky",
+                                                                                   "rosterId":  4,
+                                                                                   "score":  75
+                                                                               },
+                                                                               {
+                                                                                   "rank":  15,
+                                                                                   "manager":  "TryanboloneBB",
+                                                                                   "rosterId":  2,
+                                                                                   "score":  74
+                                                                               },
+                                                                               {
+                                                                                   "rank":  16,
+                                                                                   "manager":  "WOZZER--BB",
+                                                                                   "rosterId":  19,
+                                                                                   "score":  74
+                                                                               },
+                                                                               {
+                                                                                   "rank":  17,
+                                                                                   "manager":  "VinsBroPaul",
+                                                                                   "rosterId":  1,
+                                                                                   "score":  73
+                                                                               },
+                                                                               {
+                                                                                   "rank":  18,
+                                                                                   "manager":  "Smartinny",
+                                                                                   "rosterId":  9,
+                                                                                   "score":  72
+                                                                               },
+                                                                               {
+                                                                                   "rank":  19,
+                                                                                   "manager":  "NangBean",
+                                                                                   "rosterId":  24,
+                                                                                   "score":  71
+                                                                               },
+                                                                               {
+                                                                                   "rank":  20,
+                                                                                   "manager":  "webthree",
+                                                                                   "rosterId":  15,
+                                                                                   "score":  71
+                                                                               },
+                                                                               {
+                                                                                   "rank":  21,
+                                                                                   "manager":  "Jackfancher",
+                                                                                   "rosterId":  14,
+                                                                                   "score":  70
+                                                                               },
+                                                                               {
+                                                                                   "rank":  22,
+                                                                                   "manager":  "ZiggyAwesomeX",
+                                                                                   "rosterId":  11,
+                                                                                   "score":  70
+                                                                               },
+                                                                               {
+                                                                                   "rank":  23,
+                                                                                   "manager":  "runyan",
+                                                                                   "rosterId":  12,
+                                                                                   "score":  69
+                                                                               },
+                                                                               {
+                                                                                   "rank":  24,
+                                                                                   "manager":  "Tacious00",
+                                                                                   "rosterId":  7,
+                                                                                   "score":  0
+                                                                               }
+                                                                           ]
+                                                          },
+                                                   "TE":  {
+                                                              "position":  "TE",
+                                                              "rankings":  [
+                                                                               {
+                                                                                   "rank":  1,
+                                                                                   "manager":  "PatsChampsAgain",
+                                                                                   "rosterId":  18,
+                                                                                   "score":  83
+                                                                               },
+                                                                               {
+                                                                                   "rank":  2,
+                                                                                   "manager":  "Tacious00",
+                                                                                   "rosterId":  7,
+                                                                                   "score":  83
+                                                                               },
+                                                                               {
+                                                                                   "rank":  3,
+                                                                                   "manager":  "TryanboloneBB",
+                                                                                   "rosterId":  2,
+                                                                                   "score":  80
+                                                                               },
+                                                                               {
+                                                                                   "rank":  4,
+                                                                                   "manager":  "dangoose",
+                                                                                   "rosterId":  3,
+                                                                                   "score":  79
+                                                                               },
+                                                                               {
+                                                                                   "rank":  5,
+                                                                                   "manager":  "NangBean",
+                                                                                   "rosterId":  24,
+                                                                                   "score":  79
+                                                                               },
+                                                                               {
+                                                                                   "rank":  6,
+                                                                                   "manager":  "WOZZER--BB",
+                                                                                   "rosterId":  19,
+                                                                                   "score":  79
+                                                                               },
+                                                                               {
+                                                                                   "rank":  7,
+                                                                                   "manager":  "backmask",
+                                                                                   "rosterId":  8,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  8,
+                                                                                   "manager":  "bencurl",
+                                                                                   "rosterId":  16,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  9,
+                                                                                   "manager":  "Jackfancher",
+                                                                                   "rosterId":  14,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  10,
+                                                                                   "manager":  "runyan",
+                                                                                   "rosterId":  12,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  11,
+                                                                                   "manager":  "Smartinny",
+                                                                                   "rosterId":  9,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  12,
+                                                                                   "manager":  "Uhhyooaaah",
+                                                                                   "rosterId":  10,
+                                                                                   "score":  78
+                                                                               },
+                                                                               {
+                                                                                   "rank":  13,
+                                                                                   "manager":  "Donny01",
+                                                                                   "rosterId":  5,
+                                                                                   "score":  77
+                                                                               },
+                                                                               {
+                                                                                   "rank":  14,
+                                                                                   "manager":  "TheCharlieSmith",
+                                                                                   "rosterId":  23,
+                                                                                   "score":  73
+                                                                               },
+                                                                               {
+                                                                                   "rank":  15,
+                                                                                   "manager":  "abettertime",
+                                                                                   "rosterId":  21,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  16,
+                                                                                   "manager":  "Bookerj7",
+                                                                                   "rosterId":  22,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  17,
+                                                                                   "manager":  "bryanb460",
+                                                                                   "rosterId":  20,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  18,
+                                                                                   "manager":  "dupusboomer",
+                                                                                   "rosterId":  6,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  19,
+                                                                                   "manager":  "Gabepvm3",
+                                                                                   "rosterId":  17,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  20,
+                                                                                   "manager":  "Quietstorm22",
+                                                                                   "rosterId":  13,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  21,
+                                                                                   "manager":  "StickyPicky",
+                                                                                   "rosterId":  4,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  22,
+                                                                                   "manager":  "VinsBroPaul",
+                                                                                   "rosterId":  1,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  23,
+                                                                                   "manager":  "webthree",
+                                                                                   "rosterId":  15,
+                                                                                   "score":  0
+                                                                               },
+                                                                               {
+                                                                                   "rank":  24,
+                                                                                   "manager":  "ZiggyAwesomeX",
+                                                                                   "rosterId":  11,
+                                                                                   "score":  0
+                                                                               }
+                                                                           ]
+                                                          }
                                                },
-                        "rankings":  [
+                        "currentSeasonRankings":  [
 
+                                                  ],
+                        "rankings":  [
+                                         {
+                                             "rosterId":  4,
+                                             "ownerId":  "633359171764449280",
+                                             "teamName":  "StickyPicky",
+                                             "score":  84,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Quarterback room: 95.0 grade, 1st of 24; is especially important in Superflex and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Scoring-system fit: 81.0 grade, 18th of 24; shows how well the roster matches league scoring and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  1
+                                         },
+                                         {
+                                             "rosterId":  8,
+                                             "ownerId":  "78264787146260480",
+                                             "teamName":  "backmask",
+                                             "score":  82,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Quarterback room: 86.0 grade, 6th of 24; is especially important in Superflex and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Usable depth: 72.0 grade, 12th of 24; shapes bye-week and injury resilience and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  2
+                                         },
+                                         {
+                                             "rosterId":  22,
+                                             "ownerId":  "1224474144247136257",
+                                             "teamName":  "Bookerj7",
+                                             "score":  82,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Quarterback room: 87.5 grade, 5th of 24; is especially important in Superflex and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Starting lineup: 80.2 grade, 9th of 24; drives the weekly baseline and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  3
+                                         },
+                                         {
+                                             "rosterId":  14,
+                                             "ownerId":  "735321005978959872",
+                                             "teamName":  "Jackfancher",
+                                             "score":  82,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Quarterback room: 83.0 grade, 12th of 24; is especially important in Superflex and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Scoring-system fit: 82.0 grade, 16th of 24; shows how well the roster matches league scoring and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  4
+                                         },
+                                         {
+                                             "rosterId":  11,
+                                             "ownerId":  "722130473156947968",
+                                             "teamName":  "ZiggyAwesomeX",
+                                             "score":  82,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Quarterback room: 85.0 grade, 9th of 24; is especially important in Superflex and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Scoring-system fit: 80.0 grade, 22nd of 24; shows how well the roster matches league scoring and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  5
+                                         },
+                                         {
+                                             "rosterId":  24,
+                                             "ownerId":  "902427543800729600",
+                                             "teamName":  "NangBean",
+                                             "score":  82,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Top-end ceiling: 66.0 grade, 1st of 24; creates matchup-winning upside and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Scoring-system fit: 82.0 grade, 16th of 24; shows how well the roster matches league scoring and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  6
+                                         },
+                                         {
+                                             "rosterId":  5,
+                                             "ownerId":  "870738058931265536",
+                                             "teamName":  "Donny01",
+                                             "score":  82,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Quarterback room: 88.0 grade, 3rd of 24; is especially important in Superflex and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Starting lineup: 79.8 grade, 15th of 24; drives the weekly baseline and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  7
+                                         },
+                                         {
+                                             "rosterId":  2,
+                                             "ownerId":  "1175159775586222080",
+                                             "teamName":  "TryanboloneBB",
+                                             "score":  81,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Quarterback room: 88.0 grade, 3rd of 24; is especially important in Superflex and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Usable depth: 71.5 grade, 14th of 24; shapes bye-week and injury resilience and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  8
+                                         },
+                                         {
+                                             "rosterId":  15,
+                                             "ownerId":  "577536103842615296",
+                                             "teamName":  "webthree",
+                                             "score":  81,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Quarterback room: 83.0 grade, 12th of 24; is especially important in Superflex and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Scoring-system fit: 80.0 grade, 22nd of 24; shows how well the roster matches league scoring and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  9
+                                         },
+                                         {
+                                             "rosterId":  20,
+                                             "ownerId":  "736433000019075072",
+                                             "teamName":  "bryanb460",
+                                             "score":  81,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Quarterback room: 83.0 grade, 12th of 24; is especially important in Superflex and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Usable depth: 70.0 grade, 20th of 24; shapes bye-week and injury resilience and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  10
+                                         },
+                                         {
+                                             "rosterId":  16,
+                                             "ownerId":  "433906844256169984",
+                                             "teamName":  "bencurl",
+                                             "score":  80,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Quarterback room: 85.0 grade, 9th of 24; is especially important in Superflex and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Top-end ceiling: 66.0 grade, 1st of 24; creates matchup-winning upside and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Usable depth: 70.0 grade, 20th of 24; shapes bye-week and injury resilience and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  11
+                                         },
+                                         {
+                                             "rosterId":  6,
+                                             "ownerId":  "965104651420966912",
+                                             "teamName":  "dupusboomer",
+                                             "score":  80,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Usable depth: 74.0 grade, 5th of 24; shapes bye-week and injury resilience and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Top-end ceiling: 58.0 grade, 19th of 24; creates matchup-winning upside and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  12
+                                         },
+                                         {
+                                             "rosterId":  10,
+                                             "ownerId":  "426916866766671872",
+                                             "teamName":  "Uhhyooaaah",
+                                             "score":  80,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Player availability: 100.0 grade, 1st of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Usable depth: 75.0 grade, 2nd of 24; shapes bye-week and injury resilience and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Top-end ceiling: 58.0 grade, 19th of 24; creates matchup-winning upside and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  13
+                                         },
+                                         {
+                                             "rosterId":  17,
+                                             "ownerId":  "475164268451328000",
+                                             "teamName":  "Gabepvm3",
+                                             "score":  79,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Scoring-system fit: 92.0 grade, 1st of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Quarterback room: 86.0 grade, 6th of 24; is especially important in Superflex and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Player availability: 88.0 grade, 17th of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  14
+                                         },
+                                         {
+                                             "rosterId":  18,
+                                             "ownerId":  "735321227564064768",
+                                             "teamName":  "PatsChampsAgain",
+                                             "score":  79,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Scoring-system fit: 85.0 grade, 4th of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Starting lineup: 80.8 grade, 5th of 24; drives the weekly baseline and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Top-end ceiling: 58.0 grade, 19th of 24; creates matchup-winning upside and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  15
+                                         },
+                                         {
+                                             "rosterId":  23,
+                                             "ownerId":  "863396031688192000",
+                                             "teamName":  "TheCharlieSmith",
+                                             "score":  79,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Top-end ceiling: 66.0 grade, 1st of 24; creates matchup-winning upside and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Scoring-system fit: 84.0 grade, 7th of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Player availability: 88.0 grade, 17th of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  16
+                                         },
+                                         {
+                                             "rosterId":  19,
+                                             "ownerId":  "444890909310447616",
+                                             "teamName":  "WOZZER--BB",
+                                             "score":  79,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Quarterback room: 86.0 grade, 6th of 24; is especially important in Superflex and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Top-end ceiling: 66.0 grade, 1st of 24; creates matchup-winning upside and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Player availability: 88.0 grade, 17th of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  17
+                                         },
+                                         {
+                                             "rosterId":  3,
+                                             "ownerId":  "1131621606251466752",
+                                             "teamName":  "dangoose",
+                                             "score":  79,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Usable depth: 75.0 grade, 2nd of 24; shapes bye-week and injury resilience and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Quarterback room: 82.0 grade, 15th of 24; is especially important in Superflex and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Top-end ceiling: 58.0 grade, 19th of 24; creates matchup-winning upside and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  18
+                                         },
+                                         {
+                                             "rosterId":  9,
+                                             "ownerId":  "736202688349454336",
+                                             "teamName":  "Smartinny",
+                                             "score":  78,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Quarterback room: 89.0 grade, 2nd of 24; is especially important in Superflex and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Scoring-system fit: 88.0 grade, 3rd of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Player availability: 76.0 grade, 24th of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  19
+                                         },
+                                         {
+                                             "rosterId":  1,
+                                             "ownerId":  "466785377303130112",
+                                             "teamName":  "VinsBroPaul",
+                                             "score":  78,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Quarterback room: 84.0 grade, 11th of 24; is especially important in Superflex and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Usable depth: 75.0 grade, 2nd of 24; shapes bye-week and injury resilience and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Player availability: 88.0 grade, 17th of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  20
+                                         },
+                                         {
+                                             "rosterId":  12,
+                                             "ownerId":  "472617396415229952",
+                                             "teamName":  "runyan",
+                                             "score":  77,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Top-end ceiling: 66.0 grade, 1st of 24; creates matchup-winning upside and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Scoring-system fit: 85.0 grade, 4th of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Player availability: 82.0 grade, 22nd of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  21
+                                         },
+                                         {
+                                             "rosterId":  7,
+                                             "ownerId":  "734717042283905024",
+                                             "teamName":  "Tacious00",
+                                             "score":  76,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Scoring-system fit: 85.0 grade, 4th of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Usable depth: 72.0 grade, 12th of 24; shapes bye-week and injury resilience and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Top-end ceiling: 58.0 grade, 19th of 24; creates matchup-winning upside and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  22
+                                         },
+                                         {
+                                             "rosterId":  13,
+                                             "ownerId":  "720807497186775040",
+                                             "teamName":  "Quietstorm22",
+                                             "score":  74,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Scoring-system fit: 81.0 grade, 18th of 24; shows how well the roster matches league scoring and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Quarterback room: 78.0 grade, 22nd of 24; is especially important in Superflex and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Player availability: 82.0 grade, 22nd of 24; affects how much of the roster is immediately usable and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  23
+                                         },
+                                         {
+                                             "rosterId":  21,
+                                             "ownerId":  "1133242089002745856",
+                                             "teamName":  "abettertime",
+                                             "score":  65,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Top-end ceiling: 66.0 grade, 1st of 24; creates matchup-winning upside and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Player availability: 94.0 grade, 13th of 24; affects how much of the roster is immediately usable and is one of this roster\u0027s strongest pillars."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "Quarterback room: 0.0 grade, 24th of 24; is especially important in Superflex and is the clearest area holding the roster back."
+                                                             }
+                                                         ],
+                                             "rank":  24
+                                         }
                                      ]
                     },
                     {
@@ -17726,7 +18994,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338004997836640256/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:46.9437848+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:33.7621162+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -17822,7 +19090,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005036122279936/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:47.1459069+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:34.0208970+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -17918,7 +19186,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005075167035392/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:47.4353579+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:34.3253715+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -18014,7 +19282,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005113482022912/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:47.6232928+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:34.5545165+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -18110,7 +19378,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005158071660544/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:47.8233491+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:34.7852581+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -18206,7 +19474,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846317608992768/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:48.0107353+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:35.0086282+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -18301,7 +19569,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846742810775552/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:48.1963959+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:35.2295772+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -18396,7 +19664,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1363630886133694464/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:48.3864065+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:35.4592014+00:00",
                                            "rosterCount":  15,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -18478,7 +19746,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339342261023961088/rosters",
-                                           "refreshedAt":  "2026-07-11T11:46:48.5763804+00:00",
+                                           "refreshedAt":  "2026-07-12T11:53:35.6884619+00:00",
                                            "rosterCount":  18,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
