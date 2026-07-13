@@ -1,5 +1,5 @@
 ﻿{
-    "generatedAt":  "2026-07-12T11:53:35.6904752+00:00",
+    "generatedAt":  "2026-07-13T13:14:39.6558483+00:00",
     "snapshot":  {
                      "season":  "2026",
                      "seasonType":  "off",
@@ -25,7 +25,6 @@
                      "SKIP RD4: regular draft is pre_draft",
                      "SKIP RD32T1: regular draft is pre_draft",
                      "SKIP CM1: regular draft is pre_draft",
-                     "SKIP DYN9: startup draft is paused",
                      "SKIP DYB1: startup draft is pre_draft",
                      "SKIP DYB2: startup draft is pre_draft",
                      "SKIP DYB3: startup draft is pre_draft",
@@ -72,7 +71,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314663050854305792/rosters",
-                                           "refreshedAt":  "2026-07-12T11:52:14.1091858+00:00",
+                                           "refreshedAt":  "2026-07-13T13:13:11.0310081+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -167,7 +166,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314662767977824256/rosters",
-                                           "refreshedAt":  "2026-07-12T11:52:14.3657089+00:00",
+                                           "refreshedAt":  "2026-07-13T13:13:11.4964370+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -262,7 +261,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314660487635427328/rosters",
-                                           "refreshedAt":  "2026-07-12T11:52:14.6010929+00:00",
+                                           "refreshedAt":  "2026-07-13T13:13:11.9376886+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -357,7 +356,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1344449488089014272/rosters",
-                                           "refreshedAt":  "2026-07-12T11:52:14.9324846+00:00",
+                                           "refreshedAt":  "2026-07-13T13:13:12.4646513+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -452,7 +451,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1370097572764450816/rosters",
-                                           "refreshedAt":  "2026-07-12T11:52:15.1708984+00:00",
+                                           "refreshedAt":  "2026-07-13T13:13:12.8833051+00:00",
                                            "rosterCount":  32,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -544,7 +543,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1369795448134463488/rosters",
-                                           "refreshedAt":  "2026-07-12T11:52:15.3989179+00:00",
+                                           "refreshedAt":  "2026-07-13T13:13:13.2953407+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -639,7 +638,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341650084122595328/rosters",
-                                           "refreshedAt":  "2026-07-12T11:52:15.6380321+00:00",
+                                           "refreshedAt":  "2026-07-13T13:13:13.6948592+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  374,
                                            "sleeperLeagueSeason":  "2026",
@@ -1727,7 +1726,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1340820529996640256/rosters",
-                                           "refreshedAt":  "2026-07-12T11:52:22.0664616+00:00",
+                                           "refreshedAt":  "2026-07-13T13:13:20.3067576+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  368,
                                            "sleeperLeagueSeason":  "2026",
@@ -2815,7 +2814,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341646934816849920/rosters",
-                                           "refreshedAt":  "2026-07-12T11:52:27.8473346+00:00",
+                                           "refreshedAt":  "2026-07-13T13:13:26.2691058+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  368,
                                            "sleeperLeagueSeason":  "2026",
@@ -3903,7 +3902,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1342931950981091328/rosters",
-                                           "refreshedAt":  "2026-07-12T11:52:33.6672078+00:00",
+                                           "refreshedAt":  "2026-07-13T13:13:32.1948283+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  364,
                                            "sleeperLeagueSeason":  "2026",
@@ -4991,7 +4990,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345763335270400/rosters",
-                                           "refreshedAt":  "2026-07-12T11:52:39.4625135+00:00",
+                                           "refreshedAt":  "2026-07-13T13:13:38.1441717+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  376,
                                            "sleeperLeagueSeason":  "2026",
@@ -6079,7 +6078,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345934114725888/rosters",
-                                           "refreshedAt":  "2026-07-12T11:52:45.3897276+00:00",
+                                           "refreshedAt":  "2026-07-13T13:13:44.2620045+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  372,
                                            "sleeperLeagueSeason":  "2026",
@@ -7167,7 +7166,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1360285262617284608/rosters",
-                                           "refreshedAt":  "2026-07-12T11:52:51.2994048+00:00",
+                                           "refreshedAt":  "2026-07-13T13:13:50.4971762+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  373,
                                            "sleeperLeagueSeason":  "2026",
@@ -8255,7 +8254,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362902973520306176/rosters",
-                                           "refreshedAt":  "2026-07-12T11:52:57.2495395+00:00",
+                                           "refreshedAt":  "2026-07-13T13:13:56.5253379+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  354,
                                            "sleeperLeagueSeason":  "2026",
@@ -9317,20 +9316,20 @@
                         "sleeperLeagueId":  "1370134727394066432",
                         "name":  "VBP Dynasty League #9 (Slow Draft)",
                         "format":  "dynasty",
-                        "publish":  false,
-                        "holdReason":  "startup draft is paused",
+                        "publish":  true,
+                        "holdReason":  "startup draft is drafting",
                         "draftStatuses":  [
-                                              "paused"
+                                              "drafting"
                                           ],
                         "draftReadiness":  {
-                                               "ready":  false,
+                                               "ready":  true,
                                                "stage":  "startup",
-                                               "label":  "Waiting on startup draft",
-                                               "reason":  "startup draft is paused",
+                                               "label":  "Live from current Sleeper rosters while draft is in progress",
+                                               "reason":  "startup draft is drafting",
                                                "drafts":  [
                                                               {
                                                                   "draftId":  "1370134728274870272",
-                                                                  "status":  "paused",
+                                                                  "status":  "drafting",
                                                                   "stage":  "startup",
                                                                   "type":  "snake",
                                                                   "season":  "2026",
@@ -9343,7 +9342,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1370134727394066432/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:02.9781419+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:02.4946924+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9416,8 +9415,681 @@
                         "positionalRankings":  {
 
                                                },
+                        "currentSeasonRankings":  [
+                                                      {
+                                                          "rosterId":  1,
+                                                          "ownerId":  "466785377303130112",
+                                                          "teamName":  "VinsBroPaul",
+                                                          "score":  80,
+                                                          "reasons":  [
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Core building blocks:  give the roster a credible foundation for its next move."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "concern",
+                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind ."
+                                                                          }
+                                                                      ],
+                                                          "record":  {
+                                                                         "wins":  0,
+                                                                         "pointsFor":  0,
+                                                                         "maxPointsFor":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0
+                                                                     },
+                                                          "rank":  1
+                                                      },
+                                                      {
+                                                          "rosterId":  2,
+                                                          "ownerId":  "1370139541914013696",
+                                                          "teamName":  "BynxBalls603",
+                                                          "score":  80,
+                                                          "reasons":  [
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Core building blocks:  give the roster a credible foundation for its next move."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "concern",
+                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind ."
+                                                                          }
+                                                                      ],
+                                                          "record":  {
+                                                                         "wins":  0,
+                                                                         "pointsFor":  0,
+                                                                         "maxPointsFor":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0
+                                                                     },
+                                                          "rank":  2
+                                                      },
+                                                      {
+                                                          "rosterId":  3,
+                                                          "ownerId":  "699188610297044992",
+                                                          "teamName":  "Carter1217",
+                                                          "score":  80,
+                                                          "reasons":  [
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Core building blocks:  give the roster a credible foundation for its next move."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "concern",
+                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind ."
+                                                                          }
+                                                                      ],
+                                                          "record":  {
+                                                                         "wins":  0,
+                                                                         "pointsFor":  0,
+                                                                         "maxPointsFor":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0
+                                                                     },
+                                                          "rank":  3
+                                                      },
+                                                      {
+                                                          "rosterId":  5,
+                                                          "ownerId":  "76623368878964736",
+                                                          "teamName":  "BXBenny",
+                                                          "score":  80,
+                                                          "reasons":  [
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Core building blocks:  give the roster a credible foundation for its next move."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "concern",
+                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind ."
+                                                                          }
+                                                                      ],
+                                                          "record":  {
+                                                                         "wins":  0,
+                                                                         "pointsFor":  0,
+                                                                         "maxPointsFor":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0
+                                                                     },
+                                                          "rank":  4
+                                                      },
+                                                      {
+                                                          "rosterId":  4,
+                                                          "ownerId":  "1195136617623166976",
+                                                          "teamName":  "gratefulhead",
+                                                          "score":  80,
+                                                          "reasons":  [
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Core building blocks:  give the roster a credible foundation for its next move."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "concern",
+                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind ."
+                                                                          }
+                                                                      ],
+                                                          "record":  {
+                                                                         "wins":  0,
+                                                                         "pointsFor":  0,
+                                                                         "maxPointsFor":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0
+                                                                     },
+                                                          "rank":  5
+                                                      },
+                                                      {
+                                                          "rosterId":  6,
+                                                          "ownerId":  "434089153395683328",
+                                                          "teamName":  "mdogsizzle",
+                                                          "score":  80,
+                                                          "reasons":  [
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Core building blocks:  give the roster a credible foundation for its next move."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "concern",
+                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind ."
+                                                                          }
+                                                                      ],
+                                                          "record":  {
+                                                                         "wins":  0,
+                                                                         "pointsFor":  0,
+                                                                         "maxPointsFor":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0
+                                                                     },
+                                                          "rank":  6
+                                                      },
+                                                      {
+                                                          "rosterId":  7,
+                                                          "ownerId":  "958208850555904000",
+                                                          "teamName":  "BenF83",
+                                                          "score":  80,
+                                                          "reasons":  [
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Core building blocks:  give the roster a credible foundation for its next move."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "concern",
+                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind ."
+                                                                          }
+                                                                      ],
+                                                          "record":  {
+                                                                         "wins":  0,
+                                                                         "pointsFor":  0,
+                                                                         "maxPointsFor":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0
+                                                                     },
+                                                          "rank":  7
+                                                      },
+                                                      {
+                                                          "rosterId":  8,
+                                                          "ownerId":  "397982436304101376",
+                                                          "teamName":  "Turd_Ferguson",
+                                                          "score":  80,
+                                                          "reasons":  [
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Core building blocks:  give the roster a credible foundation for its next move."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "concern",
+                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind ."
+                                                                          }
+                                                                      ],
+                                                          "record":  {
+                                                                         "wins":  0,
+                                                                         "pointsFor":  0,
+                                                                         "maxPointsFor":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0
+                                                                     },
+                                                          "rank":  8
+                                                      },
+                                                      {
+                                                          "rosterId":  9,
+                                                          "ownerId":  "966666258466836480",
+                                                          "teamName":  "Zaragoz",
+                                                          "score":  80,
+                                                          "reasons":  [
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Core building blocks:  give the roster a credible foundation for its next move."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "concern",
+                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind ."
+                                                                          }
+                                                                      ],
+                                                          "record":  {
+                                                                         "wins":  0,
+                                                                         "pointsFor":  0,
+                                                                         "maxPointsFor":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0
+                                                                     },
+                                                          "rank":  9
+                                                      },
+                                                      {
+                                                          "rosterId":  10,
+                                                          "ownerId":  "712337207368699904",
+                                                          "teamName":  "ItsATravesty",
+                                                          "score":  80,
+                                                          "reasons":  [
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Core building blocks:  give the roster a credible foundation for its next move."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "concern",
+                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind ."
+                                                                          }
+                                                                      ],
+                                                          "record":  {
+                                                                         "wins":  0,
+                                                                         "pointsFor":  0,
+                                                                         "maxPointsFor":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0
+                                                                     },
+                                                          "rank":  10
+                                                      },
+                                                      {
+                                                          "rosterId":  11,
+                                                          "ownerId":  "1310133686179491840",
+                                                          "teamName":  "OrbitalLizards",
+                                                          "score":  80,
+                                                          "reasons":  [
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Core building blocks:  give the roster a credible foundation for its next move."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "concern",
+                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind ."
+                                                                          }
+                                                                      ],
+                                                          "record":  {
+                                                                         "wins":  0,
+                                                                         "pointsFor":  0,
+                                                                         "maxPointsFor":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0
+                                                                     },
+                                                          "rank":  11
+                                                      },
+                                                      {
+                                                          "rosterId":  12,
+                                                          "ownerId":  "1146637535649746944",
+                                                          "teamName":  "weatherman172",
+                                                          "score":  80,
+                                                          "reasons":  [
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Core building blocks:  give the roster a credible foundation for its next move."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "positive",
+                                                                              "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
+                                                                          },
+                                                                          {
+                                                                              "tone":  "concern",
+                                                                              "text":  "Quarterback uncertainty: the roster lacks two dependable Superflex starters behind ."
+                                                                          }
+                                                                      ],
+                                                          "record":  {
+                                                                         "wins":  0,
+                                                                         "pointsFor":  0,
+                                                                         "maxPointsFor":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0
+                                                                     },
+                                                          "rank":  12
+                                                      }
+                                                  ],
                         "rankings":  [
-
+                                         {
+                                             "rosterId":  9,
+                                             "ownerId":  "966666258466836480",
+                                             "teamName":  "Zaragoz",
+                                             "score":  80,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Future flexibility: the rookie-pick inventory gives this manager options to add young talent or trade for proven help."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Core building blocks:  give the roster a credible foundation for its next move."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "No young quarterback foundation: long-term Superflex stability remains a major concern."
+                                                             }
+                                                         ],
+                                             "rank":  1
+                                         },
+                                         {
+                                             "rosterId":  8,
+                                             "ownerId":  "397982436304101376",
+                                             "teamName":  "Turd_Ferguson",
+                                             "score":  80,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Future flexibility: the rookie-pick inventory gives this manager options to add young talent or trade for proven help."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Core building blocks:  give the roster a credible foundation for its next move."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "No young quarterback foundation: long-term Superflex stability remains a major concern."
+                                                             }
+                                                         ],
+                                             "rank":  2
+                                         },
+                                         {
+                                             "rosterId":  7,
+                                             "ownerId":  "958208850555904000",
+                                             "teamName":  "BenF83",
+                                             "score":  80,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Future flexibility: the rookie-pick inventory gives this manager options to add young talent or trade for proven help."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Core building blocks:  give the roster a credible foundation for its next move."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "No young quarterback foundation: long-term Superflex stability remains a major concern."
+                                                             }
+                                                         ],
+                                             "rank":  3
+                                         },
+                                         {
+                                             "rosterId":  12,
+                                             "ownerId":  "1146637535649746944",
+                                             "teamName":  "weatherman172",
+                                             "score":  80,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Future flexibility: the rookie-pick inventory gives this manager options to add young talent or trade for proven help."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Core building blocks:  give the roster a credible foundation for its next move."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "No young quarterback foundation: long-term Superflex stability remains a major concern."
+                                                             }
+                                                         ],
+                                             "rank":  4
+                                         },
+                                         {
+                                             "rosterId":  11,
+                                             "ownerId":  "1310133686179491840",
+                                             "teamName":  "OrbitalLizards",
+                                             "score":  80,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Future flexibility: the rookie-pick inventory gives this manager options to add young talent or trade for proven help."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Core building blocks:  give the roster a credible foundation for its next move."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "No young quarterback foundation: long-term Superflex stability remains a major concern."
+                                                             }
+                                                         ],
+                                             "rank":  5
+                                         },
+                                         {
+                                             "rosterId":  10,
+                                             "ownerId":  "712337207368699904",
+                                             "teamName":  "ItsATravesty",
+                                             "score":  80,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Future flexibility: the rookie-pick inventory gives this manager options to add young talent or trade for proven help."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Core building blocks:  give the roster a credible foundation for its next move."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "No young quarterback foundation: long-term Superflex stability remains a major concern."
+                                                             }
+                                                         ],
+                                             "rank":  6
+                                         },
+                                         {
+                                             "rosterId":  3,
+                                             "ownerId":  "699188610297044992",
+                                             "teamName":  "Carter1217",
+                                             "score":  80,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Future flexibility: the rookie-pick inventory gives this manager options to add young talent or trade for proven help."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Core building blocks:  give the roster a credible foundation for its next move."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "No young quarterback foundation: long-term Superflex stability remains a major concern."
+                                                             }
+                                                         ],
+                                             "rank":  7
+                                         },
+                                         {
+                                             "rosterId":  2,
+                                             "ownerId":  "1370139541914013696",
+                                             "teamName":  "BynxBalls603",
+                                             "score":  80,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Future flexibility: the rookie-pick inventory gives this manager options to add young talent or trade for proven help."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Core building blocks:  give the roster a credible foundation for its next move."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "No young quarterback foundation: long-term Superflex stability remains a major concern."
+                                                             }
+                                                         ],
+                                             "rank":  8
+                                         },
+                                         {
+                                             "rosterId":  1,
+                                             "ownerId":  "466785377303130112",
+                                             "teamName":  "VinsBroPaul",
+                                             "score":  80,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Future flexibility: the rookie-pick inventory gives this manager options to add young talent or trade for proven help."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Core building blocks:  give the roster a credible foundation for its next move."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "No young quarterback foundation: long-term Superflex stability remains a major concern."
+                                                             }
+                                                         ],
+                                             "rank":  9
+                                         },
+                                         {
+                                             "rosterId":  6,
+                                             "ownerId":  "434089153395683328",
+                                             "teamName":  "mdogsizzle",
+                                             "score":  80,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Future flexibility: the rookie-pick inventory gives this manager options to add young talent or trade for proven help."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Core building blocks:  give the roster a credible foundation for its next move."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "No young quarterback foundation: long-term Superflex stability remains a major concern."
+                                                             }
+                                                         ],
+                                             "rank":  10
+                                         },
+                                         {
+                                             "rosterId":  4,
+                                             "ownerId":  "1195136617623166976",
+                                             "teamName":  "gratefulhead",
+                                             "score":  80,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Core building blocks:  give the roster a credible foundation for its next move."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "No young quarterback foundation: long-term Superflex stability remains a major concern."
+                                                             }
+                                                         ],
+                                             "rank":  11
+                                         },
+                                         {
+                                             "rosterId":  5,
+                                             "ownerId":  "76623368878964736",
+                                             "teamName":  "BXBenny",
+                                             "score":  77,
+                                             "record":  {
+                                                            "wins":  0,
+                                                            "pointsFor":  0,
+                                                            "maxPointsFor":  0,
+                                                            "losses":  0,
+                                                            "ties":  0
+                                                        },
+                                             "reasons":  [
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Core building blocks:  give the roster a credible foundation for its next move."
+                                                             },
+                                                             {
+                                                                 "tone":  "positive",
+                                                                 "text":  "Balanced roster construction: the team has enough usable pieces across positions to remain flexible."
+                                                             },
+                                                             {
+                                                                 "tone":  "concern",
+                                                                 "text":  "No young quarterback foundation: long-term Superflex stability remains a major concern."
+                                                             }
+                                                         ],
+                                             "rank":  12
+                                         }
                                      ]
                     },
                     {
@@ -9451,7 +10123,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350152770275020800/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:03.2210317+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:03.3347139+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9559,7 +10231,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154389192474624/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:03.4637554+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:03.6733224+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9667,7 +10339,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154561549004800/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:03.6875737+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:04.0866243+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9775,7 +10447,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154695137570816/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:03.9162033+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:04.4581297+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9883,7 +10555,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095209052508160/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:04.1478628+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:04.9020081+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -10523,7 +11195,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095313704554496/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:06.8034270+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:07.5176781+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -11163,7 +11835,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095371091017728/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:09.1652242+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:10.0774741+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -11803,7 +12475,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095416859287552/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:11.5301581+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:12.6104319+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -12443,7 +13115,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095453291003904/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:13.9040839+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:15.1513306+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  179,
                                            "sleeperLeagueSeason":  "2026",
@@ -13083,7 +13755,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480393130868736/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:16.2629588+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:17.6668771+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -13723,7 +14395,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480515533242368/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:18.6123438+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:20.1994719+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -14363,7 +15035,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480638808064000/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:20.9817976+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:22.7706656+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -15003,7 +15675,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480857310302208/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:23.3553587+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:25.3663723+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -15643,7 +16315,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480992765353984/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:25.7320523+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:27.9339289+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -16283,7 +16955,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362908679824740352/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:28.0856423+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:30.4851214+00:00",
                                            "rosterCount":  24,
                                            "playerCount":  120,
                                            "sleeperLeagueSeason":  "2026",
@@ -17638,7 +18310,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1368003315815686144/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:30.7274312+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:33.2999257+00:00",
                                            "rosterCount":  24,
                                            "playerCount":  144,
                                            "sleeperLeagueSeason":  "2026",
@@ -18994,7 +19666,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338004997836640256/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:33.7621162+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:36.5085779+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -19090,7 +19762,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005036122279936/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:34.0208970+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:36.9541400+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -19186,7 +19858,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005075167035392/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:34.3253715+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:37.4201602+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -19282,7 +19954,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005113482022912/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:34.5545165+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:37.7615784+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -19378,7 +20050,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005158071660544/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:34.7852581+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:38.1695628+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -19474,7 +20146,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846317608992768/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:35.0086282+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:38.5382745+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -19569,7 +20241,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846742810775552/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:35.2295772+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:38.8811696+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -19664,7 +20336,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1363630886133694464/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:35.4592014+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:39.2696133+00:00",
                                            "rosterCount":  15,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -19746,7 +20418,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339342261023961088/rosters",
-                                           "refreshedAt":  "2026-07-12T11:53:35.6884619+00:00",
+                                           "refreshedAt":  "2026-07-13T13:14:39.6538394+00:00",
                                            "rosterCount":  18,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
