@@ -1,5 +1,5 @@
 ﻿{
-    "generatedAt":  "2026-07-13T13:14:39.6558483+00:00",
+    "generatedAt":  "2026-07-14T12:07:52.4473132+00:00",
     "snapshot":  {
                      "season":  "2026",
                      "seasonType":  "off",
@@ -71,7 +71,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314663050854305792/rosters",
-                                           "refreshedAt":  "2026-07-13T13:13:11.0310081+00:00",
+                                           "refreshedAt":  "2026-07-14T12:06:22.8536613+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -166,7 +166,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314662767977824256/rosters",
-                                           "refreshedAt":  "2026-07-13T13:13:11.4964370+00:00",
+                                           "refreshedAt":  "2026-07-14T12:06:23.2922810+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -261,7 +261,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1314660487635427328/rosters",
-                                           "refreshedAt":  "2026-07-13T13:13:11.9376886+00:00",
+                                           "refreshedAt":  "2026-07-14T12:06:23.7045988+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -356,7 +356,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1344449488089014272/rosters",
-                                           "refreshedAt":  "2026-07-13T13:13:12.4646513+00:00",
+                                           "refreshedAt":  "2026-07-14T12:06:24.3028362+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -451,7 +451,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1370097572764450816/rosters",
-                                           "refreshedAt":  "2026-07-13T13:13:12.8833051+00:00",
+                                           "refreshedAt":  "2026-07-14T12:06:24.7139730+00:00",
                                            "rosterCount":  32,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -543,7 +543,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1369795448134463488/rosters",
-                                           "refreshedAt":  "2026-07-13T13:13:13.2953407+00:00",
+                                           "refreshedAt":  "2026-07-14T12:06:25.1485823+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -567,13 +567,13 @@
                                             ],
                         "scoringProfile":  {
                                                "source":  "Live Sleeper league scoring_settings",
-                                               "rec":  5,
+                                               "rec":  0.5,
                                                "bonusRecRb":  0,
                                                "bonusRecWr":  0,
                                                "bonusRecTe":  0.5,
-                                               "rbPpr":  5,
-                                               "wrPpr":  5,
-                                               "tePpr":  5.5,
+                                               "rbPpr":  0.5,
+                                               "wrPpr":  0.5,
+                                               "tePpr":  1,
                                                "rushYard":  0.1,
                                                "rushTd":  6,
                                                "receivingYard":  0.1,
@@ -638,7 +638,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341650084122595328/rosters",
-                                           "refreshedAt":  "2026-07-13T13:13:13.6948592+00:00",
+                                           "refreshedAt":  "2026-07-14T12:06:25.5777121+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  374,
                                            "sleeperLeagueSeason":  "2026",
@@ -1726,7 +1726,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1340820529996640256/rosters",
-                                           "refreshedAt":  "2026-07-13T13:13:20.3067576+00:00",
+                                           "refreshedAt":  "2026-07-14T12:06:32.1000443+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  368,
                                            "sleeperLeagueSeason":  "2026",
@@ -2814,7 +2814,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341646934816849920/rosters",
-                                           "refreshedAt":  "2026-07-13T13:13:26.2691058+00:00",
+                                           "refreshedAt":  "2026-07-14T12:06:38.2268398+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  368,
                                            "sleeperLeagueSeason":  "2026",
@@ -3902,7 +3902,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1342931950981091328/rosters",
-                                           "refreshedAt":  "2026-07-13T13:13:32.1948283+00:00",
+                                           "refreshedAt":  "2026-07-14T12:06:44.2781663+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  364,
                                            "sleeperLeagueSeason":  "2026",
@@ -4990,7 +4990,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345763335270400/rosters",
-                                           "refreshedAt":  "2026-07-13T13:13:38.1441717+00:00",
+                                           "refreshedAt":  "2026-07-14T12:06:50.2135060+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  376,
                                            "sleeperLeagueSeason":  "2026",
@@ -6078,7 +6078,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1348345934114725888/rosters",
-                                           "refreshedAt":  "2026-07-13T13:13:44.2620045+00:00",
+                                           "refreshedAt":  "2026-07-14T12:06:56.6336661+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  372,
                                            "sleeperLeagueSeason":  "2026",
@@ -7166,7 +7166,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1360285262617284608/rosters",
-                                           "refreshedAt":  "2026-07-13T13:13:50.4971762+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:02.9926808+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  373,
                                            "sleeperLeagueSeason":  "2026",
@@ -8254,7 +8254,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362902973520306176/rosters",
-                                           "refreshedAt":  "2026-07-13T13:13:56.5253379+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:09.0242936+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  354,
                                            "sleeperLeagueSeason":  "2026",
@@ -9342,7 +9342,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1370134727394066432/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:02.4946924+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:14.8431985+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -9529,9 +9529,9 @@
                                                           "rank":  4
                                                       },
                                                       {
-                                                          "rosterId":  4,
-                                                          "ownerId":  "1195136617623166976",
-                                                          "teamName":  "gratefulhead",
+                                                          "rosterId":  7,
+                                                          "ownerId":  "958208850555904000",
+                                                          "teamName":  "BenF83",
                                                           "score":  80,
                                                           "reasons":  [
                                                                           {
@@ -9557,9 +9557,9 @@
                                                           "rank":  5
                                                       },
                                                       {
-                                                          "rosterId":  6,
-                                                          "ownerId":  "434089153395683328",
-                                                          "teamName":  "mdogsizzle",
+                                                          "rosterId":  4,
+                                                          "ownerId":  "1195136617623166976",
+                                                          "teamName":  "gratefulhead",
                                                           "score":  80,
                                                           "reasons":  [
                                                                           {
@@ -9585,9 +9585,9 @@
                                                           "rank":  6
                                                       },
                                                       {
-                                                          "rosterId":  7,
-                                                          "ownerId":  "958208850555904000",
-                                                          "teamName":  "BenF83",
+                                                          "rosterId":  10,
+                                                          "ownerId":  "712337207368699904",
+                                                          "teamName":  "ItsATravesty",
                                                           "score":  80,
                                                           "reasons":  [
                                                                           {
@@ -9669,9 +9669,9 @@
                                                           "rank":  9
                                                       },
                                                       {
-                                                          "rosterId":  10,
-                                                          "ownerId":  "712337207368699904",
-                                                          "teamName":  "ItsATravesty",
+                                                          "rosterId":  6,
+                                                          "ownerId":  "434089153395683328",
+                                                          "teamName":  "mdogsizzle",
                                                           "score":  80,
                                                           "reasons":  [
                                                                           {
@@ -9811,9 +9811,9 @@
                                              "rank":  2
                                          },
                                          {
-                                             "rosterId":  7,
-                                             "ownerId":  "958208850555904000",
-                                             "teamName":  "BenF83",
+                                             "rosterId":  10,
+                                             "ownerId":  "712337207368699904",
+                                             "teamName":  "ItsATravesty",
                                              "score":  80,
                                              "record":  {
                                                             "wins":  0,
@@ -9895,9 +9895,9 @@
                                              "rank":  5
                                          },
                                          {
-                                             "rosterId":  10,
-                                             "ownerId":  "712337207368699904",
-                                             "teamName":  "ItsATravesty",
+                                             "rosterId":  6,
+                                             "ownerId":  "434089153395683328",
+                                             "teamName":  "mdogsizzle",
                                              "score":  80,
                                              "record":  {
                                                             "wins":  0,
@@ -10007,9 +10007,9 @@
                                              "rank":  9
                                          },
                                          {
-                                             "rosterId":  6,
-                                             "ownerId":  "434089153395683328",
-                                             "teamName":  "mdogsizzle",
+                                             "rosterId":  4,
+                                             "ownerId":  "1195136617623166976",
+                                             "teamName":  "gratefulhead",
                                              "score":  80,
                                              "record":  {
                                                             "wins":  0,
@@ -10035,10 +10035,10 @@
                                              "rank":  10
                                          },
                                          {
-                                             "rosterId":  4,
-                                             "ownerId":  "1195136617623166976",
-                                             "teamName":  "gratefulhead",
-                                             "score":  80,
+                                             "rosterId":  7,
+                                             "ownerId":  "958208850555904000",
+                                             "teamName":  "BenF83",
+                                             "score":  78,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -10066,7 +10066,7 @@
                                              "rosterId":  5,
                                              "ownerId":  "76623368878964736",
                                              "teamName":  "BXBenny",
-                                             "score":  77,
+                                             "score":  78,
                                              "record":  {
                                                             "wins":  0,
                                                             "pointsFor":  0,
@@ -10123,7 +10123,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350152770275020800/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:03.3347139+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:15.7918540+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10231,7 +10231,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154389192474624/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:03.6733224+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:16.2176650+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10339,7 +10339,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154561549004800/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:04.0866243+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:16.6235046+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10447,7 +10447,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1350154695137570816/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:04.4581297+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:17.0788896+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -10555,7 +10555,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095209052508160/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:04.9020081+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:17.5321157+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -11195,7 +11195,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095313704554496/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:07.5176781+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:20.2293568+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -11835,7 +11835,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095371091017728/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:10.0774741+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:22.7524809+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -12475,7 +12475,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095416859287552/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:12.6104319+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:25.3293277+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -13115,7 +13115,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339095453291003904/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:15.1513306+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:27.8364779+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  179,
                                            "sleeperLeagueSeason":  "2026",
@@ -13755,7 +13755,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480393130868736/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:17.6668771+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:30.3351612+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -14395,7 +14395,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480515533242368/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:20.1994719+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:32.8698282+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -15035,7 +15035,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480638808064000/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:22.7706656+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:35.4014018+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -15675,7 +15675,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480857310302208/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:25.3663723+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:37.8858147+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -16315,7 +16315,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362480992765353984/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:27.9339289+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:40.4475306+00:00",
                                            "rosterCount":  10,
                                            "playerCount":  180,
                                            "sleeperLeagueSeason":  "2026",
@@ -16955,7 +16955,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1362908679824740352/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:30.4851214+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:42.9821924+00:00",
                                            "rosterCount":  24,
                                            "playerCount":  120,
                                            "sleeperLeagueSeason":  "2026",
@@ -18310,7 +18310,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1368003315815686144/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:33.2999257+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:45.7889586+00:00",
                                            "rosterCount":  24,
                                            "playerCount":  144,
                                            "sleeperLeagueSeason":  "2026",
@@ -19666,7 +19666,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338004997836640256/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:36.5085779+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:48.9409942+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -19762,7 +19762,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005036122279936/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:36.9541400+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:49.3860280+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -19858,7 +19858,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005075167035392/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:37.4201602+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:49.8816706+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -19954,7 +19954,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005113482022912/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:37.7615784+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:50.2839306+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -20050,7 +20050,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1338005158071660544/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:38.1695628+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:50.6722668+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -20146,7 +20146,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846317608992768/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:38.5382745+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:51.0993920+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -20241,7 +20241,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1341846742810775552/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:38.8811696+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:51.5359144+00:00",
                                            "rosterCount":  12,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -20336,7 +20336,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1363630886133694464/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:39.2696133+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:51.9986687+00:00",
                                            "rosterCount":  15,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
@@ -20418,7 +20418,7 @@
                                            },
                         "rosterSync":  {
                                            "source":  "https://api.sleeper.app/v1/league/1339342261023961088/rosters",
-                                           "refreshedAt":  "2026-07-13T13:14:39.6538394+00:00",
+                                           "refreshedAt":  "2026-07-14T12:07:52.4463802+00:00",
                                            "rosterCount":  18,
                                            "playerCount":  0,
                                            "sleeperLeagueSeason":  "2026",
