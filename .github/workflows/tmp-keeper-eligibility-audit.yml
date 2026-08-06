@@ -1,0 +1,192 @@
+name: Temporary Keeper Eligibility Audit
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/tmp-keeper-eligibility-audit.yml
+      - data/tmp-keeper-audit-trigger.txt
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Query Sleeper draft history
+        run: |
+          cat > /tmp/keeper-audit.mjs <<'EOF'
+          import fs from 'node:fs';
+
+          const base = 'https://api.sleeper.app/v1';
+          const currentLeagueId = '1314734374628884480';
+          const openRosterIds = new Set([6, 10, 11]);
+
+          const get = async (path) => {
+            const response = await fetch(`${base}${path}`);
+            if (!response.ok) throw new Error(`${path}: HTTP ${response.status}`);
+            return response.json();
+          };
+
+          const isKeeper = (pick) => {
+            const raw = pick?.is_keeper ?? pick?.metadata?.is_keeper ?? pick?.metadata?.keeper;
+            return raw === true || raw === 1 || raw === '1' || raw === 'true' || raw === 'yes';
+          };
+
+          const currentLeague = await get(`/league/${currentLeagueId}`);
+          const currentRosters = await get(`/league/${currentLeagueId}/rosters`);
+          const players = await get('/players/nfl');
+          const openings = currentRosters.filter((r) => openRosterIds.has(Number(r.roster_id)));
+          const playerIds = new Set(openings.flatMap((r) => (r.players || []).map(String)));
+
+          const seasons = [];
+          let leagueId = currentLeague.previous_league_id;
+          for (let guard = 0; leagueId && guard < 10; guard += 1) {
+            const league = await get(`/league/${leagueId}`);
+            const drafts = await get(`/league/${leagueId}/drafts`);
+            const draft = drafts.find((d) => String(d.draft_id) === String(league.draft_id))
+              || [...drafts].sort((a, b) => Number(b.created || 0) - Number(a.created || 0))[0]
+              || null;
+            const allPicks = draft ? await get(`/draft/${draft.draft_id}/picks`) : [];
+
+            seasons.push({
+              season: String(league.season),
+              league_id: String(league.league_id),
+              league_name: league.name,
+              previous_league_id: league.previous_league_id ? String(league.previous_league_id) : null,
+              draft_id: draft ? String(draft.draft_id) : null,
+              draft_status: draft?.status ?? null,
+              draft_rounds: draft?.settings?.rounds ?? null,
+              picks: allPicks
+                .filter((pick) => playerIds.has(String(pick.player_id)))
+                .map((pick) => ({
+                  player_id: String(pick.player_id),
+                  round: Number(pick.round),
+                  pick_no: Number(pick.pick_no),
+                  draft_slot: Number(pick.draft_slot),
+                  roster_id: pick.roster_id == null ? null : Number(pick.roster_id),
+                  picked_by: pick.picked_by == null ? null : String(pick.picked_by),
+                  is_keeper: isKeeper(pick),
+                  raw_is_keeper: pick.is_keeper ?? null,
+                  metadata: pick.metadata ?? null
+                }))
+            });
+            leagueId = league.previous_league_id;
+          }
+
+          seasons.sort((a, b) => Number(b.season) - Number(a.season));
+          const latestCompletedSeason = seasons[0]?.season ?? null;
+
+          const playerName = (id) => {
+            if (String(id).length <= 3) return String(id);
+            const p = players[String(id)];
+            return p?.full_name || `${p?.first_name || ''} ${p?.last_name || ''}`.trim() || String(id);
+          };
+
+          const auditPlayer = (playerId, roster) => {
+            const history = seasons
+              .map((season) => {
+                const pick = season.picks.find((item) => item.player_id === String(playerId));
+                return pick ? { season: season.season, ...pick } : null;
+              })
+              .filter(Boolean);
+
+            const latest = history.find((entry) => entry.season === latestCompletedSeason) || null;
+            let consecutiveKeeperUses = 0;
+
+            if (latest) {
+              for (const season of seasons) {
+                const entry = history.find((item) => item.season === season.season);
+                if (!entry || !entry.is_keeper) break;
+                consecutiveKeeperUses += 1;
+              }
+            }
+
+            let status = 'ELIGIBLE';
+            let keeperCost = latest ? latest.round - 2 : null;
+            let reason = latest
+              ? `2025 cost Round ${latest.round}; two-round penalty produces Round ${keeperCost}.`
+              : 'No 2025 draft entry; Sleeper does not establish a keeper round.';
+
+            if (!latest) {
+              status = 'NO_VERIFIED_2025_DRAFT_COST';
+              keeperCost = null;
+            } else if (latest.round < 3) {
+              status = 'INELIGIBLE_ROUND';
+              keeperCost = null;
+              reason = `2025 cost was Round ${latest.round}; only Round 3 or later is eligible.`;
+            } else if (consecutiveKeeperUses >= 2) {
+              status = 'INELIGIBLE_MAX_TENURE';
+              keeperCost = null;
+              reason = `Marked as a keeper in ${consecutiveKeeperUses} consecutive completed drafts; two keeper years are exhausted.`;
+            }
+
+            return {
+              player_id: String(playerId),
+              name: playerName(playerId),
+              position: String(playerId).length <= 3 ? 'DEF' : players[String(playerId)]?.position ?? null,
+              nfl_team: String(playerId).length <= 3 ? String(playerId) : players[String(playerId)]?.team ?? null,
+              sleeper_note: roster.metadata?.[`p_nick_${playerId}`] || null,
+              status,
+              keeper_cost_2026_round: keeperCost,
+              latest_completed_season: latestCompletedSeason,
+              latest_round: latest?.round ?? null,
+              latest_was_keeper: latest?.is_keeper ?? null,
+              consecutive_keeper_uses: consecutiveKeeperUses,
+              reason,
+              history
+            };
+          };
+
+          const auditedOpenings = openings.map((roster) => {
+            const audited = (roster.players || []).map((id) => auditPlayer(String(id), roster));
+            return {
+              roster_id: Number(roster.roster_id),
+              players: audited,
+              eligible: audited.filter((p) => p.status === 'ELIGIBLE'),
+              max_tenure_ineligible: audited.filter((p) => p.status === 'INELIGIBLE_MAX_TENURE'),
+              early_round_ineligible: audited.filter((p) => p.status === 'INELIGIBLE_ROUND'),
+              no_verified_cost: audited.filter((p) => p.status === 'NO_VERIFIED_2025_DRAFT_COST')
+            };
+          });
+
+          const result = {
+            checked_at_utc: new Date().toISOString(),
+            current_league: {
+              league_id: String(currentLeague.league_id),
+              name: currentLeague.name,
+              season: String(currentLeague.season),
+              previous_league_id: currentLeague.previous_league_id ? String(currentLeague.previous_league_id) : null,
+              max_keepers: currentLeague.settings?.max_keepers ?? null
+            },
+            rule_applied: {
+              minimum_latest_round: 3,
+              round_penalty: 2,
+              maximum_keeper_uses: 2,
+              interpretation: 'Original draft season plus up to two consecutive keeper seasons.'
+            },
+            season_chain: seasons.map(({ picks, ...season }) => ({ ...season, matching_pick_count: picks.length })),
+            openings: auditedOpenings
+          };
+
+          fs.mkdirSync('data', { recursive: true });
+          fs.writeFileSync('data/tmp-keeper-eligibility-audit-result.json', JSON.stringify(result, null, 2));
+          EOF
+          node /tmp/keeper-audit.mjs
+
+      - name: Commit audit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/tmp-keeper-eligibility-audit-result.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Record temporary keeper eligibility audit"
+            git push
+          fi
