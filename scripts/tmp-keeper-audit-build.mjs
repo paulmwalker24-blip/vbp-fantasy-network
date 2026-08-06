@@ -3,7 +3,7 @@ import fs from 'node:fs';
 const base = 'https://api.sleeper.app/v1';
 const currentId = '1314734374628884480';
 const openIds = new Set([6, 10, 11]);
-const captureUrl = 'https://bibilreqcatcher.requestcatcher.com/vbp-1314734374628884480-keeper-audit-20260806';
+const webhookAlias = 'vbpkeeper260806';
 
 const get = async (path) => {
   const response = await fetch(`${base}${path}`);
@@ -124,21 +124,36 @@ const result = {
   openings
 };
 
-const body = JSON.stringify(result);
-let captureStatus = null;
-let captureError = null;
+const defaultContent = JSON.stringify(result);
+const tokenPayload = {
+  default_status: 200,
+  default_content: defaultContent,
+  default_content_type: 'application/json',
+  expiry: 3600,
+  request_limit: 20,
+  alias: webhookAlias,
+  actions: false
+};
+
+let tokenStatus = null;
+let tokenResponse = null;
+let tokenError = null;
 try {
-  const capture = await fetch(captureUrl, {
-    method: 'POST',
-    headers: { 'content-type': 'application/json', 'x-vbp-audit': 'keeper-eligibility' },
-    body
+  const existing = await fetch(`https://webhook.site/token/${webhookAlias}`);
+  const method = existing.ok ? 'PUT' : 'POST';
+  const url = existing.ok ? `https://webhook.site/token/${webhookAlias}` : 'https://webhook.site/token';
+  const response = await fetch(url, {
+    method,
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(tokenPayload)
   });
-  captureStatus = capture.status;
+  tokenStatus = response.status;
+  tokenResponse = await response.text();
 } catch (error) {
-  captureError = String(error?.stack || error);
+  tokenError = String(error?.stack || error);
 }
 
 fs.mkdirSync('dist', { recursive: true });
-fs.writeFileSync('dist/index.html', `<!doctype html><title>Keeper audit complete</title><pre>${JSON.stringify({ captureStatus, captureError }, null, 2)}</pre>`);
+fs.writeFileSync('dist/index.html', `<!doctype html><title>Keeper audit complete</title><pre>${JSON.stringify({ webhookAlias, tokenStatus, tokenResponse, tokenError }, null, 2)}</pre>`);
 fs.writeFileSync('dist/keeper-audit.json', JSON.stringify(result, null, 2));
-console.log(JSON.stringify({ captureStatus, captureError, seasons: result.season_chain, openings: openings.length }, null, 2));
+console.log(JSON.stringify({ webhookAlias, tokenStatus, tokenResponse, tokenError, seasons: result.season_chain, openings: openings.length }, null, 2));
