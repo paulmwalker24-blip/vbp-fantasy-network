@@ -1,0 +1,29 @@
+name: Temporary Sleeper Check
+
+on:
+  push:
+    branches:
+      - tmp/sleeper-check-1314734374628884480
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Query Sleeper API
+        shell: pwsh
+        run: |
+          powershell -ExecutionPolicy Bypass -File .\scripts\sync-sleeper-leagues.ps1 -JsonPath data/tmp-sleeper-check.json -UpdateFilledFromSleeper -UpdateStatus -UpdateNames
+      - name: Commit result
+        shell: pwsh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/tmp-sleeper-check.json
+          if (-not (git diff --cached --quiet)) {
+            git commit -m "Record temporary Sleeper API result"
+            git push
+          }
