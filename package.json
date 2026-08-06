@@ -1,6 +1,6 @@
 {
   "private": true,
   "scripts": {
-    "build": "node scripts/tmp-keeper-audit-build.mjs && node scripts/tmp-keeper-audit-enrich.mjs && node scripts/tmp-enriched-submit-simple.mjs"
+    "build": "node scripts/tmp-2026-pick-inventory.mjs"
   }
 }
