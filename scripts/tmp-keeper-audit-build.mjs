@@ -3,7 +3,7 @@ import fs from 'node:fs';
 const base = 'https://api.sleeper.app/v1';
 const currentId = '1314734374628884480';
 const openIds = new Set([6, 10, 11]);
-const webhookAlias = 'vbpkeeper260806';
+const jotformId = '262176197689071';
 
 const get = async (path) => {
   const response = await fetch(`${base}${path}`);
@@ -124,36 +124,29 @@ const result = {
   openings
 };
 
-const defaultContent = JSON.stringify(result);
-const tokenPayload = {
-  default_status: 200,
-  default_content: defaultContent,
-  default_content_type: 'application/json',
-  expiry: 3600,
-  request_limit: 20,
-  alias: webhookAlias,
-  actions: false
-};
+const auditJson = JSON.stringify(result);
+const formBody = new URLSearchParams({
+  formID: jotformId,
+  q2_textarea0: auditJson
+});
 
-let tokenStatus = null;
-let tokenResponse = null;
-let tokenError = null;
+let submissionStatus = null;
+let submissionUrl = null;
+let submissionError = null;
 try {
-  const existing = await fetch(`https://webhook.site/token/${webhookAlias}`);
-  const method = existing.ok ? 'PUT' : 'POST';
-  const url = existing.ok ? `https://webhook.site/token/${webhookAlias}` : 'https://webhook.site/token';
-  const response = await fetch(url, {
-    method,
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify(tokenPayload)
+  const submission = await fetch(`https://submit.jotform.com/submit/${jotformId}`, {
+    method: 'POST',
+    headers: { 'content-type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+    body: formBody,
+    redirect: 'follow'
   });
-  tokenStatus = response.status;
-  tokenResponse = await response.text();
+  submissionStatus = submission.status;
+  submissionUrl = submission.url;
 } catch (error) {
-  tokenError = String(error?.stack || error);
+  submissionError = String(error?.stack || error);
 }
 
 fs.mkdirSync('dist', { recursive: true });
-fs.writeFileSync('dist/index.html', `<!doctype html><title>Keeper audit complete</title><pre>${JSON.stringify({ webhookAlias, tokenStatus, tokenResponse, tokenError }, null, 2)}</pre>`);
+fs.writeFileSync('dist/index.html', `<!doctype html><title>Keeper audit complete</title><pre>${JSON.stringify({ submissionStatus, submissionUrl, submissionError }, null, 2)}</pre>`);
 fs.writeFileSync('dist/keeper-audit.json', JSON.stringify(result, null, 2));
-console.log(JSON.stringify({ webhookAlias, tokenStatus, tokenResponse, tokenError, seasons: result.season_chain, openings: openings.length }, null, 2));
+console.log(JSON.stringify({ submissionStatus, submissionUrl, submissionError, seasons: result.season_chain, openings: openings.length }, null, 2));
