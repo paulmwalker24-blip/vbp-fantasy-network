@@ -1,21 +1,22 @@
 {
-  "leagues": [
-    {
-      "id": "TEMP",
-      "sleeperLeagueId": "1314734374628884480",
-      "sleeperSeason": "",
-      "name": "",
-      "format": "unknown",
-      "division": "",
-      "buyIn": 0,
-      "teams": 0,
-      "filled": 0,
-      "status": "open",
-      "inviteLink": "temporary",
-      "leagueSafeLink": "temporary",
-      "constitutionPage": "temporary",
-      "notes": "Temporary Sleeper API verification record.",
-      "lastUpdated": "2026-08-06"
-    }
-  ]
+    "leagues":  [
+                    {
+                        "id":  "TEMP",
+                        "sleeperLeagueId":  "1314734374628884480",
+                        "sleeperSeason":  "2026",
+                        "name":  "VBP Keeper League #3",
+                        "format":  "unknown",
+                        "division":  "",
+                        "buyIn":  0,
+                        "teams":  12,
+                        "filled":  9,
+                        "status":  "open",
+                        "inviteLink":  "temporary",
+                        "leagueSafeLink":  "temporary",
+                        "constitutionPage":  "temporary",
+                        "notes":  "Temporary Sleeper API verification record.",
+                        "lastUpdated":  "2026-08-06",
+                        "sleeperFilled":  9
+                    }
+                ]
 }
