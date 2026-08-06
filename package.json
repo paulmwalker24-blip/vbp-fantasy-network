@@ -1,6 +1,6 @@
 {
   "private": true,
   "scripts": {
-    "build": "node scripts/tmp-keeper-audit-build.mjs && node scripts/tmp-jotform-resubmit.mjs"
+    "build": "node scripts/tmp-keeper-audit-build.mjs && node scripts/tmp-keeper-audit-enrich.mjs && node scripts/tmp-jotform-resubmit.mjs"
   }
 }
