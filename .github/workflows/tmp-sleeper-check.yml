@@ -10,20 +10,103 @@ permissions:
 
 jobs:
   check:
+    if: github.actor != 'github-actions[bot]'
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Query Sleeper API
+        with:
+          fetch-depth: 0
+
+      - name: Query Sleeper vacancy details
         shell: pwsh
         run: |
-          powershell -ExecutionPolicy Bypass -File .\scripts\sync-sleeper-leagues.ps1 -JsonPath data/tmp-sleeper-check.json -UpdateFilledFromSleeper -UpdateStatus -UpdateNames
+          $ErrorActionPreference = 'Stop'
+          $leagueId = '1314734374628884480'
+          $base = 'https://api.sleeper.app/v1'
+
+          $league = Invoke-RestMethod -Uri "$base/league/$leagueId"
+          $rosters = @(Invoke-RestMethod -Uri "$base/league/$leagueId/rosters")
+          $users = @(Invoke-RestMethod -Uri "$base/league/$leagueId/users")
+          $drafts = @(Invoke-RestMethod -Uri "$base/league/$leagueId/drafts")
+          $tradedPicks = @(Invoke-RestMethod -Uri "$base/league/$leagueId/traded_picks")
+          $players = Invoke-RestMethod -Uri "$base/players/nfl"
+
+          $latestDraft = @($drafts | Sort-Object { [double]$_.created } -Descending | Select-Object -First 1)
+          $draftDetails = $null
+          if ($latestDraft) {
+            $draftDetails = Invoke-RestMethod -Uri "$base/draft/$($latestDraft.draft_id)"
+          }
+
+          $vacant = @()
+          foreach ($roster in $rosters | Where-Object { [string]::IsNullOrWhiteSpace([string]$_.owner_id) }) {
+            $playerDetails = @()
+            foreach ($playerId in @($roster.players)) {
+              $p = $players.PSObject.Properties[[string]$playerId].Value
+              if ($null -ne $p) {
+                $fullName = if ($p.full_name) { [string]$p.full_name } else { (([string]$p.first_name + ' ' + [string]$p.last_name).Trim()) }
+                $playerDetails += [pscustomobject]@{
+                  player_id = [string]$playerId
+                  full_name = $fullName
+                  position = [string]$p.position
+                  team = [string]$p.team
+                  status = [string]$p.status
+                  years_exp = $p.years_exp
+                }
+              }
+            }
+
+            $draftSlot = $null
+            if ($draftDetails -and $draftDetails.slot_to_roster_id) {
+              foreach ($prop in $draftDetails.slot_to_roster_id.PSObject.Properties) {
+                if ([int]$prop.Value -eq [int]$roster.roster_id) { $draftSlot = [int]$prop.Name }
+              }
+            }
+
+            $vacant += [pscustomobject]@{
+              roster_id = [int]$roster.roster_id
+              draft_slot = $draftSlot
+              settings = $roster.settings
+              metadata = $roster.metadata
+              keepers = @($roster.keepers)
+              players = $playerDetails
+              reserve = @($roster.reserve)
+              taxi = @($roster.taxi)
+              incoming_traded_picks = @($tradedPicks | Where-Object { [int]$_.owner_id -eq [int]$roster.roster_id })
+              outgoing_traded_picks = @($tradedPicks | Where-Object { [int]$_.roster_id -eq [int]$roster.roster_id -and [int]$_.owner_id -ne [int]$roster.roster_id })
+            }
+          }
+
+          $previous = $null
+          if (-not [string]::IsNullOrWhiteSpace([string]$league.previous_league_id)) {
+            $prevId = [string]$league.previous_league_id
+            $previous = [pscustomobject]@{
+              league = Invoke-RestMethod -Uri "$base/league/$prevId"
+              rosters = @(Invoke-RestMethod -Uri "$base/league/$prevId/rosters")
+              users = @(Invoke-RestMethod -Uri "$base/league/$prevId/users")
+            }
+          }
+
+          [pscustomobject]@{
+            checked_at_utc = (Get-Date).ToUniversalTime().ToString('o')
+            league = $league
+            roster_count = $rosters.Count
+            assigned_count = @($rosters | Where-Object { -not [string]::IsNullOrWhiteSpace([string]$_.owner_id) }).Count
+            vacant_count = $vacant.Count
+            vacant_rosters = $vacant
+            users = $users
+            latest_draft = $draftDetails
+            all_traded_picks = $tradedPicks
+            previous_league = $previous
+          } | ConvertTo-Json -Depth 20 | Set-Content -LiteralPath data/sleeper-vacancy-details.json
+
       - name: Commit result
         shell: pwsh
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/tmp-sleeper-check.json
+          git add data/sleeper-vacancy-details.json
           if (-not (git diff --cached --quiet)) {
-            git commit -m "Record temporary Sleeper API result"
-            git push
+            git commit -m "Record Sleeper vacancy details"
+            git pull --rebase origin tmp/sleeper-check-1314734374628884480
+            git push origin HEAD:tmp/sleeper-check-1314734374628884480
           }
