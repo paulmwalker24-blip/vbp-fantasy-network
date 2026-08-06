@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "node scripts/tmp-keeper-audit-build.mjs"
+  }
+}
