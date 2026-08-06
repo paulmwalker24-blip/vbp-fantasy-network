@@ -1,0 +1,66 @@
+name: Temporary Keeper Audit V2
+
+on:
+  push:
+    branches:
+      - tmp/keeper-audit-1314734374628884480-v2
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Query Sleeper draft history
+        run: |
+          cat > /tmp/audit.mjs <<'EOF'
+          import fs from 'node:fs';
+          const base='https://api.sleeper.app/v1';
+          const currentId='1314734374628884480';
+          const openIds=new Set([6,10,11]);
+          const get=async p=>{const r=await fetch(base+p);if(!r.ok)throw new Error(`${p}: ${r.status}`);return r.json()};
+          const keeper=p=>{const v=p?.is_keeper??p?.metadata?.is_keeper??p?.metadata?.keeper;return v===true||v===1||v==='1'||v==='true'||v==='yes'};
+          const current=await get(`/league/${currentId}`);
+          const rosters=await get(`/league/${currentId}/rosters`);
+          const players=await get('/players/nfl');
+          const targets=rosters.filter(r=>openIds.has(Number(r.roster_id)));
+          const ids=new Set(targets.flatMap(r=>(r.players||[]).map(String)));
+          const seasons=[];
+          let lid=current.previous_league_id;
+          for(let i=0;lid&&i<10;i++){
+            const l=await get(`/league/${lid}`);
+            const ds=await get(`/league/${lid}/drafts`);
+            const d=ds.find(x=>String(x.draft_id)===String(l.draft_id))||[...ds].sort((a,b)=>Number(b.created||0)-Number(a.created||0))[0]||null;
+            const ps=d?await get(`/draft/${d.draft_id}/picks`):[];
+            seasons.push({season:String(l.season),league_id:String(l.league_id),draft_id:d?String(d.draft_id):null,picks:ps.filter(p=>ids.has(String(p.player_id))).map(p=>({player_id:String(p.player_id),round:Number(p.round),pick_no:Number(p.pick_no),roster_id:p.roster_id==null?null:Number(p.roster_id),is_keeper:keeper(p),raw_is_keeper:p.is_keeper??null,metadata:p.metadata??null}))});
+            lid=l.previous_league_id;
+          }
+          seasons.sort((a,b)=>Number(b.season)-Number(a.season));
+          const latest=seasons[0]?.season||null;
+          const name=id=>String(id).length<=3?String(id):(players[String(id)]?.full_name||`${players[String(id)]?.first_name||''} ${players[String(id)]?.last_name||''}`.trim()||String(id));
+          const openings=targets.map(r=>({roster_id:Number(r.roster_id),players:(r.players||[]).map(id=>{
+            const h=seasons.map(s=>{const p=s.picks.find(x=>x.player_id===String(id));return p?{season:s.season,...p}:null}).filter(Boolean);
+            const last=h.find(x=>x.season===latest)||null;
+            let uses=0;
+            if(last){for(const s of seasons){const e=h.find(x=>x.season===s.season);if(!e||!e.is_keeper)break;uses++}}
+            let status='ELIGIBLE',cost=last?last.round-2:null;
+            if(!last){status='NO_VERIFIED_2025_DRAFT_COST';cost=null}else if(last.round<3){status='INELIGIBLE_ROUND';cost=null}else if(uses>=2){status='INELIGIBLE_MAX_TENURE';cost=null}
+            return {player_id:String(id),name:name(id),position:String(id).length<=3?'DEF':players[String(id)]?.position||null,status,keeper_cost_2026_round:cost,latest_round:last?.round??null,latest_was_keeper:last?.is_keeper??null,consecutive_keeper_uses:uses,sleeper_note:r.metadata?.[`p_nick_${id}`]||null,history:h};
+          })}));
+          fs.mkdirSync('data',{recursive:true});
+          fs.writeFileSync('data/keeper-eligibility-audit.json',JSON.stringify({checked_at:new Date().toISOString(),league:{id:currentId,name:current.name,season:current.season},rule:{minimum_round:3,penalty_rounds:2,max_keeper_uses:2},season_chain:seasons.map(s=>({season:s.season,league_id:s.league_id,draft_id:s.draft_id})),openings},null,2));
+          EOF
+          node /tmp/audit.mjs
+
+      - name: Commit audit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/keeper-eligibility-audit.json
+          git commit -m "Record keeper eligibility audit" || exit 0
+          git push
