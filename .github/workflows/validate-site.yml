@@ -14,6 +14,85 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Run site checks
+      - name: Query Sleeper vacancy details
         shell: pwsh
-        run: powershell -ExecutionPolicy Bypass -File .\scripts\check-site.ps1 -Strict
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $leagueId = '1314734374628884480'
+          $base = 'https://api.sleeper.app/v1'
+
+          $league = Invoke-RestMethod -Uri "$base/league/$leagueId"
+          $rosters = @(Invoke-RestMethod -Uri "$base/league/$leagueId/rosters")
+          $drafts = @(Invoke-RestMethod -Uri "$base/league/$leagueId/drafts")
+          $tradedPicks = @(Invoke-RestMethod -Uri "$base/league/$leagueId/traded_picks")
+          $players = Invoke-RestMethod -Uri "$base/players/nfl"
+
+          $latestDraft = @($drafts | Sort-Object { [double]$_.created } -Descending | Select-Object -First 1)
+          $draftDetails = $null
+          if ($latestDraft) { $draftDetails = Invoke-RestMethod -Uri "$base/draft/$($latestDraft.draft_id)" }
+
+          $vacant = @()
+          foreach ($roster in $rosters | Where-Object { [string]::IsNullOrWhiteSpace([string]$_.owner_id) }) {
+            $playerDetails = @()
+            foreach ($playerId in @($roster.players)) {
+              $p = $players.PSObject.Properties[[string]$playerId].Value
+              if ($null -ne $p) {
+                $playerDetails += [pscustomobject]@{
+                  id = [string]$playerId
+                  name = if ($p.full_name) { [string]$p.full_name } else { (([string]$p.first_name + ' ' + [string]$p.last_name).Trim()) }
+                  pos = [string]$p.position
+                  team = [string]$p.team
+                }
+              }
+            }
+
+            $draftSlot = $null
+            if ($draftDetails -and $draftDetails.slot_to_roster_id) {
+              foreach ($prop in $draftDetails.slot_to_roster_id.PSObject.Properties) {
+                if ([int]$prop.Value -eq [int]$roster.roster_id) { $draftSlot = [int]$prop.Name }
+              }
+            }
+
+            $vacant += [pscustomobject]@{
+              roster_id = [int]$roster.roster_id
+              draft_slot = $draftSlot
+              settings = $roster.settings
+              metadata = $roster.metadata
+              keepers = @($roster.keepers)
+              players = $playerDetails
+              reserve = @($roster.reserve)
+              incoming_picks = @($tradedPicks | Where-Object { [int]$_.owner_id -eq [int]$roster.roster_id })
+              outgoing_picks = @($tradedPicks | Where-Object { [int]$_.roster_id -eq [int]$roster.roster_id -and [int]$_.owner_id -ne [int]$roster.roster_id })
+            }
+          }
+
+          $previousVacant = @()
+          if (-not [string]::IsNullOrWhiteSpace([string]$league.previous_league_id)) {
+            $prevId = [string]$league.previous_league_id
+            $prevRosters = @(Invoke-RestMethod -Uri "$base/league/$prevId/rosters")
+            foreach ($v in $vacant) {
+              $pr = @($prevRosters | Where-Object { [int]$_.roster_id -eq [int]$v.roster_id } | Select-Object -First 1)
+              if ($pr) {
+                $previousVacant += [pscustomobject]@{
+                  roster_id = [int]$pr.roster_id
+                  settings = $pr.settings
+                  metadata = $pr.metadata
+                }
+              }
+            }
+          }
+
+          $result = [pscustomobject]@{
+            league_name = [string]$league.name
+            season = [string]$league.season
+            previous_league_id = [string]$league.previous_league_id
+            total_rosters = [int]$league.total_rosters
+            assigned = @($rosters | Where-Object { -not [string]::IsNullOrWhiteSpace([string]$_.owner_id) }).Count
+            vacant = $vacant
+            previous_records = $previousVacant
+            draft = $draftDetails
+          }
+
+          Write-Host 'SLEEPER_VACANCY_JSON_BEGIN'
+          Write-Host ($result | ConvertTo-Json -Depth 15 -Compress)
+          Write-Host 'SLEEPER_VACANCY_JSON_END'
