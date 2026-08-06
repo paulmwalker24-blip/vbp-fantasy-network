@@ -1,4 +1,4 @@
-name: Temporary Sleeper Vacancy Details
+name: Temporary Keeper Openings Summary
 
 on:
   push:
@@ -11,109 +11,102 @@ permissions:
 jobs:
   check:
     if: github.actor != 'github-actions[bot]'
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Query Sleeper vacancy details
-        shell: pwsh
+      - name: Build keeper openings summary
         run: |
-          $ErrorActionPreference = 'Stop'
-          $leagueId = '1314734374628884480'
-          $base = "https://api.sleeper.app/v1"
+          cat > /tmp/keeper-summary.mjs <<'EOF'
+          import fs from 'node:fs';
 
-          $league = Invoke-RestMethod -Uri "$base/league/$leagueId"
-          $rosters = @(Invoke-RestMethod -Uri "$base/league/$leagueId/rosters")
-          $users = @(Invoke-RestMethod -Uri "$base/league/$leagueId/users")
-          $drafts = @(Invoke-RestMethod -Uri "$base/league/$leagueId/drafts")
-          $tradedPicks = @(Invoke-RestMethod -Uri "$base/league/$leagueId/traded_picks")
-          $players = Invoke-RestMethod -Uri "$base/players/nfl"
+          const base = 'https://api.sleeper.app/v1';
+          const leagueId = '1314734374628884480';
+          const get = async (path) => {
+            const response = await fetch(`${base}${path}`);
+            if (!response.ok) throw new Error(`${path}: ${response.status}`);
+            return response.json();
+          };
 
-          $latestDraft = @($drafts | Sort-Object { [double]$_.created } -Descending | Select-Object -First 1)
-          $draftDetails = $null
-          if ($latestDraft) {
-            $draftDetails = Invoke-RestMethod -Uri "$base/draft/$($latestDraft.draft_id)"
+          const league = await get(`/league/${leagueId}`);
+          const rosters = await get(`/league/${leagueId}/rosters`);
+          const players = await get('/players/nfl');
+          const previousLeagueId = league.previous_league_id;
+          const previousDrafts = previousLeagueId ? await get(`/league/${previousLeagueId}/drafts`) : [];
+          const previousDraft = [...previousDrafts].sort((a, b) => Number(b.created || 0) - Number(a.created || 0))[0] || null;
+          const previousPicks = previousDraft ? await get(`/draft/${previousDraft.draft_id}/picks`) : [];
+
+          const picksByPlayer = new Map();
+          for (const pick of previousPicks) {
+            if (pick.player_id) picksByPlayer.set(String(pick.player_id), pick);
           }
 
-          $vacant = @()
-          foreach ($roster in $rosters | Where-Object { [string]::IsNullOrWhiteSpace([string]$_.owner_id) }) {
-            $playerDetails = @()
-            foreach ($playerId in @($roster.players)) {
-              $p = $players.PSObject.Properties[[string]$playerId].Value
-              if ($null -ne $p) {
-                $playerDetails += [pscustomobject]@{
-                  player_id = [string]$playerId
-                  full_name = if ($p.full_name) { [string]$p.full_name } else { (([string]$p.first_name + ' ' + [string]$p.last_name).Trim()) }
-                  position = [string]$p.position
-                  team = [string]$p.team
-                  status = [string]$p.status
-                  years_exp = $p.years_exp
-                }
-              } else {
-                $playerDetails += [pscustomobject]@{ player_id = [string]$playerId; full_name = ''; position = ''; team = ''; status = ''; years_exp = $null }
-              }
-            }
+          const fullName = (id) => {
+            const p = players[String(id)];
+            if (!p) return String(id);
+            return p.full_name || `${p.first_name || ''} ${p.last_name || ''}`.trim() || String(id);
+          };
 
-            $draftSlot = $null
-            if ($draftDetails -and $draftDetails.slot_to_roster_id) {
-              foreach ($prop in $draftDetails.slot_to_roster_id.PSObject.Properties) {
-                if ([int]$prop.Value -eq [int]$roster.roster_id) { $draftSlot = [int]$prop.Name }
-              }
-            }
+          const vacant = rosters
+            .filter((roster) => !roster.owner_id)
+            .map((roster) => ({
+              roster_id: roster.roster_id,
+              waiver_position: roster.settings?.waiver_position ?? null,
+              existing_keeper_ids: roster.keepers || [],
+              players: (roster.players || []).map((id) => {
+                const pick = picksByPlayer.get(String(id));
+                const round = pick?.round ?? null;
+                return {
+                  player_id: String(id),
+                  name: fullName(id),
+                  position: players[String(id)]?.position || (String(id).length <= 3 ? 'DEF' : null),
+                  current_team: players[String(id)]?.team || (String(id).length <= 3 ? String(id) : null),
+                  drafted_round_2025: round,
+                  was_keeper_2025: Boolean(pick?.is_keeper),
+                  drafted_by_roster_2025: pick?.roster_id ?? null,
+                  eligible_under_round_3_rule: Number.isInteger(round) && round >= 3,
+                  keeper_cost_2026: Number.isInteger(round) && round >= 3 ? round - 2 : null,
+                  sleeper_note: roster.metadata?.[`p_nick_${id}`] || null
+                };
+              })
+            }));
 
-            $incoming = @($tradedPicks | Where-Object { [int]$_.owner_id -eq [int]$roster.roster_id })
-            $outgoing = @($tradedPicks | Where-Object { [int]$_.roster_id -eq [int]$roster.roster_id -and [int]$_.owner_id -ne [int]$roster.roster_id })
+          const result = {
+            checked_at_utc: new Date().toISOString(),
+            league: {
+              league_id: league.league_id,
+              name: league.name,
+              season: league.season,
+              previous_league_id: previousLeagueId,
+              max_keepers: league.settings?.max_keepers,
+              draft_rounds: league.settings?.draft_rounds,
+              total_rosters: league.total_rosters
+            },
+            previous_draft: previousDraft ? {
+              draft_id: previousDraft.draft_id,
+              season: previousDraft.season,
+              rounds: previousDraft.settings?.rounds,
+              status: previousDraft.status
+            } : null,
+            assigned_count: rosters.filter((r) => r.owner_id).length,
+            vacant_count: vacant.length,
+            vacant_rosters: vacant
+          };
 
-            $vacant += [pscustomobject]@{
-              roster_id = [int]$roster.roster_id
-              owner_id = $roster.owner_id
-              co_owners = @($roster.co_owners)
-              draft_slot = $draftSlot
-              settings = $roster.settings
-              metadata = $roster.metadata
-              keepers = @($roster.keepers)
-              players = $playerDetails
-              reserve = @($roster.reserve)
-              taxi = @($roster.taxi)
-              incoming_traded_picks = $incoming
-              outgoing_traded_picks = $outgoing
-            }
-          }
-
-          $previous = $null
-          if (-not [string]::IsNullOrWhiteSpace([string]$league.previous_league_id)) {
-            $prevId = [string]$league.previous_league_id
-            $prevLeague = Invoke-RestMethod -Uri "$base/league/$prevId"
-            $prevRosters = @(Invoke-RestMethod -Uri "$base/league/$prevId/rosters")
-            $prevUsers = @(Invoke-RestMethod -Uri "$base/league/$prevId/users")
-            $previous = [pscustomobject]@{ league = $prevLeague; rosters = $prevRosters; users = $prevUsers }
-          }
-
-          $result = [pscustomobject]@{
-            checked_at_utc = (Get-Date).ToUniversalTime().ToString('o')
-            league = $league
-            roster_count = $rosters.Count
-            assigned_count = @($rosters | Where-Object { -not [string]::IsNullOrWhiteSpace([string]$_.owner_id) }).Count
-            vacant_count = $vacant.Count
-            vacant_rosters = $vacant
-            users = $users
-            latest_draft = $draftDetails
-            all_traded_picks = $tradedPicks
-            previous_league = $previous
-          }
-
-          $result | ConvertTo-Json -Depth 20 | Set-Content -LiteralPath data/sleeper-vacancy-details.json
+          fs.mkdirSync('data', { recursive: true });
+          fs.writeFileSync('data/keeper-openings-summary.json', JSON.stringify(result, null, 2));
+          EOF
+          node /tmp/keeper-summary.mjs
 
       - name: Commit result
-        shell: pwsh
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/sleeper-vacancy-details.json
-          if (-not (git diff --cached --quiet)) {
-            git commit -m "Record Sleeper vacancy details"
+          git add data/keeper-openings-summary.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Record keeper openings summary"
             git pull --rebase origin tmp/sleeper-check-1314734374628884480
             git push origin HEAD:tmp/sleeper-check-1314734374628884480
-          }
+          fi
