@@ -1,4 +1,4 @@
-name: Temporary Keeper Openings Summary
+name: Temporary Keeper Eligibility Audit
 
 on:
   push:
@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  check:
+  audit:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
@@ -17,96 +17,180 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Build keeper openings summary
+      - name: Trace keeper history
         run: |
-          cat > /tmp/keeper-summary.mjs <<'EOF'
+          cat > /tmp/keeper-audit.mjs <<'EOF'
           import fs from 'node:fs';
 
           const base = 'https://api.sleeper.app/v1';
-          const leagueId = '1314734374628884480';
+          const currentLeagueId = '1314734374628884480';
+          const openRosterIds = new Set([6, 10, 11]);
+
           const get = async (path) => {
             const response = await fetch(`${base}${path}`);
             if (!response.ok) throw new Error(`${path}: ${response.status}`);
             return response.json();
           };
 
-          const league = await get(`/league/${leagueId}`);
-          const rosters = await get(`/league/${leagueId}/rosters`);
-          const players = await get('/players/nfl');
-          const previousLeagueId = league.previous_league_id;
-          const previousDrafts = previousLeagueId ? await get(`/league/${previousLeagueId}/drafts`) : [];
-          const previousDraft = [...previousDrafts].sort((a, b) => Number(b.created || 0) - Number(a.created || 0))[0] || null;
-          const previousPicks = previousDraft ? await get(`/draft/${previousDraft.draft_id}/picks`) : [];
-
-          const picksByPlayer = new Map();
-          for (const pick of previousPicks) {
-            if (pick.player_id) picksByPlayer.set(String(pick.player_id), pick);
-          }
-
-          const fullName = (id) => {
-            const p = players[String(id)];
-            if (!p) return String(id);
-            return p.full_name || `${p.first_name || ''} ${p.last_name || ''}`.trim() || String(id);
+          const normalizeKeeper = (pick) => {
+            const raw = pick?.is_keeper ?? pick?.metadata?.is_keeper ?? pick?.metadata?.keeper;
+            return raw === true || raw === 1 || raw === '1' || raw === 'true' || raw === 'yes';
           };
 
-          const vacant = rosters
-            .filter((roster) => !roster.owner_id)
-            .map((roster) => ({
-              roster_id: roster.roster_id,
-              waiver_position: roster.settings?.waiver_position ?? null,
-              existing_keeper_ids: roster.keepers || [],
-              players: (roster.players || []).map((id) => {
-                const pick = picksByPlayer.get(String(id));
-                const round = pick?.round ?? null;
-                return {
-                  player_id: String(id),
-                  name: fullName(id),
-                  position: players[String(id)]?.position || (String(id).length <= 3 ? 'DEF' : null),
-                  current_team: players[String(id)]?.team || (String(id).length <= 3 ? String(id) : null),
-                  drafted_round_2025: round,
-                  was_keeper_2025: Boolean(pick?.is_keeper),
-                  drafted_by_roster_2025: pick?.roster_id ?? null,
-                  eligible_under_round_3_rule: Number.isInteger(round) && round >= 3,
-                  keeper_cost_2026: Number.isInteger(round) && round >= 3 ? round - 2 : null,
-                  sleeper_note: roster.metadata?.[`p_nick_${id}`] || null
-                };
-              })
-            }));
+          const currentLeague = await get(`/league/${currentLeagueId}`);
+          const currentRosters = await get(`/league/${currentLeagueId}/rosters`);
+          const players = await get('/players/nfl');
+
+          const targetRosters = currentRosters.filter((r) => openRosterIds.has(Number(r.roster_id)));
+          const targetPlayerIds = new Set(targetRosters.flatMap((r) => (r.players || []).map(String)));
+
+          const seasons = [];
+          let leagueId = currentLeague.previous_league_id;
+          let guard = 0;
+          while (leagueId && guard < 10) {
+            guard += 1;
+            const league = await get(`/league/${leagueId}`);
+            const drafts = await get(`/league/${leagueId}/drafts`);
+            const selectedDraft = drafts.find((d) => String(d.draft_id) === String(league.draft_id))
+              || [...drafts].sort((a, b) => Number(b.created || 0) - Number(a.created || 0))[0]
+              || null;
+            const picks = selectedDraft ? await get(`/draft/${selectedDraft.draft_id}/picks`) : [];
+
+            seasons.push({
+              season: String(league.season),
+              league_id: String(league.league_id),
+              league_name: league.name,
+              draft_id: selectedDraft ? String(selectedDraft.draft_id) : null,
+              draft_status: selectedDraft?.status ?? null,
+              rounds: selectedDraft?.settings?.rounds ?? null,
+              picks: picks
+                .filter((pick) => targetPlayerIds.has(String(pick.player_id)))
+                .map((pick) => ({
+                  player_id: String(pick.player_id),
+                  round: Number(pick.round),
+                  pick_no: Number(pick.pick_no),
+                  draft_slot: Number(pick.draft_slot),
+                  roster_id: pick.roster_id == null ? null : Number(pick.roster_id),
+                  picked_by: pick.picked_by == null ? null : String(pick.picked_by),
+                  is_keeper: normalizeKeeper(pick),
+                  raw_is_keeper: pick.is_keeper ?? null,
+                  metadata: pick.metadata ?? null
+                }))
+            });
+
+            leagueId = league.previous_league_id;
+          }
+
+          seasons.sort((a, b) => Number(b.season) - Number(a.season));
+          const latestCompletedSeason = seasons[0]?.season ?? null;
+
+          const nameFor = (id) => {
+            if (String(id).length <= 3) return String(id);
+            const p = players[String(id)];
+            return p?.full_name || `${p?.first_name || ''} ${p?.last_name || ''}`.trim() || String(id);
+          };
+
+          const historyFor = (playerId) => seasons
+            .map((season) => {
+              const pick = season.picks.find((p) => p.player_id === String(playerId));
+              return pick ? { season: season.season, ...pick } : null;
+            })
+            .filter(Boolean);
+
+          const auditPlayer = (playerId, roster) => {
+            const history = historyFor(playerId);
+            const latest = history.find((h) => h.season === latestCompletedSeason) || null;
+
+            let consecutiveKeeperUses = 0;
+            if (latest) {
+              const seasonOrder = seasons.map((s) => s.season);
+              const latestIndex = seasonOrder.indexOf(latestCompletedSeason);
+              for (let i = latestIndex; i < seasonOrder.length; i += 1) {
+                const entry = history.find((h) => h.season === seasonOrder[i]);
+                if (!entry) break;
+                if (entry.is_keeper) consecutiveKeeperUses += 1;
+                else break;
+              }
+            }
+
+            let status;
+            let reason;
+            let cost = null;
+            if (!latest) {
+              status = 'NO_VERIFIED_2025_DRAFT_COST';
+              reason = 'Player does not appear in the latest completed draft results, so Sleeper does not provide a verified keeper round.';
+            } else if (latest.round < 3) {
+              status = 'INELIGIBLE_ROUND';
+              reason = `Latest cost was Round ${latest.round}; only Round 3 or later may be kept.`;
+            } else if (consecutiveKeeperUses >= 2) {
+              status = 'INELIGIBLE_MAX_TENURE';
+              reason = `Player was marked as a keeper in ${consecutiveKeeperUses} consecutive completed drafts and must return to the pool.`;
+            } else {
+              status = 'ELIGIBLE';
+              cost = latest.round - 2;
+              reason = `Latest cost was Round ${latest.round}; the two-round penalty makes the 2026 cost Round ${cost}.`;
+            }
+
+            return {
+              player_id: String(playerId),
+              name: nameFor(playerId),
+              position: String(playerId).length <= 3 ? 'DEF' : players[String(playerId)]?.position ?? null,
+              nfl_team: String(playerId).length <= 3 ? String(playerId) : players[String(playerId)]?.team ?? null,
+              sleeper_note: roster.metadata?.[`p_nick_${playerId}`] || null,
+              latest_completed_season: latestCompletedSeason,
+              latest_round: latest?.round ?? null,
+              latest_was_keeper: latest?.is_keeper ?? null,
+              consecutive_keeper_uses: consecutiveKeeperUses,
+              status,
+              keeper_cost_2026_round: cost,
+              reason,
+              history
+            };
+          };
+
+          const openings = targetRosters.map((roster) => {
+            const audited = (roster.players || []).map((id) => auditPlayer(String(id), roster));
+            return {
+              roster_id: Number(roster.roster_id),
+              players: audited,
+              eligible: audited.filter((p) => p.status === 'ELIGIBLE'),
+              max_tenure_ineligible: audited.filter((p) => p.status === 'INELIGIBLE_MAX_TENURE'),
+              early_round_ineligible: audited.filter((p) => p.status === 'INELIGIBLE_ROUND'),
+              no_verified_cost: audited.filter((p) => p.status === 'NO_VERIFIED_2025_DRAFT_COST')
+            };
+          });
 
           const result = {
             checked_at_utc: new Date().toISOString(),
-            league: {
-              league_id: league.league_id,
-              name: league.name,
-              season: league.season,
-              previous_league_id: previousLeagueId,
-              max_keepers: league.settings?.max_keepers,
-              draft_rounds: league.settings?.draft_rounds,
-              total_rosters: league.total_rosters
+            current_league: {
+              league_id: String(currentLeague.league_id),
+              name: currentLeague.name,
+              season: String(currentLeague.season),
+              previous_league_id: String(currentLeague.previous_league_id),
+              max_keepers: currentLeague.settings?.max_keepers ?? null
             },
-            previous_draft: previousDraft ? {
-              draft_id: previousDraft.draft_id,
-              season: previousDraft.season,
-              rounds: previousDraft.settings?.rounds,
-              status: previousDraft.status
-            } : null,
-            assigned_count: rosters.filter((r) => r.owner_id).length,
-            vacant_count: vacant.length,
-            vacant_rosters: vacant
+            rule_applied: {
+              minimum_latest_round: 3,
+              round_penalty: 2,
+              maximum_keeper_uses_before_return_to_pool: 2,
+              interpretation: 'The player may be rostered for the original draft season plus two keeper seasons. After two consecutive keeper designations, the player returns to the draft pool.'
+            },
+            season_chain: seasons.map(({ picks, ...season }) => ({ ...season, matching_pick_count: picks.length })),
+            openings
           };
 
           fs.mkdirSync('data', { recursive: true });
-          fs.writeFileSync('data/keeper-openings-summary.json', JSON.stringify(result, null, 2));
+          fs.writeFileSync('data/keeper-eligibility-audit.json', JSON.stringify(result, null, 2));
           EOF
-          node /tmp/keeper-summary.mjs
+          node /tmp/keeper-audit.mjs
 
       - name: Commit result
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/keeper-openings-summary.json
+          git add data/keeper-eligibility-audit.json
           if ! git diff --cached --quiet; then
-            git commit -m "Record keeper openings summary"
+            git commit -m "Record keeper eligibility audit"
             git pull --rebase origin tmp/sleeper-check-1314734374628884480
             git push origin HEAD:tmp/sleeper-check-1314734374628884480
           fi
