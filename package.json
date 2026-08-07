@@ -1,0 +1,4 @@
+{
+  "private": true,
+  "scripts": {"build":"node scripts/tmp-keeper3-ledger.mjs"}
+}
