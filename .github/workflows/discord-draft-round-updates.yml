@@ -1,0 +1,105 @@
+name: Discord Draft Round Updates
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+    inputs:
+      league_record_ids:
+        description: "Optional comma-separated bracket league IDs. Leave blank for the five configured Redraft Bracket divisions."
+        required: false
+        default: ""
+      include_completed_drafts:
+        description: "Backfill completed drafts that are not already tracked. Use carefully because this can post many rounds."
+        required: false
+        type: boolean
+        default: false
+      initialize_threads:
+        description: "Create missing division thread starters before the first pick is made."
+        required: false
+        type: boolean
+        default: false
+      force_refresh:
+        description: "Refresh existing team cards even when no new round has completed."
+        required: false
+        type: boolean
+        default: false
+      dry_run:
+        description: "Fetch Sleeper data and preview completed rounds without posting to Discord."
+        required: false
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: discord-draft-round-updates
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: ${{ github.event_name == 'workflow_dispatch' || vars.DISCORD_DRAFT_ROUND_UPDATES_ENABLED == 'true' }}
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Post completed draft rounds
+        shell: pwsh
+        env:
+          DISCORD_WEBHOOK_DRAFT_APEX: ${{ secrets.DISCORD_WEBHOOK_DRAFT_APEX }}
+          DISCORD_WEBHOOK_DRAFT_DOMINION: ${{ secrets.DISCORD_WEBHOOK_DRAFT_DOMINION }}
+          DISCORD_WEBHOOK_DRAFT_IRON: ${{ secrets.DISCORD_WEBHOOK_DRAFT_IRON }}
+          DISCORD_WEBHOOK_DRAFT_TITAN: ${{ secrets.DISCORD_WEBHOOK_DRAFT_TITAN }}
+          DISCORD_WEBHOOK_DRAFT_VANGUARD: ${{ secrets.DISCORD_WEBHOOK_DRAFT_VANGUARD }}
+        run: |
+          $args = @(
+            "-ExecutionPolicy", "Bypass",
+            "-File", ".\scripts\post-discord-draft-rounds.ps1",
+            "-ConfigPath", "data/discord-draft-round-config.json",
+            "-StatePath", "data/discord-draft-round-state.json"
+          )
+
+          $leagueIds = "${{ inputs.league_record_ids }}".Trim()
+          if (-not [string]::IsNullOrWhiteSpace($leagueIds)) {
+            $args += "-LeagueRecordIds"
+            $args += $leagueIds
+          }
+
+          if ("${{ inputs.include_completed_drafts }}" -eq "true") {
+            $args += "-IncludeCompletedDrafts"
+          }
+
+          if ("${{ inputs.initialize_threads }}" -eq "true") {
+            $args += "-InitializeThreads"
+          }
+
+          if ("${{ inputs.force_refresh }}" -eq "true") {
+            $args += "-ForceRefresh"
+          }
+
+          if ("${{ github.event_name }}" -eq "workflow_dispatch" -and "${{ inputs.dry_run }}" -eq "true") {
+            $args += "-DryRun"
+          }
+
+          powershell @args
+
+      - name: Save draft tracker state
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.dry_run == false }}
+        shell: pwsh
+        run: |
+          if (git diff --quiet -- data/discord-draft-round-state.json) {
+            Write-Host "Discord draft tracker state is already current."
+            exit 0
+          }
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/discord-draft-round-state.json
+          git commit -m "Update Discord draft round state"
+          git pull --rebase origin main
+          git push

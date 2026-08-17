@@ -1,0 +1,33 @@
+{
+  "channelId": "1524951585661128756",
+  "channelMode": "text",
+  "displayMode": "teams",
+  "leagueRecordIds": ["RDB1", "RDB2", "RDB3", "RDB4", "RDB5"],
+  "leagueDestinations": {
+    "RDB1": {
+      "division": "Titan",
+      "webhookKey": "draft-titan",
+      "webhookEnv": "DISCORD_WEBHOOK_DRAFT_TITAN"
+    },
+    "RDB2": {
+      "division": "Apex",
+      "webhookKey": "draft-apex",
+      "webhookEnv": "DISCORD_WEBHOOK_DRAFT_APEX"
+    },
+    "RDB3": {
+      "division": "Iron",
+      "webhookKey": "draft-iron",
+      "webhookEnv": "DISCORD_WEBHOOK_DRAFT_IRON"
+    },
+    "RDB4": {
+      "division": "Vanguard",
+      "webhookKey": "draft-vanguard",
+      "webhookEnv": "DISCORD_WEBHOOK_DRAFT_VANGUARD"
+    },
+    "RDB5": {
+      "division": "Dominion",
+      "webhookKey": "draft-dominion",
+      "webhookEnv": "DISCORD_WEBHOOK_DRAFT_DOMINION"
+    }
+  }
+}
