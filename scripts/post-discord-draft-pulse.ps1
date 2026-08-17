@@ -3,6 +3,7 @@ param(
   [string]$ConfigPath = "data/discord-draft-pulse-config.json",
   [string]$StatePath = "data/discord-draft-pulse-state.json",
   [string]$WebhookUrl = $env:DISCORD_WEBHOOK_DRAFT_PULSE,
+  [string]$StatusOutputPath = $env:GITHUB_OUTPUT,
   [switch]$ForceRefresh,
   [switch]$DryRun
 )
@@ -32,6 +33,27 @@ function Get-IntValue {
   $parsed = 0
   if ([int]::TryParse((Get-StringValue $Value), [ref]$parsed)) { return $parsed }
   return 0
+}
+
+function Write-DraftPulseStatus {
+  param([bool]$AllDraftsComplete)
+
+  if ([string]::IsNullOrWhiteSpace($StatusOutputPath)) { return }
+  $value = $AllDraftsComplete.ToString().ToLowerInvariant()
+  Add-Content -LiteralPath $StatusOutputPath -Value "all_drafts_complete=$value"
+}
+
+function Set-DraftCompletionState {
+  param(
+    [object]$State,
+    [bool]$AllDraftsComplete
+  )
+
+  if ($State.PSObject.Properties["allDraftsComplete"]) {
+    $State.allDraftsComplete = $AllDraftsComplete
+  } else {
+    $State | Add-Member -NotePropertyName allDraftsComplete -NotePropertyValue $AllDraftsComplete
+  }
 }
 
 function Convert-ToFlatObjectArray {
@@ -326,6 +348,11 @@ foreach ($leagueRecord in $leagueRecords) {
 $divisions = @($divisions | Sort-Object { [array]::IndexOf($wantedIds, $_.leagueRecordId) })
 if ($divisions.Count -eq 0) { throw "No configured Sleeper drafts were found for Draft Pulse." }
 
+$foundLeagueIds = @($divisions | ForEach-Object { $_.leagueRecordId } | Sort-Object -Unique)
+$missingLeagueIds = @($wantedIds | Where-Object { $foundLeagueIds -notcontains $_ })
+$unfinishedDivisions = @($divisions | Where-Object { (Get-StringValue $_.draftStatus).ToLowerInvariant() -ne "complete" })
+$allDraftsComplete = $missingLeagueIds.Count -eq 0 -and $unfinishedDivisions.Count -eq 0
+
 $roundSignatureParts = @($divisions | ForEach-Object {
   "{0}:{1}:{2}" -f $_.leagueRecordId, $_.draftId, $_.completedRounds
 })
@@ -439,7 +466,7 @@ $payload = @{
   embeds = @(
     @{
       title = "Redraft Bracket Draft Pulse"
-      description = "A neutral comparison of Titan, Apex, Iron, Vanguard, and Dominion. This post refreshes after full rounds are completed."
+      description = "A neutral comparison of Titan, Apex, Iron, Vanguard, and Dominion. This post refreshes every 30 minutes while drafts are active, then publishes a final update when all five are complete."
       color = 0x5865F2
       fields = @(
         @{ name = "Draft Progress"; value = (Join-LimitedLines -Lines $progressLines); inline = $false },
@@ -455,6 +482,7 @@ $payload = @{
 }
 
 if ($DryRun) {
+  Write-DraftPulseStatus -AllDraftsComplete $allDraftsComplete
   Write-Output ("DRY RUN Draft Pulse: {0}; shared depth: {1}; player ranges: {2}; unique early selections: {3}; position runs: {4}." -f $roundSignature, $commonDepth, $rangeLines.Count, $uniqueLines.Count, $runLines.Count)
   Write-Output ($payload | ConvertTo-Json -Depth 12)
   exit 0
@@ -477,8 +505,28 @@ $state = if (Test-Path -LiteralPath $StatePath) {
 $messageId = Get-StringValue (Get-ObjectPropertyValue $state "messageId")
 $savedSignature = Get-StringValue (Get-ObjectPropertyValue $state "roundSignature")
 if (-not $ForceRefresh -and -not [string]::IsNullOrWhiteSpace($messageId) -and $savedSignature -eq $roundSignature) {
+  $savedCompletionValue = Get-ObjectPropertyValue $state "allDraftsComplete"
+  if ($allDraftsComplete -and -not [bool]$savedCompletionValue) {
+    Set-DraftCompletionState -State $state -AllDraftsComplete $true
+    Save-PulseState -Path $StatePath -State $state
+  }
+  Write-DraftPulseStatus -AllDraftsComplete $allDraftsComplete
   Write-Output "Draft Pulse is already current for completed rounds: $roundSignature"
   exit 0
+}
+
+$minRefreshMinutes = [math]::Max((Get-IntValue (Get-ObjectPropertyValue $config "minRefreshMinutes")), 0)
+$lastUpdatedText = Get-StringValue (Get-ObjectPropertyValue $state "updatedAt")
+if (-not $ForceRefresh -and -not $allDraftsComplete -and -not [string]::IsNullOrWhiteSpace($messageId) -and $minRefreshMinutes -gt 0 -and -not [string]::IsNullOrWhiteSpace($lastUpdatedText)) {
+  $lastUpdatedAt = [datetimeoffset]::MinValue
+  if ([datetimeoffset]::TryParse($lastUpdatedText, [ref]$lastUpdatedAt)) {
+    $nextEligibleAt = $lastUpdatedAt.ToUniversalTime().AddMinutes($minRefreshMinutes)
+    if ([datetimeoffset]::UtcNow -lt $nextEligibleAt) {
+      Write-Output ("Draft Pulse has new completed-round data but is inside its {0}-minute refresh window. Next eligible update: {1}." -f $minRefreshMinutes, $nextEligibleAt.ToString("o"))
+      Write-DraftPulseStatus -AllDraftsComplete $allDraftsComplete
+      exit 0
+    }
+  }
 }
 
 $createdNewMessage = $false
@@ -502,7 +550,9 @@ $state.channelId = $channelId
 $state.webhookId = $webhookId
 $state.messageId = $messageId
 $state.roundSignature = $roundSignature
+Set-DraftCompletionState -State $state -AllDraftsComplete $allDraftsComplete
 Save-PulseState -Path $StatePath -State $state
 
 $action = if ($createdNewMessage) { "created" } else { "updated" }
+Write-DraftPulseStatus -AllDraftsComplete $allDraftsComplete
 Write-Output "Draft Pulse $action message $messageId for completed rounds: $roundSignature"

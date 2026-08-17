@@ -31,7 +31,7 @@ on:
         type: boolean
         default: true
       continue_chain:
-        description: "Keep checking automatically by queuing one successor run after five minutes."
+        description: "Keep checking automatically every five minutes until all configured drafts are complete."
         required: false
         type: boolean
         default: false
@@ -46,11 +46,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout completion state
+        uses: actions/checkout@v4
+
       - name: Restart a missing updater chain
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          $statePath = "data/discord-draft-pulse-state.json"
+          if (Test-Path -LiteralPath $statePath) {
+            $completionState = Get-Content -LiteralPath $statePath -Raw | ConvertFrom-Json
+            if ($completionState.PSObject.Properties["allDraftsComplete"] -and [bool]$completionState.allDraftsComplete) {
+              Write-Host "All configured drafts are complete. The updater chain will remain stopped."
+              exit 0
+            }
+          }
+
           $workflow = "discord-draft-round-updates.yml"
           $runs = gh run list `
             --repo "${{ github.repository }}" `
@@ -147,6 +159,7 @@ jobs:
           powershell @args
 
       - name: Post cross-division Draft Pulse
+        id: draft_pulse
         shell: pwsh
         env:
           DISCORD_WEBHOOK_DRAFT_PULSE: ${{ secrets.DISCORD_WEBHOOK_DRAFT_PULSE }}
@@ -190,7 +203,7 @@ jobs:
           git push
 
       - name: Queue next draft check
-        if: ${{ always() && github.event_name == 'workflow_dispatch' && inputs.continue_chain == true && vars.DISCORD_DRAFT_ROUND_UPDATES_ENABLED == 'true' }}
+        if: ${{ always() && github.event_name == 'workflow_dispatch' && inputs.continue_chain == true && vars.DISCORD_DRAFT_ROUND_UPDATES_ENABLED == 'true' && steps.draft_pulse.outputs.all_drafts_complete != 'true' }}
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}

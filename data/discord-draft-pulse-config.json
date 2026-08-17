@@ -15,5 +15,6 @@
   "maxRangeItems": 8,
   "maxUniqueItems": 6,
   "maxRunItems": 5,
-  "minPositionRun": 3
+  "minPositionRun": 3,
+  "minRefreshMinutes": 30
 }
