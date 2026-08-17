@@ -1,0 +1,19 @@
+{
+  "analysisVersion": 1,
+  "channelId": "1538924631338258502",
+  "webhookEnv": "DISCORD_WEBHOOK_DRAFT_PULSE",
+  "leagueRecordIds": ["RDB1", "RDB2", "RDB3", "RDB4", "RDB5"],
+  "divisionLabels": {
+    "RDB1": "Titan",
+    "RDB2": "Apex",
+    "RDB3": "Iron",
+    "RDB4": "Vanguard",
+    "RDB5": "Dominion"
+  },
+  "minComparableDrafts": 2,
+  "minPickRange": 6,
+  "maxRangeItems": 8,
+  "maxUniqueItems": 6,
+  "maxRunItems": 5,
+  "minPositionRun": 3
+}

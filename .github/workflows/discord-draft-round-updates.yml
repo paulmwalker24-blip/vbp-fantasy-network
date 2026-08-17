@@ -95,19 +95,46 @@ jobs:
 
           powershell @args
 
+      - name: Post cross-division Draft Pulse
+        shell: pwsh
+        env:
+          DISCORD_WEBHOOK_DRAFT_PULSE: ${{ secrets.DISCORD_WEBHOOK_DRAFT_PULSE }}
+        run: |
+          $args = @(
+            "-ExecutionPolicy", "Bypass",
+            "-File", ".\scripts\post-discord-draft-pulse.ps1",
+            "-ConfigPath", "data/discord-draft-pulse-config.json",
+            "-StatePath", "data/discord-draft-pulse-state.json"
+          )
+
+          if ("${{ inputs.force_refresh }}" -eq "true") {
+            $args += "-ForceRefresh"
+          }
+
+          if ("${{ github.event_name }}" -eq "workflow_dispatch" -and "${{ inputs.dry_run }}" -eq "true") {
+            $args += "-DryRun"
+          }
+
+          powershell @args
+
       - name: Save draft tracker state
         if: ${{ github.event_name != 'workflow_dispatch' || inputs.dry_run == false }}
         shell: pwsh
         run: |
-          if (git diff --quiet -- data/discord-draft-round-state.json) {
-            Write-Host "Discord draft tracker state is already current."
+          $stateFiles = @(
+            "data/discord-draft-round-state.json",
+            "data/discord-draft-pulse-state.json"
+          )
+
+          if (git diff --quiet -- $stateFiles) {
+            Write-Host "Discord draft tracker and Draft Pulse state are already current."
             exit 0
           }
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/discord-draft-round-state.json
-          git commit -m "Update Discord draft round state"
+          git add -- $stateFiles
+          git commit -m "Update Discord draft automation state"
           git pull --rebase origin main
           git push
 
