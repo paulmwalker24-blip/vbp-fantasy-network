@@ -2,8 +2,8 @@ name: Discord Draft Round Updates
 
 on:
   schedule:
-    # Stagger away from the busiest top-of-hour and five-minute boundaries.
-    - cron: "3/5 * * * *"
+    # Lightweight watchdog. The active updater chain supplies the five-minute checks.
+    - cron: "7/15 * * * *"
   workflow_dispatch:
     inputs:
       league_record_ids:
@@ -40,14 +40,65 @@ permissions:
   actions: write
   contents: write
 
-concurrency:
-  group: discord-draft-round-updates
-  cancel-in-progress: false
-
 jobs:
+  watchdog:
+    if: ${{ github.event_name == 'schedule' && vars.DISCORD_DRAFT_ROUND_UPDATES_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Restart a missing updater chain
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $workflow = "discord-draft-round-updates.yml"
+          $runs = gh run list `
+            --repo "${{ github.repository }}" `
+            --workflow $workflow `
+            --event workflow_dispatch `
+            --limit 10 `
+            --json status,conclusion,createdAt,updatedAt,databaseId,url | ConvertFrom-Json
+
+          $cutoff = (Get-Date).ToUniversalTime().AddMinutes(-12)
+          $healthyRuns = @($runs | Where-Object {
+            $_.status -in @("queued", "pending", "in_progress") -or
+            ($_.conclusion -eq "success" -and ([datetime]$_.updatedAt).ToUniversalTime() -ge $cutoff)
+          })
+
+          if ($healthyRuns.Count -gt 0) {
+            Write-Host "A healthy draft updater chain is active or completed within the last 12 minutes."
+            exit 0
+          }
+
+          Write-Host "No healthy draft updater chain was found. Starting a replacement."
+          $dispatched = $false
+          foreach ($attempt in 1..5) {
+            gh workflow run $workflow `
+              --repo "${{ github.repository }}" `
+              --ref main `
+              -f dry_run=false `
+              -f continue_chain=true
+            if ($LASTEXITCODE -eq 0) {
+              $dispatched = $true
+              break
+            }
+            if ($attempt -lt 5) {
+              $delay = 15 * $attempt
+              Write-Warning "Dispatch attempt $attempt failed. Retrying in $delay seconds."
+              Start-Sleep -Seconds $delay
+            }
+          }
+
+          if (-not $dispatched) {
+            throw "The watchdog could not restart the draft updater chain after five attempts."
+          }
+
   update:
-    if: ${{ vars.DISCORD_DRAFT_ROUND_UPDATES_ENABLED == 'true' || (github.event_name == 'workflow_dispatch' && inputs.continue_chain != true) }}
+    if: ${{ github.event_name == 'workflow_dispatch' && (vars.DISCORD_DRAFT_ROUND_UPDATES_ENABLED == 'true' || inputs.continue_chain != true) }}
     runs-on: windows-latest
+    concurrency:
+      group: discord-draft-round-updates
+      cancel-in-progress: false
 
     steps:
       - name: Checkout
@@ -146,8 +197,24 @@ jobs:
         run: |
           Write-Host "Waiting five minutes before queuing the next draft check."
           Start-Sleep -Seconds 300
-          gh workflow run discord-draft-round-updates.yml `
-            --repo "${{ github.repository }}" `
-            --ref main `
-            -f dry_run=false `
-            -f continue_chain=true
+          $dispatched = $false
+          foreach ($attempt in 1..5) {
+            gh workflow run discord-draft-round-updates.yml `
+              --repo "${{ github.repository }}" `
+              --ref main `
+              -f dry_run=false `
+              -f continue_chain=true
+            if ($LASTEXITCODE -eq 0) {
+              $dispatched = $true
+              break
+            }
+            if ($attempt -lt 5) {
+              $delay = 15 * $attempt
+              Write-Warning "Dispatch attempt $attempt failed. Retrying in $delay seconds."
+              Start-Sleep -Seconds $delay
+            }
+          }
+
+          if (-not $dispatched) {
+            throw "Could not queue the next draft check after five attempts. The watchdog will restart the chain."
+          }
