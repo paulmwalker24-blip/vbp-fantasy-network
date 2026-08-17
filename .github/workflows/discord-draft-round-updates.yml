@@ -30,8 +30,14 @@ on:
         required: false
         type: boolean
         default: true
+      continue_chain:
+        description: "Keep checking automatically by queuing one successor run after five minutes."
+        required: false
+        type: boolean
+        default: false
 
 permissions:
+  actions: write
   contents: write
 
 concurrency:
@@ -40,7 +46,7 @@ concurrency:
 
 jobs:
   update:
-    if: ${{ github.event_name == 'workflow_dispatch' || vars.DISCORD_DRAFT_ROUND_UPDATES_ENABLED == 'true' }}
+    if: ${{ vars.DISCORD_DRAFT_ROUND_UPDATES_ENABLED == 'true' || (github.event_name == 'workflow_dispatch' && inputs.continue_chain != true) }}
     runs-on: windows-latest
 
     steps:
@@ -104,3 +110,17 @@ jobs:
           git commit -m "Update Discord draft round state"
           git pull --rebase origin main
           git push
+
+      - name: Queue next draft check
+        if: ${{ always() && github.event_name == 'workflow_dispatch' && inputs.continue_chain == true && vars.DISCORD_DRAFT_ROUND_UPDATES_ENABLED == 'true' }}
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          Write-Host "Waiting five minutes before queuing the next draft check."
+          Start-Sleep -Seconds 300
+          gh workflow run discord-draft-round-updates.yml `
+            --repo "${{ github.repository }}" `
+            --ref main `
+            -f dry_run=false `
+            -f continue_chain=true
