@@ -176,6 +176,19 @@ $env:DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/..."
 powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-redraft-bracket-status.ps1
 ```
 
+## `post-discord-redraft-bracket-standings.ps1`
+
+Builds the official combined Redraft Bracket standings from `data/bracket-ledger.json`. Before real results exist it publishes one preseason notice; after Week 1 it maintains an overview plus persistent cards for ranks 1-20, 21-40, and 41-60. It never publishes the Bracket Center's synthetic sample standings.
+
+Refresh the Sleeper ledger and preview without posting:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\sync-bracket-ledger.ps1 -GroupIds BRACKET-2026-1
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\post-discord-redraft-bracket-standings.ps1 -DryRun
+```
+
+Scheduled automation lives in `.github/workflows/redraft-bracket-standings-discord.yml` and runs Tuesday at 1:00 AM in `America/Chicago`. It uses the `DISCORD_WEBHOOK_REDRAFT_BRACKET_STANDINGS` secret and the `DISCORD_REDRAFT_BRACKET_STANDINGS_ENABLED` enable variable. Message IDs are stored in `data/discord-redraft-bracket-standings-state.json` so weekly updates edit the same Discord cards.
+
 ## `post-discord-redraft-status.ps1`
 
 Builds one living Discord post for open standard seasonal redraft leagues only. 32-team redraft and co-manager redraft should use their own Discord channels/scripts.

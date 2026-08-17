@@ -132,6 +132,18 @@ Post the full Redraft Bracket status:
 Post or update the Discord redraft bracket status message with the overview at the top and all five divisions alphabetically underneath it as embeds with division graphics. Use live assigned Sleeper spots and the current redraft bracket payment report.
 ```
 
+Preview the official Redraft Bracket Discord standings without posting:
+
+```text
+Refresh the Redraft Bracket ledger from Sleeper, then dry-run the Discord combined standings. Use only official ledger data and never the website sample standings.
+```
+
+Run the weekly Redraft Bracket standings update now:
+
+```text
+Run the Redraft Bracket Discord standings workflow live. Refresh all five divisions from Sleeper, update the existing standings cards, and keep the website ledger aligned.
+```
+
 Post the open redraft league status:
 
 ```text
