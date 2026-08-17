@@ -383,7 +383,7 @@ $rangeLines = @($rangeItems |
     $lateDivision = Escape-DiscordText $_.latest.division
     $earlyPick = Format-PickLocation -PickNumber $_.earliest.pickNo -TeamCount $commonTeamCount
     $latePick = Format-PickLocation -PickNumber $_.latest.pickNo -TeamCount $commonTeamCount
-    "**$player ($position)** - $earlyDivision $earlyPick to $lateDivision $latePick | **$($_.range)-pick range**"
+    "$player ($position) - $earlyDivision $earlyPick to $lateDivision $latePick | $($_.range)-pick range"
   })
 
 $uniqueLines = @($uniqueItems |
@@ -394,14 +394,14 @@ $uniqueLines = @($uniqueItems |
     $position = Escape-DiscordText $_.position
     $division = Escape-DiscordText $_.division
     $pick = Format-PickLocation -PickNumber $_.pickNo -TeamCount $commonTeamCount
-    "**$player ($position)** - $division $pick"
+    "$player ($position) - $division $pick"
   })
 
 $progressLines = @($divisions | ForEach-Object {
   if ($_.completedRounds -gt 0) {
-    "**$($_.division):** $($_.completedRounds) completed rounds"
+    "$($_.division): $($_.completedRounds) completed rounds"
   } else {
-    "**$($_.division):** waiting for Round 1"
+    "$($_.division): waiting for Round 1"
   }
 })
 
@@ -414,7 +414,7 @@ if ($commonDepth -gt 0) {
     foreach ($position in @("QB", "RB", "WR", "TE")) {
       $counts[$position] = @($commonPicks | Where-Object { $_.position -eq $position }).Count
     }
-    "**$($division.division):** QB $($counts.QB) | RB $($counts.RB) | WR $($counts.WR) | TE $($counts.TE)"
+    "$($division.division): QB $($counts.QB) | RB $($counts.RB) | WR $($counts.WR) | TE $($counts.TE)"
   })
 }
 
@@ -429,7 +429,7 @@ $runLines = @($allRuns |
   Sort-Object @{ Expression = "length"; Descending = $true }, @{ Expression = "startPick"; Descending = $false } |
   Select-Object -First (Get-IntValue $config.maxRunItems) |
   ForEach-Object {
-    "**$($_.division):** $($_.length) straight $($_.position)s, Picks $($_.startPick)-$($_.endPick)"
+    "$($_.division): $($_.length) straight $($_.position)s, Picks $($_.startPick)-$($_.endPick)"
   })
 
 $commonDepthLabel = if ($commonDepth -gt 0) { "through Pick #$commonDepth ($commonRounds rounds)" } else { "once multiple drafts complete a round" }
