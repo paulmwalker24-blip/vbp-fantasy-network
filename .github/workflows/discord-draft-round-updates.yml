@@ -2,7 +2,8 @@ name: Discord Draft Round Updates
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    # Stagger away from the busiest top-of-hour and five-minute boundaries.
+    - cron: "3/5 * * * *"
   workflow_dispatch:
     inputs:
       league_record_ids:
