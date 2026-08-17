@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "channelId": "1538949281573118082",
+  "groupId": "BRACKET-2026-1",
+  "leagueRecordIds": ["RDB1", "RDB2", "RDB3", "RDB4", "RDB5"],
+  "divisionNames": {
+    "RDB1": "Titan",
+    "RDB2": "Apex",
+    "RDB3": "Iron",
+    "RDB4": "Vanguard",
+    "RDB5": "Dominion"
+  },
+  "expectedTeamCount": 60,
+  "topCount": 20,
+  "websiteUrl": "https://vbp-fantasy-network.vercel.app/power-rankings.html"
+}
