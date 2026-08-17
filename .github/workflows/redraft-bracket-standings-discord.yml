@@ -1,0 +1,91 @@
+name: Redraft Bracket Discord Standings
+
+on:
+  schedule:
+    - cron: "0 1 * * 2"
+      timezone: "America/Chicago"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Refresh the ledger and preview the Discord standings without posting or committing."
+        required: false
+        type: boolean
+        default: true
+      force_refresh:
+        description: "Rewrite the persistent Discord standings even when this snapshot is already current."
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: redraft-bracket-discord-standings
+  cancel-in-progress: false
+
+jobs:
+  standings:
+    if: ${{ github.event_name == 'workflow_dispatch' || vars.DISCORD_REDRAFT_BRACKET_STANDINGS_ENABLED == 'true' }}
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Refresh the official bracket ledger from Sleeper
+        shell: pwsh
+        run: |
+          powershell -NoProfile -ExecutionPolicy Bypass `
+            -File .\scripts\sync-bracket-ledger.ps1 `
+            -GroupIds BRACKET-2026-1
+
+      - name: Update the persistent Discord standings
+        shell: pwsh
+        env:
+          DISCORD_WEBHOOK_REDRAFT_BRACKET_STANDINGS: ${{ secrets.DISCORD_WEBHOOK_REDRAFT_BRACKET_STANDINGS }}
+        run: |
+          $args = @(
+            "-NoProfile", "-ExecutionPolicy", "Bypass",
+            "-File", ".\scripts\post-discord-redraft-bracket-standings.ps1"
+          )
+          if ("${{ github.event_name }}" -eq "workflow_dispatch" -and "${{ inputs.dry_run }}" -eq "true") {
+            $args += "-DryRun"
+          }
+          if ("${{ inputs.force_refresh }}" -eq "true") {
+            $args += "-ForceRefresh"
+          }
+          powershell @args
+
+      - name: Save the website ledger and Discord message state
+        if: ${{ always() && (github.event_name != 'workflow_dispatch' || inputs.dry_run == false) }}
+        shell: pwsh
+        run: |
+          $paths = @(
+            "data/bracket-ledger.json",
+            "data/discord-redraft-bracket-standings-state.json"
+          )
+          git add -- $paths
+          if (git diff --cached --quiet) {
+            Write-Host "Bracket ledger and Discord standings state are already current."
+            exit 0
+          }
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update Redraft Bracket Discord standings"
+
+          $pushed = $false
+          foreach ($attempt in 1..4) {
+            git pull --rebase origin main
+            if ($LASTEXITCODE -ne 0) { throw "Could not rebase the standings update onto origin/main." }
+            git push origin HEAD:main
+            if ($LASTEXITCODE -eq 0) {
+              $pushed = $true
+              break
+            }
+            if ($attempt -lt 4) { Start-Sleep -Seconds (10 * $attempt) }
+          }
+          if (-not $pushed) { throw "Could not push the standings state after four attempts." }

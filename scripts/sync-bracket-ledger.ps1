@@ -131,6 +131,42 @@ function Get-RecordPct {
   return [math]::Round((($Wins + ($Ties * 0.5)) / $games), 6)
 }
 
+function Invoke-SleeperJson {
+  param([string]$Uri)
+
+  foreach ($attempt in 1..4) {
+    try {
+      return Invoke-RestMethod -Uri $Uri
+    } catch {
+      $statusCode = 0
+      if ($_.Exception.Response -and $_.Exception.Response.StatusCode) {
+        $statusCode = [int]$_.Exception.Response.StatusCode
+      }
+      if ($attempt -ge 4 -or ($statusCode -ne 429 -and $statusCode -lt 500)) { throw }
+
+      $delaySeconds = [math]::Min([math]::Pow(2, $attempt), 30)
+      if ($statusCode -eq 429 -and $_.Exception.Response.Headers) {
+        $retryAfter = Get-StringValue $_.Exception.Response.Headers["Retry-After"]
+        $parsedDelay = 0.0
+        if ([double]::TryParse($retryAfter, [ref]$parsedDelay)) {
+          $delaySeconds = [math]::Min([math]::Max([math]::Ceiling($parsedDelay), 1), 30)
+        }
+      }
+      Start-Sleep -Seconds $delaySeconds
+    }
+  }
+}
+
+function Get-TeamKey {
+  param([AllowNull()][object]$Entry)
+
+  if ($null -eq $Entry) { return "" }
+  return "{0}:{1}:{2}" -f `
+    (Get-StringValue (Get-PropertyValue $Entry "leagueRecordId")), `
+    (Get-StringValue (Get-PropertyValue $Entry "ownerId")), `
+    (Get-StringValue (Get-PropertyValue $Entry "rosterId"))
+}
+
 function Get-StandingsOrder {
   param(
     [AllowNull()]
@@ -284,9 +320,9 @@ foreach ($group in ($selectedGroups | Sort-Object { Get-StringValue $_.groupId }
     $leagueRecordId = Get-StringValue $leagueRecord.id
     $sleeperLeagueId = Get-StringValue $leagueRecord.sleeperLeagueId
 
-    $sleeperLeague = Invoke-RestMethod -Uri ("https://api.sleeper.app/v1/league/{0}" -f $sleeperLeagueId)
-    $users = Convert-ToFlatObjectArray (Invoke-RestMethod -Uri ("https://api.sleeper.app/v1/league/{0}/users" -f $sleeperLeagueId))
-    $rosters = Convert-ToFlatObjectArray (Invoke-RestMethod -Uri ("https://api.sleeper.app/v1/league/{0}/rosters" -f $sleeperLeagueId))
+    $sleeperLeague = Invoke-SleeperJson -Uri ("https://api.sleeper.app/v1/league/{0}" -f $sleeperLeagueId)
+    $users = Convert-ToFlatObjectArray (Invoke-SleeperJson -Uri ("https://api.sleeper.app/v1/league/{0}/users" -f $sleeperLeagueId))
+    $rosters = Convert-ToFlatObjectArray (Invoke-SleeperJson -Uri ("https://api.sleeper.app/v1/league/{0}/rosters" -f $sleeperLeagueId))
 
     $usersById = @{}
     foreach ($user in $users) {
@@ -376,11 +412,11 @@ foreach ($group in ($selectedGroups | Sort-Object { Get-StringValue $_.groupId }
   }
 
   $divisionWinners = Get-StandingsOrder -Entries @($leagueSnapshots | ForEach-Object { $_.divisionWinner } | Where-Object { $null -ne $_ })
-  $divisionWinnerOwnerIds = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
+  $divisionWinnerTeamKeys = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
   $seededDivisionWinners = [System.Collections.Generic.List[object]]::new()
   $seedNumber = 1
   foreach ($winner in $divisionWinners) {
-    [void]$divisionWinnerOwnerIds.Add((Get-StringValue $winner.ownerId))
+    [void]$divisionWinnerTeamKeys.Add((Get-TeamKey $winner))
     $seededDivisionWinners.Add([pscustomobject]@{
       seed = $seedNumber
       seedType = "division-winner"
@@ -389,7 +425,7 @@ foreach ($group in ($selectedGroups | Sort-Object { Get-StringValue $_.groupId }
     $seedNumber += 1
   }
 
-  $remainingTeams = @($allTeams | Where-Object { -not $divisionWinnerOwnerIds.Contains((Get-StringValue $_.ownerId)) })
+  $remainingTeams = @($allTeams | Where-Object { -not $divisionWinnerTeamKeys.Contains((Get-TeamKey $_)) })
   $orderedRemaining = Get-StandingsOrder -Entries $remainingTeams
 
   $seededDirectQualifiers = [System.Collections.Generic.List[object]]::new()
