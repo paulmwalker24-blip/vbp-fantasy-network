@@ -4,7 +4,7 @@
                     "refreshSpecificGroup":  "Run the bracket ledger sync for BRACKET-2026-1 only and refresh data/bracket-ledger.json from Sleeper so that bracket group\u0027s standings and playoff output are up to date.",
                     "refreshOverallStandings":  "Run the bracket ledger sync and refresh data/bracket-ledger.json from Sleeper, then give me the current combined overall standings for BRACKET-2026-1 with rank, team name, league/division, record, and points for. If the season is not far enough along or the group is not full yet, tell me the standings are provisional."
                 },
-    "generatedAt":  "2026-08-17T16:29:51",
+    "generatedAt":  "2026-08-18T06:29:09",
     "groups":  [
                    {
                        "groupId":  "BRACKET-2026-1",
@@ -29,7 +29,7 @@
                                      "postWeek13Reset":  "wild_card_winner_faces_8th_highest_remaining_seed",
                                      "postResetBracketStyle":  "static_traditional_bracket"
                                  },
-                       "lastSyncedAt":  "2026-08-17T16:29:51",
+                       "lastSyncedAt":  "2026-08-18T06:29:09",
                        "seasonStatuses":  [
                                               "drafting",
                                               "pre_draft"
