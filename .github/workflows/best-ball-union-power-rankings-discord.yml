@@ -1,0 +1,94 @@
+name: Best Ball Union Discord Power Rankings
+
+on:
+  schedule:
+    - cron: "45 1 * * 2"
+      timezone: "America/Chicago"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Refresh and preview the combined Top 25 without posting or committing."
+        required: false
+        type: boolean
+        default: true
+      force_refresh:
+        description: "Rewrite the persistent Discord card even when this snapshot is already current."
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: best-ball-union-discord-power-rankings
+  cancel-in-progress: false
+
+jobs:
+  power-rankings:
+    if: ${{ github.event_name == 'workflow_dispatch' || vars.DISCORD_BEST_BALL_UNION_POWER_RANKINGS_ENABLED == 'true' }}
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build a fresh Best Ball Union ranking snapshot from Sleeper
+        shell: pwsh
+        run: |
+          $outputPath = Join-Path $env:RUNNER_TEMP "best-ball-union-power-rankings.json"
+          & .\scripts\sync-power-rankings.ps1 `
+            -LeagueRecordIds @("BBU1", "BBU2", "BBU3", "BBU4", "BBU5", "BBU6", "BBU7", "BBU8", "BBU9", "BBU10", "BBU11", "BBU12", "BBU13") `
+            -OutputPath $outputPath `
+            -PublishDrafting
+
+      - name: Update the persistent Discord Top 25
+        id: publish
+        shell: pwsh
+        env:
+          DISCORD_WEBHOOK_BEST_BALL_UNION_POWER_RANKINGS: ${{ secrets.DISCORD_WEBHOOK_BEST_BALL_UNION_POWER_RANKINGS }}
+        run: |
+          $args = @(
+            "-NoProfile", "-ExecutionPolicy", "Bypass",
+            "-File", ".\scripts\post-discord-best-ball-union-power-rankings.ps1",
+            "-RankingsPath", (Join-Path $env:RUNNER_TEMP "best-ball-union-power-rankings.json")
+          )
+          if ("${{ github.event_name }}" -eq "workflow_dispatch" -and "${{ inputs.dry_run }}" -eq "true") {
+            $args += "-DryRun"
+          }
+          if ("${{ inputs.force_refresh }}" -eq "true") {
+            $args += "-ForceRefresh"
+          }
+          powershell @args
+
+      - name: Save the Discord message state
+        if: ${{ always() && (github.event_name != 'workflow_dispatch' || inputs.dry_run == false) }}
+        shell: pwsh
+        run: |
+          $statePath = "data/discord-best-ball-union-power-rankings-state.json"
+          if (Test-Path -LiteralPath $statePath) {
+            git add -- $statePath
+          }
+          if (git diff --cached --quiet) {
+            Write-Host "Discord BBU power-ranking message state is already current."
+            exit 0
+          }
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update Best Ball Union Discord power rankings"
+
+          $pushed = $false
+          foreach ($attempt in 1..4) {
+            git pull --rebase origin main
+            if ($LASTEXITCODE -ne 0) { throw "Could not rebase the BBU power-ranking update onto origin/main." }
+            git push origin HEAD:main
+            if ($LASTEXITCODE -eq 0) {
+              $pushed = $true
+              break
+            }
+            if ($attempt -lt 4) { Start-Sleep -Seconds (10 * $attempt) }
+          }
+          if (-not $pushed) { throw "Could not push the BBU power-ranking state after four attempts." }

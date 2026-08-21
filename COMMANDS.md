@@ -404,6 +404,18 @@ Run the bracket ledger sync using data/dynasty-bracket-groups.json and data/dyna
 
 ## Power Rankings
 
+Preview the combined Best Ball Union Top 25 without posting:
+
+```text
+Refresh power rankings for BBU1 through BBU13, then dry-run the Best Ball Union Discord Top 25 without changing its saved message.
+```
+
+Force-refresh the persistent Best Ball Union Top 25:
+
+```text
+Generate a fresh Sleeper power-ranking snapshot for BBU1 through BBU13 and update the existing Best Ball Union Discord Top 25 message in place.
+```
+
 Refresh every eligible generated power-ranking board from Sleeper:
 
 ```text

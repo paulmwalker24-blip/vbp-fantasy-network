@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "channelId": "1540207093133344768",
+  "groupId": "BBU-2026",
+  "leagueRecordIds": [
+    "BBU1",
+    "BBU2",
+    "BBU3",
+    "BBU4",
+    "BBU5",
+    "BBU6",
+    "BBU7",
+    "BBU8",
+    "BBU9",
+    "BBU10",
+    "BBU11",
+    "BBU12",
+    "BBU13"
+  ],
+  "divisionNames": {
+    "BBU1": "BBU1",
+    "BBU2": "BBU2",
+    "BBU3": "BBU3",
+    "BBU4": "BBU4",
+    "BBU5": "BBU5",
+    "BBU6": "BBU6",
+    "BBU7": "BBU7",
+    "BBU8": "BBU8",
+    "BBU9": "BBU9",
+    "BBU10": "BBU10",
+    "BBU11": "BBU11",
+    "BBU12": "BBU12",
+    "BBU13": "BBU13"
+  },
+  "expectedTeamCount": 130,
+  "topCount": 25,
+  "websiteUrl": "https://vbp-fantasy-network.vercel.app/bestball-center.html#powerRankings"
+}
