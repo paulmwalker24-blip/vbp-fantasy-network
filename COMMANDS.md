@@ -506,6 +506,18 @@ Run the broad site check, including constitutions:
 Run the one-command site check and include the constitution-page results in the summary.
 ```
 
+Preview the live Best Ball Union division leaders without posting:
+
+```text
+Run the Discord division-leaders tracker in dry-run mode and show me the current first-place team, record, and points for in BBU1 through BBU13.
+```
+
+Force-refresh the persistent Discord division-leaders post:
+
+```text
+Run the Discord division-leaders workflow with dry_run false and force_refresh true, then confirm the persistent post was updated.
+```
+
 ## Cache Busting
 
 Update the homepage asset version strings after frontend edits:
