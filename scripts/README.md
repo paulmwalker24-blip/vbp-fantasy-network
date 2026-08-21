@@ -811,6 +811,8 @@ powershell -ExecutionPolicy Bypass -File .\scripts\sync-bracket-ledger.ps1 -Grou
 
 Builds or refreshes `data/power-rankings.json` by pulling detailed power-ranking inputs from Sleeper.
 
+The Best Ball Union Discord publisher uses `post-discord-best-ball-union-power-rankings.ps1` to combine the 130 ranked teams from `BBU1` through `BBU13` into one persistent Top 25 message. Its workflow generates a fresh temporary Sleeper snapshot every Tuesday at 1:45 AM Central, then edits the existing Discord card. See `docs/discord-server/best-ball-union-power-rankings.md`.
+
 The sync automatically reads each league's Sleeper draft records and determines whether the relevant board is ready:
 
 - startup drafts for new dynasty, dynasty-bracket, and keeper rooms

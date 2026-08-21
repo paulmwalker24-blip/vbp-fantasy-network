@@ -1,6 +1,7 @@
 {
   "notes": "Copy this to data/private/discord-webhooks.json and paste the real webhook URL for each Discord channel. The real file is gitignored.",
   "channels": {
+    "best-ball-union-power-rankings": "",
     "32-team-redraft-testing": "",
     "best-ball-gauntlet-testing": "",
     "best-ball-union-testing": "",

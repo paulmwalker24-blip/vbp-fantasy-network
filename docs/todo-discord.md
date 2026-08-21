@@ -12,6 +12,7 @@ Use this list for Discord server structure, webhook automation, testing-channel 
 
 ## Automation
 
+- [x] Add one persistent combined Best Ball Union Top 25 power-ranking card for BBU1 through BBU13 feeding channel `1540207093133344768`.
 - [ ] Use `scripts/post-discord-testing-channel-stack.ps1 -DryRun` locally before live posts when copy or counts change.
 - [ ] After the first successful live workflow run, verify `data/discord-message-state.json` is saved so future posts update in place.
 - [ ] Confirm Discord webhook permissions after any channel rename from `*-testing` to final public names.
