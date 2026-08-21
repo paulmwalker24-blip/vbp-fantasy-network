@@ -1,0 +1,73 @@
+name: Discord Redraft Bracket Trade Tracker
+
+on:
+  schedule:
+    - cron: "4,19,34,49 * * * *"
+  workflow_dispatch:
+    inputs:
+      include_historical:
+        description: "Post completed historical trades that are not already in state. Use carefully."
+        required: false
+        type: boolean
+        default: false
+      dry_run:
+        description: "Fetch and render trades without posting or changing state."
+        required: false
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    if: ${{ github.event_name == 'workflow_dispatch' || vars.DISCORD_TRADE_TRACKER_ENABLED == 'true' }}
+    runs-on: windows-latest
+    concurrency:
+      group: discord-redraft-bracket-trade-tracker
+      cancel-in-progress: false
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check for completed Redraft Bracket trades
+        shell: pwsh
+        env:
+          DISCORD_WEBHOOK_TRADE_TRACKER: ${{ secrets.DISCORD_WEBHOOK_TRADE_TRACKER }}
+        run: |
+          $args = @(
+            "-ExecutionPolicy", "Bypass",
+            "-File", ".\scripts\post-discord-trade-tracker.ps1",
+            "-ConfigPath", "data/discord-trade-tracker-config.json",
+            "-StatePath", "data/discord-trade-tracker-state.json"
+          )
+
+          if ("${{ github.event_name }}" -eq "workflow_dispatch" -and "${{ inputs.include_historical }}" -eq "true") {
+            $args += "-IncludeHistorical"
+          }
+
+          if ("${{ github.event_name }}" -eq "workflow_dispatch" -and "${{ inputs.dry_run }}" -eq "true") {
+            $args += "-DryRun"
+          }
+
+          powershell @args
+
+      - name: Save posted-trade state
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.dry_run == false }}
+        shell: pwsh
+        run: |
+          $statePath = "data/discord-trade-tracker-state.json"
+          if (git diff --quiet -- $statePath) {
+            Write-Host "Trade tracker state is already current."
+            exit 0
+          }
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- $statePath
+          git commit -m "Update Discord trade tracker state"
+          git pull --rebase origin main
+          git push

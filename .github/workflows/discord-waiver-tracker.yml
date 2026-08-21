@@ -1,0 +1,85 @@
+name: Discord Redraft Bracket Waiver Wire
+
+on:
+  schedule:
+    # 2 PM Central is 19:00 UTC during daylight time and 20:00 UTC during standard time.
+    - cron: "0 19,20 * * *"
+  workflow_dispatch:
+    inputs:
+      include_historical:
+        description: "Post historical completed waiver-wire moves not already in state. Use carefully."
+        required: false
+        type: boolean
+        default: false
+      dry_run:
+        description: "Fetch and render waiver-wire moves without posting or changing state."
+        required: false
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    if: ${{ github.event_name == 'workflow_dispatch' || vars.DISCORD_WAIVER_TRACKER_ENABLED == 'true' }}
+    runs-on: windows-latest
+    concurrency:
+      group: discord-redraft-bracket-waiver-tracker
+      cancel-in-progress: false
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check 2 PM Central run window
+        id: central_time
+        shell: pwsh
+        run: |
+          $timeZone = [TimeZoneInfo]::FindSystemTimeZoneById("Central Standard Time")
+          $centralNow = [TimeZoneInfo]::ConvertTime([DateTimeOffset]::UtcNow, $timeZone)
+          $isDue = $centralNow.Hour -eq 14
+          "is_due=$($isDue.ToString().ToLowerInvariant())" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+          Write-Host "Central time is $($centralNow.ToString('yyyy-MM-dd HH:mm zzz')); due=$isDue"
+
+      - name: Check Redraft Bracket waiver wire
+        if: ${{ github.event_name == 'workflow_dispatch' || steps.central_time.outputs.is_due == 'true' }}
+        shell: pwsh
+        env:
+          DISCORD_WEBHOOK_WAIVER_TRACKER: ${{ secrets.DISCORD_WEBHOOK_WAIVER_TRACKER }}
+        run: |
+          $args = @(
+            "-ExecutionPolicy", "Bypass",
+            "-File", ".\scripts\post-discord-waiver-tracker.ps1",
+            "-ConfigPath", "data/discord-waiver-tracker-config.json",
+            "-StatePath", "data/discord-waiver-tracker-state.json"
+          )
+
+          if ("${{ github.event_name }}" -eq "workflow_dispatch" -and "${{ inputs.include_historical }}" -eq "true") {
+            $args += "-IncludeHistorical"
+          }
+          if ("${{ github.event_name }}" -eq "workflow_dispatch" -and "${{ inputs.dry_run }}" -eq "true") {
+            $args += "-DryRun"
+          }
+          if ("${{ github.event_name }}" -eq "schedule") {
+            $args += "-ForceRefresh"
+          }
+          powershell @args
+
+      - name: Save posted waiver state
+        if: ${{ (github.event_name == 'schedule' && steps.central_time.outputs.is_due == 'true') || (github.event_name == 'workflow_dispatch' && inputs.dry_run == false) }}
+        shell: pwsh
+        run: |
+          $statePath = "data/discord-waiver-tracker-state.json"
+          if (git diff --quiet -- $statePath) {
+            Write-Host "Waiver tracker state is already current."
+            exit 0
+          }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- $statePath
+          git commit -m "Update Discord waiver tracker state"
+          git pull --rebase origin main
+          git push
