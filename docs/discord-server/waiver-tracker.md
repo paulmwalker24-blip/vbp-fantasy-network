@@ -1,6 +1,6 @@
 # Redraft Bracket Waiver Wire Tracker
 
-The Discord waiver tracker maintains one consolidated message per Sleeper week per division in channel `1540122228199268352`.
+The Discord waiver tracker maintains one compact network-wide message per Sleeper week in channel `1540122228199268352`.
 
 ## Scope
 
@@ -25,9 +25,9 @@ Other VBP leagues are not part of this feed.
 - the FAAB bid when Sleeper provides one, otherwise waiver priority or free-agent method
 - the manager or team, division, transaction timestamp, and direct Sleeper league link
 
-Pending and failed waiver claims are ignored. A division receives no post for a week until it has completed activity. Once created, that division's weekly summary is edited in place whenever another successful move appears. `data/discord-waiver-tracker-state.json` stores transaction IDs, group signatures, and the one Discord message ID for each week/division summary.
+Pending and failed waiver claims are ignored. The weekly recap shows the five largest successful FAAB bids and one short activity line for each division. Routine moves remain counted without making the message grow indefinitely. `data/discord-waiver-tracker-state.json` stores transaction IDs, a weekly signature, and the single Discord message ID for each network recap.
 
-The first live run is safe by default: existing moves are recorded without being posted unless `-IncludeHistorical` is supplied. `-MigrateIndividualMessages` converts older per-transaction webhook posts into weekly division summaries by editing one retained message and removing the superseded individual messages.
+The first live run is safe by default: existing moves are recorded without being posted unless `-IncludeHistorical` is supplied. `-MigrateIndividualMessages` also consolidates older per-transaction or per-division webhook posts by editing one retained weekly message and removing the superseded messages.
 
 ## Credentials
 
@@ -60,7 +60,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-waiver-tracker.p
 
 ## GitHub Actions
 
-`.github/workflows/discord-waiver-tracker.yml` checks every 15 minutes. Scheduled posting stays disabled until repository variable `DISCORD_WAIVER_TRACKER_ENABLED` is set to `true`.
+`.github/workflows/discord-waiver-tracker.yml` refreshes the current recap every day at 2:00 PM Central. It schedules both possible UTC hours and performs a Chicago-time check so daylight-saving changes do not move the local posting time. Scheduled posting stays disabled until repository variable `DISCORD_WAIVER_TRACKER_ENABLED` is set to `true`.
 
 The manual workflow defaults to dry-run mode. Recommended rollout:
 

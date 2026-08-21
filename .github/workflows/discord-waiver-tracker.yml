@@ -2,7 +2,8 @@ name: Discord Redraft Bracket Waiver Wire
 
 on:
   schedule:
-    - cron: "8,23,38,53 * * * *"
+    # 2 PM Central is 19:00 UTC during daylight time and 20:00 UTC during standard time.
+    - cron: "0 19,20 * * *"
   workflow_dispatch:
     inputs:
       include_historical:
@@ -33,7 +34,18 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Check 2 PM Central run window
+        id: central_time
+        shell: pwsh
+        run: |
+          $timeZone = [TimeZoneInfo]::FindSystemTimeZoneById("Central Standard Time")
+          $centralNow = [TimeZoneInfo]::ConvertTime([DateTimeOffset]::UtcNow, $timeZone)
+          $isDue = $centralNow.Hour -eq 14
+          "is_due=$($isDue.ToString().ToLowerInvariant())" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+          Write-Host "Central time is $($centralNow.ToString('yyyy-MM-dd HH:mm zzz')); due=$isDue"
+
       - name: Check Redraft Bracket waiver wire
+        if: ${{ github.event_name == 'workflow_dispatch' || steps.central_time.outputs.is_due == 'true' }}
         shell: pwsh
         env:
           DISCORD_WEBHOOK_WAIVER_TRACKER: ${{ secrets.DISCORD_WEBHOOK_WAIVER_TRACKER }}
@@ -51,10 +63,13 @@ jobs:
           if ("${{ github.event_name }}" -eq "workflow_dispatch" -and "${{ inputs.dry_run }}" -eq "true") {
             $args += "-DryRun"
           }
+          if ("${{ github.event_name }}" -eq "schedule") {
+            $args += "-ForceRefresh"
+          }
           powershell @args
 
       - name: Save posted waiver state
-        if: ${{ github.event_name != 'workflow_dispatch' || inputs.dry_run == false }}
+        if: ${{ (github.event_name == 'schedule' && steps.central_time.outputs.is_due == 'true') || (github.event_name == 'workflow_dispatch' && inputs.dry_run == false) }}
         shell: pwsh
         run: |
           $statePath = "data/discord-waiver-tracker-state.json"
