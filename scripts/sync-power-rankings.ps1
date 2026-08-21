@@ -9,6 +9,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+$script:ProjectionProfileCache = @{}
 
 function Get-TextValue {
   param($Value)
@@ -39,12 +40,23 @@ function Get-JsonFile {
 
 function Invoke-SleeperJson {
   param([string]$Uri)
-  $separator = if ($Uri.Contains("?")) { "&" } else { "?" }
-  $cacheBustedUri = "{0}{1}_={2}" -f $Uri, $separator, [DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds()
-  Invoke-RestMethod -Uri $cacheBustedUri -Headers @{
-    "User-Agent" = "vbp-power-rankings/1.0"
-    "Cache-Control" = "no-cache"
-    "Pragma" = "no-cache"
+  foreach ($attempt in 1..4) {
+    $separator = if ($Uri.Contains("?")) { "&" } else { "?" }
+    $cacheBustedUri = "{0}{1}_={2}" -f $Uri, $separator, [DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds()
+    try {
+      return Invoke-RestMethod -Uri $cacheBustedUri -Headers @{
+        "User-Agent" = "vbp-power-rankings/2.0"
+        "Cache-Control" = "no-cache"
+        "Pragma" = "no-cache"
+      }
+    } catch {
+      $statusCode = 0
+      if ($_.Exception.Response -and $_.Exception.Response.StatusCode) {
+        $statusCode = [int]$_.Exception.Response.StatusCode
+      }
+      if ($attempt -ge 4 -or ($statusCode -ne 429 -and $statusCode -lt 500)) { throw }
+      Start-Sleep -Seconds ([Math]::Min([Math]::Pow(2, $attempt), 30))
+    }
   }
 }
 
@@ -61,6 +73,84 @@ function Get-Player {
   param($PlayersById, [string]$PlayerId)
   if ([string]::IsNullOrWhiteSpace($PlayerId)) { return $null }
   return Get-ObjectProperty -Object $PlayersById -Name $PlayerId
+}
+
+function Test-ScoringDerivedFormat {
+  param([string]$Format)
+  return (Get-TextValue $Format).ToLowerInvariant() -in @("bestball", "gauntlet", "redraft", "bracket", "keeper", "chopped")
+}
+
+function Test-OffensiveProjectionKey {
+  param([string]$Name)
+  return $Name -match '^(pass_|rush_|rec_|bonus_pass_|bonus_rush_|bonus_rec_|fum$|fum_lost$|fum_rec$|fum_rec_td$|def_fum_td$)'
+}
+
+function Get-ProjectionPointProfile {
+  param(
+    [string]$PlayerId,
+    [object[]]$ProjectionWeeks,
+    $ScoringSettings
+  )
+
+  $scoringSignature = @($ScoringSettings.PSObject.Properties | Where-Object {
+    [Math]::Abs((Get-NumberValue $_.Value 0)) -gt 0.000001
+  } | Sort-Object Name | ForEach-Object { "{0}={1}" -f $_.Name, (Get-NumberValue $_.Value 0) }) -join ";"
+  $cacheKey = "${scoringSignature}|${PlayerId}"
+  if ($script:ProjectionProfileCache.ContainsKey($cacheKey)) {
+    return $script:ProjectionProfileCache[$cacheKey]
+  }
+
+  $weeklyPoints = New-Object System.Collections.Generic.List[double]
+  $coveredWeeks = 0
+  foreach ($weekMap in $ProjectionWeeks) {
+    $projection = Get-ObjectProperty -Object $weekMap -Name $PlayerId
+    $points = 0.0
+    $hasProjection = $false
+    if ($projection) {
+      foreach ($setting in $ScoringSettings.PSObject.Properties) {
+        $multiplier = Get-NumberValue $setting.Value 0
+        if ([Math]::Abs($multiplier) -lt 0.000001) { continue }
+        $statValue = Get-ObjectProperty -Object $projection -Name $setting.Name
+        if ($null -eq $statValue) { continue }
+        $hasProjection = $true
+        $points += (Get-NumberValue $statValue 0) * $multiplier
+      }
+      if ((Get-NumberValue (Get-ObjectProperty -Object $projection -Name "gp") 0) -gt 0) {
+        $hasProjection = $true
+      }
+    }
+    if ($hasProjection) { $coveredWeeks++ }
+    $weeklyPoints.Add([Math]::Max(0, [Math]::Round($points, 3))) | Out-Null
+  }
+
+  $seasonTotal = Get-NumberValue (($weeklyPoints | Measure-Object -Sum).Sum) 0
+  $weeklyAverage = if ($ProjectionWeeks.Count -gt 0) { $seasonTotal / $ProjectionWeeks.Count } else { 0 }
+  $ceilingWeeks = @($weeklyPoints | Where-Object { $_ -gt 0 } | Sort-Object -Descending | Select-Object -First 3)
+  $weeklyCeiling = if ($ceilingWeeks.Count -gt 0) { Get-NumberValue (($ceilingWeeks | Measure-Object -Average).Average) 0 } else { 0 }
+
+  $profile = [pscustomobject]@{
+    seasonTotal = [Math]::Round($seasonTotal, 2)
+    weeklyAverage = [Math]::Round($weeklyAverage, 3)
+    weeklyCeiling = [Math]::Round($weeklyCeiling, 3)
+    coveredWeeks = $coveredWeeks
+  }
+  $script:ProjectionProfileCache[$cacheKey] = $profile
+  return $profile
+}
+
+function Convert-ProjectionToPlayerValue {
+  param(
+    $ProjectionProfile,
+    [double]$InjuryPenalty,
+    [double]$ManualAdjustment
+  )
+
+  $averagePoints = Get-NumberValue $ProjectionProfile.weeklyAverage 0
+  $ceilingPoints = Get-NumberValue $ProjectionProfile.weeklyCeiling 0
+  $averageGrade = [Math]::Min(99, [Math]::Max(15, 30 + ($averagePoints * 3.50)))
+  $ceilingGrade = [Math]::Min(99, [Math]::Max(15, 28 + ($ceilingPoints * 3.35)))
+  $grade = ($averageGrade * 0.72) + ($ceilingGrade * 0.28) - ($InjuryPenalty * 0.35) + $ManualAdjustment
+  return [Math]::Min(99, [Math]::Max(0, $grade))
 }
 
 function Get-PrimaryPosition {
@@ -333,7 +423,9 @@ function Get-PlayerValue {
     [string]$Format,
     $Adjustment,
     $ScoringProfile,
-    $LineupArchitecture
+    $LineupArchitecture,
+    [object[]]$ProjectionWeeks = @(),
+    $ScoringSettings = $null
   )
 
   $position = Get-PrimaryPosition $Player
@@ -345,10 +437,26 @@ function Get-PlayerValue {
   $manual = if ($Adjustment) { Get-NumberValue (Get-ObjectProperty -Object $Adjustment -Name "valueAdjustment") 0 } else { 0 }
   $vbpAdjustment = Get-VbpScoringAdjustment -Position $position -ScoringProfile $ScoringProfile -LineupArchitecture $LineupArchitecture
 
+  $projectionProfile = if ($ProjectionWeeks.Count -gt 0 -and $ScoringSettings) {
+    Get-ProjectionPointProfile -PlayerId $PlayerId -ProjectionWeeks $ProjectionWeeks -ScoringSettings $ScoringSettings
+  } else {
+    [pscustomobject]@{ seasonTotal = 0; weeklyAverage = 0; weeklyCeiling = 0; coveredWeeks = 0 }
+  }
+  $projectionValue = Convert-ProjectionToPlayerValue -ProjectionProfile $projectionProfile -InjuryPenalty $injuryPenalty -ManualAdjustment $manual
+
   $value = ($base * 0.20) + ($market * 0.42) + ($age * 0.22) + ($depth * 0.16) + $vbpAdjustment - $injuryPenalty + $manual
   $value = [Math]::Min(99, [Math]::Max(0, $value))
   $seasonValue = ($base * 0.18) + ($market * 0.52) + ($depth * 0.30) + $vbpAdjustment - $injuryPenalty + $manual
   $seasonValue = [Math]::Min(99, [Math]::Max(0, $seasonValue))
+
+  if (Test-ScoringDerivedFormat -Format $Format) {
+    $value = $projectionValue
+    $seasonValue = $projectionValue
+  } elseif ($Format -in @("dynasty", "dynastybracket")) {
+    # Dynasty asset value remains long-term, while its current-season board is
+    # calculated from the same full scoring-derived projection standard.
+    $seasonValue = $projectionValue
+  }
 
   [pscustomobject]@{
     playerId = $PlayerId
@@ -360,6 +468,10 @@ function Get-PlayerValue {
     searchRank = Get-NumberValue $Player.search_rank 0
     value = [Math]::Round($value, 1)
     seasonValue = [Math]::Round($seasonValue, 1)
+    projectedSeasonPoints = Get-NumberValue $projectionProfile.seasonTotal 0
+    projectedWeeklyPoints = Get-NumberValue $projectionProfile.weeklyAverage 0
+    projectedWeeklyCeiling = Get-NumberValue $projectionProfile.weeklyCeiling 0
+    projectionWeeks = [int](Get-NumberValue $projectionProfile.coveredWeeks 0)
     vbpAdjustment = $vbpAdjustment
     injuryPenalty = [Math]::Round($injuryPenalty, 1)
     note = if ($Adjustment) { Get-TextValue (Get-ObjectProperty -Object $Adjustment -Name "note") } else { "" }
@@ -892,7 +1004,8 @@ function New-TeamRanking {
     $DraftCapitalByRosterId,
     $Overrides,
     $ScoringProfile,
-    $LineupArchitecture
+    $LineupArchitecture,
+    [object[]]$ProjectionWeeks = @()
   )
 
   $leagueRecordId = Get-TextValue $LeagueRecord.id
@@ -906,10 +1019,16 @@ function New-TeamRanking {
     $player = Get-Player -PlayersById $PlayersById -PlayerId $playerId
     if ($null -eq $player) { continue }
     $adjustment = Get-ObjectProperty -Object $playerAdjustments -Name $playerId
-    $playerEntries += Get-PlayerValue -Player $player -PlayerId $playerId -Format $format -Adjustment $adjustment -ScoringProfile $ScoringProfile -LineupArchitecture $LineupArchitecture
+    $playerEntries += Get-PlayerValue -Player $player -PlayerId $playerId -Format $format -Adjustment $adjustment -ScoringProfile $ScoringProfile -LineupArchitecture $LineupArchitecture -ProjectionWeeks $ProjectionWeeks -ScoringSettings $LiveLeague.scoring_settings
   }
 
   $slots = Get-LineupSlots -League $LiveLeague
+  if (Test-ScoringDerivedFormat -Format $format) {
+    $projectedPlayers = @($playerEntries | Where-Object { (Get-NumberValue $_.projectionWeeks 0) -gt 0 -and (Get-NumberValue $_.projectedWeeklyPoints 0) -gt 0 })
+    if ($projectedPlayers.Count -lt $slots.Count) {
+      throw "Roster $rosterId in $leagueRecordId has only $($projectedPlayers.Count) positively projected players for $($slots.Count) required starters. Scoring-derived rankings were not published."
+    }
+  }
   $optimized = Get-OptimizedLineup -Players $playerEntries -Slots $slots
   $starters = @($optimized.starters)
   $bench = @($optimized.bench)
@@ -1273,6 +1392,45 @@ try {
   Write-Warning ("Unable to load Sleeper NFL state for snapshot labels: {0}" -f $_.Exception.Message)
 }
 
+$projectionSeason = Get-TextValue (Get-ObjectProperty -Object $nflState -Name "season")
+if ([string]::IsNullOrWhiteSpace($projectionSeason)) {
+  $projectionSeason = Get-TextValue (Get-ObjectProperty -Object $selectedLeagues[0] -Name "sleeperSeason")
+}
+if ($projectionSeason -notmatch '^\d{4}$') {
+  throw "Could not resolve a four-digit season for scoring-derived projections."
+}
+
+Write-Host ("Loading Sleeper {0} weekly stat projections for scoring-derived rankings..." -f $projectionSeason)
+$projectionWeeks = New-Object System.Collections.Generic.List[object]
+$projectionSupportedKeys = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
+$projectionQuery = "season_type=regular&position%5B%5D=QB&position%5B%5D=RB&position%5B%5D=WR&position%5B%5D=TE"
+foreach ($projectionWeek in 1..17) {
+  $projectionUri = "https://api.sleeper.app/v1/projections/nfl/regular/{0}/{1}?{2}" -f $projectionSeason, $projectionWeek, $projectionQuery
+  $weekMap = Invoke-SleeperJson -Uri $projectionUri
+  $weekProperties = @($weekMap.PSObject.Properties)
+  $usableProjectionCount = 0
+  foreach ($playerProjection in $weekProperties) {
+    $hasUsableProjection = (Get-NumberValue (Get-ObjectProperty -Object $playerProjection.Value -Name "gp") 0) -gt 0 -or
+      $null -ne (Get-ObjectProperty -Object $playerProjection.Value -Name "pass_yd") -or
+      $null -ne (Get-ObjectProperty -Object $playerProjection.Value -Name "rush_yd") -or
+      $null -ne (Get-ObjectProperty -Object $playerProjection.Value -Name "rec_yd")
+    if (-not $hasUsableProjection) { continue }
+    $usableProjectionCount++
+    if ($projectionWeek -eq 1) {
+      foreach ($statProperty in $playerProjection.Value.PSObject.Properties) {
+        [void]$projectionSupportedKeys.Add($statProperty.Name)
+      }
+    }
+    if ($usableProjectionCount -ge 300) { break }
+  }
+  if ($usableProjectionCount -lt 300) {
+    throw "Sleeper projection Week $projectionWeek returned only $usableProjectionCount usable offensive players. Existing published rankings were preserved."
+  }
+  $projectionWeeks.Add($weekMap) | Out-Null
+}
+if ($projectionWeeks.Count -ne 17) { throw "Scoring-derived rankings require all 17 weekly projection maps." }
+$projectionWeekMaps = $projectionWeeks.ToArray()
+
 $generatedLeagues = @()
 $warnings = New-Object System.Collections.Generic.List[string]
 
@@ -1301,6 +1459,27 @@ foreach ($leagueRecord in $selectedLeagues) {
   $holdReason = Get-TextValue $draftReadiness.reason
   $scoringProfile = Get-ScoringProfile -League $liveLeague
   $lineupArchitecture = Get-LineupArchitecture -League $liveLeague
+  $nonzeroOffensiveScoringKeys = @($liveLeague.scoring_settings.PSObject.Properties | Where-Object {
+    [Math]::Abs((Get-NumberValue $_.Value 0)) -gt 0.000001 -and (Test-OffensiveProjectionKey -Name $_.Name)
+  } | ForEach-Object { $_.Name } | Sort-Object -Unique)
+  $projectionAppliedKeys = @($nonzeroOffensiveScoringKeys | Where-Object { $projectionSupportedKeys.Contains($_) })
+  $projectionZeroAssumptionKeys = @($nonzeroOffensiveScoringKeys | Where-Object { -not $projectionSupportedKeys.Contains($_) })
+  $requiredProjectionKeys = @("pass_yd", "pass_td", "pass_int", "rush_yd", "rush_td", "rec_yd", "rec_td", "bonus_rec_rb", "bonus_rec_wr", "bonus_rec_te")
+  $missingRequiredKeys = @($requiredProjectionKeys | Where-Object {
+    [Math]::Abs((Get-NumberValue (Get-ObjectProperty -Object $liveLeague.scoring_settings -Name $_) 0)) -gt 0.000001 -and
+      -not $projectionSupportedKeys.Contains($_)
+  })
+  if ($missingRequiredKeys.Count -gt 0) {
+    throw "League '$leagueRecordId' cannot meet the scoring-derived standard because Sleeper projections are missing required keys: $($missingRequiredKeys -join ', ')."
+  }
+  $scoringProfile | Add-Member -NotePropertyName projectionModel -NotePropertyValue ([pscustomobject]@{
+    version = "2.0-scoring-derived"
+    source = "Sleeper weekly stat projections, Weeks 1-17"
+    formula = "For each player and week, sum projected_stat multiplied by the matching live Sleeper scoring_settings coefficient."
+    appliedScoringKeys = $projectionAppliedKeys
+    zeroAssumptionKeys = $projectionZeroAssumptionKeys
+    note = "Nonzero offensive categories without a projection field are explicitly treated as zero, never silently replaced with generic PPR points."
+  }) -Force
   $rosterSync = [pscustomobject]@{
     source = $rosterSourceUrl
     refreshedAt = (Get-Date).ToString("o")
@@ -1341,20 +1520,48 @@ foreach ($leagueRecord in $selectedLeagues) {
   $draftCapitalByRosterId = Get-DraftCapitalByRosterId -Drafts $drafts
   $rankings = @()
   $allPlayerEntries = @()
-  foreach ($roster in ($rosters | Where-Object { -not [string]::IsNullOrWhiteSpace((Get-TextValue $_.owner_id)) })) {
-    $ownerId = Get-TextValue $roster.owner_id
-    $user = if ($usersById.ContainsKey($ownerId)) { $usersById[$ownerId] } else { $null }
-    $teamName = Get-TeamName -User $user -Roster $roster
-    $rankings += New-TeamRanking -LeagueRecord $leagueRecord -LiveLeague $liveLeague -Roster $roster -User $user -PlayersById $playersById -DraftCapitalByRosterId $draftCapitalByRosterId -Overrides $overrides -ScoringProfile $scoringProfile -LineupArchitecture $lineupArchitecture
-    foreach ($playerId in (Convert-ToArray $roster.players | ForEach-Object { Get-TextValue $_ } | Where-Object { $_ })) {
-      $player = Get-Player -PlayersById $playersById -PlayerId $playerId
-      if ($null -eq $player) { continue }
-      $adjustment = Get-ObjectProperty -Object $overrides.playerAdjustments -Name $playerId
-      $entry = Get-PlayerValue -Player $player -PlayerId $playerId -Format (Get-TextValue $leagueRecord.format) -Adjustment $adjustment -ScoringProfile $scoringProfile -LineupArchitecture $lineupArchitecture
-      $entry | Add-Member -NotePropertyName rosterId -NotePropertyValue ([int](Get-NumberValue $roster.roster_id 0)) -Force
-      $entry | Add-Member -NotePropertyName manager -NotePropertyValue $teamName -Force
-      $allPlayerEntries += $entry
+  $rankingFailure = ""
+  try {
+    foreach ($roster in ($rosters | Where-Object { -not [string]::IsNullOrWhiteSpace((Get-TextValue $_.owner_id)) })) {
+      $ownerId = Get-TextValue $roster.owner_id
+      $user = if ($usersById.ContainsKey($ownerId)) { $usersById[$ownerId] } else { $null }
+      $teamName = Get-TeamName -User $user -Roster $roster
+      $rankings += New-TeamRanking -LeagueRecord $leagueRecord -LiveLeague $liveLeague -Roster $roster -User $user -PlayersById $playersById -DraftCapitalByRosterId $draftCapitalByRosterId -Overrides $overrides -ScoringProfile $scoringProfile -LineupArchitecture $lineupArchitecture -ProjectionWeeks $projectionWeekMaps
+      foreach ($playerId in (Convert-ToArray $roster.players | ForEach-Object { Get-TextValue $_ } | Where-Object { $_ })) {
+        $player = Get-Player -PlayersById $playersById -PlayerId $playerId
+        if ($null -eq $player) { continue }
+        $adjustment = Get-ObjectProperty -Object $overrides.playerAdjustments -Name $playerId
+        $entry = Get-PlayerValue -Player $player -PlayerId $playerId -Format (Get-TextValue $leagueRecord.format) -Adjustment $adjustment -ScoringProfile $scoringProfile -LineupArchitecture $lineupArchitecture -ProjectionWeeks $projectionWeekMaps -ScoringSettings $liveLeague.scoring_settings
+        $entry | Add-Member -NotePropertyName rosterId -NotePropertyValue ([int](Get-NumberValue $roster.roster_id 0)) -Force
+        $entry | Add-Member -NotePropertyName manager -NotePropertyValue $teamName -Force
+        $allPlayerEntries += $entry
+      }
     }
+  } catch {
+    $rankingFailure = $_.Exception.Message
+  }
+
+  if ($rankingFailure) {
+    $warnings.Add(("SKIP {0}: {1}" -f $leagueRecordId, $rankingFailure)) | Out-Null
+    $generatedLeagues += [pscustomobject]@{
+      leagueRecordId = $leagueRecordId
+      sleeperLeagueId = $sleeperLeagueId
+      name = Get-TextValue $leagueRecord.name
+      format = Get-TextValue $leagueRecord.format
+      publish = $false
+      holdReason = $rankingFailure
+      draftStatuses = $draftStatuses
+      draftReadiness = $draftReadiness
+      rosterSync = $rosterSync
+      rosterPositions = @(Convert-ToArray $liveLeague.roster_positions)
+      scoringProfile = $scoringProfile
+      lineupArchitecture = $lineupArchitecture
+      formatProfile = $formatProfile
+      positionalRankings = [pscustomobject]@{}
+      currentSeasonRankings = @()
+      rankings = @()
+    }
+    continue
   }
 
   if ((Get-TextValue $leagueRecord.format) -eq "dynasty") {
@@ -1406,6 +1613,7 @@ foreach ($leagueRecord in $selectedLeagues) {
 
 $output = [pscustomobject]@{
   generatedAt = (Get-Date).ToString("o")
+  modelVersion = "2.0-scoring-derived"
   snapshot = [pscustomobject]@{
     season = Get-TextValue (Get-ObjectProperty -Object $nflState -Name "season")
     seasonType = Get-TextValue (Get-ObjectProperty -Object $nflState -Name "season_type")
@@ -1416,16 +1624,18 @@ $output = [pscustomobject]@{
       "Current snapshot"
     }
   }
-  source = "Sleeper league scoring settings, roster, user, draft, draft-pick, and player metadata endpoints plus data/power-ranking-overrides.json."
+  source = "Sleeper weekly stat projections, live league scoring settings, roster, user, draft, draft-pick, and player metadata endpoints plus data/power-ranking-overrides.json."
   methodology = [pscustomobject]@{
-    summary = "The board compares each roster within its league using current Sleeper data and the league's scoring rules. Scores are for relative team strength, not projected standings."
+    summary = "Current-season player values are calculated by applying every matching live Sleeper scoring coefficient to Sleeper's Week 1-17 stat projections. Team scores remain comparative roster-strength grades, not predicted records."
     components = @(
-      "League settings: active Sleeper scoring and starter requirements.",
-      "Roster quality: lineup strength, useful depth, and quarterback stability.",
+      "Scoring-derived projections: projected player stats multiplied by the matching live Sleeper scoring settings.",
+      "League settings: exact starter requirements and positional eligibility from Sleeper.",
+      "Roster quality: optimized lineup strength, best-ball ceiling, locked depth, and quarterback stability.",
       "Dynasty outlook: age curve and future draft capital.",
       "Availability: current injury and player-status information.",
       "Position boards: each owner's strength at QB, RB, WR, and TE.",
-      "Score meaning: relative roster grade, not a season prediction."
+      "Unsupported projected stat categories: explicitly treated as zero and reported in each league's projection model metadata.",
+      "Score meaning: relative roster grade derived from custom-scoring projections, not a predicted record."
     )
   }
   warnings = @($warnings)

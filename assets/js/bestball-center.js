@@ -645,7 +645,7 @@ function renderPowerRankings(entries = []) {
     scoreBadge.textContent = `${entry.leagueId} | ${score.toFixed(1)}`;
 
     const summary = document.createElement("p");
-    summary.textContent = "Draft-build roster grade for the completed Best Ball Union rooms.";
+    summary.textContent = "Custom-scoring projection grade for the completed Best Ball Union rooms.";
 
     header.append(name, scoreBadge);
     body.append(header, summary);
