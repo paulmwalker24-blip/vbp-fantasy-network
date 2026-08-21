@@ -447,14 +447,14 @@ $embed = @{
   title = "Best Ball Union - Power Rankings"
   url = $websiteUrl
   description = if ($rankingsReady) {
-    "Combined Top 25 across BBU1-BBU13. Current locked-roster strength snapshot: $snapshotLabel."
+    "Combined Top 25 across BBU1-BBU13. Custom-scoring projection snapshot: $snapshotLabel."
   } else {
     "The combined Top 25 will activate only after all thirteen BBU room drafts are complete. Partial and sample rankings are never published."
   }
   color = if ($rankingsReady) { 0xC0392B } else { 0x5865F2 }
   fields = @($fields)
   footer = @{ text = if ($rankingsReady) {
-    "Scores are locked-roster strength grades, not projected standings. Updated every Tuesday at 1:45 AM Central."
+    "Grades use live BBU scoring applied to Sleeper stat projections; they are not projected standings. Updated Tuesdays at 1:45 AM Central."
   } else {
     "Room drafts are still in progress. Checked every Tuesday at 1:45 AM Central."
   } }

@@ -7,7 +7,8 @@ The Best Ball Union power-ranking channel uses one persistent Discord message co
 - A fresh temporary ranking snapshot is generated from Sleeper before every publish.
 - All 13 completed rooms contribute 10 teams, producing a 130-team comparison pool.
 - Only ranks 1-25 are displayed, in five compact five-team fields.
-- Scores are locked-roster strength grades out of 100, not projected standings.
+- Scores are custom-scoring, projection-derived locked-roster grades out of 100, not projected standings.
+- Every matching Sleeper stat projection is multiplied by the live BBU scoring coefficient before lineup, depth, ceiling, and injury grading.
 - The same Discord message is edited on later refreshes.
 - Incomplete or malformed ranking data fails closed and preserves the last valid Top 25.
 
