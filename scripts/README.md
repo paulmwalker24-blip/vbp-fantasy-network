@@ -320,6 +320,18 @@ $env:DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/..."
 powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-format-guide.ps1 -FormatKey redraft
 ```
 
+## `post-discord-division-leaders.ps1`
+
+Maintains one persistent Discord card showing the current first-place team, record, and points for in BBU1 through BBU13. It reads live Sleeper standings, ranks each division by record percentage and then points for, and does not name an arbitrary leader while every team is still 0-0.
+
+Preview without posting:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\post-discord-division-leaders.ps1 -DryRun
+```
+
+Scheduled automation lives in `.github/workflows/discord-division-leaders.yml`. Configure `DISCORD_WEBHOOK_DIVISION_LEADERS` and set `DISCORD_DIVISION_LEADERS_ENABLED=true` before enabling live daily refreshes.
+
 ## `post-discord-testing-channel-stack.ps1`
 
 Posts one consolidated format/openings status board into every Discord `League Openings` testing channel, using channel-specific webhook URLs from `data/private/discord-webhooks.json`.

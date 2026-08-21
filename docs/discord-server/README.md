@@ -10,3 +10,7 @@ Start with:
 - `discord-audit-template.md`
 
 Fill in as much as you can. Rough notes are fine.
+
+Live automation references:
+
+- `division-leaders.md` documents the persistent Best Ball Union division-leaders post.

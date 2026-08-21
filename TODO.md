@@ -54,6 +54,7 @@
 
 ### Automation Recommendations
 
+- [x] Add a persistent daily Discord card for the current BBU1-BBU13 division leaders with record and points for.
 - [x] Add timezone-aware Tuesday 1:00 AM Discord automation for the official combined Redraft Bracket standings and projected playoff cut line.
 - [x] Add a reusable 100 Yard Rush helper for league draft-order races using the VBP defaults of 3-8 yards, 2-6 seconds, Fast speed, and no luck.
 - [x] Upgrade generated power rankings to verify live league scoring settings and publish owner-by-position boards without public player breakdowns.
