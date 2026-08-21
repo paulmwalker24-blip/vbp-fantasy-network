@@ -1,0 +1,70 @@
+name: Discord Redraft Bracket Waiver Wire
+
+on:
+  schedule:
+    - cron: "8,23,38,53 * * * *"
+  workflow_dispatch:
+    inputs:
+      include_historical:
+        description: "Post historical completed waiver-wire moves not already in state. Use carefully."
+        required: false
+        type: boolean
+        default: false
+      dry_run:
+        description: "Fetch and render waiver-wire moves without posting or changing state."
+        required: false
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    if: ${{ github.event_name == 'workflow_dispatch' || vars.DISCORD_WAIVER_TRACKER_ENABLED == 'true' }}
+    runs-on: windows-latest
+    concurrency:
+      group: discord-redraft-bracket-waiver-tracker
+      cancel-in-progress: false
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check Redraft Bracket waiver wire
+        shell: pwsh
+        env:
+          DISCORD_WEBHOOK_WAIVER_TRACKER: ${{ secrets.DISCORD_WEBHOOK_WAIVER_TRACKER }}
+        run: |
+          $args = @(
+            "-ExecutionPolicy", "Bypass",
+            "-File", ".\scripts\post-discord-waiver-tracker.ps1",
+            "-ConfigPath", "data/discord-waiver-tracker-config.json",
+            "-StatePath", "data/discord-waiver-tracker-state.json"
+          )
+
+          if ("${{ github.event_name }}" -eq "workflow_dispatch" -and "${{ inputs.include_historical }}" -eq "true") {
+            $args += "-IncludeHistorical"
+          }
+          if ("${{ github.event_name }}" -eq "workflow_dispatch" -and "${{ inputs.dry_run }}" -eq "true") {
+            $args += "-DryRun"
+          }
+          powershell @args
+
+      - name: Save posted waiver state
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.dry_run == false }}
+        shell: pwsh
+        run: |
+          $statePath = "data/discord-waiver-tracker-state.json"
+          if (git diff --quiet -- $statePath) {
+            Write-Host "Waiver tracker state is already current."
+            exit 0
+          }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- $statePath
+          git commit -m "Update Discord waiver tracker state"
+          git pull --rebase origin main
+          git push

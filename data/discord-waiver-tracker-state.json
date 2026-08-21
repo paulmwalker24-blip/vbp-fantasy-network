@@ -1,0 +1,169 @@
+{
+    "version":  1,
+    "channelId":  "1540122228199268352",
+    "webhookId":  "1540126219784163358",
+    "initialized":  true,
+    "transactions":  {
+                         "1395655619989487616":  {
+                                                     "leagueRecordId":  "RDB4",
+                                                     "sleeperLeagueId":  "1338005113482022912",
+                                                     "transactionId":  "1395655619989487616",
+                                                     "transactionType":  "free_agent",
+                                                     "created":  1787112739134,
+                                                     "messageId":  "1540176214440935525",
+                                                     "disposition":  "posted",
+                                                     "recordedAt":  "2026-08-21T01:50:25.0876454+00:00"
+                                                 },
+                         "1395712443136634880":  {
+                                                     "leagueRecordId":  "RDB4",
+                                                     "sleeperLeagueId":  "1338005113482022912",
+                                                     "transactionId":  "1395712443136634880",
+                                                     "transactionType":  "waiver",
+                                                     "created":  1787126286828,
+                                                     "messageId":  "1540176215804219493",
+                                                     "disposition":  "posted",
+                                                     "recordedAt":  "2026-08-21T01:50:25.3518605+00:00"
+                                                 },
+                         "1395848645961605120":  {
+                                                     "leagueRecordId":  "RDB5",
+                                                     "sleeperLeagueId":  "1338005158071660544",
+                                                     "transactionId":  "1395848645961605120",
+                                                     "transactionType":  "free_agent",
+                                                     "created":  1787158760112,
+                                                     "messageId":  "1540176217213501623",
+                                                     "disposition":  "posted",
+                                                     "recordedAt":  "2026-08-21T01:50:25.8640538+00:00"
+                                                 },
+                         "1395849395546619907":  {
+                                                     "leagueRecordId":  "RDB5",
+                                                     "sleeperLeagueId":  "1338005158071660544",
+                                                     "transactionId":  "1395849395546619907",
+                                                     "transactionType":  "waiver",
+                                                     "created":  1787158938827,
+                                                     "messageId":  "1540176218735771790",
+                                                     "disposition":  "posted",
+                                                     "recordedAt":  "2026-08-21T01:50:26.0578011+00:00"
+                                                 },
+                         "1395850893903007744":  {
+                                                     "leagueRecordId":  "RDB4",
+                                                     "sleeperLeagueId":  "1338005113482022912",
+                                                     "transactionId":  "1395850893903007744",
+                                                     "transactionType":  "waiver",
+                                                     "created":  1787159296063,
+                                                     "messageId":  "1540176219734024276",
+                                                     "disposition":  "posted",
+                                                     "recordedAt":  "2026-08-21T01:50:26.3048168+00:00"
+                                                 },
+                         "1395861687269068800":  {
+                                                     "leagueRecordId":  "RDB5",
+                                                     "sleeperLeagueId":  "1338005158071660544",
+                                                     "transactionId":  "1395861687269068800",
+                                                     "transactionType":  "waiver",
+                                                     "created":  1787161869403,
+                                                     "messageId":  "1540176220770271253",
+                                                     "disposition":  "posted",
+                                                     "recordedAt":  "2026-08-21T01:50:26.5227651+00:00"
+                                                 },
+                         "1395885550375821312":  {
+                                                     "leagueRecordId":  "RDB4",
+                                                     "sleeperLeagueId":  "1338005113482022912",
+                                                     "transactionId":  "1395885550375821312",
+                                                     "transactionType":  "waiver",
+                                                     "created":  1787167558811,
+                                                     "messageId":  "1540176221634170912",
+                                                     "disposition":  "posted",
+                                                     "recordedAt":  "2026-08-21T01:50:26.8358570+00:00"
+                                                 },
+                         "1395889399689936896":  {
+                                                     "leagueRecordId":  "RDB5",
+                                                     "sleeperLeagueId":  "1338005158071660544",
+                                                     "transactionId":  "1395889399689936896",
+                                                     "transactionType":  "waiver",
+                                                     "created":  1787168476559,
+                                                     "messageId":  "1540176223064432643",
+                                                     "disposition":  "posted",
+                                                     "recordedAt":  "2026-08-21T01:50:27.1504811+00:00"
+                                                 },
+                         "1395898008062681088":  {
+                                                     "leagueRecordId":  "RDB1",
+                                                     "sleeperLeagueId":  "1338004997836640256",
+                                                     "transactionId":  "1395898008062681088",
+                                                     "transactionType":  "waiver",
+                                                     "created":  1787170528955,
+                                                     "messageId":  "1540176224285106298",
+                                                     "disposition":  "posted",
+                                                     "recordedAt":  "2026-08-21T01:50:27.3924389+00:00"
+                                                 },
+                         "1395898044561502208":  {
+                                                     "leagueRecordId":  "RDB1",
+                                                     "sleeperLeagueId":  "1338004997836640256",
+                                                     "transactionId":  "1395898044561502208",
+                                                     "transactionType":  "waiver",
+                                                     "created":  1787170537657,
+                                                     "messageId":  "1540176225287282740",
+                                                     "disposition":  "posted",
+                                                     "recordedAt":  "2026-08-21T01:50:27.6757555+00:00"
+                                                 },
+                         "1395898486041374720":  {
+                                                     "leagueRecordId":  "RDB1",
+                                                     "sleeperLeagueId":  "1338004997836640256",
+                                                     "transactionId":  "1395898486041374720",
+                                                     "transactionType":  "waiver",
+                                                     "created":  1787170642914,
+                                                     "messageId":  "1540176226457755649",
+                                                     "disposition":  "posted",
+                                                     "recordedAt":  "2026-08-21T01:50:27.8893765+00:00"
+                                                 },
+                         "1395930463024988160":  {
+                                                     "leagueRecordId":  "RDB1",
+                                                     "sleeperLeagueId":  "1338004997836640256",
+                                                     "transactionId":  "1395930463024988160",
+                                                     "transactionType":  "waiver",
+                                                     "created":  1787178266821,
+                                                     "messageId":  "1540176227783020595",
+                                                     "disposition":  "posted",
+                                                     "recordedAt":  "2026-08-21T01:50:28.3133576+00:00"
+                                                 },
+                         "1395951294123905024":  {
+                                                     "leagueRecordId":  "RDB4",
+                                                     "sleeperLeagueId":  "1338005113482022912",
+                                                     "transactionId":  "1395951294123905024",
+                                                     "transactionType":  "waiver",
+                                                     "created":  1787183233341,
+                                                     "messageId":  "1540176229200560139",
+                                                     "disposition":  "posted",
+                                                     "recordedAt":  "2026-08-21T01:50:28.5700117+00:00"
+                                                 },
+                         "1396025250797342720":  {
+                                                     "leagueRecordId":  "RDB1",
+                                                     "sleeperLeagueId":  "1338004997836640256",
+                                                     "transactionId":  "1396025250797342720",
+                                                     "transactionType":  "waiver",
+                                                     "created":  1787200865986,
+                                                     "messageId":  "1540176229892759715",
+                                                     "disposition":  "posted",
+                                                     "recordedAt":  "2026-08-21T01:50:28.8514662+00:00"
+                                                 },
+                         "1396120847386710016":  {
+                                                     "leagueRecordId":  "RDB4",
+                                                     "sleeperLeagueId":  "1338005113482022912",
+                                                     "transactionId":  "1396120847386710016",
+                                                     "transactionType":  "waiver",
+                                                     "created":  1787223657990,
+                                                     "messageId":  "1540176240625852557",
+                                                     "disposition":  "posted",
+                                                     "recordedAt":  "2026-08-21T01:50:31.3879941+00:00"
+                                                 },
+                         "1396125267574947840":  {
+                                                     "leagueRecordId":  "RDB5",
+                                                     "sleeperLeagueId":  "1338005158071660544",
+                                                     "transactionId":  "1396125267574947840",
+                                                     "transactionType":  "waiver",
+                                                     "created":  1787224711845,
+                                                     "messageId":  "1540176374873202752",
+                                                     "disposition":  "posted",
+                                                     "recordedAt":  "2026-08-21T01:51:03.4391428+00:00"
+                                                 }
+                     },
+    "updatedAt":  "2026-08-21T01:51:03.4473945+00:00"
+}
