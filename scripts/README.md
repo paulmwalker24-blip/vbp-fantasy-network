@@ -332,6 +332,18 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\post-discord-divis
 
 Scheduled automation lives in `.github/workflows/discord-division-leaders.yml`. Configure `DISCORD_WEBHOOK_DIVISION_LEADERS` and set `DISCORD_DIVISION_LEADERS_ENABLED=true` before enabling live daily refreshes.
 
+## `post-discord-bbu-high-scorer.ps1`
+
+Maintains one persistent Discord card with the highest single-week score across BBU1 through BBU13. The card keeps completed-week history in one place, displays exact ties together, and shows a preseason notice until Week 1 scoring is complete.
+
+Preview without posting:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\post-discord-bbu-high-scorer.ps1 -DryRun
+```
+
+Scheduled automation lives in `.github/workflows/discord-bbu-high-scorer.yml`. Configure `DISCORD_WEBHOOK_BBU_HIGH_SCORER` and set `DISCORD_BBU_HIGH_SCORER_ENABLED=true` before enabling the Tuesday 2:20 PM Central refresh.
+
 ## `post-discord-testing-channel-stack.ps1`
 
 Posts one consolidated format/openings status board into every Discord `League Openings` testing channel, using channel-specific webhook URLs from `data/private/discord-webhooks.json`.
