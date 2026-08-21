@@ -1,0 +1,83 @@
+name: Discord BBU High Scorer
+
+on:
+  schedule:
+    - cron: "20 14 * * 2"
+      timezone: "America/Chicago"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Preview the BBU weekly high-scorer history without posting or committing."
+        required: false
+        type: boolean
+        default: true
+      force_refresh:
+        description: "Rewrite the persistent Discord card even when the results are unchanged."
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: discord-bbu-high-scorer
+  cancel-in-progress: false
+
+jobs:
+  high-scorer:
+    if: ${{ github.event_name == 'workflow_dispatch' || vars.DISCORD_BBU_HIGH_SCORER_ENABLED == 'true' }}
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Update the persistent BBU high-scorer card
+        shell: pwsh
+        env:
+          DISCORD_WEBHOOK_BBU_HIGH_SCORER: ${{ secrets.DISCORD_WEBHOOK_BBU_HIGH_SCORER }}
+        run: |
+          $args = @(
+            "-NoProfile", "-ExecutionPolicy", "Bypass",
+            "-File", ".\scripts\post-discord-bbu-high-scorer.ps1"
+          )
+          if ("${{ github.event_name }}" -eq "workflow_dispatch" -and "${{ inputs.dry_run }}" -eq "true") {
+            $args += "-DryRun"
+          }
+          if ("${{ inputs.force_refresh }}" -eq "true") {
+            $args += "-ForceRefresh"
+          }
+          powershell @args
+
+      - name: Save the Discord message state
+        if: ${{ always() && (github.event_name != 'workflow_dispatch' || inputs.dry_run == false) }}
+        shell: pwsh
+        run: |
+          $statePath = "data/discord-bbu-high-scorer-state.json"
+          if (Test-Path -LiteralPath $statePath) {
+            git add -- $statePath
+          }
+          if (git diff --cached --quiet) {
+            Write-Host "Discord BBU high-scorer state is already current."
+            exit 0
+          }
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update Discord BBU high scorer"
+
+          $pushed = $false
+          foreach ($attempt in 1..4) {
+            git pull --rebase origin main
+            if ($LASTEXITCODE -ne 0) { throw "Could not rebase the BBU high-scorer update onto origin/main." }
+            git push origin HEAD:main
+            if ($LASTEXITCODE -eq 0) {
+              $pushed = $true
+              break
+            }
+            if ($attempt -lt 4) { Start-Sleep -Seconds (10 * $attempt) }
+          }
+          if (-not $pushed) { throw "Could not push the BBU high-scorer state after four attempts." }

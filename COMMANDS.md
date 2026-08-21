@@ -518,6 +518,18 @@ Force-refresh the persistent Discord division-leaders post:
 Run the Discord division-leaders workflow with dry_run false and force_refresh true, then confirm the persistent post was updated.
 ```
 
+Preview the Best Ball Union weekly high scorer without posting:
+
+```text
+Run the BBU high-scorer tracker in dry-run mode and show me the highest-scoring team, BBU room, and score for every completed week across BBU1 through BBU13.
+```
+
+Force-refresh the persistent BBU high-scorer post:
+
+```text
+Run the Discord BBU high-scorer workflow with dry_run false and force_refresh true, then confirm the persistent post was updated.
+```
+
 ## Cache Busting
 
 Update the homepage asset version strings after frontend edits:

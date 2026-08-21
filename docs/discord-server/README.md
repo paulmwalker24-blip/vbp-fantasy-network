@@ -13,4 +13,5 @@ Fill in as much as you can. Rough notes are fine.
 
 Live automation references:
 
+- `bbu-high-scorer.md` documents the persistent Best Ball Union weekly high-scorer post.
 - `division-leaders.md` documents the persistent Best Ball Union division-leaders post.
