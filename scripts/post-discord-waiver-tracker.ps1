@@ -6,6 +6,7 @@ param(
   [string]$WebhookUrl = $env:DISCORD_WEBHOOK_WAIVER_TRACKER,
   [string[]]$LeagueRecordIds,
   [switch]$IncludeHistorical,
+  [switch]$MigrateIndividualMessages,
   [switch]$DryRun,
   [switch]$PassThru
 )
@@ -59,6 +60,9 @@ function Get-StateRoot {
       if (-not $loaded.PSObject.Properties["transactions"]) {
         $loaded | Add-Member -NotePropertyName transactions -NotePropertyValue ([pscustomobject]@{})
       }
+      if (-not $loaded.PSObject.Properties["groups"]) {
+        $loaded | Add-Member -NotePropertyName groups -NotePropertyValue ([pscustomobject]@{})
+      }
       if (-not $loaded.PSObject.Properties["initialized"]) {
         $loaded | Add-Member -NotePropertyName initialized -NotePropertyValue $false
       }
@@ -66,11 +70,12 @@ function Get-StateRoot {
     }
   }
   return [pscustomobject]@{
-    version = 1
+    version = 2
     channelId = ""
     webhookId = ""
     initialized = $false
     transactions = [pscustomobject]@{}
+    groups = [pscustomobject]@{}
     updatedAt = ""
   }
 }
@@ -94,12 +99,42 @@ function Add-StateTransaction {
     sleeperLeagueId = Get-StringValue $Activity.sleeperLeagueId
     transactionId = Get-StringValue $Activity.transactionId
     transactionType = Get-StringValue $Activity.transactionType
+    week = [int]$Activity.week
     created = [long]$Activity.created
     messageId = $MessageId
     disposition = $Disposition
     recordedAt = [datetimeoffset]::UtcNow.ToString("o")
   }
   (Get-PropertyValue $State "transactions") | Add-Member -NotePropertyName $Activity.transactionId -NotePropertyValue $entry -Force
+}
+
+function Get-GroupKey {
+  param([object]$Activity)
+  return ("{0}-week-{1}" -f (Get-StringValue $Activity.leagueRecordId), [int]$Activity.week)
+}
+
+function Get-StateGroup {
+  param([object]$State, [string]$GroupKey)
+  $groups = Get-PropertyValue $State "groups"
+  $property = $groups.PSObject.Properties[$GroupKey]
+  if ($property) { return $property.Value }
+  return $null
+}
+
+function Set-StateGroup {
+  param([object]$State, [object]$Group, [string]$MessageId, [string]$Signature)
+  $first = @($Group.activities | Select-Object -First 1)[0]
+  $entry = [pscustomobject]@{
+    groupKey = Get-StringValue $Group.groupKey
+    leagueRecordId = Get-StringValue $first.leagueRecordId
+    sleeperLeagueId = Get-StringValue $first.sleeperLeagueId
+    week = [int]$first.week
+    messageId = $MessageId
+    signature = $Signature
+    transactionIds = @($Group.activities | ForEach-Object { Get-StringValue $_.transactionId })
+    updatedAt = [datetimeoffset]::UtcNow.ToString("o")
+  }
+  (Get-PropertyValue $State "groups") | Add-Member -NotePropertyName $Group.groupKey -NotePropertyValue $entry -Force
 }
 
 function Invoke-JsonGet {
@@ -134,6 +169,33 @@ function Invoke-DiscordPost {
       if ($_.Exception.Response -and $_.Exception.Response.StatusCode) {
         $statusCode = [int]$_.Exception.Response.StatusCode
       }
+      if ($attempt -ge 4 -or ($statusCode -lt 500 -and $statusCode -ne 429)) { throw }
+      Start-Sleep -Seconds ([math]::Min([math]::Pow(2, $attempt), 20))
+    }
+  }
+}
+
+function Invoke-DiscordPatch {
+  param([string]$Uri, [object]$Payload)
+  $body = $Payload | ConvertTo-Json -Depth 12 -Compress
+  foreach ($attempt in 1..4) {
+    try { return Invoke-RestMethod -Uri $Uri -Method Patch -ContentType "application/json" -Body $body }
+    catch {
+      $statusCode = 0
+      if ($_.Exception.Response -and $_.Exception.Response.StatusCode) { $statusCode = [int]$_.Exception.Response.StatusCode }
+      if ($attempt -ge 4 -or ($statusCode -lt 500 -and $statusCode -ne 429)) { throw }
+      Start-Sleep -Seconds ([math]::Min([math]::Pow(2, $attempt), 20))
+    }
+  }
+}
+
+function Invoke-DiscordDelete {
+  param([string]$Uri)
+  foreach ($attempt in 1..4) {
+    try { Invoke-RestMethod -Uri $Uri -Method Delete | Out-Null; return }
+    catch {
+      $statusCode = 0
+      if ($_.Exception.Response -and $_.Exception.Response.StatusCode) { $statusCode = [int]$_.Exception.Response.StatusCode }
       if ($attempt -ge 4 -or ($statusCode -lt 500 -and $statusCode -ne 429)) { throw }
       Start-Sleep -Seconds ([math]::Min([math]::Pow(2, $attempt), 20))
     }
@@ -219,8 +281,8 @@ function Get-TransactionPlayers {
   return @($result)
 }
 
-function New-WaiverPayload {
-  param([object]$Activity, [hashtable]$RosterNames, [hashtable]$PlayersById, [string]$WebsiteUrl)
+function Get-WaiverActivityField {
+  param([object]$Activity, [hashtable]$RosterNames, [hashtable]$PlayersById)
   $transaction = $Activity.transaction
   $adds = @(Get-TransactionPlayers -Transaction $transaction -PropertyName "adds" -PlayersById $PlayersById)
   $drops = @(Get-TransactionPlayers -Transaction $transaction -PropertyName "drops" -PlayersById $PlayersById)
@@ -240,26 +302,46 @@ function New-WaiverPayload {
   $settings = Get-PropertyValue $transaction "settings"
   $waiverBid = Get-IntValue (Get-PropertyValue $settings "waiver_bid")
   $method = if ($isWaiver -and $waiverBid -gt 0) { "$waiverBid FAAB" } elseif ($isWaiver) { "Waiver priority" } elseif ($isDropOnly) { "Drop only" } else { "Free agent" }
-  $fields = [System.Collections.Generic.List[object]]::new()
-  $addedText = if ($adds.Count -gt 0) { ($adds | ForEach-Object { "- $_" }) -join "`n" } else { "No added player reported" }
-  $fields.Add(@{ name = "Added"; value = $addedText; inline = $false }) | Out-Null
-  if ($drops.Count -gt 0) {
-    $fields.Add(@{ name = "Dropped"; value = (($drops | ForEach-Object { "- $_" }) -join "`n"); inline = $false }) | Out-Null
+  $valueLines = [System.Collections.Generic.List[string]]::new()
+  if ($adds.Count -gt 0) { $valueLines.Add("**Added:** $($adds -join ', ')") | Out-Null }
+  if ($drops.Count -gt 0) { $valueLines.Add("**Dropped:** $($drops -join ', ')") | Out-Null }
+  $valueLines.Add("**Method:** $method") | Out-Null
+  $value = $valueLines -join "`n"
+  if ($value.Length -gt 1024) { $value = $value.Substring(0, 1021).TrimEnd() + "..." }
+  return @{
+    name = Convert-ToPlainDiscordText "$teamName - $activityName" 256
+    value = $value
+    inline = $false
   }
-  $fields.Add(@{ name = "Method"; value = $method; inline = $true }) | Out-Null
-  $recordId = Convert-ToPlainDiscordText $Activity.leagueRecordId 20
-  $leagueName = Convert-ToPlainDiscordText $Activity.leagueName 80
-  $embed = @{
-    title = "$activityName - $teamName"
-    url = "https://sleeper.com/leagues/$($Activity.sleeperLeagueId)"
-    description = "Completed in **$leagueName** ($recordId)."
-    color = if ($isWaiver) { 0x2ECC71 } else { 0x3498DB }
-    fields = @($fields)
-    footer = @{ text = "VBP Waiver Wire | $recordId | Sleeper transaction $($Activity.transactionId)" }
-    timestamp = Get-UnixTimestampIso ([long]$Activity.created)
+}
+
+function New-WaiverGroupPayload {
+  param([object]$Group, [hashtable]$RosterNames, [hashtable]$PlayersById, [string]$WebsiteUrl)
+  $activities = @($Group.activities | Sort-Object created, transactionId)
+  $first = $activities[0]
+  $recordId = Convert-ToPlainDiscordText $first.leagueRecordId 20
+  $leagueName = Convert-ToPlainDiscordText $first.leagueName 80
+  $week = [int]$first.week
+  $allFields = @($activities | ForEach-Object { Get-WaiverActivityField -Activity $_ -RosterNames $RosterNames -PlayersById $PlayersById })
+  $embeds = [System.Collections.Generic.List[object]]::new()
+  $pageCount = [math]::Ceiling($allFields.Count / 20.0)
+  if ($pageCount -gt 10) { throw "$recordId Week $week has too many waiver moves for one Discord message." }
+  foreach ($pageIndex in 0..([int]$pageCount - 1)) {
+    $pageFields = @($allFields | Select-Object -Skip ($pageIndex * 20) -First 20)
+    $pageLabel = if ($pageCount -gt 1) { " ($($pageIndex + 1)/$pageCount)" } else { "" }
+    $embed = @{
+      title = "Week $week Waiver Wire - $leagueName$pageLabel"
+      url = "https://sleeper.com/leagues/$($first.sleeperLeagueId)"
+      description = "$($activities.Count) completed roster move(s). This summary updates as Week $week continues."
+      color = 0x2ECC71
+      fields = $pageFields
+      footer = @{ text = "VBP Waiver Wire | $recordId | Week $week" }
+      timestamp = Get-UnixTimestampIso ([long]$activities[-1].created)
+    }
+    if ($WebsiteUrl) { $embed.author = @{ name = "VBP Fantasy Network"; url = $WebsiteUrl } }
+    $embeds.Add($embed) | Out-Null
   }
-  if ($WebsiteUrl) { $embed.author = @{ name = "VBP Fantasy Network"; url = $WebsiteUrl } }
-  return @{ username = "VBP Waiver Wire"; allowed_mentions = @{ parse = @() }; embeds = @($embed) }
+  return @{ username = "VBP Waiver Wire"; allowed_mentions = @{ parse = @() }; embeds = @($embeds) }
 }
 
 if (-not (Test-Path -LiteralPath $LeaguesPath)) { throw "Could not find league data at '$LeaguesPath'." }
@@ -310,6 +392,7 @@ foreach ($leagueRecordId in $configuredIds) {
         $activitiesById[$transactionId] = [pscustomobject]@{
           transactionId = $transactionId
           transactionType = $type
+          week = $week
           created = $created
           leagueRecordId = $leagueRecordId
           sleeperLeagueId = $sleeperLeagueId
@@ -323,10 +406,23 @@ foreach ($leagueRecordId in $configuredIds) {
 if ($fetchErrors.Count -gt 0) { throw "Waiver tracker Sleeper fetch failed; state and Discord were left untouched. $($fetchErrors -join ' | ')" }
 
 $allActivities = @($activitiesById.Values | Sort-Object created, transactionId)
+$activityGroups = [System.Collections.Generic.List[object]]::new()
+foreach ($grouping in @($allActivities | Group-Object { Get-GroupKey $_ })) {
+  $activities = @($grouping.Group | Sort-Object created, transactionId)
+  $signature = (@($activities | ForEach-Object { Get-StringValue $_.transactionId }) -join ":")
+  $activityGroups.Add([pscustomobject]@{
+    groupKey = Get-StringValue $grouping.Name
+    activities = $activities
+    signature = $signature
+  }) | Out-Null
+}
+$activityGroups = @($activityGroups | Sort-Object { [int]$_.activities[0].week }, { Get-StringValue $_.activities[0].leagueName })
 $isInitialized = [bool](Get-PropertyValue $state "initialized")
 if (-not $isInitialized -and -not $IncludeHistorical) {
   if (-not $DryRun) {
     foreach ($activity in $allActivities) { Add-StateTransaction -State $state -Activity $activity -MessageId "" -Disposition "bootstrap-existing" }
+    foreach ($group in $activityGroups) { Set-StateGroup -State $state -Group $group -MessageId "" -Signature $group.signature }
+    Set-StateProperty -State $state -Name version -Value 2
     Set-StateProperty -State $state -Name channelId -Value $channelId
     Set-StateProperty -State $state -Name initialized -Value $true
     Save-StateRoot -Path $StatePath -State $state
@@ -337,10 +433,16 @@ if (-not $isInitialized -and -not $IncludeHistorical) {
 }
 
 $newActivities = @($allActivities | Where-Object { -not (Test-StateHasTransaction -State $state -TransactionId $_.transactionId) })
-$queuedActivities = @($newActivities | Select-Object -First $maxPostsPerRun)
-if ($queuedActivities.Count -eq 0) {
-  $result = [pscustomobject]@{ action = if ($DryRun) { "dry-run-current" } else { "current" }; configuredLeagues = $configuredIds.Count; transactionsFound = $allActivities.Count; newTransactions = 0; channelId = $channelId }
-  if ($PassThru) { $result } else { Write-Host "Waiver tracker is current; no new completed claims or pickups were found." }
+$changedGroups = @($activityGroups | Where-Object {
+  $savedGroup = Get-StateGroup -State $state -GroupKey $_.groupKey
+  $savedMessageId = Get-StringValue (Get-PropertyValue $savedGroup "messageId")
+  $savedSignature = Get-StringValue (Get-PropertyValue $savedGroup "signature")
+  (-not $savedMessageId) -or $savedSignature -ne $_.signature
+})
+$queuedGroups = @($changedGroups | Select-Object -First $maxPostsPerRun)
+if ($queuedGroups.Count -eq 0) {
+  $result = [pscustomobject]@{ action = if ($DryRun) { "dry-run-current" } else { "current" }; configuredLeagues = $configuredIds.Count; transactionsFound = $allActivities.Count; newTransactions = $newActivities.Count; weeklySummaries = $activityGroups.Count; changedSummaries = 0; channelId = $channelId }
+  if ($PassThru) { $result } else { Write-Host "Waiver tracker is current; all weekly division summaries match Sleeper." }
   exit 0
 }
 
@@ -349,19 +451,20 @@ $players = Invoke-JsonGet -Uri "https://api.sleeper.app/v1/players/nfl"
 foreach ($property in $players.PSObject.Properties) { $playersById[$property.Name] = $property.Value }
 $leagueContext = @{}
 $payloadEntries = [System.Collections.Generic.List[object]]::new()
-foreach ($activity in $queuedActivities) {
-  if (-not $leagueContext.ContainsKey($activity.leagueRecordId)) {
-    $users = @(Invoke-JsonGet -Uri "https://api.sleeper.app/v1/league/$($activity.sleeperLeagueId)/users")
-    $rosters = @(Invoke-JsonGet -Uri "https://api.sleeper.app/v1/league/$($activity.sleeperLeagueId)/rosters")
-    $leagueContext[$activity.leagueRecordId] = Get-RosterNameMap -Users $users -Rosters $rosters
+foreach ($group in $queuedGroups) {
+  $first = @($group.activities | Select-Object -First 1)[0]
+  if (-not $leagueContext.ContainsKey($first.leagueRecordId)) {
+    $users = @(Invoke-JsonGet -Uri "https://api.sleeper.app/v1/league/$($first.sleeperLeagueId)/users")
+    $rosters = @(Invoke-JsonGet -Uri "https://api.sleeper.app/v1/league/$($first.sleeperLeagueId)/rosters")
+    $leagueContext[$first.leagueRecordId] = Get-RosterNameMap -Users $users -Rosters $rosters
   }
-  $payload = New-WaiverPayload -Activity $activity -RosterNames $leagueContext[$activity.leagueRecordId] -PlayersById $playersById -WebsiteUrl $websiteUrl
-  $payloadEntries.Add([pscustomobject]@{ activity = $activity; payload = $payload }) | Out-Null
+  $payload = New-WaiverGroupPayload -Group $group -RosterNames $leagueContext[$first.leagueRecordId] -PlayersById $playersById -WebsiteUrl $websiteUrl
+  $payloadEntries.Add([pscustomobject]@{ group = $group; payload = $payload }) | Out-Null
 }
 
 if ($DryRun) {
-  $result = [pscustomobject]@{ action = "dry-run"; configuredLeagues = $configuredIds.Count; transactionsFound = $allActivities.Count; newTransactions = $newActivities.Count; queuedTransactions = $queuedActivities.Count; deferredTransactions = [math]::Max($newActivities.Count - $queuedActivities.Count, 0); channelId = $channelId; payloads = @($payloadEntries) }
-  if ($PassThru) { $result } else { Write-Host "DRY RUN Waiver Tracker: $($newActivities.Count) new transaction(s), $($queuedActivities.Count) queued."; $payloadEntries | ForEach-Object { Write-Output ($_.payload | ConvertTo-Json -Depth 12) } }
+  $result = [pscustomobject]@{ action = "dry-run"; configuredLeagues = $configuredIds.Count; transactionsFound = $allActivities.Count; newTransactions = $newActivities.Count; weeklySummaries = $activityGroups.Count; changedSummaries = $changedGroups.Count; queuedSummaries = $queuedGroups.Count; deferredSummaries = [math]::Max($changedGroups.Count - $queuedGroups.Count, 0); channelId = $channelId; payloads = @($payloadEntries) }
+  if ($PassThru) { $result } else { Write-Host "DRY RUN Waiver Tracker: $($changedGroups.Count) weekly division summary message(s) need creation or refresh."; $payloadEntries | ForEach-Object { Write-Output ($_.payload | ConvertTo-Json -Depth 12) } }
   exit 0
 }
 
@@ -376,16 +479,47 @@ if ($savedWebhookId -and $savedWebhookId -ne $webhookId) { throw "The waiver tra
 Set-StateProperty -State $state -Name channelId -Value $channelId
 Set-StateProperty -State $state -Name webhookId -Value $webhookId
 Set-StateProperty -State $state -Name initialized -Value $true
+Set-StateProperty -State $state -Name version -Value 2
 
-$postedCount = 0
+$createdCount = 0
+$updatedCount = 0
+$deletedCount = 0
 foreach ($entry in $payloadEntries) {
-  $response = Invoke-DiscordPost -Uri (Get-WebhookUri -BaseUrl $resolvedWebhookUrl -Query @{ wait = "true" }) -Payload $entry.payload
-  $messageId = Get-StringValue (Get-PropertyValue $response "id")
-  if (-not $messageId) { throw "Discord did not return a message ID for waiver transaction '$($entry.activity.transactionId)'." }
-  Add-StateTransaction -State $state -Activity $entry.activity -MessageId $messageId -Disposition "posted"
+  $group = $entry.group
+  $savedGroup = Get-StateGroup -State $state -GroupKey $group.groupKey
+  $messageId = Get-StringValue (Get-PropertyValue $savedGroup "messageId")
+  $individualMessageIds = [System.Collections.Generic.List[string]]::new()
+  if (-not $messageId -and $MigrateIndividualMessages) {
+    foreach ($activity in $group.activities) {
+      $savedTransaction = Get-PropertyValue (Get-PropertyValue $state "transactions") $activity.transactionId
+      $savedTransactionMessageId = Get-StringValue (Get-PropertyValue $savedTransaction "messageId")
+      if ($savedTransactionMessageId -and -not $individualMessageIds.Contains($savedTransactionMessageId)) {
+        $individualMessageIds.Add($savedTransactionMessageId) | Out-Null
+      }
+    }
+    if ($individualMessageIds.Count -gt 0) { $messageId = $individualMessageIds[0] }
+  }
+
+  if ($messageId) {
+    $messageUri = "{0}/messages/{1}" -f $resolvedWebhookUrl.TrimEnd('/'), [uri]::EscapeDataString($messageId)
+    $response = Invoke-DiscordPatch -Uri $messageUri -Payload $entry.payload
+    $updatedCount++
+  } else {
+    $response = Invoke-DiscordPost -Uri (Get-WebhookUri -BaseUrl $resolvedWebhookUrl -Query @{ wait = "true" }) -Payload $entry.payload
+    $messageId = Get-StringValue (Get-PropertyValue $response "id")
+    if (-not $messageId) { throw "Discord did not return a message ID for waiver group '$($group.groupKey)'." }
+    $createdCount++
+  }
+
+  foreach ($oldMessageId in @($individualMessageIds | Where-Object { $_ -ne $messageId })) {
+    $deleteUri = "{0}/messages/{1}" -f $resolvedWebhookUrl.TrimEnd('/'), [uri]::EscapeDataString($oldMessageId)
+    Invoke-DiscordDelete -Uri $deleteUri
+    $deletedCount++
+  }
+  foreach ($activity in $group.activities) { Add-StateTransaction -State $state -Activity $activity -MessageId $messageId -Disposition "included-in-weekly-summary" }
+  Set-StateGroup -State $state -Group $group -MessageId $messageId -Signature $group.signature
   Save-StateRoot -Path $StatePath -State $state
-  $postedCount++
 }
 
-$result = [pscustomobject]@{ action = "posted"; configuredLeagues = $configuredIds.Count; transactionsFound = $allActivities.Count; newTransactions = $newActivities.Count; postedTransactions = $postedCount; deferredTransactions = [math]::Max($newActivities.Count - $postedCount, 0); channelId = $channelId }
-if ($PassThru) { $result } else { Write-Host "Waiver tracker posted $postedCount completed transaction(s) to channel $channelId." }
+$result = [pscustomobject]@{ action = "updated"; configuredLeagues = $configuredIds.Count; transactionsFound = $allActivities.Count; newTransactions = $newActivities.Count; weeklySummaries = $activityGroups.Count; createdSummaries = $createdCount; updatedSummaries = $updatedCount; removedIndividualMessages = $deletedCount; deferredSummaries = [math]::Max($changedGroups.Count - $queuedGroups.Count, 0); channelId = $channelId }
+if ($PassThru) { $result } else { Write-Host "Waiver tracker created $createdCount and updated $updatedCount weekly division summary message(s); removed $deletedCount superseded individual posts." }

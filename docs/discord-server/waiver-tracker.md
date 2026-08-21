@@ -1,6 +1,6 @@
 # Redraft Bracket Waiver Wire Tracker
 
-The Discord waiver tracker posts each newly completed waiver-wire move once to channel `1540122228199268352`.
+The Discord waiver tracker maintains one consolidated message per Sleeper week per division in channel `1540122228199268352`.
 
 ## Scope
 
@@ -16,7 +16,7 @@ Other VBP leagues are not part of this feed.
 
 ## Included Activity
 
-`scripts/post-discord-waiver-tracker.ps1` checks Sleeper transaction Weeks 1-18 and posts:
+`scripts/post-discord-waiver-tracker.ps1` checks Sleeper transaction Weeks 1-18 and summarizes:
 
 - successful waiver claims with status `complete` or `completed`
 - completed free-agent pickups
@@ -25,9 +25,9 @@ Other VBP leagues are not part of this feed.
 - the FAAB bid when Sleeper provides one, otherwise waiver priority or free-agent method
 - the manager or team, division, transaction timestamp, and direct Sleeper league link
 
-Pending and failed waiver claims are ignored. `data/discord-waiver-tracker-state.json` stores processed Sleeper transaction IDs and Discord message IDs so later checks do not create duplicates.
+Pending and failed waiver claims are ignored. A division receives no post for a week until it has completed activity. Once created, that division's weekly summary is edited in place whenever another successful move appears. `data/discord-waiver-tracker-state.json` stores transaction IDs, group signatures, and the one Discord message ID for each week/division summary.
 
-The first live run is safe by default: existing moves are recorded without being posted unless `-IncludeHistorical` is supplied.
+The first live run is safe by default: existing moves are recorded without being posted unless `-IncludeHistorical` is supplied. `-MigrateIndividualMessages` converts older per-transaction webhook posts into weekly division summaries by editing one retained message and removing the superseded individual messages.
 
 ## Credentials
 
