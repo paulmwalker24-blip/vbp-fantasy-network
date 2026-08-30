@@ -1,6 +1,6 @@
 {
     "version":  1,
-    "updatedAt":  "2026-08-30T19:48:14.2852651Z",
+    "updatedAt":  "2026-08-30T21:58:41.7452388Z",
     "leagues":  {
                     "RDB4":  {
                                  "leagueRecordId":  "RDB4",
@@ -378,10 +378,11 @@
                                                             }
                                                   },
                                  "postedRounds":  [
-                                                      1
+                                                      1,
+                                                      2
                                                   ],
                                  "finalPosted":  false,
-                                 "updatedAt":  "2026-08-30T19:48:14.2852651Z"
+                                 "updatedAt":  "2026-08-30T21:58:41.7432291Z"
                              }
                 }
 }
