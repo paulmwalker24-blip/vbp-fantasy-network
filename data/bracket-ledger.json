@@ -4,7 +4,7 @@
                     "refreshSpecificGroup":  "Run the bracket ledger sync for BRACKET-2026-1 only and refresh data/bracket-ledger.json from Sleeper so that bracket group\u0027s standings and playoff output are up to date.",
                     "refreshOverallStandings":  "Run the bracket ledger sync and refresh data/bracket-ledger.json from Sleeper, then give me the current combined overall standings for BRACKET-2026-1 with rank, team name, league/division, record, and points for. If the season is not far enough along or the group is not full yet, tell me the standings are provisional."
                 },
-    "generatedAt":  "2026-08-25T06:32:18",
+    "generatedAt":  "2026-09-01T10:52:03",
     "groups":  [
                    {
                        "groupId":  "BRACKET-2026-1",
@@ -29,10 +29,10 @@
                                      "postWeek13Reset":  "wild_card_winner_faces_8th_highest_remaining_seed",
                                      "postResetBracketStyle":  "static_traditional_bracket"
                                  },
-                       "lastSyncedAt":  "2026-08-25T06:32:18",
+                       "lastSyncedAt":  "2026-09-01T10:52:03",
                        "seasonStatuses":  [
-                                              "in_season",
-                                              "pre_draft"
+                                              "drafting",
+                                              "in_season"
                                           ],
                        "seedingReady":  false,
                        "seasonDataReady":  false,
@@ -274,7 +274,7 @@
                                                 },
                                                 {
                                                     "rank":  19,
-                                                    "teamName":  "Van, BC",
+                                                    "teamName":  "Johnny Canuck",
                                                     "displayName":  "henninge",
                                                     "leagueRecordId":  "RDB1",
                                                     "leagueName":  "Titan",
@@ -521,7 +521,7 @@
                                                 },
                                                 {
                                                     "rank":  38,
-                                                    "teamName":  "NFLGoodellEvilKing",
+                                                    "teamName":  "Love Hurts",
                                                     "displayName":  "NFLGoodellEvilKing",
                                                     "leagueRecordId":  "RDB4",
                                                     "leagueName":  "Vanguard",
@@ -704,7 +704,7 @@
                                                 {
                                                     "rank":  52,
                                                     "teamName":  "Baskin Dobbins",
-                                                    "displayName":  "StriaghtA",
+                                                    "displayName":  "StraightA",
                                                     "leagueRecordId":  "RDB2",
                                                     "leagueName":  "Apex",
                                                     "division":  "Slow",
@@ -933,7 +933,7 @@
                                                                          "ownerId":  "473349702444642304",
                                                                          "rosterId":  11,
                                                                          "displayName":  "henninge",
-                                                                         "teamName":  "Van, BC",
+                                                                         "teamName":  "Johnny Canuck",
                                                                          "wins":  0,
                                                                          "losses":  0,
                                                                          "ties":  0,
@@ -1284,7 +1284,7 @@
                                                                          "sleeperLeagueName":  "Apex Division (VBP\u0027s Redraft Bracket-Slow Draft)",
                                                                          "ownerId":  "1260034523194732544",
                                                                          "rosterId":  11,
-                                                                         "displayName":  "StriaghtA",
+                                                                         "displayName":  "StraightA",
                                                                          "teamName":  "Baskin Dobbins",
                                                                          "wins":  0,
                                                                          "losses":  0,
@@ -1340,7 +1340,7 @@
                                                    "localLeagueName":  "Iron",
                                                    "sleeperLeagueName":  "Iron Division (VBP\u0027s Redraft Bracket-Fast Draft)",
                                                    "division":  "Fast",
-                                                   "status":  "pre_draft",
+                                                   "status":  "drafting",
                                                    "standings":  [
                                                                      {
                                                                          "groupId":  "BRACKET-2026-1",
@@ -1359,7 +1359,7 @@
                                                                          "recordPct":  0,
                                                                          "pointsFor":  0,
                                                                          "pointsForDisplay":  "0.00",
-                                                                         "seasonStatus":  "pre_draft"
+                                                                         "seasonStatus":  "drafting"
                                                                      },
                                                                      {
                                                                          "groupId":  "BRACKET-2026-1",
@@ -1378,7 +1378,7 @@
                                                                          "recordPct":  0,
                                                                          "pointsFor":  0,
                                                                          "pointsForDisplay":  "0.00",
-                                                                         "seasonStatus":  "pre_draft"
+                                                                         "seasonStatus":  "drafting"
                                                                      },
                                                                      {
                                                                          "groupId":  "BRACKET-2026-1",
@@ -1397,7 +1397,7 @@
                                                                          "recordPct":  0,
                                                                          "pointsFor":  0,
                                                                          "pointsForDisplay":  "0.00",
-                                                                         "seasonStatus":  "pre_draft"
+                                                                         "seasonStatus":  "drafting"
                                                                      },
                                                                      {
                                                                          "groupId":  "BRACKET-2026-1",
@@ -1416,7 +1416,7 @@
                                                                          "recordPct":  0,
                                                                          "pointsFor":  0,
                                                                          "pointsForDisplay":  "0.00",
-                                                                         "seasonStatus":  "pre_draft"
+                                                                         "seasonStatus":  "drafting"
                                                                      },
                                                                      {
                                                                          "groupId":  "BRACKET-2026-1",
@@ -1435,7 +1435,7 @@
                                                                          "recordPct":  0,
                                                                          "pointsFor":  0,
                                                                          "pointsForDisplay":  "0.00",
-                                                                         "seasonStatus":  "pre_draft"
+                                                                         "seasonStatus":  "drafting"
                                                                      },
                                                                      {
                                                                          "groupId":  "BRACKET-2026-1",
@@ -1454,7 +1454,7 @@
                                                                          "recordPct":  0,
                                                                          "pointsFor":  0,
                                                                          "pointsForDisplay":  "0.00",
-                                                                         "seasonStatus":  "pre_draft"
+                                                                         "seasonStatus":  "drafting"
                                                                      },
                                                                      {
                                                                          "groupId":  "BRACKET-2026-1",
@@ -1473,7 +1473,7 @@
                                                                          "recordPct":  0,
                                                                          "pointsFor":  0,
                                                                          "pointsForDisplay":  "0.00",
-                                                                         "seasonStatus":  "pre_draft"
+                                                                         "seasonStatus":  "drafting"
                                                                      },
                                                                      {
                                                                          "groupId":  "BRACKET-2026-1",
@@ -1492,7 +1492,7 @@
                                                                          "recordPct":  0,
                                                                          "pointsFor":  0,
                                                                          "pointsForDisplay":  "0.00",
-                                                                         "seasonStatus":  "pre_draft"
+                                                                         "seasonStatus":  "drafting"
                                                                      },
                                                                      {
                                                                          "groupId":  "BRACKET-2026-1",
@@ -1511,7 +1511,7 @@
                                                                          "recordPct":  0,
                                                                          "pointsFor":  0,
                                                                          "pointsForDisplay":  "0.00",
-                                                                         "seasonStatus":  "pre_draft"
+                                                                         "seasonStatus":  "drafting"
                                                                      },
                                                                      {
                                                                          "groupId":  "BRACKET-2026-1",
@@ -1530,7 +1530,7 @@
                                                                          "recordPct":  0,
                                                                          "pointsFor":  0,
                                                                          "pointsForDisplay":  "0.00",
-                                                                         "seasonStatus":  "pre_draft"
+                                                                         "seasonStatus":  "drafting"
                                                                      },
                                                                      {
                                                                          "groupId":  "BRACKET-2026-1",
@@ -1549,7 +1549,7 @@
                                                                          "recordPct":  0,
                                                                          "pointsFor":  0,
                                                                          "pointsForDisplay":  "0.00",
-                                                                         "seasonStatus":  "pre_draft"
+                                                                         "seasonStatus":  "drafting"
                                                                      },
                                                                      {
                                                                          "groupId":  "BRACKET-2026-1",
@@ -1568,7 +1568,7 @@
                                                                          "recordPct":  0,
                                                                          "pointsFor":  0,
                                                                          "pointsForDisplay":  "0.00",
-                                                                         "seasonStatus":  "pre_draft"
+                                                                         "seasonStatus":  "drafting"
                                                                      }
                                                                  ],
                                                    "divisionWinner":  {
@@ -1588,7 +1588,7 @@
                                                                           "recordPct":  0,
                                                                           "pointsFor":  0,
                                                                           "pointsForDisplay":  "0.00",
-                                                                          "seasonStatus":  "pre_draft"
+                                                                          "seasonStatus":  "drafting"
                                                                       }
                                                },
                                                {
@@ -1742,7 +1742,7 @@
                                                                          "ownerId":  "733902537643651072",
                                                                          "rosterId":  8,
                                                                          "displayName":  "NFLGoodellEvilKing",
-                                                                         "teamName":  "",
+                                                                         "teamName":  "Love Hurts",
                                                                          "wins":  0,
                                                                          "losses":  0,
                                                                          "ties":  0,
@@ -2219,7 +2219,7 @@
                                                                 "recordPct":  0,
                                                                 "pointsFor":  0,
                                                                 "pointsForDisplay":  "0.00",
-                                                                "seasonStatus":  "pre_draft"
+                                                                "seasonStatus":  "drafting"
                                                             }
                                                }
                                            ],
@@ -2359,7 +2359,7 @@
                                                                  "recordPct":  0,
                                                                  "pointsFor":  0,
                                                                  "pointsForDisplay":  "0.00",
-                                                                 "seasonStatus":  "pre_draft"
+                                                                 "seasonStatus":  "drafting"
                                                              }
                                                 },
                                                 {
@@ -2451,7 +2451,7 @@
                                                                  "recordPct":  0,
                                                                  "pointsFor":  0,
                                                                  "pointsForDisplay":  "0.00",
-                                                                 "seasonStatus":  "pre_draft"
+                                                                 "seasonStatus":  "drafting"
                                                              }
                                                 },
                                                 {
@@ -2536,7 +2536,7 @@
                                                                  "ownerId":  "473349702444642304",
                                                                  "rosterId":  11,
                                                                  "displayName":  "henninge",
-                                                                 "teamName":  "Van, BC",
+                                                                 "teamName":  "Johnny Canuck",
                                                                  "wins":  0,
                                                                  "losses":  0,
                                                                  "ties":  0,
@@ -2612,7 +2612,7 @@
                                                                  "recordPct":  0,
                                                                  "pointsFor":  0,
                                                                  "pointsForDisplay":  "0.00",
-                                                                 "seasonStatus":  "pre_draft"
+                                                                 "seasonStatus":  "drafting"
                                                              }
                                                 },
                                                 {
@@ -2704,7 +2704,7 @@
                                                                  "recordPct":  0,
                                                                  "pointsFor":  0,
                                                                  "pointsForDisplay":  "0.00",
-                                                                 "seasonStatus":  "pre_draft"
+                                                                 "seasonStatus":  "drafting"
                                                              }
                                                 },
                                                 {
@@ -2821,7 +2821,7 @@
                                                           "recordPct":  0,
                                                           "pointsFor":  0,
                                                           "pointsForDisplay":  "0.00",
-                                                          "seasonStatus":  "pre_draft"
+                                                          "seasonStatus":  "drafting"
                                                       }
                                          },
                                          {
@@ -2866,7 +2866,7 @@
                                                "recordPct":  0,
                                                "pointsFor":  0,
                                                "pointsForDisplay":  "0.00",
-                                               "seasonStatus":  "pre_draft"
+                                               "seasonStatus":  "drafting"
                                            },
                                            {
                                                "groupId":  "BRACKET-2026-1",
@@ -2923,7 +2923,7 @@
                                                "recordPct":  0,
                                                "pointsFor":  0,
                                                "pointsForDisplay":  "0.00",
-                                               "seasonStatus":  "pre_draft"
+                                               "seasonStatus":  "drafting"
                                            },
                                            {
                                                "groupId":  "BRACKET-2026-1",
@@ -2954,7 +2954,7 @@
                                                "ownerId":  "733902537643651072",
                                                "rosterId":  8,
                                                "displayName":  "NFLGoodellEvilKing",
-                                               "teamName":  "",
+                                               "teamName":  "Love Hurts",
                                                "wins":  0,
                                                "losses":  0,
                                                "ties":  0,
@@ -3189,7 +3189,7 @@
                                                "recordPct":  0,
                                                "pointsFor":  0,
                                                "pointsForDisplay":  "0.00",
-                                               "seasonStatus":  "pre_draft"
+                                               "seasonStatus":  "drafting"
                                            },
                                            {
                                                "groupId":  "BRACKET-2026-1",
@@ -3219,7 +3219,7 @@
                                                "sleeperLeagueName":  "Apex Division (VBP\u0027s Redraft Bracket-Slow Draft)",
                                                "ownerId":  "1260034523194732544",
                                                "rosterId":  11,
-                                               "displayName":  "StriaghtA",
+                                               "displayName":  "StraightA",
                                                "teamName":  "Baskin Dobbins",
                                                "wins":  0,
                                                "losses":  0,
@@ -3246,7 +3246,7 @@
                                                "recordPct":  0,
                                                "pointsFor":  0,
                                                "pointsForDisplay":  "0.00",
-                                               "seasonStatus":  "pre_draft"
+                                               "seasonStatus":  "drafting"
                                            },
                                            {
                                                "groupId":  "BRACKET-2026-1",
@@ -3265,7 +3265,7 @@
                                                "recordPct":  0,
                                                "pointsFor":  0,
                                                "pointsForDisplay":  "0.00",
-                                               "seasonStatus":  "pre_draft"
+                                               "seasonStatus":  "drafting"
                                            },
                                            {
                                                "groupId":  "BRACKET-2026-1",
@@ -3379,7 +3379,7 @@
                                                "recordPct":  0,
                                                "pointsFor":  0,
                                                "pointsForDisplay":  "0.00",
-                                               "seasonStatus":  "pre_draft"
+                                               "seasonStatus":  "drafting"
                                            }
                                        ],
                        "playoffField":  [
@@ -3495,7 +3495,7 @@
                                                              "recordPct":  0,
                                                              "pointsFor":  0,
                                                              "pointsForDisplay":  "0.00",
-                                                             "seasonStatus":  "pre_draft"
+                                                             "seasonStatus":  "drafting"
                                                          }
                                             },
                                             {
@@ -3633,7 +3633,7 @@
                                                              "recordPct":  0,
                                                              "pointsFor":  0,
                                                              "pointsForDisplay":  "0.00",
-                                                             "seasonStatus":  "pre_draft"
+                                                             "seasonStatus":  "drafting"
                                                          }
                                             },
                                             {
@@ -3725,7 +3725,7 @@
                                                              "recordPct":  0,
                                                              "pointsFor":  0,
                                                              "pointsForDisplay":  "0.00",
-                                                             "seasonStatus":  "pre_draft"
+                                                             "seasonStatus":  "drafting"
                                                          }
                                             },
                                             {
@@ -3810,7 +3810,7 @@
                                                              "ownerId":  "473349702444642304",
                                                              "rosterId":  11,
                                                              "displayName":  "henninge",
-                                                             "teamName":  "Van, BC",
+                                                             "teamName":  "Johnny Canuck",
                                                              "wins":  0,
                                                              "losses":  0,
                                                              "ties":  0,
@@ -3886,7 +3886,7 @@
                                                              "recordPct":  0,
                                                              "pointsFor":  0,
                                                              "pointsForDisplay":  "0.00",
-                                                             "seasonStatus":  "pre_draft"
+                                                             "seasonStatus":  "drafting"
                                                          }
                                             },
                                             {
@@ -3978,7 +3978,7 @@
                                                              "recordPct":  0,
                                                              "pointsFor":  0,
                                                              "pointsForDisplay":  "0.00",
-                                                             "seasonStatus":  "pre_draft"
+                                                             "seasonStatus":  "drafting"
                                                          }
                                             },
                                             {
@@ -4093,7 +4093,7 @@
                                                              "recordPct":  0,
                                                              "pointsFor":  0,
                                                              "pointsForDisplay":  "0.00",
-                                                             "seasonStatus":  "pre_draft"
+                                                             "seasonStatus":  "drafting"
                                                          }
                                             },
                                             {
@@ -4142,7 +4142,7 @@
                                                                               "recordPct":  0,
                                                                               "pointsFor":  0,
                                                                               "pointsForDisplay":  "0.00",
-                                                                              "seasonStatus":  "pre_draft"
+                                                                              "seasonStatus":  "drafting"
                                                                           },
                                                              "awayTeam":  {
                                                                               "groupId":  "BRACKET-2026-1",
@@ -4358,7 +4358,7 @@
                                                                              "recordPct":  0,
                                                                              "pointsFor":  0,
                                                                              "pointsForDisplay":  "0.00",
-                                                                             "seasonStatus":  "pre_draft"
+                                                                             "seasonStatus":  "drafting"
                                                                          },
                                                             "awayTeam":  {
                                                                              "groupId":  "BRACKET-2026-1",
@@ -4377,7 +4377,7 @@
                                                                              "recordPct":  0,
                                                                              "pointsFor":  0,
                                                                              "pointsForDisplay":  "0.00",
-                                                                             "seasonStatus":  "pre_draft"
+                                                                             "seasonStatus":  "drafting"
                                                                          }
                                                         },
                                                         {
@@ -4549,7 +4549,7 @@
                                                                              "recordPct":  0,
                                                                              "pointsFor":  0,
                                                                              "pointsForDisplay":  "0.00",
-                                                                             "seasonStatus":  "pre_draft"
+                                                                             "seasonStatus":  "drafting"
                                                                          }
                                                         },
                                                         {
@@ -4616,7 +4616,7 @@
                                                                              "recordPct":  0,
                                                                              "pointsFor":  0,
                                                                              "pointsForDisplay":  "0.00",
-                                                                             "seasonStatus":  "pre_draft"
+                                                                             "seasonStatus":  "drafting"
                                                                          },
                                                             "awayTeam":  {
                                                                              "groupId":  "BRACKET-2026-1",
@@ -4671,7 +4671,7 @@
                                                                              "ownerId":  "473349702444642304",
                                                                              "rosterId":  11,
                                                                              "displayName":  "henninge",
-                                                                             "teamName":  "Van, BC",
+                                                                             "teamName":  "Johnny Canuck",
                                                                              "wins":  0,
                                                                              "losses":  0,
                                                                              "ties":  0,
@@ -4788,7 +4788,7 @@
                                                                              "recordPct":  0,
                                                                              "pointsFor":  0,
                                                                              "pointsForDisplay":  "0.00",
-                                                                             "seasonStatus":  "pre_draft"
+                                                                             "seasonStatus":  "drafting"
                                                                          },
                                                             "awayTeam":  {
                                                                              "groupId":  "BRACKET-2026-1",
