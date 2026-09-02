@@ -1,6 +1,6 @@
 {
     "version":  1,
-    "updatedAt":  "2026-09-02T16:53:52.6736125Z",
+    "updatedAt":  "2026-09-02T20:24:08.7183266Z",
     "leagues":  {
                     "RDB4":  {
                                  "leagueRecordId":  "RDB4",
@@ -391,10 +391,11 @@
                                                       11,
                                                       12,
                                                       13,
-                                                      14
+                                                      14,
+                                                      15
                                                   ],
-                                 "finalPosted":  false,
-                                 "updatedAt":  "2026-09-02T16:53:52.6715822Z"
+                                 "finalPosted":  true,
+                                 "updatedAt":  "2026-09-02T20:24:08.7179125Z"
                              }
                 }
 }
