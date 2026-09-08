@@ -4,7 +4,7 @@
                     "refreshSpecificGroup":  "Run the bracket ledger sync for BRACKET-2026-1 only and refresh data/bracket-ledger.json from Sleeper so that bracket group\u0027s standings and playoff output are up to date.",
                     "refreshOverallStandings":  "Run the bracket ledger sync and refresh data/bracket-ledger.json from Sleeper, then give me the current combined overall standings for BRACKET-2026-1 with rank, team name, league/division, record, and points for. If the season is not far enough along or the group is not full yet, tell me the standings are provisional."
                 },
-    "generatedAt":  "2026-09-01T10:52:03",
+    "generatedAt":  "2026-09-08T10:21:15",
     "groups":  [
                    {
                        "groupId":  "BRACKET-2026-1",
@@ -29,14 +29,13 @@
                                      "postWeek13Reset":  "wild_card_winner_faces_8th_highest_remaining_seed",
                                      "postResetBracketStyle":  "static_traditional_bracket"
                                  },
-                       "lastSyncedAt":  "2026-09-01T10:52:03",
+                       "lastSyncedAt":  "2026-09-08T10:21:15",
                        "seasonStatuses":  [
-                                              "drafting",
                                               "in_season"
                                           ],
-                       "seedingReady":  false,
-                       "seasonDataReady":  false,
-                       "notes":  "One or more bracket leagues are still pre-draft or drafting, so the seeding output is structural or provisional.",
+                       "seedingReady":  true,
+                       "seasonDataReady":  true,
+                       "notes":  "Standings and seeding reflect current Sleeper roster settings.",
                        "overallStandings":  [
                                                 {
                                                     "rank":  1,
@@ -157,7 +156,7 @@
                                                 },
                                                 {
                                                     "rank":  10,
-                                                    "teamName":  "Pukamon",
+                                                    "teamName":  "Jsn/Jeanty",
                                                     "displayName":  "declanq1",
                                                     "leagueRecordId":  "RDB3",
                                                     "leagueName":  "Iron",
@@ -261,19 +260,6 @@
                                                 },
                                                 {
                                                     "rank":  18,
-                                                    "teamName":  "gratefulhead",
-                                                    "displayName":  "gratefulhead",
-                                                    "leagueRecordId":  "RDB4",
-                                                    "leagueName":  "Vanguard",
-                                                    "division":  "Fast",
-                                                    "record":  "0-0-0",
-                                                    "pointsFor":  0,
-                                                    "pointsForDisplay":  "0.00",
-                                                    "ownerId":  "1195136617623166976",
-                                                    "rosterId":  11
-                                                },
-                                                {
-                                                    "rank":  19,
                                                     "teamName":  "Johnny Canuck",
                                                     "displayName":  "henninge",
                                                     "leagueRecordId":  "RDB1",
@@ -286,7 +272,7 @@
                                                     "rosterId":  11
                                                 },
                                                 {
-                                                    "rank":  20,
+                                                    "rank":  19,
                                                     "teamName":  "TN Hess",
                                                     "displayName":  "Hess105",
                                                     "leagueRecordId":  "RDB5",
@@ -299,7 +285,7 @@
                                                     "rosterId":  12
                                                 },
                                                 {
-                                                    "rank":  21,
+                                                    "rank":  20,
                                                     "teamName":  "Hilto",
                                                     "displayName":  "Hilto",
                                                     "leagueRecordId":  "RDB5",
@@ -312,8 +298,8 @@
                                                     "rosterId":  2
                                                 },
                                                 {
-                                                    "rank":  22,
-                                                    "teamName":  "HTownSwarm",
+                                                    "rank":  21,
+                                                    "teamName":  "Bhaysheka Egbuten",
                                                     "displayName":  "HTownSwarm",
                                                     "leagueRecordId":  "RDB3",
                                                     "leagueName":  "Iron",
@@ -325,7 +311,7 @@
                                                     "rosterId":  4
                                                 },
                                                 {
-                                                    "rank":  23,
+                                                    "rank":  22,
                                                     "teamName":  "Imperialsalsa23",
                                                     "displayName":  "Imperialsalsa23",
                                                     "leagueRecordId":  "RDB5",
@@ -338,7 +324,7 @@
                                                     "rosterId":  7
                                                 },
                                                 {
-                                                    "rank":  24,
+                                                    "rank":  23,
                                                     "teamName":  "iMystery",
                                                     "displayName":  "iMystery",
                                                     "leagueRecordId":  "RDB5",
@@ -351,7 +337,7 @@
                                                     "rosterId":  11
                                                 },
                                                 {
-                                                    "rank":  25,
+                                                    "rank":  24,
                                                     "teamName":  "JavarisonLamar",
                                                     "displayName":  "JavarisonLamar",
                                                     "leagueRecordId":  "RDB5",
@@ -364,7 +350,7 @@
                                                     "rosterId":  10
                                                 },
                                                 {
-                                                    "rank":  26,
+                                                    "rank":  25,
                                                     "teamName":  "jboogie541",
                                                     "displayName":  "jboogie541",
                                                     "leagueRecordId":  "RDB3",
@@ -377,7 +363,7 @@
                                                     "rosterId":  9
                                                 },
                                                 {
-                                                    "rank":  27,
+                                                    "rank":  26,
                                                     "teamName":  "Worthy of Scrutiny",
                                                     "displayName":  "Jdorsh",
                                                     "leagueRecordId":  "RDB5",
@@ -390,7 +376,7 @@
                                                     "rosterId":  5
                                                 },
                                                 {
-                                                    "rank":  28,
+                                                    "rank":  27,
                                                     "teamName":  "White Chocolate",
                                                     "displayName":  "jmoncs",
                                                     "leagueRecordId":  "RDB4",
@@ -403,7 +389,7 @@
                                                     "rosterId":  4
                                                 },
                                                 {
-                                                    "rank":  29,
+                                                    "rank":  28,
                                                     "teamName":  "joetheschmoe",
                                                     "displayName":  "joetheschmoe",
                                                     "leagueRecordId":  "RDB1",
@@ -416,7 +402,7 @@
                                                     "rosterId":  4
                                                 },
                                                 {
-                                                    "rank":  30,
+                                                    "rank":  29,
                                                     "teamName":  "jpfiteni",
                                                     "displayName":  "jpfiteni",
                                                     "leagueRecordId":  "RDB4",
@@ -429,7 +415,7 @@
                                                     "rosterId":  1
                                                 },
                                                 {
-                                                    "rank":  31,
+                                                    "rank":  30,
                                                     "teamName":  "THE RAY GUN",
                                                     "displayName":  "Jray1515",
                                                     "leagueRecordId":  "RDB3",
@@ -442,7 +428,7 @@
                                                     "rosterId":  3
                                                 },
                                                 {
-                                                    "rank":  32,
+                                                    "rank":  31,
                                                     "teamName":  "Walker Texas Rangers",
                                                     "displayName":  "kfoxchifan",
                                                     "leagueRecordId":  "RDB2",
@@ -455,8 +441,21 @@
                                                     "rosterId":  1
                                                 },
                                                 {
+                                                    "rank":  32,
+                                                    "teamName":  "kingyellowman",
+                                                    "displayName":  "kingyellowman",
+                                                    "leagueRecordId":  "RDB4",
+                                                    "leagueName":  "Vanguard",
+                                                    "division":  "Fast",
+                                                    "record":  "0-0-0",
+                                                    "pointsFor":  0,
+                                                    "pointsForDisplay":  "0.00",
+                                                    "ownerId":  "1195136617623166976",
+                                                    "rosterId":  11
+                                                },
+                                                {
                                                     "rank":  33,
-                                                    "teamName":  "Kribi",
+                                                    "teamName":  "Omae Wa Mou Shindeiru",
                                                     "displayName":  "Kribi",
                                                     "leagueRecordId":  "RDB3",
                                                     "leagueName":  "Iron",
@@ -560,7 +559,7 @@
                                                 },
                                                 {
                                                     "rank":  41,
-                                                    "teamName":  "Omega1105",
+                                                    "teamName":  "CBPOY Three-Peat",
                                                     "displayName":  "Omega1105",
                                                     "leagueRecordId":  "RDB2",
                                                     "leagueName":  "Apex",
@@ -1228,7 +1227,7 @@
                                                                          "ownerId":  "1168422541535584256",
                                                                          "rosterId":  5,
                                                                          "displayName":  "Omega1105",
-                                                                         "teamName":  "",
+                                                                         "teamName":  "CBPOY Three-Peat",
                                                                          "wins":  0,
                                                                          "losses":  0,
                                                                          "ties":  0,
@@ -1340,7 +1339,7 @@
                                                    "localLeagueName":  "Iron",
                                                    "sleeperLeagueName":  "Iron Division (VBP\u0027s Redraft Bracket-Fast Draft)",
                                                    "division":  "Fast",
-                                                   "status":  "drafting",
+                                                   "status":  "in_season",
                                                    "standings":  [
                                                                      {
                                                                          "groupId":  "BRACKET-2026-1",
@@ -1352,14 +1351,14 @@
                                                                          "ownerId":  "737907365877317632",
                                                                          "rosterId":  12,
                                                                          "displayName":  "declanq1",
-                                                                         "teamName":  "Pukamon",
+                                                                         "teamName":  "Jsn/Jeanty",
                                                                          "wins":  0,
                                                                          "losses":  0,
                                                                          "ties":  0,
                                                                          "recordPct":  0,
                                                                          "pointsFor":  0,
                                                                          "pointsForDisplay":  "0.00",
-                                                                         "seasonStatus":  "drafting"
+                                                                         "seasonStatus":  "in_season"
                                                                      },
                                                                      {
                                                                          "groupId":  "BRACKET-2026-1",
@@ -1378,7 +1377,7 @@
                                                                          "recordPct":  0,
                                                                          "pointsFor":  0,
                                                                          "pointsForDisplay":  "0.00",
-                                                                         "seasonStatus":  "drafting"
+                                                                         "seasonStatus":  "in_season"
                                                                      },
                                                                      {
                                                                          "groupId":  "BRACKET-2026-1",
@@ -1397,7 +1396,7 @@
                                                                          "recordPct":  0,
                                                                          "pointsFor":  0,
                                                                          "pointsForDisplay":  "0.00",
-                                                                         "seasonStatus":  "drafting"
+                                                                         "seasonStatus":  "in_season"
                                                                      },
                                                                      {
                                                                          "groupId":  "BRACKET-2026-1",
@@ -1409,14 +1408,14 @@
                                                                          "ownerId":  "1133514404269637632",
                                                                          "rosterId":  4,
                                                                          "displayName":  "HTownSwarm",
-                                                                         "teamName":  "",
+                                                                         "teamName":  "Bhaysheka Egbuten",
                                                                          "wins":  0,
                                                                          "losses":  0,
                                                                          "ties":  0,
                                                                          "recordPct":  0,
                                                                          "pointsFor":  0,
                                                                          "pointsForDisplay":  "0.00",
-                                                                         "seasonStatus":  "drafting"
+                                                                         "seasonStatus":  "in_season"
                                                                      },
                                                                      {
                                                                          "groupId":  "BRACKET-2026-1",
@@ -1435,7 +1434,7 @@
                                                                          "recordPct":  0,
                                                                          "pointsFor":  0,
                                                                          "pointsForDisplay":  "0.00",
-                                                                         "seasonStatus":  "drafting"
+                                                                         "seasonStatus":  "in_season"
                                                                      },
                                                                      {
                                                                          "groupId":  "BRACKET-2026-1",
@@ -1454,7 +1453,7 @@
                                                                          "recordPct":  0,
                                                                          "pointsFor":  0,
                                                                          "pointsForDisplay":  "0.00",
-                                                                         "seasonStatus":  "drafting"
+                                                                         "seasonStatus":  "in_season"
                                                                      },
                                                                      {
                                                                          "groupId":  "BRACKET-2026-1",
@@ -1466,14 +1465,14 @@
                                                                          "ownerId":  "983473463291711488",
                                                                          "rosterId":  5,
                                                                          "displayName":  "Kribi",
-                                                                         "teamName":  "",
+                                                                         "teamName":  "Omae Wa Mou Shindeiru",
                                                                          "wins":  0,
                                                                          "losses":  0,
                                                                          "ties":  0,
                                                                          "recordPct":  0,
                                                                          "pointsFor":  0,
                                                                          "pointsForDisplay":  "0.00",
-                                                                         "seasonStatus":  "drafting"
+                                                                         "seasonStatus":  "in_season"
                                                                      },
                                                                      {
                                                                          "groupId":  "BRACKET-2026-1",
@@ -1492,7 +1491,7 @@
                                                                          "recordPct":  0,
                                                                          "pointsFor":  0,
                                                                          "pointsForDisplay":  "0.00",
-                                                                         "seasonStatus":  "drafting"
+                                                                         "seasonStatus":  "in_season"
                                                                      },
                                                                      {
                                                                          "groupId":  "BRACKET-2026-1",
@@ -1511,7 +1510,7 @@
                                                                          "recordPct":  0,
                                                                          "pointsFor":  0,
                                                                          "pointsForDisplay":  "0.00",
-                                                                         "seasonStatus":  "drafting"
+                                                                         "seasonStatus":  "in_season"
                                                                      },
                                                                      {
                                                                          "groupId":  "BRACKET-2026-1",
@@ -1530,7 +1529,7 @@
                                                                          "recordPct":  0,
                                                                          "pointsFor":  0,
                                                                          "pointsForDisplay":  "0.00",
-                                                                         "seasonStatus":  "drafting"
+                                                                         "seasonStatus":  "in_season"
                                                                      },
                                                                      {
                                                                          "groupId":  "BRACKET-2026-1",
@@ -1549,7 +1548,7 @@
                                                                          "recordPct":  0,
                                                                          "pointsFor":  0,
                                                                          "pointsForDisplay":  "0.00",
-                                                                         "seasonStatus":  "drafting"
+                                                                         "seasonStatus":  "in_season"
                                                                      },
                                                                      {
                                                                          "groupId":  "BRACKET-2026-1",
@@ -1568,7 +1567,7 @@
                                                                          "recordPct":  0,
                                                                          "pointsFor":  0,
                                                                          "pointsForDisplay":  "0.00",
-                                                                         "seasonStatus":  "drafting"
+                                                                         "seasonStatus":  "in_season"
                                                                      }
                                                                  ],
                                                    "divisionWinner":  {
@@ -1581,14 +1580,14 @@
                                                                           "ownerId":  "737907365877317632",
                                                                           "rosterId":  12,
                                                                           "displayName":  "declanq1",
-                                                                          "teamName":  "Pukamon",
+                                                                          "teamName":  "Jsn/Jeanty",
                                                                           "wins":  0,
                                                                           "losses":  0,
                                                                           "ties":  0,
                                                                           "recordPct":  0,
                                                                           "pointsFor":  0,
                                                                           "pointsForDisplay":  "0.00",
-                                                                          "seasonStatus":  "drafting"
+                                                                          "seasonStatus":  "in_season"
                                                                       }
                                                },
                                                {
@@ -1663,25 +1662,6 @@
                                                                          "division":  "Fast",
                                                                          "localLeagueName":  "Vanguard",
                                                                          "sleeperLeagueName":  "Vanguard Division (Redraft Bracket - Slow Draft)",
-                                                                         "ownerId":  "1195136617623166976",
-                                                                         "rosterId":  11,
-                                                                         "displayName":  "gratefulhead",
-                                                                         "teamName":  "",
-                                                                         "wins":  0,
-                                                                         "losses":  0,
-                                                                         "ties":  0,
-                                                                         "recordPct":  0,
-                                                                         "pointsFor":  0,
-                                                                         "pointsForDisplay":  "0.00",
-                                                                         "seasonStatus":  "in_season"
-                                                                     },
-                                                                     {
-                                                                         "groupId":  "BRACKET-2026-1",
-                                                                         "leagueRecordId":  "RDB4",
-                                                                         "sleeperLeagueId":  "1338005113482022912",
-                                                                         "division":  "Fast",
-                                                                         "localLeagueName":  "Vanguard",
-                                                                         "sleeperLeagueName":  "Vanguard Division (Redraft Bracket - Slow Draft)",
                                                                          "ownerId":  "863211973901520896",
                                                                          "rosterId":  4,
                                                                          "displayName":  "jmoncs",
@@ -1704,6 +1684,25 @@
                                                                          "ownerId":  "581514643499954176",
                                                                          "rosterId":  1,
                                                                          "displayName":  "jpfiteni",
+                                                                         "teamName":  "",
+                                                                         "wins":  0,
+                                                                         "losses":  0,
+                                                                         "ties":  0,
+                                                                         "recordPct":  0,
+                                                                         "pointsFor":  0,
+                                                                         "pointsForDisplay":  "0.00",
+                                                                         "seasonStatus":  "in_season"
+                                                                     },
+                                                                     {
+                                                                         "groupId":  "BRACKET-2026-1",
+                                                                         "leagueRecordId":  "RDB4",
+                                                                         "sleeperLeagueId":  "1338005113482022912",
+                                                                         "division":  "Fast",
+                                                                         "localLeagueName":  "Vanguard",
+                                                                         "sleeperLeagueName":  "Vanguard Division (Redraft Bracket - Slow Draft)",
+                                                                         "ownerId":  "1195136617623166976",
+                                                                         "rosterId":  11,
+                                                                         "displayName":  "kingyellowman",
                                                                          "teamName":  "",
                                                                          "wins":  0,
                                                                          "losses":  0,
@@ -2212,14 +2211,14 @@
                                                                 "ownerId":  "737907365877317632",
                                                                 "rosterId":  12,
                                                                 "displayName":  "declanq1",
-                                                                "teamName":  "Pukamon",
+                                                                "teamName":  "Jsn/Jeanty",
                                                                 "wins":  0,
                                                                 "losses":  0,
                                                                 "ties":  0,
                                                                 "recordPct":  0,
                                                                 "pointsFor":  0,
                                                                 "pointsForDisplay":  "0.00",
-                                                                "seasonStatus":  "drafting"
+                                                                "seasonStatus":  "in_season"
                                                             }
                                                }
                                            ],
@@ -2359,7 +2358,7 @@
                                                                  "recordPct":  0,
                                                                  "pointsFor":  0,
                                                                  "pointsForDisplay":  "0.00",
-                                                                 "seasonStatus":  "drafting"
+                                                                 "seasonStatus":  "in_season"
                                                              }
                                                 },
                                                 {
@@ -2451,7 +2450,7 @@
                                                                  "recordPct":  0,
                                                                  "pointsFor":  0,
                                                                  "pointsForDisplay":  "0.00",
-                                                                 "seasonStatus":  "drafting"
+                                                                 "seasonStatus":  "in_season"
                                                              }
                                                 },
                                                 {
@@ -2505,29 +2504,6 @@
                                                     "seedType":  "direct-qualifier",
                                                     "team":  {
                                                                  "groupId":  "BRACKET-2026-1",
-                                                                 "leagueRecordId":  "RDB4",
-                                                                 "sleeperLeagueId":  "1338005113482022912",
-                                                                 "division":  "Fast",
-                                                                 "localLeagueName":  "Vanguard",
-                                                                 "sleeperLeagueName":  "Vanguard Division (Redraft Bracket - Slow Draft)",
-                                                                 "ownerId":  "1195136617623166976",
-                                                                 "rosterId":  11,
-                                                                 "displayName":  "gratefulhead",
-                                                                 "teamName":  "",
-                                                                 "wins":  0,
-                                                                 "losses":  0,
-                                                                 "ties":  0,
-                                                                 "recordPct":  0,
-                                                                 "pointsFor":  0,
-                                                                 "pointsForDisplay":  "0.00",
-                                                                 "seasonStatus":  "in_season"
-                                                             }
-                                                },
-                                                {
-                                                    "seed":  19,
-                                                    "seedType":  "direct-qualifier",
-                                                    "team":  {
-                                                                 "groupId":  "BRACKET-2026-1",
                                                                  "leagueRecordId":  "RDB1",
                                                                  "sleeperLeagueId":  "1338004997836640256",
                                                                  "division":  "Slow",
@@ -2547,7 +2523,7 @@
                                                              }
                                                 },
                                                 {
-                                                    "seed":  20,
+                                                    "seed":  19,
                                                     "seedType":  "direct-qualifier",
                                                     "team":  {
                                                                  "groupId":  "BRACKET-2026-1",
@@ -2570,7 +2546,7 @@
                                                              }
                                                 },
                                                 {
-                                                    "seed":  21,
+                                                    "seed":  20,
                                                     "seedType":  "direct-qualifier",
                                                     "team":  {
                                                                  "groupId":  "BRACKET-2026-1",
@@ -2593,7 +2569,7 @@
                                                              }
                                                 },
                                                 {
-                                                    "seed":  22,
+                                                    "seed":  21,
                                                     "seedType":  "direct-qualifier",
                                                     "team":  {
                                                                  "groupId":  "BRACKET-2026-1",
@@ -2605,18 +2581,18 @@
                                                                  "ownerId":  "1133514404269637632",
                                                                  "rosterId":  4,
                                                                  "displayName":  "HTownSwarm",
-                                                                 "teamName":  "",
+                                                                 "teamName":  "Bhaysheka Egbuten",
                                                                  "wins":  0,
                                                                  "losses":  0,
                                                                  "ties":  0,
                                                                  "recordPct":  0,
                                                                  "pointsFor":  0,
                                                                  "pointsForDisplay":  "0.00",
-                                                                 "seasonStatus":  "drafting"
+                                                                 "seasonStatus":  "in_season"
                                                              }
                                                 },
                                                 {
-                                                    "seed":  23,
+                                                    "seed":  22,
                                                     "seedType":  "direct-qualifier",
                                                     "team":  {
                                                                  "groupId":  "BRACKET-2026-1",
@@ -2639,7 +2615,7 @@
                                                              }
                                                 },
                                                 {
-                                                    "seed":  24,
+                                                    "seed":  23,
                                                     "seedType":  "direct-qualifier",
                                                     "team":  {
                                                                  "groupId":  "BRACKET-2026-1",
@@ -2662,7 +2638,7 @@
                                                              }
                                                 },
                                                 {
-                                                    "seed":  25,
+                                                    "seed":  24,
                                                     "seedType":  "direct-qualifier",
                                                     "team":  {
                                                                  "groupId":  "BRACKET-2026-1",
@@ -2685,7 +2661,7 @@
                                                              }
                                                 },
                                                 {
-                                                    "seed":  26,
+                                                    "seed":  25,
                                                     "seedType":  "direct-qualifier",
                                                     "team":  {
                                                                  "groupId":  "BRACKET-2026-1",
@@ -2704,11 +2680,11 @@
                                                                  "recordPct":  0,
                                                                  "pointsFor":  0,
                                                                  "pointsForDisplay":  "0.00",
-                                                                 "seasonStatus":  "drafting"
+                                                                 "seasonStatus":  "in_season"
                                                              }
                                                 },
                                                 {
-                                                    "seed":  27,
+                                                    "seed":  26,
                                                     "seedType":  "direct-qualifier",
                                                     "team":  {
                                                                  "groupId":  "BRACKET-2026-1",
@@ -2731,7 +2707,7 @@
                                                              }
                                                 },
                                                 {
-                                                    "seed":  28,
+                                                    "seed":  27,
                                                     "seedType":  "direct-qualifier",
                                                     "team":  {
                                                                  "groupId":  "BRACKET-2026-1",
@@ -2754,7 +2730,7 @@
                                                              }
                                                 },
                                                 {
-                                                    "seed":  29,
+                                                    "seed":  28,
                                                     "seedType":  "direct-qualifier",
                                                     "team":  {
                                                                  "groupId":  "BRACKET-2026-1",
@@ -2777,7 +2753,7 @@
                                                              }
                                                 },
                                                 {
-                                                    "seed":  30,
+                                                    "seed":  29,
                                                     "seedType":  "direct-qualifier",
                                                     "team":  {
                                                                  "groupId":  "BRACKET-2026-1",
@@ -2798,34 +2774,34 @@
                                                                  "pointsForDisplay":  "0.00",
                                                                  "seasonStatus":  "in_season"
                                                              }
+                                                },
+                                                {
+                                                    "seed":  30,
+                                                    "seedType":  "direct-qualifier",
+                                                    "team":  {
+                                                                 "groupId":  "BRACKET-2026-1",
+                                                                 "leagueRecordId":  "RDB3",
+                                                                 "sleeperLeagueId":  "1338005075167035392",
+                                                                 "division":  "Fast",
+                                                                 "localLeagueName":  "Iron",
+                                                                 "sleeperLeagueName":  "Iron Division (VBP\u0027s Redraft Bracket-Fast Draft)",
+                                                                 "ownerId":  "632034908692385792",
+                                                                 "rosterId":  3,
+                                                                 "displayName":  "Jray1515",
+                                                                 "teamName":  "THE RAY GUN",
+                                                                 "wins":  0,
+                                                                 "losses":  0,
+                                                                 "ties":  0,
+                                                                 "recordPct":  0,
+                                                                 "pointsFor":  0,
+                                                                 "pointsForDisplay":  "0.00",
+                                                                 "seasonStatus":  "in_season"
+                                                             }
                                                 }
                                             ],
                        "wildCards":  [
                                          {
                                              "seed":  31,
-                                             "seedType":  "wild-card",
-                                             "team":  {
-                                                          "groupId":  "BRACKET-2026-1",
-                                                          "leagueRecordId":  "RDB3",
-                                                          "sleeperLeagueId":  "1338005075167035392",
-                                                          "division":  "Fast",
-                                                          "localLeagueName":  "Iron",
-                                                          "sleeperLeagueName":  "Iron Division (VBP\u0027s Redraft Bracket-Fast Draft)",
-                                                          "ownerId":  "632034908692385792",
-                                                          "rosterId":  3,
-                                                          "displayName":  "Jray1515",
-                                                          "teamName":  "THE RAY GUN",
-                                                          "wins":  0,
-                                                          "losses":  0,
-                                                          "ties":  0,
-                                                          "recordPct":  0,
-                                                          "pointsFor":  0,
-                                                          "pointsForDisplay":  "0.00",
-                                                          "seasonStatus":  "drafting"
-                                                      }
-                                         },
-                                         {
-                                             "seed":  32,
                                              "seedType":  "wild-card",
                                              "team":  {
                                                           "groupId":  "BRACKET-2026-1",
@@ -2838,6 +2814,29 @@
                                                           "rosterId":  1,
                                                           "displayName":  "kfoxchifan",
                                                           "teamName":  "Walker Texas Rangers",
+                                                          "wins":  0,
+                                                          "losses":  0,
+                                                          "ties":  0,
+                                                          "recordPct":  0,
+                                                          "pointsFor":  0,
+                                                          "pointsForDisplay":  "0.00",
+                                                          "seasonStatus":  "in_season"
+                                                      }
+                                         },
+                                         {
+                                             "seed":  32,
+                                             "seedType":  "wild-card",
+                                             "team":  {
+                                                          "groupId":  "BRACKET-2026-1",
+                                                          "leagueRecordId":  "RDB4",
+                                                          "sleeperLeagueId":  "1338005113482022912",
+                                                          "division":  "Fast",
+                                                          "localLeagueName":  "Vanguard",
+                                                          "sleeperLeagueName":  "Vanguard Division (Redraft Bracket - Slow Draft)",
+                                                          "ownerId":  "1195136617623166976",
+                                                          "rosterId":  11,
+                                                          "displayName":  "kingyellowman",
+                                                          "teamName":  "",
                                                           "wins":  0,
                                                           "losses":  0,
                                                           "ties":  0,
@@ -2859,14 +2858,14 @@
                                                "ownerId":  "983473463291711488",
                                                "rosterId":  5,
                                                "displayName":  "Kribi",
-                                               "teamName":  "",
+                                               "teamName":  "Omae Wa Mou Shindeiru",
                                                "wins":  0,
                                                "losses":  0,
                                                "ties":  0,
                                                "recordPct":  0,
                                                "pointsFor":  0,
                                                "pointsForDisplay":  "0.00",
-                                               "seasonStatus":  "drafting"
+                                               "seasonStatus":  "in_season"
                                            },
                                            {
                                                "groupId":  "BRACKET-2026-1",
@@ -2923,7 +2922,7 @@
                                                "recordPct":  0,
                                                "pointsFor":  0,
                                                "pointsForDisplay":  "0.00",
-                                               "seasonStatus":  "drafting"
+                                               "seasonStatus":  "in_season"
                                            },
                                            {
                                                "groupId":  "BRACKET-2026-1",
@@ -3011,7 +3010,7 @@
                                                "ownerId":  "1168422541535584256",
                                                "rosterId":  5,
                                                "displayName":  "Omega1105",
-                                               "teamName":  "",
+                                               "teamName":  "CBPOY Three-Peat",
                                                "wins":  0,
                                                "losses":  0,
                                                "ties":  0,
@@ -3189,7 +3188,7 @@
                                                "recordPct":  0,
                                                "pointsFor":  0,
                                                "pointsForDisplay":  "0.00",
-                                               "seasonStatus":  "drafting"
+                                               "seasonStatus":  "in_season"
                                            },
                                            {
                                                "groupId":  "BRACKET-2026-1",
@@ -3246,7 +3245,7 @@
                                                "recordPct":  0,
                                                "pointsFor":  0,
                                                "pointsForDisplay":  "0.00",
-                                               "seasonStatus":  "drafting"
+                                               "seasonStatus":  "in_season"
                                            },
                                            {
                                                "groupId":  "BRACKET-2026-1",
@@ -3265,7 +3264,7 @@
                                                "recordPct":  0,
                                                "pointsFor":  0,
                                                "pointsForDisplay":  "0.00",
-                                               "seasonStatus":  "drafting"
+                                               "seasonStatus":  "in_season"
                                            },
                                            {
                                                "groupId":  "BRACKET-2026-1",
@@ -3379,7 +3378,7 @@
                                                "recordPct":  0,
                                                "pointsFor":  0,
                                                "pointsForDisplay":  "0.00",
-                                               "seasonStatus":  "drafting"
+                                               "seasonStatus":  "in_season"
                                            }
                                        ],
                        "playoffField":  [
@@ -3488,14 +3487,14 @@
                                                              "ownerId":  "737907365877317632",
                                                              "rosterId":  12,
                                                              "displayName":  "declanq1",
-                                                             "teamName":  "Pukamon",
+                                                             "teamName":  "Jsn/Jeanty",
                                                              "wins":  0,
                                                              "losses":  0,
                                                              "ties":  0,
                                                              "recordPct":  0,
                                                              "pointsFor":  0,
                                                              "pointsForDisplay":  "0.00",
-                                                             "seasonStatus":  "drafting"
+                                                             "seasonStatus":  "in_season"
                                                          }
                                             },
                                             {
@@ -3633,7 +3632,7 @@
                                                              "recordPct":  0,
                                                              "pointsFor":  0,
                                                              "pointsForDisplay":  "0.00",
-                                                             "seasonStatus":  "drafting"
+                                                             "seasonStatus":  "in_season"
                                                          }
                                             },
                                             {
@@ -3725,7 +3724,7 @@
                                                              "recordPct":  0,
                                                              "pointsFor":  0,
                                                              "pointsForDisplay":  "0.00",
-                                                             "seasonStatus":  "drafting"
+                                                             "seasonStatus":  "in_season"
                                                          }
                                             },
                                             {
@@ -3779,29 +3778,6 @@
                                                 "seedType":  "direct-qualifier",
                                                 "team":  {
                                                              "groupId":  "BRACKET-2026-1",
-                                                             "leagueRecordId":  "RDB4",
-                                                             "sleeperLeagueId":  "1338005113482022912",
-                                                             "division":  "Fast",
-                                                             "localLeagueName":  "Vanguard",
-                                                             "sleeperLeagueName":  "Vanguard Division (Redraft Bracket - Slow Draft)",
-                                                             "ownerId":  "1195136617623166976",
-                                                             "rosterId":  11,
-                                                             "displayName":  "gratefulhead",
-                                                             "teamName":  "",
-                                                             "wins":  0,
-                                                             "losses":  0,
-                                                             "ties":  0,
-                                                             "recordPct":  0,
-                                                             "pointsFor":  0,
-                                                             "pointsForDisplay":  "0.00",
-                                                             "seasonStatus":  "in_season"
-                                                         }
-                                            },
-                                            {
-                                                "seed":  19,
-                                                "seedType":  "direct-qualifier",
-                                                "team":  {
-                                                             "groupId":  "BRACKET-2026-1",
                                                              "leagueRecordId":  "RDB1",
                                                              "sleeperLeagueId":  "1338004997836640256",
                                                              "division":  "Slow",
@@ -3821,7 +3797,7 @@
                                                          }
                                             },
                                             {
-                                                "seed":  20,
+                                                "seed":  19,
                                                 "seedType":  "direct-qualifier",
                                                 "team":  {
                                                              "groupId":  "BRACKET-2026-1",
@@ -3844,7 +3820,7 @@
                                                          }
                                             },
                                             {
-                                                "seed":  21,
+                                                "seed":  20,
                                                 "seedType":  "direct-qualifier",
                                                 "team":  {
                                                              "groupId":  "BRACKET-2026-1",
@@ -3867,7 +3843,7 @@
                                                          }
                                             },
                                             {
-                                                "seed":  22,
+                                                "seed":  21,
                                                 "seedType":  "direct-qualifier",
                                                 "team":  {
                                                              "groupId":  "BRACKET-2026-1",
@@ -3879,18 +3855,18 @@
                                                              "ownerId":  "1133514404269637632",
                                                              "rosterId":  4,
                                                              "displayName":  "HTownSwarm",
-                                                             "teamName":  "",
+                                                             "teamName":  "Bhaysheka Egbuten",
                                                              "wins":  0,
                                                              "losses":  0,
                                                              "ties":  0,
                                                              "recordPct":  0,
                                                              "pointsFor":  0,
                                                              "pointsForDisplay":  "0.00",
-                                                             "seasonStatus":  "drafting"
+                                                             "seasonStatus":  "in_season"
                                                          }
                                             },
                                             {
-                                                "seed":  23,
+                                                "seed":  22,
                                                 "seedType":  "direct-qualifier",
                                                 "team":  {
                                                              "groupId":  "BRACKET-2026-1",
@@ -3913,7 +3889,7 @@
                                                          }
                                             },
                                             {
-                                                "seed":  24,
+                                                "seed":  23,
                                                 "seedType":  "direct-qualifier",
                                                 "team":  {
                                                              "groupId":  "BRACKET-2026-1",
@@ -3936,7 +3912,7 @@
                                                          }
                                             },
                                             {
-                                                "seed":  25,
+                                                "seed":  24,
                                                 "seedType":  "direct-qualifier",
                                                 "team":  {
                                                              "groupId":  "BRACKET-2026-1",
@@ -3959,7 +3935,7 @@
                                                          }
                                             },
                                             {
-                                                "seed":  26,
+                                                "seed":  25,
                                                 "seedType":  "direct-qualifier",
                                                 "team":  {
                                                              "groupId":  "BRACKET-2026-1",
@@ -3978,11 +3954,11 @@
                                                              "recordPct":  0,
                                                              "pointsFor":  0,
                                                              "pointsForDisplay":  "0.00",
-                                                             "seasonStatus":  "drafting"
+                                                             "seasonStatus":  "in_season"
                                                          }
                                             },
                                             {
-                                                "seed":  27,
+                                                "seed":  26,
                                                 "seedType":  "direct-qualifier",
                                                 "team":  {
                                                              "groupId":  "BRACKET-2026-1",
@@ -4005,7 +3981,7 @@
                                                          }
                                             },
                                             {
-                                                "seed":  28,
+                                                "seed":  27,
                                                 "seedType":  "direct-qualifier",
                                                 "team":  {
                                                              "groupId":  "BRACKET-2026-1",
@@ -4028,7 +4004,7 @@
                                                          }
                                             },
                                             {
-                                                "seed":  29,
+                                                "seed":  28,
                                                 "seedType":  "direct-qualifier",
                                                 "team":  {
                                                              "groupId":  "BRACKET-2026-1",
@@ -4051,7 +4027,7 @@
                                                          }
                                             },
                                             {
-                                                "seed":  30,
+                                                "seed":  29,
                                                 "seedType":  "direct-qualifier",
                                                 "team":  {
                                                              "groupId":  "BRACKET-2026-1",
@@ -4074,8 +4050,8 @@
                                                          }
                                             },
                                             {
-                                                "seed":  31,
-                                                "seedType":  "wild-card",
+                                                "seed":  30,
+                                                "seedType":  "direct-qualifier",
                                                 "team":  {
                                                              "groupId":  "BRACKET-2026-1",
                                                              "leagueRecordId":  "RDB3",
@@ -4093,11 +4069,11 @@
                                                              "recordPct":  0,
                                                              "pointsFor":  0,
                                                              "pointsForDisplay":  "0.00",
-                                                             "seasonStatus":  "drafting"
+                                                             "seasonStatus":  "in_season"
                                                          }
                                             },
                                             {
-                                                "seed":  32,
+                                                "seed":  31,
                                                 "seedType":  "wild-card",
                                                 "team":  {
                                                              "groupId":  "BRACKET-2026-1",
@@ -4118,6 +4094,29 @@
                                                              "pointsForDisplay":  "0.00",
                                                              "seasonStatus":  "in_season"
                                                          }
+                                            },
+                                            {
+                                                "seed":  32,
+                                                "seedType":  "wild-card",
+                                                "team":  {
+                                                             "groupId":  "BRACKET-2026-1",
+                                                             "leagueRecordId":  "RDB4",
+                                                             "sleeperLeagueId":  "1338005113482022912",
+                                                             "division":  "Fast",
+                                                             "localLeagueName":  "Vanguard",
+                                                             "sleeperLeagueName":  "Vanguard Division (Redraft Bracket - Slow Draft)",
+                                                             "ownerId":  "1195136617623166976",
+                                                             "rosterId":  11,
+                                                             "displayName":  "kingyellowman",
+                                                             "teamName":  "",
+                                                             "wins":  0,
+                                                             "losses":  0,
+                                                             "ties":  0,
+                                                             "recordPct":  0,
+                                                             "pointsFor":  0,
+                                                             "pointsForDisplay":  "0.00",
+                                                             "seasonStatus":  "in_season"
+                                                         }
                                             }
                                         ],
                        "week13":  {
@@ -4126,25 +4125,6 @@
                                                              "homeSeed":  31,
                                                              "awaySeed":  32,
                                                              "homeTeam":  {
-                                                                              "groupId":  "BRACKET-2026-1",
-                                                                              "leagueRecordId":  "RDB3",
-                                                                              "sleeperLeagueId":  "1338005075167035392",
-                                                                              "division":  "Fast",
-                                                                              "localLeagueName":  "Iron",
-                                                                              "sleeperLeagueName":  "Iron Division (VBP\u0027s Redraft Bracket-Fast Draft)",
-                                                                              "ownerId":  "632034908692385792",
-                                                                              "rosterId":  3,
-                                                                              "displayName":  "Jray1515",
-                                                                              "teamName":  "THE RAY GUN",
-                                                                              "wins":  0,
-                                                                              "losses":  0,
-                                                                              "ties":  0,
-                                                                              "recordPct":  0,
-                                                                              "pointsFor":  0,
-                                                                              "pointsForDisplay":  "0.00",
-                                                                              "seasonStatus":  "drafting"
-                                                                          },
-                                                             "awayTeam":  {
                                                                               "groupId":  "BRACKET-2026-1",
                                                                               "leagueRecordId":  "RDB2",
                                                                               "sleeperLeagueId":  "1338005036122279936",
@@ -4155,6 +4135,25 @@
                                                                               "rosterId":  1,
                                                                               "displayName":  "kfoxchifan",
                                                                               "teamName":  "Walker Texas Rangers",
+                                                                              "wins":  0,
+                                                                              "losses":  0,
+                                                                              "ties":  0,
+                                                                              "recordPct":  0,
+                                                                              "pointsFor":  0,
+                                                                              "pointsForDisplay":  "0.00",
+                                                                              "seasonStatus":  "in_season"
+                                                                          },
+                                                             "awayTeam":  {
+                                                                              "groupId":  "BRACKET-2026-1",
+                                                                              "leagueRecordId":  "RDB4",
+                                                                              "sleeperLeagueId":  "1338005113482022912",
+                                                                              "division":  "Fast",
+                                                                              "localLeagueName":  "Vanguard",
+                                                                              "sleeperLeagueName":  "Vanguard Division (Redraft Bracket - Slow Draft)",
+                                                                              "ownerId":  "1195136617623166976",
+                                                                              "rosterId":  11,
+                                                                              "displayName":  "kingyellowman",
+                                                                              "teamName":  "",
                                                                               "wins":  0,
                                                                               "losses":  0,
                                                                               "ties":  0,
@@ -4190,15 +4189,15 @@
                                                                          },
                                                             "awayTeam":  {
                                                                              "groupId":  "BRACKET-2026-1",
-                                                                             "leagueRecordId":  "RDB4",
-                                                                             "sleeperLeagueId":  "1338005113482022912",
+                                                                             "leagueRecordId":  "RDB3",
+                                                                             "sleeperLeagueId":  "1338005075167035392",
                                                                              "division":  "Fast",
-                                                                             "localLeagueName":  "Vanguard",
-                                                                             "sleeperLeagueName":  "Vanguard Division (Redraft Bracket - Slow Draft)",
-                                                                             "ownerId":  "581514643499954176",
-                                                                             "rosterId":  1,
-                                                                             "displayName":  "jpfiteni",
-                                                                             "teamName":  "",
+                                                                             "localLeagueName":  "Iron",
+                                                                             "sleeperLeagueName":  "Iron Division (VBP\u0027s Redraft Bracket-Fast Draft)",
+                                                                             "ownerId":  "632034908692385792",
+                                                                             "rosterId":  3,
+                                                                             "displayName":  "Jray1515",
+                                                                             "teamName":  "THE RAY GUN",
                                                                              "wins":  0,
                                                                              "losses":  0,
                                                                              "ties":  0,
@@ -4233,14 +4232,14 @@
                                                                          },
                                                             "awayTeam":  {
                                                                              "groupId":  "BRACKET-2026-1",
-                                                                             "leagueRecordId":  "RDB1",
-                                                                             "sleeperLeagueId":  "1338004997836640256",
-                                                                             "division":  "Slow",
-                                                                             "localLeagueName":  "Titan",
-                                                                             "sleeperLeagueName":  "Titan Division (VBP\u0027s Redraft Bracket-Slow Draft)",
-                                                                             "ownerId":  "471890047507886080",
-                                                                             "rosterId":  4,
-                                                                             "displayName":  "joetheschmoe",
+                                                                             "leagueRecordId":  "RDB4",
+                                                                             "sleeperLeagueId":  "1338005113482022912",
+                                                                             "division":  "Fast",
+                                                                             "localLeagueName":  "Vanguard",
+                                                                             "sleeperLeagueName":  "Vanguard Division (Redraft Bracket - Slow Draft)",
+                                                                             "ownerId":  "581514643499954176",
+                                                                             "rosterId":  1,
+                                                                             "displayName":  "jpfiteni",
                                                                              "teamName":  "",
                                                                              "wins":  0,
                                                                              "losses":  0,
@@ -4276,15 +4275,15 @@
                                                                          },
                                                             "awayTeam":  {
                                                                              "groupId":  "BRACKET-2026-1",
-                                                                             "leagueRecordId":  "RDB4",
-                                                                             "sleeperLeagueId":  "1338005113482022912",
-                                                                             "division":  "Fast",
-                                                                             "localLeagueName":  "Vanguard",
-                                                                             "sleeperLeagueName":  "Vanguard Division (Redraft Bracket - Slow Draft)",
-                                                                             "ownerId":  "863211973901520896",
+                                                                             "leagueRecordId":  "RDB1",
+                                                                             "sleeperLeagueId":  "1338004997836640256",
+                                                                             "division":  "Slow",
+                                                                             "localLeagueName":  "Titan",
+                                                                             "sleeperLeagueName":  "Titan Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                                             "ownerId":  "471890047507886080",
                                                                              "rosterId":  4,
-                                                                             "displayName":  "jmoncs",
-                                                                             "teamName":  "White Chocolate",
+                                                                             "displayName":  "joetheschmoe",
+                                                                             "teamName":  "",
                                                                              "wins":  0,
                                                                              "losses":  0,
                                                                              "ties":  0,
@@ -4319,15 +4318,15 @@
                                                                          },
                                                             "awayTeam":  {
                                                                              "groupId":  "BRACKET-2026-1",
-                                                                             "leagueRecordId":  "RDB5",
-                                                                             "sleeperLeagueId":  "1338005158071660544",
-                                                                             "division":  "Slow",
-                                                                             "localLeagueName":  "Dominion",
-                                                                             "sleeperLeagueName":  "Dominion Division (VBP\u0027s Redraft Bracket - SD)",
-                                                                             "ownerId":  "734859736066969600",
-                                                                             "rosterId":  5,
-                                                                             "displayName":  "Jdorsh",
-                                                                             "teamName":  "Worthy of Scrutiny",
+                                                                             "leagueRecordId":  "RDB4",
+                                                                             "sleeperLeagueId":  "1338005113482022912",
+                                                                             "division":  "Fast",
+                                                                             "localLeagueName":  "Vanguard",
+                                                                             "sleeperLeagueName":  "Vanguard Division (Redraft Bracket - Slow Draft)",
+                                                                             "ownerId":  "863211973901520896",
+                                                                             "rosterId":  4,
+                                                                             "displayName":  "jmoncs",
+                                                                             "teamName":  "White Chocolate",
                                                                              "wins":  0,
                                                                              "losses":  0,
                                                                              "ties":  0,
@@ -4351,33 +4350,33 @@
                                                                              "ownerId":  "737907365877317632",
                                                                              "rosterId":  12,
                                                                              "displayName":  "declanq1",
-                                                                             "teamName":  "Pukamon",
+                                                                             "teamName":  "Jsn/Jeanty",
                                                                              "wins":  0,
                                                                              "losses":  0,
                                                                              "ties":  0,
                                                                              "recordPct":  0,
                                                                              "pointsFor":  0,
                                                                              "pointsForDisplay":  "0.00",
-                                                                             "seasonStatus":  "drafting"
+                                                                             "seasonStatus":  "in_season"
                                                                          },
                                                             "awayTeam":  {
                                                                              "groupId":  "BRACKET-2026-1",
-                                                                             "leagueRecordId":  "RDB3",
-                                                                             "sleeperLeagueId":  "1338005075167035392",
-                                                                             "division":  "Fast",
-                                                                             "localLeagueName":  "Iron",
-                                                                             "sleeperLeagueName":  "Iron Division (VBP\u0027s Redraft Bracket-Fast Draft)",
-                                                                             "ownerId":  "596396232251858944",
-                                                                             "rosterId":  9,
-                                                                             "displayName":  "jboogie541",
-                                                                             "teamName":  "",
+                                                                             "leagueRecordId":  "RDB5",
+                                                                             "sleeperLeagueId":  "1338005158071660544",
+                                                                             "division":  "Slow",
+                                                                             "localLeagueName":  "Dominion",
+                                                                             "sleeperLeagueName":  "Dominion Division (VBP\u0027s Redraft Bracket - SD)",
+                                                                             "ownerId":  "734859736066969600",
+                                                                             "rosterId":  5,
+                                                                             "displayName":  "Jdorsh",
+                                                                             "teamName":  "Worthy of Scrutiny",
                                                                              "wins":  0,
                                                                              "losses":  0,
                                                                              "ties":  0,
                                                                              "recordPct":  0,
                                                                              "pointsFor":  0,
                                                                              "pointsForDisplay":  "0.00",
-                                                                             "seasonStatus":  "drafting"
+                                                                             "seasonStatus":  "in_season"
                                                                          }
                                                         },
                                                         {
@@ -4405,14 +4404,14 @@
                                                                          },
                                                             "awayTeam":  {
                                                                              "groupId":  "BRACKET-2026-1",
-                                                                             "leagueRecordId":  "RDB5",
-                                                                             "sleeperLeagueId":  "1338005158071660544",
-                                                                             "division":  "Slow",
-                                                                             "localLeagueName":  "Dominion",
-                                                                             "sleeperLeagueName":  "Dominion Division (VBP\u0027s Redraft Bracket - SD)",
-                                                                             "ownerId":  "791162591366983680",
-                                                                             "rosterId":  10,
-                                                                             "displayName":  "JavarisonLamar",
+                                                                             "leagueRecordId":  "RDB3",
+                                                                             "sleeperLeagueId":  "1338005075167035392",
+                                                                             "division":  "Fast",
+                                                                             "localLeagueName":  "Iron",
+                                                                             "sleeperLeagueName":  "Iron Division (VBP\u0027s Redraft Bracket-Fast Draft)",
+                                                                             "ownerId":  "596396232251858944",
+                                                                             "rosterId":  9,
+                                                                             "displayName":  "jboogie541",
                                                                              "teamName":  "",
                                                                              "wins":  0,
                                                                              "losses":  0,
@@ -4453,9 +4452,9 @@
                                                                              "division":  "Slow",
                                                                              "localLeagueName":  "Dominion",
                                                                              "sleeperLeagueName":  "Dominion Division (VBP\u0027s Redraft Bracket - SD)",
-                                                                             "ownerId":  "608750621025202176",
-                                                                             "rosterId":  11,
-                                                                             "displayName":  "iMystery",
+                                                                             "ownerId":  "791162591366983680",
+                                                                             "rosterId":  10,
+                                                                             "displayName":  "JavarisonLamar",
                                                                              "teamName":  "",
                                                                              "wins":  0,
                                                                              "losses":  0,
@@ -4496,9 +4495,9 @@
                                                                              "division":  "Slow",
                                                                              "localLeagueName":  "Dominion",
                                                                              "sleeperLeagueName":  "Dominion Division (VBP\u0027s Redraft Bracket - SD)",
-                                                                             "ownerId":  "604903194249736192",
-                                                                             "rosterId":  7,
-                                                                             "displayName":  "Imperialsalsa23",
+                                                                             "ownerId":  "608750621025202176",
+                                                                             "rosterId":  11,
+                                                                             "displayName":  "iMystery",
                                                                              "teamName":  "",
                                                                              "wins":  0,
                                                                              "losses":  0,
@@ -4534,14 +4533,14 @@
                                                                          },
                                                             "awayTeam":  {
                                                                              "groupId":  "BRACKET-2026-1",
-                                                                             "leagueRecordId":  "RDB3",
-                                                                             "sleeperLeagueId":  "1338005075167035392",
-                                                                             "division":  "Fast",
-                                                                             "localLeagueName":  "Iron",
-                                                                             "sleeperLeagueName":  "Iron Division (VBP\u0027s Redraft Bracket-Fast Draft)",
-                                                                             "ownerId":  "1133514404269637632",
-                                                                             "rosterId":  4,
-                                                                             "displayName":  "HTownSwarm",
+                                                                             "leagueRecordId":  "RDB5",
+                                                                             "sleeperLeagueId":  "1338005158071660544",
+                                                                             "division":  "Slow",
+                                                                             "localLeagueName":  "Dominion",
+                                                                             "sleeperLeagueName":  "Dominion Division (VBP\u0027s Redraft Bracket - SD)",
+                                                                             "ownerId":  "604903194249736192",
+                                                                             "rosterId":  7,
+                                                                             "displayName":  "Imperialsalsa23",
                                                                              "teamName":  "",
                                                                              "wins":  0,
                                                                              "losses":  0,
@@ -4549,7 +4548,7 @@
                                                                              "recordPct":  0,
                                                                              "pointsFor":  0,
                                                                              "pointsForDisplay":  "0.00",
-                                                                             "seasonStatus":  "drafting"
+                                                                             "seasonStatus":  "in_season"
                                                                          }
                                                         },
                                                         {
@@ -4577,15 +4576,15 @@
                                                                          },
                                                             "awayTeam":  {
                                                                              "groupId":  "BRACKET-2026-1",
-                                                                             "leagueRecordId":  "RDB5",
-                                                                             "sleeperLeagueId":  "1338005158071660544",
-                                                                             "division":  "Slow",
-                                                                             "localLeagueName":  "Dominion",
-                                                                             "sleeperLeagueName":  "Dominion Division (VBP\u0027s Redraft Bracket - SD)",
-                                                                             "ownerId":  "79002768593272832",
-                                                                             "rosterId":  2,
-                                                                             "displayName":  "Hilto",
-                                                                             "teamName":  "",
+                                                                             "leagueRecordId":  "RDB3",
+                                                                             "sleeperLeagueId":  "1338005075167035392",
+                                                                             "division":  "Fast",
+                                                                             "localLeagueName":  "Iron",
+                                                                             "sleeperLeagueName":  "Iron Division (VBP\u0027s Redraft Bracket-Fast Draft)",
+                                                                             "ownerId":  "1133514404269637632",
+                                                                             "rosterId":  4,
+                                                                             "displayName":  "HTownSwarm",
+                                                                             "teamName":  "Bhaysheka Egbuten",
                                                                              "wins":  0,
                                                                              "losses":  0,
                                                                              "ties":  0,
@@ -4616,7 +4615,7 @@
                                                                              "recordPct":  0,
                                                                              "pointsFor":  0,
                                                                              "pointsForDisplay":  "0.00",
-                                                                             "seasonStatus":  "drafting"
+                                                                             "seasonStatus":  "in_season"
                                                                          },
                                                             "awayTeam":  {
                                                                              "groupId":  "BRACKET-2026-1",
@@ -4625,10 +4624,10 @@
                                                                              "division":  "Slow",
                                                                              "localLeagueName":  "Dominion",
                                                                              "sleeperLeagueName":  "Dominion Division (VBP\u0027s Redraft Bracket - SD)",
-                                                                             "ownerId":  "1127041219806285824",
-                                                                             "rosterId":  12,
-                                                                             "displayName":  "Hess105",
-                                                                             "teamName":  "TN Hess",
+                                                                             "ownerId":  "79002768593272832",
+                                                                             "rosterId":  2,
+                                                                             "displayName":  "Hilto",
+                                                                             "teamName":  "",
                                                                              "wins":  0,
                                                                              "losses":  0,
                                                                              "ties":  0,
@@ -4663,15 +4662,15 @@
                                                                          },
                                                             "awayTeam":  {
                                                                              "groupId":  "BRACKET-2026-1",
-                                                                             "leagueRecordId":  "RDB1",
-                                                                             "sleeperLeagueId":  "1338004997836640256",
+                                                                             "leagueRecordId":  "RDB5",
+                                                                             "sleeperLeagueId":  "1338005158071660544",
                                                                              "division":  "Slow",
-                                                                             "localLeagueName":  "Titan",
-                                                                             "sleeperLeagueName":  "Titan Division (VBP\u0027s Redraft Bracket-Slow Draft)",
-                                                                             "ownerId":  "473349702444642304",
-                                                                             "rosterId":  11,
-                                                                             "displayName":  "henninge",
-                                                                             "teamName":  "Johnny Canuck",
+                                                                             "localLeagueName":  "Dominion",
+                                                                             "sleeperLeagueName":  "Dominion Division (VBP\u0027s Redraft Bracket - SD)",
+                                                                             "ownerId":  "1127041219806285824",
+                                                                             "rosterId":  12,
+                                                                             "displayName":  "Hess105",
+                                                                             "teamName":  "TN Hess",
                                                                              "wins":  0,
                                                                              "losses":  0,
                                                                              "ties":  0,
@@ -4706,15 +4705,15 @@
                                                                          },
                                                             "awayTeam":  {
                                                                              "groupId":  "BRACKET-2026-1",
-                                                                             "leagueRecordId":  "RDB4",
-                                                                             "sleeperLeagueId":  "1338005113482022912",
-                                                                             "division":  "Fast",
-                                                                             "localLeagueName":  "Vanguard",
-                                                                             "sleeperLeagueName":  "Vanguard Division (Redraft Bracket - Slow Draft)",
-                                                                             "ownerId":  "1195136617623166976",
+                                                                             "leagueRecordId":  "RDB1",
+                                                                             "sleeperLeagueId":  "1338004997836640256",
+                                                                             "division":  "Slow",
+                                                                             "localLeagueName":  "Titan",
+                                                                             "sleeperLeagueName":  "Titan Division (VBP\u0027s Redraft Bracket-Slow Draft)",
+                                                                             "ownerId":  "473349702444642304",
                                                                              "rosterId":  11,
-                                                                             "displayName":  "gratefulhead",
-                                                                             "teamName":  "",
+                                                                             "displayName":  "henninge",
+                                                                             "teamName":  "Johnny Canuck",
                                                                              "wins":  0,
                                                                              "losses":  0,
                                                                              "ties":  0,
@@ -4788,7 +4787,7 @@
                                                                              "recordPct":  0,
                                                                              "pointsFor":  0,
                                                                              "pointsForDisplay":  "0.00",
-                                                                             "seasonStatus":  "drafting"
+                                                                             "seasonStatus":  "in_season"
                                                                          },
                                                             "awayTeam":  {
                                                                              "groupId":  "BRACKET-2026-1",
