@@ -60,7 +60,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\post-discord-waiver-tracker.p
 
 ## GitHub Actions
 
-`.github/workflows/discord-waiver-tracker.yml` refreshes the current recap every day at 2:00 PM Central. It schedules both possible UTC hours and performs a Chicago-time check so daylight-saving changes do not move the local posting time. Scheduled posting stays disabled until repository variable `DISCORD_WAIVER_TRACKER_ENABLED` is set to `true`.
+`.github/workflows/discord-waiver-tracker.yml` refreshes the current recap every day at 2:00 PM Central using GitHub's `America/Chicago` schedule timezone. A delayed GitHub Actions start still runs the tracker instead of being rejected by an exact-hour check. Scheduled posting stays disabled until repository variable `DISCORD_WAIVER_TRACKER_ENABLED` is set to `true`.
 
 The manual workflow defaults to dry-run mode. Recommended rollout:
 
