@@ -378,6 +378,9 @@ foreach ($leagueId in $expectedLeagueIds) {
       ownerId = Get-StringValue (Get-PropertyValue $row "ownerId")
       teamName = $teamName
       score = $score
+      wins = Get-IntValue (Get-PropertyValue (Get-PropertyValue $row "record") "wins")
+      losses = Get-IntValue (Get-PropertyValue (Get-PropertyValue $row "record") "losses")
+      ties = Get-IntValue (Get-PropertyValue (Get-PropertyValue $row "record") "ties")
       pointsFor = Get-DoubleValue (Get-PropertyValue (Get-PropertyValue $row "record") "pointsFor")
     }) | Out-Null
   }
@@ -414,11 +417,16 @@ if ($rankingsReady) {
     $lines = [System.Collections.Generic.List[string]]::new()
     for ($rank = $rangeStart; $rank -le $rangeEnd; $rank++) {
       $row = $topRows[$rank - 1]
-      $lines.Add(("{0:D2}. {1} - {2} - {3:N1} / 100" -f `
+      $record = if ((Get-IntValue $row.ties) -gt 0) {
+        "{0}-{1}-{2}" -f (Get-IntValue $row.wins), (Get-IntValue $row.losses), (Get-IntValue $row.ties)
+      } else {
+        "{0}-{1}" -f (Get-IntValue $row.wins), (Get-IntValue $row.losses)
+      }
+      $lines.Add(("{0:D2}. {1} - {2} - {3}" -f `
         $rank, `
         (Convert-ToPlainDiscordText $row.teamName 32), `
         (Convert-ToPlainDiscordText $row.divisionName 16), `
-        (Get-DoubleValue $row.score))) | Out-Null
+        $record)) | Out-Null
     }
     $fields.Add(@{
       name = "Ranks $rangeStart-$rangeEnd"
@@ -454,7 +462,7 @@ $embed = @{
   color = if ($rankingsReady) { 0xC0392B } else { 0x5865F2 }
   fields = @($fields)
   footer = @{ text = if ($rankingsReady) {
-    "Scores are roster-strength grades, not projected standings. Updated every Tuesday at 1:30 AM Central."
+    "Updated every Tuesday at 1:30 AM Central."
   } else {
     "Drafts are still in progress. Checked every Tuesday at 1:30 AM Central."
   } }
