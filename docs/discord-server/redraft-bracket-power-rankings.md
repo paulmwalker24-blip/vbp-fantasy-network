@@ -20,7 +20,7 @@ The Discord snapshot is generated in the runner's temporary directory. It does n
 
 Before every division draft is complete, Discord shows one waiting card with each division's current draft status. It never publishes a partial or sample Top 20.
 
-Once all five drafts are complete, the card displays ranks 1-20 in four plain-text groups. Scores are the existing 0-100 roster-strength grades generated for the website. They are not described as projected standings because wins, points scored, and playoff position are not part of this roster model.
+Once all five drafts are complete, the card displays ranks 1-20 in four plain-text groups. Each row includes the manager/team name, division, and current record. Internal roster-strength scores are used to order the rankings but are not displayed in Discord.
 
 If a later Sleeper refresh is incomplete or one division is missing, the publisher fails closed and leaves the last valid Top 20 in Discord.
 
