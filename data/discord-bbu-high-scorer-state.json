@@ -4,11 +4,21 @@
     "webhookId":  "1540365476234919956",
     "groupId":  "BBU-2026",
     "season":  "2026",
-    "completedWeek":  0,
-    "signature":  "c8920b0135a077cd782035b67afcbb4c519677adad702d146c5c1de21253511d",
+    "completedWeek":  1,
+    "signature":  "fa84433ec2275cd2eae239881469c556f64c7f6f8872c7fbcdb2857b66842993",
     "messageId":  "1540370236933410817",
     "weeklyHighScores":  [
-
+                             {
+                                 "week":  1,
+                                 "score":  200.29,
+                                 "winners":  [
+                                                 {
+                                                     "leagueRecordId":  "BBU3",
+                                                     "rosterId":  8,
+                                                     "teamName":  "crossthesea"
+                                                 }
+                                             ]
+                             }
                          ],
-    "updatedAt":  "2026-08-21T14:41:23.2830967+00:00"
+    "updatedAt":  "2026-09-15T22:20:11.7024844+00:00"
 }
