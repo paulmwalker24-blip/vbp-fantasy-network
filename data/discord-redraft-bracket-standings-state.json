@@ -3,14 +3,26 @@
     "channelId":  "1538942408602157226",
     "webhookId":  "1538942461198475326",
     "groupId":  "BRACKET-2026-1",
-    "snapshotKey":  "2026-09-08",
-    "signature":  "1db257469eb089b11ed8a7923929e5ce25b532de752440dc03141abd1c12a8ae",
-    "hasPublishedStandings":  false,
+    "snapshotKey":  "2026-09-15",
+    "signature":  "25b52e96ed4806a356b3c4068918abab99a16a16e29b1b194ae10cd456e6a93d",
+    "hasPublishedStandings":  true,
     "messages":  {
                      "overview":  {
                                       "messageId":  "1538947678765977694",
-                                      "updatedAt":  "2026-09-08T10:21:17.0415767+00:00"
-                                  }
+                                      "updatedAt":  "2026-09-15T10:45:18.6056340+00:00"
+                                  },
+                     "ranks-1-20":  {
+                                        "messageId":  "1549370523396608032",
+                                        "updatedAt":  "2026-09-15T10:45:19.7339336+00:00"
+                                    },
+                     "ranks-21-40":  {
+                                         "messageId":  "1549370528186236959",
+                                         "updatedAt":  "2026-09-15T10:45:19.9671151+00:00"
+                                     },
+                     "ranks-41-60":  {
+                                         "messageId":  "1549370529104793641",
+                                         "updatedAt":  "2026-09-15T10:45:20.2338288+00:00"
+                                     }
                  },
-    "updatedAt":  "2026-09-08T10:21:17.0533936+00:00"
+    "updatedAt":  "2026-09-15T10:45:20.2407755+00:00"
 }
