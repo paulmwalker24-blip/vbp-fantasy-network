@@ -1,11 +1,16 @@
 {
-  "version": 1,
-  "channelId": "1538949281573118082",
-  "webhookId": "",
-  "groupId": "BRACKET-2026-1",
-  "snapshotKey": "",
-  "signature": "",
-  "hasPublishedRankings": false,
-  "messages": {},
-  "updatedAt": ""
+    "version":  1,
+    "channelId":  "1538949281573118082",
+    "webhookId":  "1538949402360807484",
+    "groupId":  "BRACKET-2026-1",
+    "snapshotKey":  "2026-09-15",
+    "signature":  "c7c86cdabe12aae0f483a6d4aacab105bba866c17b9bb9df9ebab09a5147c6e5",
+    "hasPublishedRankings":  true,
+    "messages":  {
+                     "main":  {
+                                  "messageId":  "1549388211934077020",
+                                  "updatedAt":  "2026-09-15T11:55:36.3087628+00:00"
+                              }
+                 },
+    "updatedAt":  "2026-09-15T11:55:36.3504802+00:00"
 }
