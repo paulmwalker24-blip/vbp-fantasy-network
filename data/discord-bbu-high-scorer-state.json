@@ -4,8 +4,8 @@
     "webhookId":  "1540365476234919956",
     "groupId":  "BBU-2026",
     "season":  "2026",
-    "completedWeek":  1,
-    "signature":  "fa84433ec2275cd2eae239881469c556f64c7f6f8872c7fbcdb2857b66842993",
+    "completedWeek":  2,
+    "signature":  "937bdd40bbd52d25f61672b83a6b17494f7a4a3da7df99f91ed391a1610ef0c1",
     "messageId":  "1540370236933410817",
     "weeklyHighScores":  [
                              {
@@ -18,7 +18,18 @@
                                                      "teamName":  "crossthesea"
                                                  }
                                              ]
+                             },
+                             {
+                                 "week":  2,
+                                 "score":  170.08,
+                                 "winners":  [
+                                                 {
+                                                     "leagueRecordId":  "BBU1",
+                                                     "rosterId":  1,
+                                                     "teamName":  "HopscotchDaisy"
+                                                 }
+                                             ]
                              }
                          ],
-    "updatedAt":  "2026-09-15T22:20:11.7024844+00:00"
+    "updatedAt":  "2026-09-22T22:19:06.3422443+00:00"
 }
