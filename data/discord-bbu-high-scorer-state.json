@@ -4,8 +4,8 @@
     "webhookId":  "1540365476234919956",
     "groupId":  "BBU-2026",
     "season":  "2026",
-    "completedWeek":  2,
-    "signature":  "937bdd40bbd52d25f61672b83a6b17494f7a4a3da7df99f91ed391a1610ef0c1",
+    "completedWeek":  3,
+    "signature":  "ee63b64f204c62feb66131196c5c8232914a178ecbff8b0b3ab608cf65cfa470",
     "messageId":  "1540370236933410817",
     "weeklyHighScores":  [
                              {
@@ -29,7 +29,18 @@
                                                      "teamName":  "HopscotchDaisy"
                                                  }
                                              ]
+                             },
+                             {
+                                 "week":  3,
+                                 "score":  176.06,
+                                 "winners":  [
+                                                 {
+                                                     "leagueRecordId":  "BBU1",
+                                                     "rosterId":  8,
+                                                     "teamName":  "jessegambo"
+                                                 }
+                                             ]
                              }
                          ],
-    "updatedAt":  "2026-09-22T22:19:06.3422443+00:00"
+    "updatedAt":  "2026-09-29T23:02:32.5653453+00:00"
 }
