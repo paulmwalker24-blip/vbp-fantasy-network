@@ -4,8 +4,8 @@
     "webhookId":  "1540365476234919956",
     "groupId":  "BBU-2026",
     "season":  "2026",
-    "completedWeek":  3,
-    "signature":  "ee63b64f204c62feb66131196c5c8232914a178ecbff8b0b3ab608cf65cfa470",
+    "completedWeek":  4,
+    "signature":  "2f115644f517b0cd00f972c5dd217fbf1b91cf7ce875b0fdcfad7a3cbc17b352",
     "messageId":  "1540370236933410817",
     "weeklyHighScores":  [
                              {
@@ -40,7 +40,18 @@
                                                      "teamName":  "jessegambo"
                                                  }
                                              ]
+                             },
+                             {
+                                 "week":  4,
+                                 "score":  193.17,
+                                 "winners":  [
+                                                 {
+                                                     "leagueRecordId":  "BBU13",
+                                                     "rosterId":  4,
+                                                     "teamName":  "sumbrad"
+                                                 }
+                                             ]
                              }
                          ],
-    "updatedAt":  "2026-09-29T23:02:32.5653453+00:00"
+    "updatedAt":  "2026-10-06T23:07:18.1040445+00:00"
 }
