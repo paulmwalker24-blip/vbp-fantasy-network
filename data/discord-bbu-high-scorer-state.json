@@ -4,8 +4,8 @@
     "webhookId":  "1540365476234919956",
     "groupId":  "BBU-2026",
     "season":  "2026",
-    "completedWeek":  5,
-    "signature":  "723557f30082531ac3eaa53b3947b5a696292380f8a9b3b9d7091f7ddf1fff58",
+    "completedWeek":  6,
+    "signature":  "ef8aebc6297d204d3551f920e5f38e818b118c4ac52d8249afb3a725085cfbfe",
     "messageId":  "1540370236933410817",
     "weeklyHighScores":  [
                              {
@@ -62,7 +62,18 @@
                                                      "teamName":  "WWWaldo"
                                                  }
                                              ]
+                             },
+                             {
+                                 "week":  6,
+                                 "score":  146.08,
+                                 "winners":  [
+                                                 {
+                                                     "leagueRecordId":  "BBU7",
+                                                     "rosterId":  10,
+                                                     "teamName":  "VinsBroPaul"
+                                                 }
+                                             ]
                              }
                          ],
-    "updatedAt":  "2026-10-13T23:19:33.0950069+00:00"
+    "updatedAt":  "2026-10-20T22:25:06.0868853+00:00"
 }
