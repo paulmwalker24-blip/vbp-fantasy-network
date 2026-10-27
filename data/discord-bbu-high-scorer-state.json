@@ -4,8 +4,8 @@
     "webhookId":  "1540365476234919956",
     "groupId":  "BBU-2026",
     "season":  "2026",
-    "completedWeek":  6,
-    "signature":  "ef8aebc6297d204d3551f920e5f38e818b118c4ac52d8249afb3a725085cfbfe",
+    "completedWeek":  7,
+    "signature":  "d2b0c5bd4c44e234f2725510dbde9b632acbb6398b07e6cc22d648c5f212c67d",
     "messageId":  "1540370236933410817",
     "weeklyHighScores":  [
                              {
@@ -73,7 +73,18 @@
                                                      "teamName":  "VinsBroPaul"
                                                  }
                                              ]
+                             },
+                             {
+                                 "week":  7,
+                                 "score":  173.42,
+                                 "winners":  [
+                                                 {
+                                                     "leagueRecordId":  "BBU2",
+                                                     "rosterId":  2,
+                                                     "teamName":  "jakeejk"
+                                                 }
+                                             ]
                              }
                          ],
-    "updatedAt":  "2026-10-20T22:25:06.0868853+00:00"
+    "updatedAt":  "2026-10-27T23:00:26.9179955+00:00"
 }
