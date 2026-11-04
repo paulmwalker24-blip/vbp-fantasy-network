@@ -4,8 +4,8 @@
     "webhookId":  "1540365476234919956",
     "groupId":  "BBU-2026",
     "season":  "2026",
-    "completedWeek":  7,
-    "signature":  "d2b0c5bd4c44e234f2725510dbde9b632acbb6398b07e6cc22d648c5f212c67d",
+    "completedWeek":  8,
+    "signature":  "a5f75e119f3421fe21bfff8645883acfae454b1da7371e5f029a64b65a225c73",
     "messageId":  "1540370236933410817",
     "weeklyHighScores":  [
                              {
@@ -84,7 +84,18 @@
                                                      "teamName":  "jakeejk"
                                                  }
                                              ]
+                             },
+                             {
+                                 "week":  8,
+                                 "score":  181.48,
+                                 "winners":  [
+                                                 {
+                                                     "leagueRecordId":  "BBU7",
+                                                     "rosterId":  6,
+                                                     "teamName":  "TryanboloneBB"
+                                                 }
+                                             ]
                              }
                          ],
-    "updatedAt":  "2026-10-27T23:00:26.9179955+00:00"
+    "updatedAt":  "2026-11-04T00:41:59.3583884+00:00"
 }
