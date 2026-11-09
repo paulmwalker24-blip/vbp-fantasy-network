@@ -386,7 +386,7 @@ foreach ($snapshot in $snapshots) {
 $payloadEntries = [System.Collections.Generic.List[object]]::new()
 $overviewDescription = if ($standingsReady) {
   $periodLabel = if ($completedWeek -gt 0) { "through Week $completedWeek" } else { "for the Tuesday snapshot dated $($centralNow.ToString('MMMM d, yyyy'))" }
-  "Official combined standings $periodLabel. Rankings use record first, followed by points for to two decimals."
+  "Official combined standings $periodLabel. Division leaders hold positions 1-5, ordered by record then points for. The remaining teams follow by record then points for to two decimals."
 } else {
   "The official combined 1-60 standings will activate after Sleeper records completed regular-season games across all five divisions. This card updates automatically every Tuesday at 1:00 AM Central."
 }
@@ -494,7 +494,7 @@ if ($standingsReady) {
       url = $websiteUrl
       description = ($lines -join "`n")
       color = if ($range.start -eq 1) { 0xC0392B } elseif ($range.start -eq 21) { 0xF39C12 } else { 0x7F8C8D }
-      footer = @{ text = "Record is the first tiebreaker; points for is shown to two decimals." }
+      footer = @{ text = "Division leaders rank 1-5; record then points for determines order within each tier." }
       timestamp = $timestamp
     }
     $payloadEntries.Add([pscustomobject]@{ key = $range.key; payload = (New-DiscordPayload $rangeEmbed) }) | Out-Null

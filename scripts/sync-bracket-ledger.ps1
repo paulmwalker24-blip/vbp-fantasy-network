@@ -386,9 +386,18 @@ foreach ($group in ($selectedGroups | Sort-Object { Get-StringValue $_.groupId }
     }) | Out-Null
   }
 
+  $divisionWinners = Get-StandingsOrder -Entries @($leagueSnapshots | ForEach-Object { $_.divisionWinner } | Where-Object { $null -ne $_ })
+  $combinedStandingsOrder = Get-StandingsOrder -Entries @($allTeams)
+  if (@($groupLeagues | Where-Object { (Get-StringValue $_.format).ToLowerInvariant() -ne 'bracket' }).Count -eq 0) {
+    # Redraft Bracket reserves standings positions 1-5 for the division leaders.
+    # Keep the remaining field in record/PF order; wildcard selection stays separate.
+    $leaderKeys = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
+    foreach ($leader in $divisionWinners) { [void]$leaderKeys.Add((Get-TeamKey $leader)) }
+    $combinedStandingsOrder = @($divisionWinners) + @($combinedStandingsOrder | Where-Object { -not $leaderKeys.Contains((Get-TeamKey $_)) })
+  }
   $overallStandings = [System.Collections.Generic.List[object]]::new()
   $overallRank = 1
-  foreach ($team in (Get-StandingsOrder -Entries @($allTeams))) {
+  foreach ($team in $combinedStandingsOrder) {
     $resolvedTeamName = Get-StringValue $team.teamName
     if ([string]::IsNullOrWhiteSpace($resolvedTeamName)) {
       $resolvedTeamName = Get-StringValue $team.displayName
@@ -411,7 +420,6 @@ foreach ($group in ($selectedGroups | Sort-Object { Get-StringValue $_.groupId }
     $overallRank++
   }
 
-  $divisionWinners = Get-StandingsOrder -Entries @($leagueSnapshots | ForEach-Object { $_.divisionWinner } | Where-Object { $null -ne $_ })
   $divisionWinnerTeamKeys = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
   $seededDivisionWinners = [System.Collections.Generic.List[object]]::new()
   $seedNumber = 1

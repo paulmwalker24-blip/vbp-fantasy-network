@@ -1344,7 +1344,9 @@ function renderMeta(group) {
     scoreboardsHeading.textContent = "Live League Scoreboards";
   }
   if (standingsHeading) {
-    standingsHeading.textContent = "Full Combined Standings";
+    standingsHeading.textContent = centerView.key === "redraft"
+      ? "Combined Standings - Division Leaders 1-5"
+      : "Full Combined Standings";
   }
   if (tradeTrackerHeading) {
     tradeTrackerHeading.textContent = "Trade Tracker";

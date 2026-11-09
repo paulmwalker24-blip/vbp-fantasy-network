@@ -16,6 +16,8 @@ The scheduled job:
 
 ## Published cards
 
+The Redraft Bracket combined standings reserve ranks 1-5 for the five current division leaders, ordered among themselves by record and points for. The remaining teams follow by record and points for. This order is generated in `scripts/sync-bracket-ledger.ps1` and shared by Discord and the website. Wildcard selection remains a separate points-based step and is unchanged by the display order.
+
 Before regular-season results exist, Discord receives one preseason card explaining when the standings will begin. The website's synthetic sample standings are never sent to Discord.
 
 After completed games exist, the publisher maintains four persistent cards:
