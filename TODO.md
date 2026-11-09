@@ -2,8 +2,6 @@
 
 ## Immediate
 
-- [ ] Verify the installed playoff bot and GitHub token with a successful live refresh of all 16 matchup titles after standings publication.
-
 - [ ] Use `docs/todo-website-leagues.md` as the active website, league-data, recruiting-copy, and payment cleanup list.
 - [ ] Use `docs/todo-discord.md` as the active Discord launch, webhook, and GitHub Actions automation list.
 
@@ -14,6 +12,8 @@
 ## Completed
 
 ### Immediate
+
+- [x] Install the playoff bot, save its GitHub token, and verify all 16 named matchup posts refresh in place after standings publication.
 
 - [x] Replace the temporary constitution headers for Redraft, Dynasty, Dynasty Bracket, Redraft Bracket, Chopped, Pick'em, Co-Manager Redraft, Sacrifice Redraft, Best Ball Union, Best Ball Gauntlet, and Keeper with dedicated wide header assets.
 - [x] Split the Bracket Center into redraft and dynasty views inside the same page and scaffold the dynasty-bracket ledger path so both formats can share the same public center pattern.
