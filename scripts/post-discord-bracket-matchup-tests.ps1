@@ -7,6 +7,8 @@ param(
   [ValidateRange(1,31)][int]$StartSeed = 1,
   [switch]$AllMatchups,
   [string]$WebhookUrl = $env:DISCORD_WEBHOOK_REDRAFT_BRACKET_PLAYOFFS,
+  [string]$BotToken = $env:DISCORD_BOT_TOKEN,
+  [switch]$ValidateBotAccess,
   [switch]$LockedField,
   [switch]$DryRun
 )
@@ -71,6 +73,69 @@ function Read-DiscordMessage([string]$Uri) {
   }
 }
 
+# Bot requests only address channel IDs in the verified playoff forum. Never log headers.
+function Invoke-PlayoffBot([string]$Id, [string]$Method = 'Get', [hashtable]$Payload) {
+  if ($Id -notmatch '^\d+$') { throw 'Invalid Discord channel ID.' }
+  foreach ($attempt in 1..4) {
+    try {
+      Start-Sleep -Milliseconds 1200
+      $request = @{
+        Uri = "https://discord.com/api/v10/channels/$Id"
+        Method = $Method
+        Headers = @{ Authorization = "Bot $BotToken" }
+        TimeoutSec = 45
+      }
+      if ($Payload) {
+        $request.ContentType = 'application/json'
+        $request.Body = [Text.Encoding]::UTF8.GetBytes(($Payload | ConvertTo-Json -Depth 4))
+      }
+      return Invoke-RestMethod @request
+    } catch {
+      $response = Get-Value $_.Exception 'Response'
+      $status = if ($response) { [int]$response.StatusCode } else { 0 }
+      if ($status -eq 429 -and $attempt -lt 4) {
+        $delay = 5
+        try { $delay = [int][math]::Ceiling([double](($_.ErrorDetails.Message | ConvertFrom-Json).retry_after)) + 1 } catch { }
+        if ($delay -gt 60) { throw 'Discord bot rate limit exceeds 60 seconds. Resume the saved update later.' }
+        Start-Sleep -Seconds ([math]::Max(1, $delay))
+        continue
+      }
+      throw "Playoff bot request failed (HTTP $status). Check DISCORD_BOT_TOKEN and playoff forum permissions."
+    }
+  }
+}
+function Assert-PlayoffThread($Thread, [string]$ExpectedId) {
+  if ([string]$Thread.id -ne $ExpectedId -or [string]$Thread.parent_id -ne $ChannelId -or
+      [string]$Thread.guild_id -ne '1362524156465385674' -or [int]$Thread.type -ne 11) {
+    throw 'Saved matchup thread is outside the expected VBP playoff forum. No title will be changed.'
+  }
+}
+function Get-PlayoffBotThreads($State, $Plans) {
+  if ([string]::IsNullOrWhiteSpace($BotToken)) { throw 'DISCORD_BOT_TOKEN is required to keep matchup titles current.' }
+  $forum = Invoke-PlayoffBot $ChannelId
+  if ([string]$forum.id -ne $ChannelId -or [int]$forum.type -ne 15 -or [string]$forum.guild_id -ne '1362524156465385674') {
+    throw 'Bot destination is not the expected VBP playoff forum.'
+  }
+  $threads = @{}
+  foreach ($plan in $Plans) {
+    $saved = Get-Value $State.posts $plan.key
+    if (-not $saved) { continue }
+    $thread = Invoke-PlayoffBot ([string]$saved.threadId)
+    Assert-PlayoffThread $thread ([string]$saved.threadId)
+    $threads[[string]$saved.threadId] = $thread
+  }
+  return $threads
+}
+function Update-PlayoffTitle([string]$Id, [string]$Title, $Thread) {
+  Assert-PlayoffThread $Thread $Id
+  if ($Thread.name -cne $Title) {
+    Invoke-PlayoffBot $Id 'Patch' @{ name = $Title } | Out-Null
+  }
+  $verified = Invoke-PlayoffBot $Id
+  Assert-PlayoffThread $verified $Id
+  if ($verified.name -cne $Title) { throw 'Matchup title readback mismatch.' }
+}
+
 # Reuse the overview's complete-group, fresh-snapshot, unique-seed and tie validation.
 & "$PSScriptRoot/post-discord-bracket-playoff-round.ps1" -LedgerPath $LedgerPath -LockedField:$LockedField -DryRun
 $group = (Get-Content -LiteralPath $LedgerPath -Raw | ConvertFrom-Json).groups | Where-Object groupId -eq 'BRACKET-2026-1'
@@ -94,6 +159,7 @@ foreach ($pair in $pairs) {
   $entries = @($field[$pair[0] - 1], $field[$pair[1] - 1])
   $teamPayloads = @()
   $scoreboardTeams = @()
+  $titleTeams = @()
   foreach ($entry in $entries) {
     $team = $entry.team
     $leagueId = [string]$team.sleeperLeagueId
@@ -117,6 +183,7 @@ foreach ($pair in $pairs) {
       $matchup = $matches[0]
     }
     $name = Clean-Text $(if ($team.teamName) { $team.teamName } else { $team.displayName }) 40
+    $titleTeams += "#$($entry.seed) $name"
     $scoreboardScore = if ($showScores) { '{0:N2}' -f $matchup.points } else { '--' }
     $scoreboardTeams += "**#$($entry.seed) $name** - $scoreboardScore"
     $slots = @($source.league.roster_positions | Where-Object { $_ -notin @('BN','IR','TAXI') })
@@ -167,8 +234,9 @@ foreach ($pair in $pairs) {
     $teamPayloads += @{ username = 'VBP Bracket Playoffs'; content = $content; embeds = @(); allowed_mentions = @{ parse = @() }; flags = 4 }
   }
   $wildcard = $pair[0] -eq 31
-  # Stable seed-pair titles remain accurate when projected teams change each Tuesday.
-  $title = if ($wildcard) { 'Wild Card Play-In | #31 vs #32' } else { 'Round 1 | #{0} vs #{1}' -f $pair[0], $pair[1] }
+  # Keep the same thread IDs while refreshing the actual seeded team names.
+  $title = $titleTeams -join ' vs '
+  if ($title.Length -gt 100) { throw 'Matchup title exceeds Discord channel name limit.' }
   $scoreNote = if ($showScores) { 'Week 13 scores | Tuesday refresh' } else { 'Scores begin Week 13.' }
   $fieldLabel = if ($LockedField) { 'Locked' } else { 'Projected' }
   $intro = "## SCORE`n`n$($scoreboardTeams -join "`n`n")`n`n-# $fieldLabel $(if ($wildcard) {'Wild Card Play-In'} else {'Round 1'}) | $scoreNote"
@@ -176,7 +244,7 @@ foreach ($pair in $pairs) {
 }
 # Build and validate every plan before any Discord mutation.
 $plans | ConvertTo-Json -Depth 12 | Set-Content -LiteralPath $PreviewPath -Encoding UTF8
-if ($DryRun) { Write-Host "Validated $($plans.Count) matchups, $($plans.Count * 2) team messages, Week $week. Preview: $PreviewPath"; return }
+if ($DryRun -and -not $ValidateBotAccess) { Write-Host "Validated $($plans.Count) matchups, $($plans.Count * 2) team messages, Week $week. Preview: $PreviewPath"; return }
 $webhook = $WebhookUrl
 if (-not $webhook) {
   $config = Get-Content -LiteralPath $WebhookConfigPath -Raw | ConvertFrom-Json
@@ -189,6 +257,8 @@ $state = if (Test-Path -LiteralPath $StatePath) { Get-Content -LiteralPath $Stat
   [pscustomobject]@{ channelId=$ChannelId; webhookId=[string]$info.id; posts=[pscustomobject]@{} }
 }
 if ($state.channelId -ne $ChannelId -or $state.webhookId -ne [string]$info.id) { throw 'Saved test state belongs to a different webhook/channel.' }
+$botThreads = Get-PlayoffBotThreads $state $plans
+if ($DryRun) { Write-Host "Validated bot access to the forum and $($botThreads.Count) saved matchup threads. No Discord changes made."; return }
 foreach ($plan in $plans) {
   $seedNumber = [int](($plan.key -split '-')[-2])
   if ($seedNumber -lt $StartSeed) { continue }
@@ -200,6 +270,7 @@ foreach ($plan in $plans) {
     $saved = [pscustomobject]@{ threadId=[string]$response.channel_id; messageId=[string]$response.id; teamMessageIds=@('','') }
     $state.posts | Add-Member -NotePropertyName $plan.key -NotePropertyValue $saved
     Save-State
+    $botThreads[[string]$saved.threadId] = Invoke-PlayoffBot ([string]$saved.threadId)
   } else { Send-Discord "$webhook/messages/$($saved.messageId)?thread_id=$($saved.threadId)" $plan.intro 'Patch' | Out-Null }
   $introReadback = Read-DiscordMessage "$webhook/messages/$($saved.messageId)?thread_id=$($saved.threadId)"
   if ($introReadback.content -ne $plan.intro.content -or @($introReadback.embeds).Count -ne 0) { throw 'Scoreboard message readback mismatch.' }
@@ -236,5 +307,6 @@ foreach ($plan in $plans) {
     $saved.obsoleteMessageIds = @($saved.obsoleteMessageIds | Where-Object { $_ -ne $obsolete })
     Save-State
   }
+  Update-PlayoffTitle ([string]$saved.threadId) $plan.threadName $botThreads[[string]$saved.threadId]
   Write-Host "Verified $($plan.threadName) | thread $($saved.threadId)"
 }

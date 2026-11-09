@@ -1,5 +1,9 @@
 # Local Scripts
 
+## `refresh-discord-bracket-playoffs.ps1`
+
+Refreshes the existing 2026 overview, all 16 matchup titles, SCORE messages, and 32 rosters after Tuesday standings succeed. Requires `DISCORD_WEBHOOK_REDRAFT_BRACKET_PLAYOFFS` and `DISCORD_BOT_TOKEN` for live updates. The bot updates both seeded team names in place, preserving thread IDs and replies. Live preflight checks forum/thread ownership; readback verifies each title. Before Week 13 scores remain hidden; Round 1 scoring uses Week 13 only. GitHub Actions hosts the REST calls; no always-on bot process is needed. See `docs/discord-server/redraft-bracket-playoffs.md` for state, locking, credentials and preview commands.
+
 ## `run-100yardrush.ps1`
 
 Creates a 100 Yard Rush replay URL without writing any repo data.

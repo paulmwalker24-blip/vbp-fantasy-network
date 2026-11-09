@@ -2,6 +2,8 @@
 
 ## Immediate
 
+- [ ] Verify the installed playoff bot and GitHub token with a successful live refresh of all 16 matchup titles after standings publication.
+
 - [ ] Use `docs/todo-website-leagues.md` as the active website, league-data, recruiting-copy, and payment cleanup list.
 - [ ] Use `docs/todo-discord.md` as the active Discord launch, webhook, and GitHub Actions automation list.
 

@@ -36,7 +36,7 @@ if (Test-Path -LiteralPath $FieldPath) {
 }
 New-Item -ItemType Directory -Path 'tmp' -Force | Out-Null
 # Build every team message before editing the overview or matchup posts.
-& "$PSScriptRoot/post-discord-bracket-matchup-tests.ps1" -LedgerPath $effectivePath -StatePath $MatchupStatePath -AllMatchups -LockedField:$locked -DryRun
+& "$PSScriptRoot/post-discord-bracket-matchup-tests.ps1" -LedgerPath $effectivePath -StatePath $MatchupStatePath -AllMatchups -LockedField:$locked -DryRun -ValidateBotAccess:(-not $DryRun)
 if ($DryRun) { return }
 & "$PSScriptRoot/post-discord-bracket-playoff-round.ps1" -LedgerPath $effectivePath -StatePath $OverviewStatePath -LockedField:$locked
 & "$PSScriptRoot/post-discord-bracket-matchup-tests.ps1" -LedgerPath $effectivePath -StatePath $MatchupStatePath -AllMatchups -LockedField:$locked

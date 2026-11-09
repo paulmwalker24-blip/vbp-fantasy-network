@@ -1,5 +1,9 @@
 # Project Commands
 
+## Projected Bracket Playoff Forum Post
+
+"Preview all 16 matchups using scripts/refresh-discord-bracket-playoffs.ps1 -DryRun and a fresh separate ledger. Verify bot access with scripts/post-discord-bracket-matchup-tests.ps1 -AllMatchups -DryRun -ValidateBotAccess using environment credentials. When I request publication, update both seeded team names in the existing titles, SCORE messages and rosters, preserve thread IDs and replies, and verify readback. Keep scores hidden until Week 13. Use the existing Tuesday standings workflow without another schedule."
+
 Use these prompts directly with Codex from this repo when you want local automation without manually using PowerShell.
 
 ## Rule

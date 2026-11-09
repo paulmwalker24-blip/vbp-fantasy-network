@@ -63,6 +63,7 @@ jobs:
         shell: pwsh
         env:
           DISCORD_WEBHOOK_REDRAFT_BRACKET_PLAYOFFS: ${{ secrets.DISCORD_WEBHOOK_REDRAFT_BRACKET_PLAYOFFS }}
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
         run: |
           $playoffArgs = @{}
           if ("${{ github.event_name }}" -eq "workflow_dispatch" -and "${{ inputs.dry_run }}" -eq "true") {
