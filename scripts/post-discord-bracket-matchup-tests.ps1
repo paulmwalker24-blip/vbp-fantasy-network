@@ -125,14 +125,21 @@ function Get-PlayoffBotThreads($State, $Plans) {
     if (-not $saved) { continue }
     $thread = Invoke-PlayoffBot ([string]$saved.threadId)
     Assert-PlayoffThread $thread ([string]$saved.threadId)
+    $metadata = Get-Value $thread 'thread_metadata'
+    if ((Get-Value $metadata 'archived') -and (Get-Value $metadata 'locked')) { throw 'A matchup thread was manually locked. Commissioner review required.' }
     $threads[[string]$saved.threadId] = $thread
   }
   return $threads
 }
 function Update-PlayoffTitle([string]$Id, [string]$Title, $Thread) {
   Assert-PlayoffThread $Thread $Id
-  if ($Thread.name -cne $Title) {
-    Invoke-PlayoffBot $Id 'Patch' @{ name = $Title } | Out-Null
+  $metadata = Get-Value $Thread 'thread_metadata'
+  $archived = [bool](Get-Value $metadata 'archived')
+  if ($archived -and (Get-Value $metadata 'locked')) { throw 'A matchup thread was manually locked. Commissioner review required.' }
+  if ($Thread.name -cne $Title -or $archived) {
+    $payload = @{ name = $Title }
+    if ($archived) { $payload.archived = $false }
+    Invoke-PlayoffBot $Id 'Patch' $payload | Out-Null
   }
   $verified = Invoke-PlayoffBot $Id
   Assert-PlayoffThread $verified $Id
@@ -274,7 +281,11 @@ foreach ($plan in $plans) {
     $state.posts | Add-Member -NotePropertyName $plan.key -NotePropertyValue $saved
     Save-State
     $botThreads[[string]$saved.threadId] = Invoke-PlayoffBot ([string]$saved.threadId)
-  } else { Send-Discord "$webhook/messages/$($saved.messageId)?thread_id=$($saved.threadId)" $plan.intro 'Patch' | Out-Null }
+  } else {
+    # Reopen automatically archived matchups before editing their webhook messages.
+    Update-PlayoffTitle ([string]$saved.threadId) $plan.threadName $botThreads[[string]$saved.threadId]
+    Send-Discord "$webhook/messages/$($saved.messageId)?thread_id=$($saved.threadId)" $plan.intro 'Patch' | Out-Null
+  }
   $introReadback = Read-DiscordMessage "$webhook/messages/$($saved.messageId)?thread_id=$($saved.threadId)"
   if ($introReadback.content -ne $plan.intro.content -or @($introReadback.embeds).Count -ne 0) { throw 'Scoreboard message readback mismatch.' }
   foreach ($i in 0..1) {
@@ -313,4 +324,3 @@ foreach ($plan in $plans) {
   Update-PlayoffTitle ([string]$saved.threadId) $plan.threadName $botThreads[[string]$saved.threadId]
   Write-Host "Verified $($plan.threadName) | thread $($saved.threadId)"
 }
-
