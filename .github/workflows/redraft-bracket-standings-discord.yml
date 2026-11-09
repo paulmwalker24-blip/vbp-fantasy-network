@@ -59,14 +59,30 @@ jobs:
           }
           powershell @args
 
+      - name: Refresh playoff forum after successful standings publication
+        shell: pwsh
+        env:
+          DISCORD_WEBHOOK_REDRAFT_BRACKET_PLAYOFFS: ${{ secrets.DISCORD_WEBHOOK_REDRAFT_BRACKET_PLAYOFFS }}
+        run: |
+          $playoffArgs = @{}
+          if ("${{ github.event_name }}" -eq "workflow_dispatch" -and "${{ inputs.dry_run }}" -eq "true") {
+            $playoffArgs.DryRun = $true
+          }
+          & .\scripts\refresh-discord-bracket-playoffs.ps1 @playoffArgs
+
       - name: Save the website ledger and Discord message state
         if: ${{ always() && (github.event_name != 'workflow_dispatch' || inputs.dry_run == false) }}
         shell: pwsh
         run: |
           $paths = @(
             "data/bracket-ledger.json",
-            "data/discord-redraft-bracket-standings-state.json"
+            "data/discord-redraft-bracket-standings-state.json",
+            "data/discord-bracket-playoffs-state.json",
+            "data/discord-bracket-matchups-state.json"
           )
+          if (Test-Path 'data/bracket-playoff-field-2026.json') {
+            $paths += "data/bracket-playoff-field-2026.json"
+          }
           git add -- $paths
           if (git diff --cached --quiet) {
             Write-Host "Bracket ledger and Discord standings state are already current."
