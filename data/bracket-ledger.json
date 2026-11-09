@@ -4,7 +4,7 @@
                     "refreshSpecificGroup":  "Run the bracket ledger sync for BRACKET-2026-1 only and refresh data/bracket-ledger.json from Sleeper so that bracket group\u0027s standings and playoff output are up to date.",
                     "refreshOverallStandings":  "Run the bracket ledger sync and refresh data/bracket-ledger.json from Sleeper, then give me the current combined overall standings for BRACKET-2026-1 with rank, team name, league/division, record, and points for. If the season is not far enough along or the group is not full yet, tell me the standings are provisional."
                 },
-    "generatedAt":  "2026-11-03T14:46:25",
+    "generatedAt":  "2026-11-09T21:12:58",
     "groups":  [
                    {
                        "groupId":  "BRACKET-2026-1",
@@ -29,7 +29,7 @@
                                      "postWeek13Reset":  "wild_card_winner_faces_8th_highest_remaining_seed",
                                      "postResetBracketStyle":  "static_traditional_bracket"
                                  },
-                       "lastSyncedAt":  "2026-11-03T14:46:25",
+                       "lastSyncedAt":  "2026-11-09T21:12:58",
                        "seasonStatuses":  [
                                               "in_season"
                                           ],
@@ -91,6 +91,19 @@
                                                 },
                                                 {
                                                     "rank":  5,
+                                                    "teamName":  "jboogie541",
+                                                    "displayName":  "jboogie541",
+                                                    "leagueRecordId":  "RDB3",
+                                                    "leagueName":  "Iron",
+                                                    "division":  "Fast",
+                                                    "record":  "6-2-0",
+                                                    "pointsFor":  885.14,
+                                                    "pointsForDisplay":  "885.14",
+                                                    "ownerId":  "596396232251858944",
+                                                    "rosterId":  9
+                                                },
+                                                {
+                                                    "rank":  6,
                                                     "teamName":  "geno311",
                                                     "displayName":  "geno311",
                                                     "leagueRecordId":  "RDB2",
@@ -103,7 +116,7 @@
                                                     "rosterId":  3
                                                 },
                                                 {
-                                                    "rank":  6,
+                                                    "rank":  7,
                                                     "teamName":  "yoshiposhy",
                                                     "displayName":  "yoshiposhy",
                                                     "leagueRecordId":  "RDB5",
@@ -116,7 +129,7 @@
                                                     "rosterId":  3
                                                 },
                                                 {
-                                                    "rank":  7,
+                                                    "rank":  8,
                                                     "teamName":  "jpfiteni",
                                                     "displayName":  "jpfiteni",
                                                     "leagueRecordId":  "RDB4",
@@ -129,7 +142,7 @@
                                                     "rosterId":  1
                                                 },
                                                 {
-                                                    "rank":  8,
+                                                    "rank":  9,
                                                     "teamName":  "nerdmagic",
                                                     "displayName":  "nerdmagic",
                                                     "leagueRecordId":  "RDB1",
@@ -140,19 +153,6 @@
                                                     "pointsForDisplay":  "907.17",
                                                     "ownerId":  "1119025676432101376",
                                                     "rosterId":  5
-                                                },
-                                                {
-                                                    "rank":  9,
-                                                    "teamName":  "jboogie541",
-                                                    "displayName":  "jboogie541",
-                                                    "leagueRecordId":  "RDB3",
-                                                    "leagueName":  "Iron",
-                                                    "division":  "Fast",
-                                                    "record":  "6-2-0",
-                                                    "pointsFor":  885.14,
-                                                    "pointsForDisplay":  "885.14",
-                                                    "ownerId":  "596396232251858944",
-                                                    "rosterId":  9
                                                 },
                                                 {
                                                     "rank":  10,
@@ -325,7 +325,7 @@
                                                 },
                                                 {
                                                     "rank":  23,
-                                                    "teamName":  "Regina Jackson’s Team",
+                                                    "teamName":  "The LSU Tigers",
                                                     "displayName":  "alanh003",
                                                     "leagueRecordId":  "RDB2",
                                                     "leagueName":  "Apex",
@@ -1151,7 +1151,7 @@
                                                                          "ownerId":  "868021731762319360",
                                                                          "rosterId":  8,
                                                                          "displayName":  "alanh003",
-                                                                         "teamName":  "Regina Jackson’s Team",
+                                                                         "teamName":  "The LSU Tigers",
                                                                          "wins":  5,
                                                                          "losses":  3,
                                                                          "ties":  0,
@@ -2627,7 +2627,7 @@
                                                                  "ownerId":  "868021731762319360",
                                                                  "rosterId":  8,
                                                                  "displayName":  "alanh003",
-                                                                 "teamName":  "Regina Jackson’s Team",
+                                                                 "teamName":  "The LSU Tigers",
                                                                  "wins":  5,
                                                                  "losses":  3,
                                                                  "ties":  0,
@@ -3901,7 +3901,7 @@
                                                              "ownerId":  "868021731762319360",
                                                              "rosterId":  8,
                                                              "displayName":  "alanh003",
-                                                             "teamName":  "Regina Jackson’s Team",
+                                                             "teamName":  "The LSU Tigers",
                                                              "wins":  5,
                                                              "losses":  3,
                                                              "ties":  0,
@@ -4498,7 +4498,7 @@
                                                                              "ownerId":  "868021731762319360",
                                                                              "rosterId":  8,
                                                                              "displayName":  "alanh003",
-                                                                             "teamName":  "Regina Jackson’s Team",
+                                                                             "teamName":  "The LSU Tigers",
                                                                              "wins":  5,
                                                                              "losses":  3,
                                                                              "ties":  0,
