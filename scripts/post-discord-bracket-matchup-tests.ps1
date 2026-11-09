@@ -83,6 +83,7 @@ function Invoke-PlayoffBot([string]$Id, [string]$Method = 'Get', [hashtable]$Pay
         Uri = "https://discord.com/api/v10/channels/$Id"
         Method = $Method
         Headers = @{ Authorization = "Bot $BotToken" }
+        UserAgent = 'DiscordBot (https://github.com/paulmwalker24-blip/vbp-fantasy-network, 1.0.0)'
         TimeoutSec = 45
       }
       if ($Payload) {
