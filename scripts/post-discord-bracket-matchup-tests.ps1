@@ -100,7 +100,9 @@ function Invoke-PlayoffBot([string]$Id, [string]$Method = 'Get', [hashtable]$Pay
         Start-Sleep -Seconds ([math]::Max(1, $delay))
         continue
       }
-      throw "Playoff bot request failed (HTTP $status). Check DISCORD_BOT_TOKEN and playoff forum permissions."
+      $discordCode = 0
+      try { $discordCode = [int](($_.ErrorDetails.Message | ConvertFrom-Json).code) } catch { }
+      throw "Playoff bot $Method for channel $Id failed (HTTP $status, Discord code $discordCode). Check DISCORD_BOT_TOKEN and playoff forum permissions."
     }
   }
 }
@@ -310,3 +312,4 @@ foreach ($plan in $plans) {
   Update-PlayoffTitle ([string]$saved.threadId) $plan.threadName $botThreads[[string]$saved.threadId]
   Write-Host "Verified $($plan.threadName) | thread $($saved.threadId)"
 }
+
