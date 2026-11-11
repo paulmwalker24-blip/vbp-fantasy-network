@@ -4,8 +4,8 @@
     "webhookId":  "1540365476234919956",
     "groupId":  "BBU-2026",
     "season":  "2026",
-    "completedWeek":  8,
-    "signature":  "a5f75e119f3421fe21bfff8645883acfae454b1da7371e5f029a64b65a225c73",
+    "completedWeek":  9,
+    "signature":  "deb132f3e39c54a2a6c7dc13e10f031ac03c47dfa9c85bef2be1c9e7d0f34c0c",
     "messageId":  "1540370236933410817",
     "weeklyHighScores":  [
                              {
@@ -95,7 +95,18 @@
                                                      "teamName":  "TryanboloneBB"
                                                  }
                                              ]
+                             },
+                             {
+                                 "week":  9,
+                                 "score":  162.65,
+                                 "winners":  [
+                                                 {
+                                                     "leagueRecordId":  "BBU1",
+                                                     "rosterId":  4,
+                                                     "teamName":  "kj0116"
+                                                 }
+                                             ]
                              }
                          ],
-    "updatedAt":  "2026-11-04T00:41:59.3583884+00:00"
+    "updatedAt":  "2026-11-11T00:42:42.1762982+00:00"
 }
