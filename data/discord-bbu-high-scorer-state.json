@@ -4,8 +4,8 @@
     "webhookId":  "1540365476234919956",
     "groupId":  "BBU-2026",
     "season":  "2026",
-    "completedWeek":  9,
-    "signature":  "deb132f3e39c54a2a6c7dc13e10f031ac03c47dfa9c85bef2be1c9e7d0f34c0c",
+    "completedWeek":  10,
+    "signature":  "7e8c593fc874786c56e7a05d72481a576ce133f8aa5635cbb2996394d914732b",
     "messageId":  "1540370236933410817",
     "weeklyHighScores":  [
                              {
@@ -106,7 +106,18 @@
                                                      "teamName":  "kj0116"
                                                  }
                                              ]
+                             },
+                             {
+                                 "week":  10,
+                                 "score":  207.22,
+                                 "winners":  [
+                                                 {
+                                                     "leagueRecordId":  "BBU12",
+                                                     "rosterId":  1,
+                                                     "teamName":  "heeshang"
+                                                 }
+                                             ]
                              }
                          ],
-    "updatedAt":  "2026-11-11T00:42:42.1762982+00:00"
+    "updatedAt":  "2026-11-18T02:28:22.3184812+00:00"
 }
