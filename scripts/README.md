@@ -1119,3 +1119,5 @@ powershell -ExecutionPolicy Bypass -File .\scripts\create-general-thumbnail.ps1 
 
 Use `pwsh -NoProfile -File scripts/refresh-bbu-scoreboards.ps1` to audit and preview both 15-room BBU scoreboards; add `-Publish` only for publication. See `docs/discord-server/bbu-scoreboard-automation.md` for credentials, state, schedules, recovery runs, and rate-limit handling.
 
+
+The BBU refresh also maintains the original combined weekly-winners post using `post-discord-bbu-high-scorer.ps1` and the existing `DISCORD_WEBHOOK_BBU_HIGH_SCORER` secret. All three outputs use the verified 15-room audit and are read back after publication.

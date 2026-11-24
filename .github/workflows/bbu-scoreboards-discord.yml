@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: "Audit and validate both BBU Bot scoreboards without sending messages."
+        description: "Audit and validate the weekly summary, weekly cards, and overall standings without sending messages."
         type: boolean
         default: true
 
@@ -29,10 +29,11 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
-      - name: Audit all 15 rooms and refresh both scoreboards
+      - name: Audit all 15 rooms and refresh all BBU scoreboards
         shell: pwsh
         env:
           DISCORD_BBU_BOT_TOKEN: ${{ secrets.DISCORD_BBU_BOT_TOKEN }}
+          DISCORD_WEBHOOK_BBU_HIGH_SCORER: ${{ secrets.DISCORD_WEBHOOK_BBU_HIGH_SCORER }}
           PREVIEW_ONLY: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
         run: |
           if ($env:PREVIEW_ONLY -ne 'true' -and -not $env:DISCORD_BBU_BOT_TOKEN) {
@@ -46,6 +47,7 @@ jobs:
           $paths = @(
             'data/bbu-weekly-high-scores.json', 'data/bbu-overall-high-scorer.json',
             'data/discord-bbu-weekly-high-scores-state.json', 'data/discord-bbu-overall-high-scorer-state.json',
+            'data/discord-bbu-high-scorer-state.json',
             'reports/bbu-weekly-scores-2026.csv', 'reports/bbu-weekly-high-scores-2026.md'
           )
           foreach ($path in $paths) {
