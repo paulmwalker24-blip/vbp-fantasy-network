@@ -1,123 +1,134 @@
 {
-    "version":  1,
-    "channelId":  "1540365233636249692",
-    "webhookId":  "1540365476234919956",
-    "groupId":  "BBU-2026",
-    "season":  "2026",
-    "completedWeek":  10,
-    "signature":  "7e8c593fc874786c56e7a05d72481a576ce133f8aa5635cbb2996394d914732b",
-    "messageId":  "1540370236933410817",
-    "weeklyHighScores":  [
-                             {
-                                 "week":  1,
-                                 "score":  200.29,
-                                 "winners":  [
-                                                 {
-                                                     "leagueRecordId":  "BBU3",
-                                                     "rosterId":  8,
-                                                     "teamName":  "crossthesea"
-                                                 }
-                                             ]
-                             },
-                             {
-                                 "week":  2,
-                                 "score":  170.08,
-                                 "winners":  [
-                                                 {
-                                                     "leagueRecordId":  "BBU1",
-                                                     "rosterId":  1,
-                                                     "teamName":  "HopscotchDaisy"
-                                                 }
-                                             ]
-                             },
-                             {
-                                 "week":  3,
-                                 "score":  176.06,
-                                 "winners":  [
-                                                 {
-                                                     "leagueRecordId":  "BBU1",
-                                                     "rosterId":  8,
-                                                     "teamName":  "jessegambo"
-                                                 }
-                                             ]
-                             },
-                             {
-                                 "week":  4,
-                                 "score":  193.17,
-                                 "winners":  [
-                                                 {
-                                                     "leagueRecordId":  "BBU13",
-                                                     "rosterId":  4,
-                                                     "teamName":  "sumbrad"
-                                                 }
-                                             ]
-                             },
-                             {
-                                 "week":  5,
-                                 "score":  169.34,
-                                 "winners":  [
-                                                 {
-                                                     "leagueRecordId":  "BBU2",
-                                                     "rosterId":  7,
-                                                     "teamName":  "WWWaldo"
-                                                 }
-                                             ]
-                             },
-                             {
-                                 "week":  6,
-                                 "score":  146.08,
-                                 "winners":  [
-                                                 {
-                                                     "leagueRecordId":  "BBU7",
-                                                     "rosterId":  10,
-                                                     "teamName":  "VinsBroPaul"
-                                                 }
-                                             ]
-                             },
-                             {
-                                 "week":  7,
-                                 "score":  173.42,
-                                 "winners":  [
-                                                 {
-                                                     "leagueRecordId":  "BBU2",
-                                                     "rosterId":  2,
-                                                     "teamName":  "jakeejk"
-                                                 }
-                                             ]
-                             },
-                             {
-                                 "week":  8,
-                                 "score":  181.48,
-                                 "winners":  [
-                                                 {
-                                                     "leagueRecordId":  "BBU7",
-                                                     "rosterId":  6,
-                                                     "teamName":  "TryanboloneBB"
-                                                 }
-                                             ]
-                             },
-                             {
-                                 "week":  9,
-                                 "score":  162.65,
-                                 "winners":  [
-                                                 {
-                                                     "leagueRecordId":  "BBU1",
-                                                     "rosterId":  4,
-                                                     "teamName":  "kj0116"
-                                                 }
-                                             ]
-                             },
-                             {
-                                 "week":  10,
-                                 "score":  207.22,
-                                 "winners":  [
-                                                 {
-                                                     "leagueRecordId":  "BBU12",
-                                                     "rosterId":  1,
-                                                     "teamName":  "heeshang"
-                                                 }
-                                             ]
-                             }
-                         ],
-    "updatedAt":  "2026-11-18T02:28:22.3184812+00:00"
+  "version": 1,
+  "channelId": "1540365233636249692",
+  "webhookId": "1540365476234919956",
+  "groupId": "BBU-2026",
+  "season": "2026",
+  "completedWeek": 11,
+  "signature": "audited-15-room-week-11",
+  "messageId": "1540370236933410817",
+  "weeklyHighScores": [
+    {
+      "score": 211.11,
+      "winners": [
+        {
+          "leagueRecordId": "BBU14",
+          "teamName": "BammBamKam",
+          "rosterId": 3
+        }
+      ],
+      "week": 1
+    },
+    {
+      "score": 170.08,
+      "winners": [
+        {
+          "leagueRecordId": "BBU1",
+          "teamName": "HopscotchDaisy",
+          "rosterId": 1
+        }
+      ],
+      "week": 2
+    },
+    {
+      "score": 176.06,
+      "winners": [
+        {
+          "leagueRecordId": "BBU1",
+          "teamName": "jessegambo",
+          "rosterId": 8
+        }
+      ],
+      "week": 3
+    },
+    {
+      "score": 193.17,
+      "winners": [
+        {
+          "leagueRecordId": "BBU13",
+          "teamName": "sumbrad",
+          "rosterId": 4
+        }
+      ],
+      "week": 4
+    },
+    {
+      "score": 175.68,
+      "winners": [
+        {
+          "leagueRecordId": "BBU15",
+          "teamName": "hwright0490",
+          "rosterId": 6
+        }
+      ],
+      "week": 5
+    },
+    {
+      "score": 150.74,
+      "winners": [
+        {
+          "leagueRecordId": "BBU14",
+          "teamName": "BammBamKam",
+          "rosterId": 3
+        }
+      ],
+      "week": 6
+    },
+    {
+      "score": 173.42,
+      "winners": [
+        {
+          "leagueRecordId": "BBU2",
+          "teamName": "jakeejk",
+          "rosterId": 2
+        }
+      ],
+      "week": 7
+    },
+    {
+      "score": 181.48,
+      "winners": [
+        {
+          "leagueRecordId": "BBU7",
+          "teamName": "TryanboloneBB",
+          "rosterId": 6
+        }
+      ],
+      "week": 8
+    },
+    {
+      "score": 162.65,
+      "winners": [
+        {
+          "leagueRecordId": "BBU1",
+          "teamName": "kj0116",
+          "rosterId": 4
+        }
+      ],
+      "week": 9
+    },
+    {
+      "score": 207.22,
+      "winners": [
+        {
+          "leagueRecordId": "BBU12",
+          "teamName": "heeshang",
+          "rosterId": 1
+        }
+      ],
+      "week": 10
+    },
+    {
+      "score": 148.11,
+      "winners": [
+        {
+          "leagueRecordId": "BBU6",
+          "teamName": "HopscotchDaisy",
+          "rosterId": 2
+        }
+      ],
+      "week": 11
+    }
+  ],
+  "updatedAt": "2026-11-24T17:40:05.0062571+00:00"
 }

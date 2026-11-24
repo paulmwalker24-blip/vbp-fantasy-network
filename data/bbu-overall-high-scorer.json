@@ -1,8 +1,6 @@
 {
-  "verifiedAt": "2026-11-24T17:26:47.3272644Z",
   "throughWeek": 11,
   "leagueCount": 15,
-  "teamCount": 150,
   "entries": [
     {
       "leagueRecordId": "BBU15",
@@ -1355,6 +1353,8 @@
       "sourceUrl": "https://api.sleeper.app/v1/league/1392580936901611520/rosters"
     }
   ],
+  "verifiedAt": "2026-11-24T17:40:52.1739800Z",
+  "teamCount": 150,
   "season": "2026",
   "overallPrize": 415
 }
