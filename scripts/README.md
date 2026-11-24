@@ -1114,3 +1114,8 @@ Custom output path:
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\create-general-thumbnail.ps1 -OutputPath assets\images\sleeper-thumbnail-v2.png
 ```
+
+## BBU Bot scoreboards
+
+Use `pwsh -NoProfile -File scripts/refresh-bbu-scoreboards.ps1` to audit and preview both 15-room BBU scoreboards; add `-Publish` only for publication. See `docs/discord-server/bbu-scoreboard-automation.md` for credentials, state, schedules, recovery runs, and rate-limit handling.
+

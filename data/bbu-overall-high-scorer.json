@@ -1,0 +1,1360 @@
+{
+  "leagueCount": 15,
+  "entries": [
+    {
+      "leagueRecordId": "BBU15",
+      "sleeperLeagueId": "1400552006992556032",
+      "rosterId": 3,
+      "manager": "Kribi",
+      "teamName": "Shinigami",
+      "points": 1581.62,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1400552006992556032/rosters"
+    },
+    {
+      "leagueRecordId": "BBU7",
+      "sleeperLeagueId": "1362480515533242368",
+      "rosterId": 8,
+      "manager": "digao1",
+      "teamName": "Biebs",
+      "points": 1555.98,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480515533242368/rosters"
+    },
+    {
+      "leagueRecordId": "BBU14",
+      "sleeperLeagueId": "1395814066945036288",
+      "rosterId": 3,
+      "manager": "BammBamKam",
+      "teamName": "BammBamKam",
+      "points": 1514.60,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1395814066945036288/rosters"
+    },
+    {
+      "leagueRecordId": "BBU3",
+      "sleeperLeagueId": "1339095371091017728",
+      "rosterId": 8,
+      "manager": "crossthesea",
+      "teamName": "crossthesea",
+      "points": 1512.57,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095371091017728/rosters"
+    },
+    {
+      "leagueRecordId": "BBU2",
+      "sleeperLeagueId": "1339095313704554496",
+      "rosterId": 2,
+      "manager": "jakeejk",
+      "teamName": "jakeejk",
+      "points": 1499.34,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095313704554496/rosters"
+    },
+    {
+      "leagueRecordId": "BBU2",
+      "sleeperLeagueId": "1339095313704554496",
+      "rosterId": 7,
+      "manager": "WWWaldo",
+      "teamName": "Flagg Planters",
+      "points": 1445.73,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095313704554496/rosters"
+    },
+    {
+      "leagueRecordId": "BBU9",
+      "sleeperLeagueId": "1362480857310302208",
+      "rosterId": 3,
+      "manager": "JimmyWojo",
+      "teamName": "JimmyWojo",
+      "points": 1440.74,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480857310302208/rosters"
+    },
+    {
+      "leagueRecordId": "BBU1",
+      "sleeperLeagueId": "1339095209052508160",
+      "rosterId": 4,
+      "manager": "kj0116",
+      "teamName": "kj0116",
+      "points": 1440.35,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095209052508160/rosters"
+    },
+    {
+      "leagueRecordId": "BBU10",
+      "sleeperLeagueId": "1362480992765353984",
+      "rosterId": 8,
+      "manager": "pmorin57",
+      "teamName": "pmorin57",
+      "points": 1439.55,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480992765353984/rosters"
+    },
+    {
+      "leagueRecordId": "BBU6",
+      "sleeperLeagueId": "1362480393130868736",
+      "rosterId": 9,
+      "manager": "KeyzerSoze12",
+      "teamName": "KeyzerSoze12",
+      "points": 1428.15,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480393130868736/rosters"
+    },
+    {
+      "leagueRecordId": "BBU12",
+      "sleeperLeagueId": "1389361694546878464",
+      "rosterId": 1,
+      "manager": "heeshang",
+      "teamName": "heeshang",
+      "points": 1427.83,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1389361694546878464/rosters"
+    },
+    {
+      "leagueRecordId": "BBU1",
+      "sleeperLeagueId": "1339095209052508160",
+      "rosterId": 6,
+      "manager": "mguzz",
+      "teamName": "mguzz",
+      "points": 1422.02,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095209052508160/rosters"
+    },
+    {
+      "leagueRecordId": "BBU7",
+      "sleeperLeagueId": "1362480515533242368",
+      "rosterId": 7,
+      "manager": "killemsoftly1",
+      "teamName": "Cheese Burger Lacy",
+      "points": 1407.10,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480515533242368/rosters"
+    },
+    {
+      "leagueRecordId": "BBU9",
+      "sleeperLeagueId": "1362480857310302208",
+      "rosterId": 8,
+      "manager": "Donny01",
+      "teamName": "Donny01",
+      "points": 1400.83,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480857310302208/rosters"
+    },
+    {
+      "leagueRecordId": "BBU7",
+      "sleeperLeagueId": "1362480515533242368",
+      "rosterId": 6,
+      "manager": "TryanboloneBB",
+      "teamName": "8-bit Usain Bolt",
+      "points": 1396.65,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480515533242368/rosters"
+    },
+    {
+      "leagueRecordId": "BBU12",
+      "sleeperLeagueId": "1389361694546878464",
+      "rosterId": 5,
+      "manager": "abettertime",
+      "teamName": "abettertime",
+      "points": 1396.30,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1389361694546878464/rosters"
+    },
+    {
+      "leagueRecordId": "BBU12",
+      "sleeperLeagueId": "1389361694546878464",
+      "rosterId": 6,
+      "manager": "BynxBalls603",
+      "teamName": "BynxBalls603",
+      "points": 1394.92,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1389361694546878464/rosters"
+    },
+    {
+      "leagueRecordId": "BBU15",
+      "sleeperLeagueId": "1400552006992556032",
+      "rosterId": 6,
+      "manager": "hwright0490",
+      "teamName": "hwright0490",
+      "points": 1393.95,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1400552006992556032/rosters"
+    },
+    {
+      "leagueRecordId": "BBU5",
+      "sleeperLeagueId": "1339095453291003904",
+      "rosterId": 1,
+      "manager": "PickleRick702",
+      "teamName": "PickleRick702",
+      "points": 1391.72,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095453291003904/rosters"
+    },
+    {
+      "leagueRecordId": "BBU4",
+      "sleeperLeagueId": "1339095416859287552",
+      "rosterId": 6,
+      "manager": "mdogsizzle",
+      "teamName": "mdogsizzle",
+      "points": 1389.70,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095416859287552/rosters"
+    },
+    {
+      "leagueRecordId": "BBU12",
+      "sleeperLeagueId": "1389361694546878464",
+      "rosterId": 4,
+      "manager": "BammBamKam",
+      "teamName": "BammBamKam",
+      "points": 1389.46,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1389361694546878464/rosters"
+    },
+    {
+      "leagueRecordId": "BBU10",
+      "sleeperLeagueId": "1362480992765353984",
+      "rosterId": 10,
+      "manager": "Imperialsalsa23",
+      "teamName": "Imperialsalsa23",
+      "points": 1383.90,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480992765353984/rosters"
+    },
+    {
+      "leagueRecordId": "BBU14",
+      "sleeperLeagueId": "1395814066945036288",
+      "rosterId": 9,
+      "manager": "SLKing17",
+      "teamName": "SLKing17",
+      "points": 1381.75,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1395814066945036288/rosters"
+    },
+    {
+      "leagueRecordId": "BBU2",
+      "sleeperLeagueId": "1339095313704554496",
+      "rosterId": 8,
+      "manager": "SnoopDerek",
+      "teamName": "SnoopDerek",
+      "points": 1380.07,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095313704554496/rosters"
+    },
+    {
+      "leagueRecordId": "BBU11",
+      "sleeperLeagueId": "1383933081991278592",
+      "rosterId": 7,
+      "manager": "ChairmenFantasy",
+      "teamName": "ChairmenFantasy",
+      "points": 1378.37,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1383933081991278592/rosters"
+    },
+    {
+      "leagueRecordId": "BBU4",
+      "sleeperLeagueId": "1339095416859287552",
+      "rosterId": 7,
+      "manager": "Dropswitch",
+      "teamName": "Dropswitch",
+      "points": 1377.77,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095416859287552/rosters"
+    },
+    {
+      "leagueRecordId": "BBU11",
+      "sleeperLeagueId": "1383933081991278592",
+      "rosterId": 10,
+      "manager": "StickyPicky",
+      "teamName": "StickyPicky",
+      "points": 1376.63,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1383933081991278592/rosters"
+    },
+    {
+      "leagueRecordId": "BBU9",
+      "sleeperLeagueId": "1362480857310302208",
+      "rosterId": 4,
+      "manager": "mkpconway",
+      "teamName": "mkpconway",
+      "points": 1371.15,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480857310302208/rosters"
+    },
+    {
+      "leagueRecordId": "BBU14",
+      "sleeperLeagueId": "1395814066945036288",
+      "rosterId": 4,
+      "manager": "TryanboloneBB",
+      "teamName": "TryanboloneBB",
+      "points": 1370.03,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1395814066945036288/rosters"
+    },
+    {
+      "leagueRecordId": "BBU9",
+      "sleeperLeagueId": "1362480857310302208",
+      "rosterId": 10,
+      "manager": "cokeboy99",
+      "teamName": "cokeboy99",
+      "points": 1368.34,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480857310302208/rosters"
+    },
+    {
+      "leagueRecordId": "BBU6",
+      "sleeperLeagueId": "1362480393130868736",
+      "rosterId": 3,
+      "manager": "Tacious00",
+      "teamName": "Tacious00",
+      "points": 1365.12,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480393130868736/rosters"
+    },
+    {
+      "leagueRecordId": "BBU6",
+      "sleeperLeagueId": "1362480393130868736",
+      "rosterId": 8,
+      "manager": "nordy0",
+      "teamName": "Nordy($10)",
+      "points": 1360.97,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480393130868736/rosters"
+    },
+    {
+      "leagueRecordId": "BBU15",
+      "sleeperLeagueId": "1400552006992556032",
+      "rosterId": 4,
+      "manager": "TryanboloneBB",
+      "teamName": "TryanboloneBB",
+      "points": 1360.25,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1400552006992556032/rosters"
+    },
+    {
+      "leagueRecordId": "BBU10",
+      "sleeperLeagueId": "1362480992765353984",
+      "rosterId": 2,
+      "manager": "JimmyWojo",
+      "teamName": "JimmyWojo",
+      "points": 1358.08,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480992765353984/rosters"
+    },
+    {
+      "leagueRecordId": "BBU3",
+      "sleeperLeagueId": "1339095371091017728",
+      "rosterId": 3,
+      "manager": "Cameron74",
+      "teamName": "Cameron74",
+      "points": 1356.41,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095371091017728/rosters"
+    },
+    {
+      "leagueRecordId": "BBU8",
+      "sleeperLeagueId": "1362480638808064000",
+      "rosterId": 10,
+      "manager": "Pitterpatta",
+      "teamName": "Pitterpatta",
+      "points": 1349.86,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480638808064000/rosters"
+    },
+    {
+      "leagueRecordId": "BBU1",
+      "sleeperLeagueId": "1339095209052508160",
+      "rosterId": 8,
+      "manager": "jessegambo",
+      "teamName": "jessegambo",
+      "points": 1348.85,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095209052508160/rosters"
+    },
+    {
+      "leagueRecordId": "BBU13",
+      "sleeperLeagueId": "1392580936901611520",
+      "rosterId": 3,
+      "manager": "DSnyder5",
+      "teamName": "DSnyder5",
+      "points": 1347.40,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1392580936901611520/rosters"
+    },
+    {
+      "leagueRecordId": "BBU5",
+      "sleeperLeagueId": "1339095453291003904",
+      "rosterId": 9,
+      "manager": "fatty17",
+      "teamName": "fatty17",
+      "points": 1346.57,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095453291003904/rosters"
+    },
+    {
+      "leagueRecordId": "BBU4",
+      "sleeperLeagueId": "1339095416859287552",
+      "rosterId": 5,
+      "manager": "Isurus33",
+      "teamName": "Isurus33",
+      "points": 1343.00,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095416859287552/rosters"
+    },
+    {
+      "leagueRecordId": "BBU5",
+      "sleeperLeagueId": "1339095453291003904",
+      "rosterId": 8,
+      "manager": "OmahaaaSet",
+      "teamName": "OmahaaaSet$10",
+      "points": 1342.10,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095453291003904/rosters"
+    },
+    {
+      "leagueRecordId": "BBU14",
+      "sleeperLeagueId": "1395814066945036288",
+      "rosterId": 1,
+      "manager": "erdeme",
+      "teamName": "erdeme",
+      "points": 1340.40,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1395814066945036288/rosters"
+    },
+    {
+      "leagueRecordId": "BBU13",
+      "sleeperLeagueId": "1392580936901611520",
+      "rosterId": 10,
+      "manager": "BRWNCURSE",
+      "teamName": "BRWNCURSE",
+      "points": 1339.55,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1392580936901611520/rosters"
+    },
+    {
+      "leagueRecordId": "BBU1",
+      "sleeperLeagueId": "1339095209052508160",
+      "rosterId": 7,
+      "manager": "Adamgrifki",
+      "teamName": "Adamgrifki",
+      "points": 1334.54,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095209052508160/rosters"
+    },
+    {
+      "leagueRecordId": "BBU4",
+      "sleeperLeagueId": "1339095416859287552",
+      "rosterId": 8,
+      "manager": "Cameron74",
+      "teamName": "Cameron74",
+      "points": 1333.75,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095416859287552/rosters"
+    },
+    {
+      "leagueRecordId": "BBU4",
+      "sleeperLeagueId": "1339095416859287552",
+      "rosterId": 3,
+      "manager": "PickleRick702",
+      "teamName": "PickleRick702",
+      "points": 1330.70,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095416859287552/rosters"
+    },
+    {
+      "leagueRecordId": "BBU7",
+      "sleeperLeagueId": "1362480515533242368",
+      "rosterId": 9,
+      "manager": "TySegall",
+      "teamName": "TySegall",
+      "points": 1323.89,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480515533242368/rosters"
+    },
+    {
+      "leagueRecordId": "BBU13",
+      "sleeperLeagueId": "1392580936901611520",
+      "rosterId": 1,
+      "manager": "TeamRONQ",
+      "teamName": "TeamRONQ",
+      "points": 1322.92,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1392580936901611520/rosters"
+    },
+    {
+      "leagueRecordId": "BBU11",
+      "sleeperLeagueId": "1383933081991278592",
+      "rosterId": 8,
+      "manager": "VinsBroPaul",
+      "teamName": "VinsBroPaul",
+      "points": 1321.87,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1383933081991278592/rosters"
+    },
+    {
+      "leagueRecordId": "BBU2",
+      "sleeperLeagueId": "1339095313704554496",
+      "rosterId": 10,
+      "manager": "OutlawReturns",
+      "teamName": "OutlawReturns",
+      "points": 1319.25,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095313704554496/rosters"
+    },
+    {
+      "leagueRecordId": "BBU6",
+      "sleeperLeagueId": "1362480393130868736",
+      "rosterId": 5,
+      "manager": "swampraider",
+      "teamName": "swampraider",
+      "points": 1318.46,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480393130868736/rosters"
+    },
+    {
+      "leagueRecordId": "BBU9",
+      "sleeperLeagueId": "1362480857310302208",
+      "rosterId": 2,
+      "manager": "Tacious00",
+      "teamName": "Tacious00",
+      "points": 1317.30,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480857310302208/rosters"
+    },
+    {
+      "leagueRecordId": "BBU3",
+      "sleeperLeagueId": "1339095371091017728",
+      "rosterId": 2,
+      "manager": "Dropswitch",
+      "teamName": "Dropswitch",
+      "points": 1315.07,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095371091017728/rosters"
+    },
+    {
+      "leagueRecordId": "BBU13",
+      "sleeperLeagueId": "1392580936901611520",
+      "rosterId": 5,
+      "manager": "swampraider",
+      "teamName": "swampraider",
+      "points": 1313.69,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1392580936901611520/rosters"
+    },
+    {
+      "leagueRecordId": "BBU5",
+      "sleeperLeagueId": "1339095453291003904",
+      "rosterId": 4,
+      "manager": "odaroloc",
+      "teamName": "odaroloc",
+      "points": 1313.10,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095453291003904/rosters"
+    },
+    {
+      "leagueRecordId": "BBU15",
+      "sleeperLeagueId": "1400552006992556032",
+      "rosterId": 7,
+      "manager": "DSnyder5",
+      "teamName": "DSnyder5",
+      "points": 1313.02,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1400552006992556032/rosters"
+    },
+    {
+      "leagueRecordId": "BBU3",
+      "sleeperLeagueId": "1339095371091017728",
+      "rosterId": 4,
+      "manager": "gunnar21",
+      "teamName": "gunnar21",
+      "points": 1312.58,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095371091017728/rosters"
+    },
+    {
+      "leagueRecordId": "BBU8",
+      "sleeperLeagueId": "1362480638808064000",
+      "rosterId": 6,
+      "manager": "Gumorak",
+      "teamName": "Gumorak",
+      "points": 1310.66,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480638808064000/rosters"
+    },
+    {
+      "leagueRecordId": "BBU9",
+      "sleeperLeagueId": "1362480857310302208",
+      "rosterId": 9,
+      "manager": "XWILL07",
+      "teamName": "XWILL07",
+      "points": 1309.82,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480857310302208/rosters"
+    },
+    {
+      "leagueRecordId": "BBU13",
+      "sleeperLeagueId": "1392580936901611520",
+      "rosterId": 4,
+      "manager": "sumbrad",
+      "teamName": "sumbrad",
+      "points": 1309.75,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1392580936901611520/rosters"
+    },
+    {
+      "leagueRecordId": "BBU10",
+      "sleeperLeagueId": "1362480992765353984",
+      "rosterId": 1,
+      "manager": "DSnyder5",
+      "teamName": "DSnyder5",
+      "points": 1307.52,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480992765353984/rosters"
+    },
+    {
+      "leagueRecordId": "BBU5",
+      "sleeperLeagueId": "1339095453291003904",
+      "rosterId": 3,
+      "manager": "russbuss83",
+      "teamName": "russbuss83",
+      "points": 1306.76,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095453291003904/rosters"
+    },
+    {
+      "leagueRecordId": "BBU5",
+      "sleeperLeagueId": "1339095453291003904",
+      "rosterId": 6,
+      "manager": "Isurus33",
+      "teamName": "Isurus33",
+      "points": 1306.26,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095453291003904/rosters"
+    },
+    {
+      "leagueRecordId": "BBU2",
+      "sleeperLeagueId": "1339095313704554496",
+      "rosterId": 3,
+      "manager": "bryanb460",
+      "teamName": "bryanb460",
+      "points": 1306.25,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095313704554496/rosters"
+    },
+    {
+      "leagueRecordId": "BBU6",
+      "sleeperLeagueId": "1362480393130868736",
+      "rosterId": 6,
+      "manager": "hankburnem",
+      "teamName": "Slot 3",
+      "points": 1304.62,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480393130868736/rosters"
+    },
+    {
+      "leagueRecordId": "BBU4",
+      "sleeperLeagueId": "1339095416859287552",
+      "rosterId": 10,
+      "manager": "OmahaaaSet",
+      "teamName": "OmahaaaSet$10",
+      "points": 1303.94,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095416859287552/rosters"
+    },
+    {
+      "leagueRecordId": "BBU11",
+      "sleeperLeagueId": "1383933081991278592",
+      "rosterId": 5,
+      "manager": "PickleRick702",
+      "teamName": "PickleRick702",
+      "points": 1302.12,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1383933081991278592/rosters"
+    },
+    {
+      "leagueRecordId": "BBU15",
+      "sleeperLeagueId": "1400552006992556032",
+      "rosterId": 5,
+      "manager": "Danield13",
+      "teamName": "Danield13",
+      "points": 1298.43,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1400552006992556032/rosters"
+    },
+    {
+      "leagueRecordId": "BBU7",
+      "sleeperLeagueId": "1362480515533242368",
+      "rosterId": 10,
+      "manager": "VinsBroPaul",
+      "teamName": "VinsBroPaul",
+      "points": 1298.39,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480515533242368/rosters"
+    },
+    {
+      "leagueRecordId": "BBU1",
+      "sleeperLeagueId": "1339095209052508160",
+      "rosterId": 3,
+      "manager": "jakeejk",
+      "teamName": "jakeejk",
+      "points": 1295.52,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095209052508160/rosters"
+    },
+    {
+      "leagueRecordId": "BBU10",
+      "sleeperLeagueId": "1362480992765353984",
+      "rosterId": 4,
+      "manager": "Christian5838",
+      "teamName": "Christian5838",
+      "points": 1293.56,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480992765353984/rosters"
+    },
+    {
+      "leagueRecordId": "BBU11",
+      "sleeperLeagueId": "1383933081991278592",
+      "rosterId": 4,
+      "manager": "weatherman172",
+      "teamName": "weatherman172",
+      "points": 1292.82,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1383933081991278592/rosters"
+    },
+    {
+      "leagueRecordId": "BBU6",
+      "sleeperLeagueId": "1362480393130868736",
+      "rosterId": 2,
+      "manager": "HopscotchDaisy",
+      "teamName": "HopscotchDaisy",
+      "points": 1292.50,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480393130868736/rosters"
+    },
+    {
+      "leagueRecordId": "BBU8",
+      "sleeperLeagueId": "1362480638808064000",
+      "rosterId": 8,
+      "manager": "GSH46",
+      "teamName": "GSH46",
+      "points": 1288.16,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480638808064000/rosters"
+    },
+    {
+      "leagueRecordId": "BBU5",
+      "sleeperLeagueId": "1339095453291003904",
+      "rosterId": 5,
+      "manager": "ZiggyAwesomeX",
+      "teamName": "ZiggyAwesomeX",
+      "points": 1286.53,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095453291003904/rosters"
+    },
+    {
+      "leagueRecordId": "BBU15",
+      "sleeperLeagueId": "1400552006992556032",
+      "rosterId": 1,
+      "manager": "VinsBroPaul",
+      "teamName": "VinsBroPaul",
+      "points": 1285.13,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1400552006992556032/rosters"
+    },
+    {
+      "leagueRecordId": "BBU14",
+      "sleeperLeagueId": "1395814066945036288",
+      "rosterId": 2,
+      "manager": "pmzet",
+      "teamName": "pmzet",
+      "points": 1282.87,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1395814066945036288/rosters"
+    },
+    {
+      "leagueRecordId": "BBU8",
+      "sleeperLeagueId": "1362480638808064000",
+      "rosterId": 7,
+      "manager": "TampaRaiderFan",
+      "teamName": "TampaRaiderFan",
+      "points": 1282.63,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480638808064000/rosters"
+    },
+    {
+      "leagueRecordId": "BBU2",
+      "sleeperLeagueId": "1339095313704554496",
+      "rosterId": 6,
+      "manager": "swampraider",
+      "teamName": "swampraider",
+      "points": 1281.66,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095313704554496/rosters"
+    },
+    {
+      "leagueRecordId": "BBU15",
+      "sleeperLeagueId": "1400552006992556032",
+      "rosterId": 2,
+      "manager": "Cameron74",
+      "teamName": "Cameron74",
+      "points": 1279.45,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1400552006992556032/rosters"
+    },
+    {
+      "leagueRecordId": "BBU8",
+      "sleeperLeagueId": "1362480638808064000",
+      "rosterId": 1,
+      "manager": "DSnyder5",
+      "teamName": "DSnyder5",
+      "points": 1275.39,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480638808064000/rosters"
+    },
+    {
+      "leagueRecordId": "BBU13",
+      "sleeperLeagueId": "1392580936901611520",
+      "rosterId": 9,
+      "manager": "OprahsTeddyBear",
+      "teamName": "OprahsTeddyBear",
+      "points": 1274.26,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1392580936901611520/rosters"
+    },
+    {
+      "leagueRecordId": "BBU3",
+      "sleeperLeagueId": "1339095371091017728",
+      "rosterId": 9,
+      "manager": "XWILL07",
+      "teamName": "XWILL07",
+      "points": 1269.48,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095371091017728/rosters"
+    },
+    {
+      "leagueRecordId": "BBU12",
+      "sleeperLeagueId": "1389361694546878464",
+      "rosterId": 2,
+      "manager": "jokers6699",
+      "teamName": "10-JWBB-66",
+      "points": 1268.94,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1389361694546878464/rosters"
+    },
+    {
+      "leagueRecordId": "BBU9",
+      "sleeperLeagueId": "1362480857310302208",
+      "rosterId": 1,
+      "manager": "DSnyder5",
+      "teamName": "DSnyder5",
+      "points": 1268.90,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480857310302208/rosters"
+    },
+    {
+      "leagueRecordId": "BBU11",
+      "sleeperLeagueId": "1383933081991278592",
+      "rosterId": 2,
+      "manager": "ZoZ0mBi3",
+      "teamName": "ZoZ0mBi3",
+      "points": 1267.49,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1383933081991278592/rosters"
+    },
+    {
+      "leagueRecordId": "BBU13",
+      "sleeperLeagueId": "1392580936901611520",
+      "rosterId": 8,
+      "manager": "halfmedal442",
+      "teamName": "halfmedal442",
+      "points": 1253.05,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1392580936901611520/rosters"
+    },
+    {
+      "leagueRecordId": "BBU14",
+      "sleeperLeagueId": "1395814066945036288",
+      "rosterId": 8,
+      "manager": "odaroloc",
+      "teamName": "odaroloc",
+      "points": 1252.58,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1395814066945036288/rosters"
+    },
+    {
+      "leagueRecordId": "BBU11",
+      "sleeperLeagueId": "1383933081991278592",
+      "rosterId": 9,
+      "manager": "DoubleTap7798",
+      "teamName": "DoubleTap7798",
+      "points": 1251.28,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1383933081991278592/rosters"
+    },
+    {
+      "leagueRecordId": "BBU12",
+      "sleeperLeagueId": "1389361694546878464",
+      "rosterId": 10,
+      "manager": "hwright0490",
+      "teamName": "hwright0490",
+      "points": 1250.79,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1389361694546878464/rosters"
+    },
+    {
+      "leagueRecordId": "BBU8",
+      "sleeperLeagueId": "1362480638808064000",
+      "rosterId": 2,
+      "manager": "VinsBroPaul",
+      "teamName": "VinsBroPaul",
+      "points": 1248.43,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480638808064000/rosters"
+    },
+    {
+      "leagueRecordId": "BBU13",
+      "sleeperLeagueId": "1392580936901611520",
+      "rosterId": 7,
+      "manager": "vareska",
+      "teamName": "vareska",
+      "points": 1242.94,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1392580936901611520/rosters"
+    },
+    {
+      "leagueRecordId": "BBU8",
+      "sleeperLeagueId": "1362480638808064000",
+      "rosterId": 5,
+      "manager": "Randrew99",
+      "teamName": "Randrew99",
+      "points": 1242.27,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480638808064000/rosters"
+    },
+    {
+      "leagueRecordId": "BBU8",
+      "sleeperLeagueId": "1362480638808064000",
+      "rosterId": 4,
+      "manager": "cokeboy99",
+      "teamName": "cokeboy99",
+      "points": 1232.79,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480638808064000/rosters"
+    },
+    {
+      "leagueRecordId": "BBU3",
+      "sleeperLeagueId": "1339095371091017728",
+      "rosterId": 10,
+      "manager": "OmahaaaSet",
+      "teamName": "OmahaaaSet$10",
+      "points": 1232.54,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095371091017728/rosters"
+    },
+    {
+      "leagueRecordId": "BBU1",
+      "sleeperLeagueId": "1339095209052508160",
+      "rosterId": 1,
+      "manager": "HopscotchDaisy",
+      "teamName": "HopscotchDaisy",
+      "points": 1232.33,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095209052508160/rosters"
+    },
+    {
+      "leagueRecordId": "BBU4",
+      "sleeperLeagueId": "1339095416859287552",
+      "rosterId": 4,
+      "manager": "PeterJ555",
+      "teamName": "Chasing Jets",
+      "points": 1231.35,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095416859287552/rosters"
+    },
+    {
+      "leagueRecordId": "BBU1",
+      "sleeperLeagueId": "1339095209052508160",
+      "rosterId": 9,
+      "manager": "VanillaWafer",
+      "teamName": "VanillaWafer",
+      "points": 1229.62,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095209052508160/rosters"
+    },
+    {
+      "leagueRecordId": "BBU8",
+      "sleeperLeagueId": "1362480638808064000",
+      "rosterId": 3,
+      "manager": "mkpconway",
+      "teamName": "mkpconway",
+      "points": 1228.34,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480638808064000/rosters"
+    },
+    {
+      "leagueRecordId": "BBU15",
+      "sleeperLeagueId": "1400552006992556032",
+      "rosterId": 8,
+      "manager": "Dynasty4JG",
+      "teamName": "Dynasty4JG",
+      "points": 1227.80,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1400552006992556032/rosters"
+    },
+    {
+      "leagueRecordId": "BBU3",
+      "sleeperLeagueId": "1339095371091017728",
+      "rosterId": 5,
+      "manager": "Tacious00",
+      "teamName": "Tacious00",
+      "points": 1222.24,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095371091017728/rosters"
+    },
+    {
+      "leagueRecordId": "BBU3",
+      "sleeperLeagueId": "1339095371091017728",
+      "rosterId": 6,
+      "manager": "PickleRick702",
+      "teamName": "PickleRick702",
+      "points": 1212.70,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095371091017728/rosters"
+    },
+    {
+      "leagueRecordId": "BBU12",
+      "sleeperLeagueId": "1389361694546878464",
+      "rosterId": 3,
+      "manager": "TryanboloneBB",
+      "teamName": "TryanboloneBB",
+      "points": 1211.42,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1389361694546878464/rosters"
+    },
+    {
+      "leagueRecordId": "BBU11",
+      "sleeperLeagueId": "1383933081991278592",
+      "rosterId": 6,
+      "manager": "hoosierdaddy85",
+      "teamName": "hoosierdaddy85",
+      "points": 1205.89,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1383933081991278592/rosters"
+    },
+    {
+      "leagueRecordId": "BBU7",
+      "sleeperLeagueId": "1362480515533242368",
+      "rosterId": 5,
+      "manager": "BakDraft",
+      "teamName": "BakDraft",
+      "points": 1203.50,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480515533242368/rosters"
+    },
+    {
+      "leagueRecordId": "BBU1",
+      "sleeperLeagueId": "1339095209052508160",
+      "rosterId": 10,
+      "manager": "ThrowwUpTheX",
+      "teamName": "ThrowwUpTheX",
+      "points": 1193.67,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095209052508160/rosters"
+    },
+    {
+      "leagueRecordId": "BBU9",
+      "sleeperLeagueId": "1362480857310302208",
+      "rosterId": 5,
+      "manager": "TryanboloneBB",
+      "teamName": "TryanboloneBB",
+      "points": 1192.68,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480857310302208/rosters"
+    },
+    {
+      "leagueRecordId": "BBU4",
+      "sleeperLeagueId": "1339095416859287552",
+      "rosterId": 2,
+      "manager": "jakeejk",
+      "teamName": "jakeejk",
+      "points": 1189.95,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095416859287552/rosters"
+    },
+    {
+      "leagueRecordId": "BBU12",
+      "sleeperLeagueId": "1389361694546878464",
+      "rosterId": 7,
+      "manager": "ChairmenFantasy",
+      "teamName": "ChairmenFantasy",
+      "points": 1188.51,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1389361694546878464/rosters"
+    },
+    {
+      "leagueRecordId": "BBU10",
+      "sleeperLeagueId": "1362480992765353984",
+      "rosterId": 5,
+      "manager": "Doobee",
+      "teamName": "Doobee",
+      "points": 1188.15,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480992765353984/rosters"
+    },
+    {
+      "leagueRecordId": "BBU12",
+      "sleeperLeagueId": "1389361694546878464",
+      "rosterId": 8,
+      "manager": "bryanb460",
+      "teamName": "bryanb460",
+      "points": 1184.88,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1389361694546878464/rosters"
+    },
+    {
+      "leagueRecordId": "BBU6",
+      "sleeperLeagueId": "1362480393130868736",
+      "rosterId": 1,
+      "manager": "DSnyder5",
+      "teamName": "DSnyder5",
+      "points": 1184.64,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480393130868736/rosters"
+    },
+    {
+      "leagueRecordId": "BBU10",
+      "sleeperLeagueId": "1362480992765353984",
+      "rosterId": 9,
+      "manager": "JoeNasty",
+      "teamName": "JoeNasty",
+      "points": 1182.17,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480992765353984/rosters"
+    },
+    {
+      "leagueRecordId": "BBU9",
+      "sleeperLeagueId": "1362480857310302208",
+      "rosterId": 6,
+      "manager": "GSH46",
+      "teamName": "GSH46",
+      "points": 1177.22,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480857310302208/rosters"
+    },
+    {
+      "leagueRecordId": "BBU14",
+      "sleeperLeagueId": "1395814066945036288",
+      "rosterId": 7,
+      "manager": "StolenSix",
+      "teamName": "StolenSix",
+      "points": 1176.70,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1395814066945036288/rosters"
+    },
+    {
+      "leagueRecordId": "BBU13",
+      "sleeperLeagueId": "1392580936901611520",
+      "rosterId": 6,
+      "manager": "Kenxzl",
+      "teamName": "Kenxzl",
+      "points": 1168.69,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1392580936901611520/rosters"
+    },
+    {
+      "leagueRecordId": "BBU6",
+      "sleeperLeagueId": "1362480393130868736",
+      "rosterId": 10,
+      "manager": "OmahaaaSet",
+      "teamName": "OmahaaaSet$10",
+      "points": 1168.38,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480393130868736/rosters"
+    },
+    {
+      "leagueRecordId": "BBU15",
+      "sleeperLeagueId": "1400552006992556032",
+      "rosterId": 10,
+      "manager": "abettertime",
+      "teamName": "abettertime",
+      "points": 1167.73,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1400552006992556032/rosters"
+    },
+    {
+      "leagueRecordId": "BBU3",
+      "sleeperLeagueId": "1339095371091017728",
+      "rosterId": 7,
+      "manager": "Isurus33",
+      "teamName": "Fradulent ",
+      "points": 1165.73,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095371091017728/rosters"
+    },
+    {
+      "leagueRecordId": "BBU7",
+      "sleeperLeagueId": "1362480515533242368",
+      "rosterId": 3,
+      "manager": "Tacious00",
+      "teamName": "Tacious00",
+      "points": 1162.41,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480515533242368/rosters"
+    },
+    {
+      "leagueRecordId": "BBU4",
+      "sleeperLeagueId": "1339095416859287552",
+      "rosterId": 9,
+      "manager": "Tacious00",
+      "teamName": "Tacious00",
+      "points": 1155.81,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095416859287552/rosters"
+    },
+    {
+      "leagueRecordId": "BBU10",
+      "sleeperLeagueId": "1362480992765353984",
+      "rosterId": 3,
+      "manager": "Isurus33",
+      "teamName": "Isurus33",
+      "points": 1155.07,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480992765353984/rosters"
+    },
+    {
+      "leagueRecordId": "BBU7",
+      "sleeperLeagueId": "1362480515533242368",
+      "rosterId": 4,
+      "manager": "glosque",
+      "teamName": "glosque",
+      "points": 1152.44,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480515533242368/rosters"
+    },
+    {
+      "leagueRecordId": "BBU10",
+      "sleeperLeagueId": "1362480992765353984",
+      "rosterId": 7,
+      "manager": "8offHitword",
+      "teamName": "8offHitword",
+      "points": 1148.13,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480992765353984/rosters"
+    },
+    {
+      "leagueRecordId": "BBU3",
+      "sleeperLeagueId": "1339095371091017728",
+      "rosterId": 1,
+      "manager": "DSnyder5",
+      "teamName": "DSnyder5",
+      "points": 1146.07,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095371091017728/rosters"
+    },
+    {
+      "leagueRecordId": "BBU11",
+      "sleeperLeagueId": "1383933081991278592",
+      "rosterId": 1,
+      "manager": "abettertime",
+      "teamName": "abettertime",
+      "points": 1141.96,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1383933081991278592/rosters"
+    },
+    {
+      "leagueRecordId": "BBU14",
+      "sleeperLeagueId": "1395814066945036288",
+      "rosterId": 10,
+      "manager": "MoGetEm",
+      "teamName": "MoGetEm",
+      "points": 1139.50,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1395814066945036288/rosters"
+    },
+    {
+      "leagueRecordId": "BBU8",
+      "sleeperLeagueId": "1362480638808064000",
+      "rosterId": 9,
+      "manager": "TryanboloneBB",
+      "teamName": "TryanboloneBB",
+      "points": 1135.00,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480638808064000/rosters"
+    },
+    {
+      "leagueRecordId": "BBU14",
+      "sleeperLeagueId": "1395814066945036288",
+      "rosterId": 6,
+      "manager": "Lurk6",
+      "teamName": "Lurk6",
+      "points": 1130.53,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1395814066945036288/rosters"
+    },
+    {
+      "leagueRecordId": "BBU11",
+      "sleeperLeagueId": "1383933081991278592",
+      "rosterId": 3,
+      "manager": "8offHitword",
+      "teamName": "8offHitword",
+      "points": 1128.94,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1383933081991278592/rosters"
+    },
+    {
+      "leagueRecordId": "BBU5",
+      "sleeperLeagueId": "1339095453291003904",
+      "rosterId": 2,
+      "manager": "DSnyder5",
+      "teamName": "DSnyder5",
+      "points": 1117.36,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095453291003904/rosters"
+    },
+    {
+      "leagueRecordId": "BBU2",
+      "sleeperLeagueId": "1339095313704554496",
+      "rosterId": 9,
+      "manager": "PasqTheGoat",
+      "teamName": "PasqTheGoat",
+      "points": 1114.93,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095313704554496/rosters"
+    },
+    {
+      "leagueRecordId": "BBU5",
+      "sleeperLeagueId": "1339095453291003904",
+      "rosterId": 10,
+      "manager": "DKLounge420",
+      "teamName": "DKLounge420",
+      "points": 1110.76,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095453291003904/rosters"
+    },
+    {
+      "leagueRecordId": "BBU10",
+      "sleeperLeagueId": "1362480992765353984",
+      "rosterId": 6,
+      "manager": "TeaBaggg",
+      "teamName": "TeaBaggg",
+      "points": 1101.87,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480992765353984/rosters"
+    },
+    {
+      "leagueRecordId": "BBU1",
+      "sleeperLeagueId": "1339095209052508160",
+      "rosterId": 5,
+      "manager": "gunnar21",
+      "teamName": "gunnar21",
+      "points": 1095.59,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095209052508160/rosters"
+    },
+    {
+      "leagueRecordId": "BBU6",
+      "sleeperLeagueId": "1362480393130868736",
+      "rosterId": 4,
+      "manager": "ghopzy",
+      "teamName": "ghopzy",
+      "points": 1090.35,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480393130868736/rosters"
+    },
+    {
+      "leagueRecordId": "BBU12",
+      "sleeperLeagueId": "1389361694546878464",
+      "rosterId": 9,
+      "manager": "Kenxzl",
+      "teamName": "Kenxzl",
+      "points": 1084.42,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1389361694546878464/rosters"
+    },
+    {
+      "leagueRecordId": "BBU2",
+      "sleeperLeagueId": "1339095313704554496",
+      "rosterId": 4,
+      "manager": "Cameron74",
+      "teamName": "Cameron74",
+      "points": 1084.12,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095313704554496/rosters"
+    },
+    {
+      "leagueRecordId": "BBU4",
+      "sleeperLeagueId": "1339095416859287552",
+      "rosterId": 1,
+      "manager": "DSnyder5",
+      "teamName": "DSnyder5",
+      "points": 1080.11,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095416859287552/rosters"
+    },
+    {
+      "leagueRecordId": "BBU6",
+      "sleeperLeagueId": "1362480393130868736",
+      "rosterId": 7,
+      "manager": "StrangeAuto12",
+      "teamName": "StrangeAuto12",
+      "points": 1067.02,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480393130868736/rosters"
+    },
+    {
+      "leagueRecordId": "BBU1",
+      "sleeperLeagueId": "1339095209052508160",
+      "rosterId": 2,
+      "manager": "2GunzTanner",
+      "teamName": "2GunzTanner",
+      "points": 1055.62,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095209052508160/rosters"
+    },
+    {
+      "leagueRecordId": "BBU2",
+      "sleeperLeagueId": "1339095313704554496",
+      "rosterId": 1,
+      "manager": "DSnyder5",
+      "teamName": "DSnyder5",
+      "points": 1034.55,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095313704554496/rosters"
+    },
+    {
+      "leagueRecordId": "BBU5",
+      "sleeperLeagueId": "1339095453291003904",
+      "rosterId": 7,
+      "manager": "JimmyWojo",
+      "teamName": "JimmyWojo",
+      "points": 1033.18,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095453291003904/rosters"
+    },
+    {
+      "leagueRecordId": "BBU7",
+      "sleeperLeagueId": "1362480515533242368",
+      "rosterId": 1,
+      "manager": "DSnyder5",
+      "teamName": "MethEnjoyer14",
+      "points": 1018.97,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480515533242368/rosters"
+    },
+    {
+      "leagueRecordId": "BBU2",
+      "sleeperLeagueId": "1339095313704554496",
+      "rosterId": 5,
+      "manager": "RevDennis",
+      "teamName": "RevDennis",
+      "points": 1003.05,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1339095313704554496/rosters"
+    },
+    {
+      "leagueRecordId": "BBU9",
+      "sleeperLeagueId": "1362480857310302208",
+      "rosterId": 7,
+      "manager": "Quietstorm22",
+      "teamName": "Quietstorm22",
+      "points": 993.67,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480857310302208/rosters"
+    },
+    {
+      "leagueRecordId": "BBU14",
+      "sleeperLeagueId": "1395814066945036288",
+      "rosterId": 5,
+      "manager": "PostKobe",
+      "teamName": "PostKobe",
+      "points": 987.48,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1395814066945036288/rosters"
+    },
+    {
+      "leagueRecordId": "BBU15",
+      "sleeperLeagueId": "1400552006992556032",
+      "rosterId": 9,
+      "manager": "FCWashington",
+      "teamName": "FCWashington",
+      "points": 981.80,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1400552006992556032/rosters"
+    },
+    {
+      "leagueRecordId": "BBU7",
+      "sleeperLeagueId": "1362480515533242368",
+      "rosterId": 2,
+      "manager": "hankburnem",
+      "teamName": "Slot 7",
+      "points": 972.89,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1362480515533242368/rosters"
+    },
+    {
+      "leagueRecordId": "BBU13",
+      "sleeperLeagueId": "1392580936901611520",
+      "rosterId": 2,
+      "manager": "abettertime",
+      "teamName": "abettertime",
+      "points": 970.64,
+      "sourceUrl": "https://api.sleeper.app/v1/league/1392580936901611520/rosters"
+    }
+  ],
+  "throughWeek": 11,
+  "overallPrize": 415,
+  "verifiedAt": "2026-11-24T17:22:51.7314663Z",
+  "teamCount": 150,
+  "season": "2026"
+}

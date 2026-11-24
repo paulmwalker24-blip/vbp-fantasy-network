@@ -613,3 +613,8 @@ Run the one-command site check and tell me any errors or warnings before commit.
 - Use the constitution-page check when you want a fast pass on Back to Hub links, banner image references, and basic constitution structure.
 - Use the validator before commit or push.
 - Use the one-command site check when you want the broadest local pre-push pass.
+
+## BBU Discord scoreboard refresh
+
+Ask: Validate both 15-room BBU scoreboards through the latest completed week with scripts/refresh-bbu-scoreboards.ps1. If I request publication, pass -Publish and verify Discord readback. Preserve saved message IDs.
+

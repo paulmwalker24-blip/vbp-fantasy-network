@@ -1,0 +1,3504 @@
+{
+  "season": "2026",
+  "verifiedAt": "2026-11-24T17:21:11.0253448Z",
+  "throughWeek": 11,
+  "leagueRecordIds": [
+    "BBU1",
+    "BBU2",
+    "BBU3",
+    "BBU4",
+    "BBU5",
+    "BBU6",
+    "BBU7",
+    "BBU8",
+    "BBU9",
+    "BBU10",
+    "BBU11",
+    "BBU12",
+    "BBU13",
+    "BBU14",
+    "BBU15"
+  ],
+  "leagues": [
+    {
+      "leagueRecordId": "BBU1",
+      "sleeperLeagueId": "1339095209052508160",
+      "name": "✅ Best Ball Union #1"
+    },
+    {
+      "leagueRecordId": "BBU2",
+      "sleeperLeagueId": "1339095313704554496",
+      "name": "✅ Best Ball Union #2"
+    },
+    {
+      "leagueRecordId": "BBU3",
+      "sleeperLeagueId": "1339095371091017728",
+      "name": "✅ Best Ball Union #3"
+    },
+    {
+      "leagueRecordId": "BBU4",
+      "sleeperLeagueId": "1339095416859287552",
+      "name": "✅ Best Ball Union #4"
+    },
+    {
+      "leagueRecordId": "BBU5",
+      "sleeperLeagueId": "1339095453291003904",
+      "name": "✅ Best Ball Union #5"
+    },
+    {
+      "leagueRecordId": "BBU6",
+      "sleeperLeagueId": "1362480393130868736",
+      "name": "✅ Best Ball Union #6"
+    },
+    {
+      "leagueRecordId": "BBU7",
+      "sleeperLeagueId": "1362480515533242368",
+      "name": "✅ Best Ball Union #7"
+    },
+    {
+      "leagueRecordId": "BBU8",
+      "sleeperLeagueId": "1362480638808064000",
+      "name": "✅ Best Ball Union #8"
+    },
+    {
+      "leagueRecordId": "BBU9",
+      "sleeperLeagueId": "1362480857310302208",
+      "name": "✅ Best Ball Union #9"
+    },
+    {
+      "leagueRecordId": "BBU10",
+      "sleeperLeagueId": "1362480992765353984",
+      "name": "✅ Best Ball Union #10"
+    },
+    {
+      "leagueRecordId": "BBU11",
+      "sleeperLeagueId": "1383933081991278592",
+      "name": "✅ Best Ball Union #11"
+    },
+    {
+      "leagueRecordId": "BBU12",
+      "sleeperLeagueId": "1389361694546878464",
+      "name": "✅ Best Ball Union #12"
+    },
+    {
+      "leagueRecordId": "BBU13",
+      "sleeperLeagueId": "1392580936901611520",
+      "name": "Best Ball Union #13"
+    },
+    {
+      "leagueRecordId": "BBU14",
+      "sleeperLeagueId": "1395814066945036288",
+      "name": "Best Ball Union #14"
+    },
+    {
+      "leagueRecordId": "BBU15",
+      "sleeperLeagueId": "1400552006992556032",
+      "name": "Best Ball Union #15"
+    }
+  ],
+  "scoreCount": 1650,
+  "methodology": "Official Sleeper matchup.points; complete 15-room coverage; exact score ties share one $5 weekly award. Verification does not mark payment issued. Current owner identity requires review if ownership changed.",
+  "weeks": [
+    {
+      "week": 1,
+      "status": "verified",
+      "leagueCount": 15,
+      "teamScoreCount": 150,
+      "highScore": 211.11,
+      "prizePool": 5,
+      "prizePerWinner": 5.0,
+      "paymentStatus": "not-recorded",
+      "winners": [
+        {
+          "week": 1,
+          "leagueRecordId": "BBU14",
+          "sleeperLeagueId": "1395814066945036288",
+          "rosterId": 3,
+          "ownerId": "729201775764180992",
+          "manager": "BammBamKam",
+          "teamName": "BammBamKam",
+          "points": 211.11,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1395814066945036288/matchups/1",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "status": "verified",
+      "leagueCount": 15,
+      "teamScoreCount": 150,
+      "highScore": 170.08,
+      "prizePool": 5,
+      "prizePerWinner": 5.0,
+      "paymentStatus": "not-recorded",
+      "winners": [
+        {
+          "week": 2,
+          "leagueRecordId": "BBU1",
+          "sleeperLeagueId": "1339095209052508160",
+          "rosterId": 1,
+          "ownerId": "707317555764740096",
+          "manager": "HopscotchDaisy",
+          "teamName": "HopscotchDaisy",
+          "points": 170.08,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095209052508160/matchups/2",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "status": "verified",
+      "leagueCount": 15,
+      "teamScoreCount": 150,
+      "highScore": 176.06,
+      "prizePool": 5,
+      "prizePerWinner": 5.0,
+      "paymentStatus": "not-recorded",
+      "winners": [
+        {
+          "week": 3,
+          "leagueRecordId": "BBU1",
+          "sleeperLeagueId": "1339095209052508160",
+          "rosterId": 8,
+          "ownerId": "1126340979302178816",
+          "manager": "jessegambo",
+          "teamName": "jessegambo",
+          "points": 176.06,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095209052508160/matchups/3",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "status": "verified",
+      "leagueCount": 15,
+      "teamScoreCount": 150,
+      "highScore": 193.17,
+      "prizePool": 5,
+      "prizePerWinner": 5.0,
+      "paymentStatus": "not-recorded",
+      "winners": [
+        {
+          "week": 4,
+          "leagueRecordId": "BBU13",
+          "sleeperLeagueId": "1392580936901611520",
+          "rosterId": 4,
+          "ownerId": "300779850958921728",
+          "manager": "sumbrad",
+          "teamName": "sumbrad",
+          "points": 193.17,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1392580936901611520/matchups/4",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "status": "verified",
+      "leagueCount": 15,
+      "teamScoreCount": 150,
+      "highScore": 175.68,
+      "prizePool": 5,
+      "prizePerWinner": 5.0,
+      "paymentStatus": "not-recorded",
+      "winners": [
+        {
+          "week": 5,
+          "leagueRecordId": "BBU15",
+          "sleeperLeagueId": "1400552006992556032",
+          "rosterId": 6,
+          "ownerId": "991563873712959488",
+          "manager": "hwright0490",
+          "teamName": "hwright0490",
+          "points": 175.68,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1400552006992556032/matchups/5",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "status": "verified",
+      "leagueCount": 15,
+      "teamScoreCount": 150,
+      "highScore": 150.74,
+      "prizePool": 5,
+      "prizePerWinner": 5.0,
+      "paymentStatus": "not-recorded",
+      "winners": [
+        {
+          "week": 6,
+          "leagueRecordId": "BBU14",
+          "sleeperLeagueId": "1395814066945036288",
+          "rosterId": 3,
+          "ownerId": "729201775764180992",
+          "manager": "BammBamKam",
+          "teamName": "BammBamKam",
+          "points": 150.74,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1395814066945036288/matchups/6",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "status": "verified",
+      "leagueCount": 15,
+      "teamScoreCount": 150,
+      "highScore": 173.42,
+      "prizePool": 5,
+      "prizePerWinner": 5.0,
+      "paymentStatus": "not-recorded",
+      "winners": [
+        {
+          "week": 7,
+          "leagueRecordId": "BBU2",
+          "sleeperLeagueId": "1339095313704554496",
+          "rosterId": 2,
+          "ownerId": "1254553997973389313",
+          "manager": "jakeejk",
+          "teamName": "jakeejk",
+          "points": 173.42,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095313704554496/matchups/7",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "status": "verified",
+      "leagueCount": 15,
+      "teamScoreCount": 150,
+      "highScore": 181.48,
+      "prizePool": 5,
+      "prizePerWinner": 5.0,
+      "paymentStatus": "not-recorded",
+      "winners": [
+        {
+          "week": 8,
+          "leagueRecordId": "BBU7",
+          "sleeperLeagueId": "1362480515533242368",
+          "rosterId": 6,
+          "ownerId": "1175159775586222080",
+          "manager": "TryanboloneBB",
+          "teamName": "8-bit Usain Bolt",
+          "points": 181.48,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480515533242368/matchups/8",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "status": "verified",
+      "leagueCount": 15,
+      "teamScoreCount": 150,
+      "highScore": 162.65,
+      "prizePool": 5,
+      "prizePerWinner": 5.0,
+      "paymentStatus": "not-recorded",
+      "winners": [
+        {
+          "week": 9,
+          "leagueRecordId": "BBU1",
+          "sleeperLeagueId": "1339095209052508160",
+          "rosterId": 4,
+          "ownerId": "995900688305733632",
+          "manager": "kj0116",
+          "teamName": "kj0116",
+          "points": 162.65,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095209052508160/matchups/9",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "status": "verified",
+      "leagueCount": 15,
+      "teamScoreCount": 150,
+      "highScore": 207.22,
+      "prizePool": 5,
+      "prizePerWinner": 5.0,
+      "paymentStatus": "not-recorded",
+      "winners": [
+        {
+          "week": 10,
+          "leagueRecordId": "BBU12",
+          "sleeperLeagueId": "1389361694546878464",
+          "rosterId": 1,
+          "ownerId": "1033311955865542656",
+          "manager": "heeshang",
+          "teamName": "heeshang",
+          "points": 207.22,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1389361694546878464/matchups/10",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "status": "verified",
+      "leagueCount": 15,
+      "teamScoreCount": 150,
+      "highScore": 148.11,
+      "prizePool": 5,
+      "prizePerWinner": 5.0,
+      "paymentStatus": "not-recorded",
+      "winners": [
+        {
+          "week": 11,
+          "leagueRecordId": "BBU6",
+          "sleeperLeagueId": "1362480393130868736",
+          "rosterId": 2,
+          "ownerId": "707317555764740096",
+          "manager": "HopscotchDaisy",
+          "teamName": "HopscotchDaisy",
+          "points": 148.11,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480393130868736/matchups/11",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    }
+  ],
+  "roomHighScores": [
+    {
+      "week": 1,
+      "leagueRecordId": "BBU1",
+      "highScore": 171.91,
+      "winners": [
+        {
+          "week": 1,
+          "leagueRecordId": "BBU1",
+          "sleeperLeagueId": "1339095209052508160",
+          "rosterId": 5,
+          "ownerId": "1127082953709899776",
+          "manager": "gunnar21",
+          "teamName": "gunnar21",
+          "points": 171.91,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095209052508160/matchups/1",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "leagueRecordId": "BBU1",
+      "highScore": 170.08,
+      "winners": [
+        {
+          "week": 2,
+          "leagueRecordId": "BBU1",
+          "sleeperLeagueId": "1339095209052508160",
+          "rosterId": 1,
+          "ownerId": "707317555764740096",
+          "manager": "HopscotchDaisy",
+          "teamName": "HopscotchDaisy",
+          "points": 170.08,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095209052508160/matchups/2",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "leagueRecordId": "BBU1",
+      "highScore": 176.06,
+      "winners": [
+        {
+          "week": 3,
+          "leagueRecordId": "BBU1",
+          "sleeperLeagueId": "1339095209052508160",
+          "rosterId": 8,
+          "ownerId": "1126340979302178816",
+          "manager": "jessegambo",
+          "teamName": "jessegambo",
+          "points": 176.06,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095209052508160/matchups/3",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "leagueRecordId": "BBU1",
+      "highScore": 164.72,
+      "winners": [
+        {
+          "week": 4,
+          "leagueRecordId": "BBU1",
+          "sleeperLeagueId": "1339095209052508160",
+          "rosterId": 4,
+          "ownerId": "995900688305733632",
+          "manager": "kj0116",
+          "teamName": "kj0116",
+          "points": 164.72,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095209052508160/matchups/4",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "leagueRecordId": "BBU1",
+      "highScore": 140.05,
+      "winners": [
+        {
+          "week": 5,
+          "leagueRecordId": "BBU1",
+          "sleeperLeagueId": "1339095209052508160",
+          "rosterId": 6,
+          "ownerId": "1266160975749337088",
+          "manager": "mguzz",
+          "teamName": "mguzz",
+          "points": 140.05,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095209052508160/matchups/5",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "leagueRecordId": "BBU1",
+      "highScore": 130.53,
+      "winners": [
+        {
+          "week": 6,
+          "leagueRecordId": "BBU1",
+          "sleeperLeagueId": "1339095209052508160",
+          "rosterId": 9,
+          "ownerId": "597669849140879360",
+          "manager": "VanillaWafer",
+          "teamName": "VanillaWafer",
+          "points": 130.53,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095209052508160/matchups/6",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "leagueRecordId": "BBU1",
+      "highScore": 130.44,
+      "winners": [
+        {
+          "week": 7,
+          "leagueRecordId": "BBU1",
+          "sleeperLeagueId": "1339095209052508160",
+          "rosterId": 10,
+          "ownerId": "386524408732508160",
+          "manager": "ThrowwUpTheX",
+          "teamName": "ThrowwUpTheX",
+          "points": 130.44,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095209052508160/matchups/7",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "leagueRecordId": "BBU1",
+      "highScore": 163.77,
+      "winners": [
+        {
+          "week": 8,
+          "leagueRecordId": "BBU1",
+          "sleeperLeagueId": "1339095209052508160",
+          "rosterId": 8,
+          "ownerId": "1126340979302178816",
+          "manager": "jessegambo",
+          "teamName": "jessegambo",
+          "points": 163.77,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095209052508160/matchups/8",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "leagueRecordId": "BBU1",
+      "highScore": 162.65,
+      "winners": [
+        {
+          "week": 9,
+          "leagueRecordId": "BBU1",
+          "sleeperLeagueId": "1339095209052508160",
+          "rosterId": 4,
+          "ownerId": "995900688305733632",
+          "manager": "kj0116",
+          "teamName": "kj0116",
+          "points": 162.65,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095209052508160/matchups/9",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "leagueRecordId": "BBU1",
+      "highScore": 149.97,
+      "winners": [
+        {
+          "week": 10,
+          "leagueRecordId": "BBU1",
+          "sleeperLeagueId": "1339095209052508160",
+          "rosterId": 8,
+          "ownerId": "1126340979302178816",
+          "manager": "jessegambo",
+          "teamName": "jessegambo",
+          "points": 149.97,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095209052508160/matchups/10",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "leagueRecordId": "BBU1",
+      "highScore": 129.05,
+      "winners": [
+        {
+          "week": 11,
+          "leagueRecordId": "BBU1",
+          "sleeperLeagueId": "1339095209052508160",
+          "rosterId": 6,
+          "ownerId": "1266160975749337088",
+          "manager": "mguzz",
+          "teamName": "mguzz",
+          "points": 129.05,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095209052508160/matchups/11",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 1,
+      "leagueRecordId": "BBU2",
+      "highScore": 167.16,
+      "winners": [
+        {
+          "week": 1,
+          "leagueRecordId": "BBU2",
+          "sleeperLeagueId": "1339095313704554496",
+          "rosterId": 8,
+          "ownerId": "996914165291745280",
+          "manager": "SnoopDerek",
+          "teamName": "SnoopDerek",
+          "points": 167.16,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095313704554496/matchups/1",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "leagueRecordId": "BBU2",
+      "highScore": 148.28,
+      "winners": [
+        {
+          "week": 2,
+          "leagueRecordId": "BBU2",
+          "sleeperLeagueId": "1339095313704554496",
+          "rosterId": 10,
+          "ownerId": "1290192913556340736",
+          "manager": "OutlawReturns",
+          "teamName": "OutlawReturns",
+          "points": 148.28,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095313704554496/matchups/2",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "leagueRecordId": "BBU2",
+      "highScore": 138.51,
+      "winners": [
+        {
+          "week": 3,
+          "leagueRecordId": "BBU2",
+          "sleeperLeagueId": "1339095313704554496",
+          "rosterId": 7,
+          "ownerId": "798999450809905152",
+          "manager": "WWWaldo",
+          "teamName": "Flagg Planters",
+          "points": 138.51,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095313704554496/matchups/3",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "leagueRecordId": "BBU2",
+      "highScore": 149.21,
+      "winners": [
+        {
+          "week": 4,
+          "leagueRecordId": "BBU2",
+          "sleeperLeagueId": "1339095313704554496",
+          "rosterId": 3,
+          "ownerId": "736433000019075072",
+          "manager": "bryanb460",
+          "teamName": "bryanb460",
+          "points": 149.21,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095313704554496/matchups/4",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "leagueRecordId": "BBU2",
+      "highScore": 169.34,
+      "winners": [
+        {
+          "week": 5,
+          "leagueRecordId": "BBU2",
+          "sleeperLeagueId": "1339095313704554496",
+          "rosterId": 7,
+          "ownerId": "798999450809905152",
+          "manager": "WWWaldo",
+          "teamName": "Flagg Planters",
+          "points": 169.34,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095313704554496/matchups/5",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "leagueRecordId": "BBU2",
+      "highScore": 127.11,
+      "winners": [
+        {
+          "week": 6,
+          "leagueRecordId": "BBU2",
+          "sleeperLeagueId": "1339095313704554496",
+          "rosterId": 2,
+          "ownerId": "1254553997973389313",
+          "manager": "jakeejk",
+          "teamName": "jakeejk",
+          "points": 127.11,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095313704554496/matchups/6",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "leagueRecordId": "BBU2",
+      "highScore": 173.42,
+      "winners": [
+        {
+          "week": 7,
+          "leagueRecordId": "BBU2",
+          "sleeperLeagueId": "1339095313704554496",
+          "rosterId": 2,
+          "ownerId": "1254553997973389313",
+          "manager": "jakeejk",
+          "teamName": "jakeejk",
+          "points": 173.42,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095313704554496/matchups/7",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "leagueRecordId": "BBU2",
+      "highScore": 152.77,
+      "winners": [
+        {
+          "week": 8,
+          "leagueRecordId": "BBU2",
+          "sleeperLeagueId": "1339095313704554496",
+          "rosterId": 3,
+          "ownerId": "736433000019075072",
+          "manager": "bryanb460",
+          "teamName": "bryanb460",
+          "points": 152.77,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095313704554496/matchups/8",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "leagueRecordId": "BBU2",
+      "highScore": 131.71,
+      "winners": [
+        {
+          "week": 9,
+          "leagueRecordId": "BBU2",
+          "sleeperLeagueId": "1339095313704554496",
+          "rosterId": 8,
+          "ownerId": "996914165291745280",
+          "manager": "SnoopDerek",
+          "teamName": "SnoopDerek",
+          "points": 131.71,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095313704554496/matchups/9",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "leagueRecordId": "BBU2",
+      "highScore": 149.67,
+      "winners": [
+        {
+          "week": 10,
+          "leagueRecordId": "BBU2",
+          "sleeperLeagueId": "1339095313704554496",
+          "rosterId": 7,
+          "ownerId": "798999450809905152",
+          "manager": "WWWaldo",
+          "teamName": "Flagg Planters",
+          "points": 149.67,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095313704554496/matchups/10",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "leagueRecordId": "BBU2",
+      "highScore": 147.57,
+      "winners": [
+        {
+          "week": 11,
+          "leagueRecordId": "BBU2",
+          "sleeperLeagueId": "1339095313704554496",
+          "rosterId": 2,
+          "ownerId": "1254553997973389313",
+          "manager": "jakeejk",
+          "teamName": "jakeejk",
+          "points": 147.57,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095313704554496/matchups/11",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 1,
+      "leagueRecordId": "BBU3",
+      "highScore": 200.29,
+      "winners": [
+        {
+          "week": 1,
+          "leagueRecordId": "BBU3",
+          "sleeperLeagueId": "1339095371091017728",
+          "rosterId": 8,
+          "ownerId": "1222026455337156610",
+          "manager": "crossthesea",
+          "teamName": "crossthesea",
+          "points": 200.29,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095371091017728/matchups/1",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "leagueRecordId": "BBU3",
+      "highScore": 139.96,
+      "winners": [
+        {
+          "week": 2,
+          "leagueRecordId": "BBU3",
+          "sleeperLeagueId": "1339095371091017728",
+          "rosterId": 1,
+          "ownerId": "738614393776001024",
+          "manager": "DSnyder5",
+          "teamName": "DSnyder5",
+          "points": 139.96,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095371091017728/matchups/2",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "leagueRecordId": "BBU3",
+      "highScore": 161.79,
+      "winners": [
+        {
+          "week": 3,
+          "leagueRecordId": "BBU3",
+          "sleeperLeagueId": "1339095371091017728",
+          "rosterId": 8,
+          "ownerId": "1222026455337156610",
+          "manager": "crossthesea",
+          "teamName": "crossthesea",
+          "points": 161.79,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095371091017728/matchups/3",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "leagueRecordId": "BBU3",
+      "highScore": 144.07,
+      "winners": [
+        {
+          "week": 4,
+          "leagueRecordId": "BBU3",
+          "sleeperLeagueId": "1339095371091017728",
+          "rosterId": 10,
+          "ownerId": "1115680444374302720",
+          "manager": "OmahaaaSet",
+          "teamName": "OmahaaaSet$10",
+          "points": 144.07,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095371091017728/matchups/4",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "leagueRecordId": "BBU3",
+      "highScore": 155.71,
+      "winners": [
+        {
+          "week": 5,
+          "leagueRecordId": "BBU3",
+          "sleeperLeagueId": "1339095371091017728",
+          "rosterId": 4,
+          "ownerId": "1127082953709899776",
+          "manager": "gunnar21",
+          "teamName": "gunnar21",
+          "points": 155.71,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095371091017728/matchups/5",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "leagueRecordId": "BBU3",
+      "highScore": 118.89,
+      "winners": [
+        {
+          "week": 6,
+          "leagueRecordId": "BBU3",
+          "sleeperLeagueId": "1339095371091017728",
+          "rosterId": 8,
+          "ownerId": "1222026455337156610",
+          "manager": "crossthesea",
+          "teamName": "crossthesea",
+          "points": 118.89,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095371091017728/matchups/6",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "leagueRecordId": "BBU3",
+      "highScore": 153.22,
+      "winners": [
+        {
+          "week": 7,
+          "leagueRecordId": "BBU3",
+          "sleeperLeagueId": "1339095371091017728",
+          "rosterId": 3,
+          "ownerId": "468958144274362368",
+          "manager": "Cameron74",
+          "teamName": "Cameron74",
+          "points": 153.22,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095371091017728/matchups/7",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "leagueRecordId": "BBU3",
+      "highScore": 163.26,
+      "winners": [
+        {
+          "week": 8,
+          "leagueRecordId": "BBU3",
+          "sleeperLeagueId": "1339095371091017728",
+          "rosterId": 8,
+          "ownerId": "1222026455337156610",
+          "manager": "crossthesea",
+          "teamName": "crossthesea",
+          "points": 163.26,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095371091017728/matchups/8",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "leagueRecordId": "BBU3",
+      "highScore": 139.92,
+      "winners": [
+        {
+          "week": 9,
+          "leagueRecordId": "BBU3",
+          "sleeperLeagueId": "1339095371091017728",
+          "rosterId": 2,
+          "ownerId": "494964717865922560",
+          "manager": "Dropswitch",
+          "teamName": "Dropswitch",
+          "points": 139.92,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095371091017728/matchups/9",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "leagueRecordId": "BBU3",
+      "highScore": 141.53,
+      "winners": [
+        {
+          "week": 10,
+          "leagueRecordId": "BBU3",
+          "sleeperLeagueId": "1339095371091017728",
+          "rosterId": 7,
+          "ownerId": "1130628508293783552",
+          "manager": "Isurus33",
+          "teamName": "Fradulent ",
+          "points": 141.53,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095371091017728/matchups/10",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "leagueRecordId": "BBU3",
+      "highScore": 134.65,
+      "winners": [
+        {
+          "week": 11,
+          "leagueRecordId": "BBU3",
+          "sleeperLeagueId": "1339095371091017728",
+          "rosterId": 1,
+          "ownerId": "738614393776001024",
+          "manager": "DSnyder5",
+          "teamName": "DSnyder5",
+          "points": 134.65,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095371091017728/matchups/11",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 1,
+      "leagueRecordId": "BBU4",
+      "highScore": 158.05,
+      "winners": [
+        {
+          "week": 1,
+          "leagueRecordId": "BBU4",
+          "sleeperLeagueId": "1339095416859287552",
+          "rosterId": 10,
+          "ownerId": "1115680444374302720",
+          "manager": "OmahaaaSet",
+          "teamName": "OmahaaaSet$10",
+          "points": 158.05,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095416859287552/matchups/1",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "leagueRecordId": "BBU4",
+      "highScore": 151.98,
+      "winners": [
+        {
+          "week": 2,
+          "leagueRecordId": "BBU4",
+          "sleeperLeagueId": "1339095416859287552",
+          "rosterId": 3,
+          "ownerId": "1263107036925665280",
+          "manager": "PickleRick702",
+          "teamName": "PickleRick702",
+          "points": 151.98,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095416859287552/matchups/2",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "leagueRecordId": "BBU4",
+      "highScore": 161.7,
+      "winners": [
+        {
+          "week": 3,
+          "leagueRecordId": "BBU4",
+          "sleeperLeagueId": "1339095416859287552",
+          "rosterId": 9,
+          "ownerId": "734717042283905024",
+          "manager": "Tacious00",
+          "teamName": "Tacious00",
+          "points": 161.7,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095416859287552/matchups/3",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "leagueRecordId": "BBU4",
+      "highScore": 158.68,
+      "winners": [
+        {
+          "week": 4,
+          "leagueRecordId": "BBU4",
+          "sleeperLeagueId": "1339095416859287552",
+          "rosterId": 6,
+          "ownerId": "434089153395683328",
+          "manager": "mdogsizzle",
+          "teamName": "mdogsizzle",
+          "points": 158.68,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095416859287552/matchups/4",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "leagueRecordId": "BBU4",
+      "highScore": 144.45,
+      "winners": [
+        {
+          "week": 5,
+          "leagueRecordId": "BBU4",
+          "sleeperLeagueId": "1339095416859287552",
+          "rosterId": 10,
+          "ownerId": "1115680444374302720",
+          "manager": "OmahaaaSet",
+          "teamName": "OmahaaaSet$10",
+          "points": 144.45,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095416859287552/matchups/5",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "leagueRecordId": "BBU4",
+      "highScore": 131.9,
+      "winners": [
+        {
+          "week": 6,
+          "leagueRecordId": "BBU4",
+          "sleeperLeagueId": "1339095416859287552",
+          "rosterId": 8,
+          "ownerId": "468958144274362368",
+          "manager": "Cameron74",
+          "teamName": "Cameron74",
+          "points": 131.9,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095416859287552/matchups/6",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "leagueRecordId": "BBU4",
+      "highScore": 156.03,
+      "winners": [
+        {
+          "week": 7,
+          "leagueRecordId": "BBU4",
+          "sleeperLeagueId": "1339095416859287552",
+          "rosterId": 7,
+          "ownerId": "494964717865922560",
+          "manager": "Dropswitch",
+          "teamName": "Dropswitch",
+          "points": 156.03,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095416859287552/matchups/7",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "leagueRecordId": "BBU4",
+      "highScore": 175.08,
+      "winners": [
+        {
+          "week": 8,
+          "leagueRecordId": "BBU4",
+          "sleeperLeagueId": "1339095416859287552",
+          "rosterId": 7,
+          "ownerId": "494964717865922560",
+          "manager": "Dropswitch",
+          "teamName": "Dropswitch",
+          "points": 175.08,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095416859287552/matchups/8",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "leagueRecordId": "BBU4",
+      "highScore": 132.83,
+      "winners": [
+        {
+          "week": 9,
+          "leagueRecordId": "BBU4",
+          "sleeperLeagueId": "1339095416859287552",
+          "rosterId": 6,
+          "ownerId": "434089153395683328",
+          "manager": "mdogsizzle",
+          "teamName": "mdogsizzle",
+          "points": 132.83,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095416859287552/matchups/9",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "leagueRecordId": "BBU4",
+      "highScore": 180.42,
+      "winners": [
+        {
+          "week": 10,
+          "leagueRecordId": "BBU4",
+          "sleeperLeagueId": "1339095416859287552",
+          "rosterId": 8,
+          "ownerId": "468958144274362368",
+          "manager": "Cameron74",
+          "teamName": "Cameron74",
+          "points": 180.42,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095416859287552/matchups/10",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "leagueRecordId": "BBU4",
+      "highScore": 135.07,
+      "winners": [
+        {
+          "week": 11,
+          "leagueRecordId": "BBU4",
+          "sleeperLeagueId": "1339095416859287552",
+          "rosterId": 6,
+          "ownerId": "434089153395683328",
+          "manager": "mdogsizzle",
+          "teamName": "mdogsizzle",
+          "points": 135.07,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095416859287552/matchups/11",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 1,
+      "leagueRecordId": "BBU5",
+      "highScore": 164.19,
+      "winners": [
+        {
+          "week": 1,
+          "leagueRecordId": "BBU5",
+          "sleeperLeagueId": "1339095453291003904",
+          "rosterId": 8,
+          "ownerId": "1115680444374302720",
+          "manager": "OmahaaaSet",
+          "teamName": "OmahaaaSet$10",
+          "points": 164.19,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095453291003904/matchups/1",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "leagueRecordId": "BBU5",
+      "highScore": 168.63,
+      "winners": [
+        {
+          "week": 2,
+          "leagueRecordId": "BBU5",
+          "sleeperLeagueId": "1339095453291003904",
+          "rosterId": 9,
+          "ownerId": "584235527943798784",
+          "manager": "fatty17",
+          "teamName": "fatty17",
+          "points": 168.63,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095453291003904/matchups/2",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "leagueRecordId": "BBU5",
+      "highScore": 150.14,
+      "winners": [
+        {
+          "week": 3,
+          "leagueRecordId": "BBU5",
+          "sleeperLeagueId": "1339095453291003904",
+          "rosterId": 4,
+          "ownerId": "1258993633240027136",
+          "manager": "odaroloc",
+          "teamName": "odaroloc",
+          "points": 150.14,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095453291003904/matchups/3",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "leagueRecordId": "BBU5",
+      "highScore": 161.66,
+      "winners": [
+        {
+          "week": 4,
+          "leagueRecordId": "BBU5",
+          "sleeperLeagueId": "1339095453291003904",
+          "rosterId": 3,
+          "ownerId": "872625812317335552",
+          "manager": "russbuss83",
+          "teamName": "russbuss83",
+          "points": 161.66,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095453291003904/matchups/4",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "leagueRecordId": "BBU5",
+      "highScore": 152.91,
+      "winners": [
+        {
+          "week": 5,
+          "leagueRecordId": "BBU5",
+          "sleeperLeagueId": "1339095453291003904",
+          "rosterId": 4,
+          "ownerId": "1258993633240027136",
+          "manager": "odaroloc",
+          "teamName": "odaroloc",
+          "points": 152.91,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095453291003904/matchups/5",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "leagueRecordId": "BBU5",
+      "highScore": 130.95,
+      "winners": [
+        {
+          "week": 6,
+          "leagueRecordId": "BBU5",
+          "sleeperLeagueId": "1339095453291003904",
+          "rosterId": 3,
+          "ownerId": "872625812317335552",
+          "manager": "russbuss83",
+          "teamName": "russbuss83",
+          "points": 130.95,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095453291003904/matchups/6",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "leagueRecordId": "BBU5",
+      "highScore": 139.92,
+      "winners": [
+        {
+          "week": 7,
+          "leagueRecordId": "BBU5",
+          "sleeperLeagueId": "1339095453291003904",
+          "rosterId": 6,
+          "ownerId": "1130628508293783552",
+          "manager": "Isurus33",
+          "teamName": "Isurus33",
+          "points": 139.92,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095453291003904/matchups/7",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "leagueRecordId": "BBU5",
+      "highScore": 157.13,
+      "winners": [
+        {
+          "week": 8,
+          "leagueRecordId": "BBU5",
+          "sleeperLeagueId": "1339095453291003904",
+          "rosterId": 4,
+          "ownerId": "1258993633240027136",
+          "manager": "odaroloc",
+          "teamName": "odaroloc",
+          "points": 157.13,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095453291003904/matchups/8",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "leagueRecordId": "BBU5",
+      "highScore": 143.78,
+      "winners": [
+        {
+          "week": 9,
+          "leagueRecordId": "BBU5",
+          "sleeperLeagueId": "1339095453291003904",
+          "rosterId": 8,
+          "ownerId": "1115680444374302720",
+          "manager": "OmahaaaSet",
+          "teamName": "OmahaaaSet$10",
+          "points": 143.78,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095453291003904/matchups/9",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "leagueRecordId": "BBU5",
+      "highScore": 155.06,
+      "winners": [
+        {
+          "week": 10,
+          "leagueRecordId": "BBU5",
+          "sleeperLeagueId": "1339095453291003904",
+          "rosterId": 1,
+          "ownerId": "1263107036925665280",
+          "manager": "PickleRick702",
+          "teamName": "PickleRick702",
+          "points": 155.06,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095453291003904/matchups/10",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "leagueRecordId": "BBU5",
+      "highScore": 126.96,
+      "winners": [
+        {
+          "week": 11,
+          "leagueRecordId": "BBU5",
+          "sleeperLeagueId": "1339095453291003904",
+          "rosterId": 8,
+          "ownerId": "1115680444374302720",
+          "manager": "OmahaaaSet",
+          "teamName": "OmahaaaSet$10",
+          "points": 126.96,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1339095453291003904/matchups/11",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 1,
+      "leagueRecordId": "BBU6",
+      "highScore": 155.87,
+      "winners": [
+        {
+          "week": 1,
+          "leagueRecordId": "BBU6",
+          "sleeperLeagueId": "1362480393130868736",
+          "rosterId": 3,
+          "ownerId": "734717042283905024",
+          "manager": "Tacious00",
+          "teamName": "Tacious00",
+          "points": 155.87,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480393130868736/matchups/1",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "leagueRecordId": "BBU6",
+      "highScore": 157.27,
+      "winners": [
+        {
+          "week": 2,
+          "leagueRecordId": "BBU6",
+          "sleeperLeagueId": "1362480393130868736",
+          "rosterId": 9,
+          "ownerId": "731006428101324800",
+          "manager": "KeyzerSoze12",
+          "teamName": "KeyzerSoze12",
+          "points": 157.27,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480393130868736/matchups/2",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "leagueRecordId": "BBU6",
+      "highScore": 151.05,
+      "winners": [
+        {
+          "week": 3,
+          "leagueRecordId": "BBU6",
+          "sleeperLeagueId": "1362480393130868736",
+          "rosterId": 3,
+          "ownerId": "734717042283905024",
+          "manager": "Tacious00",
+          "teamName": "Tacious00",
+          "points": 151.05,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480393130868736/matchups/3",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "leagueRecordId": "BBU6",
+      "highScore": 153.21,
+      "winners": [
+        {
+          "week": 4,
+          "leagueRecordId": "BBU6",
+          "sleeperLeagueId": "1362480393130868736",
+          "rosterId": 10,
+          "ownerId": "1115680444374302720",
+          "manager": "OmahaaaSet",
+          "teamName": "OmahaaaSet$10",
+          "points": 153.21,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480393130868736/matchups/4",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "leagueRecordId": "BBU6",
+      "highScore": 160.23,
+      "winners": [
+        {
+          "week": 5,
+          "leagueRecordId": "BBU6",
+          "sleeperLeagueId": "1362480393130868736",
+          "rosterId": 3,
+          "ownerId": "734717042283905024",
+          "manager": "Tacious00",
+          "teamName": "Tacious00",
+          "points": 160.23,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480393130868736/matchups/5",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "leagueRecordId": "BBU6",
+      "highScore": 120.05,
+      "winners": [
+        {
+          "week": 6,
+          "leagueRecordId": "BBU6",
+          "sleeperLeagueId": "1362480393130868736",
+          "rosterId": 7,
+          "ownerId": "872990845027123200",
+          "manager": "StrangeAuto12",
+          "teamName": "StrangeAuto12",
+          "points": 120.05,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480393130868736/matchups/6",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "leagueRecordId": "BBU6",
+      "highScore": 159.32,
+      "winners": [
+        {
+          "week": 7,
+          "leagueRecordId": "BBU6",
+          "sleeperLeagueId": "1362480393130868736",
+          "rosterId": 3,
+          "ownerId": "734717042283905024",
+          "manager": "Tacious00",
+          "teamName": "Tacious00",
+          "points": 159.32,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480393130868736/matchups/7",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "leagueRecordId": "BBU6",
+      "highScore": 169.88,
+      "winners": [
+        {
+          "week": 8,
+          "leagueRecordId": "BBU6",
+          "sleeperLeagueId": "1362480393130868736",
+          "rosterId": 5,
+          "ownerId": "712531686138646528",
+          "manager": "swampraider",
+          "teamName": "swampraider",
+          "points": 169.88,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480393130868736/matchups/8",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "leagueRecordId": "BBU6",
+      "highScore": 141.96,
+      "winners": [
+        {
+          "week": 9,
+          "leagueRecordId": "BBU6",
+          "sleeperLeagueId": "1362480393130868736",
+          "rosterId": 2,
+          "ownerId": "707317555764740096",
+          "manager": "HopscotchDaisy",
+          "teamName": "HopscotchDaisy",
+          "points": 141.96,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480393130868736/matchups/9",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "leagueRecordId": "BBU6",
+      "highScore": 174.61,
+      "winners": [
+        {
+          "week": 10,
+          "leagueRecordId": "BBU6",
+          "sleeperLeagueId": "1362480393130868736",
+          "rosterId": 9,
+          "ownerId": "731006428101324800",
+          "manager": "KeyzerSoze12",
+          "teamName": "KeyzerSoze12",
+          "points": 174.61,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480393130868736/matchups/10",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "leagueRecordId": "BBU6",
+      "highScore": 148.11,
+      "winners": [
+        {
+          "week": 11,
+          "leagueRecordId": "BBU6",
+          "sleeperLeagueId": "1362480393130868736",
+          "rosterId": 2,
+          "ownerId": "707317555764740096",
+          "manager": "HopscotchDaisy",
+          "teamName": "HopscotchDaisy",
+          "points": 148.11,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480393130868736/matchups/11",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 1,
+      "leagueRecordId": "BBU7",
+      "highScore": 172.66,
+      "winners": [
+        {
+          "week": 1,
+          "leagueRecordId": "BBU7",
+          "sleeperLeagueId": "1362480515533242368",
+          "rosterId": 10,
+          "ownerId": "466785377303130112",
+          "manager": "VinsBroPaul",
+          "teamName": "VinsBroPaul",
+          "points": 172.66,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480515533242368/matchups/1",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "leagueRecordId": "BBU7",
+      "highScore": 144.43,
+      "winners": [
+        {
+          "week": 2,
+          "leagueRecordId": "BBU7",
+          "sleeperLeagueId": "1362480515533242368",
+          "rosterId": 8,
+          "ownerId": "969086423548694528",
+          "manager": "digao1",
+          "teamName": "Biebs",
+          "points": 144.43,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480515533242368/matchups/2",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "leagueRecordId": "BBU7",
+      "highScore": 167.04,
+      "winners": [
+        {
+          "week": 3,
+          "leagueRecordId": "BBU7",
+          "sleeperLeagueId": "1362480515533242368",
+          "rosterId": 8,
+          "ownerId": "969086423548694528",
+          "manager": "digao1",
+          "teamName": "Biebs",
+          "points": 167.04,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480515533242368/matchups/3",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "leagueRecordId": "BBU7",
+      "highScore": 146.23,
+      "winners": [
+        {
+          "week": 4,
+          "leagueRecordId": "BBU7",
+          "sleeperLeagueId": "1362480515533242368",
+          "rosterId": 10,
+          "ownerId": "466785377303130112",
+          "manager": "VinsBroPaul",
+          "teamName": "VinsBroPaul",
+          "points": 146.23,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480515533242368/matchups/4",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "leagueRecordId": "BBU7",
+      "highScore": 152.03,
+      "winners": [
+        {
+          "week": 5,
+          "leagueRecordId": "BBU7",
+          "sleeperLeagueId": "1362480515533242368",
+          "rosterId": 8,
+          "ownerId": "969086423548694528",
+          "manager": "digao1",
+          "teamName": "Biebs",
+          "points": 152.03,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480515533242368/matchups/5",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "leagueRecordId": "BBU7",
+      "highScore": 146.08,
+      "winners": [
+        {
+          "week": 6,
+          "leagueRecordId": "BBU7",
+          "sleeperLeagueId": "1362480515533242368",
+          "rosterId": 10,
+          "ownerId": "466785377303130112",
+          "manager": "VinsBroPaul",
+          "teamName": "VinsBroPaul",
+          "points": 146.08,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480515533242368/matchups/6",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "leagueRecordId": "BBU7",
+      "highScore": 153.38,
+      "winners": [
+        {
+          "week": 7,
+          "leagueRecordId": "BBU7",
+          "sleeperLeagueId": "1362480515533242368",
+          "rosterId": 9,
+          "ownerId": "609817786394406912",
+          "manager": "TySegall",
+          "teamName": "TySegall",
+          "points": 153.38,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480515533242368/matchups/7",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "leagueRecordId": "BBU7",
+      "highScore": 181.48,
+      "winners": [
+        {
+          "week": 8,
+          "leagueRecordId": "BBU7",
+          "sleeperLeagueId": "1362480515533242368",
+          "rosterId": 6,
+          "ownerId": "1175159775586222080",
+          "manager": "TryanboloneBB",
+          "teamName": "8-bit Usain Bolt",
+          "points": 181.48,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480515533242368/matchups/8",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "leagueRecordId": "BBU7",
+      "highScore": 149.68,
+      "winners": [
+        {
+          "week": 9,
+          "leagueRecordId": "BBU7",
+          "sleeperLeagueId": "1362480515533242368",
+          "rosterId": 8,
+          "ownerId": "969086423548694528",
+          "manager": "digao1",
+          "teamName": "Biebs",
+          "points": 149.68,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480515533242368/matchups/9",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "leagueRecordId": "BBU7",
+      "highScore": 148.96,
+      "winners": [
+        {
+          "week": 10,
+          "leagueRecordId": "BBU7",
+          "sleeperLeagueId": "1362480515533242368",
+          "rosterId": 8,
+          "ownerId": "969086423548694528",
+          "manager": "digao1",
+          "teamName": "Biebs",
+          "points": 148.96,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480515533242368/matchups/10",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "leagueRecordId": "BBU7",
+      "highScore": 134.69,
+      "winners": [
+        {
+          "week": 11,
+          "leagueRecordId": "BBU7",
+          "sleeperLeagueId": "1362480515533242368",
+          "rosterId": 9,
+          "ownerId": "609817786394406912",
+          "manager": "TySegall",
+          "teamName": "TySegall",
+          "points": 134.69,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480515533242368/matchups/11",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 1,
+      "leagueRecordId": "BBU8",
+      "highScore": 187.15,
+      "winners": [
+        {
+          "week": 1,
+          "leagueRecordId": "BBU8",
+          "sleeperLeagueId": "1362480638808064000",
+          "rosterId": 8,
+          "ownerId": "942828168044544000",
+          "manager": "GSH46",
+          "teamName": "GSH46",
+          "points": 187.15,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480638808064000/matchups/1",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "leagueRecordId": "BBU8",
+      "highScore": 146.93,
+      "winners": [
+        {
+          "week": 2,
+          "leagueRecordId": "BBU8",
+          "sleeperLeagueId": "1362480638808064000",
+          "rosterId": 8,
+          "ownerId": "942828168044544000",
+          "manager": "GSH46",
+          "teamName": "GSH46",
+          "points": 146.93,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480638808064000/matchups/2",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "leagueRecordId": "BBU8",
+      "highScore": 147.38,
+      "winners": [
+        {
+          "week": 3,
+          "leagueRecordId": "BBU8",
+          "sleeperLeagueId": "1362480638808064000",
+          "rosterId": 9,
+          "ownerId": "1175159775586222080",
+          "manager": "TryanboloneBB",
+          "teamName": "TryanboloneBB",
+          "points": 147.38,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480638808064000/matchups/3",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "leagueRecordId": "BBU8",
+      "highScore": 181.81,
+      "winners": [
+        {
+          "week": 4,
+          "leagueRecordId": "BBU8",
+          "sleeperLeagueId": "1362480638808064000",
+          "rosterId": 4,
+          "ownerId": "729164103104495616",
+          "manager": "cokeboy99",
+          "teamName": "cokeboy99",
+          "points": 181.81,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480638808064000/matchups/4",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "leagueRecordId": "BBU8",
+      "highScore": 136.25,
+      "winners": [
+        {
+          "week": 5,
+          "leagueRecordId": "BBU8",
+          "sleeperLeagueId": "1362480638808064000",
+          "rosterId": 9,
+          "ownerId": "1175159775586222080",
+          "manager": "TryanboloneBB",
+          "teamName": "TryanboloneBB",
+          "points": 136.25,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480638808064000/matchups/5",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "leagueRecordId": "BBU8",
+      "highScore": 117.73,
+      "winners": [
+        {
+          "week": 6,
+          "leagueRecordId": "BBU8",
+          "sleeperLeagueId": "1362480638808064000",
+          "rosterId": 6,
+          "ownerId": "335159055616061440",
+          "manager": "Gumorak",
+          "teamName": "Gumorak",
+          "points": 117.73,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480638808064000/matchups/6",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "leagueRecordId": "BBU8",
+      "highScore": 127.12,
+      "winners": [
+        {
+          "week": 7,
+          "leagueRecordId": "BBU8",
+          "sleeperLeagueId": "1362480638808064000",
+          "rosterId": 6,
+          "ownerId": "335159055616061440",
+          "manager": "Gumorak",
+          "teamName": "Gumorak",
+          "points": 127.12,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480638808064000/matchups/7",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "leagueRecordId": "BBU8",
+      "highScore": 132.11,
+      "winners": [
+        {
+          "week": 8,
+          "leagueRecordId": "BBU8",
+          "sleeperLeagueId": "1362480638808064000",
+          "rosterId": 2,
+          "ownerId": "466785377303130112",
+          "manager": "VinsBroPaul",
+          "teamName": "VinsBroPaul",
+          "points": 132.11,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480638808064000/matchups/8",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "leagueRecordId": "BBU8",
+      "highScore": 129.71,
+      "winners": [
+        {
+          "week": 9,
+          "leagueRecordId": "BBU8",
+          "sleeperLeagueId": "1362480638808064000",
+          "rosterId": 6,
+          "ownerId": "335159055616061440",
+          "manager": "Gumorak",
+          "teamName": "Gumorak",
+          "points": 129.71,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480638808064000/matchups/9",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "leagueRecordId": "BBU8",
+      "highScore": 156.21,
+      "winners": [
+        {
+          "week": 10,
+          "leagueRecordId": "BBU8",
+          "sleeperLeagueId": "1362480638808064000",
+          "rosterId": 6,
+          "ownerId": "335159055616061440",
+          "manager": "Gumorak",
+          "teamName": "Gumorak",
+          "points": 156.21,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480638808064000/matchups/10",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "leagueRecordId": "BBU8",
+      "highScore": 147.0,
+      "winners": [
+        {
+          "week": 11,
+          "leagueRecordId": "BBU8",
+          "sleeperLeagueId": "1362480638808064000",
+          "rosterId": 10,
+          "ownerId": "474012849551699968",
+          "manager": "Pitterpatta",
+          "teamName": "Pitterpatta",
+          "points": 147.0,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480638808064000/matchups/11",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 1,
+      "leagueRecordId": "BBU9",
+      "highScore": 161.4,
+      "winners": [
+        {
+          "week": 1,
+          "leagueRecordId": "BBU9",
+          "sleeperLeagueId": "1362480857310302208",
+          "rosterId": 9,
+          "ownerId": "331519009751060480",
+          "manager": "XWILL07",
+          "teamName": "XWILL07",
+          "points": 161.4,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480857310302208/matchups/1",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "leagueRecordId": "BBU9",
+      "highScore": 148.87,
+      "winners": [
+        {
+          "week": 2,
+          "leagueRecordId": "BBU9",
+          "sleeperLeagueId": "1362480857310302208",
+          "rosterId": 7,
+          "ownerId": "720807497186775040",
+          "manager": "Quietstorm22",
+          "teamName": "Quietstorm22",
+          "points": 148.87,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480857310302208/matchups/2",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "leagueRecordId": "BBU9",
+      "highScore": 144.29,
+      "winners": [
+        {
+          "week": 3,
+          "leagueRecordId": "BBU9",
+          "sleeperLeagueId": "1362480857310302208",
+          "rosterId": 4,
+          "ownerId": "741465794885656576",
+          "manager": "mkpconway",
+          "teamName": "mkpconway",
+          "points": 144.29,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480857310302208/matchups/3",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "leagueRecordId": "BBU9",
+      "highScore": 161.82,
+      "winners": [
+        {
+          "week": 4,
+          "leagueRecordId": "BBU9",
+          "sleeperLeagueId": "1362480857310302208",
+          "rosterId": 3,
+          "ownerId": "961088761436192768",
+          "manager": "JimmyWojo",
+          "teamName": "JimmyWojo",
+          "points": 161.82,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480857310302208/matchups/4",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "leagueRecordId": "BBU9",
+      "highScore": 159.56,
+      "winners": [
+        {
+          "week": 5,
+          "leagueRecordId": "BBU9",
+          "sleeperLeagueId": "1362480857310302208",
+          "rosterId": 2,
+          "ownerId": "734717042283905024",
+          "manager": "Tacious00",
+          "teamName": "Tacious00",
+          "points": 159.56,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480857310302208/matchups/5",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "leagueRecordId": "BBU9",
+      "highScore": 135.35,
+      "winners": [
+        {
+          "week": 6,
+          "leagueRecordId": "BBU9",
+          "sleeperLeagueId": "1362480857310302208",
+          "rosterId": 2,
+          "ownerId": "734717042283905024",
+          "manager": "Tacious00",
+          "teamName": "Tacious00",
+          "points": 135.35,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480857310302208/matchups/6",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "leagueRecordId": "BBU9",
+      "highScore": 160.02,
+      "winners": [
+        {
+          "week": 7,
+          "leagueRecordId": "BBU9",
+          "sleeperLeagueId": "1362480857310302208",
+          "rosterId": 4,
+          "ownerId": "741465794885656576",
+          "manager": "mkpconway",
+          "teamName": "mkpconway",
+          "points": 160.02,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480857310302208/matchups/7",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "leagueRecordId": "BBU9",
+      "highScore": 159.06,
+      "winners": [
+        {
+          "week": 8,
+          "leagueRecordId": "BBU9",
+          "sleeperLeagueId": "1362480857310302208",
+          "rosterId": 8,
+          "ownerId": "870738058931265536",
+          "manager": "Donny01",
+          "teamName": "Donny01",
+          "points": 159.06,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480857310302208/matchups/8",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "leagueRecordId": "BBU9",
+      "highScore": 129.74,
+      "winners": [
+        {
+          "week": 9,
+          "leagueRecordId": "BBU9",
+          "sleeperLeagueId": "1362480857310302208",
+          "rosterId": 4,
+          "ownerId": "741465794885656576",
+          "manager": "mkpconway",
+          "teamName": "mkpconway",
+          "points": 129.74,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480857310302208/matchups/9",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "leagueRecordId": "BBU9",
+      "highScore": 151.96,
+      "winners": [
+        {
+          "week": 10,
+          "leagueRecordId": "BBU9",
+          "sleeperLeagueId": "1362480857310302208",
+          "rosterId": 3,
+          "ownerId": "961088761436192768",
+          "manager": "JimmyWojo",
+          "teamName": "JimmyWojo",
+          "points": 151.96,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480857310302208/matchups/10",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "leagueRecordId": "BBU9",
+      "highScore": 128.31,
+      "winners": [
+        {
+          "week": 11,
+          "leagueRecordId": "BBU9",
+          "sleeperLeagueId": "1362480857310302208",
+          "rosterId": 1,
+          "ownerId": "738614393776001024",
+          "manager": "DSnyder5",
+          "teamName": "DSnyder5",
+          "points": 128.31,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480857310302208/matchups/11",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 1,
+      "leagueRecordId": "BBU10",
+      "highScore": 185.76,
+      "winners": [
+        {
+          "week": 1,
+          "leagueRecordId": "BBU10",
+          "sleeperLeagueId": "1362480992765353984",
+          "rosterId": 5,
+          "ownerId": "708499533264384000",
+          "manager": "Doobee",
+          "teamName": "Doobee",
+          "points": 185.76,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480992765353984/matchups/1",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "leagueRecordId": "BBU10",
+      "highScore": 149.68,
+      "winners": [
+        {
+          "week": 2,
+          "leagueRecordId": "BBU10",
+          "sleeperLeagueId": "1362480992765353984",
+          "rosterId": 9,
+          "ownerId": "862211567721226240",
+          "manager": "JoeNasty",
+          "teamName": "JoeNasty",
+          "points": 149.68,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480992765353984/matchups/2",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "leagueRecordId": "BBU10",
+      "highScore": 169.66,
+      "winners": [
+        {
+          "week": 3,
+          "leagueRecordId": "BBU10",
+          "sleeperLeagueId": "1362480992765353984",
+          "rosterId": 10,
+          "ownerId": "604903194249736192",
+          "manager": "Imperialsalsa23",
+          "teamName": "Imperialsalsa23",
+          "points": 169.66,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480992765353984/matchups/3",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "leagueRecordId": "BBU10",
+      "highScore": 139.67,
+      "winners": [
+        {
+          "week": 4,
+          "leagueRecordId": "BBU10",
+          "sleeperLeagueId": "1362480992765353984",
+          "rosterId": 2,
+          "ownerId": "961088761436192768",
+          "manager": "JimmyWojo",
+          "teamName": "JimmyWojo",
+          "points": 139.67,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480992765353984/matchups/4",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "leagueRecordId": "BBU10",
+      "highScore": 160.66,
+      "winners": [
+        {
+          "week": 5,
+          "leagueRecordId": "BBU10",
+          "sleeperLeagueId": "1362480992765353984",
+          "rosterId": 10,
+          "ownerId": "604903194249736192",
+          "manager": "Imperialsalsa23",
+          "teamName": "Imperialsalsa23",
+          "points": 160.66,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480992765353984/matchups/5",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "leagueRecordId": "BBU10",
+      "highScore": 139.14,
+      "winners": [
+        {
+          "week": 6,
+          "leagueRecordId": "BBU10",
+          "sleeperLeagueId": "1362480992765353984",
+          "rosterId": 1,
+          "ownerId": "738614393776001024",
+          "manager": "DSnyder5",
+          "teamName": "DSnyder5",
+          "points": 139.14,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480992765353984/matchups/6",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "leagueRecordId": "BBU10",
+      "highScore": 136.84,
+      "winners": [
+        {
+          "week": 7,
+          "leagueRecordId": "BBU10",
+          "sleeperLeagueId": "1362480992765353984",
+          "rosterId": 8,
+          "ownerId": "1268047410060337152",
+          "manager": "pmorin57",
+          "teamName": "pmorin57",
+          "points": 136.84,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480992765353984/matchups/7",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "leagueRecordId": "BBU10",
+      "highScore": 150.08,
+      "winners": [
+        {
+          "week": 8,
+          "leagueRecordId": "BBU10",
+          "sleeperLeagueId": "1362480992765353984",
+          "rosterId": 7,
+          "ownerId": "1124040700175187968",
+          "manager": "8offHitword",
+          "teamName": "8offHitword",
+          "points": 150.08,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480992765353984/matchups/8",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "leagueRecordId": "BBU10",
+      "highScore": 139.33,
+      "winners": [
+        {
+          "week": 9,
+          "leagueRecordId": "BBU10",
+          "sleeperLeagueId": "1362480992765353984",
+          "rosterId": 8,
+          "ownerId": "1268047410060337152",
+          "manager": "pmorin57",
+          "teamName": "pmorin57",
+          "points": 139.33,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480992765353984/matchups/9",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "leagueRecordId": "BBU10",
+      "highScore": 170.77,
+      "winners": [
+        {
+          "week": 10,
+          "leagueRecordId": "BBU10",
+          "sleeperLeagueId": "1362480992765353984",
+          "rosterId": 1,
+          "ownerId": "738614393776001024",
+          "manager": "DSnyder5",
+          "teamName": "DSnyder5",
+          "points": 170.77,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480992765353984/matchups/10",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "leagueRecordId": "BBU10",
+      "highScore": 118.9,
+      "winners": [
+        {
+          "week": 11,
+          "leagueRecordId": "BBU10",
+          "sleeperLeagueId": "1362480992765353984",
+          "rosterId": 8,
+          "ownerId": "1268047410060337152",
+          "manager": "pmorin57",
+          "teamName": "pmorin57",
+          "points": 118.9,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1362480992765353984/matchups/11",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 1,
+      "leagueRecordId": "BBU11",
+      "highScore": 157.7,
+      "winners": [
+        {
+          "week": 1,
+          "leagueRecordId": "BBU11",
+          "sleeperLeagueId": "1383933081991278592",
+          "rosterId": 10,
+          "ownerId": "633359171764449280",
+          "manager": "StickyPicky",
+          "teamName": "StickyPicky",
+          "points": 157.7,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1383933081991278592/matchups/1",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "leagueRecordId": "BBU11",
+      "highScore": 147.27,
+      "winners": [
+        {
+          "week": 2,
+          "leagueRecordId": "BBU11",
+          "sleeperLeagueId": "1383933081991278592",
+          "rosterId": 7,
+          "ownerId": "380967437270634496",
+          "manager": "ChairmenFantasy",
+          "teamName": "ChairmenFantasy",
+          "points": 147.27,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1383933081991278592/matchups/2",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "leagueRecordId": "BBU11",
+      "highScore": 153.04,
+      "winners": [
+        {
+          "week": 3,
+          "leagueRecordId": "BBU11",
+          "sleeperLeagueId": "1383933081991278592",
+          "rosterId": 10,
+          "ownerId": "633359171764449280",
+          "manager": "StickyPicky",
+          "teamName": "StickyPicky",
+          "points": 153.04,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1383933081991278592/matchups/3",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "leagueRecordId": "BBU11",
+      "highScore": 153.27,
+      "winners": [
+        {
+          "week": 4,
+          "leagueRecordId": "BBU11",
+          "sleeperLeagueId": "1383933081991278592",
+          "rosterId": 10,
+          "ownerId": "633359171764449280",
+          "manager": "StickyPicky",
+          "teamName": "StickyPicky",
+          "points": 153.27,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1383933081991278592/matchups/4",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "leagueRecordId": "BBU11",
+      "highScore": 149.85,
+      "winners": [
+        {
+          "week": 5,
+          "leagueRecordId": "BBU11",
+          "sleeperLeagueId": "1383933081991278592",
+          "rosterId": 10,
+          "ownerId": "633359171764449280",
+          "manager": "StickyPicky",
+          "teamName": "StickyPicky",
+          "points": 149.85,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1383933081991278592/matchups/5",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "leagueRecordId": "BBU11",
+      "highScore": 122.19,
+      "winners": [
+        {
+          "week": 6,
+          "leagueRecordId": "BBU11",
+          "sleeperLeagueId": "1383933081991278592",
+          "rosterId": 5,
+          "ownerId": "1263107036925665280",
+          "manager": "PickleRick702",
+          "teamName": "PickleRick702",
+          "points": 122.19,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1383933081991278592/matchups/6",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "leagueRecordId": "BBU11",
+      "highScore": 125.06,
+      "winners": [
+        {
+          "week": 7,
+          "leagueRecordId": "BBU11",
+          "sleeperLeagueId": "1383933081991278592",
+          "rosterId": 1,
+          "ownerId": "1133242089002745856",
+          "manager": "abettertime",
+          "teamName": "abettertime",
+          "points": 125.06,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1383933081991278592/matchups/7",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "leagueRecordId": "BBU11",
+      "highScore": 145.75,
+      "winners": [
+        {
+          "week": 8,
+          "leagueRecordId": "BBU11",
+          "sleeperLeagueId": "1383933081991278592",
+          "rosterId": 6,
+          "ownerId": "446190687818346496",
+          "manager": "hoosierdaddy85",
+          "teamName": "hoosierdaddy85",
+          "points": 145.75,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1383933081991278592/matchups/8",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "leagueRecordId": "BBU11",
+      "highScore": 127.28,
+      "winners": [
+        {
+          "week": 9,
+          "leagueRecordId": "BBU11",
+          "sleeperLeagueId": "1383933081991278592",
+          "rosterId": 9,
+          "ownerId": "673058459607990272",
+          "manager": "DoubleTap7798",
+          "teamName": "DoubleTap7798",
+          "points": 127.28,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1383933081991278592/matchups/9",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "leagueRecordId": "BBU11",
+      "highScore": 154.26,
+      "winners": [
+        {
+          "week": 10,
+          "leagueRecordId": "BBU11",
+          "sleeperLeagueId": "1383933081991278592",
+          "rosterId": 10,
+          "ownerId": "633359171764449280",
+          "manager": "StickyPicky",
+          "teamName": "StickyPicky",
+          "points": 154.26,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1383933081991278592/matchups/10",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "leagueRecordId": "BBU11",
+      "highScore": 133.05,
+      "winners": [
+        {
+          "week": 11,
+          "leagueRecordId": "BBU11",
+          "sleeperLeagueId": "1383933081991278592",
+          "rosterId": 7,
+          "ownerId": "380967437270634496",
+          "manager": "ChairmenFantasy",
+          "teamName": "ChairmenFantasy",
+          "points": 133.05,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1383933081991278592/matchups/11",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 1,
+      "leagueRecordId": "BBU12",
+      "highScore": 169.19,
+      "winners": [
+        {
+          "week": 1,
+          "leagueRecordId": "BBU12",
+          "sleeperLeagueId": "1389361694546878464",
+          "rosterId": 4,
+          "ownerId": "729201775764180992",
+          "manager": "BammBamKam",
+          "teamName": "BammBamKam",
+          "points": 169.19,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1389361694546878464/matchups/1",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "leagueRecordId": "BBU12",
+      "highScore": 160.53,
+      "winners": [
+        {
+          "week": 2,
+          "leagueRecordId": "BBU12",
+          "sleeperLeagueId": "1389361694546878464",
+          "rosterId": 6,
+          "ownerId": "1370139541914013696",
+          "manager": "BynxBalls603",
+          "teamName": "BynxBalls603",
+          "points": 160.53,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1389361694546878464/matchups/2",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "leagueRecordId": "BBU12",
+      "highScore": 144.84,
+      "winners": [
+        {
+          "week": 3,
+          "leagueRecordId": "BBU12",
+          "sleeperLeagueId": "1389361694546878464",
+          "rosterId": 1,
+          "ownerId": "1033311955865542656",
+          "manager": "heeshang",
+          "teamName": "heeshang",
+          "points": 144.84,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1389361694546878464/matchups/3",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "leagueRecordId": "BBU12",
+      "highScore": 147.72,
+      "winners": [
+        {
+          "week": 4,
+          "leagueRecordId": "BBU12",
+          "sleeperLeagueId": "1389361694546878464",
+          "rosterId": 5,
+          "ownerId": "1133242089002745856",
+          "manager": "abettertime",
+          "teamName": "abettertime",
+          "points": 147.72,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1389361694546878464/matchups/4",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "leagueRecordId": "BBU12",
+      "highScore": 141.11,
+      "winners": [
+        {
+          "week": 5,
+          "leagueRecordId": "BBU12",
+          "sleeperLeagueId": "1389361694546878464",
+          "rosterId": 6,
+          "ownerId": "1370139541914013696",
+          "manager": "BynxBalls603",
+          "teamName": "BynxBalls603",
+          "points": 141.11,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1389361694546878464/matchups/5",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "leagueRecordId": "BBU12",
+      "highScore": 132.59,
+      "winners": [
+        {
+          "week": 6,
+          "leagueRecordId": "BBU12",
+          "sleeperLeagueId": "1389361694546878464",
+          "rosterId": 4,
+          "ownerId": "729201775764180992",
+          "manager": "BammBamKam",
+          "teamName": "BammBamKam",
+          "points": 132.59,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1389361694546878464/matchups/6",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "leagueRecordId": "BBU12",
+      "highScore": 156.68,
+      "winners": [
+        {
+          "week": 7,
+          "leagueRecordId": "BBU12",
+          "sleeperLeagueId": "1389361694546878464",
+          "rosterId": 5,
+          "ownerId": "1133242089002745856",
+          "manager": "abettertime",
+          "teamName": "abettertime",
+          "points": 156.68,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1389361694546878464/matchups/7",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "leagueRecordId": "BBU12",
+      "highScore": 146.53,
+      "winners": [
+        {
+          "week": 8,
+          "leagueRecordId": "BBU12",
+          "sleeperLeagueId": "1389361694546878464",
+          "rosterId": 5,
+          "ownerId": "1133242089002745856",
+          "manager": "abettertime",
+          "teamName": "abettertime",
+          "points": 146.53,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1389361694546878464/matchups/8",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "leagueRecordId": "BBU12",
+      "highScore": 127.43,
+      "winners": [
+        {
+          "week": 9,
+          "leagueRecordId": "BBU12",
+          "sleeperLeagueId": "1389361694546878464",
+          "rosterId": 4,
+          "ownerId": "729201775764180992",
+          "manager": "BammBamKam",
+          "teamName": "BammBamKam",
+          "points": 127.43,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1389361694546878464/matchups/9",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "leagueRecordId": "BBU12",
+      "highScore": 207.22,
+      "winners": [
+        {
+          "week": 10,
+          "leagueRecordId": "BBU12",
+          "sleeperLeagueId": "1389361694546878464",
+          "rosterId": 1,
+          "ownerId": "1033311955865542656",
+          "manager": "heeshang",
+          "teamName": "heeshang",
+          "points": 207.22,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1389361694546878464/matchups/10",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "leagueRecordId": "BBU12",
+      "highScore": 134.39,
+      "winners": [
+        {
+          "week": 11,
+          "leagueRecordId": "BBU12",
+          "sleeperLeagueId": "1389361694546878464",
+          "rosterId": 5,
+          "ownerId": "1133242089002745856",
+          "manager": "abettertime",
+          "teamName": "abettertime",
+          "points": 134.39,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1389361694546878464/matchups/11",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 1,
+      "leagueRecordId": "BBU13",
+      "highScore": 175.16,
+      "winners": [
+        {
+          "week": 1,
+          "leagueRecordId": "BBU13",
+          "sleeperLeagueId": "1392580936901611520",
+          "rosterId": 6,
+          "ownerId": "1122536427507617792",
+          "manager": "Kenxzl",
+          "teamName": "Kenxzl",
+          "points": 175.16,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1392580936901611520/matchups/1",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "leagueRecordId": "BBU13",
+      "highScore": 158.33,
+      "winners": [
+        {
+          "week": 2,
+          "leagueRecordId": "BBU13",
+          "sleeperLeagueId": "1392580936901611520",
+          "rosterId": 1,
+          "ownerId": "737729629858770944",
+          "manager": "TeamRONQ",
+          "teamName": "TeamRONQ",
+          "points": 158.33,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1392580936901611520/matchups/2",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "leagueRecordId": "BBU13",
+      "highScore": 147.28,
+      "winners": [
+        {
+          "week": 3,
+          "leagueRecordId": "BBU13",
+          "sleeperLeagueId": "1392580936901611520",
+          "rosterId": 10,
+          "ownerId": "86674462812291072",
+          "manager": "BRWNCURSE",
+          "teamName": "BRWNCURSE",
+          "points": 147.28,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1392580936901611520/matchups/3",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "leagueRecordId": "BBU13",
+      "highScore": 193.17,
+      "winners": [
+        {
+          "week": 4,
+          "leagueRecordId": "BBU13",
+          "sleeperLeagueId": "1392580936901611520",
+          "rosterId": 4,
+          "ownerId": "300779850958921728",
+          "manager": "sumbrad",
+          "teamName": "sumbrad",
+          "points": 193.17,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1392580936901611520/matchups/4",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "leagueRecordId": "BBU13",
+      "highScore": 140.45,
+      "winners": [
+        {
+          "week": 5,
+          "leagueRecordId": "BBU13",
+          "sleeperLeagueId": "1392580936901611520",
+          "rosterId": 5,
+          "ownerId": "712531686138646528",
+          "manager": "swampraider",
+          "teamName": "swampraider",
+          "points": 140.45,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1392580936901611520/matchups/5",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "leagueRecordId": "BBU13",
+      "highScore": 127.46,
+      "winners": [
+        {
+          "week": 6,
+          "leagueRecordId": "BBU13",
+          "sleeperLeagueId": "1392580936901611520",
+          "rosterId": 5,
+          "ownerId": "712531686138646528",
+          "manager": "swampraider",
+          "teamName": "swampraider",
+          "points": 127.46,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1392580936901611520/matchups/6",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "leagueRecordId": "BBU13",
+      "highScore": 155.87,
+      "winners": [
+        {
+          "week": 7,
+          "leagueRecordId": "BBU13",
+          "sleeperLeagueId": "1392580936901611520",
+          "rosterId": 10,
+          "ownerId": "86674462812291072",
+          "manager": "BRWNCURSE",
+          "teamName": "BRWNCURSE",
+          "points": 155.87,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1392580936901611520/matchups/7",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "leagueRecordId": "BBU13",
+      "highScore": 149.76,
+      "winners": [
+        {
+          "week": 8,
+          "leagueRecordId": "BBU13",
+          "sleeperLeagueId": "1392580936901611520",
+          "rosterId": 1,
+          "ownerId": "737729629858770944",
+          "manager": "TeamRONQ",
+          "teamName": "TeamRONQ",
+          "points": 149.76,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1392580936901611520/matchups/8",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "leagueRecordId": "BBU13",
+      "highScore": 137.9,
+      "winners": [
+        {
+          "week": 9,
+          "leagueRecordId": "BBU13",
+          "sleeperLeagueId": "1392580936901611520",
+          "rosterId": 5,
+          "ownerId": "712531686138646528",
+          "manager": "swampraider",
+          "teamName": "swampraider",
+          "points": 137.9,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1392580936901611520/matchups/9",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "leagueRecordId": "BBU13",
+      "highScore": 144.11,
+      "winners": [
+        {
+          "week": 10,
+          "leagueRecordId": "BBU13",
+          "sleeperLeagueId": "1392580936901611520",
+          "rosterId": 8,
+          "ownerId": "1123024547567091712",
+          "manager": "halfmedal442",
+          "teamName": "halfmedal442",
+          "points": 144.11,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1392580936901611520/matchups/10",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "leagueRecordId": "BBU13",
+      "highScore": 126.33,
+      "winners": [
+        {
+          "week": 11,
+          "leagueRecordId": "BBU13",
+          "sleeperLeagueId": "1392580936901611520",
+          "rosterId": 6,
+          "ownerId": "1122536427507617792",
+          "manager": "Kenxzl",
+          "teamName": "Kenxzl",
+          "points": 126.33,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1392580936901611520/matchups/11",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 1,
+      "leagueRecordId": "BBU14",
+      "highScore": 211.11,
+      "winners": [
+        {
+          "week": 1,
+          "leagueRecordId": "BBU14",
+          "sleeperLeagueId": "1395814066945036288",
+          "rosterId": 3,
+          "ownerId": "729201775764180992",
+          "manager": "BammBamKam",
+          "teamName": "BammBamKam",
+          "points": 211.11,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1395814066945036288/matchups/1",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "leagueRecordId": "BBU14",
+      "highScore": 153.36,
+      "winners": [
+        {
+          "week": 2,
+          "leagueRecordId": "BBU14",
+          "sleeperLeagueId": "1395814066945036288",
+          "rosterId": 4,
+          "ownerId": "1175159775586222080",
+          "manager": "TryanboloneBB",
+          "teamName": "TryanboloneBB",
+          "points": 153.36,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1395814066945036288/matchups/2",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "leagueRecordId": "BBU14",
+      "highScore": 169.81,
+      "winners": [
+        {
+          "week": 3,
+          "leagueRecordId": "BBU14",
+          "sleeperLeagueId": "1395814066945036288",
+          "rosterId": 2,
+          "ownerId": "472677951763116032",
+          "manager": "pmzet",
+          "teamName": "pmzet",
+          "points": 169.81,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1395814066945036288/matchups/3",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "leagueRecordId": "BBU14",
+      "highScore": 162.52,
+      "winners": [
+        {
+          "week": 4,
+          "leagueRecordId": "BBU14",
+          "sleeperLeagueId": "1395814066945036288",
+          "rosterId": 1,
+          "ownerId": "949808019855081472",
+          "manager": "erdeme",
+          "teamName": "erdeme",
+          "points": 162.52,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1395814066945036288/matchups/4",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "leagueRecordId": "BBU14",
+      "highScore": 173.83,
+      "winners": [
+        {
+          "week": 5,
+          "leagueRecordId": "BBU14",
+          "sleeperLeagueId": "1395814066945036288",
+          "rosterId": 3,
+          "ownerId": "729201775764180992",
+          "manager": "BammBamKam",
+          "teamName": "BammBamKam",
+          "points": 173.83,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1395814066945036288/matchups/5",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "leagueRecordId": "BBU14",
+      "highScore": 150.74,
+      "winners": [
+        {
+          "week": 6,
+          "leagueRecordId": "BBU14",
+          "sleeperLeagueId": "1395814066945036288",
+          "rosterId": 3,
+          "ownerId": "729201775764180992",
+          "manager": "BammBamKam",
+          "teamName": "BammBamKam",
+          "points": 150.74,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1395814066945036288/matchups/6",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "leagueRecordId": "BBU14",
+      "highScore": 132.92,
+      "winners": [
+        {
+          "week": 7,
+          "leagueRecordId": "BBU14",
+          "sleeperLeagueId": "1395814066945036288",
+          "rosterId": 3,
+          "ownerId": "729201775764180992",
+          "manager": "BammBamKam",
+          "teamName": "BammBamKam",
+          "points": 132.92,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1395814066945036288/matchups/7",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "leagueRecordId": "BBU14",
+      "highScore": 166.78,
+      "winners": [
+        {
+          "week": 8,
+          "leagueRecordId": "BBU14",
+          "sleeperLeagueId": "1395814066945036288",
+          "rosterId": 7,
+          "ownerId": "1257577177407303680",
+          "manager": "StolenSix",
+          "teamName": "StolenSix",
+          "points": 166.78,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1395814066945036288/matchups/8",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "leagueRecordId": "BBU14",
+      "highScore": 152.56,
+      "winners": [
+        {
+          "week": 9,
+          "leagueRecordId": "BBU14",
+          "sleeperLeagueId": "1395814066945036288",
+          "rosterId": 9,
+          "ownerId": "1012957259581730816",
+          "manager": "SLKing17",
+          "teamName": "SLKing17",
+          "points": 152.56,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1395814066945036288/matchups/9",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "leagueRecordId": "BBU14",
+      "highScore": 163.57,
+      "winners": [
+        {
+          "week": 10,
+          "leagueRecordId": "BBU14",
+          "sleeperLeagueId": "1395814066945036288",
+          "rosterId": 4,
+          "ownerId": "1175159775586222080",
+          "manager": "TryanboloneBB",
+          "teamName": "TryanboloneBB",
+          "points": 163.57,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1395814066945036288/matchups/10",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "leagueRecordId": "BBU14",
+      "highScore": 142.4,
+      "winners": [
+        {
+          "week": 11,
+          "leagueRecordId": "BBU14",
+          "sleeperLeagueId": "1395814066945036288",
+          "rosterId": 4,
+          "ownerId": "1175159775586222080",
+          "manager": "TryanboloneBB",
+          "teamName": "TryanboloneBB",
+          "points": 142.4,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1395814066945036288/matchups/11",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 1,
+      "leagueRecordId": "BBU15",
+      "highScore": 180.86,
+      "winners": [
+        {
+          "week": 1,
+          "leagueRecordId": "BBU15",
+          "sleeperLeagueId": "1400552006992556032",
+          "rosterId": 3,
+          "ownerId": "983473463291711488",
+          "manager": "Kribi",
+          "teamName": "Shinigami",
+          "points": 180.86,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1400552006992556032/matchups/1",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "leagueRecordId": "BBU15",
+      "highScore": 159.17,
+      "winners": [
+        {
+          "week": 2,
+          "leagueRecordId": "BBU15",
+          "sleeperLeagueId": "1400552006992556032",
+          "rosterId": 3,
+          "ownerId": "983473463291711488",
+          "manager": "Kribi",
+          "teamName": "Shinigami",
+          "points": 159.17,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1400552006992556032/matchups/2",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "leagueRecordId": "BBU15",
+      "highScore": 169.14,
+      "winners": [
+        {
+          "week": 3,
+          "leagueRecordId": "BBU15",
+          "sleeperLeagueId": "1400552006992556032",
+          "rosterId": 6,
+          "ownerId": "991563873712959488",
+          "manager": "hwright0490",
+          "teamName": "hwright0490",
+          "points": 169.14,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1400552006992556032/matchups/3",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "leagueRecordId": "BBU15",
+      "highScore": 150.96,
+      "winners": [
+        {
+          "week": 4,
+          "leagueRecordId": "BBU15",
+          "sleeperLeagueId": "1400552006992556032",
+          "rosterId": 8,
+          "ownerId": "991924818176016384",
+          "manager": "Dynasty4JG",
+          "teamName": "Dynasty4JG",
+          "points": 150.96,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1400552006992556032/matchups/4",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "leagueRecordId": "BBU15",
+      "highScore": 175.68,
+      "winners": [
+        {
+          "week": 5,
+          "leagueRecordId": "BBU15",
+          "sleeperLeagueId": "1400552006992556032",
+          "rosterId": 6,
+          "ownerId": "991563873712959488",
+          "manager": "hwright0490",
+          "teamName": "hwright0490",
+          "points": 175.68,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1400552006992556032/matchups/5",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "leagueRecordId": "BBU15",
+      "highScore": 139.45,
+      "winners": [
+        {
+          "week": 6,
+          "leagueRecordId": "BBU15",
+          "sleeperLeagueId": "1400552006992556032",
+          "rosterId": 3,
+          "ownerId": "983473463291711488",
+          "manager": "Kribi",
+          "teamName": "Shinigami",
+          "points": 139.45,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1400552006992556032/matchups/6",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "leagueRecordId": "BBU15",
+      "highScore": 152.12,
+      "winners": [
+        {
+          "week": 7,
+          "leagueRecordId": "BBU15",
+          "sleeperLeagueId": "1400552006992556032",
+          "rosterId": 4,
+          "ownerId": "1175159775586222080",
+          "manager": "TryanboloneBB",
+          "teamName": "TryanboloneBB",
+          "points": 152.12,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1400552006992556032/matchups/7",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "leagueRecordId": "BBU15",
+      "highScore": 153.84,
+      "winners": [
+        {
+          "week": 8,
+          "leagueRecordId": "BBU15",
+          "sleeperLeagueId": "1400552006992556032",
+          "rosterId": 4,
+          "ownerId": "1175159775586222080",
+          "manager": "TryanboloneBB",
+          "teamName": "TryanboloneBB",
+          "points": 153.84,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1400552006992556032/matchups/8",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "leagueRecordId": "BBU15",
+      "highScore": 133.43,
+      "winners": [
+        {
+          "week": 9,
+          "leagueRecordId": "BBU15",
+          "sleeperLeagueId": "1400552006992556032",
+          "rosterId": 3,
+          "ownerId": "983473463291711488",
+          "manager": "Kribi",
+          "teamName": "Shinigami",
+          "points": 133.43,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1400552006992556032/matchups/9",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "leagueRecordId": "BBU15",
+      "highScore": 152.63,
+      "winners": [
+        {
+          "week": 10,
+          "leagueRecordId": "BBU15",
+          "sleeperLeagueId": "1400552006992556032",
+          "rosterId": 10,
+          "ownerId": "1133242089002745856",
+          "manager": "abettertime",
+          "teamName": "abettertime",
+          "points": 152.63,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1400552006992556032/matchups/10",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "leagueRecordId": "BBU15",
+      "highScore": 125.58,
+      "winners": [
+        {
+          "week": 11,
+          "leagueRecordId": "BBU15",
+          "sleeperLeagueId": "1400552006992556032",
+          "rosterId": 3,
+          "ownerId": "983473463291711488",
+          "manager": "Kribi",
+          "teamName": "Shinigami",
+          "points": 125.58,
+          "sourceUrl": "https://api.sleeper.app/v1/league/1400552006992556032/matchups/11",
+          "identityBasis": "Current Sleeper roster owner; historical ownership not inferred"
+        }
+      ]
+    }
+  ]
+}

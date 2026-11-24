@@ -23,3 +23,8 @@ Use this list for Discord server structure, webhook automation, testing-channel 
 - [ ] Keep Discord status-board counts aligned with `data/leagues.json` and the current assigned-team rule for Redraft Bracket.
 - [ ] Remove stale guide/explanation posts from testing channels once the consolidated status board is readable on desktop and mobile.
 - [ ] Publish constitution forum posts or channel posts after the server structure is final.
+
+## November 24 scoreboard repair
+
+- [ ] Verify the first unattended Tuesday/Wednesday runs of the repaired BBU Bot scoreboards and bracket standings recovery schedule. See docs/discord-server/bbu-scoreboard-automation.md.
+

@@ -4,6 +4,8 @@ on:
   schedule:
     - cron: "0 1 * * 2"
       timezone: "America/Chicago"
+    - cron: "13 7 * * 2"
+      timezone: "America/Chicago"
   workflow_dispatch:
     inputs:
       dry_run:
@@ -86,7 +88,8 @@ jobs:
             $paths += "data/bracket-playoff-field-2026.json"
           }
           git add -- $paths
-          if (git diff --cached --quiet) {
+          git diff --cached --quiet
+          if ($LASTEXITCODE -eq 0) {
             Write-Host "Bracket ledger and Discord standings state are already current."
             exit 0
           }
@@ -107,3 +110,4 @@ jobs:
             if ($attempt -lt 4) { Start-Sleep -Seconds (10 * $attempt) }
           }
           if (-not $pushed) { throw "Could not push the standings state after four attempts." }
+

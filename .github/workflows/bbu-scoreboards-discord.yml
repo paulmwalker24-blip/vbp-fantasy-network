@@ -1,0 +1,69 @@
+name: BBU Bot Weekly and Overall Scoreboards
+
+on:
+  schedule:
+    - cron: "20 14 * * 2"
+      timezone: "America/Chicago"
+    - cron: "23 7 * * 3"
+      timezone: "America/Chicago"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Audit and validate both BBU Bot scoreboards without sending messages."
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bbu-bot-scoreboards
+  cancel-in-progress: false
+
+jobs:
+  scoreboards:
+    if: ${{ github.event_name == 'workflow_dispatch' || vars.DISCORD_BBU_BOT_SCOREBOARDS_ENABLED == 'true' }}
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Audit all 15 rooms and refresh both scoreboards
+        shell: pwsh
+        env:
+          DISCORD_BBU_BOT_TOKEN: ${{ secrets.DISCORD_BBU_BOT_TOKEN }}
+          PREVIEW_ONLY: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+        run: |
+          if ($env:PREVIEW_ONLY -ne 'true' -and -not $env:DISCORD_BBU_BOT_TOKEN) {
+            throw 'Set the dedicated DISCORD_BBU_BOT_TOKEN repository secret before publishing.'
+          }
+          & ./scripts/refresh-bbu-scoreboards.ps1 -Publish:($env:PREVIEW_ONLY -ne 'true')
+      - name: Preserve verified data and message IDs even after partial publication
+        if: ${{ always() && (github.event_name != 'workflow_dispatch' || inputs.dry_run == false) }}
+        shell: pwsh
+        run: |
+          $paths = @(
+            'data/bbu-weekly-high-scores.json', 'data/bbu-overall-high-scorer.json',
+            'data/discord-bbu-weekly-high-scores-state.json', 'data/discord-bbu-overall-high-scorer-state.json',
+            'reports/bbu-weekly-scores-2026.csv', 'reports/bbu-weekly-high-scores-2026.md'
+          )
+          foreach ($path in $paths) {
+            if (Test-Path -LiteralPath $path) { git add -- $path }
+          }
+          git diff --cached --quiet
+          if ($LASTEXITCODE -eq 0) { exit 0 }
+          if ($LASTEXITCODE -ne 1) { throw 'Could not inspect scoreboard changes.' }
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Refresh BBU Bot weekly and overall scoreboards'
+          if ($LASTEXITCODE -ne 0) { throw 'Could not save BBU scoreboard state.' }
+          foreach ($attempt in 1..4) {
+            git pull --rebase origin main
+            if ($LASTEXITCODE -ne 0) { throw 'Could not rebase BBU scoreboard state.' }
+            git push origin HEAD:main
+            if ($LASTEXITCODE -eq 0) { exit 0 }
+            Start-Sleep -Seconds (5 * $attempt)
+          }
+          throw 'Could not push BBU scoreboard state.'
+

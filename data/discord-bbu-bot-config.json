@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "applicationId": "1569773825271537815",
+  "guildId": "1362524156465385674",
+  "botRoleId": "1569775529614377131",
+  "credentialEnvironmentVariable": "DISCORD_BBU_BOT_TOKEN",
+  "userAgent": "DiscordBot (https://github.com/discord/discord-api-docs, 1.0)",
+  "channels": {
+    "powerRankings": "1540207093133344768",
+    "divisionLeaders": "1540364355772616794",
+    "weeklyHighScore": "1540365233636249692",
+    "overallHighScorer": "1569847887096062013"
+  }
+}
